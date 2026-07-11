@@ -3,1452 +3,843 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Root & Remedy — Natural Healing Wisdom</title>
-<meta name="description" content="Discover time-tested herbal remedies, home treatments, and wellness practices designed to support a healthier lifestyle naturally.">
-<meta name="theme-color" content="#1a3a2a">
+<title>Nouryx 101 Natural Home Remedies</title>
+<meta name="description" content="Discover 101 powerful natural home remedies for everyday wellness. Heal your body the natural way with Nouryx.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
 :root{
-  --green-deep:#1a3a2a;
-  --green-sage:#7a9e7e;
-  --green-emerald:#2d5a3e;
-  --green-moss:#4a7c5c;
-  --green-light:#a8c5a8;
-  --beige-warm:#e8dccc;
-  --cream:#f5efe6;
-  --gold-soft:#c8a96e;
-  --gold-light:#e0cfa8;
-  --brown-natural:#6b5344;
-  --brown-light:#8b7355;
-  --white:#ffffff;
-  --white-warm:#faf7f2;
-  --glass-bg:rgba(255,255,255,0.08);
-  --glass-border:rgba(255,255,255,0.15);
-  --glass-shadow:rgba(0,0,0,0.1);
-  --font-serif:'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  --font-serif-alt:'Cormorant Garamond', Georgia, serif;
-  --font-sans:'Manrope', 'Inter', -apple-system, sans-serif;
-  --font-sans-alt:'Inter', -apple-system, sans-serif;
-  --radius-sm:8px;
-  --radius-md:16px;
-  --radius-lg:24px;
-  --radius-xl:32px;
-  --transition-slow:0.6s cubic-bezier(0.22,1,0.36,1);
-  --transition-medium:0.4s cubic-bezier(0.22,1,0.36,1);
-  --transition-fast:0.2s cubic-bezier(0.22,1,0.36,1);
-  --ease-out: cubic-bezier(0.22,1,0.36,1);
+  --sage:#7A8B6F;
+  --sage-light:#A3B18A;
+  --sage-dark:#5E7153;
+  --olive:#6B7F4E;
+  --olive-dark:#4A5A35;
+  --cream:#FFF9F0;
+  --cream-deep:#FFF3E4;
+  --beige:#E8DFD0;
+  --beige-warm:#F0E6D4;
+  --gold:#C5A55A;
+  --gold-light:#D4BA6A;
+  --gold-soft:#E8D5A0;
+  --dark:#2A2A20;
+  --dark-warm:#3D3526;
+  --brown:#6B5D4F;
+  --brown-light:#8B7D6F;
+  --text:#3A3530;
+  --text-muted:#8A7E72;
 }
+
 html{scroll-behavior:smooth}
 body{
-  font-family:var(--font-sans);
+  font-family:'Inter',system-ui,sans-serif;
   background:var(--cream);
-  color:var(--green-deep);
+  color:var(--text);
   overflow-x:hidden;
-  cursor:default;
+  line-height:1.65;
 }
-::selection{background:var(--green-sage);color:var(--white)}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--cream)}
-::-webkit-scrollbar-thumb{background:var(--green-sage);border-radius:3px}
+h1,h2,h3,h4,.display{font-family:'Playfair Display',Georgia,serif;line-height:1.1;letter-spacing:-0.01em}
+.cormorant{font-family:'Cormorant Garamond',Georgia,serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
 
-/* === CUSTOM CURSOR === */
-.cursor-dot{
-  position:fixed;width:8px;height:8px;background:var(--green-emerald);border-radius:50%;
-  pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
-  transition:width 0.3s, height 0.3s, background 0.3s;mix-blend-mode:difference;
+/* ============ LIGHT LAYER ============ */
+.light-layer{position:fixed;inset:0;pointer-events:none;z-index:9998;overflow:hidden}
+.light-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:0;animation:orbDrift linear infinite}
+.light-orb:nth-child(1){width:550px;height:550px;background:radial-gradient(circle,rgba(163,177,138,0.18),transparent 70%);top:-12%;left:8%;animation-duration:24s}
+.light-orb:nth-child(2){width:450px;height:450px;background:radial-gradient(circle,rgba(197,165,90,0.14),transparent 70%);top:35%;right:-6%;animation-duration:28s;animation-delay:-9s}
+.light-orb:nth-child(3){width:380px;height:380px;background:radial-gradient(circle,rgba(107,127,78,0.1),transparent 70%);bottom:8%;left:22%;animation-duration:26s;animation-delay:-16s}
+.light-orb:nth-child(4){width:320px;height:320px;background:radial-gradient(circle,rgba(212,186,106,0.12),transparent 70%);top:58%;left:55%;animation-duration:21s;animation-delay:-5s}
+.light-orb:nth-child(5){width:280px;height:280px;background:radial-gradient(circle,rgba(163,177,138,0.1),transparent 70%);top:15%;right:20%;animation-duration:19s;animation-delay:-12s}
+@keyframes orbDrift{
+  0%{opacity:0;transform:translate(0,0) scale(1)}
+  20%{opacity:1}
+  50%{transform:translate(80px,-60px) scale(1.2)}
+  80%{opacity:1}
+  100%{opacity:0;transform:translate(-40px,80px) scale(0.9)}
 }
-.cursor-ring{
-  position:fixed;width:40px;height:40px;border:1.5px solid var(--green-sage);border-radius:50%;
-  pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
-  transition:width 0.4s, height 0.4s, border-color 0.4s;
-}
-.cursor-hover .cursor-dot{width:12px;height:12px;background:var(--gold-soft)}
-.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--gold-soft)}
 
-/* === PRELOADER === */
-#preloader{
-  position:fixed;inset:0;z-index:10000;background:var(--green-deep);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;
-  transition:opacity 0.8s var(--ease-out), visibility 0.8s var(--ease-out);
+.shimmer-line{position:fixed;width:200%;height:1px;background:linear-gradient(90deg,transparent,rgba(163,177,138,0.25),rgba(197,165,90,0.18),transparent);opacity:0;animation:shimmerSweep 7s ease-in-out infinite;pointer-events:none;z-index:9998}
+.shimmer-line:nth-child(6){top:22%;animation-delay:0s}
+.shimmer-line:nth-child(7){top:52%;animation-delay:2.5s}
+.shimmer-line:nth-child(8){top:82%;animation-delay:5s}
+@keyframes shimmerSweep{
+  0%{transform:translateX(-100%);opacity:0}
+  30%{opacity:0.5}
+  70%{opacity:0.5}
+  100%{transform:translateX(20%);opacity:0}
 }
-#preloader.hidden{opacity:0;visibility:hidden}
-.preloader-logo{font-family:var(--font-serif);color:var(--cream);font-size:2rem;letter-spacing:0.15em;margin-bottom:2rem}
-.preloader-bar{width:200px;height:2px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
-.preloader-fill{height:100%;width:0%;background:var(--gold-soft);border-radius:2px;transition:width 0.3s}
 
-/* === NAV === */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;
-  transition:background 0.5s var(--ease-out), padding 0.5s var(--ease-out);
-  mix-blend-mode:difference;
+/* ============ PARTICLES ============ */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;opacity:0;animation:floatUp linear infinite}
+@keyframes floatUp{
+  0%{transform:translateY(105vh) rotate(0deg) scale(0.5);opacity:0}
+  8%{opacity:0.5}
+  85%{opacity:0.25}
+  100%{transform:translateY(-10vh) rotate(400deg) scale(1);opacity:0}
 }
-nav.scrolled{
-  background:rgba(26,58,42,0.85);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  padding:1rem 3rem;mix-blend-mode:normal;
-}
-.nav-logo{font-family:var(--font-serif);font-size:1.5rem;color:var(--white);letter-spacing:0.08em;font-weight:600;text-decoration:none}
-.nav-links{display:flex;gap:2.5rem;align-items:center}
-.nav-links a{color:var(--white);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:opacity 0.3s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold-soft);transition:width 0.4s var(--ease-out)}
+
+/* ============ NAV ============ */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:1.2rem 2.5rem;transition:all 0.5s cubic-bezier(.23,1,.32,1);background:transparent}
+nav.scrolled{background:rgba(255,249,240,0.92);backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 2px 60px rgba(42,42,32,0.06);padding:0.7rem 2.5rem}
+.nav-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--sage-dark);transition:transform 0.3s}
+.logo:hover{transform:scale(1.05)}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--brown);font-weight:500;font-size:0.88rem;letter-spacing:0.5px;transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--sage);transition:width 0.3s}
+.nav-links a:hover{color:var(--sage)}
 .nav-links a:hover::after{width:100%}
-.nav-links a:hover{opacity:0.8}
-.nav-cta{
-  background:var(--gold-soft);color:var(--green-deep);padding:0.6rem 1.5rem;border-radius:50px;
-  font-size:0.75rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;
-  transition:all 0.4s var(--ease-out);border:none;cursor:pointer;
-}
-.nav-cta:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
-.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
+.nav-cta{background:linear-gradient(135deg,var(--sage),var(--sage-dark));color:#fff!important;padding:0.6rem 1.6rem;border-radius:50px;font-weight:600!important;font-size:0.85rem!important;letter-spacing:0.5px;box-shadow:0 4px 20px rgba(122,139,111,0.3);transition:all 0.3s}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(122,139,111,0.4);color:#fff!important}
+.menu-toggle{display:none;background:none;border:none;color:var(--dark);font-size:1.6rem;cursor:pointer}
 
-/* === HERO === */
-#hero{
-  position:relative;min-height:100vh;display:flex;align-items:center;padding:0 6rem;
-  background:linear-gradient(135deg, #0d261a 0%, #1a3a2a 30%, #2d4a3e 60%, #1a3a2a 100%);
-  overflow:hidden;
+/* ============ HERO ============ */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:7rem 2rem 4rem;overflow:hidden}
+.hero-glow-1{position:absolute;top:-30%;right:-15%;width:750px;height:750px;background:radial-gradient(circle,rgba(163,177,138,0.12) 0%,transparent 70%);border-radius:50%;animation:heroGlow 11s ease-in-out infinite}
+.hero-glow-2{position:absolute;bottom:-25%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(197,165,90,0.09) 0%,transparent 70%);border-radius:50%;animation:heroGlow 13s ease-in-out infinite reverse}
+.hero-glow-3{position:absolute;top:40%;left:40%;width:420px;height:420px;background:radial-gradient(circle,rgba(107,127,78,0.07) 0%,transparent 70%);border-radius:50%;animation:heroGlow 15s ease-in-out infinite 2s}
+@keyframes heroGlow{
+  0%,100%{transform:scale(1) translate(0,0);opacity:0.7}
+  33%{transform:scale(1.15) translate(20px,-15px);opacity:1}
+  66%{transform:scale(0.95) translate(-15px,10px);opacity:0.8}
 }
-#hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 20% 50%, rgba(200,169,110,0.08) 0%, transparent 60%),
-             radial-gradient(ellipse at 80% 20%, rgba(122,158,126,0.06) 0%, transparent 50%),
-             radial-gradient(ellipse at 50% 80%, rgba(200,169,110,0.04) 0%, transparent 50%);
-  pointer-events:none;
-}
-.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;max-width:1400px;margin:0 auto;position:relative;z-index:2}
-.hero-text{padding-right:2rem}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:0.6rem;
-  background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.3);
-  padding:0.5rem 1.2rem;border-radius:50px;margin-bottom:2rem;
-  font-size:0.75rem;color:var(--gold-soft);letter-spacing:0.06em;text-transform:uppercase;font-weight:500;
-}
-.hero-badge i{font-size:0.6rem}
-.hero-title{
-  font-family:var(--font-serif);font-size:clamp(3rem, 5vw, 5.5rem);
-  line-height:1.1;color:var(--white);font-weight:600;margin-bottom:1.5rem;
-}
-.hero-title em{font-style:italic;color:var(--gold-soft)}
-.hero-subtitle{
-  font-size:clamp(1rem, 1.2vw, 1.2rem);line-height:1.7;
-  color:rgba(255,255,255,0.7);font-weight:300;max-width:520px;margin-bottom:2.5rem;
-  font-family:var(--font-sans-alt);
-}
-.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:0.8rem;
-  background:var(--gold-soft);color:var(--green-deep);padding:1rem 2.2rem;border-radius:50px;
-  font-size:0.85rem;font-weight:700;letter-spacing:0.03em;text-decoration:none;
-  transition:all 0.5s var(--ease-out);border:none;cursor:pointer;position:relative;overflow:hidden;
-}
-.btn-primary::before{
-  content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
-  transform:translateX(-100%);transition:transform 0.6s var(--ease-out);
-}
-.btn-primary:hover::before{transform:translateX(0)}
-.btn-primary:hover{background:var(--white);transform:translateY(-3px);box-shadow:0 20px 50px rgba(200,169,110,0.3)}
-.btn-secondary{
-  display:inline-flex;align-items:center;gap:0.8rem;
-  background:transparent;color:var(--white);padding:1rem 2.2rem;border-radius:50px;
-  font-size:0.85rem;font-weight:500;letter-spacing:0.03em;text-decoration:none;
-  border:1.5px solid rgba(255,255,255,0.25);cursor:pointer;
-  transition:all 0.5s var(--ease-out);position:relative;overflow:hidden;
-}
-.btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5);transform:translateY(-3px)}
-.hero-features{
-  display:flex;gap:2rem;flex-wrap:wrap;
-}
-.hero-features span{
-  display:flex;align-items:center;gap:0.5rem;
-  font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:400;
-}
-.hero-features i{color:var(--gold-soft);font-size:0.7rem}
+.hero-content{text-align:center;position:relative;z-index:2;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,var(--sage),var(--sage-dark));color:white;padding:0.6rem 1.6rem;border-radius:50px;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:2rem;animation:badgeIn 0.8s ease-out;box-shadow:0 6px 30px rgba(122,139,111,0.3)}
+@keyframes badgeIn{from{opacity:0;transform:translateY(-25px) scale(0.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+.hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.08;margin-bottom:1.5rem;color:var(--dark);animation:heroTextIn 1s ease-out 0.2s both}
+.hero h1 .accent{color:var(--sage);display:inline-block;font-style:italic}
+.hero h1 .gold-accent{color:var(--gold);display:inline-block}
+.hero p{font-size:1.15rem;color:var(--text-muted);max-width:600px;margin:0 auto 2.5rem;line-height:1.8;animation:heroTextIn 1s ease-out 0.4s both}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:heroTextIn 1s ease-out 0.6s both}
+@keyframes heroTextIn{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.btn-glow{display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.4rem;border-radius:60px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.4s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;border:none;cursor:pointer}
+.btn-glow::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transition:left 0.6s}
+.btn-glow:hover::before{left:100%}
+.btn-glow.primary{background:linear-gradient(135deg,var(--sage),var(--sage-dark));color:white;box-shadow:0 6px 30px rgba(122,139,111,0.4)}
+.btn-glow.primary:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 45px rgba(122,139,111,0.5)}
+.btn-glow.outline{background:transparent;color:var(--sage-dark);border:2px solid rgba(122,139,111,0.3)}
+.btn-glow.outline:hover{border-color:var(--sage);background:rgba(122,139,111,0.06);transform:translateY(-4px)}
+.btn-glow.gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);box-shadow:0 6px 30px rgba(197,165,90,0.35)}
+.btn-glow.gold:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 45px rgba(197,165,90,0.5)}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;animation:heroTextIn 1s ease-out 1.2s both;z-index:2}
+.scroll-hint span{font-size:0.7rem;color:var(--text-muted);letter-spacing:3px;text-transform:uppercase}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--sage),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(0.5)}50%{opacity:1;transform:scaleY(1)}}
+.hero-features{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;animation:heroTextIn 1s ease-out 0.8s both}
+.hero-feature{display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:var(--brown-light);font-weight:500}
+.hero-feature svg{width:18px;height:18px;fill:none;stroke:var(--sage);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
-/* === BOOK CONTAINER === */
-.book-container{
-  position:relative;width:100%;height:600px;display:flex;align-items:center;justify-content:center;
-  perspective:1200px;
-}
-#book-canvas{
-  width:100%;height:100%;display:block;cursor:grab;touch-action:none;
-}
-#book-canvas:active{cursor:grabbing}
-.book-hint{
-  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
-  display:flex;align-items:center;gap:0.6rem;color:rgba(255,255,255,0.35);
-  font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:400;
-  pointer-events:none;animation:hintPulse 2.5s ease-in-out infinite;
-}
-@keyframes hintPulse{
-  0%,100%{opacity:0.35}
-  50%{opacity:0.7}
-}
+/* ============ MARQUEE ============ */
+.marquee-section{overflow:hidden;padding:1.3rem 0;background:linear-gradient(135deg,var(--beige-warm),var(--cream-deep));position:relative;z-index:2}
+.marquee-track{display:flex;gap:3rem;animation:marqueeScroll 40s linear infinite;width:max-content}
+.marquee-item{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--sage-dark);white-space:nowrap;display:flex;align-items:center;gap:1rem}
+.marquee-item .dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* === BACKGROUND PARTICLES === */
-.particles-canvas{
-  position:fixed;inset:0;pointer-events:none;z-index:1;
-}
-.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
-.floating-leaf{
-  position:absolute;width:30px;height:30px;opacity:0.15;
-  background:var(--green-light);border-radius:50% 0 50% 0;
-  animation:leafFloat linear infinite;
-}
-@keyframes leafFloat{
-  0%{transform:translateY(100vh) rotate(0deg) scale(0.5);opacity:0}
-  10%{opacity:0.15}
-  90%{opacity:0.15}
-  100%{transform:translateY(-100vh) rotate(720deg) scale(1);opacity:0}
-}
+/* ============ ROTATING BOOK SHOWCASE ============ */
+.showcase-section{padding:7rem 2rem;position:relative;z-index:2;overflow:hidden}
+.showcase-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:650px;height:650px;background:radial-gradient(circle,rgba(163,177,138,0.1) 0%,transparent 65%);border-radius:50%;animation:showcasePulse 5s ease-in-out infinite}
+@keyframes showcasePulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.6}50%{transform:translate(-50%,-50%) scale(1.2);opacity:1}}
+.showcase-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.rotating-book-stage{perspective:1200px;display:flex;justify-content:center;align-items:center;height:460px;position:relative}
 
-/* === GLASS ORB === */
-.glass-orb{
-  position:absolute;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at 30% 30%, rgba(200,169,110,0.1), transparent 70%);
-  filter:blur(60px);
+/* 3D Rotating Book */
+.rotating-book{width:280px;height:380px;position:relative;transform-style:preserve-3d;animation:bookRotate 10s ease-in-out infinite;cursor:pointer;transition:filter 0.5s}
+.rotating-book:hover{filter:drop-shadow(0 30px 60px rgba(122,139,111,0.35))}
+@keyframes bookRotate{
+  0%{transform:rotateY(-15deg) rotateX(5deg)}
+  25%{transform:rotateY(30deg) rotateX(-3deg)}
+  50%{transform:rotateY(-10deg) rotateX(4deg)}
+  75%{transform:rotateY(25deg) rotateX(-2deg)}
+  100%{transform:rotateY(-15deg) rotateX(5deg)}
 }
-.glass-orb-2{
-  background:radial-gradient(circle at 30% 30%, rgba(122,158,126,0.08), transparent 70%);
-}
+.book-face{position:absolute;width:100%;height:100%;border-radius:6px 12px 12px 6px;overflow:hidden;backface-visibility:hidden}
+.book-front{transform:translateZ(20px);box-shadow:8px 8px 50px rgba(42,42,32,0.25)}
+.book-front img{width:100%;height:100%;object-fit:cover}
+.book-back{transform:rotateY(180deg) translateZ(20px);background:linear-gradient(135deg,var(--cream-deep),var(--beige-warm));box-shadow:-8px 8px 50px rgba(42,42,32,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem;text-align:center}
+.book-back .back-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--sage-dark);margin-bottom:0.8rem}
+.book-back .back-desc{font-size:0.88rem;color:var(--brown);line-height:1.7}
+.book-back .back-badge{margin-top:1.2rem;display:inline-flex;align-items:center;gap:0.4rem;background:linear-gradient(135deg,var(--sage),var(--sage-dark));color:white;padding:0.5rem 1.2rem;border-radius:50px;font-size:0.75rem;font-weight:600;letter-spacing:1px}
+.book-spine{position:absolute;width:40px;height:100%;left:-20px;top:0;background:linear-gradient(180deg,var(--sage-dark),var(--olive-dark));transform:rotateY(-90deg) translateZ(0px);border-radius:4px 0 0 4px;box-shadow:-4px 0 15px rgba(42,42,32,0.15);display:grid;place-items:center}
+.book-spine span{writing-mode:vertical-rl;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:3px;font-size:0.65rem;text-transform:uppercase;color:rgba(255,255,255,0.9);text-shadow:0 0 10px rgba(255,255,255,0.2)}
+.book-page-edge{position:absolute;width:40px;height:100%;right:-20px;top:0;background:repeating-linear-gradient(to bottom,#f5efe8 0,#f5efe8 2px,#ebe3d8 3px,#f5efe8 4px);transform:rotateY(90deg) translateZ(0px);border-radius:0 4px 4px 0}
+.book-shadow{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);width:220px;height:30px;background:radial-gradient(ellipse,rgba(42,42,32,0.12),transparent 70%);border-radius:50%;animation:shadowPulse 10s ease-in-out infinite}
+@keyframes shadowPulse{0%,100%{transform:translateX(-50%) scaleX(1);opacity:0.6}50%{transform:translateX(-50%) scaleX(1.15);opacity:0.8}}
+.book-sparkle{position:absolute;width:8px;height:8px;background:var(--gold);border-radius:50%;opacity:0;animation:sparkle 3s ease-in-out infinite}
+.book-sparkle:nth-child(1){top:8%;right:-8%;animation-delay:0s}
+.book-sparkle:nth-child(2){top:40%;right:-10%;animation-delay:1.2s}
+.book-sparkle:nth-child(3){bottom:18%;right:-5%;animation-delay:2.4s}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:0.9;transform:scale(1.5)}}
+.showcase-text h3{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--sage);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.8rem;font-weight:600}
+.showcase-text h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.15;margin-bottom:1.2rem;color:var(--dark)}
+.showcase-text h2 em{font-style:italic;color:var(--sage)}
+.showcase-text p{font-size:1.05rem;color:var(--text-muted);line-height:1.8;margin-bottom:2rem}
+.showcase-checklist{list-style:none;margin-bottom:2rem;display:flex;flex-direction:column;gap:0.8rem}
+.showcase-checklist li{display:flex;align-items:center;gap:0.7rem;font-size:0.95rem;color:var(--text);font-weight:500}
+.showcase-checklist li svg{width:20px;height:20px;fill:none;stroke:var(--sage);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
-/* === SECTIONS COMMON === */
-section{padding:8rem 6rem;position:relative}
-.section-label{
-  font-family:var(--font-sans);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--green-sage);font-weight:600;margin-bottom:1rem;
-}
-.section-title{
-  font-family:var(--font-serif);font-size:clamp(2.2rem, 3.5vw, 3.5rem);
-  line-height:1.15;margin-bottom:1.5rem;color:var(--green-deep);
-}
-.section-title em{font-style:italic;color:var(--green-sage)}
-.section-subtitle{
-  font-size:1.05rem;line-height:1.7;color:var(--brown-natural);
-  max-width:600px;font-weight:300;
-}
-.text-center{text-align:center}
-.text-center .section-subtitle{margin:0 auto 3rem}
+/* ============ SIDE IMAGES GALLERY ============ */
+.gallery-section{padding:6rem 2rem;position:relative;z-index:2;overflow:hidden}
+.gallery-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start}
+.gallery-card{position:relative;border-radius:24px;overflow:hidden;transition:all 0.5s cubic-bezier(.23,1,.32,1);background:white;box-shadow:0 10px 60px rgba(42,42,32,0.05)}
+.gallery-card:hover{transform:translateY(-14px) scale(1.015);box-shadow:0 30px 80px rgba(42,42,32,0.1)}
+.gallery-card::before{content:'';position:absolute;inset:0;border-radius:24px;padding:2px;background:linear-gradient(135deg,transparent 40%,rgba(163,177,138,0.3),rgba(197,165,90,0.2),transparent 60%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity 0.5s;z-index:3}
+.gallery-card:hover::before{opacity:1}
+.gallery-card img{width:100%;height:360px;object-fit:cover;transition:transform 0.8s cubic-bezier(.23,1,.32,1)}
+.gallery-card:hover img{transform:scale(1.08)}
+.gallery-card .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(42,42,32,0.85) 0%,rgba(42,42,32,0.1) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;z-index:2}
+.gallery-card .gallery-tag{position:absolute;top:1.2rem;left:1.2rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:0.4rem 1rem;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--sage-dark)}
+.gallery-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:white;font-weight:700;margin-bottom:0.3rem}
+.gallery-card p{color:rgba(255,255,255,0.8);font-size:0.88rem;line-height:1.6}
+.gallery-card .gallery-cta{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold-soft);font-weight:600;font-size:0.85rem;margin-top:1rem;transition:gap 0.3s}
+.gallery-card:hover .gallery-cta{gap:0.9rem}
 
-/* === BENEFITS === */
-#benefits{background:var(--white-warm)}
-.benefits-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;
-}
-.benefit-card{
-  background:var(--white);border-radius:var(--radius-lg);padding:2.5rem 2rem;
-  box-shadow:0 2px 40px rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.03);
-  transition:all 0.5s var(--ease-out);position:relative;overflow:hidden;
-  transform:translateY(60px);opacity:0;
-}
-.benefit-card.visible{transform:translateY(0);opacity:1}
-.benefit-card:hover{
-  transform:translateY(-8px);box-shadow:0 20px 60px rgba(26,58,42,0.1);
-  border-color:rgba(200,169,110,0.15);
-}
-.benefit-icon{
-  width:56px;height:56px;background:linear-gradient(135deg, var(--green-light), var(--green-sage));
-  border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;
-  margin-bottom:1.5rem;font-size:1.3rem;color:var(--white);
-  transition:all 0.5s var(--ease-out);
-}
-.benefit-card:hover .benefit-icon{transform:scale(1.05);background:linear-gradient(135deg, var(--gold-soft), var(--gold-light))}
-.benefit-card h3{font-family:var(--font-serif);font-size:1.2rem;margin-bottom:0.6rem;color:var(--green-deep)}
-.benefit-card p{font-size:0.9rem;color:var(--brown-natural);line-height:1.6;font-weight:300}
+/* ============ SECTION HEADERS ============ */
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header .label{font-size:0.8rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-bottom:1rem;display:block}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;margin-bottom:1rem;color:var(--dark)}
+.section-header h2 em{font-style:italic;color:var(--sage)}
+.section-header p{color:var(--text-muted);max-width:560px;margin:0 auto;line-height:1.7}
 
-/* === INSIDE STATS === */
-#inside{
-  background:linear-gradient(135deg, var(--green-deep), #0d261a);
-  overflow:hidden;
-}
-#inside .section-label{color:var(--gold-light)}
-#inside .section-title{color:var(--white)}
-#inside .section-subtitle{color:rgba(255,255,255,0.6)}
-.stats-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:4rem;
-}
-.stat-card{
-  text-align:center;padding:2.5rem 1.5rem;position:relative;
-  background:rgba(255,255,255,0.03);border-radius:var(--radius-lg);
-  border:1px solid rgba(255,255,255,0.06);
-  transition:all 0.5s var(--ease-out);
-}
-.stat-card:hover{background:rgba(255,255,255,0.06);border-color:rgba(200,169,110,0.2);transform:translateY(-4px)}
-.stat-number{
-  font-family:var(--font-serif);font-size:clamp(2.5rem, 4vw, 4rem);
-  color:var(--gold-soft);font-weight:600;line-height:1;margin-bottom:0.5rem;
-}
-.stat-plus{font-size:2rem;color:var(--gold-soft);vertical-align:super}
-.stat-label{font-size:0.9rem;color:rgba(255,255,255,0.6);font-weight:300;letter-spacing:0.03em}
+/* ============ BENEFITS ============ */
+.benefits-section{padding:6rem 2rem;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);position:relative;z-index:2}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.benefit-card{text-align:center;padding:2.5rem 1.8rem;border-radius:20px;background:white;box-shadow:0 4px 30px rgba(42,42,32,0.03);transition:all 0.4s cubic-bezier(.23,1,.32,1);border:1px solid rgba(42,42,32,0.04);position:relative;overflow:hidden}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--sage),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 0.5s}
+.benefit-card:hover::before{transform:scaleX(1)}
+.benefit-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(42,42,32,0.08)}
+.benefit-icon{width:68px;height:68px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin:0 auto 1.2rem;background:linear-gradient(135deg,rgba(163,177,138,0.12),rgba(197,165,90,0.08));border:1px solid rgba(163,177,138,0.15)}
+.benefit-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.6rem;font-weight:700;color:var(--dark)}
+.benefit-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.65}
 
-/* === REMEDIES GRID === */
-#remedies{background:var(--cream)}
-.remedies-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem;
-}
-.remedy-card{
-  background:var(--white);border-radius:var(--radius-lg);padding:2rem 1.5rem;
-  text-align:center;cursor:pointer;
-  border:1px solid rgba(0,0,0,0.03);box-shadow:0 2px 30px rgba(0,0,0,0.03);
-  transition:all 0.5s var(--ease-out);position:relative;overflow:hidden;
-  transform:translateY(60px);opacity:0;
-}
-.remedy-card.visible{transform:translateY(0);opacity:1}
-.remedy-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg, var(--green-sage), var(--gold-soft));
-  transform:scaleX(0);transform-origin:left;transition:transform 0.6s var(--ease-out);
-}
-.remedy-card:hover::before{transform:scaleX(1)}
-.remedy-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(26,58,42,0.08)}
-.remedy-emoji{font-size:2.5rem;margin-bottom:1rem;display:block;transition:transform 0.5s var(--ease-out)}
-.remedy-card:hover .remedy-emoji{transform:scale(1.2) rotate(-5deg)}
-.remedy-card h4{font-family:var(--font-serif);font-size:1rem;color:var(--green-deep);margin-bottom:0.3rem}
-.remedy-card p{font-size:0.8rem;color:var(--brown-natural);font-weight:300}
+/* ============ STATS ============ */
+.stats-section{padding:5rem 2rem;position:relative;z-index:2}
+.stats-row{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;max-width:1000px;margin:0 auto}
+.stat-item{text-align:center;padding:1.5rem 2rem;border-radius:20px;transition:all 0.4s;background:rgba(255,255,255,0.5);border:1px solid rgba(42,42,32,0.04)}
+.stat-item:hover{background:white;box-shadow:0 12px 40px rgba(42,42,32,0.06)}
+.stat-number{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;background:linear-gradient(135deg,var(--sage),var(--sage-dark));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.4rem}
+.stat-label{font-size:0.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:500}
 
-/* === CATEGORIES === */
-#categories{background:var(--white-warm)}
-.categories-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem;
-}
-.category-card{
-  display:flex;align-items:center;gap:1.5rem;
-  background:var(--white);border-radius:var(--radius-lg);padding:1.8rem 2rem;
-  box-shadow:0 2px 30px rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.03);
-  transition:all 0.5s var(--ease-out);
-  transform:translateY(60px);opacity:0;cursor:pointer;
-}
-.category-card.visible{transform:translateY(0);opacity:1}
-.category-card:hover{transform:translateY(-6px);box-shadow:0 15px 50px rgba(26,58,42,0.08);border-color:rgba(200,169,110,0.15)}
-.category-icon{
-  width:64px;height:64px;min-width:64px;
-  background:linear-gradient(135deg, var(--green-light), var(--green-sage));
-  border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;color:var(--white);transition:all 0.5s var(--ease-out);
-}
-.category-card:hover .category-icon{transform:scale(1.05) rotate(-5deg);background:linear-gradient(135deg, var(--gold-soft), var(--gold-light))}
-.category-info h4{font-family:var(--font-serif);font-size:1.1rem;color:var(--green-deep);margin-bottom:0.2rem}
-.category-info p{font-size:0.85rem;color:var(--brown-natural);font-weight:300;line-height:1.5}
-.category-arrow{color:var(--green-sage);margin-left:auto;transition:transform 0.4s var(--ease-out);font-size:1.2rem}
-.category-card:hover .category-arrow{transform:translateX(6px)}
+/* ============ REMEDIES SECTION ============ */
+.remedies-section{padding:6rem 2rem;position:relative;z-index:2}
+.remedies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.remedy-card{display:flex;gap:1.2rem;padding:1.8rem;border-radius:20px;background:white;box-shadow:0 4px 30px rgba(42,42,32,0.03);transition:all 0.4s cubic-bezier(.23,1,.32,1);border:1px solid rgba(42,42,32,0.04)}
+.remedy-card:hover{transform:translateY(-6px);box-shadow:0 16px 45px rgba(42,42,32,0.08);border-color:rgba(163,177,138,0.2)}
+.remedy-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;background:linear-gradient(135deg,rgba(163,177,138,0.1),rgba(197,165,90,0.08));flex-shrink:0}
+.remedy-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:0.4rem;font-weight:700;color:var(--dark)}
+.remedy-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
 
-/* === TESTIMONIALS === */
-#testimonials{
-  background:linear-gradient(135deg, var(--green-deep), #0d261a);
-  overflow:hidden;
-}
-#testimonials .section-label{color:var(--gold-light)}
-#testimonials .section-title{color:var(--white)}
-.testimonials-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;
-}
-.testimonial-card{
-  background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-radius:var(--radius-lg);padding:2.5rem 2rem;
-  border:1px solid rgba(255,255,255,0.08);
-  transition:all 0.5s var(--ease-out);
-  transform:translateY(60px);opacity:0;
-}
-.testimonial-card.visible{transform:translateY(0);opacity:1}
-.testimonial-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(200,169,110,0.2);transform:translateY(-4px)}
-.testimonial-stars{color:var(--gold-soft);font-size:0.85rem;margin-bottom:1.2rem;letter-spacing:2px}
-.testimonial-text{
-  font-family:var(--font-serif-alt);font-size:1.05rem;line-height:1.7;
-  color:rgba(255,255,255,0.85);font-style:italic;margin-bottom:1.5rem;
-}
+/* ============ TESTIMONIALS ============ */
+.testimonials-section{padding:6rem 2rem;background:linear-gradient(180deg,var(--cream),var(--cream-deep));position:relative;z-index:2}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.testimonial-card{background:white;padding:2.5rem;border-radius:20px;box-shadow:0 4px 30px rgba(42,42,32,0.04);transition:all 0.4s cubic-bezier(.23,1,.32,1);border:1px solid rgba(42,42,32,0.04);position:relative}
+.testimonial-card::after{content:'\201C';position:absolute;top:0.8rem;right:1.5rem;font-family:'Playfair Display',serif;font-size:4rem;color:rgba(163,177,138,0.2);line-height:1}
+.testimonial-card:hover{transform:translateY(-8px);box-shadow:0 20px 55px rgba(42,42,32,0.08)}
+.testimonial-stars{color:var(--gold);font-size:0.95rem;margin-bottom:1rem;letter-spacing:3px}
+.testimonial-card blockquote{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--brown);line-height:1.7;margin-bottom:1.5rem}
 .testimonial-author{display:flex;align-items:center;gap:1rem}
-.testimonial-avatar{
-  width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg, var(--green-sage), var(--green-emerald));
-  display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:600;font-size:0.9rem;
-}
-.testimonial-name{font-size:0.9rem;color:var(--white);font-weight:500}
-.testimonial-location{font-size:0.75rem;color:rgba(255,255,255,0.4)}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--sage),var(--gold));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:0.85rem}
+.testimonial-author-info h4{font-size:0.92rem;font-weight:600;color:var(--dark)}
+.testimonial-author-info span{font-size:0.78rem;color:var(--text-muted)}
 
-/* === WHY NATURAL === */
-#why-natural{background:var(--cream)}
-.why-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;
-}
-.why-card{
-  display:flex;gap:1.5rem;padding:2rem;border-radius:var(--radius-lg);
-  background:var(--white);border:1px solid rgba(0,0,0,0.03);
-  transition:all 0.5s var(--ease-out);
-  transform:translateY(60px);opacity:0;
-}
-.why-card.visible{transform:translateY(0);opacity:1}
-.why-card:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(26,58,42,0.06)}
-.why-number{
-  font-family:var(--font-serif);font-size:2.5rem;color:var(--green-light);font-weight:600;line-height:1;min-width:50px;
-}
-.why-card h4{font-family:var(--font-serif);font-size:1.1rem;color:var(--green-deep);margin-bottom:0.4rem}
-.why-card p{font-size:0.85rem;color:var(--brown-natural);font-weight:300;line-height:1.6}
+/* ============ FINAL CTA ============ */
+.cta-section{padding:7rem 2rem;background:linear-gradient(135deg,var(--dark) 0%,var(--dark-warm) 50%,#4A5A35 100%);text-align:center;position:relative;z-index:2;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(163,177,138,0.1) 0%,transparent 50%),radial-gradient(ellipse at 80% 30%,rgba(197,165,90,0.07) 0%,transparent 50%);animation:ctaLightShift 10s ease-in-out infinite}
+@keyframes ctaLightShift{0%,100%{opacity:0.7}50%{opacity:1}}
+.cta-content{position:relative;z-index:2}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:white;margin-bottom:1rem;line-height:1.2}
+.cta-section h2 em{color:var(--gold-light);font-style:italic}
+.cta-section p{color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 2.5rem;line-height:1.7}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.4rem;border-radius:60px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:all 0.4s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden}
+.cta-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.6s}
+.cta-btn:hover::before{left:100%}
+.cta-btn.fill{background:linear-gradient(135deg,var(--sage),var(--sage-dark));color:white;box-shadow:0 6px 30px rgba(122,139,111,0.4)}
+.cta-btn.fill:hover{transform:translateY(-4px);box-shadow:0 12px 45px rgba(122,139,111,0.55)}
+.cta-btn.ghost{background:transparent;color:white;border:2px solid rgba(255,255,255,0.25)}
+.cta-btn.ghost:hover{border-color:white;background:rgba(255,255,255,0.08);transform:translateY(-4px)}
+.cta-guarantee{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2.5rem}
+.cta-guarantee span{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.5);font-size:0.85rem}
+.cta-guarantee svg{width:16px;height:16px;fill:none;stroke:var(--sage-light);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* === FAQ === */
-#faq{background:var(--white-warm)}
-.faq-list{max-width:800px;margin:3rem auto 0}
-.faq-item{
-  border-bottom:1px solid rgba(0,0,0,0.06);padding:0;
-  transition:all 0.4s var(--ease-out);
-}
-.faq-question{
-  width:100%;display:flex;align-items:center;justify-content:space-between;
-  padding:1.5rem 0;background:none;border:none;cursor:pointer;
-  font-family:var(--font-serif);font-size:1.05rem;color:var(--green-deep);
-  text-align:left;gap:1rem;transition:color 0.3s;
-}
-.faq-question:hover{color:var(--green-sage)}
-.faq-icon{font-size:1.2rem;color:var(--green-sage);transition:transform 0.5s var(--ease-out);min-width:24px;text-align:center}
-.faq-item.active .faq-icon{transform:rotate(45deg)}
-.faq-answer{
-  max-height:0;overflow:hidden;transition:max-height 0.6s var(--ease-out), padding 0.6s var(--ease-out);
-  padding:0;
-}
-.faq-item.active .faq-answer{max-height:300px;padding:0 0 1.5rem 0}
-.faq-answer p{font-size:0.9rem;color:var(--brown-natural);line-height:1.7;font-weight:300}
+/* ============ FOOTER ============ */
+footer{padding:4rem 2rem 2rem;background:var(--dark);position:relative;z-index:2}
+.footer-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .logo{font-size:1.5rem;margin-bottom:1rem;display:block;color:var(--cream)}
+.footer-brand p{color:rgba(255,255,255,0.4);font-size:0.9rem;line-height:1.7;max-width:280px}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream);margin-bottom:1.2rem;font-weight:700}
+.footer-col a{display:block;color:rgba(255,255,255,0.4);font-size:0.9rem;margin-bottom:0.7rem;transition:color 0.3s}
+.footer-col a:hover{color:var(--sage-light)}
+.footer-newsletter{display:flex;gap:8px;margin-top:1rem}
+.footer-newsletter input{flex:1;padding:0.8rem 1.2rem;border-radius:50px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:white;font-size:0.85rem;outline:none;transition:border-color 0.3s}
+.footer-newsletter input::placeholder{color:rgba(255,255,255,0.3)}
+.footer-newsletter input:focus{border-color:var(--sage)}
+.footer-newsletter button{padding:0.8rem 1.6rem;border-radius:50px;border:none;background:linear-gradient(135deg,var(--sage),var(--sage-dark));color:white;font-weight:600;font-size:0.85rem;cursor:pointer;transition:all 0.3s;white-space:nowrap}
+.footer-newsletter button:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(122,139,111,0.3)}
+.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.3);font-size:0.82rem}
+.footer-social{display:flex;gap:1rem;margin-top:1.2rem}
+.footer-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);transition:all 0.3s;font-size:0.9rem}
+.footer-social a:hover{background:var(--sage);color:white;border-color:var(--sage);transform:translateY(-3px)}
 
-/* === CTA === */
-#cta{
-  background:linear-gradient(135deg, var(--green-deep) 0%, #0d261a 50%, var(--green-emerald) 100%);
-  text-align:center;overflow:hidden;position:relative;
-}
-#cta::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 30% 50%, rgba(200,169,110,0.08) 0%, transparent 60%),
-             radial-gradient(ellipse at 70% 50%, rgba(122,158,126,0.06) 0%, transparent 50%);
-  pointer-events:none;
-}
-#cta .section-title{color:var(--white)}
-#cta .section-subtitle{color:rgba(255,255,255,0.6);margin:0 auto 2.5rem}
-.cta-book-mini{
-  width:200px;height:260px;margin:0 auto 2.5rem;position:relative;
-  perspective:800px;
-}
-.cta-book-mini img{
-  width:100%;height:100%;object-fit:cover;border-radius:var(--radius-sm);
-  box-shadow:0 20px 60px rgba(0,0,0,0.3);transition:transform 0.6s var(--ease-out);
-}
-.cta-book-mini:hover img{transform:rotateY(-10deg) scale(1.02)}
-.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(50px);transition:all 0.9s cubic-bezier(.23,1,.32,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
 
-/* === FOOTER === */
-footer{
-  background:var(--green-deep);padding:4rem 6rem 2rem;color:rgba(255,255,255,0.6);
-}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:2rem;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-}
-.footer-brand .nav-logo{font-size:1.3rem;display:inline-block;margin-bottom:1rem}
-.footer-brand p{font-size:0.85rem;line-height:1.6;font-weight:300;max-width:320px}
-.footer-col h5{color:var(--white);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;margin-bottom:1.2rem}
-.footer-col a{display:block;color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;margin-bottom:0.6rem;transition:color 0.3s;font-weight:300}
-.footer-col a:hover{color:var(--gold-soft)}
-.footer-social{display:flex;gap:1rem;margin-top:1.5rem}
-.footer-social a{
-  width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);
-  display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);
-  transition:all 0.4s var(--ease-out);font-size:0.9rem;
-}
-.footer-social a:hover{background:var(--gold-soft);color:var(--green-deep);border-color:var(--gold-soft)}
-.footer-bottom{text-align:center;font-size:0.75rem;font-weight:300}
-
-/* === MAGNETIC BUTTON === */
-.magnetic-wrap{display:inline-block}
-
-/* === SCROLL ANIMATIONS === */
-.reveal{
-  opacity:0;transform:translateY(60px);transition:all 0.8s var(--ease-out);
-}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-60px);transition:all 0.8s var(--ease-out)}
-.reveal-left.visible{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(60px);transition:all 0.8s var(--ease-out)}
-.reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(0.9);transition:all 0.8s var(--ease-out)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
-
-/* === RESPONSIVE === */
-@media(max-width:1200px){
-  .hero-content{grid-template-columns:1fr;gap:2rem;text-align:center}
-  .hero-text{padding-right:0}
-  .hero-subtitle{margin:0 auto 2.5rem}
-  .hero-features{justify-content:center}
-  .hero-buttons{justify-content:center}
-  .book-container{height:450px}
-  section{padding:6rem 3rem}
-  .benefits-grid{grid-template-columns:repeat(2,1fr)}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .remedies-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:repeat(2,1fr)}
-  .testimonials-grid{grid-template-columns:1fr}
+/* ============ RESPONSIVE ============ */
+@media(max-width:960px){
+  .showcase-content{grid-template-columns:1fr;text-align:center}
+  .showcase-text{display:flex;flex-direction:column;align-items:center}
+  .showcase-checklist{align-items:center}
+  .rotating-book-stage{height:380px}
+  .rotating-book{width:240px;height:330px}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-card:last-child{grid-column:1/-1;max-width:50%;margin:0 auto}
+  .footer-content{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  nav{padding:1rem 1.5rem}
-  nav.scrolled{padding:0.8rem 1.5rem}
-  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,58,42,0.98);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;gap:2rem;z-index:999}
-  .nav-links.open{display:flex}
-  .nav-toggle{display:block;z-index:1000}
-  #hero{padding:0 1.5rem;min-height:100vh}
-  .hero-title{font-size:clamp(2rem, 10vw, 3rem)}
-  .book-container{height:350px}
-  section{padding:4rem 1.5rem}
-  .benefits-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .remedies-grid{grid-template-columns:repeat(2,1fr)}
-  .categories-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
-  .testimonials-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr;gap:2rem}
-  .cursor-dot,.cursor-ring{display:none}
-  footer{padding:3rem 1.5rem 2rem}
-  .nav-cta{display:none}
-  .nav-links .nav-cta{display:inline-flex;margin-top:1rem}
+  .nav-links{display:none;position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(255,249,240,0.98);backdrop-filter:blur(30px);flex-direction:column;padding:5rem 2rem 2rem;gap:1.5rem;transition:right 0.4s;z-index:1001;border-left:1px solid rgba(42,42,32,0.06)}
+  .nav-links.open{right:0;display:flex}
+  .menu-toggle{display:block;z-index:1002}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-card:last-child{max-width:100%}
+  .footer-content{grid-template-columns:1fr}
+  .stats-row{gap:1rem}
+  .stat-item{padding:1rem 1.5rem}
+  .hero h1{font-size:2.5rem}
+  .remedies-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
-  .hero-title{font-size:2rem}
-  .book-container{height:280px}
-  .hero-buttons{flex-direction:column;align-items:center}
-  .btn-primary,.btn-secondary{width:100%;justify-content:center}
-  .stats-grid{grid-template-columns:1fr 1fr;gap:1rem}
-  .stat-card{padding:1.5rem 1rem}
-  .remedies-grid{grid-template-columns:1fr 1fr;gap:0.8rem}
-  .remedy-card{padding:1.5rem 1rem}
+  .hero-features{flex-direction:column;align-items:center;gap:1rem}
+  .footer-newsletter{flex-direction:column}
+  .cta-guarantee{flex-direction:column;align-items:center}
 }
 
-/* === GLASS CARD UTILITY === */
-.glass-card{
-  background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border);border-radius:var(--radius-lg);
-  box-shadow:0 8px 32px var(--glass-shadow);
-}
-
-/* === NOISE OVERLAY === */
-.noise-overlay{
-  position:fixed;inset:0;pointer-events:none;z-index:9997;
-  opacity:0.03;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size:256px 256px;
-}
-
-/* === FLOATING SHAPES === */
-.floating-shape{
-  position:absolute;border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at center, rgba(200,169,110,0.06), transparent);
-  animation:floatShape 20s ease-in-out infinite;
-}
-@keyframes floatShape{
-  0%,100%{transform:translate(0,0) scale(1)}
-  25%{transform:translate(30px,-30px) scale(1.05)}
-  50%{transform:translate(-20px,20px) scale(0.95)}
-  75%{transform:translate(40px,10px) scale(1.02)}
-}
-
-/* === PRICE TAG === */
-.price-badge{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.3);
-  padding:0.6rem 1.5rem;border-radius:50px;margin-top:1.5rem;
-}
-.price-badge .price{font-family:var(--font-serif);font-size:1.8rem;color:var(--gold-soft);font-weight:600}
-.price-badge .price-label{font-size:0.75rem;color:rgba(255,255,255,0.5)}
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--sage);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--sage-dark)}
+::selection{background:var(--sage);color:white}
 </style>
 </head>
 <body>
 
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="preloader-logo">Root & Remedy</div>
-  <div class="preloader-bar"><div class="preloader-fill" id="preloader-fill"></div></div>
+<!-- Light Layer -->
+<div class="light-layer">
+  <div class="light-orb"></div>
+  <div class="light-orb"></div>
+  <div class="light-orb"></div>
+  <div class="light-orb"></div>
+  <div class="light-orb"></div>
+  <div class="shimmer-line"></div>
+  <div class="shimmer-line"></div>
+  <div class="shimmer-line"></div>
 </div>
 
-<!-- NOISE OVERLAY -->
-<div class="noise-overlay"></div>
+<!-- Particles -->
+<div class="particles" id="particles"></div>
 
-<!-- CUSTOM CURSOR -->
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
-
-<!-- PARTICLES CANVAS -->
-<canvas class="particles-canvas" id="particlesCanvas"></canvas>
-
-<!-- NAV -->
-<nav id="nav">
-  <a href="#hero" class="nav-logo">Root & Remedy</a>
-  <div class="nav-links" id="navLinks">
-    <a href="#benefits">Benefits</a>
-    <a href="#inside">Inside</a>
-    <a href="#remedies">Remedies</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#cta" class="nav-cta">Get the Book</a>
+<!-- Nav -->
+<nav id="navbar">
+  <div class="nav-content">
+    <a href="#top" class="logo">Noury<span>x</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#showcase">About</a></li>
+      <li><a href="#remedies">Remedies</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#cta" class="nav-cta">Get the Book</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
   </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-particles">
-    <div class="floating-leaf" style="left:10%;animation-duration:25s;animation-delay:0s;width:25px;height:25px;"></div>
-    <div class="floating-leaf" style="left:30%;animation-duration:30s;animation-delay:5s;width:20px;height:20px;"></div>
-    <div class="floating-leaf" style="left:50%;animation-duration:22s;animation-delay:2s;width:35px;height:35px;"></div>
-    <div class="floating-leaf" style="left:70%;animation-duration:28s;animation-delay:8s;width:22px;height:22px;"></div>
-    <div class="floating-leaf" style="left:85%;animation-duration:26s;animation-delay:3s;width:28px;height:28px;"></div>
-    <div class="glass-orb" style="width:400px;height:400px;top:-100px;right:-100px;"></div>
-    <div class="glass-orb glass-orb-2" style="width:300px;height:300px;bottom:50px;left:-50px;"></div>
-    <div class="floating-shape" style="width:500px;height:500px;top:10%;left:5%;"></div>
-    <div class="floating-shape" style="width:350px;height:350px;bottom:20%;right:10%;animation-delay:-8s;"></div>
-  </div>
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-glow-3"></div>
+
   <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-badge"><i class="fas fa-leaf"></i> Natural Wellness Guide</div>
-      <h1 class="hero-title">Nature's Wisdom<br>for <em>Everyday Healing</em></h1>
-      <p class="hero-subtitle">Discover time-tested herbal remedies, home treatments, and wellness practices designed to support a healthier lifestyle naturally.</p>
-      <div class="hero-buttons">
-        <button class="btn-primary magnetic-btn" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
-          <i class="fas fa-book-open"></i> Explore the Book
-        </button>
-        <button class="btn-secondary magnetic-btn" onclick="document.getElementById('benefits').scrollIntoView({behavior:'smooth'})">
-          Start Your Wellness Journey <i class="fas fa-arrow-right"></i>
-        </button>
+    <div class="hero-badge">&#127807; Natural Wellness Collection</div>
+    <h1>101 <span class="accent">Natural</span><br>Home <span class="gold-accent">Remedies</span></h1>
+    <p>Discover time-tested natural remedies that heal, restore, and nourish your body. From ancient wisdom to modern wellness &mdash; your guide to living well, the natural way.</p>
+    <div class="hero-buttons">
+      <a href="#cta" class="btn-glow primary">Get Nouryx 101 &rarr;</a>
+      <a href="#showcase" class="btn-glow outline">Explore Remedies</a>
+    </div>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        101 Verified Remedies
       </div>
-      <div class="hero-features">
-        <span><i class="fas fa-check-circle"></i> Natural Ingredients</span>
-        <span><i class="fas fa-check-circle"></i> Easy to Follow</span>
-        <span><i class="fas fa-check-circle"></i> Family Friendly</span>
+      <div class="hero-feature">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        100% Natural Ingredients
       </div>
-      <div class="price-badge">
-        <span class="price-label">Just</span>
-        <span class="price">$14.99</span>
-        <span class="price-label">Lifetime Access</span>
+      <div class="hero-feature">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Easy Step-by-Step Guides
       </div>
     </div>
-    <div class="book-container" id="bookContainer">
-      <canvas id="book-canvas"></canvas>
-      <div class="book-hint"><i class="fas fa-arrows-rotate"></i> Drag to explore <i class="fas fa-arrows-rotate"></i></div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="dot"></span>Honey &amp; Ginger Tonic</span>
+    <span class="marquee-item"><span class="dot"></span>Lavender Sleep Aid</span>
+    <span class="marquee-item"><span class="dot"></span>Turmeric Golden Milk</span>
+    <span class="marquee-item"><span class="dot"></span>Peppermint Headache Oil</span>
+    <span class="marquee-item"><span class="dot"></span>Elderberry Immune Syrup</span>
+    <span class="marquee-item"><span class="dot"></span>Chamomile Digestive Tea</span>
+    <span class="marquee-item"><span class="dot"></span>Aloe Vera Skin Soother</span>
+    <span class="marquee-item"><span class="dot"></span>Eucalyptus Chest Rub</span>
+    <span class="marquee-item"><span class="dot"></span>Cinnamon Blood Sugar Blend</span>
+    <span class="marquee-item"><span class="dot"></span>Apple Cider Detox Drink</span>
+    <span class="marquee-item"><span class="dot"></span>Honey &amp; Ginger Tonic</span>
+    <span class="marquee-item"><span class="dot"></span>Lavender Sleep Aid</span>
+    <span class="marquee-item"><span class="dot"></span>Turmeric Golden Milk</span>
+    <span class="marquee-item"><span class="dot"></span>Peppermint Headache Oil</span>
+    <span class="marquee-item"><span class="dot"></span>Elderberry Immune Syrup</span>
+    <span class="marquee-item"><span class="dot"></span>Chamomile Digestive Tea</span>
+    <span class="marquee-item"><span class="dot"></span>Aloe Vera Skin Soother</span>
+    <span class="marquee-item"><span class="dot"></span>Eucalyptus Chest Rub</span>
+    <span class="marquee-item"><span class="dot"></span>Cinnamon Blood Sugar Blend</span>
+    <span class="marquee-item"><span class="dot"></span>Apple Cider Detox Drink</span>
+  </div>
+</div>
+
+<!-- Rotating Book Showcase -->
+<section class="showcase-section" id="showcase">
+  <div class="showcase-glow"></div>
+  <div class="showcase-content">
+    <div class="rotating-book-stage">
+      <div class="rotating-book" id="rotatingBook">
+        <div class="book-sparkle"></div>
+        <div class="book-sparkle"></div>
+        <div class="book-sparkle"></div>
+        <div class="book-face book-front">
+          <img src="Rem.png" alt="Nouryx 101 Natural Home Remedies">
+        </div>
+        <div class="book-face book-back">
+          <div class="back-title">Nouryx</div>
+          <div class="back-desc">101 time-tested natural remedies for everyday wellness. Heal your body with the power of nature.</div>
+          <div class="back-badge">&#10003; 101 Remedies &bull; Natural &bull; Proven</div>
+        </div>
+        <div class="book-spine"><span>Nouryx 101 Remedies</span></div>
+        <div class="book-page-edge"></div>
+      </div>
+      <div class="book-shadow"></div>
+    </div>
+
+    <div class="showcase-text reveal">
+      <h3>Discover the Book</h3>
+      <h2>Your Guide to <em>Healing Naturally</em></h2>
+      <p>Nouryx 101 is more than a book &mdash; it's a complete wellness companion packed with natural remedies, herbal treatments, and time-tested healing traditions from around the world.</p>
+      <ul class="showcase-checklist">
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          101 proven home remedies
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Easy-to-find natural ingredients
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Step-by-step preparation guides
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Full-color illustrations &amp; photos
+        </li>
+      </ul>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:flex-start">
+        <a href="#cta" class="btn-glow primary">Get the Book &rarr;</a>
+        <a href="#remedies" class="btn-glow outline">Browse Remedies</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section id="benefits">
-  <div class="section-label reveal">Why Natural Remedies</div>
-  <h2 class="section-title reveal">The <em>Power</em> of Nature</h2>
-  <p class="section-subtitle reveal">Time-honored solutions that nurture your body, mind, and spirit — all from the abundance of the natural world.</p>
-  <div class="benefits-grid">
-    <div class="benefit-card">
-      <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
-      <h3>Boost Immunity</h3>
-      <p>Strengthen your body's natural defenses with herbal blends and nutrient-rich recipes passed down through generations.</p>
+<!-- Gallery (side images) -->
+<section class="gallery-section">
+  <div class="section-header reveal">
+    <span class="label">Visual Wellness</span>
+    <h2>Healing Through <em>Nature's Lens</em></h2>
+    <p>Explore the beauty of natural ingredients and their incredible healing properties.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-card reveal">
+      <img src="side.png" alt="Natural remedy ingredients">
+      <div class="gallery-overlay">
+        <span class="gallery-tag">Herbal Power</span>
+        <h3>Ancient Herbal Wisdom</h3>
+        <p>Time-tested plant remedies passed down through generations.</p>
+        <span class="gallery-cta">Explore &rarr;</span>
+      </div>
     </div>
-    <div class="benefit-card">
-      <div class="benefit-icon"><i class="fas fa-fruit"></i></div>
-      <h3>Support Digestion</h3>
-      <p>Gentle, plant-based remedies that soothe and balance your digestive system for lasting gut health.</p>
+    <div class="gallery-card reveal reveal-delay-1">
+      <img src="side2.png" alt="Home remedy preparation">
+      <div class="gallery-overlay">
+        <span class="gallery-tag">Kitchen Medicine</span>
+        <h3>Heal from Your Kitchen</h3>
+        <p>Everyday ingredients that double as powerful medicine.</p>
+        <span class="gallery-cta">Explore &rarr;</span>
+      </div>
     </div>
-    <div class="benefit-card">
-      <div class="benefit-icon"><i class="fas fa-spa"></i></div>
-      <h3>Reduce Daily Stress</h3>
-      <p>Calming herbal infusions, adaptogenic blends, and mindful practices to restore inner peace.</p>
-    </div>
-    <div class="benefit-card">
-      <div class="benefit-icon"><i class="fas fa-moon"></i></div>
-      <h3>Healthy Sleep</h3>
-      <p>Natural sleep remedies and evening rituals that promote deep, restorative rest without dependency.</p>
-    </div>
-    <div class="benefit-card">
-      <div class="benefit-icon"><i class="fas fa-hand-sparkles"></i></div>
-      <h3>Natural Skin Care</h3>
-      <p>Herbal treatments and botanical formulations for radiant, healthy skin — free from harsh chemicals.</p>
-    </div>
-    <div class="benefit-card">
-      <div class="benefit-icon"><i class="fas fa-heart-pulse"></i></div>
-      <h3>Daily Wellness</h3>
-      <p>Simple daily habits and natural routines that build long-term vitality and resilient health.</p>
+    <div class="gallery-card reveal reveal-delay-2">
+      <img src="side3.png" alt="Natural wellness lifestyle">
+      <div class="gallery-overlay">
+        <span class="gallery-tag">Whole Body Wellness</span>
+        <h3>Mind, Body &amp; Spirit</h3>
+        <p>Holistic remedies that nurture your entire being.</p>
+        <span class="gallery-cta">Explore &rarr;</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INSIDE STATS -->
-<section id="inside">
-  <div class="section-label reveal text-center">What's Inside</div>
-  <h2 class="section-title reveal text-center">A Complete <em>Wellness</em> Library</h2>
-  <p class="section-subtitle reveal text-center">Hundreds of curated remedies, recipes, and guides at your fingertips.</p>
-  <div class="stats-grid">
-    <div class="stat-card reveal-scale">
-      <div class="stat-number"><span class="stat-counter" data-target="150">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-label">Natural Remedies</div>
-    </div>
-    <div class="stat-card reveal-scale">
-      <div class="stat-number"><span class="stat-counter" data-target="80">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-label">Herbal Recipes</div>
-    </div>
-    <div class="stat-card reveal-scale">
-      <div class="stat-number"><span class="stat-counter" data-target="40">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-label">Wellness Guides</div>
-    </div>
-    <div class="stat-card reveal-scale">
-      <div class="stat-number"><span class="stat-counter" data-target="25">0</span><span class="stat-plus">+</span></div>
-      <div class="stat-label">Lifestyle Tips</div>
-    </div>
+<!-- Remedies -->
+<section class="remedies-section" id="remedies">
+  <div class="section-header reveal">
+    <span class="label">What's Inside</span>
+    <h2>Healing for <em>Every Ailment</em></h2>
+    <p>From headaches to sleepless nights, Nouryx 101 has a natural remedy for everything.</p>
   </div>
-</section>
-
-<!-- FEATURED REMEDIES -->
-<section id="remedies">
-  <div class="section-label reveal text-center">Featured Remedies</div>
-  <h2 class="section-title reveal text-center">Nature's <em>Pharmacy</em></h2>
-  <p class="section-subtitle reveal text-center">Explore our most beloved categories of natural healing.</p>
   <div class="remedies-grid">
-    <div class="remedy-card"><span class="remedy-emoji">🍋</span><h4>Lemon Remedies</h4><p>Immune-boosting tonics</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🌿</span><h4>Herbal Teas</h4><p>Soothing botanical blends</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🧄</span><h4>Garlic Healing</h4><p>Antimicrobial wonders</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🫚</span><h4>Ginger Wellness</h4><p>Digestive warmth</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🍯</span><h4>Honey Treatments</h4><p>Nature's golden healer</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🌱</span><h4>Turmeric Recipes</h4><p>Anti-inflammatory gold</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🌼</span><h4>Chamomile Drinks</h4><p>Calm in a cup</p></div>
-    <div class="remedy-card"><span class="remedy-emoji">🥒</span><h4>Detox Water</h4><p>Refreshing cleanses</p></div>
-  </div>
-</section>
-
-<!-- HEALTH CATEGORIES -->
-<section id="categories">
-  <div class="section-label reveal text-center">Health Categories</div>
-  <h2 class="section-title reveal text-center">Healing for <em>Every Need</em></h2>
-  <p class="section-subtitle reveal text-center">Comprehensive wellness support across all areas of your health journey.</p>
-  <div class="categories-grid">
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-shield"></i></div>
-      <div class="category-info"><h4>Immune Support</h4><p>Powerful herbs and remedies to fortify your body's defenses year-round.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="remedy-card reveal">
+      <div class="remedy-icon">&#127807;</div>
+      <div>
+        <h4>Immune Boosters</h4>
+        <p>Strengthen your body's defenses with elderberry syrups, echinacea tinctures, and vitamin C-rich blends.</p>
+      </div>
     </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-lungs"></i></div>
-      <div class="category-info"><h4>Respiratory Health</h4><p>Natural solutions for clear breathing and respiratory wellness.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="remedy-card reveal reveal-delay-1">
+      <div class="remedy-icon">&#128164;</div>
+      <div>
+        <h4>Sleep &amp; Relaxation</h4>
+        <p>Drift into restful sleep with lavender aromatherapy, chamomile tonics, and calming herbal blends.</p>
+      </div>
     </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-brain"></i></div>
-      <div class="category-info"><h4>Stress & Anxiety</h4><p>Calming adaptogens and mindfulness practices for mental balance.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="remedy-card reveal reveal-delay-2">
+      <div class="remedy-icon">&#10084;&#65039;</div>
+      <div>
+        <h4>Heart &amp; Circulation</h4>
+        <p>Support cardiovascular health with garlic infusions, cayenne tonics, and omega-rich preparations.</p>
+      </div>
     </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-bed"></i></div>
-      <div class="category-info"><h4>Sleep & Rest</h4><p>Gentle remedies and rituals for deep, restorative sleep.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="remedy-card reveal">
+      <div class="remedy-icon">&#129658;</div>
+      <div>
+        <h4>Pain &amp; Inflammation</h4>
+        <p>Find relief naturally with turmeric golden milk, ginger compresses, and anti-inflammatory salves.</p>
+      </div>
     </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-droplet"></i></div>
-      <div class="category-info"><h4>Skin & Beauty</h4><p>Botanical treatments for radiant skin from the inside out.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="remedy-card reveal reveal-delay-1">
+      <div class="remedy-icon">&#127803;</div>
+      <div>
+        <h4>Skin &amp; Beauty</h4>
+        <p>Glow from within with honey face masks, aloe vera treatments, and nourishing oil blends.</p>
+      </div>
     </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-kitchen-set"></i></div>
-      <div class="category-info"><h4>Digestive Health</h4><p>Soothing herbal blends and recipes for optimal gut wellness.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-    </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-bolt"></i></div>
-      <div class="category-info"><h4>Energy & Vitality</h4><p>Natural energy boosters and revitalizing wellness practices.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-    </div>
-    <div class="category-card">
-      <div class="category-icon"><i class="fas fa-weight-scale"></i></div>
-      <div class="category-info"><h4>Weight Wellness</h4><p>Herbal support and healthy habits for balanced body weight.</p></div>
-      <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="remedy-card reveal reveal-delay-2">
+      <div class="remedy-icon">&#128156;</div>
+      <div>
+        <h4>Digestive Health</h4>
+        <p>Soothe your gut with peppermint infusions, probiotic ferments, and healing bone broths.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- WHY NATURAL REMEDIES -->
-<section id="why-natural">
-  <div class="section-label reveal text-center">Why Choose Natural</div>
-  <h2 class="section-title reveal text-center">The <em>Wisdom</em> of Tradition</h2>
-  <p class="section-subtitle reveal text-center">Ancient knowledge meets modern understanding for optimal well-being.</p>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-number">01</div>
-      <div><h4>Time-Tested Knowledge</h4><p>These remedies have been refined over centuries across cultures and traditions worldwide.</p></div>
+<!-- Benefits -->
+<section class="benefits-section" id="benefits">
+  <div class="section-header reveal">
+    <span class="label">Why Nouryx</span>
+    <h2>Crafted with <em>Care</em></h2>
+    <p>Every remedy is researched, tested, and written with your wellness in mind.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">&#128214;</div>
+      <h3>101 Remedies</h3>
+      <p>A complete collection covering immunity, sleep, pain, digestion, skin health, and more.</p>
     </div>
-    <div class="why-card">
-      <div class="why-number">02</div>
-      <div><h4>Gentle on Your Body</h4><p>Natural ingredients work in harmony with your body's own healing mechanisms, without harsh side effects.</p></div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="benefit-icon">&#127807;</div>
+      <h3>100% Natural</h3>
+      <p>Only plant-based, whole-food ingredients. No chemicals, no synthetics, no compromises.</p>
     </div>
-    <div class="why-card">
-      <div class="why-number">03</div>
-      <div><h4>Sustainable & Accessible</h4><p>Most remedies use simple, everyday ingredients you can find at local markets or grow at home.</p></div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-icon">&#128100;</div>
+      <h3>Beginner Friendly</h3>
+      <p>Clear instructions anyone can follow &mdash; no prior herbal knowledge required.</p>
     </div>
-    <div class="why-card">
-      <div class="why-number">04</div>
-      <div><h4>Whole-Body Wellness</h4><p>Natural healing addresses root causes, not just symptoms — supporting complete physical and mental health.</p></div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <div class="benefit-icon">&#128247;</div>
+      <h3>Visual Guides</h3>
+      <p>Full-color photographs and step-by-step visuals to guide your healing journey.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-4">
+      <div class="benefit-icon">&#9889;</div>
+      <h3>Instant Download</h3>
+      <p>Get immediate access on any device &mdash; start healing today, not tomorrow.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-4">
+      <div class="benefit-icon">&#128149;</div>
+      <h3>Family Safe</h3>
+      <p>Gentle remedies suitable for the whole family, with safety notes for every recipe.</p>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-label reveal text-center">Reader Testimonials</div>
-  <h2 class="section-title reveal text-center">Loved by <em>Thousands</em></h2>
-  <p class="section-subtitle reveal text-center">Hear from readers who have transformed their health naturally.</p>
+<!-- Stats -->
+<section class="stats-section">
+  <div class="stats-row">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-count="101">0</div>
+      <div class="stat-label">Remedies</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-number" data-count="15">0</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-number" data-count="100">0%</div>
+      <div class="stat-label">Natural</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-number">4.9&#9733;</div>
+      <div class="stat-label">Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section" id="reviews">
+  <div class="section-header reveal">
+    <span class="label">Happy Readers</span>
+    <h2>Loved by <em>Thousands</em></h2>
+    <p>Real stories from people who transformed their wellness with Nouryx.</p>
+  </div>
   <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"This book completely changed how I approach my health. The remedies are simple, effective, and use ingredients I already have at home."</p>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"I was skeptical at first, but the turmeric golden milk recipe completely changed my mornings. My joint pain has reduced dramatically."</blockquote>
       <div class="testimonial-author">
-        <div class="testimonial-avatar">SM</div>
-        <div><div class="testimonial-name">Sarah Mitchell</div><div class="testimonial-location">Wellness Coach, Oregon</div></div>
+        <div class="testimonial-avatar">SA</div>
+        <div class="testimonial-author-info">
+          <h4>Sarah Anderson</h4>
+          <span>Wellness Advocate, Oregon</span>
+        </div>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"I've tried countless wellness books, but this one stands out. The herbal tea recipes alone have transformed my morning routine. Worth every penny."</p>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"My entire family uses the elderberry syrup recipe during cold season. We haven't been sick in over a year. This book is a treasure."</blockquote>
       <div class="testimonial-author">
-        <div class="testimonial-avatar">MJ</div>
-        <div><div class="testimonial-name">Marcus Johnson</div><div class="testimonial-location">Yoga Instructor, California</div></div>
+        <div class="testimonial-avatar">DK</div>
+        <div class="testimonial-author-info">
+          <h4>David Kim</h4>
+          <span>Father of Three, Texas</span>
+        </div>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"The digestive health section has been life-changing. After years of discomfort, I finally found natural solutions that actually work. Highly recommend."</p>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"The sleep remedies alone are worth the price. I haven't slept this well in years. The lavender chamomile blend is pure magic."</blockquote>
       <div class="testimonial-author">
-        <div class="testimonial-avatar">EL</div>
-        <div><div class="testimonial-name">Emily Liu</div><div class="testimonial-location">Herbalist, Vermont</div></div>
+        <div class="testimonial-avatar">EM</div>
+        <div class="testimonial-author-info">
+          <h4>Emma Martinez</h4>
+          <span>Nurse, California</span>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="section-label reveal text-center">FAQ</div>
-  <h2 class="section-title reveal text-center">Frequently Asked <em>Questions</em></h2>
-  <div class="faq-list">
-    <div class="faq-item active">
-      <button class="faq-question">What format is the book available in? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-      <div class="faq-answer"><p>The Remedies eBook is available as a high-quality PDF optimized for all devices — phone, tablet, laptop, and desktop. You also receive a Kindle-compatible EPUB version with every purchase.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Are the ingredients easy to find? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-      <div class="faq-answer"><p>Absolutely! The book focuses on common, everyday ingredients found at local grocery stores, farmers markets, or in your own garden. No exotic or hard-to-find items required.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Is this suitable for beginners? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-      <div class="faq-answer"><p>Yes. Every remedy includes clear step-by-step instructions, preparation tips, and safety guidelines. Whether you're new to natural remedies or experienced, you'll find valuable knowledge inside.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Can I get updates after purchase? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-      <div class="faq-answer"><p>Yes! All purchases include free lifetime updates. As we discover and add new remedies, you'll receive the updated version at no additional cost.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">What if I'm not satisfied? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
-      <div class="faq-answer"><p>We stand behind our book. If you're not completely satisfied within 30 days, we'll refund your purchase — no questions asked. Your satisfaction is our priority.</p></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="cta">
-  <div class="cta-book-mini reveal-scale" id="ctaBook">
-    <img src="rem.png" alt="Root & Remedy Book" id="ctaBookImg">
-  </div>
-  <h2 class="section-title reveal text-center">Start Your Natural<br><em>Wellness Journey</em> Today</h2>
-  <p class="section-subtitle reveal text-center">Join thousands of readers who have transformed their health with the power of natural remedies.</p>
-  <div class="cta-buttons reveal">
-    <button class="btn-primary magnetic-btn" onclick="alert('Redirect to checkout')">
-      <i class="fas fa-download"></i> Get Instant Access — $14.99
-    </button>
-    <button class="btn-secondary magnetic-btn" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">
-      Still Have Questions? <i class="fas fa-arrow-right"></i>
-    </button>
-  </div>
-  <div style="margin-top:2rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;position:relative;z-index:2">
-    <span style="font-size:0.75rem;color:rgba(255,255,255,0.4)"><i class="fas fa-lock" style="margin-right:0.3rem;"></i> Secure Checkout</span>
-    <span style="font-size:0.75rem;color:rgba(255,255,255,0.4)"><i class="fas fa-bolt" style="margin-right:0.3rem;"></i> Instant Download</span>
-    <span style="font-size:0.75rem;color:rgba(255,255,255,0.4)"><i class="fas fa-rotate-left" style="margin-right:0.3rem;"></i> 30-Day Guarantee</span>
+<section class="cta-section" id="cta">
+  <div class="cta-content">
+    <h2>Start Your <em>Natural Healing</em><br>Journey Today</h2>
+    <p>Join thousands who've discovered the power of natural remedies. Your copy of Nouryx 101 is just one click away.</p>
+    <div class="cta-buttons">
+      <a href="#" class="cta-btn fill">Get Nouryx 101 &rarr;</a>
+      <a href="#showcase" class="cta-btn ghost">Learn More</a>
+    </div>
+    <div class="cta-guarantee">
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Instant Access
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        101 Proven Remedies
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        100% Natural
+      </span>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
-  <div class="footer-grid">
+  <div class="footer-content">
     <div class="footer-brand">
-      <a href="#hero" class="nav-logo">Root & Remedy</a>
-      <p>Empowering natural wellness through time-honored remedies, herbal wisdom, and holistic healing practices for a healthier, more vibrant life.</p>
+      <a href="#top" class="logo">Noury<span>x</span></a>
+      <p>101 Natural Home Remedies &mdash; your complete guide to healing with the power of nature.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Instagram">&#9672;</a>
+        <a href="#" aria-label="Facebook">&#9670;</a>
+        <a href="#" aria-label="Twitter">&#9674;</a>
+        <a href="#" aria-label="Pinterest">&#9673;</a>
       </div>
     </div>
     <div class="footer-col">
-      <h5>Quick Links</h5>
-      <a href="#benefits">Benefits</a>
-      <a href="#inside">Inside the Book</a>
+      <h4>Explore</h4>
+      <a href="#showcase">About the Book</a>
       <a href="#remedies">Remedies</a>
-      <a href="#testimonials">Reviews</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#reviews">Reviews</a>
     </div>
     <div class="footer-col">
-      <h5>Support</h5>
-      <a href="#">Contact Us</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Refund Policy</a>
+      <h4>Remedies</h4>
+      <a href="#remedies">Immune Boosters</a>
+      <a href="#remedies">Sleep Aids</a>
+      <a href="#remedies">Pain Relief</a>
+      <a href="#remedies">Skin Care</a>
     </div>
     <div class="footer-col">
-      <h5>Get the Book</h5>
-      <a href="#cta">Purchase Now</a>
-      <a href="#faq">FAQ</a>
-      <a href="#">Free Sample</a>
-      <a href="#">Affiliate Program</a>
+      <h4>Newsletter</h4>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:0.5rem">Get weekly natural remedy tips.</p>
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Your email">
+        <button>Subscribe</button>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Root & Remedy. All rights reserved. Crafted with nature in mind.</div>
+  <div class="footer-bottom">&copy; 2026 Nouryx. All rights reserved. Crafted with &#127807; for natural wellness.</div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-/* === PRELOADER === */
-(function(){
-  const fill = document.getElementById('preloader-fill');
-  let progress = 0;
-  const interval = setInterval(() => {
-    progress += Math.random() * 15 + 5;
-    if(progress > 100){progress = 100;clearInterval(interval)}
-    fill.style.width = progress + '%';
-    if(progress >= 100){
-      setTimeout(() => {
-        document.getElementById('preloader').classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 500);
+// ============ NAV SCROLL ============
+var navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function(){
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ============ MOBILE MENU ============
+var toggle = document.getElementById('menuToggle');
+var links = document.getElementById('navLinks');
+toggle.addEventListener('click', function(){ links.classList.toggle('open'); });
+links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ links.classList.remove('open'); }); });
+
+// ============ SCROLL REVEAL ============
+var revealEls = document.querySelectorAll('.reveal');
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('active'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(function(el){ io.observe(el); });
+
+// ============ COUNTER ANIMATION ============
+var statNums = document.querySelectorAll('.stat-number[data-count]');
+var counterIO = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var el = e.target;
+      var target = parseInt(el.getAttribute('data-count'));
+      if(isNaN(target)) return;
+      var current = 0;
+      var step = Math.ceil(target / 60);
+      var iv = setInterval(function(){
+        current += step;
+        if(current >= target){ current = target; clearInterval(iv); }
+        el.textContent = current + '+';
+      }, 25);
+      counterIO.unobserve(el);
     }
-  }, 200);
+  });
+}, { threshold: 0.5 });
+statNums.forEach(function(el){ counterIO.observe(el); });
+
+// ============ FLOATING PARTICLES ============
+(function(){
+  var container = document.getElementById('particles');
+  var symbols = ['&#127807;','&#127803;','&#9883;','&#10047;','&#9672;','&#8226;'];
+  var colors = ['#A3B18A','#C5A55A','#7A8B6F','#D4BA6A','#6B7F4E'];
+  for(var i = 0; i < 20; i++){
+    var p = document.createElement('div');
+    p.className = 'particle';
+    p.innerHTML = symbols[i % symbols.length];
+    p.style.cssText = 'left:' + (Math.random()*100) + '%;font-size:' + (8 + Math.random()*14) + 'px;color:' + colors[i%colors.length] + ';animation-duration:' + (15 + Math.random()*25) + 's;animation-delay:' + (-Math.random()*30) + 's;';
+    container.appendChild(p);
+  }
 })();
 
-/* === CURSOR === */
-const dot = document.querySelector('.cursor-dot');
-const ring = document.querySelector('.cursor-ring');
-if(window.innerWidth > 768){
-  document.addEventListener('mousemove', e => {
-    dot.style.left = e.clientX + 'px';
-    dot.style.top = e.clientY + 'px';
-    ring.style.left = e.clientX + 'px';
-    ring.style.top = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button, .benefit-card, .remedy-card, .category-card').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-}
-
-/* === NAV TOGGLE === */
-document.getElementById('navToggle').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
-  const icon = document.querySelector('#navToggle i');
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-times');
-});
-document.querySelectorAll('#navLinks a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('open');
-    const icon = document.querySelector('#navToggle i');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-times');
-  });
-});
-
-/* === NAV SCROLL === */
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('nav');
-  if(window.scrollY > 80) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
-
-/* === MAGNETIC BUTTONS === */
-document.querySelectorAll('.magnetic-btn').forEach(btn => {
-  btn.addEventListener('mousemove', e => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width/2;
-    const y = e.clientY - rect.top - rect.height/2;
-    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-  });
-  btn.addEventListener('mouseleave', () => {
-    btn.style.transform = '';
-  });
-});
-
-/* === THREE.JS INTERACTIVE BOOK === */
+// ============ ROTATING BOOK DRAG ============
 (function(){
-  const canvas = document.getElementById('book-canvas');
-  const container = document.getElementById('bookContainer');
-  if(!canvas || !container) return;
-  
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
-  camera.position.set(0, 0.5, 7);
-  
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    alpha: true,
-    antialias: true,
-    powerPreference: "high-performance"
+  var book = document.getElementById('rotatingBook');
+  if(!book) return;
+  var dragging = false, lastX = 0, ry = -15, rx = 5;
+
+  book.addEventListener('mousedown', function(e){
+    dragging = true; lastX = e.clientX;
+    book.style.animationPlayState = 'paused';
+    e.preventDefault();
   });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-  // Lights
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-  scene.add(ambientLight);
-  
-  const mainLight = new THREE.DirectionalLight(0xffeedd, 1.2);
-  mainLight.position.set(5, 8, 5);
-  mainLight.castShadow = true;
-  scene.add(mainLight);
-  
-  const fillLight = new THREE.DirectionalLight(0x88bbff, 0.4);
-  fillLight.position.set(-3, 2, -4);
-  scene.add(fillLight);
-  
-  const rimLight = new THREE.DirectionalLight(0xffeedd, 0.6);
-  rimLight.position.set(-2, 3, 5);
-  scene.add(rimLight);
-  
-  const bottomLight = new THREE.DirectionalLight(0x88bb88, 0.2);
-  bottomLight.position.set(0, -3, 2);
-  scene.add(bottomLight);
-
-  // Book Group
-  const bookGroup = new THREE.Group();
-  scene.add(bookGroup);
-
-  // Load texture
-  const textureLoader = new THREE.TextureLoader();
-  const coverTexture = textureLoader.load('rem.png');
-  coverTexture.colorSpace = THREE.SRGBColorSpace;
-
-  // Book dimensions
-  const bookW = 2.8;
-  const bookH = 3.6;
-  const bookD = 0.45;
-
-  // Front cover
-  const frontGeo = new THREE.PlaneGeometry(bookW, bookH);
-  const coverMat = new THREE.MeshPhysicalMaterial({
-    map: coverTexture,
-    metalness: 0.05,
-    roughness: 0.25,
-    clearcoat: 0.15,
-    clearcoatRoughness: 0.3,
-    envMapIntensity: 0.8,
+  book.addEventListener('mousemove', function(e){
+    if(!dragging) return;
+    ry += (e.clientX - lastX) * 0.5;
+    lastX = e.clientX;
+    book.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
   });
-  const frontCover = new THREE.Mesh(frontGeo, coverMat);
-  frontCover.position.z = bookD/2 + 0.02;
-  frontCover.castShadow = true;
-  bookGroup.add(frontCover);
-
-  // Back cover
-  const backMat = new THREE.MeshPhysicalMaterial({
-    color: 0x1a3a2a,
-    metalness: 0.05,
-    roughness: 0.4,
-  });
-  const backCover = new THREE.Mesh(frontGeo, backMat);
-  backCover.position.z = -bookD/2 - 0.02;
-  backCover.castShadow = true;
-  bookGroup.add(backCover);
-
-  // Spine
-  const spineGeo = new THREE.BoxGeometry(0.08, bookH, bookD);
-  const spineMat = new THREE.MeshPhysicalMaterial({
-    color: 0x2d4a3e,
-    metalness: 0.05,
-    roughness: 0.5,
-  });
-  const spine = new THREE.Mesh(spineGeo, spineMat);
-  spine.position.x = -bookW/2 - 0.04;
-  bookGroup.add(spine);
-
-  // Pages edge
-  const pagesGeo = new THREE.BoxGeometry(bookW - 0.15, bookH - 0.1, bookD - 0.05);
-  const pagesMat = new THREE.MeshPhysicalMaterial({
-    color: 0xf5efe6,
-    metalness: 0,
-    roughness: 0.8,
-    side: THREE.DoubleSide,
-  });
-  const pages = new THREE.Mesh(pagesGeo, pagesMat);
-  bookGroup.add(pages);
-
-  // Gold edge accent (top pages)
-  const topEdgeGeo = new THREE.PlaneGeometry(bookW - 0.15, bookD - 0.05);
-  const topEdgeMat = new THREE.MeshPhysicalMaterial({
-    color: 0xc8a96e,
-    metalness: 0.3,
-    roughness: 0.4,
-    transparent: true,
-    opacity: 0.3,
-  });
-  const topEdge = new THREE.Mesh(topEdgeGeo, topEdgeMat);
-  topEdge.rotation.x = -Math.PI/2;
-  topEdge.position.y = bookH/2 - 0.01;
-  bookGroup.add(topEdge);
-
-  // Shadow plane
-  const shadowGeo = new THREE.CircleGeometry(2.5, 32);
-  const shadowMat = new THREE.MeshBasicMaterial({
-    color: 0x000000,
-    transparent: true,
-    opacity: 0.2,
-  });
-  const shadow = new THREE.Mesh(shadowGeo, shadowMat);
-  shadow.rotation.x = -Math.PI/2;
-  shadow.position.y = -bookH/2 - 0.3;
-  bookGroup.add(shadow);
-
-  // Floating animation
-  let time = 0;
-  let targetRotX = 0;
-  let targetRotY = 0;
-  let currentRotX = -0.1;
-  let currentRotY = 0.3;
-  let velocityX = 0;
-  let velocityY = 0;
-  
-  // Auto-rotation
-  let autoRotate = true;
-  let autoRotDir = 1;
-  let autoRotTimer = 0;
-  let isDragging = false;
-  let prevMouseX = 0;
-  let prevMouseY = 0;
-  let isHovering = false;
-
-  // Mouse tracking for tilt
-  document.addEventListener('mousemove', e => {
-    if(isDragging) return;
-    const rect = container.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    if(x >= -0.1 && x <= 1.1 && y >= -0.1 && y <= 1.1){
-      targetRotY = (x - 0.5) * 0.3;
-      targetRotX = (y - 0.5) * -0.15;
-      isHovering = true;
-    } else {
-      isHovering = false;
-      targetRotX = -0.1;
-      targetRotY = 0;
-    }
+  document.addEventListener('mouseup', function(){
+    if(dragging){ dragging = false; setTimeout(function(){ book.style.animationPlayState = 'running'; }, 2000); }
   });
 
-  // Drag to rotate
-  let isPointerDown = false;
-  canvas.addEventListener('pointerdown', e => {
-    isPointerDown = true;
-    isDragging = true;
-    autoRotate = false;
-    prevMouseX = e.clientX;
-    prevMouseY = e.clientY;
-    velocityX = 0;
-    velocityY = 0;
-    canvas.style.cursor = 'grabbing';
-  });
-  
-  document.addEventListener('pointermove', e => {
-    if(!isPointerDown) return;
-    const dx = e.clientX - prevMouseX;
-    const dy = e.clientY - prevMouseY;
-    velocityY = dx * 0.008;
-    velocityX = dy * 0.004;
-    currentRotY += velocityY;
-    currentRotX += velocityX;
-    currentRotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, currentRotX));
-    prevMouseX = e.clientX;
-    prevMouseY = e.clientY;
-  });
-  
-  document.addEventListener('pointerup', () => {
-    isPointerDown = false;
-    canvas.style.cursor = 'grab';
-    setTimeout(() => {
-      if(!isPointerDown) isDragging = false;
-    }, 100);
-  });
-
-  // Touch support
-  canvas.addEventListener('touchstart', e => {
-    const touch = e.touches[0];
-    isPointerDown = true;
-    isDragging = true;
-    autoRotate = false;
-    prevMouseX = touch.clientX;
-    prevMouseY = touch.clientY;
-  }, {passive: true});
-  
-  canvas.addEventListener('touchmove', e => {
-    if(!isPointerDown) return;
-    const touch = e.touches[0];
-    const dx = touch.clientX - prevMouseX;
-    const dy = touch.clientY - prevMouseY;
-    velocityY = dx * 0.008;
-    velocityX = dy * 0.004;
-    currentRotY += velocityY;
-    currentRotX += velocityX;
-    currentRotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, currentRotX));
-    prevMouseX = touch.clientX;
-    prevMouseY = touch.clientY;
-  }, {passive: true});
-  
-  canvas.addEventListener('touchend', () => {
-    isPointerDown = false;
-    setTimeout(() => {
-      isDragging = false;
-    }, 100);
-  }, {passive: true});
-
-  // Hover lift effect
-  container.addEventListener('mouseenter', () => {
-    gsap.to(bookGroup.position, {y: 0.1, duration: 0.6, ease: 'power2.out'});
-  });
-  container.addEventListener('mouseleave', () => {
-    gsap.to(bookGroup.position, {y: 0, duration: 0.6, ease: 'power2.out'});
-    isHovering = false;
-    targetRotX = -0.1;
-    targetRotY = 0;
-  });
-
-  // Resize
-  function resizeBook(){
-    const w = container.clientWidth;
-    const h = container.clientHeight;
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-  }
-  window.addEventListener('resize', resizeBook);
-
-  // Animation loop
-  function animate(){
-    requestAnimationFrame(animate);
-    time += 0.01;
-
-    // Floating
-    const floatY = Math.sin(time * 0.8) * 0.08;
-    const floatRotZ = Math.sin(time * 0.5) * 0.02;
-    bookGroup.position.y = floatY;
-    bookGroup.rotation.z = floatRotZ;
-
-    // Auto-rotation when idle
-    if(!isDragging && !isHovering && autoRotate){
-      autoRotTimer += 0.01;
-      currentRotY += Math.sin(autoRotTimer * 0.3) * 0.0015;
-      currentRotX = -0.1 + Math.sin(autoRotTimer * 0.2) * 0.02;
-    }
-
-    // Inertia
-    if(!isPointerDown && !isHovering){
-      velocityX *= 0.95;
-      velocityY *= 0.95;
-      currentRotY += velocityY;
-      currentRotX += velocityX;
-      currentRotX = Math.max(-Math.PI/3, Math.min(Math.PI/3, currentRotX));
-      
-      if(Math.abs(velocityX) < 0.0001 && Math.abs(velocityY) < 0.0001 && !isDragging){
-        autoRotate = true;
-      }
-    }
-
-    // Smooth follow for mouse
-    if(isHovering && !isPointerDown){
-      currentRotY += (targetRotY - currentRotY) * 0.05;
-      currentRotX += (targetRotX - currentRotX) * 0.05;
-    }
-
-    bookGroup.rotation.y = currentRotY;
-    bookGroup.rotation.x = currentRotX * 0.5;
-
-    // Shadow follows
-    shadow.position.y = -bookH/2 - 0.3 + floatY;
-    shadow.scale.x = 1 + Math.abs(currentRotY) * 0.3;
-    shadow.scale.z = 1 + Math.abs(currentRotX) * 0.2;
-    shadow.material.opacity = 0.15 + Math.abs(currentRotY) * 0.05;
-
-    // Light moves slightly with drag
-    mainLight.position.x = 5 + currentRotY * 2;
-    mainLight.position.z = 5 + currentRotX * 2;
-
-    renderer.render(scene, camera);
-  }
-
-  animate();
-  resizeBook();
-})();
-
-/* === SCROLL REVEALS === */
-(function(){
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {threshold: 0.1, rootMargin: '0px 0px -50px 0px'});
-  
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .benefit-card, .remedy-card, .category-card, .why-card, .testimonial-card, .stat-card').forEach(el => {
-    observer.observe(el);
+  book.addEventListener('touchstart', function(e){
+    dragging = true; lastX = e.touches[0].clientX;
+    book.style.animationPlayState = 'paused';
+  }, { passive: true });
+  book.addEventListener('touchmove', function(e){
+    if(!dragging) return;
+    ry += (e.touches[0].clientX - lastX) * 0.5;
+    lastX = e.touches[0].clientX;
+    book.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+  }, { passive: true });
+  book.addEventListener('touchend', function(){
+    if(dragging){ dragging = false; setTimeout(function(){ book.style.animationPlayState = 'running'; }, 2000); }
   });
 })();
 
-/* === STAT COUNTER === */
-(function(){
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 60;
-        const update = () => {
-          current += increment;
-          if(current < target){
-            el.textContent = Math.floor(current);
-            requestAnimationFrame(update);
-          } else {
-            el.textContent = target;
-          }
-        };
-        update();
-        counterObserver.unobserve(el);
-      }
-    });
-  }, {threshold: 0.5});
-  
-  document.querySelectorAll('.stat-counter').forEach(el => counterObserver.observe(el));
-})();
-
-/* === FAQ ACCORDION === */
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if(!isActive) item.classList.add('active');
+// ============ SMOOTH SCROLL ============
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var target = document.querySelector(this.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
   });
 });
-
-/* === BACKGROUND PARTICLES === */
-(function(){
-  const canvas = document.getElementById('particlesCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let w, h;
-
-  function resize(){
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  class Particle {
-    constructor(){
-      this.reset();
-    }
-    reset(){
-      this.x = Math.random() * w;
-      this.y = Math.random() * h;
-      this.size = Math.random() * 2.5 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.3;
-      this.speedY = (Math.random() - 0.5) * 0.3 - 0.1;
-      this.opacity = Math.random() * 0.4 + 0.1;
-      this.color = ['rgba(200,169,110,', 'rgba(122,158,126,', 'rgba(232,220,204,'][Math.floor(Math.random() * 3)];
-    }
-    update(){
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if(this.x < 0 || this.x > w || this.y < 0 || this.y > h) this.reset();
-    }
-    draw(){
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + this.opacity + ')';
-      ctx.fill();
-    }
-  }
-
-  const count = Math.min(80, Math.floor(w * h / 15000));
-  for(let i = 0; i < count; i++) particles.push(new Particle());
-
-  function animateParticles(){
-    ctx.clearRect(0, 0, w, h);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animateParticles);
-  }
-  animateParticles();
-})();
-
-/* === PARALLAX ON SCROLL === */
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  const hero = document.getElementById('hero');
-  if(hero){
-    const leaves = hero.querySelectorAll('.floating-leaf');
-    leaves.forEach((leaf, i) => {
-      const speed = 0.1 + i * 0.02;
-      leaf.style.transform = `translateY(${scrollY * speed * 0.3}px)`;
-    });
-  }
-});
-
-/* === GSAP SCROLL ANIMATIONS (FALLBACK) === */
-if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // Animate section titles
-  document.querySelectorAll('.section-title').forEach(title => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: title,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-      }
-    });
-    tl.from(title, {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
-  });
-
-  // Animate section subtitles
-  document.querySelectorAll('.section-subtitle').forEach(sub => {
-    ScrollTrigger.create({
-      trigger: sub,
-      start: 'top 88%',
-      onEnter: () => sub.classList.add('visible'),
-    });
-  });
-}
-
-/* === SMOOTH CTRL+CLICK ON BOOK IMAGE IN CTA === */
-document.getElementById('ctaBook')?.addEventListener('click', function(){
-  this.querySelector('img').style.transform = 'rotateY(-15deg) scale(1.03)';
-  setTimeout(() => {
-    this.querySelector('img').style.transform = '';
-  }, 600);
-});
-
-console.log('%c Root & Remedy 🌿 ', 'background:#1a3a2a;color:#c8a96e;font-size:20px;padding:10px 20px;border-radius:8px;font-family:serif;');
-console.log('%c Natural Wellness for Everyday Healing ', 'color:#7a9e7e;font-size:12px;');
 </script>
 </body>
 </html>
