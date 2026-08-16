@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>DARWIN Study Hub &middot; Multi-Topic Summative Reviewer Portal</title>
+  <title>MUJIB Study Hub &middot; Multi-Topic Summative Reviewer Portal</title>
   <meta name="description" content="All-in-One Comprehensive Summative Exam Reviewer Hub covering Mabisang Komunikasyon, General Science, General Mathematics, and Finite Mathematics 1."/>
   
   <!-- Fonts -->
@@ -724,555 +724,204 @@ body {
 
 /* MabKom Styles */
 
-:root {
-  --bg: #0d0c13;
-  --bg2: #141220;
-  --card: #181528;
-  --card2: #201c34;
-  --border: #2c2548;
-  --border2: #3b3260;
-  --coral: #f43f5e;
-  --rose: #fb7185;
-  --amber: #f59e0b;
-  --yellow: #fbbf24;
-  --violet: #a855f7;
-  --purple: #c084fc;
-  --cyan: #06b6d4;
-  --green: #10b981;
-  --t1: #f8fafc;
-  --t2: #94a3b8;
-  --t3: #64748b;
-  --gcr: linear-gradient(135deg, #f43f5e, #f59e0b);
-  --gvi: linear-gradient(135deg, #a855f7, #ec4899);
-  --gam: linear-gradient(135deg, #f59e0b, #e11d48);
-  --gcy: linear-gradient(135deg, #06b6d4, #3b82f6);
-  --ghdr: linear-gradient(135deg, #0d0c13, #1e152e, #0d0c13);
-  --r1: 6px;
-  --r2: 12px;
-  --r3: 20px;
-  --r4: 28px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: Inter, sans-serif; background: var(--bg); color: var(--t1); line-height: 1.7; font-size: 15px; }
-::selection { background: rgba(244, 63, 94, .35); color: #fff; }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--coral); }
-
-/* COVER */
-.cover {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 24px;
-  background: var(--ghdr);
-  position: relative;
-  overflow: hidden;
-}
-.cover::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 70% 50% at 15% 20%, rgba(244, 63, 94, .14), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 80%, rgba(168, 85, 247, .14), transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(245, 158, 11, .08), transparent 70%);
-  pointer-events: none;
-}
-.cover-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  background: rgba(244, 63, 94, .15);
-  border: 1px solid rgba(244, 63, 94, .35);
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--rose);
-  margin-bottom: 28px;
-  animation: fadeD .6s ease both;
-}
-.cover-title {
-  font-size: clamp(34px, 6vw, 68px);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -.03em;
-  background: var(--gcr);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 16px;
-  animation: fadeD .7s ease .1s both;
-}
-.cover-sub {
-  font-size: clamp(15px, 2vw, 20px);
-  color: var(--t2);
-  margin-bottom: 40px;
-  max-width: 680px;
-  animation: fadeD .7s ease .2s both;
-}
-.cover-chips {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 44px;
-  animation: fadeU .7s ease .3s both;
-}
-.chip {
-  padding: 9px 20px;
-  border-radius: var(--r2);
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid;
-  transition: transform .2s, box-shadow .2s;
-  cursor: default;
-}
-.chip:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
-}
-.c-cr { background: rgba(244, 63, 94, .12); border-color: rgba(244, 63, 94, .35); color: var(--rose); }
-.c-vi { background: rgba(168, 85, 247, .12); border-color: rgba(168, 85, 247, .35); color: var(--purple); }
-.c-am { background: rgba(245, 158, 11, .12); border-color: rgba(245, 158, 11, .35); color: var(--amber); }
-.c-cy { background: rgba(6, 182, 212, .12); border-color: rgba(6, 182, 212, .35); color: var(--cyan); }
-.c-gr { background: rgba(16, 185, 129, .12); border-color: rgba(16, 185, 129, .35); color: var(--green); }
-
-.cvr-div {
-  width: 80px;
-  height: 3px;
-  background: var(--gcr);
-  border-radius: 2px;
-  margin: 0 auto 24px;
-  animation: fadeU .7s ease .4s both;
-}
-.cvr-note {
-  font-size: 13px;
-  color: var(--t3);
-  max-width: 540px;
-  animation: fadeU .7s ease .5s both;
-  font-style: italic;
-}
-
-/* STICKY NAV */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(13, 12, 19, .94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 24px;
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding: 12px 0;
-}
-.nav-inner::-webkit-scrollbar { display: none; }
-.nl {
-  flex-shrink: 0;
-  padding: 6px 16px;
-  border-radius: var(--r1);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--t3);
-  text-decoration: none;
-  transition: all .2s;
-  white-space: nowrap;
-}
-.nl:hover { color: var(--t1); background: var(--card); }
-.nl.cr { color: var(--rose); }
-.nl.vi { color: var(--purple); }
-.nl.am { color: var(--amber); }
-.nl.cy { color: var(--cyan); }
-.nl.back-hub {
-  margin-left: auto;
-  background: rgba(244, 63, 94, .15);
-  border: 1px solid rgba(244, 63, 94, .3);
-  color: var(--rose);
-}
-.nl.back-hub:hover {
-  background: rgba(244, 63, 94, .3);
-  color: #fff;
-}
-
-/* MAIN CONTENT */
-.main { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
-.ls { margin-bottom: 90px; }
-
-.lh {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 40px;
-  padding: 32px;
-  border-radius: var(--r4);
-  border: 1px solid;
-  position: relative;
-  overflow: hidden;
-}
-.lh::before { content: ''; position: absolute; inset: 0; opacity: .08; }
-.lh.cr { border-color: rgba(244, 63, 94, .35); background: rgba(244, 63, 94, .05); }
-.lh.cr::before { background: var(--gcr); }
-.lh.vi { border-color: rgba(168, 85, 247, .35); background: rgba(168, 85, 247, .05); }
-.lh.vi::before { background: var(--gvi); }
-.lh.am { border-color: rgba(245, 158, 11, .35); background: rgba(245, 158, 11, .05); }
-.lh.am::before { background: var(--gam); }
-
-.lnum {
-  flex-shrink: 0;
-  width: 58px;
-  height: 58px;
-  border-radius: var(--r2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  line-height: 1.2;
-  text-align: center;
-}
-.lnum.cr { background: rgba(244, 63, 94, .2); color: var(--rose); }
-.lnum.vi { background: rgba(168, 85, 247, .2); color: var(--purple); }
-.lnum.am { background: rgba(245, 158, 11, .2); color: var(--amber); }
-
-.lht { flex: 1; }
-.llbl {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.llbl.cr { color: var(--rose); }
-.llbl.vi { color: var(--purple); }
-.llbl.am { color: var(--amber); }
-
-.ltitle { font-size: clamp(20px, 3vw, 28px); font-weight: 800; line-height: 1.2; letter-spacing: -.02em; }
-.ldesc { font-size: 14px; color: var(--t2); margin-top: 8px; }
-
-/* SECTION DIVIDERS */
-.sh { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; margin-top: 40px; }
-.shl { flex: 1; height: 1px; background: var(--border); }
-.shb {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.s-cr { color: var(--rose); background: rgba(244, 63, 94, .1); border: 1px solid rgba(244, 63, 94, .25); }
-.s-vi { color: var(--purple); background: rgba(168, 85, 247, .1); border: 1px solid rgba(168, 85, 247, .25); }
-.s-am { color: var(--amber); background: rgba(245, 158, 11, .1); border: 1px solid rgba(245, 158, 11, .25); }
-.s-cy { color: var(--cyan); background: rgba(6, 182, 212, .1); border: 1px solid rgba(6, 182, 212, .25); }
-.s-gr { color: var(--green); background: rgba(16, 185, 129, .1); border: 1px solid rgba(16, 185, 129, .25); }
-
-/* CARDS */
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--r3);
-  padding: 28px;
-  margin-bottom: 16px;
-  transition: border-color .2s, background .2s;
-}
-.card:hover { border-color: var(--border2); background: var(--card2); }
-.ctitle { font-size: 15px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-.cdot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.d-cr { background: var(--rose); box-shadow: 0 0 8px rgba(244, 63, 94, .5); }
-.d-vi { background: var(--purple); box-shadow: 0 0 8px rgba(168, 85, 247, .5); }
-.d-am { background: var(--amber); box-shadow: 0 0 8px rgba(245, 158, 11, .5); }
-.d-cy { background: var(--cyan); box-shadow: 0 0 8px rgba(6, 182, 212, .5); }
-
-/* GRID */
-.tg { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
-.ti {
-  background: rgba(255, 255, 255, .03);
-  border: 1px solid var(--border);
-  border-radius: var(--r2);
-  padding: 14px 16px;
-  transition: all .2s;
-}
-.ti:hover { background: rgba(255, 255, 255, .06); transform: translateY(-1px); }
-.tn { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-.tn.cr { color: var(--rose); }
-.tn.vi { color: var(--purple); }
-.tn.am { color: var(--amber); }
-.tn.cy { color: var(--cyan); }
-.tn.gr { color: var(--green); }
-.td { font-size: 13px; color: var(--t2); line-height: 1.55; }
-
-/* CALLOUTS */
-.ex {
-  background: rgba(0, 0, 0, .25);
-  border-left: 3px solid;
-  border-radius: 0 var(--r2) var(--r2) 0;
-  padding: 18px 20px;
-  margin: 14px 0;
-}
-.ex.cr { border-color: var(--rose); }
-.ex.vi { border-color: var(--purple); }
-.ex.am { border-color: var(--amber); }
-.ex.cy { border-color: var(--cyan); }
-.ex.gr { border-color: var(--green); }
-
-.exl { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
-.exl.cr { color: var(--rose); }
-.exl.vi { color: var(--purple); }
-.exl.am { color: var(--amber); }
-.exl.cy { color: var(--cyan); }
-.exl.gr { color: var(--green); }
-.exs { font-size: 13.5px; color: var(--t2); line-height: 1.7; }
-
-/* FLOW / PROCESS BOX */
-.flow-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  background: rgba(0,0,0,0.3);
-  padding: 16px 20px;
-  border-radius: var(--r2);
-  border: 1px solid var(--border);
-  margin: 14px 0;
-}
-.flow-step {
-  background: rgba(244, 63, 94, .12);
-  border: 1px solid rgba(244, 63, 94, .3);
-  color: var(--rose);
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 13px;
-}
-.flow-arrow {
-  color: var(--amber);
-  font-weight: 800;
-  font-size: 16px;
-}
-
-/* MUST MEMORIZE LIST */
-.ml { list-style: none; counter-reset: m; }
-.ml li {
-  counter-increment: m;
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .05);
-}
-.ml li:last-child { border-bottom: none; }
-.ml li::before {
-  content: counter(m, decimal-leading-zero);
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  margin-top: 2px;
-}
-.mcr li::before { background: rgba(244, 63, 94, .15); color: var(--rose); }
-.mvi li::before { background: rgba(168, 85, 247, .15); color: var(--purple); }
-.mam li::before { background: rgba(245, 158, 11, .15); color: var(--amber); }
-.mterm { font-weight: 700; }
-.mterm.cr { color: var(--rose); }
-.mterm.vi { color: var(--purple); }
-.mterm.am { color: var(--amber); }
-
-/* EXAM SECTION */
-.es {
-  background: linear-gradient(135deg, rgba(13, 12, 19, .85), rgba(30, 21, 46, .85));
-  border: 1px solid var(--border);
-  border-radius: var(--r4);
-  padding: 36px;
-  margin-top: 48px;
-}
-.eh { text-align: center; margin-bottom: 36px; }
-.ebdg {
-  display: inline-block;
-  padding: 6px 18px;
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.eb-cr { background: rgba(244, 63, 94, .12); color: var(--rose); border: 1px solid rgba(244, 63, 94, .25); }
-.eb-vi { background: rgba(168, 85, 247, .12); color: var(--purple); border: 1px solid rgba(168, 85, 247, .25); }
-.etitle { font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
-.esub { font-size: 13px; color: var(--t3); margin-top: 4px; }
-
-.qtt {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.qn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  font-size: 11px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.qn-cr { background: rgba(244, 63, 94, .2); color: var(--rose); }
-.qn-vi { background: rgba(168, 85, 247, .2); color: var(--purple); }
-.qn-am { background: rgba(245, 158, 11, .2); color: var(--amber); }
-
-.ql { list-style: none; }
-.qi {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .04);
-  font-size: 14px;
-}
-.qi:last-child { border-bottom: none; }
-.qin { flex-shrink: 0; font-weight: 700; font-size: 13px; min-width: 26px; }
-.qit { color: var(--t2); line-height: 1.65; flex: 1; }
-.mco { list-style: none; margin-top: 8px; }
-.mci { display: flex; gap: 8px; padding: 4px 0; font-size: 13px; color: var(--t3); }
-.mcl { font-weight: 700; color: var(--t2); min-width: 18px; }
-
-/* ANSWER KEY ACCORDION */
-.ak {
-  background: rgba(0, 0, 0, .28);
-  border: 1px dashed var(--border2);
-  border-radius: var(--r3);
-  padding: 24px;
-  margin-top: 32px;
-}
-.akt {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--rose);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  user-select: none;
-}
-.aks { margin-bottom: 20px; }
-.akst {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--t2);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-}
-.akg { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
-.aki { background: rgba(255, 255, 255, .04); border-radius: var(--r1); padding: 8px 12px; font-size: 13px; display: flex; gap: 8px; }
-.akq { font-weight: 700; color: var(--t3); }
-.aka { color: var(--t1); }
-.akm { display: flex; flex-wrap: wrap; gap: 8px; }
-.akmi { background: rgba(255, 255, 255, .04); border-radius: var(--r1); padding: 6px 12px; font-size: 13px; display: flex; gap: 6px; }
-
-/* FINAL REVIEW CARD */
-.fr {
-  background: linear-gradient(135deg, rgba(244, 63, 94, .08), rgba(168, 85, 247, .08), rgba(245, 158, 11, .08));
-  border: 1px solid rgba(244, 63, 94, .25);
-  border-radius: var(--r4);
-  padding: 44px;
-  text-align: center;
-  margin-top: 80px;
-  position: relative;
-  overflow: hidden;
-}
-.frb {
-  display: inline-block;
-  padding: 6px 18px;
-  background: rgba(244, 63, 94, .15);
-  border: 1px solid rgba(244, 63, 94, .3);
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--rose);
-  margin-bottom: 16px;
-}
-.frt {
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -.02em;
-  margin-bottom: 20px;
-  background: var(--gcr);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.frtx { font-size: 15px; color: var(--t2); max-width: 760px; margin: 0 auto; line-height: 1.85; }
-.fps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 32px; }
-.fp {
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid var(--border);
-  border-radius: var(--r2);
-  padding: 20px;
-  text-align: left;
-}
-.fpi { font-size: 22px; margin-bottom: 10px; }
-.fptitle { font-weight: 700; font-size: 13px; margin-bottom: 8px; color: var(--t1); }
-.fptx { font-size: 12.5px; color: var(--t2); line-height: 1.65; }
-
-.divr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
-p { color: var(--t2); margin-bottom: 12px; font-size: 14.5px; line-height: 1.75; }
-ul, ol { padding-left: 20px; color: var(--t2); font-size: 14.5px; line-height: 1.8; }
-li { margin-bottom: 6px; }
-strong { color: var(--t1); }
-code {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  background: rgba(255, 255, 255, .07);
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--rose);
-}
-
-@keyframes fadeD { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeU { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-
-@media(max-width: 640px) {
-  .main { padding: 40px 16px; }
-  .lh { padding: 20px; flex-direction: column; }
-  .es { padding: 24px 16px; }
-  .tg { grid-template-columns: 1fr; }
-  .fps { grid-template-columns: 1fr; }
-}
+:root{--bg:#120b10;--bg2:#170f16;--card:#1f1420;--card2:#2a1830;--border:#382040;--border2:#482a52;
+--rose:#fb7185;--gold:#fbbf24;--violet:#a78bfa;--cyan:#22d3ee;--lime:#a3e635;--green:#34d399;
+--t1:#f3e8ef;--t2:#c0a8bc;--t3:#8a6f86;
+--grs:linear-gradient(135deg,#fb7185,#fbbf24);
+--ggl:linear-gradient(135deg,#fbbf24,#fb7185);
+--gvi:linear-gradient(135deg,#a78bfa,#22d3ee);
+--gcy:linear-gradient(135deg,#22d3ee,#a3e635);
+--ghdr:linear-gradient(135deg,#1a0f18,#2a1630,#1a0f18);
+--r1:6px;--r2:12px;--r3:20px;--r4:28px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;font-size:15px;}
+::selection{background:rgba(251,113,133,.3);color:#fff;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--rose);}
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;padding:60px 24px;background:var(--ghdr);position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;inset:0;
+background:radial-gradient(ellipse 70% 50% at 20% 20%,rgba(251,113,133,.14),transparent 60%),
+radial-gradient(ellipse 60% 50% at 80% 80%,rgba(167,139,250,.14),transparent 60%),
+radial-gradient(ellipse 40% 40% at 50% 50%,rgba(34,211,238,.07),transparent 70%);pointer-events:none;}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;
+background:rgba(251,113,133,.15);border:1px solid rgba(251,113,133,.35);border-radius:100px;
+font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+color:var(--rose);margin-bottom:32px;animation:fadeD .6s ease both;}
+.cover-title{font-size:clamp(34px,6vw,70px);font-weight:900;line-height:1.1;letter-spacing:-.03em;
+background:var(--grs);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+background-clip:text;margin-bottom:16px;animation:fadeD .7s ease .1s both;}
+.cover-sub{font-size:clamp(15px,2vw,21px);color:var(--t2);margin-bottom:48px;max-width:680px;
+animation:fadeD .7s ease .2s both;}
+.cover-chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;
+animation:fadeU .7s ease .3s both;}
+.chip{padding:9px 20px;border-radius:var(--r2);font-size:12px;font-weight:600;
+border:1px solid;transition:transform .2s,box-shadow .2s;}
+.chip:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.c-rs{background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.35);color:var(--rose);}
+.c-gd{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.35);color:var(--gold);}
+.c-vi{background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.35);color:var(--violet);}
+.c-cy{background:rgba(34,211,238,.12);border-color:rgba(34,211,238,.35);color:var(--cyan);}
+.cvr-div{width:80px;height:3px;background:var(--grs);border-radius:2px;margin:0 auto 24px;
+animation:fadeU .7s ease .4s both;}
+.cvr-note{font-size:13px;color:var(--t3);max-width:540px;animation:fadeU .7s ease .5s both;font-style:italic;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(18,11,16,.93);
+backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:4px;
+overflow-x:auto;scrollbar-width:none;padding:12px 0;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nl{flex-shrink:0;padding:6px 16px;border-radius:var(--r1);font-size:12px;font-weight:600;
+color:var(--t3);text-decoration:none;transition:all .2s;white-space:nowrap;}
+.nl:hover{color:var(--t1);background:var(--card);}
+.nl.h{margin-right:8px;color:var(--gold);font-weight:700;}
+.nl.gd{color:var(--gold);}
+.nl.rs{color:var(--rose);}.nl.vi{color:var(--violet);}.nl.cy{color:var(--cyan);}
+.main{max-width:1100px;margin:0 auto;padding:60px 24px;}
+.wh{position:sticky;top:0;}
+.ws{margin-bottom:80px;}
+.lh{display:flex;align-items:flex-start;gap:20px;margin-bottom:40px;padding:32px;
+border-radius:var(--r4);border:1px solid;position:relative;overflow:hidden;}
+.lh::before{content:'';position:absolute;inset:0;opacity:.07;}
+.lh.rs{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.05);}
+.lh.rs::before{background:var(--grs);}
+.lh.vi{border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.05);}
+.lh.vi::before{background:var(--gvi);}
+.lnum{flex-shrink:0;width:58px;height:58px;border-radius:var(--r2);display:flex;
+align-items:center;justify-content:center;font-size:14px;font-weight:900;}
+.lnum.rs{background:rgba(251,113,133,.2);color:var(--rose);}
+.lnum.vi{background:rgba(167,139,250,.2);color:var(--violet);}
+.lht{flex:1;}
+.llbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
+.llbl.rs{color:var(--rose);}.llbl.vi{color:var(--violet);}
+.ltitle{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.2;letter-spacing:-.02em;}
+.ldesc{font-size:14px;color:var(--t2);margin-top:8px;}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;margin-top:40px;}
+.shl{flex:1;height:1px;background:var(--border);}
+.shb{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+padding:5px 14px;border-radius:100px;white-space:nowrap;}
+.s-rs{color:var(--rose);background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.2);}
+.s-vi{color:var(--violet);background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);}
+.s-gd{color:var(--gold);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);}
+.s-cy{color:var(--cyan);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);
+padding:28px;margin-bottom:16px;transition:border-color .2s,background .2s;}
+.card:hover{border-color:var(--border2);background:var(--card2);}
+.ctitle{font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.cdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.d-rs{background:var(--rose);box-shadow:0 0 8px rgba(251,113,133,.5);}
+.d-vi{background:var(--violet);box-shadow:0 0 8px rgba(167,139,250,.5);}
+.d-cy{background:var(--cyan);box-shadow:0 0 8px rgba(34,211,238,.5);}
+.d-gd{background:var(--gold);box-shadow:0 0 8px rgba(251,191,36,.5);}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;}
+.ti{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r2);
+padding:14px 16px;transition:all .2s;}
+.ti:hover{background:rgba(255,255,255,.06);transform:translateY(-1px);}
+.tn{font-weight:700;font-size:14px;margin-bottom:4px;}
+.tn.rs{color:var(--rose);}.tn.vi{color:var(--violet);}.tn.cy{color:var(--cyan);}.tn.gd{color:var(--gold);}
+.td{font-size:13px;color:var(--t2);line-height:1.5;}
+.ex{background:rgba(0,0,0,.25);border-left:3px solid;border-radius:0 var(--r2) var(--r2) 0;
+padding:18px 20px;margin:12px 0;}
+.ex.rs{border-color:var(--rose);}.ex.vi{border-color:var(--violet);}
+.ex.gd{border-color:var(--gold);}.ex.cy{border-color:var(--cyan);}
+.exl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.exl.rs{color:var(--rose);}.exl.vi{color:var(--violet);}
+.exl.gd{color:var(--gold);}.exl.cy{color:var(--cyan);}
+.exp{font-weight:600;margin-bottom:8px;color:var(--t1);font-size:14px;}
+.exs{font-size:13.5px;color:var(--t2);line-height:1.7;}
+.hl{font-weight:700;padding:1px 6px;border-radius:4px;font-size:13px;}
+.hrs{background:rgba(251,113,133,.15);color:var(--rose);}
+.hvi{background:rgba(167,139,250,.15);color:var(--violet);}
+.hcy{background:rgba(34,211,238,.15);color:var(--cyan);}
+.hgd{background:rgba(251,191,36,.15);color:var(--gold);}
+.fb{background:rgba(0,0,0,.3);border:1px solid var(--border2);border-radius:var(--r2);
+padding:16px 20px;margin:12px 0;font-family:'JetBrains Mono',monospace;color:var(--gold);}
+.fb .fl{font-family:Inter,sans-serif;font-size:11px;font-weight:600;color:var(--t3);
+letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.fb .fm{font-size:16px;font-weight:600;}
+.ct{width:100%;border-collapse:collapse;font-size:14px;}
+.ct th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.1em;
+text-transform:uppercase;background:rgba(255,255,255,.04);
+border-bottom:1px solid var(--border);color:var(--t3);}
+.ct td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--t2);vertical-align:top;}
+.ct tr:last-child td{border-bottom:none;}.ct tr:hover td{background:rgba(255,255,255,.03);}
+.ct td:first-child{color:var(--t1);font-weight:500;}
+.ml{list-style:none;counter-reset:m;}
+.ml li{counter-increment:m;display:flex;gap:12px;align-items:flex-start;
+padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.ml li:last-child{border-bottom:none;}
+.ml li::before{content:counter(m,decimal-leading-zero);flex-shrink:0;width:28px;height:28px;
+display:flex;align-items:center;justify-content:center;border-radius:6px;
+font-size:11px;font-weight:700;margin-top:2px;}
+.mr li::before{background:rgba(251,113,133,.15);color:var(--rose);}
+.mv li::before{background:rgba(167,139,250,.15);color:var(--violet);}
+.mterm{font-weight:700;}
+.mterm.rs{color:var(--rose);}.mterm.vi{color:var(--violet);}.mterm.gd{color:var(--gold);}.mterm.cy{color:var(--cyan);}
+.es{background:linear-gradient(135deg,rgba(18,11,16,.85),rgba(31,20,32,.85));
+border:1px solid var(--border);border-radius:var(--r4);padding:36px;margin-top:48px;}
+.eh{text-align:center;margin-bottom:36px;}
+.ebdg{display:inline-block;padding:6px 18px;border-radius:100px;font-size:11px;
+font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;}
+.eb-rs{background:rgba(251,113,133,.12);color:var(--rose);border:1px solid rgba(251,113,133,.25);}
+.eb-vi{background:rgba(167,139,250,.12);color:var(--violet);border:1px solid rgba(167,139,250,.25);}
+.etitle{font-size:24px;font-weight:800;letter-spacing:-.02em;}
+.esub{font-size:13px;color:var(--t3);margin-top:4px;}
+.qtt{font-size:15px;font-weight:700;margin-bottom:16px;padding-bottom:10px;
+border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.qn{display:inline-flex;align-items:center;justify-content:center;
+width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:700;flex-shrink:0;}
+.qn-rs{background:rgba(251,113,133,.2);color:var(--rose);}
+.qn-vi{background:rgba(167,139,250,.2);color:var(--violet);}
+.qn-gd{background:rgba(251,191,36,.2);color:var(--gold);}
+.qn-cy{background:rgba(34,211,238,.2);color:var(--cyan);}
+.ql{list-style:none;}
+.qi{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:14px;}
+.qi:last-child{border-bottom:none;}
+.qin{flex-shrink:0;font-weight:700;font-size:13px;min-width:26px;}
+.qit{color:var(--t2);line-height:1.65;}
+.mco{list-style:none;margin-top:8px;}
+.mci{display:flex;gap:8px;padding:4px 0;font-size:13px;color:var(--t3);}
+.mcl{font-weight:700;color:var(--t2);min-width:18px;}
+.ak{background:rgba(0,0,0,.25);border:1px dashed var(--border2);border-radius:var(--r3);
+padding:28px;margin-top:32px;}
+.akt{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.aks{margin-bottom:20px;}
+.akst{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:10px;
+text-transform:uppercase;letter-spacing:.08em;}
+.akg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.aki{background:rgba(255,255,255,.04);border-radius:var(--r1);padding:8px 12px;font-size:13px;display:flex;gap:8px;}
+.akq{font-weight:700;color:var(--t3);}.aka{color:var(--t1);}
+.akm{display:flex;flex-wrap:wrap;gap:8px;}
+.akmi{background:rgba(255,255,255,.04);border-radius:var(--r1);padding:6px 12px;font-size:13px;display:flex;gap:6px;}
+.fr{background:linear-gradient(135deg,rgba(251,113,133,.07),rgba(167,139,250,.07),rgba(34,211,238,.07));
+border:1px solid rgba(251,113,133,.2);border-radius:var(--r4);padding:44px;
+text-align:center;margin-top:80px;position:relative;overflow:hidden;}
+.fr::before{content:'';position:absolute;inset:0;
+background:radial-gradient(ellipse 40% 40% at 50% 50%,rgba(167,139,250,.06),transparent 70%);
+pointer-events:none;}
+.frb{display:inline-block;padding:6px 18px;background:rgba(251,191,36,.12);
+border:1px solid rgba(251,191,36,.25);border-radius:100px;font-size:11px;font-weight:700;
+letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.frt{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:20px;
+background:var(--grs);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.frtx{font-size:15px;color:var(--t2);max-width:780px;margin:0 auto;line-height:1.85;}
+.fps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:32px;}
+.fp{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r2);
+padding:20px;text-align:left;}
+.fpi{font-size:22px;margin-bottom:10px;}
+.fptitle{font-weight:700;font-size:13px;margin-bottom:8px;}
+.fptx{font-size:12.5px;color:var(--t2);line-height:1.65;}
+.divr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+p{color:var(--t2);margin-bottom:12px;font-size:14.5px;line-height:1.75;}
+ul,ol{padding-left:20px;color:var(--t2);font-size:14.5px;line-height:1.8;}
+li{margin-bottom:6px;}strong{color:var(--t1);}
+@keyframes fadeD{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeU{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){.main{padding:40px 16px;}.lh{padding:20px;flex-direction:column;}
+.es{padding:24px 16px;}.tg{grid-template-columns:1fr;}.fps{grid-template-columns:1fr 1fr;}}
   
 
 /* General Science Styles */
@@ -2025,7 +1674,7 @@ code{font-family:'JetBrains Mono',monospace;font-size:13px;
     <div class="global-bar-inner">
       <div class="brand-logo" onclick="switchChannel('landing')">
         <div class="brand-icon">&#127891;</div>
-        <div class="brand-text">DARWIN <span>Study Hub</span></div>
+        <div class="brand-text">MUJIB <span>Study Hub</span></div>
       </div>
 
       <nav class="channel-nav-pills">
@@ -2220,552 +1869,365 @@ code{font-family:'JetBrains Mono',monospace;font-size:13px;
     <div class="channel-content-body">
       
 
-<!-- ========================================== ARALIN 3 ========================================== -->
-<section class="ls" id="aralin3">
-  <div class="lh cr">
-    <div class="lnum cr">A3<br>MK</div>
+<!-- ==================== ARALIN 3 ==================== -->
+<section class="ws" id="a3">
+  <div class="lh rs">
+    <div class="lnum rs">3</div>
     <div class="lht">
-      <div class="llbl cr">Aralin 3 &middot; Mabisang Komunikasyon</div>
-      <h2 class="ltitle">Malinaw at Maayos na Pagpapahayag ng mga Ideya</h2>
-      <p class="ldesc">Pasalita, Pasulat, at Multimodal para sa Tiyak na Layon, Awdyens, Konteksto, Digital Identity, at Netiquette</p>
+      <div class="llbl rs">Aralin 3 &middot; Mabisang Komunikasyon</div>
+      <h2 class="ltitle">Konsepto ng Komunikasyon &amp; Digital Identity</h2>
+      <p class="ldesc">Anatomy ng Komunikasyon &middot; Personal, Interpersonal, Intrapersonal &middot; Layunin at Awdyens &middot; Digital na Pagkakakilanlan &middot; Mabisang Wika &middot; Public-Facing na Teksto</p>
     </div>
   </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-cr">Mga Layunin sa Pagkatuto</div><div class="shl"></div></div>
+  <div class="sh"><div class="shl"></div><div class="shb s-rs">Ano ang Komunikasyon</div><div class="shl"></div></div>
   <div class="card">
-    <ul>
-      <li>Maipaliwanag ang <strong>kahulugan at 5 mahalagang elemento</strong> ng komunikasyon (Tagapagpadala, Mensahe, Daluyan, Tagatanggap, Tugon).</li>
-      <li>Matukoy ang <strong>4 na anyo ng personal at interpersonal na pagpapahayag</strong> (Pagtatanong, Pagkukuwento, Paglalahad ng Obserbasyon, Pagpapahayag ng Opinyon).</li>
-      <li>Maunawaan ang <strong>intrapersonal na komunikasyon</strong> at mga anyo nito (Talaarawan, Dyornal, Repleksyon, Goal Setting).</li>
-      <li>Maging responsable sa <strong>Digital Identity, Digital Footprint, Netiquette, Privacy,</strong> at <strong>Personal Data Protection</strong>.</li>
-      <li>Makapamili ng <strong>angkop, pormal o di-pormal na wika</strong> ayon sa kausap at awdyens.</li>
-      <li>Makatukoy ng mga <strong>public-facing na teksto</strong> at ang mga layunin nitong panglipunan (Inclusivity, Equality, Social Awareness).</li>
-    </ul>
+    <div class="ctitle"><span class="cdot d-rs"></span>Kahulugan ng Komunikasyon</div>
+    <p><strong>Komunikasyon</strong> ay ang proseso ng pagpapadala, pagtanggap, at pagpapalitan ng <strong>impormasyon, ideya, damdamin, opinyon, at mensahe</strong> sa pagitan ng dalawa o higit pang tao. Layunin nitong magkaroon ng <strong>pagkakaunawaan</strong> at makabuo ng <strong>mabuting ugnayan</strong>.</p>
+    <div class="fb"><div class="fl">Mabisang Komunikasyon</div>
+    <div class="fm">Malinaw at maayos na pagpapahayag ng mga ideya sa anyong pasalita, pasulat, at multimodal para sa tiyak na layon, awdyens, at konteksto.</div></div>
+    <table class="ct"><thead><tr><th>Elemento</th><th>Kahulugan</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tagapagpadala (Sender)</strong></td><td>Ang nagpapadala ng mensahe.</td></tr>
+      <tr><td><strong>Mensahe (Message)</strong></td><td>Ang impormasyong nais iparating.</td></tr>
+      <tr><td><strong>Daluyan (Channel)</strong></td><td>Ang paraan ng pagpapadala &mdash; pasalita, pasulat, online, atbp.</td></tr>
+      <tr><td><strong>Tagatanggap (Receiver)</strong></td><td>Ang tumatanggap ng mensahe.</td></tr>
+      <tr><td><strong>Tugon (Feedback)</strong></td><td>Ang reaksyon o sagot ng tumanggap ng mensahe.</td></tr>
+    </tbody></table>
   </div>
 
-  <!-- Seksyon 1: Batayang Konsepto & Elemento -->
-  <div class="sh"><div class="shl"></div><div class="shb s-cr">Batayang Konsepto at Elemento</div><div class="shl"></div></div>
+  <div class="sh"><div class="shl"></div><div class="shb s-rs">Uri ng Komunikasyon</div><div class="shl"></div></div>
   <div class="card">
-    <div class="ctitle"><span class="cdot d-cr"></span>Ano ang Komunikasyon?</div>
-    <p>Ang <strong>komunikasyon</strong> ay ang proseso ng <strong>pagpapadala, pagtanggap, at pagpapalitan</strong> ng impormasyon, ideya, damdamin, opinyon, at mensahe sa pagitan ng dalawa o higit pang tao. Layunin nitong magkaroon ng <strong>pagkakaunawaan</strong> at makabuo ng <strong>mabuting ugnayan</strong>.</p>
-    
-    <div class="flow-container">
-      <div class="flow-step">1. Tagapagpadala (Sender)</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-step">2. Mensahe (Message)</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-step">3. Daluyan (Channel)</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-step">4. Tagatanggap (Receiver)</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-step">5. Tugon (Feedback)</div>
-    </div>
-
-    <div class="tg" style="margin-top:16px;">
-      <div class="ti"><div class="tn cr">Tagapagpadala (Sender)</div><div class="td">Ang pinagmumulan o nagpapadala ng mensahe.</div></div>
-      <div class="ti"><div class="tn cr">Mensahe (Message)</div><div class="td">Ang impormasyon, ideya, o damdaming nais iparating.</div></div>
-      <div class="ti"><div class="tn cr">Daluyan (Channel)</div><div class="td">Paraan ng pagpapadala ng mensahe (pasalita, pasulat, online/digital, telepono).</div></div>
-      <div class="ti"><div class="tn cr">Tagatanggap (Receiver)</div><div class="td">Ang tumatanggap at nagpoproseso sa mensahe.</div></div>
-      <div class="ti"><div class="tn cr">Tugon (Feedback)</div><div class="td">Ang sagot, reaksyon, o tugon ng tumanggap ng mensahe upang malaman kung naunawaan ito.</div></div>
-      <div class="ti"><div class="tn cr">Layon at Awdyens</div><div class="td"><strong>Layon:</strong> Dahilan kung bakit nakikipag-usap.<br><strong>Awdyens:</strong> Pangkat o taong tatanggap ng mensahe.</div></div>
-    </div>
-  </div>
-
-  <!-- Seksyon 2: Anyo ng Personal at Interpersonal -->
-  <div class="sh"><div class="shl"></div><div class="shb s-cr">4 na Anyo ng Personal at Interpersonal na Pagpapahayag</div><div class="shl"></div></div>
-  <div class="card">
+    <div class="ctitle"><span class="cdot d-rs"></span>Personal, Interpersonal &amp; Pampubliko</div>
     <div class="tg">
-      <div class="ti">
-        <div class="tn cr">&#10067; 1. Pagtatanong</div>
-        <div class="td">Paraan ng pagkuha ng impormasyon, paglilinaw ng ideya, o paghingi ng paliwanag.<br><em>Halimbawa:</em> "Ano po ang takdang-aralin?", "Paano po ninyo nakuha ang sagot?"</div>
-      </div>
-      <div class="ti">
-        <div class="tn cr">&#128214; 2. Pagkukuwento</div>
-        <div class="td">Pagsasalaysay ng isang karanasan, pangyayari, o sitwasyon upang magbahagi ng impormasyon o magbigay-aliw.<br><em>Halimbawa:</em> Pagkukuwento ng bakasyon o karanasan sa paaralan.</div>
-      </div>
-      <div class="ti">
-        <div class="tn cr">&#128065; 3. Paglalahad ng Obserbasyon</div>
-        <div class="td">Pagbibigay ng impormasyon batay sa nakita, narinig, o naranasan <strong>nang hindi agad nagbibigay ng sariling paghuhusga</strong>.<br><em>Halimbawa:</em> "Napansin kong mas aktibo ang mga mag-aaral sa pangkatang gawain."</div>
-      </div>
-      <div class="ti">
-        <div class="tn cr">&#128172; 4. Pagpapahayag ng Opinyon</div>
-        <div class="td">Pagbibigay ng sariling pananaw o paniniwala tungkol sa isang paksa. Dapat may <strong>paggalang at may batayan o dahilan</strong>.<br><em>Halimbawa:</em> "Sa aking palagay, mahalaga ang pagbabasa dahil nagpapalawak ito ng kaalaman."</div>
-      </div>
+      <div class="ti"><div class="tn rs">Personal</div><div class="td">Pakikipag-usap na may kaugnayan sa sariling karanasan, damdamin, pananaw, at pang-araw-araw na pakikipag-ugnayan.</div></div>
+      <div class="ti"><div class="tn rs">Interpersonal</div><div class="td">Pakikipagpalitan ng mensahe sa isa o higit pang tao.</div></div>
+      <div class="ti"><div class="tn rs">Pampubliko</div><div class="td">Pagpapahayag ng mensahe sa mas malaking pangkat &mdash; iisa ang tagapagsalita, marami ang tagapakinig.</div></div>
     </div>
+    <div class="ex rs"><div class="exl rs">&#128204; Layunin ng Komunikasyon</div>
+      <div class="exs">Ang <strong>layunin</strong> ay ang dahilan kung bakit tayo nakikipagkomunikasyon. Maaaring ito ay: <span class="hl hrs">magbigay ng impormasyon</span>, <span class="hl hgd">magtanong</span>, <span class="hl hcy">magkuwento</span>, <span class="hl hvi">manghikayat</span>, <span class="hl hrs">magpaliwanag</span>, o <span class="hl hgd">magpahayag ng damdamin o opinyon</span>.</div></div>
+    <div class="ex rs"><div class="exl rs">&#128204; Awdyens</div>
+      <div class="exp">Ang taong o pangkat ng mga taong tumatanggap ng ating mensahe.</div>
+      <div class="exs">Mahalagang kilalanin ang <strong>awdyens</strong> upang makapili ng angkop na salita, tono, at paraan ng pagpapahayag. Halimbawa: <span class="hl hgd">kaklase</span>, <span class="hl hgd">guro</span>, <span class="hl hgd">magulang</span>, <span class="hl hgd">kaibigan</span>, <span class="hl hgd">publiko</span>.</div></div>
   </div>
 
-  <!-- Seksyon 3: Intrapersonal na Komunikasyon -->
-  <div class="sh" id="a3intra"><div class="shl"></div><div class="shb s-vi">Intrapersonal na Komunikasyon</div><div class="shl"></div></div>
   <div class="card">
-    <div class="ctitle"><span class="cdot d-vi"></span>Pakikipag-usap sa Sarili</div>
-    <p>Ang <strong>intrapersonal na komunikasyon</strong> ay ang pakikipag-usap ng isang tao sa kaniyang sarili. Nagaganap ito sa pamamagitan ng pag-iisip, pagmumuni-muni, pagsusuri sa sariling damdamin at karanasan, at pagpapasya. Layunin nitong <strong>higit na makilala ang sarili, mapabuti ang pag-uugali, at makagawa ng matalinong desisyon</strong>.</p>
-    
-    <div class="tg" style="margin-top:16px;">
-      <div class="ti">
-        <div class="tn vi">1. Talaarawan (Diary)</div>
-        <div class="td">Personal na talaan ng pang-araw-araw na pangyayari, karanasan, damdamin, at iniisip ng isang tao.</div>
-      </div>
-      <div class="ti">
-        <div class="tn vi">2. Dyornal (Journal)</div>
-        <div class="td">Mas sistematikong pagsulat ng mga natutuhan, karanasan, obserbasyon, at pagninilay.</div>
-      </div>
-      <div class="ti">
-        <div class="tn vi">3. Repleksyon (Reflection)</div>
-        <div class="td">Malalim na pagninilay o pagsusuri sa sariling karanasan, kilos, desisyon, at natutuhan.</div>
-      </div>
-      <div class="ti">
-        <div class="tn vi">4. Goal Setting (Pagtatakda ng Layunin)</div>
-        <div class="td">Proseso ng pagtatakda ng malinaw at tiyak na mga layunin na nais makamit sa hinaharap.</div>
-      </div>
-    </div>
-
-    <div class="ex vi">
-      <div class="exl vi">&#128161; Bakit Mahalaga ang Intrapersonal na Komunikasyon?</div>
-      <div class="exs">
-        &bull; Nakikilala natin ang ating sarili at sariling lakas/kahinaan.<br>
-        &bull; Natututuhan nating kontrolin ang ating emosyon.<br>
-        &bull; Nakagagawa tayo ng mas mabubuting desisyon nang may sapat na pagmumuni-muni.<br>
-        &bull; Nakatutulong sa pagtatakda at pagkamit ng mga pangarap at layunin.
-      </div>
-    </div>
-  </div>
-
-  <!-- Seksyon 4: Digital Identity & Netiquette -->
-  <div class="sh" id="a3digital"><div class="shl"></div><div class="shb s-am">Digital Identity, Netiquette, at Proteksyon sa Datos</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-am"></span>Ang Iyong Pagkakakilanlan sa Digital na Mundo</div>
-    <p>Ang <strong>digital identity</strong> ay ang pagkakakilanlan ng isang tao sa internet. Nabubuo ito mula sa impormasyong ibinabahagi tulad ng pangalan, larawan, post, at komento. Nakaaapekto ito sa pagtingin ng mga guro, kaibigan, paaralan, at magiging employers sa hinaharap.</p>
-
-    <div class="tg" style="margin-top:16px;">
-      <div class="ti">
-        <div class="tn am">Active Digital Footprint</div>
-        <div class="td">Impormasyong <strong>kusa nating ibinabahagi</strong>, tulad ng pag-post ng litrato, status, o pagkomento online.</div>
-      </div>
-      <div class="ti">
-        <div class="tn am">Passive Digital Footprint</div>
-        <div class="td">Impormasyong <strong>awtomatikong nakokolekta</strong> habang nagba-browse sa web (hal. browsing history, cookies, IP location).</div>
-      </div>
-      <div class="ti">
-        <div class="tn am">Netiquette (Online Etiquette)</div>
-        <div class="td">Wastong asal at pag-uugali sa internet: magalang na pananalita, pag-iwas sa cyberbullying, huwag magpakalat ng fake news, at mag-isip muna bago mag-post.</div>
-      </div>
-      <div class="ti">
-        <div class="tn am">Privacy at Data Protection</div>
-        <div class="td">Karapatang panatilihing pribado ang sensitibong datos (tirahan, password, numero, email). Gumamit ng malakas na password, i-on ang <strong>2FA (Two-Factor Authentication)</strong>, at limitahan ang public info.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Seksyon 5: Mabisang Paggamit ng Wika -->
-  <div class="sh" id="a3wika"><div class="shl"></div><div class="shb s-cy">Mabisang Paggamit ng Wika</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-cy"></span>Pormal vs. Di-Pormal na Wika &amp; Pagkilala sa Awdyens</div>
-    <p>Ang mabisang paggamit ng wika ay ang pagpili ng mga salitang naaayon sa paksa, sitwasyon, layunin, at kausap upang maiwasan ang hindi pagkakaunawaan.</p>
-    
+    <div class="ctitle"><span class="cdot d-rs"></span>Mga Halimbawa ng Personal at Interpersonal na Komunikasyon</div>
     <div class="tg">
-      <div class="ti">
-        <div class="tn cy">Pormal na Wika</div>
-        <div class="td">
-          <strong>Kailan ginagamit:</strong> Paaralan, opisina, talumpati, opisyal na liham, pag-uulat.<br>
-          <strong>Katangian:</strong> Gumagamit ng wastong balarila at magagalang na pananalita.<br>
-          <em>Hal:</em> "Magandang araw po. Maaari po bang pirmahan ninyo ang dokumentong ito?"
-        </div>
-      </div>
-      <div class="ti">
-        <div class="tn cy">Impormal (Di-Pormal) na Wika</div>
-        <div class="td">
-          <strong>Kailan ginagamit:</strong> Pamilya, kaibigan, chat/text, kaswal na usapan.<br>
-          <strong>Katangian:</strong> Payak, malaya, kolokyal o pamilyar na tono.<br>
-          <em>Hal:</em> "Uy, kumusta ka na? Kita tayo mamaya ha!"
-        </div>
-      </div>
-      <div class="ti">
-        <div class="tn cy">Salik sa Pagkilala sa Awdyens</div>
-        <div class="td">
-          Dapat isaalang-alang: <strong>Edad</strong>, <strong>Antas ng Kaalaman</strong>, <strong>Katayuan/Tungkulin</strong>, <strong>Interes</strong>, at <strong>Layunin ng Komunikasyon</strong>.
-        </div>
-      </div>
+      <div class="ti"><div class="tn rs">Pagtatanong</div><div class="td">Paraan ng pagkuha ng impormasyon, paglilinaw ng ideya, o paghingi ng paliwanag. <em>&ldquo;Ano po ang takdang-aralin?&rdquo;</em></div></div>
+      <div class="ti"><div class="tn rs">Pagkukuwento</div><div class="td">Pagsasalaysay ng karanasan, pangyayari, o sitwasyon upang magbahagi ng impormasyon o magbigay-aliw.</div></div>
+      <div class="ti"><div class="tn rs">Paglalahad ng Obserbasyon</div><div class="td">Pagbibigay ng impormasyon batay sa nakita, narinig, o naranasan nang hindi agad nagbibigay ng sariling paghuhusga.</div></div>
+      <div class="ti"><div class="tn rs">Pagpapahayag ng Opinyon</div><div class="td">Pagbibigay ng sariling pananaw o paniniwala &mdash; may paggalang at, kung maaari, may batayan o dahilan.</div></div>
     </div>
+    <div class="ex rs"><div class="exl rs">&#128204; Mahalagang Tandaan &middot; Personal at Interpersonal</div>
+      <div class="exs">Dapat <span class="hl hrs">malinaw ang layunin</span> ng mensahe; <span class="hl hvi">kilala ang awdyens</span>; <span class="hl hgd">gumamit ng magalang at wastong wika</span>; at <span class="hl hcy">makinig at magbigay ng angkop na tugon</span> upang maging mabisa ang komunikasyon.</div></div>
   </div>
 
-  <!-- Seksyon 6: Public-Facing na Teksto -->
-  <div class="sh" id="a3public"><div class="shl"></div><div class="shb s-cr">Public-Facing na Teksto at Layuning Panlipunan</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-cr"></span>Mga Sulatin Para sa Publiko</div>
-    <p>Ang <strong>public-facing na teksto</strong> ay mga sulatin o mensaheng ginawa upang mabasa o makita ng publiko (blog, social media, pahayagan, website). Layunin nitong magbigay-impormasyon, magpahayag ng opinyon, o magmulat ng kamalayan.</p>
-
+  <div class="sh" id="a3types"><div class="shl"></div><div class="shb s-rs">Intrapersonal na Komunikasyon</div><div class="shl"></div></div>
+  <div class="card" id="a3intra">
+    <div class="ctitle"><span class="cdot d-rs"></span>Pakikipag-usap sa Sarili</div>
+    <p>Ang <strong>intrapersonal na komunikasyon</strong> ay ang pakikipag-usap ng isang tao sa kaniyang sarili. Nagaganap ito sa pamamagitan ng pag-iisip, pagmumuni-muni, pagsusuri sa sariling damdamin at karanasan, at pagpapasya. Layunin nitong makilala ang sarili, mapabuti ang pag-uugali, at makagawa ng matalinong desisyon.</p>
     <div class="tg">
-      <div class="ti"><div class="tn cr">Blog</div><div class="td">Sulatin online na naglalaman ng karanasan, kaalaman, opinyon, o impormasyon sa isang paksa.</div></div>
-      <div class="ti"><div class="tn cr">Komentaryo</div><div class="td">Pahayag o sulating nagbibigay ng sariling pananaw, pagsusuri, o opinyon tungkol sa isang napapanahong isyu o balita.</div></div>
-      <div class="ti"><div class="tn cr">Advocacy Post</div><div class="td">Mensaheng naglalayong hikayatin ang mga tao na suportahan o makiisa sa isang adbokasiya o mabuting layunin.</div></div>
-      <div class="ti"><div class="tn cr">Maikling Kolumn</div><div class="td">Maikling artikulo sa pahayagan o magasin na nagpapahayag ng opinyon ng may-akda.</div></div>
+      <div class="ti"><div class="tn rs">Talaarawan (Diary)</div><div class="td">Personal na talaan ng mga pang-araw-araw na pangyayari, karanasan, damdamin, at iniisip.</div></div>
+      <div class="ti"><div class="tn rs">Dyornal (Journal)</div><div class="td">Mas sistematikong pagsulat ng mga natutuhan, karanasan, obserbasyon, at pagninilay.</div></div>
+      <div class="ti"><div class="tn rs">Repleksyon (Reflection)</div><div class="td">Malalim na pagninilay o pagsusuri sa sariling karanasan, kilos, desisyon, at natutuhan.</div></div>
+      <div class="ti"><div class="tn rs">Goal Setting</div><div class="td">Proseso ng pagtatakda ng malinaw at tiyak na mga layunin na nais makamit sa hinaharap.</div></div>
     </div>
-
-    <div class="ex cr" style="margin-top:16px;">
-      <div class="exl cr">&#127758; 3 Mahalagang Layunin ng Public-Facing Texts</div>
-      <div class="exs">
-        1. <strong>Inclusivity (Pagiging Inklusibo):</strong> Pagbibigay ng pantay na paggalang, pagkakataon, at pagtanggap sa lahat anuman ang kasarian, edad, relihiyon, kultura, o kakayahan.<br>
-        2. <strong>Equality (Pagkakapantay-pantay):</strong> Paniniwalang ang bawat isa ay may pantay na karapatan at pagtrato nang walang diskriminasyon.<br>
-        3. <strong>Social Awareness (Kamalayang Panlipunan):</strong> Pagkilala at pag-unawa sa mga isyu at suliraning panlipunan at pakikilahok sa paghahanap ng solusyon.
-      </div>
-    </div>
+    <div class="ex rs"><div class="exl rs">&#128204; Bakit Mahalaga ang Intrapersonal na Komunikasyon</div>
+      <div class="exs">Nakikilala natin ang <span class="hl hrs">ating sarili</span>; natututuhan nating <span class="hl hgd">kontrolin ang ating emosyon</span>; nakagagawa tayo ng <span class="hl hvi">mas mabubuting desisyon</span>; nakatutulong ito sa <span class="hl hcy">pagtatakda at pagkamit ng mga layunin</span>; at napauunlad nito ang ating <span class="hl hrs">personal na pagkatuto at pag-unlad</span>.</div></div>
   </div>
 
-  <!-- MUST MEMORIZE ARALIN 3 -->
-  <div class="sh" id="a3mem"><div class="shl"></div><div class="shb s-cr">Must Memorize &middot; Aralin 3</div><div class="shl"></div></div>
+  <div class="sh" id="a3digital"><div class="shl"></div><div class="shb s-gd">Digital Identity</div><div class="shl"></div></div>
   <div class="card">
-    <ul class="ml mcr">
-      <li><div><span class="mterm cr">Komunikasyon</span> &ndash; proseso ng pagpapadala, pagtanggap, at pagpapalitan ng mensahe upang magkaroon ng pagkakaunawaan.</div></li>
-      <li><div><span class="mterm cr">5 Elemento</span> &ndash; Tagapagpadala &rarr; Mensahe &rarr; Daluyan (Channel) &rarr; Tagatanggap &rarr; Tugon (Feedback).</div></li>
-      <li><div><span class="mterm cr">4 na Anyo ng Pagpapahayag</span> &ndash; Pagtatanong, Pagkukuwento, Paglalahad ng Obserbasyon (walang paghuhusga), Pagpapahayag ng Opinyon.</div></li>
-      <li><div><span class="mterm cr">Intrapersonal</span> &ndash; pakikipag-usap sa sarili (Talaarawan, Dyornal, Repleksyon, Goal Setting).</div></li>
-      <li><div><span class="mterm cr">Digital Identity</span> &ndash; pagkakakilanlan sa online na mundo na repleksiyon ng pagkatao.</div></li>
-      <li><div><span class="mterm cr">Active vs. Passive Footprint</span> &ndash; Active = kusang ipinost; Passive = awtomatikong nakolektang browsing data/cookies.</div></li>
-      <li><div><span class="mterm cr">Netiquette</span> &ndash; tamang asal online (magalang, iwas fake news, mag-isip bago mag-post).</div></li>
-      <li><div><span class="mterm cr">Proteksyon sa Datos</span> &ndash; malakas na password, 2FA (Two-Factor Authentication), pag-iingat sa sensitibong impormasyon.</div></li>
-      <li><div><span class="mterm cr">Pormal vs. Di-Pormal</span> &ndash; Pormal sa paaralan/opisina/talumpati; Di-pormal sa kaibigan/pamilya/chat.</div></li>
-      <li><div><span class="mterm cr">3 Layuning Panlipunan</span> &ndash; Inclusivity (Inklusibo), Equality (Pagkakapantay-pantay), Social Awareness (Kamalayang Panlipunan).</div></li>
-    </ul>
+    <div class="ctitle"><span class="cdot d-gd"></span>Ang Pagkakakilanlan sa Online na Mundo</div>
+    <p>Ang <strong>digital identity</strong> ay ang pagkakakilanlan ng isang tao sa internet o digital na mundo. Nabubuo ito mula sa impormasyong ibinabahagi natin online &mdash; pangalan, larawan, mga post, komento, at iba pang online na gawain. Ang ating digital identity ay maaaring makaapekto sa kung paano tayo nakikita ng ibang tao, kabilang ang mga guro, kaibigan, paaralan, at maging mga employer sa hinaharap.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn gd">Social Media Profile</div><div class="td">Personal na account kung saan makikita ang pangalan, larawan, interes, edukasyon, at mga post. Hal. Facebook, Instagram, TikTok, X (Twitter).</div></div>
+      <div class="ti"><div class="tn gd">Digital Footprint</div><div class="td">Bakas o rekord ng lahat ng ginagawa sa internet &mdash; posts, komento, likes, shares, at mga website na binibisita.</div></div>
+      <div class="ti"><div class="tn gd">Online Etiquette (Netiquette)</div><div class="td">Wastong asal at pag-uugali online: magalang na pananalita, igalang ang opinyon ng iba, iwasan ang cyberbullying, huwag magpakalat ng fake news.</div></div>
+      <div class="ti"><div class="tn gd">Privacy</div><div class="td">Karapatang panatilihing pribado at ligtas ang personal na impormasyon &mdash; tirahan, numero, password, email, larawan.</div></div>
+      <div class="ti"><div class="tn gd">Personal Data Protection</div><div class="td">Pangangalaga sa personal na impormasyon upang hindi ito magamit nang walang pahintulot.</div></div>
+    </div>
+    <table class="ct"><thead><tr><th>Uri ng Digital Footprint</th><th>Kahulugan</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Active Digital Footprint</strong></td><td>Mga impormasyong kusa nating ibinabahagi, tulad ng pagpo-post o pagko-komento.</td></tr>
+      <tr><td><strong>Passive Digital Footprint</strong></td><td>Mga impormasyong awtomatikong nakokolekta, tulad ng browsing history at cookies.</td></tr>
+    </tbody></table>
+    <div class="ex gd"><div class="exl gd">&#128204; Paraan ng Pagprotekta sa Personal na Datos</div>
+      <div class="exs">Gumamit ng <span class="hl hgd">malakas na password</span>; huwag ibahagi ang password; i-on ang <span class="hl hcy">two-factor authentication (2FA)</span>; <span class="hl hvi">limitahan ang impormasyon</span> sa social media; tiyaking <span class="hl hrs">mapagkakatiwalaan ang website</span>; at regular na suriin ang <span class="hl hgd">privacy settings</span>.</div></div>
   </div>
 
-  <!-- EXAM QUESTIONS ARALIN 3 -->
+  <div class="sh" id="a3wika"><div class="shl"></div><div class="shb s-gd">Mabisang Paggamit ng Wika</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-gd"></span>Pagsasaayos ng Wika sa Sitwasyon</div>
+    <p>Ang <strong>mabisang paggamit ng wika</strong> ay ang paggamit ng mga salita at estruktura ng pangungusap na malinaw, tama, angkop, at nauunawaan ng kausap o mambabasa. Nakabatay ito sa layunin ng komunikasyon, sitwasyon, at awdyens.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn gd">Angkop na Salita</div><div class="td">Paggamit ng mga salitang naaayon sa paksa, sitwasyon, layunin, at kausap.</div></div>
+      <div class="ti"><div class="tn gd">Pormal na Wika</div><div class="td">Ginagamit sa opisyal at seryosong sitwasyon &mdash; paaralan, opisina, talumpati, liham, pag-uulat.</div></div>
+      <div class="ti"><div class="tn gd">Impormal (Di-pormal) na Wika</div><div class="td">Ginagamit sa pang-araw-araw na pakikipag-usap sa pamilya at kaibigan, chat/text message, kaswal na usapan.</div></div>
+      <div class="ti"><div class="tn gd">Pagkilala sa Awdyens</div><div class="td">Isaalang-alang ang edad, antas ng kaalaman, katayuan o tungkulin, interes, at layunin ng komunikasyon.</div></div>
+    </div>
+    <div class="ex gd"><div class="exl gd">&#128204; Halimbawa &ndash; Angkop na Salita</div>
+      <div class="exp">Pakikipag-usap sa punong-guro:</div>
+      <div class="exs"><span class="hl hgd">&ldquo;Uy, pare, pirmahan mo nga ito.&rdquo;</span> &#8594; impormal at hindi angkop<br>
+      <span class="hl hvi">&ldquo;Magandang araw po. Maaari po bang pirmahan ninyo ang dokumentong ito?&rdquo;</span> &#8594; magalang at naaangkop</div></div>
+  </div>
+
+  <div class="sh" id="a3public"><div class="shl"></div><div class="shb s-gd">Public-Facing na Teksto</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-gd"></span>Mga Sulatin Para sa Publiko</div>
+    <p>Ang <strong>public-facing na teksto</strong> ay mga sulatin o mensaheng ginawa upang mabasa o makita ng publiko. Layunin nitong magbigay ng impormasyon, magpahayag ng opinyon, manghikayat, o magmulat ng kamalayan. Karaniwang inilalathala sa social media, blog sites, pahayagan, website, at iba pang online o print na plataporma.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn gd">Blog</div><div class="td">Impormal o pormal na sulatin tungkol sa isang partikular na paksa.</div></div>
+      <div class="ti"><div class="tn gd">Komentaryo</div><div class="td">Pahayag na nagbibigay ng sariling pananaw, pagsusuri, o opinyon sa isang isyu o pangyayari.</div></div>
+      <div class="ti"><div class="tn gd">Advocacy Post</div><div class="td">Mensahe na naghihikayat na suportahan o makiisa sa isang adbokasiya o layunin.</div></div>
+      <div class="ti"><div class="tn gd">Maikling Kolumn</div><div class="td">Maikling artikulo na nagpapahayag ng opinyon ng may-akda sa isang napapanahong isyu.</div></div>
+    </div>
+    <div class="ex gd"><div class="exl gd">&#128204; Mga Layunin ng Public-Facing na Teksto</div>
+      <div class="exs"><span class="hl hgd">Inclusivity</span> &ndash; pagbibigay ng pantay na paggalang, pagkakataon, at pagtanggap sa lahat ng tao (kasarian, edad, relihiyon, kultura, kakayahan, pinagmulan).<br>
+      <span class="hl hvi">Equality</span> &ndash; paniniwalang ang bawat tao ay may pantay na karapatan, pagkakataon, at pagtrato nang walang diskriminasyon.<br>
+      <span class="hl hcy">Social Awareness</span> &ndash; pagkilala at pag-unawa sa mga isyu ng lipunan at ang kahalagahan ng pakikilahok sa paghahanap ng solusyon.</div></div>
+    <div class="ex gd"><div class="exl gd">&#128204; Mahalagang Tandaan &middot; Public-Facing na Teksto</div>
+      <div class="exs">Dapat gumamit ng <span class="hl hgd">malinaw, responsable, at angkop na wika</span>; ang nilalaman ay dapat <span class="hl hvi">nakabatay sa katotohanan</span> at may paggalang sa iba; at maaari itong magsulong ng <span class="hl hcy">positibong pagbabago sa lipunan</span>.</div></div>
+  </div>
+
+  <div class="sh" id="a3mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Aralin 3</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mr">
+    <li><div><span class="mterm rs">Komunikasyon</span> &ndash; proseso ng pagpapadala, pagtanggap, at pagpapalitan ng impormasyon, ideya, damdamin, opinyon, at mensahe. Layunin: pagkakaunawaan at mabuting ugnayan.</div></li>
+    <li><div><span class="mterm rs">Mabisang Komunikasyon</span> &ndash; malinaw at maayos na pagpapahayag ng ideya sa anyong pasalita, pasulat, at multimodal para sa layon, awdyens, at konteksto.</div></li>
+    <li><div><span class="mterm rs">5 Elemento</span> &ndash; Tagapagpadala (Sender) &rarr; Mensahe (Message) &rarr; Daluyan (Channel) &rarr; Tagatanggap (Receiver) &rarr; Tugon (Feedback).</div></li>
+    <li><div><span class="mterm rs">Personal</span> &ndash; pakikipag-usap tungkol sa sariling karanasan at damdamin. <span class="mterm vi">Interpersonal</span> &ndash; pakikipagpalitan ng mensahe sa isa o higit pang tao.</div></li>
+    <li><div><span class="mterm rs">Pampubliko</span> &ndash; iisa ang tagapagsalita, marami ang tagapakinig.</div></li>
+    <li><div><span class="mterm rs">Intrapersonal</span> &ndash; pakikipag-usap sa sarili; hal. talaarawan, dyornal, repleksyon, goal setting.</div></li>
+    <li><div><span class="mterm gd">Digital Identity</span> &ndash; pagkakakilanlan ng isang tao sa internet na nabubuo mula sa impormasyong ibinabahagi online.</div></li>
+    <li><div><span class="mterm gd">Digital Footprint</span> &ndash; bakas ng lahat ng ginagawa online; Active (kusa) / Passive (awtomatiko).</div></li>
+    <li><div><span class="mterm gd">Netiquette</span> &ndash; magalang na pananalita, igalang ang opinyon, iwasan ang cyberbullying at fake news.</div></li>
+    <li><div><span class="mterm gd">Pormal vs Impormal</span> &ndash; pormal para sa opisyal na sitwasyon; impormal para sa kaibigan at kaswal na usapan.</div></li>
+    <li><div><span class="mterm gd">Public-Facing Teksto</span> &ndash; blog, komentaryo, advocacy post, maikling kolumn. Layunin: inclusivity, equality, social awareness.</div></li>
+  </ul></div>
+
   <div class="es" id="a3exam">
-    <div class="eh">
-      <div class="ebdg eb-cr">&#128221; Aralin 3 Pagsusulit</div>
-      <div class="etitle">Mga Posibleng Tanong sa Pagsusulit</div>
-      <div class="esub">Malinaw na Pagpapahayag, Digital Identity, at Netiquette</div>
-    </div>
-
-    <div class="qtt"><span class="qn qn-cr">A</span> Pagkilala (Identification) <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 8 aytem</span></div>
+    <div class="eh"><div class="ebdg eb-rs">&#128221; Aralin 3</div>
+    <div class="etitle">Possible Exam Questions</div>
+    <div class="esub">Konsepto ng Komunikasyon &amp; Digital Identity</div></div>
+    <div class="qtt"><span class="qn qn-rs">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
     <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Ang elemento ng komunikasyon na tumutukoy sa reaksyon o sagot ng tumanggap ng mensahe.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Anyo ng komunikasyon kung saan ang isang tao ay nakikipag-usap o nagninilay sa kaniyang sarili.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Ang bakas o rekord ng lahat ng ating ginagawa at binibisita sa internet.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Uri ng digital footprint na binubuo ng impormasyong awtomatikong nakokolekta tulad ng cookies at browsing history.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Ang tawag sa wastong asal, pag-uugali, at paggalang habang gumagamit ng internet.</span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">Isang paraan ng intrapersonal na komunikasyon na tumutukoy sa mas sistematikong pagsulat ng mga natutuhan at obserbasyon.</span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Ang pagbibigay ng pantay na paggalang at pagtanggap sa lahat anuman ang kanilang kasarian, edad, o kultura.</span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">Ang antas ng wika na ginagamit sa mga pormal na talumpati, opisyal na liham, at paaralan.</span></li>
+      <li class="qi"><span class="qin">1.</span><span class="qit">Ang nagpapadala ng mensahe.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Ang paraan ng pagpapadala ng mensahe (pasalita, pasulat, online).</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Uri ng komunikasyon kung saan nakikipag-usap ang isang tao sa kaniyang sarili.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Personal na talaan ng mga pang-araw-araw na pangyayari, karanasan, at damdamin.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Ang pagkakakilanlan ng isang tao sa internet o digital na mundo.</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">Bakas o rekord ng lahat ng ating ginagawa sa internet.</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">Wastong asal at pag-uugali habang gumagamit ng internet.</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Uri ng komunikasyon kung saan iisa ang tagapagsalita at marami ang tagapakinig.</span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">Ang karapatan ng isang tao na panatilihing pribado ang kaniyang personal na impormasyon.</span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">Sulatin o mensaheng ginawa upang mabasa o makita ng publiko.</span></li>
     </ul>
-
     <hr class="divr">
-
-    <div class="qtt"><span class="qn qn-cr">B</span> Maramihang Pagpipilian (Multiple Choice) <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 7 aytem</span></div>
+    <div class="qtt"><span class="qn qn-gd">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 8 items</span></div>
     <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Alin sa mga sumusunod ang halimbawa ng paglalahad ng obserbasyon?<ul class="mco"><li class="mci"><span class="mcl">A.</span>"Mali ang ginagawa ng grupo ninyo."</li><li class="mci"><span class="mcl">B.</span>"Napansin kong mas tahimik ang klase kaninang umaga."</li><li class="mci"><span class="mcl">C.</span>"Dapat tayong magtanim ng puno bukas."</li><li class="mci"><span class="mcl">D.</span>"Ano ang gagawin natin mamaya?"</li></ul></span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Ang pag-post ng video sa TikTok o larawan sa Instagram ay halimbawa ng:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Passive digital footprint</li><li class="mci"><span class="mcl">B.</span>Active digital footprint</li><li class="mci"><span class="mcl">C.</span>Two-factor authentication</li><li class="mci"><span class="mcl">D.</span>Intrapersonal na komunikasyon</li></ul></span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Alin ang nagpapakita ng tamang Netiquette?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Pagbabahagi agad ng balita kahit hindi sigurado kung totoo</li><li class="mci"><span class="mcl">B.</span>Pagbibigay ng sariling password sa kaibigan para may backup</li><li class="mci"><span class="mcl">C.</span>Pag-iisip nang mabuti bago mag-post at paggalang sa opinyon ng iba</li><li class="mci"><span class="mcl">D.</span>Paggamit ng all caps kapag nagagalit sa social media</li></ul></span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Kung kakausapin mo ang punong-guro upang humingi ng pirma, anong pahayag ang pinakaangkop?<ul class="mco"><li class="mci"><span class="mcl">A.</span>"Uy sir, pakipirmahan nga ito agad."</li><li class="mci"><span class="mcl">B.</span>"Magandang araw po. Maaari po bang mahingi ang inyong lagda rito?"</li><li class="mci"><span class="mcl">C.</span>"Sir, ito na yung papel."</li><li class="mci"><span class="mcl">D.</span>"Pakibilisan po at kailangan ko na."</li></ul></span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Ano ang pangunahing layunin ng intrapersonal na komunikasyon?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Mang-impluwensya ng ibang tao sa komunidad</li><li class="mci"><span class="mcl">B.</span>Higit na makilala ang sarili at makagawa ng matalinong desisyon</li><li class="mci"><span class="mcl">C.</span>Makakuha ng maraming followers sa social media</li><li class="mci"><span class="mcl">D.</span>Malaman ang passive data ng iba</li></ul></span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">Ang isang online post na humihikayat sa kabataan na protektahan ang kalikasan ay tinatawag na:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Advocacy Post</li><li class="mci"><span class="mcl">B.</span>Talaarawan</li><li class="mci"><span class="mcl">C.</span>Passive Cookies</li><li class="mci"><span class="mcl">D.</span>Interpersonal Feedback</li></ul></span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Bakit mahalagang isaalang-alang ang awdyens sa pagpapahayag?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Upang magmukhang mas magaling kaysa sa kanila</li><li class="mci"><span class="mcl">B.</span>Upang makapili ng angkop na tono, salita, at paraan ng komunikasyon</li><li class="mci"><span class="mcl">C.</span>Upang hindi na kailanganin ng feedback</li><li class="mci"><span class="mcl">D.</span>Upang maiwasan ang pormal na pagsasalita</li></ul></span></li>
+      <li class="qi"><span class="qin">1.</span><span class="qit">Ang proseso ng pagpapadala, pagtanggap, at pagpapalitan ng impormasyon, ideya, at damdamin ay tinatawag na:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Komunikasyon</li><li class="mci"><span class="mcl">B.</span> Edukasyon</li><li class="mci"><span class="mcl">C.</span> Pag-unawa</li><li class="mci"><span class="mcl">D.</span> Pagtatanong</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Ang Digital Footprint na awtomatikong nakokolekta habang gumagamit tayo ng internet ay tinatawag na:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Active</li><li class="mci"><span class="mcl">B.</span> Passive</li><li class="mci"><span class="mcl">C.</span> Social</li><li class="mci"><span class="mcl">D.</span> Private</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">&ldquo;Magandang araw po. Maaari po bang pirmahan ninyo ito?&rdquo; ay halimbawa ng:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Impormal na wika</li><li class="mci"><span class="mcl">B.</span> Pormal na wika</li><li class="mci"><span class="mcl">C.</span> Di-pormal na wika</li><li class="mci"><span class="mcl">D.</span> Public-facing text</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Saan galing ang mensaheng ito: &ldquo;Uy, pare, pirmahan mo nga ito.&rdquo;?<ul class="mco"><li class="mci"><span class="mcl">A.</span> Opisina</li><li class="mci"><span class="mcl">B.</span> Talumpati</li><li class="mci"><span class="mcl">C.</span> Kaswal na usapan</li><li class="mci"><span class="mcl">D.</span> Liham</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Ang malalim na pagninilay sa sariling karanasan, kilos, at desisyon ay tinatawag na:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Talaarawan</li><li class="mci"><span class="mcl">B.</span> Goal Setting</li><li class="mci"><span class="mcl">C.</span> Repleksyon</li><li class="mci"><span class="mcl">D.</span> Dyornal</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">Ang pagbibigay ng pantay na paggalang at pagtanggap sa lahat ng tao ay tinatawag na:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Equality</li><li class="mci"><span class="mcl">B.</span> Inclusivity</li><li class="mci"><span class="mcl">C.</span> Social Awareness</li><li class="mci"><span class="mcl">D.</span> Privacy</li></ul></span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">Alin sa mga sumusunod ang isang paraan ng pagprotekta sa personal na datos?<ul class="mco"><li class="mci"><span class="mcl">A.</span> Ibahagi ang password sa kaibigan</li><li class="mci"><span class="mcl">B.</span> I-on ang two-factor authentication</li><li class="mci"><span class="mcl">C.</span> Mag-post ng tirahan</li><li class="mci"><span class="mcl">D.</span> Iwasan ang privacy settings</li></ul></span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Ang pagpapahayag ng mensahe sa mas malaking pangkat ng mga tao ay tinatawag na:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Personal</li><li class="mci"><span class="mcl">B.</span> Interpersonal</li><li class="mci"><span class="mcl">C.</span> Intrapersonal</li><li class="mci"><span class="mcl">D.</span> Pampubliko</li></ul></span></li>
     </ul>
-
-    <hr class="divr">
-
-    <div class="qtt"><span class="qn qn-cr">C</span> Tama o Mali (True or False) <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 aytem</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Ang paglalahad ng obserbasyon ay dapat laging may kalakip na agarang paghuhusga o paninisi.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Ang 2FA (Two-factor authentication) ay karagdagang proteksyon upang hindi madaling mapasok ang online account.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Ang dyornal ay mas sistematiko kaysa sa simpleng talaarawan o diary.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Ligtas na ibahagi ang buong tirahan at numero ng telepono sa public profile sa social media.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Ang public-facing na teksto ay nililikha upang mabasa at maunawaan ng mas malawak na madla o publiko.</span></li>
-    </ul>
-
-    <!-- Answer Key Box -->
     <div class="ak">
-      <div class="akt">&#128273; Susi sa Pagwawasto (Answer Key) &ndash; Aralin 3</div>
-      <div class="aks"><div class="akst">A. Pagkilala (Identification)</div>
-        <div class="akg">
-          <div class="aki"><span class="akq">1.</span><span class="aka">Tugon (Feedback)</span></div>
-          <div class="aki"><span class="akq">2.</span><span class="aka">Intrapersonal na Komunikasyon</span></div>
-          <div class="aki"><span class="akq">3.</span><span class="aka">Digital Footprint</span></div>
-          <div class="aki"><span class="akq">4.</span><span class="aka">Passive Digital Footprint</span></div>
-          <div class="aki"><span class="akq">5.</span><span class="aka">Netiquette (Online Etiquette)</span></div>
-          <div class="aki"><span class="akq">6.</span><span class="aka">Dyornal (Journal)</span></div>
-          <div class="aki"><span class="akq">7.</span><span class="aka">Inclusivity (Pagiging Inklusibo)</span></div>
-          <div class="aki"><span class="akq">8.</span><span class="aka">Pormal na Wika</span></div>
-        </div>
-      </div>
-      <div class="aks"><div class="akst">B. Maramihang Pagpipilian</div>
-        <div class="akm">
-          <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div>
-          <div class="akmi"><span class="akq">2.</span><span class="aka">B</span></div>
-          <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div>
-          <div class="akmi"><span class="akq">4.</span><span class="aka">B</span></div>
-          <div class="akmi"><span class="akq">5.</span><span class="aka">B</span></div>
-          <div class="akmi"><span class="akq">6.</span><span class="aka">A</span></div>
-          <div class="akmi"><span class="akq">7.</span><span class="aka">B</span></div>
-        </div>
-      </div>
-      <div class="aks"><div class="akst">C. Tama o Mali</div>
-        <div class="akm">
-          <div class="akmi"><span class="akq">1.</span><span class="aka">Mali (hindi agad nagbibigay ng paghuhusga)</span></div>
-          <div class="akmi"><span class="akq">2.</span><span class="aka">Tama</span></div>
-          <div class="akmi"><span class="akq">3.</span><span class="aka">Tama</span></div>
-          <div class="akmi"><span class="akq">4.</span><span class="aka">Mali (dapat panatilihing pribado)</span></div>
-          <div class="akmi"><span class="akq">5.</span><span class="aka">Tama</span></div>
-        </div>
-      </div>
+      <div class="akt">&#128273; Answer Key &ndash; Aralin 3</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">Tagapagpadala (Sender)</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">Daluyan (Channel)</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">Intrapersonal</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Talaarawan (Diary)</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">Digital Identity</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">Digital Footprint</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">Netiquette / Online Etiquette</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">Pampubliko</span></div>
+        <div class="aki"><span class="akq">9.</span><span class="aka">Privacy</span></div>
+        <div class="aki"><span class="akq">10.</span><span class="aka">Public-Facing na Teksto</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">A</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">6.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">7.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">8.</span><span class="aka">D</span></div>
+      </div></div>
     </div>
   </div>
 </section>
 
-<!-- ========================================== ARALIN 4 ========================================== -->
-<section class="ls" id="aralin4">
+<!-- ==================== ARALIN 4 ==================== -->
+<section class="ws" id="a4">
   <div class="lh vi">
-    <div class="lnum vi">A4<br>MK</div>
+    <div class="lnum vi">4</div>
     <div class="lht">
       <div class="llbl vi">Aralin 4 &middot; Mabisang Komunikasyon</div>
-      <h2 class="ltitle">Pagninilay sa Proseso at Kamalayang Kultural</h2>
-      <p class="ldesc">Pagbibigay-kahulugan &middot; Pakikilahok &middot; Pagpapahayag &middot; Konteksto &middot; Kamalayang Kultural &middot; Sensibilidad</p>
+      <h2 class="ltitle">Pagninilay sa mga Proseso ng Komunikasyon</h2>
+      <p class="ldesc">Pagbibigay-kahulugan &middot; Pakikilahok &middot; Pagpapahayag &middot; Konteksto: Personal, Interpersonal, Sosyal, Kultural &middot; Kamalayang Kultural</p>
     </div>
   </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-vi">Mga Layunin sa Pagkatuto</div><div class="shl"></div></div>
+  <div class="sh"><div class="shl"></div><div class="shb s-vi">Komunikasyon Bilang Dinamikong Proseso</div><div class="shl"></div></div>
   <div class="card">
-    <ul>
-      <li>Maunawaan ang komunikasyon bilang isang <strong>dinamiko, tuloy-tuloy, at interaktibong proseso</strong>.</li>
-      <li>Masuri ang <strong>3 Mahahalagang Proseso</strong>: Pagbibigay-kahulugan, Pakikilahok, at Pagpapahayag.</li>
-      <li>Makilala ang papel ng <strong>Konteksto</strong> at <strong>Hadlang (Noise)</strong> sa komunikasyon.</li>
-      <li>Maipaliwanag ang <strong>4 na Konteksto ng Komunikasyon</strong> (Personal, Interpersonal, Sosyal, Kultural).</li>
-      <li>Magkaroon ng <strong>Kamalayang Kultural</strong> at <strong>Sensibilidad sa Komunikasyon</strong> upang maging magalang at epektibong tagapagsalita.</li>
-    </ul>
+    <div class="ctitle"><span class="cdot d-vi"></span>Higit pa sa Pagpapadala ng Impormasyon</div>
+    <p>Ang komunikasyon ay isang <strong>dinamiko, tuloy-tuloy, at interaktibong proseso</strong> ng pagpapalitan ng mensahe upang magkaroon ng pagkakaunawaan. Hindi lamang ito pagpapadala ng impormasyon kundi: <span class="hl hvi">pagbuo ng relasyon</span>, <span class="hl hcy">pagpapahayag ng damdamin</span>, <span class="hl hgd">pagbabahagi ng karanasan</span>, <span class="hl hrs">paglutas ng suliranin</span>, at <span class="hl hvi">paghubog ng pagkatao</span>.</p>
+    <div class="ex vi"><div class="exl vi">&#128204; Halimbawa</div>
+      <div class="exp">Nanay: &ldquo;Umuwi ka nang maaga.&rdquo;</div>
+      <div class="exs">Hindi lamang ito utos. Maaari rin itong mangahulugan ng: <span class="hl hvi">nag-aalala siya</span>; <span class="hl hcy">may mahalagang pag-uusapan</span>; o <span class="hl hgd">may okasyon sa bahay</span>.</div></div>
+    <table class="ct"><thead><tr><th>Palaging Kasama</th><th>Kahulugan</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Konteksto</strong></td><td>Lugar, oras, kultura, sitwasyon.</td></tr>
+      <tr><td><strong>Hadlang (Noise)</strong></td><td>Maingay, mahinang signal, maling interpretasyon, emosyon.</td></tr>
+    </tbody></table>
   </div>
 
-  <!-- Dinamikong Kalikasan ng Komunikasyon -->
-  <div class="sh"><div class="shl"></div><div class="shb s-vi">Ang Dinamikong Kalikasan ng Komunikasyon</div><div class="shl"></div></div>
+  <div class="sh"><div class="shl"></div><div class="shb s-vi">Tatlong Mahahalagang Proseso</div><div class="shl"></div></div>
   <div class="card">
-    <div class="ctitle"><span class="cdot d-vi"></span>Higit Pa sa Pagpapadala ng Impormasyon</div>
-    <p>Ang komunikasyon ay hindi simpleng palitan lamang ng impormasyon; ito ay isang <strong>dinamiko, tuloy-tuloy, at interaktibong proseso</strong> na:</p>
+    <div class="ctitle"><span class="cdot d-vi"></span>Pagbibigay-kahulugan &middot; Pakikilahok &middot; Pagpapahayag</div>
     <div class="tg">
-      <div class="ti"><div class="tn vi">1. Bumubuo ng Relasyon</div><div class="td">Nagpapatibay ng koneksyon, pagtitiwala, at samahan sa kapwa.</div></div>
-      <div class="ti"><div class="tn vi">2. Nagpapahayag ng Damdamin</div><div class="td">Nagpapakita ng pagmamahal, pag-aalala, tuwa, o lungkot.</div></div>
-      <div class="ti"><div class="tn vi">3. Nagbabahagi ng Karanasan</div><div class="td">Nagpapasa ng mahahalagang aral at kwento sa buhay.</div></div>
-      <div class="ti"><div class="tn vi">4. Lumulutas ng Suliranin</div><div class="td">Daan sa pagkakasundo at paghahanap ng tamang solusyon.</div></div>
-      <div class="ti"><div class="tn vi">5. Humuhubog ng Pagkatao</div><div class="td">Nakaaapekto sa ating pag-uugali, paninindigan, at pananaw sa mundo.</div></div>
+      <div class="ti"><div class="tn vi">1 &middot; Pagbibigay-kahulugan</div><div class="td">Pag-unawa at pagbibigay ng kahulugan sa mensaheng natanggap. Hindi lahat ng tao ay pareho ng interpretasyon &mdash; naaapektuhan ng karanasan, paniniwala, emosyon, kultura, at edukasyon.</div></div>
+      <div class="ti"><div class="tn vi">2 &middot; Pakikilahok</div><div class="td">Aktibong pakikinig at pakikiisa sa komunikasyon &mdash; pakikinig, pagtatanong, pagbibigay ng opinyon, at paggalang sa opinyon ng iba.</div></div>
+      <div class="ti"><div class="tn vi">3 &middot; Pagpapahayag</div><div class="td">Malinaw at angkop na pagbabahagi ng ideya, damdamin, saloobin, at impormasyon sa pamamagitan ng pagsasalita, pagsulat, kilos, ekspresyon ng mukha, at simbolo.</div></div>
     </div>
-    
-    <div class="ex vi" style="margin-top:16px;">
-      <div class="exl vi">&#128204; Halimbawa ng Lalim ng Mensahe</div>
-      <div class="exs">
-        Kapag sinabi ng Nanay: <em>"Umuwi ka nang maaga."</em> &mdash; Hindi lamang ito simpleng utos. Maaari rin itong mangahulugang <strong>nag-aalala siya sa iyong kaligtasan</strong>, may mahalagang pag-uusapan ang pamilya, o may espesyal na okasyon sa bahay.
-      </div>
-    </div>
+    <div class="ex vi"><div class="exl vi">&#128204; Halimbawa &ndash; Pagbibigay-kahulugan</div>
+      <div class="exp">Chat: &ldquo;Okay.&rdquo;</div>
+      <div class="exs">Maaaring ang ibig sabihin ay <span class="hl hvi">sang-ayon</span>, <span class="hl hrs">galit</span>, <span class="hl hgd">walang interes</span>, o <span class="hl hcy">pagod lamang</span>. Depende ito sa <strong>konteksto</strong>.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Halimbawa &ndash; Pakikilahok</div>
+      <div class="exp">Sa klase: hindi sapat na nakikinig lamang.</div>
+      <div class="exs">Mas mahusay ang komunikasyon kapag <span class="hl hcy">nagtatanong</span>, <span class="hl hvi">nagbibigay ng ideya</span>, at <span class="hl hgd">nakikipagtalakayan</span>.</div></div>
   </div>
 
-  <!-- Konteksto at Hadlang (Noise) -->
-  <div class="sh"><div class="shl"></div><div class="shb s-am">Konteksto at Hadlang (Noise) sa Komunikasyon</div><div class="shl"></div></div>
+  <div class="sh" id="a4konteksto"><div class="shl"></div><div class="shb s-vi">Konteksto ng Komunikasyon</div><div class="shl"></div></div>
   <div class="card">
-    <div class="tg">
-      <div class="ti">
-        <div class="tn am">&#127757; Konteksto</div>
-        <div class="td">Ang sitwasyon, lugar, oras, okasyon, at kulturang nakapaloob sa pag-uusap. Binabago ng konteksto ang kahulugan ng bawat sinasabi.</div>
-      </div>
-      <div class="ti">
-        <div class="tn am">&#9888; Hadlang (Noise)</div>
-        <div class="td">Mga salik na nakagagambala sa malinaw na paghahatid ng mensahe. Halimbawa: maingay na paligid, mahinang signal, labis na emosyon (galit/takot), o maling interpretasyon ng mga salita.</div>
-      </div>
-    </div>
+    <div class="ctitle"><span class="cdot d-vi"></span>Apat na Konteksto</div>
+    <table class="ct"><thead><tr><th>Konteksto</th><th>Kahulugan</th><th>Halimbawa</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Personal</strong></td><td>Pakikipag-usap sa sarili.</td><td>&ldquo;Natatakot akong magsalita sa harap.&rdquo;</td></tr>
+      <tr><td><strong>Interpersonal</strong></td><td>Pakikipag-usap sa ibang tao.</td><td>Pakikipag-usap sa kaibigan.</td></tr>
+      <tr><td><strong>Sosyal</strong></td><td>Komunikasyon sa pangkat o komunidad.</td><td>Pagbibigay ng opinyon sa klase.</td></tr>
+      <tr><td><strong>Kultural</strong></td><td>Komunikasyong isinasaalang-alang ang kultura at paniniwala.</td><td>Paggalang sa paniniwala ng ibang tao.</td></tr>
+    </tbody></table>
   </div>
 
-  <!-- Tatlong Mahahalagang Proseso -->
-  <div class="sh" id="a4proseso"><div class="shl"></div><div class="shb s-vi">3 Mahahalagang Proseso ng Komunikasyon</div><div class="shl"></div></div>
   <div class="card">
-    <div class="tg">
-      <div class="ti">
-        <div class="tn vi">1. Pagbibigay-kahulugan (Decoding / Interpretation)</div>
-        <div class="td">
-          Ito ang proseso ng pag-unawa at pagbibigay ng kahulugan sa mensaheng natanggap. <strong>Hindi lahat ng tao ay pareho ng interpretasyon.</strong><br>
-          <em>Mga Salik na Nakaaapekto:</em> Karanasan, paniniwala, emosyon, kultura, at edukasyon.<br>
-          <em>Halimbawa:</em> Ang chat na <code>"Okay."</code> ay maaaring mangahulugang sang-ayon, galit, walang interes, o sadyang pagod lamang depende sa konteksto.
-        </div>
-      </div>
-      <div class="ti">
-        <div class="tn vi">2. Pakikilahok (Active Participation)</div>
-        <div class="td">
-          Ang pakikilahok ay hindi lamang basta pagsasalita; ito ay <strong>aktibong pakikinig at pakikiisa</strong> sa komunikasyon.<br>
-          <em>Gawain:</em> Pakikinig nang buong atensyon, pagtatanong para sa linaw, pagbibigay ng ideya, at paggalang sa opinyon ng iba.<br>
-          <em>Halimbawa sa Klase:</em> Mas mabisa ang pagkatuto kung aktibong nagtatanong at nakikipagtalakayan kaysa sa nakikinig lamang.
-        </div>
-      </div>
-      <div class="ti">
-        <div class="tn vi">3. Pagpapahayag (Expression)</div>
-        <div class="td">
-          Ang malinaw at angkop na pagbabahagi ng ideya, damdamin, saloobin, at impormasyon.<br>
-          <em>Mga Paraan:</em> Pagsasalita, pagsulat, kilos/galaw ng katawan, ekspresyon ng mukha, at mga simbolo.
-        </div>
-      </div>
-    </div>
+    <div class="ctitle"><span class="cdot d-vi"></span>Kamalayang Kultural</div>
+    <p>Ang <strong>kamalayang kultural</strong> ay pag-unawa na magkakaiba ang <span class="hl hvi">paniniwala</span>, <span class="hl hgd">tradisyon</span>, <span class="hl hcy">wika</span>, <span class="hl hrs">pagpapahalaga</span>, at <span class="hl hvi">paraan ng pakikipag-usap</span> ng mga tao.</p>
+    <div class="ex vi"><div class="exl vi">&#128204; Halimbawa &ndash; Po at Opo</div>
+      <div class="exs">Sa Pilipinas, normal ang paggamit ng <span class="hl hgd">&ldquo;po&rdquo; at &ldquo;opo&rdquo;</span>. Sa ibang bansa, hindi ito ginagamit ngunit hindi nangangahulugang <span class="hl hvi">bastos</span> sila.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Sensibilidad sa Komunikasyon</div>
+      <div class="exp">Ang kakayahang isipin ang mararamdaman ng kausap bago magsalita.</div>
+      <div class="exs">Sa halip na sabihin: <span class="hl hrs">&ldquo;Mali ka.&rdquo;</span><br>
+      Mas sensitibong pahayag: <span class="hl hvi">&ldquo;Mayroon akong ibang pananaw.&rdquo;</span></div></div>
   </div>
 
-  <!-- Apat na Konteksto -->
-  <div class="sh" id="a4konteksto"><div class="shl"></div><div class="shb s-cy">Apat (4) na Konteksto ng Komunikasyon</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="tg">
-      <div class="ti">
-        <div class="tn cy">1. Personal (Intrapersonal)</div>
-        <div class="td">Pakikipag-usap sa sarili; pagninilay at pagsusuri sa sariling damdamin.<br><em>Hal:</em> "Natatakot akong magsalita sa harap."</div>
-      </div>
-      <div class="ti">
-        <div class="tn cy">2. Interpersonal</div>
-        <div class="td">Pakikipagpalitan ng mensahe sa isa o higit pang tao.<br><em>Hal:</em> Masinsinang pakikipag-usap sa isang matalik na kaibigan.</div>
-      </div>
-      <div class="ti">
-        <div class="tn cy">3. Sosyal</div>
-        <div class="td">Komunikasyon sa loob ng isang pangkat, organisasyon, o komunidad.<br><em>Hal:</em> Pagbabahagi ng opinyon sa talakayan ng buong klase o barangay meeting.</div>
-      </div>
-      <div class="ti">
-        <div class="tn cy">4. Kultural</div>
-        <div class="td">Komunikasyong isinasaalang-alang ang kultura, tradisyon, at mga kaugalian ng kinabibilangang pangkat o lahi.<br><em>Hal:</em> Paggalang sa paniniwala at relihiyon ng ibang tao.</div>
-      </div>
-    </div>
-  </div>
+  <div class="sh" id="a4mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Aralin 4</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mv">
+    <li><div><span class="mterm vi">Komunikasyon</span> &ndash; dinamiko, tuloy-tuloy, at interaktibong proseso ng pagpapalitan ng mensahe para sa pagkakaunawaan.</div></li>
+    <li><div><span class="mterm vi">Konteksto</span> &ndash; lugar, oras, kultura, sitwasyon. <span class="mterm gd">Hadlang (Noise)</span> &ndash; maingay, mahinang signal, maling interpretasyon, emosyon.</div></li>
+    <li><div><span class="mterm vi">Pagbibigay-kahulugan</span> &ndash; pag-unawa sa mensahe; naiimpluwensiyahan ng karanasan, paniniwala, emosyon, kultura, edukasyon.</div></li>
+    <li><div><span class="mterm vi">Pakikilahok</span> &ndash; aktibong pakikinig, pagtatanong, pagbibigay ng opinyon, at paggalang sa opinyon ng iba.</div></li>
+    <li><div><span class="mterm vi">Pagpapahayag</span> &ndash; malinaw at angkop na pagbabahagi ng ideya at damdamin (pasalita, pasulat, kilos, mukha, simbolo).</div></li>
+    <li><div><span class="mterm vi">Personal na Konteksto</span> &ndash; pakikipag-usap sa sarili &middot; <span class="mterm gd">Interpersonal</span> &ndash; pakikipag-usap sa ibang tao.</div></li>
+    <li><div><span class="mterm vi">Sosyal</span> &ndash; komunikasyon sa pangkat o komunidad &middot; <span class="mterm gd">Kultural</span> &ndash; isinasaalang-alang ang kultura at paniniwala.</div></li>
+    <li><div><span class="mterm vi">Kamalayang Kultural</span> &ndash; pag-unawa na magkakaiba ang paniniwala, tradisyon, wika, pagpapahalaga, at paraan ng pakikipag-usap.</div></li>
+    <li><div><span class="mterm vi">Sensibilidad</span> &ndash; kakayahang isipin ang mararamdaman ng kausap bago magsalita. Hal: &ldquo;Mayroon akong ibang pananaw&rdquo; sa halip na &ldquo;Mali ka.&rdquo;</div></li>
+  </ul></div>
 
-  <!-- Kamalayang Kultural at Sensibilidad -->
-  <div class="sh" id="a4kultura"><div class="shl"></div><div class="shb s-gr">Kamalayang Kultural at Sensibilidad sa Komunikasyon</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-cr"></span>Pagiging Maunawain at Sensitibong Tagapagsalita</div>
-    
-    <div class="tg">
-      <div class="ti">
-        <div class="tn gr">Kamalayang Kultural (Cultural Awareness)</div>
-        <div class="td">
-          Pag-unawa na magkakaiba ang paniniwala, tradisyon, wika, pagpapahalaga, at paraan ng pakikipag-usap ng mga tao.<br>
-          <em>Halimbawa:</em> Sa Pilipinas, normal ang paggamit ng <strong>"po" at "opo"</strong> bilang paggalang. Sa ibang bansa, hindi ito ginagamit ngunit hindi ito nangangahulugang bastos sila.
-        </div>
-      </div>
-      <div class="ti">
-        <div class="tn gr">Sensibilidad sa Komunikasyon (Sensitivity)</div>
-        <div class="td">
-          Ang kakayahang <strong>isipin muna ang mararamdaman ng kausap</strong> bago magsalita upang hindi makasakit o makainsulto.<br>
-          <em>Halimbawa:</em> Sa halip na sabihing <em>"Mali ka!"</em>, mas sensitibong sabihin: <strong>"Mayroon akong ibang pananaw ukol diyan."</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MUST MEMORIZE ARALIN 4 -->
-  <div class="sh" id="a4mem"><div class="shl"></div><div class="shb s-vi">Must Memorize &middot; Aralin 4</div><div class="shl"></div></div>
-  <div class="card">
-    <ul class="ml mvi">
-      <li><div><span class="mterm vi">Dinamikong Komunikasyon</span> &ndash; tuloy-tuloy at interaktibo; bumubuo ng relasyon, nagpapahayag ng damdamin, lumulutas ng suliranin.</div></li>
-      <li><div><span class="mterm vi">Konteksto</span> &ndash; lugar, oras, sitwasyon, at kultura kung saan nagaganap ang usapan.</div></li>
-      <li><div><span class="mterm vi">Hadlang (Noise)</span> &ndash; ingay, mahinang signal, emosyon, o maling interpretasyon na nakasasagabal.</div></li>
-      <li><div><span class="mterm vi">3 Proseso</span> &ndash; 1. Pagbibigay-kahulugan (Decoding), 2. Pakikilahok (Participation), 3. Pagpapahayag (Expression).</div></li>
-      <li><div><span class="mterm vi">Pagbibigay-kahulugan</span> &ndash; apektado ng sariling karanasan, kultura, emosyon, at edukasyon.</div></li>
-      <li><div><span class="mterm vi">Pakikilahok</span> &ndash; hindi lang pagsasalita kundi aktibong pakikinig at pakikiisa sa talakayan.</div></li>
-      <li><div><span class="mterm vi">4 na Konteksto</span> &ndash; Personal (sa sarili), Interpersonal (sa kapwa), Sosyal (sa pangkat), Kultural (paniniwala/tradisyon).</div></li>
-      <li><div><span class="mterm vi">Kamalayang Kultural</span> &ndash; pag-unawa sa pagkakaiba-iba ng kultura at kaugalian (hal. "po" at "opo").</div></li>
-      <li><div><span class="mterm vi">Sensibilidad sa Komunikasyon</span> &ndash; pag-iisip sa damdamin ng kausap bago magsalita (hal. "Mayroon akong ibang pananaw").</div></li>
-    </ul>
-  </div>
-
-  <!-- EXAM QUESTIONS ARALIN 4 -->
   <div class="es" id="a4exam">
-    <div class="eh">
-      <div class="ebdg eb-vi">&#128221; Aralin 4 Pagsusulit</div>
-      <div class="etitle">Mga Posibleng Tanong sa Pagsusulit</div>
-      <div class="esub">Proseso, Konteksto, at Kamalayang Kultural</div>
-    </div>
-
-    <div class="qtt"><span class="qn qn-vi">A</span> Pagkilala (Identification) <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 8 aytem</span></div>
+    <div class="eh"><div class="ebdg eb-vi">&#128221; Aralin 4</div>
+    <div class="etitle">Possible Exam Questions</div>
+    <div class="esub">Pagninilay sa mga Proseso ng Komunikasyon</div></div>
+    <div class="qtt"><span class="qn qn-vi">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 8 items</span></div>
     <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Ang proseso ng pag-unawa at pagbibigay ng sariling kahulugan o interpretasyon sa mensaheng natanggap.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Ang elemento o salik na tumutukoy sa lugar, oras, kultura, at sitwasyon kung kailan at saan nagaganap ang komunikasyon.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Ang tawag sa anumang sagabal o hadlang sa malinaw na komunikasyon tulad ng ingay o mahinang signal.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Ang kakayahang isaalang-alang at isipin ang maaaring maramdaman ng kausap bago magbitiw ng salita.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Ang konteksto ng komunikasyon na nagaganap sa loob ng isang komunidad, klase, o pangkat.</span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">Ang proseso ng komunikasyon na kinabibilangan ng aktibong pakikinig, pagtatanong, at pakikiisa sa talakayan.</span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Ang pagkilala at paggalang na ang bawat grupo o lahi ay may kani-kaniyang paniniwala, wika, at tradisyon.</span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">Ang anyo ng pagpapahayag gamit ang kilos, kumpas, o galaw ng katawan sa halip na salita.</span></li>
+      <li class="qi"><span class="qin">1.</span><span class="qit">Ang proseso ng pag-unawa at pagbibigay ng kahulugan sa mensaheng natanggap.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Aktibong pakikinig at pakikiisa sa komunikasyon.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Malinaw at angkop na pagbabahagi ng ideya, damdamin, at impormasyon.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Ang salik na tumutukoy sa lugar, oras, kultura, at sitwasyon ng komunikasyon.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Hadlang sa komunikasyon tulad ng maingay, mahinang signal, o maling interpretasyon.</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">Komunikasyong isinasaalang-alang ang kultura at paniniwala ng mga tao.</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">Pag-unawa na magkakaiba ang paniniwala, tradisyon, wika, at pagpapahalaga ng mga tao.</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Kakayahang isipin ang mararamdaman ng kausap bago magsalita.</span></li>
     </ul>
-
     <hr class="divr">
-
-    <div class="qtt"><span class="qn qn-vi">B</span> Maramihang Pagpipilian (Multiple Choice) <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 7 aytem</span></div>
+    <div class="qtt"><span class="qn qn-gd">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 6 items</span></div>
     <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Bakit maaaring magkaiba ang pagbibigay-kahulugan ng dalawang tao sa iisang mensaheng "Okay"?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Dahil magkaiba sila ng karanasan, emosyon, at konteksto</li><li class="mci"><span class="mcl">B.</span>Dahil mali palagi ang nagpapadala ng mensahe</li><li class="mci"><span class="mcl">C.</span>Dahil hindi gumamit ng pormal na wika</li><li class="mci"><span class="mcl">D.</span>Dahil walang feedback na naganap</li></ul></span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Alin sa mga sumusunod ang halimbawa ng komunikasyong kultural?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Pagsulat sa sariling diary bago matulog</li><li class="mci"><span class="mcl">B.</span>Paggamit ng "po" at "opo" sa matatanda sa kulturang Pilipino</li><li class="mci"><span class="mcl">C.</span>Pag-ayos ng signal ng router upang hindi maantala ang klase</li><li class="mci"><span class="mcl">D.</span>Pagkalkula ng mechanical advantage sa Science</li></ul></span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Paano maipakikita ang sensibilidad sa komunikasyon kapag hindi ka sang-ayon sa kaklase?<ul class="mco"><li class="mci"><span class="mcl">A.</span>"Maling-mali ang sinasabi mo."</li><li class="mci"><span class="mcl">B.</span>"Huwag ka nang magsalita ulit."</li><li class="mci"><span class="mcl">C.</span>"Maganda ang iyong punto, subalit mayroon akong ibang pananaw ukol dito."</li><li class="mci"><span class="mcl">D.</span>"Wala kang alam sa paksa natin."</li></ul></span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Ang pakikilahok (participation) ay nangangahulugang:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Dapat ikaw lamang ang nagsasalita sa buong talakayan</li><li class="mci"><span class="mcl">B.</span>Aktibong nakikinig, nagtatanong, at nagbibigay ng maayos na reaksyon</li><li class="mci"><span class="mcl">C.</span>Tahimik na pag-upo nang walang anumang tugon</li><li class="mci"><span class="mcl">D.</span>Panghihimasok sa pribadong usapan ng iba</li></ul></span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Alin ang maituturing na "Hadlang o Noise" sa komunikasyon?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Matinding galit na nagdudulot ng padalos-dalos na pananalita</li><li class="mci"><span class="mcl">B.</span>Maingay na tunog ng sasakyan sa tabi ng kalsada</li><li class="mci"><span class="mcl">C.</span>Mahinang koneksyon sa internet habang may online meeting</li><li class="mci"><span class="mcl">D.</span>Lahat ng nabanggit</li></ul></span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">Nagsabi ang nanay sa anak: "Mag-ingat ka sa daan." Anong layunin ang ipinahihiwatig nito?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Pagpapakita ng pag-aalala at pagmamahal</li><li class="mci"><span class="mcl">B.</span>Panghuhusga sa kakayahan ng anak</li><li class="mci"><span class="mcl">C.</span>Pormal na utos mula sa awtoridad</li><li class="mci"><span class="mcl">D.</span>Pakikipag-usap sa sarili</li></ul></span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Bakit mahalagang malaman na hindi lahat ng bansa ay gumagamit ng "po" at "opo"?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Upang hindi natin husgahan agad na bastos ang mga banyaga</li><li class="mci"><span class="mcl">B.</span>Upang itigil na rin natin ang paggamit nito sa Pilipinas</li><li class="mci"><span class="mcl">C.</span>Upang pilitin silang magsalita ng Tagalog</li><li class="mci"><span class="mcl">D.</span>Upang mawala ang kultura ng paggalang</li></ul></span></li>
+      <li class="qi"><span class="qin">1.</span><span class="qit">Pakikipag-usap sa kaibigan ay halimbawa ng anong konteksto?<ul class="mco"><li class="mci"><span class="mcl">A.</span> Personal</li><li class="mci"><span class="mcl">B.</span> Interpersonal</li><li class="mci"><span class="mcl">C.</span> Sosyal</li><li class="mci"><span class="mcl">D.</span> Kultural</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">&ldquo;Natatakot akong magsalita sa harap.&rdquo; Ito ay halimbawa ng anong konteksto?<ul class="mco"><li class="mci"><span class="mcl">A.</span> Personal</li><li class="mci"><span class="mcl">B.</span> Interpersonal</li><li class="mci"><span class="mcl">C.</span> Sosyal</li><li class="mci"><span class="mcl">D.</span> Kultural</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Pagbibigay ng opinyon sa klase ay halimbawa ng anong konteksto?<ul class="mco"><li class="mci"><span class="mcl">A.</span> Personal</li><li class="mci"><span class="mcl">B.</span> Interpersonal</li><li class="mci"><span class="mcl">C.</span> Sosyal</li><li class="mci"><span class="mcl">D.</span> Kultural</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Ang &ldquo;Okay.&rdquo; sa chat ay maaaring mangahulugan ng sang-ayon, galit, o pagod. Ito ay nagpapakita ng kahalagahan ng:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Pagpapahayag</li><li class="mci"><span class="mcl">B.</span> Konteksto</li><li class="mci"><span class="mcl">C.</span> Hadlang</li><li class="mci"><span class="mcl">D.</span> Netiquette</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Masan mas sensitibong pahayag sa halip na &ldquo;Mali ka.&rdquo;?<ul class="mco"><li class="mci"><span class="mcl">A.</span> &ldquo;Wala kang alam.&rdquo;</li><li class="mci"><span class="mcl">B.</span> &ldquo;Mayroon akong ibang pananaw.&rdquo;</li><li class="mci"><span class="mcl">C.</span> &ldquo;Mali talaga.&rdquo;</li><li class="mci"><span class="mcl">D.</span> &ldquo;Tama lang ako.&rdquo;</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">Ang paggalang sa paniniwala ng ibang tao ay halimbawa ng:<ul class="mco"><li class="mci"><span class="mcl">A.</span> Personal na komunikasyon</li><li class="mci"><span class="mcl">B.</span> Intrapersonal na komunikasyon</li><li class="mci"><span class="mcl">C.</span> Kultural na komunikasyon</li><li class="mci"><span class="mcl">D.</span> Digital na komunikasyon</li></ul></span></li>
     </ul>
-
-    <hr class="divr">
-
-    <div class="qtt"><span class="qn qn-vi">C</span> Tama o Mali (True or False) <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 aytem</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Ang komunikasyon ay isang beses lamang nagaganap at hindi na kailanman nagiging dinamiko.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Ang kultura at karanasan ng isang tao ay may malaking impluwensya sa kung paano niya bibigyang-kahulugan ang mensahe.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Ang pakikilahok ay limitado lamang sa pagsasalita at hindi kasama ang pakikinig.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Ang konteksto tulad ng lugar at sitwasyon ay maaaring magpabago sa tunay na ibig sabihin ng isang pahayag.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Ang pagiging sensitibo sa komunikasyon ay nagdudulot ng mas payapa at maayos na ugnayan sa kapwa.</span></li>
-    </ul>
-
-    <!-- Answer Key Box -->
     <div class="ak">
-      <div class="akt">&#128273; Susi sa Pagwawasto (Answer Key) &ndash; Aralin 4</div>
-      <div class="aks"><div class="akst">A. Pagkilala (Identification)</div>
-        <div class="akg">
-          <div class="aki"><span class="akq">1.</span><span class="aka">Pagbibigay-kahulugan (Decoding)</span></div>
-          <div class="aki"><span class="akq">2.</span><span class="aka">Konteksto (Context)</span></div>
-          <div class="aki"><span class="akq">3.</span><span class="aka">Hadlang (Noise)</span></div>
-          <div class="aki"><span class="akq">4.</span><span class="aka">Sensibilidad sa Komunikasyon</span></div>
-          <div class="aki"><span class="akq">5.</span><span class="aka">Sosyal na Konteksto</span></div>
-          <div class="aki"><span class="akq">6.</span><span class="aka">Pakikilahok (Participation)</span></div>
-          <div class="aki"><span class="akq">7.</span><span class="aka">Kamalayang Kultural</span></div>
-          <div class="aki"><span class="akq">8.</span><span class="aka">Di-berbal / Kilos at Galaw</span></div>
-        </div>
-      </div>
-      <div class="aks"><div class="akst">B. Maramihang Pagpipilian</div>
-        <div class="akm">
-          <div class="akmi"><span class="akq">1.</span><span class="aka">A</span></div>
-          <div class="akmi"><span class="akq">2.</span><span class="aka">B</span></div>
-          <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div>
-          <div class="akmi"><span class="akq">4.</span><span class="aka">B</span></div>
-          <div class="akmi"><span class="akq">5.</span><span class="aka">D</span></div>
-          <div class="akmi"><span class="akq">6.</span><span class="aka">A</span></div>
-          <div class="akmi"><span class="akq">7.</span><span class="aka">A</span></div>
-        </div>
-      </div>
-      <div class="aks"><div class="akst">C. Tama o Mali</div>
-        <div class="akm">
-          <div class="akmi"><span class="akq">1.</span><span class="aka">Mali (ito ay tuloy-tuloy at dinamiko)</span></div>
-          <div class="akmi"><span class="akq">2.</span><span class="aka">Tama</span></div>
-          <div class="akmi"><span class="akq">3.</span><span class="aka">Mali (kasama ang aktibong pakikinig)</span></div>
-          <div class="akmi"><span class="akq">4.</span><span class="aka">Tama</span></div>
-          <div class="akmi"><span class="akq">5.</span><span class="aka">Tama</span></div>
-        </div>
-      </div>
+      <div class="akt">&#128273; Answer Key &ndash; Aralin 4</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">Pagbibigay-kahulugan</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">Pakikilahok</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">Pagpapahayag</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Konteksto</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">Hadlang (Noise)</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">Kultural</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">Kamalayang Kultural</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">Sensibilidad</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">A</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">6.</span><span class="aka">C</span></div>
+      </div></div>
     </div>
   </div>
 </section>
 
-<!-- ========================================== PINAL NA BUOD ========================================== -->
 <section class="fr" id="final">
-  <div class="frb">&#9889; Pangkalahatang Gabay</div>
-  <h2 class="frt">Ang Susi sa Mabisang Komunikasyon</h2>
+  <div class="frb">&#9889; One-Minute Final Review</div>
+  <div class="frt">Mabisang Komunikasyon &middot; Aralin 3 &amp; 4</div>
   <p class="frtx">
-    Ang mabisang komunikasyon ay hindi lamang pagsasalita o pagpapadala ng impormasyon &mdash; ito ay ang sining ng pagkakaunawaan, paggalang sa kultura at damdamin ng iba, pagiging responsable sa digital na mundo, at malalim na pagkilala sa sarili.
+    <strong>Aralin 3:</strong> Ang komunikasyon ay ang proseso ng pagpapadala, pagtanggap, at pagpapalitan ng mensahe &mdash; mayroon itong limang elemento (tsaga: Sender, Message, Channel, Receiver, Feedback) at iba&rsquo;t ibang uri (personal, interpersonal, pampubliko, intrapersonal). Alamin ang tinatalakay tungkol sa Digital Identity: protektahan ang iyong digital footprint at personal na datos. Gumamit ng wastong wika at maging responsable sa public-facing na teksto.<br><br>
+    <strong>Aralin 4:</strong> Ang komunikasyon ay dinamiko, tuloy-tuloy, at interaktibo. Tandaan ang tatlong proseso &mdash; pagbibigay-kahulugan, pakikilahok, at pagpapahayag. Isaalang-alang ang konteksto (personal, interpersonal, sosyal, kultural), ang kamalayang kultural, at ang sensibilidad sa pakikipag-usap. Hindi lang kung ano ang sinabi, kundi kung paano ito naintindihan.
   </p>
   <div class="fps">
     <div class="fp">
       <div class="fpi">&#128172;</div>
-      <div class="fptitle">Malinaw na Layunin</div>
-      <div class="fptx">Alamin kung bakit ka nakikipag-usap at iangkop ang tono at salita sa iyong awdyens.</div>
+      <div class="fptitle" style="color:var(--rose)">Aralin 3 &middot; Pangunahing Tandaan</div>
+      <div class="fptx">
+        Sender &rarr; Message &rarr; Channel &rarr; Receiver &rarr; Feedback<br>
+        Personal &middot; Interpersonal &middot; Pampubliko &middot; Intrapersonal<br>
+        Digital Identity &rarr; protektahan ang datos<br>
+        Pormal vs Impormal na wika<br>
+        Public text: blog, komentaryo, advocacy, kolumn
+      </div>
     </div>
     <div class="fp">
-      <div class="fpi">&#128737;</div>
-      <div class="fptitle">Ligtas na Digital Identity</div>
-      <div class="fptx">Alagaan ang privacy, gumamit ng 2FA, at sundin ang wastong Netiquette sa lahat ng oras.</div>
+      <div class="fpi">&#128161;</div>
+      <div class="fptitle" style="color:var(--violet)">Aralin 4 &middot; Pangunahing Tandaan</div>
+      <div class="fptx">
+        3 Proseso: Pagbibigay-kahulugan, Pakikilahok, Pagpapahayag<br>
+        Konteksto: lugar, oras, kultura, sitwasyon<br>
+        Hadlang (Noise): maingay, signal, interpretasyon<br>
+        Apat na konteksto: personal, interpersonal, sosyal, kultural<br>
+        Kamalayang Kultural + Sensibilidad
+      </div>
     </div>
     <div class="fp">
-      <div class="fpi">&#129309;</div>
-      <div class="fptitle">Sensibilidad at Paggalang</div>
-      <div class="fptx">Isaalang-alang ang damdamin ng kausap at igalang ang pagkakaiba-iba ng kultura at tradisyon.</div>
+      <div class="fpi">&#127919;</div>
+      <div class="fptitle" style="color:var(--gold)">Study Tips</div>
+      <div class="fptx">
+        Ulitin nang malakas ang mga depinisyon<br>
+        Gumawa ng sariling halimbawa ng bawat uri ng komunikasyon<br>
+        I-review ang mga &ldquo;Mahalagang Tandaan&rdquo;<br>
+        Sagutan muna ang exam questions bago tingnan ang answer key
+      </div>
     </div>
   </div>
 </section>
