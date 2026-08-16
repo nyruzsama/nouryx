@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>MUJIB Study Hub &middot; Detailed &amp; Summary Summative Reviewer</title>
-  <meta name="description" content="All-in-One Comprehensive Summative Exam Reviewer with Detailed Long-form and Summary Short-form modes for Mabisang Komunikasyon, General Science, General Mathematics, and Finite Mathematics 1."/>
+  <title>MUJIB Study Hub &middot; Summative Reviewer &amp; Interactive Lesson Quizzes</title>
+  <meta name="description" content="All-in-One Comprehensive Summative Exam Reviewer with Short Summary and Long Detailed modes, sample visual diagrams, and multiple-choice quizzes after every lesson."/>
   
-  <!-- Google Fonts -->
+  <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
@@ -16,14 +16,14 @@
 
   <style>
 /* ==========================================================================
-   LIGHT MODERN THEME & DESIGN TOKENS
+   LIGHT MODERN THEME & TOKENS
    ========================================================================== */
 :root {
   --font-display: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Crisp Light Theme */
+  /* Crisp Light Colors */
   --bg: #f8fafc;
   --bg-surface: #ffffff;
   --bg-subtle: #f1f5f9;
@@ -31,10 +31,9 @@
   --border: #e2e8f0;
   --border-focus: #cbd5e1;
 
-  --t1: #0f172a;       /* Primary text */
-  --t2: #334155;       /* Secondary body text */
-  --t3: #64748b;       /* Muted text */
-  --t-light: #94a3b8;
+  --t1: #0f172a;       /* Primary dark */
+  --t2: #334155;       /* Secondary body */
+  --t3: #64748b;       /* Muted */
 
   /* Subject Accent Colors */
   --mk-color: #e11d48;
@@ -60,8 +59,10 @@
   /* Functional Colors */
   --success: #10b981;
   --success-bg: #ecfdf5;
+  --success-border: #a7f3d0;
   --error: #ef4444;
   --error-bg: #fef2f2;
+  --error-border: #fecaca;
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -70,7 +71,7 @@
 
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.03);
   --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.09);
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
@@ -109,7 +110,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -154,9 +155,7 @@ body {
   letter-spacing: -0.02em;
   color: var(--t1);
 }
-.brand-text span {
-  color: #2563eb;
-}
+.brand-text span { color: #2563eb; }
 
 .top-center-mode {
   display: flex;
@@ -216,6 +215,34 @@ body {
   color: var(--t1);
 }
 
+/* Desktop Channels */
+.desktop-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 860px) {
+  .desktop-pills { display: none; }
+}
+
+.dpill {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12.5px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--t3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dpill:hover { color: var(--t1); background: var(--bg-subtle); }
+.dpill.active-hub { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+.dpill.active-mk { background: #fff1f2; color: #e11d48; border-color: #fecdd3; }
+.dpill.active-gs { background: #f0fdfa; color: #0d9488; border-color: #99f6e4; }
+.dpill.active-gm { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+.dpill.active-fn { background: #fffbeb; color: #d97706; border-color: #fde68a; }
+
 /* ==========================================================================
    MOBILE BOTTOM NAVIGATION
    ========================================================================== */
@@ -264,34 +291,6 @@ body {
 .mob-tab.active-tab.tab-gm { color: #2563eb; }
 .mob-tab.active-tab.tab-fn { color: #d97706; }
 
-/* Desktop Channel Tabs */
-.desktop-pills {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-@media (max-width: 860px) {
-  .desktop-pills { display: none; }
-}
-
-.dpill {
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-size: 12.5px;
-  font-weight: 700;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--t3);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.dpill:hover { color: var(--t1); background: var(--bg-subtle); }
-.dpill.active-hub { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
-.dpill.active-mk { background: #fff1f2; color: #e11d48; border-color: #fecdd3; }
-.dpill.active-gs { background: #f0fdfa; color: #0d9488; border-color: #99f6e4; }
-.dpill.active-gm { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
-.dpill.active-fn { background: #fffbeb; color: #d97706; border-color: #fde68a; }
-
 /* ==========================================================================
    VIEW SWITCHING & MODE LOGIC
    ========================================================================== */
@@ -307,7 +306,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Visibility based on Mode */
+/* Mode content toggling */
 body.mode-is-summary .mode-detailed-content { display: none !important; }
 body.mode-is-summary .mode-summary-content { display: block !important; }
 
@@ -315,7 +314,7 @@ body.mode-is-detailed .mode-summary-content { display: none !important; }
 body.mode-is-detailed .mode-detailed-content { display: block !important; }
 
 /* ==========================================================================
-   LANDING PAGE HERO & MODE SELECTION
+   LANDING PAGE (WITH 2 CHOICES)
    ========================================================================== */
 .hero {
   padding: 40px 20px 30px;
@@ -359,15 +358,15 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
 .hero-subtitle {
   font-size: clamp(14px, 2.5vw, 16px);
   color: var(--t2);
-  max-width: 620px;
+  max-width: 640px;
   margin: 0 auto 24px;
   line-height: 1.6;
 }
 
-/* Landing Page Mode Choice Cards */
+/* Landing Page 2 Choices */
 .mode-choice-container {
-  max-width: 740px;
-  margin: 0 auto 30px;
+  max-width: 760px;
+  margin: 0 auto 26px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
@@ -428,7 +427,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   line-height: 1.45;
 }
 
-/* Subject Grid */
+/* Topics Grid */
 .landing-grid-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -688,7 +687,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   color: var(--t1);
 }
 
-/* Keyword Concept Grid */
+/* Concept Grid */
 .concept-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -810,34 +809,63 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   gap: 6px;
 }
 
-/* QUIZ ACTION BUTTON AT END OF LESSON */
-.quiz-cta-box {
-  margin-top: 20px;
-  padding: 16px;
+/* ==========================================================================
+   DEDICATED QUIZ BUTTON CATEGORY AFTER EVERY LESSON
+   ========================================================================== */
+.quiz-category-box {
+  margin-top: 22px;
+  padding: 16px 18px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #eff6ff, #f8fafc);
-  border: 1px solid #bfdbfe;
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
+  transition: all 0.2s;
 }
-.quiz-cta-info h4 {
+.quiz-category-box:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.quiz-cat-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.quiz-cat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: #eff6ff;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+.quiz-cat-title {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 800;
   color: var(--t1);
 }
-.quiz-cta-info p { font-size: 12.5px; color: var(--t3); }
+.quiz-cat-sub {
+  font-size: 12px;
+  color: var(--t3);
+}
 
 .btn-start-quiz {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: var(--radius-full);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 800;
   color: #ffffff;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
@@ -845,10 +873,11 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   transition: all 0.2s;
+  white-space: nowrap;
 }
 .btn-start-quiz:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
 }
 .btn-start-quiz.mk { background: var(--mk-grad); box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3); }
 .btn-start-quiz.gs { background: var(--gs-grad); box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3); }
@@ -856,7 +885,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
 .btn-start-quiz.fn { background: var(--fn-grad); box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); }
 
 /* ==========================================================================
-   INTERACTIVE QUIZ MODAL
+   INTERACTIVE QUIZ MODAL (ONE QUESTION AT A TIME)
    ========================================================================== */
 .quiz-modal-backdrop {
   position: fixed;
@@ -971,6 +1000,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 100%;
 }
 .quiz-opt-btn:hover:not(:disabled) {
   border-color: #94a3b8;
@@ -1016,6 +1046,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   75% { transform: translateX(4px); }
 }
 
+/* Feedback Box */
 .quiz-feedback-box {
   display: none;
   padding: 12px 16px;
@@ -1028,13 +1059,22 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   display: block;
   background: var(--success-bg);
   color: #065f46;
-  border: 1px solid #a7f3d0;
+  border: 1px solid var(--success-border);
 }
 .quiz-feedback-box.wrong-fb {
   display: block;
   background: var(--error-bg);
   color: #b91c1c;
-  border: 1px solid #fecaca;
+  border: 1px solid var(--error-border);
+}
+.wrong-tag {
+  display: inline-block;
+  background: #fee2e2;
+  color: #ef4444;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 900;
+  margin-right: 4px;
 }
 
 .quiz-modal-footer {
@@ -1044,6 +1084,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 10px;
 }
 
 .btn-quiz-next {
@@ -1059,17 +1100,6 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
 }
 .btn-quiz-next.show { display: inline-flex; align-items: center; gap: 6px; }
 
-/* Finished View */
-.quiz-finished-view { text-align: center; padding: 30px 10px; }
-.quiz-finished-emoji { font-size: 48px; margin-bottom: 12px; }
-.quiz-finished-score {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--t1);
-  margin-bottom: 6px;
-}
-.quiz-finished-msg { font-size: 14px; color: var(--t2); margin-bottom: 24px; }
 .btn-continue-topic {
   display: inline-flex;
   align-items: center;
@@ -1089,6 +1119,18 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
 }
+
+/* Finished View */
+.quiz-finished-view { text-align: center; padding: 30px 10px; }
+.quiz-finished-emoji { font-size: 48px; margin-bottom: 12px; }
+.quiz-finished-score {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--t1);
+  margin-bottom: 6px;
+}
+.quiz-finished-msg { font-size: 14px; color: var(--t2); margin-bottom: 24px; }
 
 /* ==========================================================================
    SEARCH MODAL
@@ -1215,7 +1257,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
       <div class="hero-pill">&#10024; Summative Reviewer Portal</div>
       <h1 class="hero-title">Master Your <span class="grad-text">Summatives</span></h1>
       <p class="hero-subtitle">
-        Choose your preferred study depth below, then pick a subject channel to start reviewing.
+        Choose your preferred study depth below, then tap a subject to start reviewing with interactive quizzes after every lesson.
       </p>
 
       <!-- The Two Reviewer Choices (Detailed vs. Summary) -->
@@ -1267,7 +1309,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
           </div>
           <div class="card-bottom">
             <span class="btn-open-channel">Buksan ang Channel &#8594;</span>
-            <span style="font-size:12px;color:var(--t3);font-weight:600;">2 Quizzes Available</span>
+            <span style="font-size:12px;color:var(--t3);font-weight:600;">5 Quizzes Available</span>
           </div>
         </div>
 
@@ -1291,7 +1333,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
           </div>
           <div class="card-bottom">
             <span class="btn-open-channel">Open Science Channel &#8594;</span>
-            <span style="font-size:12px;color:var(--t3);font-weight:600;">2 Quizzes Available</span>
+            <span style="font-size:12px;color:var(--t3);font-weight:600;">5 Quizzes Available</span>
           </div>
         </div>
 
@@ -1315,7 +1357,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
           </div>
           <div class="card-bottom">
             <span class="btn-open-channel">Open Math Channel &#8594;</span>
-            <span style="font-size:12px;color:var(--t3);font-weight:600;">2 Quizzes Available</span>
+            <span style="font-size:12px;color:var(--t3);font-weight:600;">4 Quizzes Available</span>
           </div>
         </div>
 
@@ -1339,7 +1381,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
           </div>
           <div class="card-bottom">
             <span class="btn-open-channel">Open Finite Channel &#8594;</span>
-            <span style="font-size:12px;color:var(--t3);font-weight:600;">2 Quizzes Available</span>
+            <span style="font-size:12px;color:var(--t3);font-weight:600;">4 Quizzes Available</span>
           </div>
         </div>
       </div>
@@ -1369,14 +1411,13 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> 5 Elemento ng Komunikasyon &amp; Netiquette Safety Guide</div>
       </div>
 
-      <!-- LESSON 1 -->
-      <section class="lesson-card" id="lesson-mk-a3">
+      <!-- MK LESSON 1 -->
+      <section class="lesson-card" id="lesson-mk-elem">
         <div class="lesson-head">
-          <div class="lesson-num mk">A3</div>
-          <div class="lesson-title">Aralin 3: Malinaw na Pagpapahayag at Digital Identity</div>
+          <div class="lesson-num mk">1</div>
+          <div class="lesson-title">Aralin 3: 5 Elemento ng Komunikasyon</div>
         </div>
 
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
             <div class="concept-item"><div class="c-keyword mk">Tagapagpadala (Sender)</div><div class="c-meaning">Pinagmumulan ng mensahe o impormasyon.</div></div>
@@ -1384,130 +1425,199 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
             <div class="concept-item"><div class="c-keyword mk">Daluyan (Channel)</div><div class="c-meaning">Paraan ng pagpapadala (pasalita, pasulat, online/chat).</div></div>
             <div class="concept-item"><div class="c-keyword mk">Tagatanggap (Receiver)</div><div class="c-meaning">Tumatanggap at nag-iinterpret sa mensahe.</div></div>
             <div class="concept-item"><div class="c-keyword mk">Tugon (Feedback)</div><div class="c-meaning">Sagot o reaksyon upang matiyak ang pagkakaunawaan.</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Intrapersonal</div><div class="c-meaning">Talaarawan (Diary), Dyornal (sistematiko), Repleksyon, Goal Setting.</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Active Footprint</div><div class="c-meaning">Kusang ibinabahagi online (post, photos, comments).</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Passive Footprint</div><div class="c-meaning">Awtomatikong nakokolekta (cookies, browsing history).</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Netiquette</div><div class="c-meaning">Wastong asal online: magalang, iwas fake news, mag-isip bago mag-post.</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Public-Facing</div><div class="c-meaning">Blog, Komentaryo, Advocacy &rarr; Inclusivity, Equality, Social Awareness.</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Kahulugan at Elemento ng Komunikasyon</h4>
-            <p class="det-p">
-              Ang <strong>komunikasyon</strong> ay ang proseso ng pagpapadala, pagtanggap, at pagpapalitan ng impormasyon, ideya, damdamin, opinyon, at mensahe sa pagitan ng dalawa o higit pang tao upang magkaroon ng pagkakaunawaan at mabuting ugnayan.
-            </p>
+            <p class="det-p">Ang <strong>komunikasyon</strong> ay ang proseso ng pagpapadala, pagtanggap, at pagpapalitan ng impormasyon, ideya, at damdamin sa pagitan ng dalawa o higit pang tao upang magkaroon ng pagkakaunawaan.</p>
             <ul class="det-list">
-              <li><strong>Tagapagpadala (Sender):</strong> Ang nagpapadala at pinagmumulan ng mensahe.</li>
-              <li><strong>Mensahe (Message):</strong> Ang impormasyon, kaisipan, o damdaming nais iparating.</li>
-              <li><strong>Daluyan (Channel):</strong> Ang paraan o midyum ng pagpapadala (pasalita, pasulat, online/chat).</li>
-              <li><strong>Tagatanggap (Receiver):</strong> Ang tumatanggap at nagpoproseso sa mensahe.</li>
-              <li><strong>Tugon (Feedback):</strong> Ang sagot o reaksyon ng tagatanggap na nagpapatunay kung naunawaan ang mensahe.</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. Anyo ng Personal at Interpersonal na Pagpapahayag</h4>
-            <ul class="det-list">
-              <li><strong>Pagtatanong:</strong> Paraan ng pagkuha ng impormasyon o paghingi ng linaw (hal. <em>"Ano po ang takdang-aralin?"</em>).</li>
-              <li><strong>Pagkukuwento:</strong> Pagsasalaysay ng karanasan upang magbahagi ng impormasyon o magbigay-aliw.</li>
-              <li><strong>Paglalahad ng Obserbasyon:</strong> Pagbibigay ng impormasyon batay sa nakita o narinig <strong>nang hindi agad nagbibigay ng sariling paghuhusga</strong>.</li>
-              <li><strong>Pagpapahayag ng Opinyon:</strong> Pagbibigay ng sariling pananaw nang may paggalang at batayan.</li>
-            </ul>
-
-            <h4 class="det-subtitle">3. Intrapersonal na Komunikasyon</h4>
-            <p class="det-p">Pakikipag-usap sa sarili upang mas makilala ang sarili at makagawa ng matalinong desisyon:</p>
-            <ul class="det-list">
-              <li><strong>Talaarawan (Diary):</strong> Personal na talaan ng mga pang-araw-araw na karanasan at damdamin.</li>
-              <li><strong>Dyornal (Journal):</strong> Mas sistematikong pagsulat ng mga natutuhan, obserbasyon, at pagninilay.</li>
-              <li><strong>Repleksyon (Reflection):</strong> Malalim na pagninilay sa sariling kilos at desisyon.</li>
-              <li><strong>Goal Setting:</strong> Pagtatakda ng malinaw na layunin sa hinaharap.</li>
-            </ul>
-
-            <h4 class="det-subtitle">4. Digital Identity, Netiquette at Proteksyon sa Datos</h4>
-            <div class="det-example-box mk">
-              <strong>Active Footprint:</strong> Kusang ipinost (status, videos, comments).<br>
-              <strong>Passive Footprint:</strong> Awtomatikong nakolekta ng web browsers (cookies, history, IP location).<br>
-              <strong>Netiquette:</strong> Mag-isip bago mag-post, iwas cyberbullying, gumamit ng 2FA (Two-Factor Authentication) at malakas na password.
-            </div>
-
-            <h4 class="det-subtitle">5. Public-Facing Texts at Layuning Panlipunan</h4>
-            <p class="det-p">Mga tekstong para sa madla (Blog, Komentaryo, Advocacy Post, Maikling Kolumn) na nagtataguyod ng:</p>
-            <ul class="det-list">
-              <li><strong>Inclusivity:</strong> Pantay na paggalang at pagtanggap sa lahat anuman ang kasarian, edad, o kultura.</li>
-              <li><strong>Equality:</strong> Pantay na karapatan at pagtrato nang walang diskriminasyon.</li>
-              <li><strong>Social Awareness:</strong> Pagkilala at paglahok sa paghahanap ng solusyon sa mga isyung panlipunan.</li>
+              <li><strong>Tagapagpadala (Sender):</strong> Ang taong may layuning magbahagi ng kaisipan o impormasyon.</li>
+              <li><strong>Mensahe (Message):</strong> Ang mismong nilalaman ng komunikasyon &mdash; maaaring pormal, impormal, pasulat, o pasalita.</li>
+              <li><strong>Daluyan (Channel):</strong> Ang daluyan o teknolohiyang ginagamit tulad ng bibig (pasalita), papel (liham), o internet (chat/video).</li>
+              <li><strong>Tagatanggap (Receiver):</strong> Ang nagdedekowd at umiintindi sa mensahe.</li>
+              <li><strong>Tugon (Feedback):</strong> Ang pagtugon na nagpapatunay kung naging matagumpay ang komunikasyon.</li>
             </ul>
           </div>
         </div>
 
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Aralin 3?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: 5 Elemento ng Komunikasyon</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-a3')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-elem')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
 
-      <!-- LESSON 2 -->
-      <section class="lesson-card" id="lesson-mk-a4">
+      <!-- MK LESSON 2 -->
+      <section class="lesson-card" id="lesson-mk-intra">
         <div class="lesson-head">
-          <div class="lesson-num mk">A4</div>
-          <div class="lesson-title">Aralin 4: Proseso at Kamalayang Kultural</div>
+          <div class="lesson-num mk">2</div>
+          <div class="lesson-title">Aralin 3: Intrapersonal na Komunikasyon</div>
         </div>
 
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword mk">Dinamikong Proseso</div><div class="c-meaning">Tuloy-tuloy at interaktibo; bumubuo ng relasyon at lumulutas ng suliranin.</div></div>
-            <div class="concept-item"><div class="c-keyword mk">3 Proseso</div><div class="c-meaning">1. Pagbibigay-kahulugan (Decoding), 2. Pakikilahok (Participation), 3. Pagpapahayag.</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Konteksto at Noise</div><div class="c-meaning">Lugar, oras, sitwasyon; Hadlang (Noise) = ingay, mahinang signal, emosyon.</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Kamalayang Kultural</div><div class="c-meaning">Pag-unawa sa tradisyon (hal. paggamit ng "po" at "opo").</div></div>
-            <div class="concept-item"><div class="c-keyword mk">Sensibilidad</div><div class="c-meaning">Pag-iisip sa damdamin ng kausap (<em>"Mayroon akong ibang pananaw"</em>).</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Intrapersonal</div><div class="c-meaning">Pakikipag-usap sa sarili para sa self-awareness at pagpapasya.</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Talaarawan (Diary)</div><div class="c-meaning">Personal na talaan ng pang-araw-araw na damdamin at karanasan.</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Dyornal (Journal)</div><div class="c-meaning">Sistematikong talaan ng mga aral, obserbasyon, at pagninilay.</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Goal Setting</div><div class="c-meaning">Pagtatakda ng malinaw na mithiin sa hinaharap.</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Ang Dinamikong Kalikasan ng Komunikasyon</h4>
-            <p class="det-p">
-              Ang komunikasyon ay hindi lamang simpleng pagpapalitan ng impormasyon. Ito ay dinamiko, tuloy-tuloy, at interaktibo kung saan nabubuo ang relasyon, naipapahayag ang damdamin, at nalulutas ang mga suliranin.
-            </p>
-            <div class="det-example-box mk">
-              <strong>Halimbawa ng Lalim ng Mensahe:</strong> Kapag sinabi ng Nanay <em>"Umuwi ka nang maaga"</em>, hindi lamang ito utos &mdash; nagpapakita ito ng kaniyang pag-aalala sa iyong kaligtasan.
-            </div>
-
-            <h4 class="det-subtitle">2. Tatlong Mahahalagang Proseso</h4>
+            <p class="det-p">Ang <strong>Intrapersonal na Komunikasyon</strong> ay ang panloob na pakikipag-usap sa sarili. Mahalaga ito upang:</p>
             <ul class="det-list">
-              <li><strong>1. Pagbibigay-kahulugan (Decoding):</strong> Pag-unawa sa mensahe batay sa sariling karanasan, emosyon, at kultura. Halimbawa, ang chat na <code>"Okay."</code> ay maaaring mangahulugang sang-ayon, galit, o pagod depende sa konteksto.</li>
-              <li><strong>2. Pakikilahok (Active Participation):</strong> Hindi lamang pagsasalita, kundi aktibong pakikinig, pagtatanong, at pakikiisa sa talakayan.</li>
-              <li><strong>3. Pagpapahayag (Expression):</strong> Malinaw na pagbabahagi gamit ang salita, kilos, at ekspresyon ng mukha.</li>
+              <li>Makilala ang sariling kalakasan, kahinaan, at emosyon.</li>
+              <li>Makatulong sa matalinong pagpapasya bago magsalita o kumilos.</li>
+              <li><strong>Talaarawan (Diary):</strong> Talaan ng mga pang-araw-araw na nangyari at nilalaman ng puso.</li>
+              <li><strong>Dyornal (Journal):</strong> Mas malalim na pagsusuri sa natutuhan at pagninilay sa sariling pag-unlad.</li>
+              <li><strong>Repleksyon at Goal Setting:</strong> Pagtatasa sa sariling kilos at paglalatag ng plano para sa kinabukasan.</li>
             </ul>
-
-            <h4 class="det-subtitle">3. Apat na Konteksto ng Komunikasyon</h4>
-            <ul class="det-list">
-              <li><strong>Personal (Intrapersonal):</strong> Pakikipag-usap sa sarili.</li>
-              <li><strong>Interpersonal:</strong> Pakikipag-usap sa kapwa o kaibigan.</li>
-              <li><strong>Sosyal:</strong> Komunikasyon sa loob ng pangkat o komunidad.</li>
-              <li><strong>Kultural:</strong> Isinasaalang-alang ang kultura at paniniwala.</li>
-            </ul>
-
-            <h4 class="det-subtitle">4. Kamalayang Kultural at Sensibilidad</h4>
-            <p class="det-p">
-              <strong>Kamalayang Kultural:</strong> Pag-unawa na magkakaiba ang kaugalian ng mga tao (hal. ang "po" at "opo" sa Pilipinas).<br>
-              <strong>Sensibilidad sa Komunikasyon:</strong> Pag-iisip muna bago magsalita upang hindi makasakit (hal. sa halip na <em>"Mali ka!"</em>, sabihing <em>"Mayroon akong ibang pananaw ukol diyan"</em>).
-            </p>
           </div>
         </div>
 
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Aralin 4?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Intrapersonal na Komunikasyon</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-a4')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-intra')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- MK LESSON 3 -->
+      <section class="lesson-card" id="lesson-mk-digital">
+        <div class="lesson-head">
+          <div class="lesson-num mk">3</div>
+          <div class="lesson-title">Aralin 3: Digital Identity, Footprint at Netiquette</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword mk">Active Footprint</div><div class="c-meaning">Kusang ibinabahagi online (post, photos, comments, status).</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Passive Footprint</div><div class="c-meaning">Awtomatikong nakokolekta (cookies, IP address, browsing history).</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Netiquette</div><div class="c-meaning">Wastong asal online: magalang, iwas fake news, mag-isip bago mag-post.</div></div>
+            <div class="concept-item"><div class="c-keyword mk">2FA Security</div><div class="c-meaning">Two-Factor Authentication para sa proteksyon ng personal na datos.</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <h4 class="det-subtitle">Digital Identity &amp; Online Safety</h4>
+            <p class="det-p">Ang bawat kilos natin sa internet ay lumilikha ng <strong>Digital Footprint</strong> na maaaring maging permanente.</p>
+            <div class="det-example-box mk">
+              <strong>Active Footprint:</strong> Mga bagay na kusang-loob nating inilalathala (posts, pictures, vlogs).<br>
+              <strong>Passive Footprint:</strong> Datos na tahimik na naitatala ng servers (searches, device location, cookies).<br>
+              <strong>Netiquette:</strong> Tamang pag-uugali &mdash; paggalang sa kapwa, pag-iwas sa cyberbullying, pagberipika ng balita bago i-share, at paggamit ng Two-Factor Authentication (2FA).
+            </div>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Digital Identity &amp; Netiquette</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-digital')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- MK LESSON 4 -->
+      <section class="lesson-card" id="lesson-mk-proseso">
+        <div class="lesson-head">
+          <div class="lesson-num mk">4</div>
+          <div class="lesson-title">Aralin 4: 3 Proseso ng Komunikasyon</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword mk">1. Pagbibigay-kahulugan</div><div class="c-meaning">Decoding batay sa sariling karanasan, kultura, at damdamin.</div></div>
+            <div class="concept-item"><div class="c-keyword mk">2. Pakikilahok</div><div class="c-meaning">Aktibong pakikinig, pagtatanong, at pakikiisa sa talakayan.</div></div>
+            <div class="concept-item"><div class="c-keyword mk">3. Pagpapahayag</div><div class="c-meaning">Paggamit ng salita, kilos, at simbolo upang maipahayag ang sarili.</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p">Ang komunikasyon ay dinamiko at binubuo ng tatlong magkakaugnay na proseso:</p>
+            <ul class="det-list">
+              <li><strong>1. Pagbibigay-kahulugan (Decoding):</strong> Ang pag-unawa sa kahulugan ng mensahe. Ang salitang <code>"Sige"</code> ay maaaring magbago ang ibig sabihin depende sa tono at sitwasyon.</li>
+              <li><strong>2. Pakikilahok (Participation):</strong> Ang hindi lamang pananahimik kundi aktibong pagbibigay ng atensyon at bukas na kaisipan.</li>
+              <li><strong>3. Pagpapahayag (Expression):</strong> Ang paggamit ng angkop na wika at body language upang malinaw na maiparating ang kaisipan.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: 3 Proseso ng Komunikasyon</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-proseso')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- MK LESSON 5 -->
+      <section class="lesson-card" id="lesson-mk-kultural">
+        <div class="lesson-head">
+          <div class="lesson-num mk">5</div>
+          <div class="lesson-title">Aralin 4: Kamalayang Kultural at Sensibilidad</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword mk">Kamalayang Kultural</div><div class="c-meaning">Pag-unawa sa tradisyon ng iba (hal. paggamit ng "po" at "opo").</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Sensibilidad</div><div class="c-meaning">Pag-iisip sa damdamin ng kausap (<em>"Mayroon akong ibang pananaw"</em>).</div></div>
+            <div class="concept-item"><div class="c-keyword mk">Hadlang (Noise)</div><div class="c-meaning">Ingay sa paligid, mahinang signal, at matinding galit/emosyon.</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p"><strong>Kamalayang Kultural:</strong> Ang bawat kultura ay may sariling pamantayan sa komunikasyon. Ang pag-alam dito ay nag-iiwas sa hindi pagkakaunawaan.</p>
+            <p class="det-p"><strong>Sensibilidad sa Komunikasyon:</strong> Ang pagpili ng mga salitang magalang at hindi mapanghusga kahit may pagkakaiba sa pananaw.</p>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Kamalayang Kultural at Sensibilidad</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz mk" onclick="startLessonQuiz('mk-kultural')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
     </main>
@@ -1536,140 +1646,203 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> The 6 Simple Machines &amp; Force Trade-offs</div>
       </div>
 
-      <!-- LESSON 1 -->
-      <section class="lesson-card" id="lesson-gs-w5simple">
+      <!-- GS LESSON 1 -->
+      <section class="lesson-card" id="lesson-gs-levers">
         <div class="lesson-head">
-          <div class="lesson-num gs">W5</div>
-          <div class="lesson-title">Week 5: Simple Machines &amp; Mechanical Advantage</div>
+          <div class="lesson-num gs">1</div>
+          <div class="lesson-title">Week 5: Simple Machines &amp; Lever Classes</div>
         </div>
 
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gs">Work Conservation</div><div class="c-meaning">W = F x d. Simple machines do <strong>NOT reduce total work</strong>; they reduce effort force by increasing distance.</div></div>
-            <div class="concept-item"><div class="c-keyword gs">1st Class Lever</div><div class="c-meaning"><strong>Fulcrum middle</strong> (Seesaw, crowbar, scissors). Redirects &amp; multiplies force.</div></div>
-            <div class="concept-item"><div class="c-keyword gs">2nd Class Lever</div><div class="c-meaning"><strong>Load middle</strong> (Wheelbarrow, nutcracker). Always <strong>MA &gt; 1</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gs">3rd Class Lever</div><div class="c-meaning"><strong>Effort middle</strong> (Tweezers, fishing rod, broom). <strong>MA &lt; 1</strong> (multiplies speed).</div></div>
-            <div class="concept-item"><div class="c-keyword gs">Pulleys</div><div class="c-meaning"><strong>Fixed:</strong> MA=1. <strong>Movable:</strong> MA=2. <strong>Block &amp; Tackle:</strong> MA = number of supporting rope segments.</div></div>
-            <div class="concept-item"><div class="c-keyword gs">Inclined Plane</div><div class="c-meaning">IMA = Length / Height. Wedge &amp; Screw are derived from inclined planes.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Work (W = F x d)</div><div class="c-meaning">Machines do <strong>NOT reduce work</strong>; they reduce effort force by increasing distance.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">1st Class Lever</div><div class="c-meaning"><strong>Fulcrum in middle</strong> (Seesaw, crowbar, scissors). Redirects &amp; multiplies force.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">2nd Class Lever</div><div class="c-meaning"><strong>Load in middle</strong> (Wheelbarrow, nutcracker). Always <strong>MA &gt; 1</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">3rd Class Lever</div><div class="c-meaning"><strong>Effort in middle</strong> (Tweezers, fishing rod, broom). <strong>MA &lt; 1</strong> (multiplies speed).</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Principles of Simple Machines &amp; Work</h4>
-            <p class="det-p">
-              A <strong>simple machine</strong> changes the direction or magnitude of a force. It makes work easier by decreasing the effort force needed &mdash; but it <strong>never reduces the total work done</strong> (\(W = F 	imes d\)). Less force requires moving over a greater distance.
-            </p>
-            <ul class="det-list">
-              <li><strong>Mechanical Advantage (MA):</strong> \(MA = rac{	ext{Load Force}}{	ext{Effort Force}}\). If \(MA > 1\), it multiplies force. If \(MA < 1\), it multiplies speed.</li>
-              <li><strong>IMA (Ideal):</strong> Calculated from distances assuming zero friction: \(IMA = rac{d_{	ext{effort}}}{d_{	ext{load}}}\).</li>
-              <li><strong>AMA (Actual):</strong> Calculated from real measured forces with friction: \(AMA = rac{F_{	ext{load}}}{F_{	ext{effort}}}\).</li>
-              <li><strong>Efficiency:</strong> \(	ext{Efficiency} = \left(rac{AMA}{IMA}ight) 	imes 100\%\) (always \(< 100\%\) in real machines).</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. The Three Classes of Levers</h4>
+            <h4 class="det-subtitle">Lever Classes &amp; The F-L-E Rule</h4>
             <div class="det-example-box gs">
-              <strong>1st Class (Fulcrum in the Middle):</strong> Effort &mdash; Fulcrum &mdash; Load. Ex: Seesaw, scissors, crowbar, pliers.<br>
-              <strong>2nd Class (Load in the Middle):</strong> Fulcrum &mdash; Load &mdash; Effort. Always \(MA > 1\). Ex: Wheelbarrow, nutcracker, bottle opener.<br>
-              <strong>3rd Class (Effort in the Middle):</strong> Fulcrum &mdash; Effort &mdash; Load. \(MA < 1\); multiplies speed &amp; range. Ex: Tweezers, fishing rod, baseball bat, broom.
+              <strong>1st Class (Fulcrum in Middle):</strong> Effort &mdash; Fulcrum &mdash; Load (Seesaw, pliers, crowbar).<br>
+              <strong>2nd Class (Load in Middle):</strong> Fulcrum &mdash; Load &mdash; Effort (Wheelbarrow, nutcracker, bottle opener). Always MA &gt; 1.<br>
+              <strong>3rd Class (Effort in Middle):</strong> Fulcrum &mdash; Effort &mdash; Load (Tweezers, broom, fishing rod, tongs). Multiplies speed (MA &lt; 1).
             </div>
-
-            <h4 class="det-subtitle">3. Wheel and Axle, Pulleys, and Inclined Planes</h4>
-            <ul class="det-list">
-              <li><strong>Wheel and Axle:</strong> Two concentric circular objects. \(IMA = rac{R_{	ext{wheel}}}{R_{	ext{axle}}}\) (Doorknob, steering wheel, screwdriver).</li>
-              <li><strong>Fixed Pulley:</strong> Attached to a support; changes force direction only (\(MA = 1\)).</li>
-              <li><strong>Movable Pulley:</strong> Attached to the load; multiplies force (\(MA = 2\)).</li>
-              <li><strong>Block and Tackle:</strong> Combination of fixed and movable pulleys; \(MA =\) number of supporting rope strands.</li>
-              <li><strong>Inclined Plane (Ramp):</strong> Flat sloped surface. \(IMA = rac{	ext{Length}}{	ext{Height}}\).</li>
-              <li><strong>Wedge:</strong> Two inclined planes back-to-back (Axe, knife, chisel).</li>
-              <li><strong>Screw:</strong> Inclined plane wrapped around a cylinder; finer threads \(=\) higher MA.</li>
-            </ul>
           </div>
         </div>
 
-        <div class="formula-box">
-          <div class="formula-label">Key Formulas</div>
-          MA = Load Force / Effort Force<br>
-          IMA (Ramp) = Length / Height<br>
-          Efficiency = (AMA / IMA) x 100%
-        </div>
-
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Simple Machines?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Three Classes of Levers</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-w5simple')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-levers')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
 
-      <!-- LESSON 2 -->
-      <section class="lesson-card" id="lesson-gs-w6pascal">
+      <!-- GS LESSON 2 -->
+      <section class="lesson-card" id="lesson-gs-pulleys">
         <div class="lesson-head">
-          <div class="lesson-num gs">W6</div>
-          <div class="lesson-title">Week 6: Compound Machines, Pascal &amp; Archimedes</div>
+          <div class="lesson-num gs">2</div>
+          <div class="lesson-title">Week 5: Pulleys, Wheels, &amp; Inclined Planes</div>
         </div>
 
-        <!-- Sample Visual Diagram 2 -->
-        <div class="diagram-card">
-          <img src="./assets/images/pascal_archimedes.jpg" alt="Pascal and Archimedes Principles" loading="lazy"/>
-          <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> Hydraulic Lift Mechanics &amp; Buoyant Force</div>
-        </div>
-
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gs">Compound Machine</div><div class="c-meaning">Two or more simple machines combined: <strong>MA_total = MA1 x MA2 x ...</strong> (Scissors, bicycle, can opener).</div></div>
-            <div class="concept-item"><div class="c-keyword gs">Pascal's Principle</div><div class="c-meaning">Pressure applied to enclosed fluid is transmitted <strong>undiminished in all directions</strong> (F1/A1 = F2/A2).</div></div>
-            <div class="concept-item"><div class="c-keyword gs">Archimedes' Principle</div><div class="c-meaning">Buoyant Force (Fb) = <strong>Weight of fluid displaced</strong> by submerged object.</div></div>
-            <div class="concept-item"><div class="c-keyword gs">Floating / Sinking</div><div class="c-meaning"><strong>Floats:</strong> Fb &ge; Weight (Density &le; fluid). <strong>Sinks:</strong> Fb &lt; Weight.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Fixed Pulley</div><div class="c-meaning">MA = 1 (changes force direction only, e.g. flagpole).</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Movable Pulley</div><div class="c-meaning">MA = 2 (multiplies effort force).</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Block &amp; Tackle</div><div class="c-meaning">MA = number of supporting rope segments.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Inclined Plane</div><div class="c-meaning">IMA = Length / Height (Ramp, Wedge, Screw).</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Compound Machines &amp; Combined Advantage</h4>
-            <p class="det-p">
-              A <strong>compound machine</strong> links two or more simple machines so the output of one becomes the input of the next. Total mechanical advantage is the product:
-              \[MA_{	ext{total}} = MA_1 	imes MA_2 	imes MA_3 \dots\]
-              <em>Trade-off:</em> More moving parts produce more friction, resulting in lower efficiency than individual simple machines.
-            </p>
-
-            <h4 class="det-subtitle">2. Pascal's Principle &amp; Hydraulic Systems</h4>
-            <p class="det-p">
-              <strong>Pascal's Principle:</strong> Pressure applied to an enclosed static fluid is transmitted undiminished to every portion of the fluid and container walls:
-              \[P_1 = P_2 \implies rac{F_1}{A_1} = rac{F_2}{A_2} \implies F_2 = F_1 	imes \left(rac{A_2}{A_1}ight)\]
-              A small force applied to a small piston creates a large lifting force on a large piston (used in hydraulic car lifts and automotive brakes).
-            </p>
-
-            <h4 class="det-subtitle">3. Archimedes' Principle &amp; Buoyancy</h4>
-            <p class="det-p">
-              <strong>Archimedes' Principle:</strong> Any object submerged in a fluid experiences an upward buoyant force equal to the weight of the fluid displaced:
-              \[F_b = ho_{	ext{fluid}} 	imes V_{	ext{submerged}} 	imes g = 	ext{Weight}_{	ext{displaced fluid}}\]
-            </p>
+            <h4 class="det-subtitle">Pulleys and Inclined Planes</h4>
             <ul class="det-list">
-              <li><strong>Floating:</strong> If \(F_b \ge F_g\) (\(ho_{	ext{object}} \le ho_{	ext{fluid}}\)), the object floats on the surface.</li>
-              <li><strong>Sinking:</strong> If \(F_b < F_g\) (\(ho_{	ext{object}} > ho_{	ext{fluid}}\)), the object sinks to the bottom.</li>
-              <li><strong>Applications:</strong> Steel ships float because their hollow hull displaces a huge volume of water, generating buoyant force greater than their total weight. Submarines use ballast tanks to control density.</li>
+              <li><strong>Wheel and Axle:</strong> IMA = R_wheel / R_axle (Doorknobs, steering wheels).</li>
+              <li><strong>Ramp / Inclined Plane:</strong> IMA = Length / Height. Greater length reduces required pushing force.</li>
+              <li><strong>Wedge:</strong> Two back-to-back inclined planes (Axes, knives, chisels).</li>
+              <li><strong>Screw:</strong> An inclined plane wrapped around a cylinder in a spiral.</li>
             </ul>
           </div>
         </div>
 
-        <div class="formula-box">
-          <div class="formula-label">Key Formulas</div>
-          Pascal: F1 / A1 = F2 / A2  &rarr;  F2 = F1 x (A2 / A1)<br>
-          Buoyant Force: Fb = &rho; x V x g = Weight_displaced
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Pulleys, Wheels &amp; Inclined Planes</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-pulleys')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- GS LESSON 3 -->
+      <section class="lesson-card" id="lesson-gs-compound">
+        <div class="lesson-head">
+          <div class="lesson-num gs">3</div>
+          <div class="lesson-title">Week 5: Compound Machines &amp; Combined Advantage</div>
         </div>
 
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Pascal &amp; Archimedes?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword gs">Compound Machine</div><div class="c-meaning">Two or more simple machines combined: <strong>MA_total = MA1 x MA2 x ...</strong></div></div>
+            <div class="concept-item"><div class="c-keyword gs">Friction Trade-off</div><div class="c-meaning">More moving parts create more friction, reducing overall efficiency.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Examples</div><div class="c-meaning">Scissors (levers + wedges), Bicycle (wheel &amp; axle + pulleys/gears).</div></div>
           </div>
-          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-w6pascal')">🎯 Answer Quiz (5 Qs)</button>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p">When simple machines are combined into a <strong>compound machine</strong>, the output force of one component becomes the input of the next. Total MA is multiplicative:</p>
+            <div class="formula-box">MA_total = MA1 x MA2 x MA3 ...</div>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Compound Machines</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-compound')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- Sample Visual Diagram 2 -->
+      <div class="diagram-card">
+        <img src="./assets/images/pascal_archimedes.jpg" alt="Pascal and Archimedes Principles" loading="lazy"/>
+        <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> Hydraulic Lift Mechanics &amp; Buoyant Force</div>
+      </div>
+
+      <!-- GS LESSON 4 -->
+      <section class="lesson-card" id="lesson-gs-pascal">
+        <div class="lesson-head">
+          <div class="lesson-num gs">4</div>
+          <div class="lesson-title">Week 6: Pascal's Principle &amp; Hydraulics</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword gs">Pascal's Principle</div><div class="c-meaning">Pressure applied to enclosed fluid is transmitted <strong>undiminished in all directions</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Hydraulic Lift</div><div class="c-meaning">F2 = F1 x (A2 / A1). Small force on small piston lifts heavy load on large piston.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Applications</div><div class="c-meaning">Hydraulic car lifts, automotive hydraulic brakes, heavy construction excavators.</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p"><strong>Pascal's Principle:</strong> Pressure in an enclosed static fluid is transmitted equally everywhere: P1 = P2 &rarr; F1/A1 = F2/A2.</p>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Pascal's Principle &amp; Hydraulics</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-pascal')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- GS LESSON 5 -->
+      <section class="lesson-card" id="lesson-gs-archimedes">
+        <div class="lesson-head">
+          <div class="lesson-num gs">5</div>
+          <div class="lesson-title">Week 6: Archimedes' Principle &amp; Buoyancy</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword gs">Archimedes' Principle</div><div class="c-meaning">Buoyant Force (Fb) = <strong>Weight of fluid displaced</strong> by the submerged object.</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Floating Condition</div><div class="c-meaning">Object floats if Fb &ge; Weight (Density &le; fluid density).</div></div>
+            <div class="concept-item"><div class="c-keyword gs">Sinking Condition</div><div class="c-meaning">Object sinks if Fb &lt; Weight (Density &gt; fluid density).</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p"><strong>Archimedes' Law:</strong> Fb = &rho; &bull; V &bull; g. Steel ships float because the hollow air-filled hull displaces a gigantic volume of water, creating an upward buoyant force greater than the entire ship's weight.</p>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Archimedes' Principle &amp; Buoyancy</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz gs" onclick="startLessonQuiz('gs-archimedes')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
     </main>
@@ -1692,118 +1865,160 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         <p class="shc-desc">Business percentages, mark-ups, simple interest, nature symmetry, and sequences.</p>
       </div>
 
-      <!-- LESSON 1 -->
-      <section class="lesson-card" id="lesson-gm-w6">
+      <!-- GM LESSON 1 -->
+      <section class="lesson-card" id="lesson-gm-markup">
         <div class="lesson-head">
-          <div class="lesson-num gm">W6</div>
-          <div class="lesson-title">Week 6: Percentages in Business &amp; Finance</div>
+          <div class="lesson-num gm">1</div>
+          <div class="lesson-title">Week 6: Mark-up, Mark-down &amp; Discounts</div>
         </div>
 
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Mark-up</div><div class="c-meaning">Added to cost: <strong>Mark-up = Selling Price - Cost</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Mark-down</div><div class="c-meaning">Discount: <strong>Sale Price = Regular Price - Discount</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Simple Interest</div><div class="c-meaning"><strong>I = Prt</strong> (P = Principal, r = annual rate, t = time in years).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Future Value</div><div class="c-meaning">Total sum: <strong>F = P + I = P(1 + rt)</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Mark-up</div><div class="c-meaning"><strong>Mark-up = Selling Price - Cost</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Mark-down</div><div class="c-meaning"><strong>Sale Price = Regular Price - Discount</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Mark-up Rate</div><div class="c-meaning">Rate = (Mark-up / Cost) x 100%.</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Mark-up, Mark-down and Pricing Strategies</h4>
-            <p class="det-p">In business, prices are calculated to cover operating expenses and profit:</p>
-            <ul class="det-list">
-              <li><strong>Cost Price (C):</strong> Original purchase price of the item.</li>
-              <li><strong>Selling Price (SP):</strong> Price at which the item is sold: \(SP = C + M\).</li>
-              <li><strong>Mark-up (M):</strong> Amount added to cost: \(M = SP - C\).</li>
-              <li><strong>Mark-up Rate on Cost:</strong> \(	ext{Rate} = \left(rac{M}{C}ight) 	imes 100\%\).</li>
-              <li><strong>Mark-down (Discount, D):</strong> Reduction from original price: \(D = 	ext{Regular Price} 	imes 	ext{Discount Rate}\).</li>
-              <li><strong>Sale Price:</strong> \(	ext{Sale Price} = 	ext{Regular Price} - D\).</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. Simple Interest and Financial Calculations</h4>
-            <p class="det-p">
-              <strong>Simple Interest (I):</strong> Fee paid for borrowing money or return on investment:
-              \[I = P \cdot r \cdot t\]
-              where \(P =\) Principal, \(r =\) annual interest rate (as decimal), \(t =\) time in years.
-            </p>
+            <h4 class="det-subtitle">Business Percentages Cheatsheet</h4>
             <div class="det-example-box gm">
-              <strong>Example:</strong> Borrow ₱10,000 at 5% simple annual interest for 3 years.<br>
-              \(I = 10,000 	imes 0.05 	imes 3 = ₱1,500\).<br>
-              <strong>Future Value (Maturity Value):</strong> \(F = P + I = 10,000 + 1,500 = ₱11,500\).
+              Cost = ₱400, Selling Price = ₱550 &rarr; Mark-up = ₱150.<br>
+              Regular Price = ₱1,000 with 25% discount &rarr; Discount = ₱250, Sale Price = ₱750.
             </div>
           </div>
         </div>
 
-        <div class="formula-box">
-          <div class="formula-label">Quick Calculation Cheatsheet</div>
-          I = P x r x t<br>
-          Mark-up Rate = (Mark-up / Cost) x 100%<br>
-          F = P(1 + rt)
-        </div>
-
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Business Percentages?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Mark-up &amp; Mark-down</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-w6')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-markup')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
 
-      <!-- LESSON 2 -->
-      <section class="lesson-card" id="lesson-gm-w7w8">
+      <!-- GM LESSON 2 -->
+      <section class="lesson-card" id="lesson-gm-interest">
         <div class="lesson-head">
-          <div class="lesson-num gm">W7-8</div>
-          <div class="lesson-title">Weeks 7 &amp; 8: Patterns in Nature &amp; Sequences</div>
+          <div class="lesson-num gm">2</div>
+          <div class="lesson-title">Week 6: Simple Interest &amp; Maturity Value</div>
         </div>
 
-        <!-- Sample Visual Diagram -->
-        <div class="diagram-card">
-          <img src="./assets/images/fibonacci_fractals.jpg" alt="Fibonacci and Fractals in Nature" loading="lazy"/>
-          <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> Golden Ratio, Fibonacci Spiral &amp; Sierpinski Fractals</div>
-        </div>
-
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Fibonacci Sequence</div><div class="c-meaning">0, 1, 1, 2, 3, 5, 8, 13, 21, 34... Sum of previous two terms.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Arithmetic Sequence</div><div class="c-meaning">Constant difference <strong>d</strong>: <strong>an = a1 + (n - 1)d</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Geometric Sequence</div><div class="c-meaning">Constant ratio <strong>r</strong>: <strong>an = a1 x r^(n - 1)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Symmetry</div><div class="c-meaning"><strong>Bilateral:</strong> Mirror reflection. <strong>Radial:</strong> Rotational central axis.</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Simple Interest</div><div class="c-meaning"><strong>I = Prt</strong> (P = Principal, r = annual decimal rate, t = time in years).</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Maturity Value</div><div class="c-meaning"><strong>F = P + I = P(1 + rt)</strong>.</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Patterns in Life &amp; Nature</h4>
-            <ul class="det-list">
-              <li><strong>Symmetry:</strong> Bilateral (human face, butterfly) vs. Radial (starfish, sunflower florets).</li>
-              <li><strong>Tessellations:</strong> Hexagonal honeycomb cells maximize volume with minimal wax.</li>
-              <li><strong>Fibonacci Sequence:</strong> \(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55\dots\) found in sunflower seed spirals, pinecone scales, and nautilus shell chambers.</li>
-            </ul>
+            <p class="det-p"><strong>Simple Interest Formula:</strong> I = P &bull; r &bull; t. If you invest ₱20,000 at 4% for 2 years: \(I = 20,000 	imes 0.04 	imes 2 = ₱1,600\). Maturity Value = ₱21,600.</p>
+          </div>
+        </div>
 
-            <h4 class="det-subtitle">2. Arithmetic and Geometric Sequences</h4>
-            <div class="det-example-box gm">
-              <strong>Arithmetic Sequence:</strong> Difference between consecutive terms is constant (\(d\)).<br>
-              \(n\)-th term: \(a_n = a_1 + (n - 1)d\)<br>
-              Sum of \(n\) terms: \(S_n = rac{n}{2}(a_1 + a_n)\)<br><br>
-              <strong>Geometric Sequence:</strong> Ratio between consecutive terms is constant (\(r\)).<br>
-              \(n\)-th term: \(a_n = a_1 \cdot r^{n - 1}\)<br>
-              Sum of \(n\) terms: \(S_n = rac{a_1(1 - r^n)}{1 - r}\)
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Simple Interest &amp; Future Value</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-interest')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- Sample Visual Diagram -->
+      <div class="diagram-card">
+        <img src="./assets/images/fibonacci_fractals.jpg" alt="Fibonacci and Fractals in Nature" loading="lazy"/>
+        <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> Golden Ratio, Fibonacci Spiral &amp; Sierpinski Fractals</div>
+      </div>
+
+      <!-- GM LESSON 3 -->
+      <section class="lesson-card" id="lesson-gm-patterns">
+        <div class="lesson-head">
+          <div class="lesson-num gm">3</div>
+          <div class="lesson-title">Week 7: Patterns in Nature &amp; Fibonacci</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword gm">Fibonacci Sequence</div><div class="c-meaning">0, 1, 1, 2, 3, 5, 8, 13, 21, 34... Each term is sum of previous two.</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Radial Symmetry</div><div class="c-meaning">Rotational symmetry around center (starfish, sunflower florets).</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Honeycomb Packing</div><div class="c-meaning">Hexagons maximize storage area with minimal wax boundary.</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p">Nature uses mathematical optimization: Fibonacci sequences appear in pinecone spirals, nautilus shell chambers, and sunflower seed packing.</p>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Patterns in Nature &amp; Fibonacci</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-patterns')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- GM LESSON 4 -->
+      <section class="lesson-card" id="lesson-gm-sequences">
+        <div class="lesson-head">
+          <div class="lesson-num gm">4</div>
+          <div class="lesson-title">Week 8: Arithmetic &amp; Geometric Sequences</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword gm">Arithmetic Sequence</div><div class="c-meaning">Constant difference <strong>d</strong>: an = a1 + (n - 1)d.</div></div>
+            <div class="concept-item"><div class="c-keyword gm">Geometric Sequence</div><div class="c-meaning">Constant ratio <strong>r</strong>: an = a1 &bull; r^(n - 1).</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <div class="formula-box">
+              Arithmetic nth term: an = a1 + (n - 1)d<br>
+              Arithmetic Sum: Sn = (n / 2) * (a1 + an)<br>
+              Geometric nth term: an = a1 * r^(n - 1)<br>
+              Geometric Sum: Sn = a1 * (1 - r^n) / (1 - r)
             </div>
           </div>
         </div>
 
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Patterns &amp; Sequences?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Arithmetic &amp; Geometric Sequences</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-w7w8')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-sequences')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
     </main>
@@ -1826,109 +2041,149 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         <p class="shc-desc">Tessellations, frieze groups, golden ratio, fractals, and matrix algebra.</p>
       </div>
 
-      <!-- LESSON 1 -->
-      <section class="lesson-card" id="lesson-fn-l3l4">
+      <!-- FN LESSON 1 -->
+      <section class="lesson-card" id="lesson-fn-tess">
         <div class="lesson-head">
-          <div class="lesson-num fn">L3-4</div>
-          <div class="lesson-title">Lessons 3 &amp; 4: Tessellations &amp; Golden Ratio</div>
+          <div class="lesson-num fn">1</div>
+          <div class="lesson-title">Lesson 3: Tessellations &amp; 7 Frieze Patterns</div>
         </div>
 
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword fn">Tessellation (Tiling)</div><div class="c-meaning">Covering a 2D plane with shapes with <strong>no overlaps and no gaps</strong> (M.C. Escher art).</div></div>
-            <div class="concept-item"><div class="c-keyword fn">4 Isometries</div><div class="c-meaning"><strong>Translation</strong> (slide), <strong>Reflection</strong> (flip), <strong>Rotation</strong> (turn), <strong>Glide Reflection</strong> (slide + flip).</div></div>
-            <div class="concept-item"><div class="c-keyword fn">7 Frieze Patterns</div><div class="c-meaning">Exactly <strong>7 infinite 1D border symmetry groups</strong> describe all repeating band patterns.</div></div>
-            <div class="concept-item"><div class="c-keyword fn">Golden Ratio (&Phi;)</div><div class="c-meaning"><strong>&Phi; = (1 + &radic;5)/2 &asymp; 1.6180339887</strong>. Ratio of consecutive Fibonacci numbers converges to &Phi;.</div></div>
+            <div class="concept-item"><div class="c-keyword fn">Tessellation</div><div class="c-meaning">Covering a 2D plane with shapes with <strong>no overlaps and no gaps</strong> (M.C. Escher).</div></div>
+            <div class="concept-item"><div class="c-keyword fn">4 Isometries</div><div class="c-meaning">Translation (slide), Reflection (flip), Rotation (turn), Glide Reflection.</div></div>
+            <div class="concept-item"><div class="c-keyword fn">7 Frieze Groups</div><div class="c-meaning">Exactly 7 infinite 1D symmetry groups classify all repeating band patterns.</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Tessellations and Frieze Patterns (Lesson 3)</h4>
-            <p class="det-p">
-              A <strong>tessellation</strong> is a pattern formed by repeating figures to cover a plane completely without any gaps or overlaps.
-            </p>
-            <ul class="det-list">
-              <li><strong>4 Rigid Motions (Isometries):</strong> Translation (linear slide), Reflection (mirror flip), Rotation (turn about a center point), Glide Reflection (slide followed by reflection).</li>
-              <li><strong>Frieze Patterns:</strong> An infinite border pattern repeating along a single direction. There are exactly <strong>7 distinct symmetry classes</strong> of frieze patterns.</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. Golden Ratio &amp; Fibonacci (Lesson 4)</h4>
-            <p class="det-p">
-              The <strong>Golden Ratio (\(\phi\))</strong> is the unique positive number satisfying \(rac{a+b}{a} = rac{a}{b} = \phi\):
-              \[\phi = rac{1 + \sqrt{5}}{2} pprox 1.6180339887\]
-            </p>
-            <div class="det-example-box fn">
-              <strong>Golden Rectangle:</strong> A rectangle whose side lengths are in the ratio \(1 : \phi pprox 1 : 1.618\). Subdividing it into squares creates the logarithmic Golden Spiral found in nature and classical architecture (Parthenon).
-            </div>
+            <p class="det-p"><strong>4 Rigid Motions (Isometries):</strong> Translation (slide), Reflection (flip), Rotation (turn), Glide Reflection (slide + flip). There are exactly 7 infinite frieze symmetry groups.</p>
           </div>
         </div>
 
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Tessellations &amp; Golden Ratio?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Tessellations &amp; 7 Frieze Groups</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz fn" onclick="startLessonQuiz('fn-l3l4')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz fn" onclick="startLessonQuiz('fn-tess')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
 
-      <!-- LESSON 2 -->
-      <section class="lesson-card" id="lesson-fn-l5l6l7">
+      <!-- FN LESSON 2 -->
+      <section class="lesson-card" id="lesson-fn-golden">
         <div class="lesson-head">
-          <div class="lesson-num fn">L5-7</div>
-          <div class="lesson-title">Lessons 5, 6 &amp; 7: Fractals &amp; Matrix Algebra</div>
+          <div class="lesson-num fn">2</div>
+          <div class="lesson-title">Lesson 4: Golden Ratio (&Phi;) &amp; Spirals</div>
         </div>
 
-        <!-- SUMMARY CONTENT -->
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword fn">Fractals &amp; Self-Similarity</div><div class="c-meaning">Figures where every sub-part is a reduced-scale replica of the whole (Sierpinski, Mandelbrot).</div></div>
-            <div class="concept-item"><div class="c-keyword fn">Matrix Order</div><div class="c-meaning">Size: <strong>rows x columns (m x n)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword fn">Matrix Addition</div><div class="c-meaning">Requires <strong>identical dimensions</strong> (add corresponding elements).</div></div>
-            <div class="concept-item"><div class="c-keyword fn">Matrix Product Rule</div><div class="c-meaning"><strong>Columns of A = Rows of B</strong>: (m x k) • (k x n) = (m x n).</div></div>
+            <div class="concept-item"><div class="c-keyword fn">Golden Ratio (&Phi;)</div><div class="c-meaning"><strong>&Phi; = (1 + &radic;5)/2 &asymp; 1.6180339887</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword fn">Golden Rectangle</div><div class="c-meaning">Side ratio 1 : 1.618 &rarr; subdivides into logarithmic Golden Spiral.</div></div>
           </div>
         </div>
 
-        <!-- DETAILED CONTENT -->
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Fractals &amp; Self-Similarity (Lesson 5)</h4>
-            <p class="det-p">
-              A <strong>fractal</strong> is a complex geometric shape that exhibits <strong>self-similarity</strong> &mdash; zooming in at any scale reveals structural details resembling the overall object (Sierpinski Gasket, Koch Snowflake, Mandelbrot Set, fern leaves, coastlines).
-            </p>
+            <p class="det-p">The Golden Ratio is found in ancient classical architecture, the human body, and logarithmic spirals in galaxies and seashells.</p>
+          </div>
+        </div>
 
-            <h4 class="det-subtitle">2. Matrix Fundamentals &amp; Operations (Lesson 6)</h4>
-            <ul class="det-list">
-              <li><strong>Order / Dimensions:</strong> Array of numbers arranged in \(m\) rows and \(n\) columns (\(m 	imes n\)).</li>
-              <li><strong>Matrix Addition/Subtraction:</strong> Only possible when matrices have the exact same dimensions. Add/subtract corresponding entries: \((A + B)_{ij} = A_{ij} + B_{ij}\).</li>
-              <li><strong>Scalar Multiplication:</strong> Multiply every entry by real number \(k\): \((kA)_{ij} = k \cdot A_{ij}\).</li>
-            </ul>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Golden Ratio &amp; Spirals</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz fn" onclick="startLessonQuiz('fn-golden')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
 
-            <h4 class="det-subtitle">3. Matrix Multiplication (Lesson 7)</h4>
-            <div class="det-example-box fn">
-              <strong>Inner Dimension Rule:</strong> Product \(AB\) exists if and only if the number of columns in \(A\) equals the number of rows in \(B\):
-              \[[m 	imes k] \cdot [k 	imes n] = [m 	imes n]\]
-              Each entry \(C_{ij}\) is the dot product of row \(i\) from Matrix A and column \(j\) from Matrix B. Note: Matrix multiplication is non-commutative (\(AB 
-eq BA\)).
+      <!-- FN LESSON 3 -->
+      <section class="lesson-card" id="lesson-fn-fractals">
+        <div class="lesson-head">
+          <div class="lesson-num fn">3</div>
+          <div class="lesson-title">Lesson 5: Fractals &amp; Self-Similarity</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword fn">Self-Similarity</div><div class="c-meaning">Every part has the exact same character as the whole at all magnification scales.</div></div>
+            <div class="concept-item"><div class="c-keyword fn">Examples</div><div class="c-meaning">Sierpinski Gasket / Triangle, Koch Snowflake, Mandelbrot set, fern leaves.</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <p class="det-p">A fractal has infinite detail and non-integer Hausdorff dimension, commonly seen in lightning bolts, river branches, and lung bronchi.</p>
+          </div>
+        </div>
+
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Fractals &amp; Self-Similarity</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
+          </div>
+          <button class="btn-start-quiz fn" onclick="startLessonQuiz('fn-fractals')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
+        </div>
+      </section>
+
+      <!-- FN LESSON 4 -->
+      <section class="lesson-card" id="lesson-fn-matrix">
+        <div class="lesson-head">
+          <div class="lesson-num fn">4</div>
+          <div class="lesson-title">Lessons 6 &amp; 7: Matrix Algebra &amp; Multiplication</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item"><div class="c-keyword fn">Matrix Order</div><div class="c-meaning">Size: <strong>rows x columns (m x n)</strong>.</div></div>
+            <div class="concept-item"><div class="c-keyword fn">Addition / Subtraction</div><div class="c-meaning">Requires <strong>identical dimensions</strong> (add corresponding elements).</div></div>
+            <div class="concept-item"><div class="c-keyword fn">Multiplication Rule</div><div class="c-meaning"><strong>Columns of A = Rows of B</strong>: (m x k) • (k x n) = (m x n).</div></div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <div class="formula-box">
+              Matrix Multiplication Rule:<br>
+              Matrix A [m x k] &bull; Matrix B [k x n] = Matrix C [m x n]<br>
+              Inner dimensions (k) must match! Matrix multiplication is non-commutative (AB != BA).
             </div>
           </div>
         </div>
 
-        <div class="formula-box">
-          <div class="formula-label">Matrix Multiplication Rule</div>
-          Matrix A [m x k]  &bull;  Matrix B [k x n]  =  Matrix C [m x n]<br>
-          Inner dimensions (k) must match! Result has outer dimensions (m x n).
-        </div>
-
-        <div class="quiz-cta-box">
-          <div class="quiz-cta-info">
-            <h4>Ready to test Fractals &amp; Matrices?</h4>
-            <p>5 Quick Multiple Choice questions to test your recall.</p>
+        <!-- Dedicated Quiz Category Button -->
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Matrix Operations &amp; Multiplication</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+            </div>
           </div>
-          <button class="btn-start-quiz fn" onclick="startLessonQuiz('fn-l5l6l7')">🎯 Answer Quiz (5 Qs)</button>
+          <button class="btn-start-quiz fn" onclick="startLessonQuiz('fn-matrix')">
+            <span>&#127919;</span> Take Lesson Quiz
+          </button>
         </div>
       </section>
     </main>
@@ -1951,7 +2206,7 @@ eq BA\)).
       <div class="quiz-body" id="quizBody">
         <!-- Question Active State -->
         <div id="quizQuestionView">
-          <div class="quiz-q-counter" id="quizQuestionCounter">Question 1 of 5</div>
+          <div class="quiz-q-counter" id="quizQuestionCounter">Question 1 of 3</div>
           <div class="quiz-q-text" id="quizQuestionText">Question text here?</div>
 
           <div class="quiz-options-list" id="quizOptionsList">
@@ -1964,9 +2219,9 @@ eq BA\)).
         <!-- Finished State -->
         <div class="quiz-finished-view" id="quizFinishedView" style="display:none;">
           <div class="quiz-finished-emoji" id="quizFinishedEmoji">&#127881;</div>
-          <div class="quiz-finished-score" id="quizFinishedScore">Score: 5 / 5</div>
+          <div class="quiz-finished-score" id="quizFinishedScore">Score: 3 / 3</div>
           <div class="quiz-finished-msg" id="quizFinishedMsg">Amazing recall! You are fully prepared for this topic.</div>
-          <button class="btn-continue-topic" onclick="continueToTopic()">Continue to the topic &#8594;</button>
+          <button class="btn-continue-topic" onclick="continueToTopic()">continue to the topic &#8594;</button>
         </div>
       </div>
 
@@ -1995,18 +2250,18 @@ eq BA\)).
   </div>
 
   <!-- ==========================================================================
-       JAVASCRIPT ENGINE: QUIZZES, MODES, ROUTING
+       JAVASCRIPT ENGINE
        ========================================================================== -->
   <script>
-    // Quiz Database
-    const QUIZ_DATABASE = {quiz_json_str};
+    // Complete Quiz Database
+    const QUIZ_DATABASE = {"mk-elem": {"title": "Aralin 3: 5 Elemento ng Komunikasyon", "lessonId": "lesson-mk-elem", "questions": [{"q": "Sino ang pinagmumulan o nagpapadala ng mensahe?", "options": ["Tagatanggap (Receiver)", "Tagapagpadala (Sender)", "Daluyan (Channel)", "Tugon (Feedback)"], "answer": 1, "hint": "Ang Sender ang nagsisimula ng proseso."}, {"q": "Ano ang tawag sa reaksyon o sagot na nagpapatunay kung naunawaan ang mensahe?", "options": ["Daluyan", "Mensahe", "Tugon (Feedback)", "Noise"], "answer": 2, "hint": "Ang Feedback ang nagbabalik ng tugon."}, {"q": "Ang online chat, tawag sa telepono, at sulat ay mga halimbawa ng:", "options": ["Tagapagpadala", "Daluyan (Channel)", "Tagatanggap", "Tugon"], "answer": 1, "hint": "Ito ang midyum o paraan ng pagpapadala."}]}, "mk-intra": {"title": "Aralin 3: Intrapersonal na Komunikasyon", "lessonId": "lesson-mk-intra", "questions": [{"q": "Ang intrapersonal na komunikasyon ay pakikipag-usap sa:", "options": ["Maraming tao", "Guro at punong-guro", "Sarili", "Social media followers"], "answer": 2, "hint": "Intra = sa loob ng sarili."}, {"q": "Alin ang mas SISTEMATIKONG pagsulat ng mga natutuhan, karanasan, at pagninilay?", "options": ["Dyornal (Journal)", "Talaarawan (Diary)", "Chat message", "Advocacy Post"], "answer": 0, "hint": "Ang Dyornal ay mas nakatutok sa aral at obserbasyon."}, {"q": "Ang pagtatakda ng mga nais makamit sa hinaharap ay tinatawag na:", "options": ["Repleksyon", "Goal Setting", "Passive footprint", "Netiquette"], "answer": 1, "hint": "Pagtatakda ng malinaw na layunin."}]}, "mk-digital": {"title": "Aralin 3: Digital Identity at Netiquette", "lessonId": "lesson-mk-digital", "questions": [{"q": "Alin ang halimbawa ng PASSIVE digital footprint?", "options": ["Pag-upload ng video sa TikTok", "Pag-post ng litrato sa Instagram", "Web cookies at browsing history", "Pagkomento sa Facebook"], "answer": 2, "hint": "Awtomatikong nakokolekta nang hindi mo kusang pinopost."}, {"q": "Ano ang tawag sa wastong asal at pag-uugali habang gumagamit ng internet?", "options": ["Digital Footprint", "Netiquette (Online Etiquette)", "Two-Factor Auth", "Public Profile"], "answer": 1, "hint": "Net + Etiquette = Netiquette."}, {"q": "Bakit mahalagang i-on ang 2FA (Two-Factor Authentication)?", "options": ["Para sa karagdagang proteksyon sa personal na datos", "Para bumilis ang internet", "Para dumami ang likes", "Para maging public ang account"], "answer": 0, "hint": "Pangalagaan ang password at account security."}]}, "mk-proseso": {"title": "Aralin 4: 3 Proseso ng Komunikasyon", "lessonId": "lesson-mk-proseso", "questions": [{"q": "Alin sa 3 proseso ang tumutukoy sa pag-unawa at pagbibigay-kahulugan sa mensahe?", "options": ["Pagpapahayag (Expression)", "Pakikilahok (Participation)", "Pagbibigay-kahulugan (Decoding)", "Konteksto"], "answer": 2, "hint": "Apektado ito ng sariling karanasan at emosyon."}, {"q": "Ang pakikilahok (participation) ay kinabibilangan ng:", "options": ["Pagsasalita lamang", "Aktibong pakikinig at pakikiisa sa talakayan", "Tahimik na pag-alis", "Pang-iinsulto sa kausap"], "answer": 1, "hint": "Kasama ang buong atensyon at paggalang."}, {"q": "Ang galaw ng katawan, kumpas, at ekspresyon ng mukha ay anyo ng:", "options": ["Pagpapahayag (Expression)", "Hadlang", "Passive data", "2FA"], "answer": 0, "hint": "Di-berbal na paraan ng pagpapahayag."}]}, "mk-kultural": {"title": "Aralin 4: Kamalayang Kultural at Sensibilidad", "lessonId": "lesson-mk-kultural", "questions": [{"q": "Ano ang Kamalayang Kultural (Cultural Awareness)?", "options": ["Pilitin ang iba na gayahin ang iyong wika", "Pag-unawa at paggalang na magkakaiba ang kultura at tradisyon", "Pag-iwas sa pakikipag-usap sa banyaga", "Panghuhusga sa hindi nagpo-po at opo"], "answer": 1, "hint": "Pagkilala sa pagkakaiba ng mga kultura."}, {"q": "Aling pahayag ang nagpapakita ng SENSIBILIDAD sa komunikasyon?", "options": ["'Maling-mali ka!'", "'Wala kang alam!'", "'Mayroon akong ibang pananaw ukol diyan.'", "'Tumahimik ka na lang.'"], "answer": 2, "hint": "Isinasaalang-alang ang mararamdaman ng kausap."}, {"q": "Alin ang halimbawa ng 'Hadlang o Noise' sa komunikasyon?", "options": ["Maingay na paligid at mahinang signal", "Matinding galit o labis na emosyon", "Maling interpretasyon ng salita", "Lahat ng nabanggit"], "answer": 3, "hint": "Lahat ng nakasisira sa linaw ng usapan ay noise."}]}, "gs-levers": {"title": "Week 5: The Three Classes of Levers", "lessonId": "lesson-gs-levers", "questions": [{"q": "Which class of lever has the FULCRUM in the middle?", "options": ["1st Class Lever (Seesaw, scissors)", "2nd Class Lever (Wheelbarrow)", "3rd Class Lever (Tweezers)", "None"], "answer": 0, "hint": "1st = Fulcrum in middle."}, {"q": "Which class of lever has the LOAD in the middle and always has MA > 1?", "options": ["1st Class", "2nd Class", "3rd Class", "4th Class"], "answer": 1, "hint": "2nd = Load in middle."}, {"q": "Which class of lever has the EFFORT in the middle and multiplies speed (MA < 1)?", "options": ["1st Class", "2nd Class", "3rd Class", "Fixed pulley"], "answer": 2, "hint": "3rd = Effort in middle (e.g. fishing rod, broom)."}]}, "gs-pulleys": {"title": "Week 5: Pulleys, Wheels, & Inclined Planes", "lessonId": "lesson-gs-pulleys", "questions": [{"q": "A fixed pulley has a Mechanical Advantage of:", "options": ["0", "1 (only redirects force)", "2", "4"], "answer": 1, "hint": "It changes force direction only."}, {"q": "A ramp is 10 m long and 2 m high. What is its Ideal Mechanical Advantage (IMA)?", "options": ["0.2", "5", "20", "8"], "answer": 1, "hint": "IMA = Length / Height (10 / 2 = 5)."}, {"q": "Two inclined planes placed back-to-back used for cutting or splitting describe a:", "options": ["Screw", "Wedge", "Wheel and Axle", "3rd Class Lever"], "answer": 1, "hint": "Axes and knives are wedges."}]}, "gs-compound": {"title": "Week 5: Compound Machines & Combined MA", "lessonId": "lesson-gs-compound", "questions": [{"q": "How is the total MA of a compound machine calculated from its components?", "options": ["MA_total = MA1 + MA2", "MA_total = MA1 x MA2 x MA3...", "MA_total = (MA1 + MA2) / 2", "MA_total = MA1 - MA2"], "answer": 1, "hint": "Component mechanical advantages are multiplied together."}, {"q": "Why are compound machines generally LESS efficient than single simple machines?", "options": ["They produce too much work", "More moving parts introduce more friction and heat loss", "They violate physics", "They have MA < 1"], "answer": 1, "hint": "More joints and surfaces create friction."}, {"q": "A pair of scissors combines which simple machines?", "options": ["Two 1st class levers + wedge blades", "Wheel & axle + pulley", "Screw + ramp", "3rd class lever + fixed pulley"], "answer": 0, "hint": "Pivoted levers with sharp wedge blades."}]}, "gs-pascal": {"title": "Week 6: Pascal's Principle & Hydraulics", "lessonId": "lesson-gs-pascal", "questions": [{"q": "Pascal's Principle states that pressure applied to an enclosed fluid is:", "options": ["Lost at the bottom", "Transmitted undiminished in all directions", "Reduced by 50%", "Directed only upwards"], "answer": 1, "hint": "P1 = P2 throughout the enclosed fluid."}, {"q": "In a hydraulic lift, if Piston 2 has 10 times the area of Piston 1, the output force F2 will be:", "options": ["10 times greater than F1", "10 times smaller than F1", "Equal to F1", "Zero"], "answer": 0, "hint": "F2 = F1 x (A2 / A1)."}, {"q": "Which real-world machine operates directly on Pascal's Principle?", "options": ["Hydraulic car brakes and lifts", "A simple crowbar", "A fixed flagpole pulley", "A compass"], "answer": 0, "hint": "Hydraulic systems use fluid pressure transmission."}]}, "gs-archimedes": {"title": "Week 6: Archimedes' Principle & Buoyancy", "lessonId": "lesson-gs-archimedes", "questions": [{"q": "According to Archimedes' Principle, the Buoyant Force (Fb) on an object equals:", "options": ["The total weight of the object", "The weight of the fluid displaced by the object", "The depth of the water", "Zero in seawater"], "answer": 1, "hint": "Fb = Weight of displaced fluid."}, {"q": "An object will SINK in water if:", "options": ["Its density is greater than water (Fb < Weight)", "Its density is less than water", "It is made of wood", "Its volume is large"], "answer": 0, "hint": "Gravity overcomes buoyant force when density is higher."}, {"q": "Why do massive steel ships float on water?", "options": ["Steel is lighter than water", "The hollow hull displaces a large volume of water, creating large buoyant force", "Salt in the ocean repels steel", "Engines push the ship up"], "answer": 1, "hint": "High displaced volume creates huge upward buoyant force."}]}, "gm-markup": {"title": "Week 6: Mark-up, Mark-down & Discounts", "lessonId": "lesson-gm-markup", "questions": [{"q": "If an item costs \u20b1400 and is sold for \u20b1550, what is the Mark-up?", "options": ["\u20b1100", "\u20b1150", "\u20b1950", "\u20b1200"], "answer": 1, "hint": "Mark-up = Selling Price - Cost Price (550 - 400 = 150)."}, {"q": "A shoes pair originally priced at \u20b11,000 is on a 25% discount. What is the Sale Price?", "options": ["\u20b1250", "\u20b1750", "\u20b11,250", "\u20b1800"], "answer": 1, "hint": "Discount = 250. Sale Price = 1,000 - 250 = 750."}, {"q": "What is the formula for Mark-up Rate based on Cost?", "options": ["(Mark-up / Cost) x 100%", "(Cost / Mark-up) x 100%", "Cost x Selling Price", "Selling Price - Discount"], "answer": 0, "hint": "Fraction of mark-up over original cost."}]}, "gm-interest": {"title": "Week 6: Simple Interest & Maturity Value", "lessonId": "lesson-gm-interest", "questions": [{"q": "What is the formula for Simple Interest (I)?", "options": ["I = P + r + t", "I = Prt (Principal x Rate x Time)", "I = P / rt", "I = P(1 + r)^t"], "answer": 1, "hint": "I = Prt where rate is decimal and time is in years."}, {"q": "If you invest \u20b120,000 at 4% annual simple interest for 2 years, how much interest is earned?", "options": ["\u20b1800", "\u20b11,600", "\u20b121,600", "\u20b14,000"], "answer": 1, "hint": "I = 20,000 x 0.04 x 2 = 1,600."}, {"q": "What is the Maturity Value (Future Value F) of the \u20b120,000 investment above?", "options": ["\u20b11,600", "\u20b120,000", "\u20b121,600", "\u20b124,000"], "answer": 2, "hint": "F = Principal + Interest (20,000 + 1,600 = 21,600)."}]}, "gm-patterns": {"title": "Week 7: Patterns in Nature & Fibonacci", "lessonId": "lesson-gm-patterns", "questions": [{"q": "What are the next two terms in the Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, __, __?", "options": ["10, 12", "13, 21", "11, 15", "16, 24"], "answer": 1, "hint": "5 + 8 = 13, and 8 + 13 = 21."}, {"q": "Which type of symmetry is exhibited by a starfish and sunflower florets?", "options": ["Bilateral symmetry", "Radial / Rotational symmetry", "Asymmetry", "Translation"], "answer": 1, "hint": "Rotational symmetry around a central point."}, {"q": "Why do honeybees build hexagonal honeycomb cells?", "options": ["Hexagons are random", "Hexagons maximize storage volume using minimal perimeter/wax", "To trap heat only", "Hexagons are easier to count"], "answer": 1, "hint": "Optimal geometric packing efficiency."}]}, "gm-sequences": {"title": "Week 8: Arithmetic & Geometric Sequences", "lessonId": "lesson-gm-sequences", "questions": [{"q": "In the Arithmetic Sequence 5, 9, 13, 17..., what is the Common Difference (d)?", "options": ["2", "4", "5", "8"], "answer": 1, "hint": "d = 9 - 5 = 4."}, {"q": "What is the formula for the nth term of an Arithmetic Sequence?", "options": ["an = a1 + (n - 1)d", "an = a1 x r^(n-1)", "an = n x d", "an = a1 / d"], "answer": 0, "hint": "Add (n-1) differences to the initial term."}, {"q": "In the Geometric Sequence 3, 6, 12, 24..., what is the Common Ratio (r)?", "options": ["2", "3", "4", "6"], "answer": 0, "hint": "r = 6 / 3 = 2."}]}, "fn-tess": {"title": "Lesson 3: Tessellations & Frieze Patterns", "lessonId": "lesson-fn-tess", "questions": [{"q": "What is a Tessellation (Tiling)?", "options": ["A 3D sculpture", "Covering a plane with geometric shapes without overlaps or gaps", "A mathematical equation", "A fractal dimension"], "answer": 1, "hint": "No gaps, no overlaps on a 2D surface."}, {"q": "How many distinct Frieze Symmetry Groups exist in 1D border patterns?", "options": ["4", "7", "12", "17"], "answer": 1, "hint": "Exactly 7 frieze groups classify all repeating bands."}, {"q": "Which transformation involves sliding an object along a straight line without rotation?", "options": ["Reflection", "Rotation", "Translation", "Glide Reflection"], "answer": 2, "hint": "Pure linear shift is Translation."}]}, "fn-golden": {"title": "Lesson 4: Golden Ratio & Fibonacci Spirals", "lessonId": "lesson-fn-golden", "questions": [{"q": "What is the approximate numerical value of the Golden Ratio (Phi, \u03c6)?", "options": ["3.1416", "1.618", "2.718", "1.414"], "answer": 1, "hint": "\u03c6 = (1 + \u221a5) / 2 \u2248 1.6180339887."}, {"q": "A Golden Rectangle has side lengths in the ratio:", "options": ["2 : 1", "1.618 : 1 (\u03c6 : 1)", "3 : 2", "1 : 1"], "answer": 1, "hint": "Length / Width = \u03c6."}, {"q": "As the Fibonacci sequence progresses, the ratio of consecutive terms (Fn+1 / Fn) approaches:", "options": ["0", "1", "The Golden Ratio (\u03c6 \u2248 1.618)", "Infinity"], "answer": 2, "hint": "Fibonacci ratios converge to the Golden Ratio."}]}, "fn-fractals": {"title": "Lesson 5: Fractals & Self-Similarity", "lessonId": "lesson-fn-fractals", "questions": [{"q": "What is the defining property of a Fractal (such as the Sierpinski Triangle)?", "options": ["Straight lines only", "Self-Similarity (repeats structure at every magnification scale)", "Fixed area and zero perimeter", "Finite iterations only"], "answer": 1, "hint": "Zooming in reveals identical smaller copies of the whole pattern."}, {"q": "Which of the following is a classic mathematical fractal?", "options": ["Sierpinski Gasket / Triangle", "Koch Snowflake", "Mandelbrot Set", "All of the above"], "answer": 3, "hint": "All three are prominent fractals."}, {"q": "Which natural phenomenon displays fractal geometry?", "options": ["Fern leaves and coastlines", "Lightning branches and river networks", "Blood vessels and lung bronchi", "All of the above"], "answer": 3, "hint": "Nature frequently employs fractal branching."}]}, "fn-matrix": {"title": "Lessons 6 & 7: Matrix Algebra & Multiplication", "lessonId": "lesson-fn-matrix", "questions": [{"q": "To ADD two matrices, they must have:", "options": ["The same number of rows as columns", "Identical dimensions (same number of rows and columns)", "Determinants equal to 1", "Only positive entries"], "answer": 1, "hint": "Addition requires equal dimensions (m x n)."}, {"q": "What condition must be met to MULTIPLY Matrix A (m x k) and Matrix B (p x n)?", "options": ["Columns of A (k) must equal Rows of B (p)", "Rows of A must equal Rows of B", "Both must be square", "k must equal m"], "answer": 0, "hint": "Inner dimensions must match: (m x k) \u2022 (k x n) = (m x n)."}, {"q": "If Matrix A is of order (2 x 3) and Matrix B is (3 x 4), what is the order of the product AB?", "options": ["2 x 4", "3 x 3", "2 x 3", "Undefined"], "answer": 0, "hint": "Outer dimensions form the product: (2 x 3) \u2022 (3 x 4) = (2 x 4)."}]}};
 
     let activeQuizKey = null;
     let currentQIndex = 0;
     let currentScore = 0;
     let isAnswered = false;
 
-    // Reviewer Mode Switcher (Summary vs. Detailed)
+    // Reviewer Mode Switcher
     function setReviewerMode(mode) {
       if (mode === 'detailed') {
         document.body.className = 'mode-is-detailed';
@@ -2029,7 +2284,7 @@ eq BA\)).
       }
     }
 
-    // Audio Chimes using Web Audio API
+    // Audio tones
     function playAudioTone(isCorrect) {
       try {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -2058,7 +2313,7 @@ eq BA\)).
       } catch (e) {}
     }
 
-    // Navigation Switcher
+    // Channel Switcher
     function switchChannel(channelKey, targetLessonId = null) {
       const views = {
         'landing': document.getElementById('view-landing'),
@@ -2115,7 +2370,9 @@ eq BA\)).
       }
     }
 
-    // Quiz Execution
+    // ==========================================
+    // INTERACTIVE QUIZ ENGINE
+    // ==========================================
     function startLessonQuiz(quizKey) {
       const quiz = QUIZ_DATABASE[quizKey];
       if (!quiz) return;
@@ -2141,6 +2398,7 @@ eq BA\)).
       const total = quiz.questions.length;
       isAnswered = false;
 
+      // Progress bar
       const progressPercent = ((currentQIndex) / total) * 100;
       document.getElementById('quizProgressFill').style.width = progressPercent + '%';
 
@@ -2174,6 +2432,7 @@ eq BA\)).
       const selectedBtn = document.getElementById(`optBtn-${selectedIdx}`);
       const correctBtn = document.getElementById(`optBtn-${q.answer}`);
 
+      // Disable all options
       q.options.forEach((_, idx) => {
         document.getElementById(`optBtn-${idx}`).disabled = true;
       });
@@ -2189,18 +2448,24 @@ eq BA\)).
         selectedBtn.classList.add('opt-wrong');
         correctBtn.classList.add('opt-correct');
         fb.className = 'quiz-feedback-box wrong-fb';
-        fb.innerHTML = '&#10006; <strong>haha mali &#128540;</strong> &mdash; ' + q.hint;
+        // EXACT REQUIRED TEXT: "haha mali"
+        fb.innerHTML = '<span class="wrong-tag">&#10006; haha mali</span> ' + q.hint;
         fb.style.display = 'block';
         playAudioTone(false);
       }
 
+      // Check if last question
       const nextBtn = document.getElementById('btnQuizNext');
       if (currentQIndex < quiz.questions.length - 1) {
         nextBtn.textContent = 'Next Question &rarr;';
+        nextBtn.onclick = nextQuestion;
+        nextBtn.classList.add('show');
       } else {
-        nextBtn.textContent = 'See Results &rarr;';
+        // On last question, show "continue to the topic" or see results
+        nextBtn.textContent = 'continue to the topic &rarr;';
+        nextBtn.onclick = showQuizResults;
+        nextBtn.classList.add('show');
       }
-      nextBtn.classList.add('show');
     }
 
     function nextQuestion() {
@@ -2226,22 +2491,26 @@ eq BA\)).
       
       if (currentScore === total) {
         document.getElementById('quizFinishedEmoji').textContent = '&#127881;';
-        document.getElementById('quizFinishedMsg').textContent = 'Perfect score! Outstanding mastery of this topic.';
+        document.getElementById('quizFinishedMsg').textContent = 'Perfect score! Outstanding mastery of this lesson.';
         try { confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } }); } catch(e){}
       } else if (currentScore >= total / 2) {
         document.getElementById('quizFinishedEmoji').textContent = '&#128079;';
-        document.getElementById('quizFinishedMsg').textContent = 'Great job! A quick review of the notes will make it 100%.';
+        document.getElementById('quizFinishedMsg').textContent = 'Great effort! A quick review will make it 100%.';
       } else {
         document.getElementById('quizFinishedEmoji').textContent = '&#128170;';
-        document.getElementById('quizFinishedMsg').textContent = 'Keep practicing! Review the detailed lessons or summary above.';
+        document.getElementById('quizFinishedMsg').textContent = 'Keep practicing! Review the lesson notes above.';
       }
     }
 
+    // Redirect to the reviewer topic
     function continueToTopic() {
       closeQuiz();
-      const lessonTarget = `lesson-${activeQuizKey}`;
-      const el = document.getElementById(lessonTarget);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const quiz = QUIZ_DATABASE[activeQuizKey];
+      const targetId = (quiz && quiz.lessonId) ? quiz.lessonId : activeQuizKey;
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     function closeQuiz() {
@@ -2250,22 +2519,24 @@ eq BA\)).
 
     // Search Engine
     const searchTerms = [
-      { title: "5 Elemento ng Komunikasyon", channel: "mk", lessonId: "lesson-mk-a3", desc: "Sender, Message, Channel, Receiver, Feedback" },
-      { title: "Intrapersonal (Diary, Journal, Reflection)", channel: "mk", lessonId: "lesson-mk-a3", desc: "Pakikipag-usap sa sarili at goal setting" },
-      { title: "Digital Identity, Footprint & Netiquette", channel: "mk", lessonId: "lesson-mk-a3", desc: "Active vs passive footprint, 2FA, online privacy" },
-      { title: "3 Proseso & Kamalayang Kultural", channel: "mk", lessonId: "lesson-mk-a4", desc: "Decoding, pakikilahok, ekspresyon, sensibilidad sa usapan" },
-      { title: "Simple Machines & 3 Lever Classes", channel: "gs", lessonId: "lesson-gs-w5simple", desc: "1st, 2nd, 3rd class levers (F-L-E middle rules), MA=Load/Effort" },
-      { title: "Pulleys, Inclined Planes & Screws", channel: "gs", lessonId: "lesson-gs-w5simple", desc: "Fixed vs movable pulleys, IMA=Length/Height" },
-      { title: "Pascal's Principle & Hydraulics", channel: "gs", lessonId: "lesson-gs-w6pascal", desc: "Pressure transmitted undiminished: F1/A1 = F2/A2" },
-      { title: "Archimedes' Principle & Buoyancy", channel: "gs", lessonId: "lesson-gs-w6pascal", desc: "Fb = Weight of displaced fluid; sinking vs floating" },
-      { title: "Business Percentages & Mark-up", channel: "gm", lessonId: "lesson-gm-w6", desc: "Cost, Selling Price, Mark-down, Discounts" },
-      { title: "Simple Interest (I = Prt)", channel: "gm", lessonId: "lesson-gm-w6", desc: "Principal, annual interest rate, time in years" },
-      { title: "Fibonacci Sequence & Nature Patterns", channel: "gm", lessonId: "lesson-gm-w7w8", desc: "0, 1, 1, 2, 3, 5, 8, 13, 21... Radial & Bilateral symmetry" },
-      { title: "Arithmetic & Geometric Sequences", channel: "gm", lessonId: "lesson-gm-w7w8", desc: "Common difference (d) vs common ratio (r)" },
-      { title: "Tessellations & 7 Frieze Groups", channel: "fn", lessonId: "lesson-fn-l3l4", desc: "Plane tiling with no gaps; 4 isometries" },
-      { title: "Golden Ratio (Phi = 1.618)", channel: "fn", lessonId: "lesson-fn-l3l4", desc: "Phi = (1+sqrt(5))/2; Golden rectangles & spirals" },
-      { title: "Fractals & Sierpinski Triangle", channel: "fn", lessonId: "lesson-fn-l5l6l7", desc: "Self-similarity repeating at infinite scales" },
-      { title: "Matrix Multiplication (m x k • k x n)", channel: "fn", lessonId: "lesson-fn-l5l6l7", desc: "Inner dimensions must match; matrix operations" }
+      { title: "5 Elemento ng Komunikasyon", channel: "mk", lessonId: "lesson-mk-elem", desc: "Sender, Message, Channel, Receiver, Feedback" },
+      { title: "Intrapersonal (Diary, Journal, Reflection)", channel: "mk", lessonId: "lesson-mk-intra", desc: "Pakikipag-usap sa sarili at goal setting" },
+      { title: "Digital Identity, Footprint & Netiquette", channel: "mk", lessonId: "lesson-mk-digital", desc: "Active vs passive footprint, 2FA, online privacy" },
+      { title: "3 Proseso ng Komunikasyon", channel: "mk", lessonId: "lesson-mk-proseso", desc: "Decoding, pakikilahok, ekspresyon" },
+      { title: "Kamalayang Kultural at Sensibilidad", channel: "mk", lessonId: "lesson-mk-kultural", desc: "Paggalang sa kultura, Noise, at sensibilidad" },
+      { title: "Simple Machines & 3 Lever Classes", channel: "gs", lessonId: "lesson-gs-levers", desc: "1st, 2nd, 3rd class levers (F-L-E middle rules)" },
+      { title: "Pulleys, Inclined Planes & Screws", channel: "gs", lessonId: "lesson-gs-pulleys", desc: "Fixed vs movable pulleys, IMA=Length/Height" },
+      { title: "Compound Machines & Combined MA", channel: "gs", lessonId: "lesson-gs-compound", desc: "Total MA = MA1 x MA2 x MA3..." },
+      { title: "Pascal's Principle & Hydraulics", channel: "gs", lessonId: "lesson-gs-pascal", desc: "Pressure transmitted undiminished: F1/A1 = F2/A2" },
+      { title: "Archimedes' Principle & Buoyancy", channel: "gs", lessonId: "lesson-gs-archimedes", desc: "Fb = Weight of displaced fluid; sinking vs floating" },
+      { title: "Mark-up, Mark-down & Discounts", channel: "gm", lessonId: "lesson-gm-markup", desc: "Cost, Selling Price, Mark-down, Discounts" },
+      { title: "Simple Interest (I = Prt)", channel: "gm", lessonId: "lesson-gm-interest", desc: "Principal, annual interest rate, time in years" },
+      { title: "Patterns in Nature & Fibonacci", channel: "gm", lessonId: "lesson-gm-patterns", desc: "0, 1, 1, 2, 3, 5, 8, 13, 21... Radial & Bilateral symmetry" },
+      { title: "Arithmetic & Geometric Sequences", channel: "gm", lessonId: "lesson-gm-sequences", desc: "Common difference (d) vs common ratio (r)" },
+      { title: "Tessellations & 7 Frieze Groups", channel: "fn", lessonId: "lesson-fn-tess", desc: "Plane tiling with no gaps; 4 isometries" },
+      { title: "Golden Ratio (Phi = 1.618)", channel: "fn", lessonId: "lesson-fn-golden", desc: "Phi = (1+sqrt(5))/2; Golden rectangles & spirals" },
+      { title: "Fractals & Sierpinski Triangle", channel: "fn", lessonId: "lesson-fn-fractals", desc: "Self-similarity repeating at infinite scales" },
+      { title: "Matrix Algebra & Multiplication", channel: "fn", lessonId: "lesson-fn-matrix", desc: "Inner dimensions must match; matrix operations" }
     ];
 
     function openSearch() {
