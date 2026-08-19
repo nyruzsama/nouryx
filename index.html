@@ -2813,7 +2813,1103 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
        ========================================================================== -->
   <script>
     // Complete Quiz Database
-    const QUIZ_DATABASE = {"gm-wages-overtime": {"title": "Aralin 1.1: Wages, Pay Periods at Overtime (Art. 87)", "lessonId": "lesson-gm-wages-overtime", "questions": [{"q": "Alin sa mga sumusunod ang kabayarang nakabatay sa bilang ng oras o dami ng natapos na gawa?", "options": ["Suweldo (Salary)", "Sahod (Wage)", "Komisyon (Commission)", "Withholding Tax"], "answer": 1, "hint": "Ang Sahod o Wage ay ibinabayad batay sa oras o piraso."}, {"q": "Ilang beses nagpapasahod sa isang taon kapag SEMI-MONTHLY ang suweldo?", "options": ["12 beses", "24 na beses (ika-15 at ika-30)", "26 na beses", "52 beses"], "answer": 1, "hint": "Semi-monthly ay dalawang beses bawat buwan (12 x 2 = 24)."}, {"q": "Ayon sa Article 87 ng Philippine Labor Code, ano ang pormula sa REGULAR DAY Overtime (+25%)?", "options": ["Hourly Rate x 1.00 x Oras", "Hourly Rate x 1.25 x Oras", "Hourly Rate x 1.69 x Oras", "Hourly Rate x 2.60 x Oras"], "answer": 1, "hint": "Regular day OT ay may dagdag na 25% (1.25x)."}, {"q": "Kung kumikita si Jasmine ng ₱30,000 bawat buwan, magkano ang kaniyang taunang suweldo (Annual Salary)?", "options": ["₱300,000", "₱360,000", "₱400,000", "₱320,000"], "answer": 1, "hint": "₱30,000 x 12 buwan = ₱360,000."}, {"q": "Kapag ang overtime ay pumatak sa REST DAY o SPECIAL DAY, ano ang multiplier sa hourly rate?", "options": ["1.25x", "1.69x (130% base + 30%)", "2.60x", "3.38x"], "answer": 1, "hint": "1.30 x 1.30 = 1.69x."}]}, "gm-piecework-commissions": {"title": "Aralin 1.2: Piecework & Sales Commissions", "lessonId": "lesson-gm-piecework-commissions", "questions": [{"q": "Ano ang tawag sa sistema ng pagpapasahod na nakabatay sa dami ng produktong natapos at hindi sa oras?", "options": ["Salary", "Piecework", "Excise Tax", "Hourly Rate"], "answer": 1, "hint": "Piecework ang bayad bawat piraso o unit."}, {"q": "Ano ang layunin ng DIFFERENTIAL PIECE RATE system?", "options": ["Bawasan ang sahod ng masipag", "Magbigay ng mas mataas na rate para sa bawat unit na lalagpas sa quota", "Gawing libre ang produkto", "Walang bayad ang overtime"], "answer": 1, "hint": "Insentibo sa mataas na produksyon ang mas mataas na rate beyond quota."}, {"q": "Kung si Mariel ay may 5% komisyon at nakabenta ng bahay na nagkakahalaga ng ₱3,200,000, magkano ang kaniyang komisyon?", "options": ["₱150,000", "₱160,000", "₱180,000", "₱320,000"], "answer": 1, "hint": "₱3,200,000 x 0.05 = ₱160,000."}, {"q": "Kung si Leo ay kumita ng ₱10/box sa unang 100 boxes at ₱15/box sa labis na 60 boxes, ano ang total gross earnings?", "options": ["₱1,600", "₱1,900", "₱2,400", "₱1,500"], "answer": 1, "hint": "(100 x 10) + (60 x 15) = 1,000 + 900 = ₱1,900."}]}, "gm-taxes-vat": {"title": "Aralin 1.3: 12 Uri ng Buwis, 12% VAT at 2025 Tax Table", "lessonId": "lesson-gm-taxes-vat", "questions": [{"q": "Aling buwis ang ipinapataw sa partikular na mga produkto tulad ng gasolina, alak, at tabako?", "options": ["Capital Gains Tax", "Excise Tax", "Real Property Tax", "Donor's Tax"], "answer": 1, "hint": "Excise tax ang buwis sa specific commodities."}, {"q": "Magkano ang 12% VAT ng isang laptop na nagkakahalaga ng ₱35,000 bago ang buwis?", "options": ["₱3,500", "₱4,200", "₱4,500", "₱5,000"], "answer": 1, "hint": "₱35,000 x 0.12 = ₱4,200."}, {"q": "Ayon sa Bagong Income Tax Table 2025, magkano ang buwis ng may taunang taxable income na hindi lalagpas sa ₱250,000?", "options": ["0% (Libre sa buwis)", "15%", "20%", "25%"], "answer": 0, "hint": "0% tax para sa ₱250,000 pababa."}, {"q": "Aling buwis ang kinakaltas nang maaga ng employer mula sa suweldo ng empleyado bago ito ibigay?", "options": ["Withholding Tax", "Value-Added Tax", "Transfer Tax", "Documentary Stamp Tax"], "answer": 0, "hint": "Withholding tax ang advance deduction sa suweldo."}, {"q": "Ano ang tawag sa buwis sa tubong kinita mula sa pagbebenta ng mga ari-arian tulad ng lupa o bahay?", "options": ["Capital Gains Tax (CGT)", "Percentage Tax", "Business Tax", "Excise Tax"], "answer": 0, "hint": "CGT ang buwis sa capital gains o tubo sa assets."}]}, "gm-payroll-deductions": {"title": "Aralin 1.4: Statutory Deductions & Payroll Computation", "lessonId": "lesson-gm-payroll-deductions", "questions": [{"q": "Sa ilalim ng 2025 SSS rate (15%), ilang porsyento ang share na kinakaltas sa empleyado?", "options": ["2.5%", "5%", "10%", "15%"], "answer": 1, "hint": "5% ang share ng empleyado, 10% ang employer share."}, {"q": "Magkano ang maximum statutory monthly deduction para sa Pag-IBIG ng miyembro?", "options": ["₱100.00", "₱200.00", "₱400.00", "₱500.00"], "answer": 1, "hint": "₱200.00 ang maximum member contribution sa Pag-IBIG."}, {"q": "Sa 5% PhilHealth premium rate hike, ilang porsyento ng Basic Pay ang kinakaltas bilang Employee Share?", "options": ["1.5%", "2.5% (Basic Pay x 0.025)", "4.0%", "5.0%"], "answer": 1, "hint": "Hating pantay ang 5% premium rate: 2.5% employee at 2.5% employer."}, {"q": "Paano kinukuha ang NET PAY o Take-Home Pay ng empleyado?", "options": ["Gross Income + Total Deductions", "Gross Income - Total Deductions", "Basic Pay x Overtime Rate", "Taxable Income x 12"], "answer": 1, "hint": "Net Pay = Gross Income minus Total Deductions."}, {"q": "Kung si Maria ay may Gross Income na ₱13,074.37 at Total Deductions na ₱1,163.50, magkano ang kaniyang Net Income?", "options": ["₱11,500.00", "₱11,910.87 (o ₱11,910.88)", "₱12,000.00", "₱14,237.87"], "answer": 1, "hint": "13,074.37 - 1,163.50 = ₱11,910.87."}]}, "mk-elem-anyo": {"title": "Aralin 3.1: 5 Elemento at Anyo ng Pagpapahayag", "lessonId": "lesson-mk-elem-anyo", "questions": [{"q": "Sino ang pinagmumulan o nagpapadala ng mensahe?", "options": ["Tagatanggap (Receiver)", "Tagapagpadala (Sender)", "Daluyan (Channel)", "Tugon (Feedback)"], "answer": 1, "hint": "Ang Sender ang nagsisimula ng proseso."}, {"q": "Aling anyo ng pagpapahayag ang nagbibigay ng impormasyon batay sa nakita o narinig NANG HINDI AGAD NAGBIBIGAY NG SARILING PAGHUHUSGA?", "options": ["Pagkukuwento", "Paglalahad ng Obserbasyon", "Pagtatanong", "Panghuhula"], "answer": 1, "hint": "Obserbasyon muna bago humusga."}, {"q": "'Ano po ang takdang-aralin?' ay halimbawa ng anong anyo ng pagpapahayag?", "options": ["Pagpapahayag ng Opinyon", "Pagkukuwento", "Pagtatanong", "Paglalahad ng Obserbasyon"], "answer": 2, "hint": "Paraan ng pagkuha ng impormasyon o paghingi ng linaw."}, {"q": "Ang pagsasalaysay ng isang karanasan o pangyayari upang magbahagi ng impormasyon o magbigay-aliw ay:", "options": ["Pagtatanong", "Pagkukuwento", "Tugon", "Noise"], "answer": 1, "hint": "Pagsasalaysay ng kwento at karanasan."}]}, "mk-antas-awdyens": {"title": "Aralin 3.2: Antas ng Komunikasyon at Awdyens", "lessonId": "lesson-mk-antas-awdyens", "questions": [{"q": "Ano ang tawag sa komunikasyon kung saan iisa ang tagapagsalita at marami ang tagapakinig?", "options": ["Personal na Komunikasyon", "Interpersonal na Komunikasyon", "Pampublikong Komunikasyon", "Passive Footprint"], "answer": 2, "hint": "Pampubliko dahil nakatuon sa malaking madla tulad ng talumpati."}, {"q": "Bakit mahalagang kilalanin ang awdyens bago magpahayag?", "options": ["Upang malaman ang kanilang password", "Upang makapili ng angkop na salita, tono, at paraan ng pagpapahayag", "Para sumikat online", "Para maiwasan ang pagsasalita"], "answer": 1, "hint": "Dapat iakma ang tono at wika sa nakikinig."}, {"q": "Saan karaniwang ginagamit ang PORMAL na wika?", "options": ["Chat sa barkada", "Paaralan, opisina, at talumpati", "Kaswal na usapan sa kanto", "TikTok comments"], "answer": 1, "hint": "Ginagamit sa opisyal at seryosong sitwasyon."}, {"q": "Alin ang mas SISTEMATIKONG pagsulat ng mga natutuhan, obserbasyon, at pagninilay sa sarili?", "options": ["Dyornal (Journal)", "Talaarawan (Diary)", "Blog Comment", "Tweet"], "answer": 0, "hint": "Dyornal ang mas nakatuon sa sistematikong pagkatuto."}]}, "mk-digital-privacy": {"title": "Aralin 3.3: Digital Identity, Privacy at Netiquette", "lessonId": "lesson-mk-digital-privacy", "questions": [{"q": "Ano ang kahulugan ng PRIVACY (Pagkapribado)?", "options": ["Karapatang mag-post ng kahit ano", "Karapatan ng tao na panatilihing pribado at ligtas ang kaniyang personal na impormasyon", "Pagbura ng account", "Pagbabahagi ng password"], "answer": 1, "hint": "Pangangalaga sa sariling impormasyon."}, {"q": "Alin ang halimbawa ng PASSIVE digital footprint?", "options": ["Pag-upload ng video", "Web cookies at browsing history na awtomatikong nakokolekta", "Pag-post ng status", "Pagkomento sa balita"], "answer": 1, "hint": "Awtomatikong naitatala nang walang kusa."}, {"q": "Bakit mahalaga ang Two-Factor Authentication (2FA) at Personal Data Protection?", "options": ["Upang maprotektahan ang datos laban sa hindi awtorisadong paggamit", "Upang dumami ang followers", "Upang bumilis ang phone", "Upang maging pormal ang chat"], "answer": 0, "hint": "Karagdagang layer ng seguridad sa personal data."}]}, "mk-public-facing": {"title": "Aralin 3.4: Public-Facing na Teksto at Layunin Nito", "lessonId": "lesson-mk-public-facing", "questions": [{"q": "Aling public-facing text ang naglalayong HIKAYATIN ang mga tao na suportahan o makiisa sa isang adbokasiya?", "options": ["Talaarawan", "Advocacy Post", "Maikling Kolumn", "Dyornal"], "answer": 1, "hint": "Advocacy post ang humihikayat sa layunin."}, {"q": "Ano ang INCLUSIVITY (Pagiging Inklusibo) bilang layunin ng teksto?", "options": ["Pagbubukod sa mga mahihirap", "Pantay na paggalang, pagkakataon, at pagtanggap sa lahat anuman ang kasarian, edad, o kultura", "Pagsasara ng komento", "Pang-iinsulto sa iba"], "answer": 1, "hint": "Pantay na pagtanggap sa lahat nang walang diskriminasyon."}, {"q": "Ang maikling artikulo na nagpapahayag ng opinyon ng may-akda sa napapanahong isyu ay tinatawag na:", "options": ["Blog", "Maikling Kolumn", "Advocacy Post", "Talaarawan"], "answer": 1, "hint": "Maikling kolumn sa pahayagan o magasin."}, {"q": "Alin ang sulating nagbibigay ng sariling pananaw, pagsusuri, o opinyon tungkol sa isang balita o isyu?", "options": ["Komentaryo", "Data Protection", "2FA", "Passive Footprint"], "answer": 0, "hint": "Komentaryo ang naglalaman ng pagsusuri at pananaw."}]}, "mk-proseso": {"title": "Aralin 4.1: Dinamikong Proseso ng Komunikasyon", "lessonId": "lesson-mk-proseso", "questions": [{"q": "Alin sa 3 proseso ang tumutukoy sa pag-unawa at pagbibigay-kahulugan sa mensahe batay sa karanasan at emosyon?", "options": ["Pagpapahayag (Expression)", "Pakikilahok (Participation)", "Pagbibigay-kahulugan (Decoding)", "Pampubliko"], "answer": 2, "hint": "Decoding ang pag-unawa sa kahulugan."}, {"q": "Bakit sinasabing DINAMIKO ang komunikasyon?", "options": ["Dahil ito ay nakatigil", "Dahil ito ay tuloy-tuloy, interaktibo, at lumulutas ng mga suliranin", "Dahil pasulat lamang ito", "Dahil walang tugon"], "answer": 1, "hint": "Dinamiko = patuloy na nagbabago at umuunlad ang ugnayan."}, {"q": "Ang aktibong pakikinig at pakikiisa sa talakayan ay bahagi ng anong proseso?", "options": ["Pakikilahok (Participation)", "Passive Data", "Personal Data", "Noise"], "answer": 0, "hint": "Pakikilahok = active engagement."}]}, "mk-kultural-konteksto": {"title": "Aralin 4.2: 4 na Konteksto at Kamalayang Kultural", "lessonId": "lesson-mk-kultural-konteksto", "questions": [{"q": "Ang komunikasyon sa loob ng pangkat o komunidad (hal. pagbibigay ng opinyon sa klase) ay kontekstong:", "options": ["Personal", "Interpersonal", "Sosyal", "Kultural"], "answer": 2, "hint": "Sosyal ang antas sa pangkat o komunidad."}, {"q": "Aling pahayag ang nagpapakita ng SENSIBILIDAD sa komunikasyon?", "options": ["'Maling-mali ka!'", "'Wala kang alam!'", "'Mayroon akong ibang pananaw ukol diyan.'", "'Tumahimik ka na lang.'"], "answer": 2, "hint": "Isinasaalang-alang ang damdamin ng kausap."}, {"q": "Ang paggamit ng 'po' at 'opo' sa Pilipinas ay halimbawa ng anong konteksto?", "options": ["Personal", "Kultural (pag-unawa sa tradisyon at paniniwala)", "Passive Footprint", "Noise"], "answer": 1, "hint": "Bahagi ito ng kultura at kaugaliang Pilipino."}]}, "gs-levers": {"title": "Week 5: The Three Classes of Levers", "lessonId": "lesson-gs-levers", "questions": [{"q": "Which class of lever has the FULCRUM in the middle?", "options": ["1st Class Lever (Seesaw, scissors)", "2nd Class Lever (Wheelbarrow)", "3rd Class Lever (Tweezers)", "None"], "answer": 0, "hint": "1st = Fulcrum in middle."}, {"q": "Which class of lever has the LOAD in the middle and always has MA > 1?", "options": ["1st Class", "2nd Class", "3rd Class", "4th Class"], "answer": 1, "hint": "2nd = Load in middle."}, {"q": "Which class of lever has the EFFORT in the middle and multiplies speed (MA < 1)?", "options": ["1st Class", "2nd Class", "3rd Class", "Fixed pulley"], "answer": 2, "hint": "3rd = Effort in middle."}]}, "gs-pulleys": {"title": "Week 5: Pulleys, Wheels, & Inclined Planes", "lessonId": "lesson-gs-pulleys", "questions": [{"q": "A fixed pulley has a Mechanical Advantage of:", "options": ["0", "1 (only redirects force)", "2", "4"], "answer": 1, "hint": "It changes force direction only."}, {"q": "A ramp is 10 m long and 2 m high. What is its Ideal Mechanical Advantage (IMA)?", "options": ["0.2", "5", "20", "8"], "answer": 1, "hint": "IMA = Length / Height (10 / 2 = 5)."}, {"q": "Two inclined planes placed back-to-back used for cutting describe a:", "options": ["Screw", "Wedge", "Wheel and Axle", "3rd Class Lever"], "answer": 1, "hint": "Axes and knives are wedges."}]}, "gs-compound": {"title": "Week 5: Compound Machines & Combined MA", "lessonId": "lesson-gs-compound", "questions": [{"q": "How is total MA of a compound machine calculated?", "options": ["MA_total = MA1 + MA2", "MA_total = MA1 x MA2 x MA3...", "MA_total = (MA1 + MA2) / 2", "MA_total = MA1 - MA2"], "answer": 1, "hint": "Multiplied together."}, {"q": "Why are compound machines generally less efficient than simple machines?", "options": ["They produce too much work", "More moving parts introduce more friction and heat loss", "They violate physics", "They have MA < 1"], "answer": 1, "hint": "Friction from multiple components."}, {"q": "A pair of scissors combines which simple machines?", "options": ["Two 1st class levers + wedge blades", "Wheel & axle + pulley", "Screw + ramp", "3rd class lever + fixed pulley"], "answer": 0, "hint": "Pivoted levers with sharp wedge blades."}]}, "gs-pascal": {"title": "Week 6: Pascal's Principle & Hydraulics", "lessonId": "lesson-gs-pascal", "questions": [{"q": "Pascal's Principle states that pressure applied to an enclosed fluid is:", "options": ["Lost at the bottom", "Transmitted undiminished in all directions", "Reduced by 50%", "Directed only upwards"], "answer": 1, "hint": "P1 = P2 throughout the fluid."}, {"q": "In a hydraulic lift, if Piston 2 has 10 times the area of Piston 1, the output force F2 will be:", "options": ["10 times greater than F1", "10 times smaller than F1", "Equal to F1", "Zero"], "answer": 0, "hint": "F2 = F1 x (A2 / A1)."}, {"q": "Which machine operates directly on Pascal's Principle?", "options": ["Hydraulic car brakes and lifts", "A simple crowbar", "A fixed flagpole pulley", "A compass"], "answer": 0, "hint": "Hydraulic systems use fluid pressure."}]}, "gs-archimedes": {"title": "Week 6: Archimedes' Principle & Buoyancy", "lessonId": "lesson-gs-archimedes", "questions": [{"q": "According to Archimedes' Principle, Buoyant Force (Fb) equals:", "options": ["Total weight of the object", "Weight of fluid displaced by the object", "Depth of the water", "Zero in seawater"], "answer": 1, "hint": "Fb = Weight of displaced fluid."}, {"q": "An object will SINK in water if:", "options": ["Its density is greater than water (Fb < Weight)", "Its density is less than water", "It is made of wood", "Its volume is large"], "answer": 0, "hint": "Higher density sinks."}, {"q": "Why do massive steel ships float on water?", "options": ["Steel is lighter than water", "Hollow hull displaces huge volume of water, creating large buoyant force", "Salt in ocean repels steel", "Engines push the ship up"], "answer": 1, "hint": "Displaced water weight exceeds ship weight."}]}, "gm-markup": {"title": "Week 6: Mark-up, Mark-down & Discounts", "lessonId": "lesson-gm-markup", "questions": [{"q": "If an item costs \u20b1400 and is sold for \u20b1550, what is the Mark-up?", "options": ["\u20b1100", "\u20b1150", "\u20b1950", "\u20b1200"], "answer": 1, "hint": "Mark-up = 550 - 400 = 150."}, {"q": "A \u20b11,000 item has a 25% discount. What is the Sale Price?", "options": ["\u20b1250", "\u20b1750", "\u20b11,250", "\u20b1800"], "answer": 1, "hint": "1,000 - 250 = 750."}, {"q": "What is the formula for Mark-up Rate based on Cost?", "options": ["(Mark-up / Cost) x 100%", "(Cost / Mark-up) x 100%", "Cost x Selling Price", "Selling Price - Discount"], "answer": 0, "hint": "Mark-up over original cost."}]}, "gm-interest": {"title": "Week 6: Simple Interest & Maturity Value", "lessonId": "lesson-gm-interest", "questions": [{"q": "What is the formula for Simple Interest (I)?", "options": ["I = P + r + t", "I = Prt (Principal x Rate x Time)", "I = P / rt", "I = P(1 + r)^t"], "answer": 1, "hint": "I = Prt."}, {"q": "If you invest \u20b120,000 at 4% for 2 years, how much interest is earned?", "options": ["\u20b1800", "\u20b11,600", "\u20b121,600", "\u20b14,000"], "answer": 1, "hint": "20,000 x 0.04 x 2 = 1,600."}, {"q": "What is the Maturity Value (Future Value F) of the investment above?", "options": ["\u20b11,600", "\u20b120,000", "\u20b121,600", "\u20b124,000"], "answer": 2, "hint": "20,000 + 1,600 = 21,600."}]}, "gm-patterns": {"title": "Week 7: Patterns in Nature & Fibonacci", "lessonId": "lesson-gm-patterns", "questions": [{"q": "What are the next two terms: 0, 1, 1, 2, 3, 5, 8, __, __?", "options": ["10, 12", "13, 21", "11, 15", "16, 24"], "answer": 1, "hint": "5+8=13, 8+13=21."}, {"q": "Which symmetry is shown by a starfish and sunflower florets?", "options": ["Bilateral symmetry", "Radial / Rotational symmetry", "Asymmetry", "Translation"], "answer": 1, "hint": "Rotational around center."}, {"q": "Why do honeybees build hexagonal honeycomb cells?", "options": ["Random", "Hexagons maximize storage volume with minimal perimeter/wax", "To trap heat only", "Easier to count"], "answer": 1, "hint": "Optimal packing efficiency."}]}, "gm-sequences": {"title": "Week 8: Arithmetic & Geometric Sequences", "lessonId": "lesson-gm-sequences", "questions": [{"q": "In the Arithmetic Sequence 5, 9, 13, 17..., what is the Common Difference (d)?", "options": ["2", "4", "5", "8"], "answer": 1, "hint": "d = 9 - 5 = 4."}, {"q": "What is the formula for the nth term of an Arithmetic Sequence?", "options": ["an = a1 + (n - 1)d", "an = a1 x r^(n-1)", "an = n x d", "an = a1 / d"], "answer": 0, "hint": "an = a1 + (n - 1)d."}, {"q": "In the Geometric Sequence 3, 6, 12, 24..., what is the Common Ratio (r)?", "options": ["2", "3", "4", "6"], "answer": 0, "hint": "r = 6 / 3 = 2."}]}, "fn-tess": {"title": "Lesson 3: Tessellations & Frieze Patterns", "lessonId": "lesson-fn-tess", "questions": [{"q": "What is a Tessellation (Tiling)?", "options": ["3D sculpture", "Covering a plane with shapes without overlaps or gaps", "Equation", "Fractal dimension"], "answer": 1, "hint": "No gaps, no overlaps."}, {"q": "How many distinct Frieze Symmetry Groups exist in 1D border patterns?", "options": ["4", "7", "12", "17"], "answer": 1, "hint": "Exactly 7 frieze groups."}, {"q": "Which transformation slides an object along a line without rotation?", "options": ["Reflection", "Rotation", "Translation", "Glide Reflection"], "answer": 2, "hint": "Linear slide is Translation."}]}, "fn-golden": {"title": "Lesson 4: Golden Ratio & Fibonacci Spirals", "lessonId": "lesson-fn-golden", "questions": [{"q": "What is the approximate value of the Golden Ratio (Phi, \u03c6)?", "options": ["3.1416", "1.618", "2.718", "1.414"], "answer": 1, "hint": "\u03c6 \u2248 1.6180339887."}, {"q": "A Golden Rectangle has side lengths in the ratio:", "options": ["2 : 1", "1.618 : 1 (\u03c6 : 1)", "3 : 2", "1 : 1"], "answer": 1, "hint": "Length / Width = \u03c6."}, {"q": "As Fibonacci sequence progresses, the ratio of consecutive terms (Fn+1 / Fn) approaches:", "options": ["0", "1", "The Golden Ratio (\u03c6 \u2248 1.618)", "Infinity"], "answer": 2, "hint": "Converges to Phi."}]}, "fn-fractals": {"title": "Lesson 5: Fractals & Self-Similarity", "lessonId": "lesson-fn-fractals", "questions": [{"q": "What is the defining property of a Fractal?", "options": ["Straight lines only", "Self-Similarity (repeats structure at every scale)", "Fixed area only", "Finite iterations only"], "answer": 1, "hint": "Structural repetition across zoom levels."}, {"q": "Which of the following is a classic fractal?", "options": ["Sierpinski Gasket / Triangle", "Koch Snowflake", "Mandelbrot Set", "All of the above"], "answer": 3, "hint": "All three are prominent fractals."}, {"q": "Which natural phenomenon displays fractal geometry?", "options": ["Fern leaves and coastlines", "Lightning branches and river networks", "Blood vessels and lung bronchi", "All of the above"], "answer": 3, "hint": "Nature uses fractal branching."}]}, "fn-matrix": {"title": "Lessons 6 & 7: Matrix Algebra & Multiplication", "lessonId": "lesson-fn-matrix", "questions": [{"q": "To ADD two matrices, they must have:", "options": ["Square dimensions", "Identical dimensions (same rows and columns)", "Determinants equal to 1", "Positive entries only"], "answer": 1, "hint": "Same m x n order."}, {"q": "What condition must be met to MULTIPLY Matrix A (m x k) and Matrix B (p x n)?", "options": ["Columns of A (k) must equal Rows of B (p)", "Rows of A must equal Rows of B", "Both must be square", "k must equal m"], "answer": 0, "hint": "Inner dimensions must match: (m x k) \u2022 (k x n)."}, {"q": "If Matrix A is (2 x 3) and Matrix B is (3 x 4), what is the order of AB?", "options": ["2 x 4", "3 x 3", "2 x 3", "Undefined"], "answer": 0, "hint": "Outer dimensions: 2 x 4."}]}};
+    const QUIZ_DATABASE = {
+  "mk-elem-anyo": {
+    "title": "Aralin 3.1: 5 Elemento at Anyo ng Pagpapahayag",
+    "lessonId": "lesson-mk-elem-anyo",
+    "questions": [
+      {
+        "q": "Sino ang pinagmumulan o nagpapadala ng mensahe?",
+        "options": [
+          "Tagatanggap (Receiver)",
+          "Tagapagpadala (Sender)",
+          "Daluyan (Channel)",
+          "Tugon (Feedback)"
+        ],
+        "answer": 1,
+        "hint": "Ang Sender ang nagsisimula ng proseso."
+      },
+      {
+        "q": "Aling anyo ng pagpapahayag ang nagbibigay ng impormasyon batay sa nakita o narinig NANG HINDI AGAD NAGBIBIGAY NG SARILING PAGHUHUSGA?",
+        "options": [
+          "Pagkukuwento",
+          "Paglalahad ng Obserbasyon",
+          "Pagtatanong",
+          "Panghuhula"
+        ],
+        "answer": 1,
+        "hint": "Obserbasyon muna bago humusga."
+      },
+      {
+        "q": "'Ano po ang takdang-aralin?' ay halimbawa ng anong anyo ng pagpapahayag?",
+        "options": [
+          "Pagpapahayag ng Opinyon",
+          "Pagkukuwento",
+          "Pagtatanong",
+          "Paglalahad ng Obserbasyon"
+        ],
+        "answer": 2,
+        "hint": "Paraan ng pagkuha ng impormasyon o paghingi ng linaw."
+      },
+      {
+        "q": "Ang pagsasalaysay ng isang karanasan o pangyayari upang magbahagi ng impormasyon o magbigay-aliw ay:",
+        "options": [
+          "Pagtatanong",
+          "Pagkukuwento",
+          "Tugon",
+          "Noise"
+        ],
+        "answer": 1,
+        "hint": "Pagsasalaysay ng kwento at karanasan."
+      }
+    ]
+  },
+  "mk-antas-awdyens": {
+    "title": "Aralin 3.2: Antas ng Komunikasyon at Awdyens",
+    "lessonId": "lesson-mk-antas-awdyens",
+    "questions": [
+      {
+        "q": "Ano ang tawag sa komunikasyon kung saan iisa ang tagapagsalita at marami ang tagapakinig?",
+        "options": [
+          "Personal na Komunikasyon",
+          "Interpersonal na Komunikasyon",
+          "Pampublikong Komunikasyon",
+          "Passive Footprint"
+        ],
+        "answer": 2,
+        "hint": "Pampubliko dahil nakatuon sa malaking madla tulad ng talumpati."
+      },
+      {
+        "q": "Bakit mahalagang kilalanin ang awdyens bago magpahayag?",
+        "options": [
+          "Upang malaman ang kanilang password",
+          "Upang makapili ng angkop na salita, tono, at paraan ng pagpapahayag",
+          "Para sumikat online",
+          "Para maiwasan ang pagsasalita"
+        ],
+        "answer": 1,
+        "hint": "Dapat iakma ang tono at wika sa nakikinig."
+      },
+      {
+        "q": "Saan karaniwang ginagamit ang PORMAL na wika?",
+        "options": [
+          "Chat sa barkada",
+          "Paaralan, opisina, at talumpati",
+          "Kaswal na usapan sa kanto",
+          "TikTok comments"
+        ],
+        "answer": 1,
+        "hint": "Ginagamit sa opisyal at seryosong sitwasyon."
+      },
+      {
+        "q": "Alin ang mas SISTEMATIKONG pagsulat ng mga natutuhan, obserbasyon, at pagninilay sa sarili?",
+        "options": [
+          "Dyornal (Journal)",
+          "Talaarawan (Diary)",
+          "Blog Comment",
+          "Tweet"
+        ],
+        "answer": 0,
+        "hint": "Dyornal ang mas nakatuon sa sistematikong pagkatuto."
+      }
+    ]
+  },
+  "mk-digital-privacy": {
+    "title": "Aralin 3.3: Digital Identity, Privacy at Netiquette",
+    "lessonId": "lesson-mk-digital-privacy",
+    "questions": [
+      {
+        "q": "Ano ang kahulugan ng PRIVACY (Pagkapribado)?",
+        "options": [
+          "Karapatang mag-post ng kahit ano",
+          "Karapatan ng tao na panatilihing pribado at ligtas ang kaniyang personal na impormasyon",
+          "Pagbura ng account",
+          "Pagbabahagi ng password"
+        ],
+        "answer": 1,
+        "hint": "Pangangalaga sa sariling impormasyon."
+      },
+      {
+        "q": "Alin ang halimbawa ng PASSIVE digital footprint?",
+        "options": [
+          "Pag-upload ng video",
+          "Web cookies at browsing history na awtomatikong nakokolekta",
+          "Pag-post ng status",
+          "Pagkomento sa balita"
+        ],
+        "answer": 1,
+        "hint": "Awtomatikong naitatala nang walang kusa."
+      },
+      {
+        "q": "Bakit mahalaga ang Two-Factor Authentication (2FA) at Personal Data Protection?",
+        "options": [
+          "Upang maprotektahan ang datos laban sa hindi awtorisadong paggamit",
+          "Upang dumami ang followers",
+          "Upang bumilis ang phone",
+          "Upang maging pormal ang chat"
+        ],
+        "answer": 0,
+        "hint": "Karagdagang layer ng seguridad sa personal data."
+      }
+    ]
+  },
+  "mk-public-facing": {
+    "title": "Aralin 3.4: Public-Facing na Teksto at Layunin Nito",
+    "lessonId": "lesson-mk-public-facing",
+    "questions": [
+      {
+        "q": "Aling public-facing text ang naglalayong HIKAYATIN ang mga tao na suportahan o makiisa sa isang adbokasiya?",
+        "options": [
+          "Talaarawan",
+          "Advocacy Post",
+          "Maikling Kolumn",
+          "Dyornal"
+        ],
+        "answer": 1,
+        "hint": "Advocacy post ang humihikayat sa layunin."
+      },
+      {
+        "q": "Ano ang INCLUSIVITY (Pagiging Inklusibo) bilang layunin ng teksto?",
+        "options": [
+          "Paggamit ng napakahirap na salita",
+          "Pagtitiyak na ang teksto ay bukas, sensitibo, at gumagalang sa lahat ng uri ng mambabasa",
+          "Pag-post para lamang sa mga kaibigan",
+          "Pang-iinsulto sa iba"
+        ],
+        "answer": 1,
+        "hint": "Bukas at sensitibo sa lahat."
+      },
+      {
+        "q": "Alin sa mga sumusunod ang HINDI kabilang sa public-facing texts?",
+        "options": [
+          "Press Release",
+          "Advocacy Post",
+          "Personal na Talaarawan (Secret Diary)",
+          "Maikling Kolumn"
+        ],
+        "answer": 2,
+        "hint": "Ang personal diary ay pribado at hindi para sa publiko."
+      }
+    ]
+  },
+  "mk-proseso": {
+    "title": "Aralin 4.1: 3 Yugto ng Proseso ng Komunikasyon",
+    "lessonId": "lesson-mk-proseso",
+    "questions": [
+      {
+        "q": "Ano ang unang yugto sa proseso ng komunikasyon?",
+        "options": [
+          "Aktuwal na Pagpapahayag (Transmitting)",
+          "Bago Magpahayag (Pre-communicating)",
+          "Pagkatapos Magpahayag (Post-communicating)",
+          "Feedback Loop"
+        ],
+        "answer": 1,
+        "hint": "Pre-communicating: pagpaplano at pagkilala sa layunin."
+      },
+      {
+        "q": "Saang yugto nagaganap ang pagwawasto at paghingi ng linaw batay sa tugon o feedback?",
+        "options": [
+          "Bago Magpahayag",
+          "Aktuwal na Pagpapahayag",
+          "Pagkatapos Magpahayag",
+          "Encoding"
+        ],
+        "answer": 2,
+        "hint": "Post-communicating: pagtataya sa epekto at feedback."
+      },
+      {
+        "q": "Bakit mahalaga ang paghahanda (Pre-communicating) bago magpahayag?",
+        "options": [
+          "Upang maiwasan ang maling impormasyon at maiakma ang tono sa awdyens",
+          "Para maging mabilis ang pagsasalita",
+          "Para hindi na kailangan ng tugon",
+          "Para mawala ang ingay"
+        ],
+        "answer": 0,
+        "hint": "Naiiwasan ang miscommunication kapag may plano."
+      }
+    ]
+  },
+  "mk-kultural-konteksto": {
+    "title": "Aralin 4.2: 4 na Konteksto ng Pagpapahayag",
+    "lessonId": "lesson-mk-kultural-konteksto",
+    "questions": [
+      {
+        "q": "Aling konteksto ang tumutukoy sa mga kaugalian, tradisyon, at mga bawal o taboo ng isang grupo?",
+        "options": [
+          "Pisikal na Konteksto",
+          "Kultural na Konteksto",
+          "Sosyal na Konteksto",
+          "Sikolohikal na Konteksto"
+        ],
+        "answer": 1,
+        "hint": "Kultura ang nagtatakda ng mga pamantayan at tradisyon."
+      },
+      {
+        "q": "Ang relasyon ng tagapagsalita sa tagapakinig (hal. boss at empleyado, magkaibigan) ay nasa anong konteksto?",
+        "options": [
+          "Sosyal na Konteksto",
+          "Pisikal na Konteksto",
+          "Historikal na Konteksto",
+          "Digital na Konteksto"
+        ],
+        "answer": 0,
+        "hint": "Sosyal na relasyon at ugnayan."
+      },
+      {
+        "q": "Ang maingay na silid-aralan o mahinang internet connection ay halimbawa ng:",
+        "options": [
+          "Sikolohikal na Konteksto",
+          "Pisikal / Teknolohikal na Konteksto",
+          "Kultural na Konteksto",
+          "Sosyal na Konteksto"
+        ],
+        "answer": 1,
+        "hint": "Pisikal na kapaligiran o daluyan ng komunikasyon."
+      }
+    ]
+  },
+  "gs-levers": {
+    "title": "Week 5: 6 Simple Machines & Levers",
+    "lessonId": "lesson-gs-levers",
+    "questions": [
+      {
+        "q": "Which simple machine consists of a rigid bar pivoting on a fixed point called a fulcrum?",
+        "options": [
+          "Inclined Plane",
+          "Lever",
+          "Pulley",
+          "Screw"
+        ],
+        "answer": 1,
+        "hint": "Pivots around a fulcrum."
+      },
+      {
+        "q": "In a FIRST-CLASS lever, which component is in the middle?",
+        "options": [
+          "Load",
+          "Effort",
+          "Fulcrum",
+          "Axis"
+        ],
+        "answer": 2,
+        "hint": "F-L-E mnemonic: 1st class has Fulcrum in middle."
+      },
+      {
+        "q": "A wheelbarrow and nutcracker are examples of which class of lever?",
+        "options": [
+          "1st Class",
+          "2nd Class",
+          "3rd Class",
+          "4th Class"
+        ],
+        "answer": 1,
+        "hint": "Load is in the middle."
+      },
+      {
+        "q": "Tweezers, tongs, and a baseball bat are examples of:",
+        "options": [
+          "1st Class Lever",
+          "2nd Class Lever",
+          "3rd Class Lever",
+          "Wheel & Axle"
+        ],
+        "answer": 2,
+        "hint": "Effort is applied between fulcrum and load."
+      }
+    ]
+  },
+  "gs-pulleys": {
+    "title": "Week 5: Pulleys, Inclined Planes & IMA",
+    "lessonId": "lesson-gs-pulleys",
+    "questions": [
+      {
+        "q": "What is the Ideal Mechanical Advantage (IMA) of a single FIXED pulley?",
+        "options": [
+          "IMA = 1",
+          "IMA = 2",
+          "IMA = 4",
+          "IMA = 0.5"
+        ],
+        "answer": 0,
+        "hint": "Only changes direction of force, IMA = 1."
+      },
+      {
+        "q": "What is the formula for the Ideal Mechanical Advantage (IMA) of an inclined plane?",
+        "options": [
+          "Height \u00f7 Length",
+          "Length of slope \u00f7 Height (L/h)",
+          "Force \u00f7 Distance",
+          "Radius \u00f7 Axle"
+        ],
+        "answer": 1,
+        "hint": "Length of ramp divided by vertical height."
+      },
+      {
+        "q": "If a ramp has a length of 6 meters and a height of 2 meters, what is its IMA?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "12"
+        ],
+        "answer": 1,
+        "hint": "6 \u00f7 2 = 3."
+      }
+    ]
+  },
+  "gs-compound": {
+    "title": "Week 5: Compound Machines & Efficiency",
+    "lessonId": "lesson-gs-compound",
+    "questions": [
+      {
+        "q": "What is a compound machine?",
+        "options": [
+          "A machine with electronic circuits",
+          "A machine made of two or more simple machines working together",
+          "A machine with 100% efficiency",
+          "A perpetual motion device"
+        ],
+        "answer": 1,
+        "hint": "Combination of simple machines (e.g. scissors, bicycle)."
+      },
+      {
+        "q": "Why is the real efficiency of any practical machine always LESS than 100%?",
+        "options": [
+          "Gravity disappears",
+          "Friction and heat dissipate energy",
+          "Distance is lost",
+          "Mass increases"
+        ],
+        "answer": 1,
+        "hint": "Friction converts work into heat energy."
+      },
+      {
+        "q": "What is the formula for mechanical efficiency?",
+        "options": [
+          "(Work Output \u00f7 Work Input) \u00d7 100%",
+          "(Work Input \u00f7 Work Output) \u00d7 100%",
+          "IMA \u00d7 AMA",
+          "Force \u00d7 Distance"
+        ],
+        "answer": 0,
+        "hint": "Output divided by Input times 100."
+      }
+    ]
+  },
+  "gs-pascal": {
+    "title": "Week 6: Pascal's Principle & Hydraulics",
+    "lessonId": "lesson-gs-pascal",
+    "questions": [
+      {
+        "q": "What does Pascal's Principle state regarding enclosed fluids?",
+        "options": [
+          "Pressure only pushes downward",
+          "Pressure applied to an enclosed fluid is transmitted undiminished in all directions",
+          "Fluids always expand with heat",
+          "Fluid velocity increases at nozzles"
+        ],
+        "answer": 1,
+        "hint": "Transmitted undiminished throughout the fluid."
+      },
+      {
+        "q": "What is the formula for pressure (P)?",
+        "options": [
+          "P = Force \u00d7 Area",
+          "P = Force \u00f7 Area (F/A)",
+          "P = Mass \u00d7 Gravity",
+          "P = Work \u00f7 Time"
+        ],
+        "answer": 1,
+        "hint": "Force per unit area (N/m\u00b2 or Pascals)."
+      },
+      {
+        "q": "Hydraulic car brakes and hydraulic lifts operate based on which scientific principle?",
+        "options": [
+          "Archimedes' Principle",
+          "Pascal's Principle",
+          "Bernoulli's Principle",
+          "Newton's Third Law"
+        ],
+        "answer": 1,
+        "hint": "Pascal's law of fluid pressure multiplication."
+      }
+    ]
+  },
+  "gs-archimedes": {
+    "title": "Week 6: Archimedes' Principle & Buoyancy",
+    "lessonId": "lesson-gs-archimedes",
+    "questions": [
+      {
+        "q": "According to Archimedes' Principle, the buoyant force on a submerged body is equal to:",
+        "options": [
+          "The total mass of the object",
+          "The weight of the fluid displaced by the object",
+          "The surface tension of the fluid",
+          "The atmospheric pressure"
+        ],
+        "answer": 1,
+        "hint": "Buoyant force = weight of displaced fluid."
+      },
+      {
+        "q": "An object will SINK in water if:",
+        "options": [
+          "Its average density is greater than the density of water",
+          "Its buoyant force exceeds its weight",
+          "It has a large surface area",
+          "Its volume is less than 1 liter"
+        ],
+        "answer": 0,
+        "hint": "Higher density than water causes sinking."
+      },
+      {
+        "q": "Why can a massive steel ship float on water?",
+        "options": [
+          "Steel has zero mass in water",
+          "Its hollow hull design gives it an average density lower than water",
+          "The water pressure pulls it upward",
+          "Salt water makes steel lighter"
+        ],
+        "answer": 1,
+        "hint": "Hollow shape displaces large volume of water."
+      }
+    ]
+  },
+  "fn-tess": {
+    "title": "Lessons 3 & 4: Regular & Semi-Regular Tessellations",
+    "lessonId": "lesson-fn-tess",
+    "questions": [
+      {
+        "q": "Which three regular polygons can form REGULAR tessellations on a flat plane?",
+        "options": [
+          "Triangles, Squares, Hexagons",
+          "Pentagons, Hexagons, Octagons",
+          "Squares, Pentagons, Decagons",
+          "Triangles, Pentagons, Hexagons"
+        ],
+        "answer": 0,
+        "hint": "Internal angles must divide 360\u00b0 evenly (60\u00b0, 90\u00b0, 120\u00b0)."
+      },
+      {
+        "q": "What is a SEMI-REGULAR (Archimedean) tessellation?",
+        "options": [
+          "A tiling with random gaps",
+          "A tiling using two or more types of regular polygons with identical vertex configurations",
+          "A tiling made of circles",
+          "A non-repeating pattern"
+        ],
+        "answer": 1,
+        "hint": "Uses 2+ regular polygons with same vertex arrangement."
+      },
+      {
+        "q": "Which artist is globally famous for intricate interlocking figure tessellations?",
+        "options": [
+          "Leonardo da Vinci",
+          "M.C. Escher",
+          "Pablo Picasso",
+          "Vincent van Gogh"
+        ],
+        "answer": 1,
+        "hint": "M.C. Escher."
+      }
+    ]
+  },
+  "fn-golden": {
+    "title": "Lesson 5: Golden Ratio & Fibonacci Spirals",
+    "lessonId": "lesson-fn-golden",
+    "questions": [
+      {
+        "q": "What is the approximate numerical value of the Golden Ratio (Phi, \u03c6)?",
+        "options": [
+          "1.414",
+          "1.618",
+          "2.718",
+          "3.1415"
+        ],
+        "answer": 1,
+        "hint": "\u03c6 \u2248 1.6180339887..."
+      },
+      {
+        "q": "How is the Golden Ratio mathematically connected to the Fibonacci sequence?",
+        "options": [
+          "The sum of all Fibonacci numbers is Phi",
+          "The ratio of consecutive Fibonacci terms (Fn / Fn-1) approaches Phi as n increases",
+          "Every Fibonacci number is divisible by 1.618",
+          "Phi was invented by Fibonacci's brother"
+        ],
+        "answer": 1,
+        "hint": "Limit of consecutive terms Fn/Fn-1 = Phi."
+      },
+      {
+        "q": "Where is the Golden Spiral commonly observed in nature?",
+        "options": [
+          "Nautilus shell and spiral galaxies",
+          "Straight crystals",
+          "Honeycomb hexagons",
+          "Spider web radial lines"
+        ],
+        "answer": 0,
+        "hint": "Nautilus shell growth."
+      }
+    ]
+  },
+  "fn-fractals": {
+    "title": "Lesson 5B: Fractals & Self-Similarity",
+    "lessonId": "lesson-fn-fractals",
+    "questions": [
+      {
+        "q": "What is the defining characteristic of a FRACTAL?",
+        "options": [
+          "Perfect circle shape",
+          "Self-similarity across multiple scales",
+          "Zero perimeter",
+          "Fixed finite area without boundary"
+        ],
+        "answer": 1,
+        "hint": "Self-similar repeating structures."
+      },
+      {
+        "q": "Which of the following is a famous mathematical fractal?",
+        "options": [
+          "Mandelbrot Set and Sierpinski Triangle",
+          "Euler Circle",
+          "Cartesian Coordinate System",
+          "Gaussian Curve"
+        ],
+        "answer": 0,
+        "hint": "Mandelbrot & Sierpinski."
+      },
+      {
+        "q": "Which natural phenomenon demonstrates fractal geometry?",
+        "options": [
+          "Trees, river deltas, ferns, and coastlines",
+          "A flat tabletop",
+          "A square tile floor",
+          "A single drop of oil"
+        ],
+        "answer": 0,
+        "hint": "Branching structures in nature."
+      }
+    ]
+  },
+  "fn-matrix": {
+    "title": "Lessons 6 & 7: Matrix Algebra & Multiplication",
+    "lessonId": "lesson-fn-matrix",
+    "questions": [
+      {
+        "q": "To ADD two matrices, they must have:",
+        "options": [
+          "Square dimensions",
+          "Identical dimensions (same rows and columns)",
+          "Determinants equal to 1",
+          "Positive entries only"
+        ],
+        "answer": 1,
+        "hint": "Same m x n order."
+      },
+      {
+        "q": "What condition must be met to MULTIPLY Matrix A (m x k) and Matrix B (p x n)?",
+        "options": [
+          "Columns of A (k) must equal Rows of B (p)",
+          "Rows of A must equal Rows of B",
+          "Both must be square",
+          "k must equal m"
+        ],
+        "answer": 0,
+        "hint": "Inner dimensions must match: (m x k) \u2022 (k x n)."
+      },
+      {
+        "q": "If Matrix A is (2 x 3) and Matrix B is (3 x 4), what is the order of AB?",
+        "options": [
+          "2 x 4",
+          "3 x 3",
+          "2 x 3",
+          "Undefined"
+        ],
+        "answer": 0,
+        "hint": "Outer dimensions: 2 x 4."
+      }
+    ]
+  },
+  "gm-payroll-compensation": {
+    "title": "Lesson 1.1: Wages, Salaries & Compensation",
+    "lessonId": "lesson-gm-payroll",
+    "questions": [
+      {
+        "q": "What is the formal definition of COMPENSATION?",
+        "options": [
+          "A government tax deduction",
+          "The money paid to people for their work in forms like wages, salaries, and commissions",
+          "The net profit of a corporation",
+          "An overtime multiplier"
+        ],
+        "answer": 1,
+        "hint": "PDF: Compensation is the money paid to people for their work."
+      },
+      {
+        "q": "Which compensation is based on hours worked or units finished (common in hourly or factory jobs)?",
+        "options": [
+          "Salary",
+          "Wage",
+          "Commission",
+          "Dividend"
+        ],
+        "answer": 1,
+        "hint": "Wages are calculated hourly or per piece completed."
+      },
+      {
+        "q": "Which compensation is a fixed regular payment given to professionals who are paid to complete tasks rather than track time?",
+        "options": [
+          "Commission",
+          "Wage",
+          "Salary",
+          "Bonus"
+        ],
+        "answer": 2,
+        "hint": "Salaries are fixed regular payments."
+      },
+      {
+        "q": "Under a semi-monthly pay period (e.g. 15th & 30th), how many paychecks are received in a year?",
+        "options": [
+          "12 paychecks",
+          "24 paychecks",
+          "26 paychecks",
+          "52 paychecks"
+        ],
+        "answer": 1,
+        "hint": "Semi-monthly = twice a month = 24 paychecks."
+      },
+      {
+        "q": "What does GRESMA stand for in problem-solving?",
+        "options": [
+          "Goals, Reason, Equation, Solve, Method",
+          "Given, Required, Equation, Solution, Answer",
+          "General, Ratio, Exact, Summary, Action",
+          "Gain, Rate, Expense, Standard, Amount"
+        ],
+        "answer": 1,
+        "hint": "Given, Required, Equation, Solution, Answer."
+      }
+    ]
+  },
+  "gm-overtime-art87": {
+    "title": "Lesson 1.2: Overtime Pay (Article 87 Labor Code)",
+    "lessonId": "lesson-gm-overtime",
+    "questions": [
+      {
+        "q": "What is the legal definition of Overtime (OT) Pay under Article 87 of the Philippine Labor Code?",
+        "options": [
+          "Pay for working on holidays only",
+          "Compensation for work performed beyond 8 regular hours per day",
+          "Annual 13th month pay",
+          "Deductions for late arrival"
+        ],
+        "answer": 1,
+        "hint": "Work beyond 8 hours per day."
+      },
+      {
+        "q": "What is the overtime multiplier for work beyond 8 hours on a REGULAR working day?",
+        "options": [
+          "1.10x",
+          "1.25x (+25%)",
+          "1.30x",
+          "1.69x"
+        ],
+        "answer": 1,
+        "hint": "Hourly Rate x 1.25 x Hours."
+      },
+      {
+        "q": "What is the overtime multiplier for work on a scheduled REST DAY or SPECIAL NON-WORKING DAY?",
+        "options": [
+          "1.25x",
+          "1.50x",
+          "1.69x (+30% on 130% base)",
+          "2.60x"
+        ],
+        "answer": 2,
+        "hint": "Hourly Rate x 1.69 x Hours."
+      },
+      {
+        "q": "What is the overtime multiplier for work on a REGULAR HOLIDAY (+30% on 200% base)?",
+        "options": [
+          "2.00x",
+          "2.60x",
+          "3.00x",
+          "3.38x"
+        ],
+        "answer": 1,
+        "hint": "Hourly Rate x 2.60 x Hours."
+      },
+      {
+        "q": "What is the overtime multiplier when a Regular Holiday falls on an employee's REST DAY?",
+        "options": [
+          "2.60x",
+          "3.00x",
+          "3.38x (+30% on 260% base)",
+          "4.00x"
+        ],
+        "answer": 2,
+        "hint": "Hourly Rate x 3.38 x Hours."
+      }
+    ]
+  },
+  "gm-piecework-commission": {
+    "title": "Lesson 1.3: Piecework & Commission Schemes",
+    "lessonId": "lesson-gm-piecework",
+    "questions": [
+      {
+        "q": "What is PIECEWORK pay?",
+        "options": [
+          "Pay based on hourly attendance",
+          "Pay based strictly on the number of items or units finished rather than hours worked",
+          "A government bonus",
+          "An annual dividend"
+        ],
+        "answer": 1,
+        "hint": "Gross = Pay per item x Number of items."
+      },
+      {
+        "q": "What is DIFFERENTIAL PIECEWORK?",
+        "options": [
+          "Workers earn different pay based on age",
+          "Workers earn one base rate up to a quota, and a higher rate beyond it",
+          "Workers are paid in merchandise",
+          "Pay changes every month"
+        ],
+        "answer": 1,
+        "hint": "Higher incentive rate beyond quota."
+      },
+      {
+        "q": "What is the definition of STRAIGHT COMMISSION?",
+        "options": [
+          "Commission rate remains constant for all sales volume",
+          "Commission increases with every tier",
+          "Commission paid only in cash",
+          "Commission with zero deductions"
+        ],
+        "answer": 0,
+        "hint": "Constant percentage rate across all sales."
+      },
+      {
+        "q": "What is the definition of VARIABLE COMMISSION?",
+        "options": [
+          "Commission rate changes randomly",
+          "Commission percentage rate increases as sales volume reaches higher milestones",
+          "Commission paid every 2 weeks",
+          "Commission fixed by BIR"
+        ],
+        "answer": 1,
+        "hint": "Rate increases as sales grow."
+      }
+    ]
+  },
+  "gm-taxes-vat": {
+    "title": "Lesson 1.4: Philippine Taxes & 12% VAT",
+    "lessonId": "lesson-gm-taxes",
+    "questions": [
+      {
+        "q": "What are TAXES as defined in the lesson?",
+        "options": [
+          "Voluntary donations to charity",
+          "Amounts of money collected by the government from individuals and businesses to generate revenue and fund public resources",
+          "Bank service fees",
+          "Interest on credit cards"
+        ],
+        "answer": 1,
+        "hint": "Government revenue for public services."
+      },
+      {
+        "q": "Which tax is imposed specifically on goods like alcohol, fuel, and tobacco?",
+        "options": [
+          "Excise Tax",
+          "Capital Gains Tax",
+          "Percentage Tax",
+          "Documentary Stamp Tax"
+        ],
+        "answer": 0,
+        "hint": "Excise tax on specific commodities."
+      },
+      {
+        "q": "Which tax is imposed on profit earned from selling assets like land or shares?",
+        "options": [
+          "Donor's Tax",
+          "Capital Gains Tax (CGT)",
+          "Real Property Tax",
+          "Transfer Tax"
+        ],
+        "answer": 1,
+        "hint": "CGT on capital assets."
+      },
+      {
+        "q": "What is the standard Value-Added Tax (VAT) rate in the Philippines?",
+        "options": [
+          "5%",
+          "10%",
+          "12%",
+          "15%"
+        ],
+        "answer": 2,
+        "hint": "12% statutory rate."
+      },
+      {
+        "q": "How do you compute the base price BEFORE VAT from a VAT-inclusive total?",
+        "options": [
+          "Total x 0.12",
+          "Total - 0.12",
+          "Total \u00f7 1.12",
+          "Total x 1.12"
+        ],
+        "answer": 2,
+        "hint": "Price before VAT = Total \u00f7 1.12."
+      }
+    ]
+  },
+  "gm-deductions-netpay": {
+    "title": "Lesson 1.5: 2025 Deductions & Net Take-Home Pay",
+    "lessonId": "lesson-gm-deductions",
+    "questions": [
+      {
+        "q": "What is GROSS INCOME?",
+        "options": [
+          "Salary after taxes",
+          "Total unadjusted earnings before any deductions (Basic Pay + OT Pay)",
+          "Taxable income only",
+          "Mandatory contributions"
+        ],
+        "answer": 1,
+        "hint": "Total earnings before deductions."
+      },
+      {
+        "q": "What is NET INCOME (Take-Home Pay)?",
+        "options": [
+          "Basic pay only",
+          "Actual cash received after subtracting all mandatory deductions and withholding tax",
+          "Gross income plus allowances",
+          "Annual taxable salary"
+        ],
+        "answer": 1,
+        "hint": "Net = Gross - Total Deductions."
+      },
+      {
+        "q": "Under RA 11199 in 2025, what is the employee's share of the 15% SSS contribution?",
+        "options": [
+          "4%",
+          "5% (Employer pays 10%)",
+          "10%",
+          "15%"
+        ],
+        "answer": 1,
+        "hint": "Employee pays 5%."
+      },
+      {
+        "q": "In 2025, what is the standard maximum employee contribution to Pag-IBIG Fund?",
+        "options": [
+          "\u20b1100.00",
+          "\u20b1200.00",
+          "\u20b1300.00",
+          "\u20b1500.00"
+        ],
+        "answer": 1,
+        "hint": "\u20b1200 employee share."
+      },
+      {
+        "q": "Under the 2025 Income Tax Table, what is the tax rate on annual taxable income not over \u20b1250,000?",
+        "options": [
+          "0% (Completely Tax-Exempt)",
+          "5%",
+          "10%",
+          "15%"
+        ],
+        "answer": 0,
+        "hint": "Income not over \u20b1250k pays 0%."
+      }
+    ]
+  },
+  "gm-percentages-inflation": {
+    "title": "Week 6: Percentages in Business & Finance",
+    "lessonId": "lesson-gm-percentages",
+    "questions": [
+      {
+        "q": "What is INFLATION as defined in the curriculum?",
+        "options": [
+          "The decrease in interest rates",
+          "The general increase in prices of goods and services over time, which causes money's purchasing power to decline",
+          "The increase in corporate profits",
+          "A promotional discount"
+        ],
+        "answer": 1,
+        "hint": "General price increase eroding purchasing power."
+      },
+      {
+        "q": "What is the definition of MARK-UP?",
+        "options": [
+          "The discount given to customers",
+          "The amount added to the cost price of an item to make a profit",
+          "The loss incurred in production",
+          "The VAT rate"
+        ],
+        "answer": 1,
+        "hint": "Mark-Up = Selling Price - Cost Price."
+      },
+      {
+        "q": "What is the definition of DISCOUNT?",
+        "options": [
+          "The tax on luxury goods",
+          "The amount reduced from the original regular price during a sale",
+          "The profit margin on cost",
+          "The supplier cost"
+        ],
+        "answer": 1,
+        "hint": "Discount = Original Price - Net Price."
+      },
+      {
+        "q": "When does a PROFIT (Gain) occur in business?",
+        "options": [
+          "When Selling Price > Cost Price (Revenue exceeds expenses)",
+          "When Selling Price < Cost Price",
+          "When Cost Price = Selling Price",
+          "When Discount = 0"
+        ],
+        "answer": 0,
+        "hint": "SP > CP."
+      },
+      {
+        "q": "When does a LOSS occur in business?",
+        "options": [
+          "When Selling Price > Cost Price",
+          "When an item is sold for less than what was paid for it (Selling Price < Cost Price)",
+          "When inventory is full",
+          "When taxes are zero"
+        ],
+        "answer": 1,
+        "hint": "SP < CP."
+      }
+    ]
+  },
+  "gm-patterns-fibonacci": {
+    "title": "Week 7: Patterns in Life and Nature & Fibonacci",
+    "lessonId": "lesson-gm-patterns",
+    "questions": [
+      {
+        "q": "What is a PATTERN as defined in the curriculum?",
+        "options": [
+          "A random arrangement of colors",
+          "A repeated or regular arrangement of shapes, numbers, designs, or events that follow a recognizable rule",
+          "A single geometric line",
+          "A one-time event"
+        ],
+        "answer": 1,
+        "hint": "Repeated regular arrangement following a rule."
+      },
+      {
+        "q": "What is a SEQUENCE?",
+        "options": [
+          "A set of unorganized numbers",
+          "An ordered list of numbers (terms) that follow a specific governing mathematical rule",
+          "A single algebraic equation",
+          "A geometrical circle"
+        ],
+        "answer": 1,
+        "hint": "Ordered list of numbers following a rule."
+      },
+      {
+        "q": "What is the FIBONACCI SEQUENCE?",
+        "options": [
+          "A sequence formed by multiplying by 2",
+          "A sequence where each term is the sum of the two preceding terms (Fn = Fn-1 + Fn-2)",
+          "A sequence of even numbers",
+          "A sequence with common difference d"
+        ],
+        "answer": 1,
+        "hint": "Each term is the sum of previous two terms."
+      },
+      {
+        "q": "What are FRACTALS?",
+        "options": [
+          "Shapes with no angles",
+          "Infinitely complex, self-similar repeating geometric patterns found across scales in nature",
+          "Regular 4-sided polygons",
+          "Hexagonal floor tiles"
+        ],
+        "answer": 1,
+        "hint": "Self-similar repeating structures."
+      },
+      {
+        "q": "What is the difference between BILATERAL and RADIAL symmetry?",
+        "options": [
+          "Bilateral splits into 2 mirror halves; Radial radiates outward from a central point",
+          "Bilateral has no axis; Radial has 4 axes",
+          "Bilateral is for flowers; Radial is for humans",
+          "They are identical"
+        ],
+        "answer": 0,
+        "hint": "Bilateral = 2 sides; Radial = radiating from center."
+      }
+    ]
+  },
+  "gm-sequences-applications": {
+    "title": "Week 8: Sequences & Real Life Models",
+    "lessonId": "lesson-gm-sequences",
+    "questions": [
+      {
+        "q": "What does an ARITHMETIC SEQUENCE model in real life?",
+        "options": [
+          "Rapid explosive decay",
+          "Linear steady growth with fixed constant increments added over equal intervals",
+          "Compound interest and bacteria",
+          "Chaotic unpredictable changes"
+        ],
+        "answer": 1,
+        "hint": "Linear growth through constant addition."
+      },
+      {
+        "q": "What does a GEOMETRIC SEQUENCE model in real life?",
+        "options": [
+          "Linear steady addition",
+          "Exponential growth or decay through constant multiplication over equal intervals",
+          "Simple subtraction",
+          "Zero change"
+        ],
+        "answer": 1,
+        "hint": "Exponential growth/decay through multiplication."
+      },
+      {
+        "q": "In the arithmetic formula an = a1 + (n - 1)d, what does 'd' represent?",
+        "options": [
+          "Common ratio",
+          "Common difference (the constant value added in each step)",
+          "Number of days",
+          "Discount rate"
+        ],
+        "answer": 1,
+        "hint": "d = common difference."
+      },
+      {
+        "q": "For exponential growth, how is the common ratio (r) calculated from a growth rate?",
+        "options": [
+          "r = 1 - Growth Rate",
+          "r = 1 + Growth Rate",
+          "r = Growth Rate \u00f7 100",
+          "r = Growth Rate x 10"
+        ],
+        "answer": 1,
+        "hint": "Growth multiplier r = 1 + rate."
+      },
+      {
+        "q": "What is ASSET DEPRECIATION as modeled geometrically?",
+        "options": [
+          "The increase in property tax",
+          "The gradual reduction in monetary value of physical property over time due to wear or age (r = 1 - rate)",
+          "The appreciation of land value",
+          "The total sales volume"
+        ],
+        "answer": 1,
+        "hint": "Gradual reduction in value over time."
+      }
+    ]
+  }
+};
 
     let activeQuizKey = null;
     let currentQIndex = 0;
