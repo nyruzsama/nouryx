@@ -1962,488 +1962,630 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   <div class="view-container" id="view-gm">
     <div class="channel-top-bar">
       <button class="ch-back-link" onclick="switchChannel('landing')">&#8592; Topics Hub</button>
-      <div class="ch-heading">&#128208; General Mathematics</div>
-      <div></div>
+      <div class="ch-heading">&#128208; General Mathematics &middot; Definitions &amp; Concepts</div>
+      <a href="gengen.html" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;padding:6px 14px;border-radius:9999px;font-size:12px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+        <span>&#127918;</span> Play Gimkit Mode
+      </a>
     </div>
 
     <main class="channel-container">
       <div class="subj-header-card gm">
-        <div class="shc-badge gm">&#128290; Math &middot; Aralin 1: Wages, Taxes, Payroll &amp; Business Math</div>
-        <h2 class="shc-title">General Mathematics Reviewer</h2>
-        <p class="shc-desc">Komprehensibong Reviewer para sa Wages &amp; Salaries, Overtime Pay (Art. 87), Piecework &amp; Commissions, 12 Uri ng Buwis, 12% VAT, 2025 Tax Brackets, at Statutory Payroll Deductions.</p>
+        <div class="shc-badge gm">&#128214; Official Terms &amp; Definitions Reviewer</div>
+        <h2 class="shc-title">General Mathematics: Core Definitions &amp; Concepts</h2>
+        <p class="shc-desc">
+          Authoritative definitions, formal terms, classifications, and governing formulas derived directly from <strong>Lesson 1 (Payroll, Compensation, Overtime, Taxes &amp; Deductions)</strong> and <strong>Weeks 6, 7 &amp; 8 (Percentages, Nature Patterns &amp; Sequences)</strong>.
+        </p>
       </div>
 
-      <!-- GM LESSON 1: Wages, Salaries, Pay Periods & Overtime -->
-      <section class="lesson-card" id="lesson-gm-wages-overtime">
+      <!-- Gimkit In-Channel Game Banner -->
+      <div style="background:linear-gradient(135deg, #1e1b4b, #111827);border:1px solid #6366f1;border-radius:18px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:24px;">&#127918;</span>
+          <div>
+            <div style="font-weight:800;font-size:14px;color:#fff;">Test Your Definition Mastery in Gimkit Arcade!</div>
+            <div style="font-size:12px;color:#cbd5e1;">Play questions covering all these definitions, earn ₱ cash, and upgrade your skills.</div>
+          </div>
+        </div>
+        <a href="gengen.html" style="background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;font-weight:800;font-size:12.5px;padding:8px 18px;border-radius:10px;text-decoration:none;box-shadow:0 3px 8px rgba(99,102,241,0.3);">
+          &#9654; Launch Gimkit Game &rarr;
+        </a>
+      </div>
+
+      <!-- ======================================================================
+           GM LESSON 1: WAGES, SALARIES & COMPENSATION SCHEMES (DEFINITIONS)
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-gm-payroll">
         <div class="lesson-head">
           <div class="lesson-num gm">1</div>
-          <div class="lesson-title">Aralin 1.1: Wages, Salaries, Pay Periods at Overtime Schemes (Art. 87)</div>
+          <div class="lesson-title">Lesson 1.1: Wages, Salaries, and Compensation Schemes &ndash; Definitions</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Kabayaran (Compensation)</div><div class="c-meaning">Kabuuang halagang ibinabayad sa mga manggagawa para sa kanilang serbisyo (Sahod, Suweldo, Komisyon).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Sahod (Wages)</div><div class="c-meaning">Kabayarang nakabatay sa bilang ng oras o dami ng nagawang trabaho (hourly o factory rate).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Suweldo (Salaries)</div><div class="c-meaning">Nakatakdang regular na bayad sa mga propesyonal/office workers para sa kabuuang gawain (fixed pay).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Payroll Process</div><div class="c-meaning">Pagtatala ng oras/gawain, pagkwenta ng sahod at statutory deductions, at tamang iskedyul ng pagbabayad.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">4 na Uri ng Pay Periods</div><div class="c-meaning"><strong>Weekly:</strong> Annual &divide; 52 &bull; <strong>Biweekly:</strong> Annual &divide; 26 &bull; <strong>Semi-monthly:</strong> Annual &divide; 24 (15th at 30th) &bull; <strong>Monthly:</strong> Annual &divide; 12.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Pamamaraang GRESMA</div><div class="c-meaning"><strong>G</strong>iven, <strong>R</strong>equired, <strong>E</strong>quation, <strong>S</strong>olution, <strong>A</strong>nswer.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Regular Day Overtime</div><div class="c-meaning">Trabaho lagpas sa 8 oras: <strong>Hourly Rate &times; 1.25 &times; Oras (+25%)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Rest Day / Special Day OT</div><div class="c-meaning">OT sa araw ng pahinga: <strong>Hourly Rate &times; 1.69 &times; Oras (+30% sa 130% base)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Regular Holiday OT</div><div class="c-meaning">OT sa regular holiday: <strong>Hourly Rate &times; 2.60 &times; Oras (+30% sa 200% base)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Holiday on Rest Day OT</div><div class="c-meaning">Holiday na tumapat sa rest day: <strong>Hourly Rate &times; 3.38 &times; Oras (+30% sa 260% base)</strong>.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Compensation</div>
+              <div class="c-meaning"><strong>Definition:</strong> The money paid to people for their work. It comes in different forms including wages, salaries, and commissions.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Wages</div>
+              <div class="c-meaning"><strong>Definition:</strong> Payments based on the number of hours worked or the amount of work completed (common in hourly or factory jobs).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Salaries</div>
+              <div class="c-meaning"><strong>Definition:</strong> Fixed regular payments, usually given to professionals or office workers who are paid to complete tasks rather than track time.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Commissions</div>
+              <div class="c-meaning"><strong>Definition:</strong> Earnings based on how much a person sells, commonly seen in real estate, insurance, and similar sales fields.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Payroll</div>
+              <div class="c-meaning"><strong>Definition:</strong> The business process of tracking hours, salary, deductions, and pay periods to ensure fair and accurate employee payments.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">GRESMA Method</div>
+              <div class="c-meaning"><strong>Definition:</strong> A 5-step problem solving framework: <strong>G</strong>iven, <strong>R</strong>equired, <strong>E</strong>quation, <strong>S</strong>olution, and <strong>A</strong>nswer.</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Kahulugan at Mga Anyo ng Kabayaran (Compensation)</h4>
-            <p class="det-p">Ang <strong>Compensation</strong> ay ang salaping ibinabayad sa mga tao para sa kanilang serbisyo o paggawa. Nahahati ito sa:</p>
-            <ul class="det-list">
-              <li><strong>Wages (Sahod):</strong> Ibinabayad batay sa bilang ng oras ng pagtatrabaho o dami ng natapos na gawa (karaniwan sa mga trabahong pabrika o bawat oras).</li>
-              <li><strong>Salaries (Suweldo):</strong> Nakatakdang regular na bayad sa mga propesyonal o kawani sa opisina na binabayaran batay sa kabuuang mga gawain at responsibilidad kaysa sa bawat oras.</li>
-              <li><strong>Commissions (Komisyon):</strong> Kita batay sa kabuuang halaga ng naibenta (karaniwan sa real estate, seguro/insurance, at sales).</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. Mga Uri ng Pay Periods at Pormula</h4>
-            <div class="formula-box">
-              Annual Salary = Monthly Salary &times; 12<br>
-              Weekly Salary = Annual Salary &divide; 52 (52 paychecks sa isang taon)<br>
-              Biweekly Salary = Annual Salary &divide; 26 (26 paychecks sa isang taon, bawat 2 linggo)<br>
-              Semi-monthly Salary = Annual Salary &divide; 24 (24 paychecks sa isang taon, ika-15 at ika-30)<br>
-              Monthly Salary = Annual Salary &divide; 12 (12 paychecks sa isang taon)
+            <h4 class="det-subtitle">Formal Definitions of Common Pay Periods</h4>
+            <div class="concept-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 16px;">
+              <div class="concept-item">
+                <div class="c-keyword gm">Weekly Salary</div>
+                <div class="c-meaning"><strong>Definition:</strong> Paid once a week, resulting in exactly <strong>52 paychecks per year</strong>. Computation: <code>Annual Salary &divide; 52</code>.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Biweekly Salary</div>
+                <div class="c-meaning"><strong>Definition:</strong> Paid once every two weeks, resulting in exactly <strong>26 paychecks per year</strong>. Computation: <code>Annual Salary &divide; 26</code>.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Semi-Monthly Salary</div>
+                <div class="c-meaning"><strong>Definition:</strong> Paid twice a month (e.g., the 15th and 30th), resulting in <strong>24 paychecks per year</strong>. Computation: <code>Annual Salary &divide; 24</code>.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Monthly Salary</div>
+                <div class="c-meaning"><strong>Definition:</strong> Paid once a month, resulting in exactly <strong>12 paychecks per year</strong>. Computation: <code>Annual Salary &divide; 12</code>.</div>
+              </div>
             </div>
 
-            <h4 class="det-subtitle">3. Halimbawa Gamit ang GRESMA Method (Jasmine - Graphic Designer)</h4>
+            <h4 class="det-subtitle">GRESMA Problem-Solving Structure (Defined)</h4>
             <div class="det-example-box gm">
-              <strong>Sitwasyon:</strong> Si Jasmine ay kumikita ng &#8369;30,000 bawat buwan. Nais niyang malaman ang kaniyang taunang kita at lingguhang kita.<br><br>
-              <strong>Given:</strong> Monthly Salary = &#8369;30,000<br>
-              <strong>Required:</strong> Annual Salary at Weekly Salary<br>
-              <strong>Equation &amp; Solution:</strong><br>
-              &bull; <em>Annual Salary</em> = &#8369;30,000 &times; 12 = <strong>&#8369;360,000.00</strong><br>
-              &bull; <em>Weekly Salary</em> = &#8369;360,000 &divide; 52 = <strong>&#8369;6,923.08</strong><br>
-              <strong>Answer:</strong> Ang taunang suweldo ni Jasmine ay <strong>&#8369;360,000</strong> at ang kaniyang lingguhang kita ay humigit-kumulang <strong>&#8369;6,923.08</strong>.
-            </div>
-
-            <h4 class="det-subtitle">4. Overtime (OT) Pay Rules (Article 87, Philippine Labor Code)</h4>
-            <p class="det-p">Alinsunod sa Article 87 ng Philippine Labor Code, ang mga kawani ay binabayaran ng karagdagang halaga kapag nagtrabaho lagpas sa 8 oras bawat araw:</p>
-            <ul class="det-list">
-              <li><strong>Regular Day Overtime:</strong> Hourly Rate &times; 1.25 &times; Oras ng OT (+25%)</li>
-              <li><strong>Rest Day / Special Day Overtime:</strong> Hourly Rate &times; 1.69 &times; Oras ng OT (+30% sa ibabaw ng 130% base)</li>
-              <li><strong>Regular Holiday Overtime:</strong> Hourly Rate &times; 2.60 &times; Oras ng OT (+30% sa ibabaw ng 200% base)</li>
-              <li><strong>Holiday Falling on Rest Day Overtime:</strong> Hourly Rate &times; 3.38 &times; Oras ng OT (+30% sa ibabaw ng 260% base)</li>
-            </ul>
-
-            <h4 class="det-subtitle">5. Halimbawa sa Overtime Computation (Carlo - &#8369;120/hour)</h4>
-            <div class="det-example-box gm">
-              <strong>Given:</strong> Hourly Rate = &#8369;120/hr<br>
-              1. Day 1: 2 hrs regular day OT &rarr; &#8369;120 &times; 1.25 &times; 2 = <strong>&#8369;300.00</strong><br>
-              2. Day 2: No Overtime &rarr; <strong>&#8369;0.00</strong><br>
-              3. Day 3: 3 hrs rest day OT &rarr; &#8369;120 &times; 1.69 &times; 3 = <strong>&#8369;608.40</strong><br>
-              4. Day 4: No Overtime &rarr; <strong>&#8369;0.00</strong><br>
-              5. Day 5: 1.5 hrs holiday + rest day OT &rarr; &#8369;120 &times; 3.38 &times; 1.5 = <strong>&#8369;608.40</strong><br><br>
-              <strong>Total Overtime Pay:</strong> &#8369;300.00 + &#8369;608.40 + &#8369;608.40 = <strong>&#8369;1,516.80</strong>.
+              <strong>1. Given (G):</strong> Identify all known quantities and facts stated in the problem.<br>
+              <strong>2. Required (R):</strong> State explicitly what unknown value or quantity is being asked for.<br>
+              <strong>3. Equation (E):</strong> Write down the exact mathematical formula or equation that relates the given to the required.<br>
+              <strong>4. Solution (S):</strong> Perform the step-by-step arithmetic and algebraic computations.<br>
+              <strong>5. Answer (A):</strong> Express the final result with appropriate units of measurement and currency (e.g., &#8369;).
             </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Wages, Pay Periods at Overtime (Art. 87)</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Payroll &amp; Compensation Definitions</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Test Terms, Pay Periods &amp; GRESMA Steps</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-wages-overtime')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-payroll-compensation')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- GM LESSON 2: Piecework & Commissions -->
-      <section class="lesson-card" id="lesson-gm-piecework-commissions">
+      <!-- ======================================================================
+           GM LESSON 2: OVERTIME PAY (ARTICLE 87 DEFINITIONS)
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-gm-overtime">
         <div class="lesson-head">
           <div class="lesson-num gm">2</div>
-          <div class="lesson-title">Aralin 1.2: Piecework, Differential Piece Rates at Sales Commissions</div>
+          <div class="lesson-title">Lesson 1.2: Overtime (OT) Pay &ndash; Article 87 Definitions &amp; Rates</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Straight Piecework</div><div class="c-meaning">Kabayarang nakabatay sa dami ng produktong natapos: <strong>Gross = Rate bawat item &times; Bilang ng item</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Differential Piecework</div><div class="c-meaning">May itinakdang quota rate, at mas mataas na rate para sa bawat pirasong lalagpas sa quota (insentibo sa kasipagan).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Komisyon (Commission)</div><div class="c-meaning">Kita batay sa benta: <strong>Commission = Commission Rate &times; Halaga ng Sales</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Straight Commission</div><div class="c-meaning">Parehong porsyento sa lahat ng kabuuang halaga ng naibenta.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Variable Commission</div><div class="c-meaning">Tumataas ang porsyento ng komisyon habang lumalaki ang naibentang halaga.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Overtime Pay</div>
+              <div class="c-meaning"><strong>Definition:</strong> Additional compensation mandated by Article 87 of the Philippine Labor Code for work performed beyond 8 regular hours per day.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Regular Day OT</div>
+              <div class="c-meaning"><strong>Definition:</strong> Work rendered beyond 8 hours on an ordinary working day (+25% premium). Rate: <strong>1.25 &times; Hourly Rate</strong>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Rest / Special Day OT</div>
+              <div class="c-meaning"><strong>Definition:</strong> Work performed on a scheduled rest day or special non-working holiday (+30% on top of 130% base). Rate: <strong>1.69 &times; Hourly Rate</strong>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Regular Holiday OT</div>
+              <div class="c-meaning"><strong>Definition:</strong> Overtime work rendered during an official regular holiday (+30% on top of 200% base). Rate: <strong>2.60 &times; Hourly Rate</strong>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Holiday on Rest Day OT</div>
+              <div class="c-meaning"><strong>Definition:</strong> Overtime rendered on a regular holiday that coincides with the employee's rest day (+30% on 260% base). Rate: <strong>3.38 &times; Hourly Rate</strong>.</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Gross Earnings para sa Straight Piecework</h4>
-            <p class="det-p">Sa sistemang <strong>Piecework</strong>, ang bayad ay nakasalalay sa dami ng natapos na gawa o bahagi ng produkto, hindi sa oras na iginugol sa trabaho.</p>
-            <div class="formula-box">
-              Gross Earnings = Bayad bawat item &times; Bilang ng mga natapos na item
-            </div>
-
-            <h4 class="det-subtitle">2. Halimbawa sa Piecework (Jessa - Garment Factory)</h4>
+            <h4 class="det-subtitle">Article 87 Philippine Labor Code Definitions Table</h4>
             <div class="det-example-box gm">
-              <strong>Sitwasyon:</strong> Si Jessa ay nagtatahi sa pagawaan ng damit. Ang kaniyang bayad ay &#8369;50 bawat manggas (sleeves), &#8369;70 bawat kuwelyo (collars), at &#8369;90 bawat bulsa (pockets). Sa isang linggo, nakatahi siya ng 200 sleeves, 150 collars, at 180 pockets.<br><br>
-              &bull; Sleeves: &#8369;50 &times; 200 = &#8369;10,000<br>
-              &bull; Collars: &#8369;70 &times; 150 = &#8369;10,500<br>
-              &bull; Pockets: &#8369;90 &times; 180 = &#8369;16,200<br>
-              <strong>Total Gross Earnings:</strong> &#8369;10,000 + &#8369;10,500 + &#8369;16,200 = <strong>&#8369;36,700.00</strong>.
-            </div>
-
-            <h4 class="det-subtitle">3. Differential Piece Rate System (Leo - Packaging Company)</h4>
-            <p class="det-p">Sa <strong>Differential Piece Rate</strong>, binibigyan ng standard rate ang manggagawa hanggang sa maabot ang quota, at mas mataas na rate para sa bawat unit na lalagpas dito.</p>
-            <div class="det-example-box gm">
-              <strong>Sitwasyon:</strong> Kumikita si Leo ng &#8369;10 bawat kahon para sa unang 100 kahon (quota), at &#8369;15 bawat kahon para sa labis sa quota. Nakapagbalot siya ng 160 kahon.<br><br>
-              1. Unang 100 kahon (Quota) = 100 &times; &#8369;10 = <strong>&#8369;1,000</strong><br>
-              2. Labis na 60 kahon (Beyond Quota) = 60 &times; &#8369;15 = <strong>&#8369;900</strong><br>
-              <strong>Total Gross Earnings:</strong> &#8369;1,000 + &#8369;900 = <strong>&#8369;1,900.00</strong>.
-            </div>
-
-            <h4 class="det-subtitle">4. Sales Commission (Mariel - Real Estate Agent)</h4>
-            <div class="det-example-box gm">
-              <strong>Formula:</strong> Commission = Commission Rate &times; Amount of Sales<br><br>
-              <strong>Sitwasyon:</strong> Si Mariel ay real estate agent na may 5% komisyon sa bawat bahay na maibenta. Naibenta niya ang isang bahay sa halagang &#8369;3,200,000.<br>
-              <strong>Solution:</strong> Commission = 0.05 &times; &#8369;3,200,000 = <strong>&#8369;160,000.00</strong>.
+              <strong>1. Regular Day Overtime:</strong> Work rendered beyond 8 hours on a regular working day. Formula: <code>Hourly Rate &times; 1.25 &times; OT Hours</code>.<br>
+              <strong>2. Rest Day or Special Day Overtime:</strong> Work rendered on a designated rest day or special non-working day. Formula: <code>Hourly Rate &times; 1.69 &times; OT Hours</code>.<br>
+              <strong>3. Regular Holiday Overtime:</strong> Work rendered on an official national regular holiday. Formula: <code>Hourly Rate &times; 2.60 &times; OT Hours</code>.<br>
+              <strong>4. Holiday Falling on Rest Day Overtime:</strong> Work rendered on a regular holiday that simultaneously falls on a scheduled rest day. Formula: <code>Hourly Rate &times; 3.38 &times; OT Hours</code>.
             </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Piecework &amp; Sales Commissions</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Article 87 Overtime Definitions</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Rates, Legal Bases &amp; Multipliers</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-piecework-commissions')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-overtime-art87')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- GM LESSON 3: Taxes, VAT & 2025 Tax Table -->
-      <section class="lesson-card" id="lesson-gm-taxes-vat">
+      <!-- ======================================================================
+           GM LESSON 3: PIECEWORK & COMMISSIONS (DEFINITIONS)
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-gm-piecework">
         <div class="lesson-head">
           <div class="lesson-num gm">3</div>
-          <div class="lesson-title">Aralin 1.3: 12 Uri ng Buwis sa Pilipinas, 12% VAT at 2025 Tax Table</div>
+          <div class="lesson-title">Lesson 1.3: Piecework &amp; Commission Schemes &ndash; Definitions</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Buwis (Taxes)</div><div class="c-meaning">Salaping kinokolekta ng pamahalaan para sa mga serbisyo publiko, edukasyon, at imprastraktura.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Pangunahing Formula</div><div class="c-meaning"><strong>Tax = Taxable Income &times; Rate of Taxation</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">12% Value-Added Tax</div><div class="c-meaning"><strong>VAT = Price bago VAT &times; 12%</strong> &bull; Total Price = Price + VAT.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Excise Tax &amp; CGT</div><div class="c-meaning"><strong>Excise:</strong> Sa partikular na produkto (langis, sigarilyo, alak). <strong>CGT:</strong> Sa tubong kinita sa pagbenta ng ari-arian.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">DST &amp; Percentage Tax</div><div class="c-meaning"><strong>DST:</strong> Sa legal na dokumento/pautang. <strong>Percentage Tax:</strong> Sa maliliit na negosyong di-VAT registered.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">RPT &amp; Business Tax</div><div class="c-meaning"><strong>RPT:</strong> Sa lupa at gusali. <strong>Business Tax:</strong> Lokal na buwis sa pagpapatakbo ng tindahan o negosyo.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Withholding Tax</div><div class="c-meaning">Kinakaltas nang maaga ng employer mula sa suweldo bago ibigay sa empleyado.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">2025 Tax Free Bracket</div><div class="c-meaning">Hindi lalagpas sa <strong>&#8369;250,000 bawat taon = 0% Tax (Libre sa buwis)</strong>.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Piecework</div>
+              <div class="c-meaning"><strong>Definition:</strong> Compensation paid strictly according to the number of completed items produced rather than time spent. Formula: <code>Gross = Rate Per Item &times; Number of Items</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Differential Piecework</div>
+              <div class="c-meaning"><strong>Definition:</strong> A piecework system where workers earn one base rate per unit up to a quota, and a higher incentive rate for all units produced beyond that quota.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Commission</div>
+              <div class="c-meaning"><strong>Definition:</strong> Payment based directly on a percentage of sales generated. Formula: <code>Commission = Commission Rate &times; Amount of Sales</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Straight Commission</div>
+              <div class="c-meaning"><strong>Definition:</strong> A commission structure where the percentage rate remains constant for all sales regardless of total volume.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Variable Commission</div>
+              <div class="c-meaning"><strong>Definition:</strong> A commission structure where the percentage rate increases as sales volume grows past predetermined milestone tiers.</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. 12 Uri ng Buwis sa Pilipinas (Handouts Guide)</h4>
-            <ul class="det-list">
-              <li><strong>1. Excise Tax:</strong> Buwis sa partikular na produkto tulad ng gasolina, alak, at tabako.</li>
-              <li><strong>2. Capital Gains Tax (CGT):</strong> Buwis sa tubong kinita mula sa pagbebenta ng ari-arian (lupa, bahay, stocks).</li>
-              <li><strong>3. Documentary Stamp Tax (DST):</strong> Buwis sa mga legal na dokumento, kontrata, at transaksyon ng pautang.</li>
-              <li><strong>4. Percentage Tax:</strong> Buwis para sa maliliit na negosyong hindi rehistrado sa VAT (hal. sari-sari store).</li>
-              <li><strong>5. Donor's Tax:</strong> Buwis sa mga ipinamimigay na regalo o donasyon.</li>
-              <li><strong>6. Real Property Tax (RPT):</strong> Taunang buwis sa pag-aari ng lupa at gusali na ibinabayad sa lokal na pamahalaan.</li>
-              <li><strong>7. Business Tax:</strong> Lokal na buwis sa pagpapatakbo ng negosyo sa lungsod o munisipyo.</li>
-              <li><strong>8. Transfer Tax:</strong> Buwis kapag inililipat ang pagmamay-ari ng ari-arian.</li>
-              <li><strong>9. Income Tax:</strong> Buwis sa kinikita ng mga indibidwal at korporasyon.</li>
-              <li><strong>10. Value-Added Tax (VAT):</strong> 12% na buwis na idinadagdag sa presyo ng produkto at serbisyo.</li>
-              <li><strong>11. Withholding Tax:</strong> Buwis na ibinabawas nang maaga ng employer sa suweldo bago ilabas ang bayad.</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. Mga Halimbawa sa Pagkwenta ng 12% VAT</h4>
+            <h4 class="det-subtitle">Comparative Definitions of Incentive Systems</h4>
             <div class="det-example-box gm">
-              &bull; <strong>Ana (Microwave Oven):</strong> Presyo = &#8369;6,000 &rarr; VAT = 12% &times; &#8369;6,000 = <strong>&#8369;720</strong> &rarr; Total Price = <strong>&#8369;6,720</strong>.<br>
-              &bull; <strong>John (Laptop):</strong> Presyo = &#8369;35,000 &rarr; VAT = 12% &times; &#8369;35,000 = <strong>&#8369;4,200</strong> &rarr; Total Price = <strong>&#8369;39,200</strong>.<br>
-              &bull; <strong>Maria (Groceries):</strong> Presyo = &#8369;4,500 &rarr; VAT = 12% &times; &#8369;4,500 = <strong>&#8369;540</strong> &rarr; Total Price = <strong>&#8369;5,040</strong>.
-            </div>
-
-            <h4 class="det-subtitle">3. Bagong Income Tax Table 2025 (Annual Brackets)</h4>
-            <div class="formula-box">
-              &bull; Hindi lalagpas sa &#8369;250,000: <strong>0% Tax</strong><br>
-              &bull; &#8369;250,001 &ndash; &#8369;400,000: <strong>15% ng labis sa &#8369;250,000</strong><br>
-              &bull; &#8369;400,001 &ndash; &#8369;800,000: <strong>&#8369;22,500 + 20% ng labis sa &#8369;400,000</strong><br>
-              &bull; &#8369;800,001 &ndash; &#8369;2,000,000: <strong>&#8369;102,500 + 25% ng labis sa &#8369;800,000</strong><br>
-              &bull; &#8369;2,000,001 &ndash; &#8369;8,000,000: <strong>&#8369;402,500 + 30% ng labis sa &#8369;2,000,000</strong><br>
-              &bull; Higit sa &#8369;8,000,000: <strong>&#8369;2,202,500 + 35% ng labis sa &#8369;8,000,000</strong>
+              &bull; <strong>Piecework vs Differential Piecework:</strong> Standard piecework maintains a flat fee per item regardless of quantity (e.g. &#8369;50/sleeve). Differential piecework rewards high production by paying a premium rate per item once the target quota is exceeded (e.g. &#8369;10 for first 100 boxes, &#8369;15 for excess boxes).<br><br>
+              &bull; <strong>Straight vs Variable Commission:</strong> Straight commission applies a single rate (e.g., 5% on all real estate sales). Variable commission escalates (e.g., 3% on first &#8369;1M, 5% on next &#8369;2M, 8% thereafter).
             </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: 12 Uri ng Buwis, 12% VAT at 2025 Tax Table</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Piecework &amp; Commission Definitions</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Quotas, Straight &amp; Variable Rates</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-taxes-vat')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-piecework-commission')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- GM LESSON 4: Mandatory Deductions & Complete Payroll -->
-      <section class="lesson-card" id="lesson-gm-payroll-deductions">
+      <!-- ======================================================================
+           GM LESSON 4: PHILIPPINE TAXES & 12% VAT (DEFINITIONS)
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-gm-taxes">
         <div class="lesson-head">
           <div class="lesson-num gm">4</div>
-          <div class="lesson-title">Aralin 1.4: Mandatory Statutory Deductions at Kumpletong Payroll Computation</div>
+          <div class="lesson-title">Lesson 1.4: Philippine Taxes &amp; 12% VAT &ndash; Definitions of 11 Tax Types</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Gross Income</div><div class="c-meaning"><strong>Gross Income = Basic Pay + Overtime Pay + Iba pang Kita</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">SSS Contribution 2025</div><div class="c-meaning">15% kabuuang kontribusyon: <strong>10% Employer Share, 5% Employee Share</strong> (RA 11199).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Pag-IBIG Contribution</div><div class="c-meaning">Maximum na <strong>&#8369;200.00 para sa miyembro</strong> (+ &#8369;200 employer = &#8369;400 total).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">PhilHealth Contribution</div><div class="c-meaning">5% kabuuang premium rate: <strong>2.5% Employee Share (= Basic Pay &times; 0.025)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Taxable Income</div><div class="c-meaning"><strong>Taxable Income = Gross Income - (SSS + PhilHealth + Pag-IBIG)</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Total Deductions</div><div class="c-meaning"><strong>Total Deductions = Mandatory Contributions + Withholding Tax</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Net Pay (Take-Home)</div><div class="c-meaning"><strong>Net Income = Gross Income - Total Deductions</strong>.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Taxes</div>
+              <div class="c-meaning"><strong>Definition:</strong> Amounts of money collected by the government from individuals and businesses to generate revenue and support public resources (education, healthcare, infrastructure).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Excise Tax</div>
+              <div class="c-meaning"><strong>Definition:</strong> Tax imposed on specific goods such as alcohol, fuel, and tobacco.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Capital Gains Tax (CGT)</div>
+              <div class="c-meaning"><strong>Definition:</strong> Tax imposed on profit earned from selling assets like land, buildings, or stocks.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Documentary Stamp Tax (DST)</div>
+              <div class="c-meaning"><strong>Definition:</strong> Tax levied on legal documents, promissory notes, and formal loan transactions.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Percentage Tax</div>
+              <div class="c-meaning"><strong>Definition:</strong> Business tax for small enterprises that are not registered for Value-Added Tax (VAT).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Donor's Tax</div>
+              <div class="c-meaning"><strong>Definition:</strong> Tax imposed on gratuitous transfers of property or money given as a gift.</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">1. Mga Tuntunin sa Mandatory Statutory Deductions (2025 Mandates)</h4>
-            <ul class="det-list">
-              <li><strong>1. SSS (Social Security System):</strong> Mula 14% noong 2024, itinaas sa 15% simula Enero 1, 2025 sa ilalim ng RA 11199. Ang bahagi ng employer ay 10%, at ang bahagi ng manggagawa ay 5%.</li>
-              <li><strong>2. Pag-IBIG Fund:</strong> Maximum contribution na &#8369;200.00 para sa miyembro at &#8369;200.00 para sa employer (kabuuan: &#8369;400.00).</li>
-              <li><strong>3. PhilHealth:</strong> 5% kabuuang premium rate kung saan 2.5% ang kaltas sa manggagawa (Basic Pay &times; 2.5%) at 2.5% ang katumbas na sagot ng employer.</li>
-            </ul>
-
-            <h4 class="det-subtitle">2. Halimbawa 1: Maria Santos (Laguna Factory Worker)</h4>
-            <div class="det-example-box gm">
-              <strong>Given:</strong> Daily Rate = &#8369;570, Days Worked = 22, OT = 6 hrs (regular).<br>
-              &bull; Regular Pay = &#8369;570 &times; 22 = &#8369;12,540.00<br>
-              &bull; Hourly Rate = &#8369;570 &divide; 8 = &#8369;71.25<br>
-              &bull; Overtime Rate = &#8369;71.25 &times; 1.25 = &#8369;89.06<br>
-              &bull; Overtime Pay = &#8369;89.06 &times; 6 = &#8369;534.37<br>
-              &bull; <strong>Gross Income</strong> = &#8369;12,540 + &#8369;534.37 = <strong>&#8369;13,074.37</strong><br>
-              &bull; <strong>Total Deductions</strong> = SSS (&#8369;650) + PhilHealth (&#8369;313.50) + Pag-IBIG (&#8369;200) = <strong>&#8369;1,163.50</strong><br>
-              &bull; <strong>Net Income</strong> = &#8369;13,074.37 &minus; &#8369;1,163.50 = <strong>&#8369;11,910.88</strong>.
+            <h4 class="det-subtitle">Complete Definitions of All 11 Philippine Tax Types</h4>
+            <div class="concept-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 16px;">
+              <div class="concept-item">
+                <div class="c-keyword gm">Real Property Tax (RPT)</div>
+                <div class="c-meaning"><strong>Definition:</strong> Annual local ad valorem tax imposed on the ownership of land, buildings, and real estate improvements.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Business Tax</div>
+                <div class="c-meaning"><strong>Definition:</strong> Local tax imposed by cities or municipalities on the privilege of operating a commercial business.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Transfer Tax</div>
+                <div class="c-meaning"><strong>Definition:</strong> Tax imposed upon the legal transfer of real property ownership from one party to another.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Income Tax</div>
+                <div class="c-meaning"><strong>Definition:</strong> Tax imposed on the earnings, wages, and profits of individuals and corporate entities.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Value-Added Tax (VAT)</div>
+                <div class="c-meaning"><strong>Definition:</strong> Indirect consumption tax (12% in the Philippines) added to the price of goods and services at each stage of distribution.</div>
+              </div>
+              <div class="concept-item">
+                <div class="c-keyword gm">Withholding Tax</div>
+                <div class="c-meaning"><strong>Definition:</strong> Tax deducted in advance by employers or payors from compensation before releasing payment to the payee.</div>
+              </div>
             </div>
 
-            <h4 class="det-subtitle">3. Halimbawa 2: Chris (Salaried Employee na may Withholding Tax)</h4>
+            <h4 class="det-subtitle">Value-Added Tax (VAT) Classification Definitions</h4>
             <div class="det-example-box gm">
-              <strong>Given:</strong> Monthly Basic = &#8369;37,000, 20 araw, 10 hrs OT (1.25x).<br>
-              &bull; Daily Rate = &#8369;37,000 &divide; 20 = &#8369;1,850 &bull; Hourly Rate = &#8369;1,850 &divide; 8 = &#8369;231.25<br>
-              &bull; Overtime Pay = &#8369;231.25 &times; 10 &times; 1.25 = &#8369;2,890.63<br>
-              &bull; <strong>Gross Income</strong> = &#8369;37,000 + &#8369;2,890.63 = <strong>&#8369;39,890.63</strong><br>
-              &bull; Monthly Contributions = SSS (&#8369;1,750) + PhilHealth (&#8369;925) + Pag-IBIG (&#8369;200) = &#8369;2,875.00<br>
-              &bull; Taxable Income = &#8369;39,890.63 &minus; &#8369;2,875 = &#8369;37,015.63<br>
-              &bull; Annual Taxable = &#8369;37,015.63 &times; 12 = &#8369;444,187.56<br>
-              &bull; Annual Tax (400k-800k bracket) = &#8369;22,500 + 0.20(&#8369;44,187.56) = &#8369;31,337.51<br>
-              &bull; <strong>Monthly Withholding Tax</strong> = &#8369;31,337.51 &divide; 12 = <strong>&#8369;2,661.46</strong><br>
-              &bull; <strong>Total Deductions</strong> = &#8369;2,875 + &#8369;2,661.46 = <strong>&#8369;5,536.46</strong><br>
-              &bull; <strong>Net Income</strong> = &#8369;39,890.63 &minus; &#8369;5,536.46 = <strong>&#8369;34,354.17</strong>.
-            </div>
-
-            <h4 class="det-subtitle">4. Problem 1: Jenny (Administrative Assistant Payroll Table)</h4>
-            <div class="det-example-box gm">
-              <strong>Given:</strong> Daily Rate = &#8369;600.00, Days Worked = 24, 3 hrs Rest Day OT (3.38x).<br>
-              &bull; Basic Income = &#8369;600 &times; 24 = <strong>&#8369;14,400.00</strong><br>
-              &bull; Hourly Rate = &#8369;600 &divide; 8 = &#8369;75.00 &bull; Overtime Pay = <strong>&#8369;760.50</strong><br>
-              &bull; <strong>Gross Income</strong> = &#8369;14,400 + &#8369;760.50 = <strong>&#8369;15,160.50</strong><br>
-              &bull; Deductions: SSS (&#8369;750) + Pag-IBIG (&#8369;200) + PhilHealth (&#8369;360, 2.5% of basic) + Withholding Tax (&#8369;0) = <strong>&#8369;1,310.00</strong><br>
-              &bull; <strong>NET INCOME</strong> = &#8369;15,160.50 &minus; &#8369;1,310.00 = <strong>&#8369;13,850.50</strong>.
+              &bull; <strong>VAT-Exclusive Price:</strong> The initial base price of a good or service before the 12% tax is added. <code>VAT = 12% &times; Base Price</code>.<br>
+              &bull; <strong>VAT-Inclusive Price:</strong> The total retail price paid by consumers containing both the base price and the 12% VAT. <code>Price Before VAT = Total &divide; 1.12</code>.
             </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Statutory Deductions at Payroll Computation</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: 11 Philippine Tax Types &amp; 12% VAT</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Definitions, Classifications &amp; VAT Formulas</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-payroll-deductions')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-taxes-vat')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- GM LESSON 5 (Previous Lesson 1) -->
-      <section class="lesson-card" id="lesson-gm-markup">
+      <!-- ======================================================================
+           GM LESSON 5: 2025 MANDATORY DEDUCTIONS & NET INCOME (DEFINITIONS)
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-gm-deductions">
         <div class="lesson-head">
           <div class="lesson-num gm">5</div>
-          <div class="lesson-title">Week 6: Mark-up, Mark-down &amp; Discounts</div>
+          <div class="lesson-title">Lesson 1.5: 2025 Mandatory Deductions &amp; Net Income &ndash; Definitions</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Mark-up</div><div class="c-meaning"><strong>Mark-up = Selling Price - Cost</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Mark-down</div><div class="c-meaning"><strong>Sale Price = Regular Price - Discount</strong>.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Mark-up Rate</div><div class="c-meaning">Rate = (Mark-up / Cost) x 100%.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Gross Income</div>
+              <div class="c-meaning"><strong>Definition:</strong> The total unadjusted earnings of an employee prior to any deductions (Basic Pay + Overtime Pay).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Taxable Income</div>
+              <div class="c-meaning"><strong>Definition:</strong> Gross income minus statutory mandatory deductions (SSS, PhilHealth, Pag-IBIG) that is subject to the tax brackets.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Net Income (Take-Home Pay)</div>
+              <div class="c-meaning"><strong>Definition:</strong> The actual cash received by an employee after subtracting all statutory deductions and withholding tax.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">SSS Contribution (2025)</div>
+              <div class="c-meaning"><strong>Definition:</strong> Social security contribution mandated at <strong>15%</strong> under RA 11199 (10% employer share, 5% employee share).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Pag-IBIG Contribution</div>
+              <div class="c-meaning"><strong>Definition:</strong> Mandatory national housing fund contribution capped at <strong>&#8369;200.00</strong> employee share (matched by &#8369;200.00 employer share).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">PhilHealth Contribution</div>
+              <div class="c-meaning"><strong>Definition:</strong> Mandatory health insurance premium set at <strong>5%</strong> of basic monthly salary (divided equally between employer and employee).</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <h4 class="det-subtitle">Business Percentages Cheatsheet</h4>
+            <h4 class="det-subtitle">2025 Income Tax Brackets (Formal Definitions)</h4>
             <div class="det-example-box gm">
-              Cost = &#8369;400, Selling Price = &#8369;550 &rarr; Mark-up = &#8369;150.<br>
-              Regular Price = &#8369;1,000 with 25% discount &rarr; Discount = &#8369;250, Sale Price = &#8369;750.
+              &bull; <strong>Not over &#8369;250,000 Annual Taxable Income:</strong> Defined as <strong>0% Tax (Completely Tax-Exempt)</strong>.<br>
+              &bull; <strong>&#8369;250,001 to &#8369;400,000:</strong> Defined as <strong>15% of the excess over &#8369;250,000</strong>.<br>
+              &bull; <strong>&#8369;400,001 to &#8369;800,000:</strong> Defined as <strong>&#8369;22,500 + 20% of the excess over &#8369;400,000</strong>.<br>
+              &bull; <strong>&#8369;800,001 to &#8369;2,000,000:</strong> Defined as <strong>&#8369;102,500 + 25% of the excess over &#8369;800,000</strong>.<br>
+              &bull; <strong>&#8369;2,000,001 to &#8369;8,000,000:</strong> Defined as <strong>&#8369;402,500 + 30% of the excess over &#8369;2,000,000</strong>.<br>
+              &bull; <strong>Over &#8369;8,000,000:</strong> Defined as <strong>&#8369;2,202,500 + 35% of the excess over &#8369;8,000,000</strong>.
             </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Mark-up &amp; Mark-down</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Deductions &amp; Net Pay Definitions</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; SSS RA 11199, Pag-IBIG, PhilHealth &amp; 2025 Brackets</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-markup')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-deductions-netpay')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- GM LESSON 6 (Previous Lesson 2) -->
-      <section class="lesson-card" id="lesson-gm-interest">
+      <!-- ======================================================================
+           GM LESSON 6: WEEK 6 PERCENTAGES & FINANCE (DEFINITIONS)
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-gm-percentages">
         <div class="lesson-head">
           <div class="lesson-num gm">6</div>
-          <div class="lesson-title">Week 6: Simple Interest &amp; Maturity Value</div>
+          <div class="lesson-title">Week 6: Percentages in Business &amp; Finance &ndash; Definitions</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Simple Interest</div><div class="c-meaning"><strong>I = Prt</strong> (P = Principal, r = annual decimal rate, t = time in years).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Maturity Value</div><div class="c-meaning"><strong>F = P + I = P(1 + rt)</strong>.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Inflation</div>
+              <div class="c-meaning"><strong>Definition:</strong> The general increase in prices of goods and services over time, which causes the purchasing power of money to decline.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Mark-Up</div>
+              <div class="c-meaning"><strong>Definition:</strong> The amount added to the cost price of an item to make a profit: <code>Mark-Up = Selling Price - Cost Price</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Discount</div>
+              <div class="c-meaning"><strong>Definition:</strong> The amount reduced from the original regular price of an item during a sale: <code>Discount = Original Price - Net Price</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Cost Price (CP)</div>
+              <div class="c-meaning"><strong>Definition:</strong> The original purchase price or production expense paid by the business to acquire an item.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Selling Price (SP)</div>
+              <div class="c-meaning"><strong>Definition:</strong> The final price charged to the consumer after mark-up is added: <code>SP = Cost Price + Mark-Up</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Net Price</div>
+              <div class="c-meaning"><strong>Definition:</strong> The actual final amount paid by the customer after discount deductions: <code>Net Price = Original - Discount</code>.</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <p class="det-p"><strong>Simple Interest Formula:</strong> I = P &bull; r &bull; t. If you invest &#8369;20,000 at 4% for 2 years: I = 20,000 x 0.04 x 2 = &#8369;1,600. Maturity Value = &#8369;21,600.</p>
+            <h4 class="det-subtitle">Profit and Loss Terminology (Defined)</h4>
+            <div class="det-example-box gm">
+              &bull; <strong>Profit (Gain):</strong> Defined as the positive financial gain achieved when total revenue/selling price exceeds total cost (<code>SP &gt; CP</code>). Formula: <code>Profit = Selling Price &minus; Cost Price</code>.<br>
+              &bull; <strong>Loss:</strong> Defined as the financial deficit incurred when an item is sold for less than its acquisition cost (<code>SP &lt; CP</code>). Formula: <code>Loss = Cost Price &minus; Selling Price</code>.<br>
+              &bull; <strong>Mark-Up Percentage:</strong> The mark-up expressed as a fraction of cost: <code>(Mark-Up / CP) &times; 100</code>.<br>
+              &bull; <strong>Discount Percentage:</strong> The discount expressed as a fraction of original price: <code>(Discount / Original) &times; 100</code>.<br>
+              &bull; <strong>Profit Percentage:</strong> <code>(Profit / Cost Price) &times; 100</code> &nbsp;|&nbsp; <strong>Loss Percentage:</strong> <code>(Loss / Cost Price) &times; 100</code>.
+            </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Simple Interest &amp; Future Value</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Business Percentages Definitions</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Inflation, Mark-Up, Discount, Profit &amp; Loss</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-interest')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-percentages-inflation')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- Sample Visual Diagram -->
-      <div class="diagram-card">
-        <img src="./assets/images/fibonacci_fractals.jpg" alt="Fibonacci and Fractals in Nature" loading="lazy"/>
-        <div class="diagram-caption">&#128204; <strong>Visual Infographic:</strong> Golden Ratio, Fibonacci Spiral &amp; Sierpinski Fractals</div>
-      </div>
-
-      <!-- GM LESSON 7 (Previous Lesson 3) -->
+      <!-- ======================================================================
+           GM LESSON 7: WEEK 7 PATTERNS IN LIFE AND NATURE (DEFINITIONS)
+           ====================================================================== -->
       <section class="lesson-card" id="lesson-gm-patterns">
         <div class="lesson-head">
           <div class="lesson-num gm">7</div>
-          <div class="lesson-title">Week 7: Patterns in Nature &amp; Fibonacci</div>
+          <div class="lesson-title">Week 7: Patterns in Life and Nature &ndash; Definitions</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Fibonacci Sequence</div><div class="c-meaning">0, 1, 1, 2, 3, 5, 8, 13, 21, 34... Each term is sum of previous two.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Radial Symmetry</div><div class="c-meaning">Rotational symmetry around center (starfish, sunflower florets).</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Honeycomb Packing</div><div class="c-meaning">Hexagons maximize storage area with minimal wax boundary.</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Pattern</div>
+              <div class="c-meaning"><strong>Definition:</strong> A repeated or regular arrangement of shapes, numbers, designs, or events that follow a recognizable rule.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Sequence</div>
+              <div class="c-meaning"><strong>Definition:</strong> An ordered list of numbers (terms) that follow a specific governing mathematical rule explaining how each term is obtained.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Fibonacci Sequence</div>
+              <div class="c-meaning"><strong>Definition:</strong> A sequence where each term is the sum of the two preceding terms (<code>Fn = Fn-1 + Fn-2</code>), starting with 0 and 1.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Fractals</div>
+              <div class="c-meaning"><strong>Definition:</strong> Infinitely complex, self-similar repeating geometric patterns found in nature (trees, ferns, lightning, rivers).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Tessellations</div>
+              <div class="c-meaning"><strong>Definition:</strong> Repeating arrangements of geometric shapes fitted closely together without any gaps or overlapping edges (honeycombs).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Symmetry</div>
+              <div class="c-meaning"><strong>Definition:</strong> Balanced proportion across an axis: <strong>Bilateral</strong> (2 mirror halves) vs. <strong>Radial</strong> (radiates from center).</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <p class="det-p">Nature uses mathematical optimization: Fibonacci sequences appear in pinecone spirals, nautilus shell chambers, and sunflower seed packing.</p>
+            <h4 class="det-subtitle">Special Sequence Classifications (Defined)</h4>
+            <div class="det-example-box gm">
+              &bull; <strong>Arithmetic Sequence (Progression):</strong> Defined as a sequence in which the difference between consecutive terms is constant (the common difference \(d\)).<br>
+              &bull; <strong>Geometric Sequence (Progression):</strong> Defined as a sequence formed by multiplying each term by a constant multiplier (the common ratio \(r\)).<br>
+              &bull; <strong>Harmonic Sequence:</strong> Defined as a progression formed by taking the reciprocals of an arithmetic progression (\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}\dots\)).<br>
+              &bull; <strong>Sequence of Perfect Squares:</strong> Defined as \(a_n = n^2\) (\(1, 4, 9, 16, 25, 36\dots\)).<br>
+              &bull; <strong>Constant Sequence:</strong> Defined as a sequence where all terms are identical (\(c, c, c\dots\)), possessing \(d=0\) and \(r=1\).
+            </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Patterns in Nature &amp; Fibonacci</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Patterns &amp; Fibonacci Definitions</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Fractals, Spirals, Symmetry &amp; Special Sequences</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-patterns')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-patterns-fibonacci')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- GM LESSON 8 (Previous Lesson 4) -->
+      <!-- ======================================================================
+           GM LESSON 8: WEEK 8 SEQUENCES IN REAL LIFE (DEFINITIONS)
+           ====================================================================== -->
       <section class="lesson-card" id="lesson-gm-sequences">
         <div class="lesson-head">
           <div class="lesson-num gm">8</div>
-          <div class="lesson-title">Week 8: Arithmetic &amp; Geometric Sequences</div>
+          <div class="lesson-title">Week 8: Arithmetic &amp; Geometric Sequences in Real Life &ndash; Definitions</div>
         </div>
 
         <div class="mode-summary-content">
           <div class="concept-grid">
-            <div class="concept-item"><div class="c-keyword gm">Arithmetic Sequence</div><div class="c-meaning">Constant difference <strong>d</strong>: an = a1 + (n - 1)d.</div></div>
-            <div class="concept-item"><div class="c-keyword gm">Geometric Sequence</div><div class="c-meaning">Constant ratio <strong>r</strong>: an = a1 &bull; r^(n - 1).</div></div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Arithmetic Sequence</div>
+              <div class="c-meaning"><strong>Definition:</strong> A mathematical model for linear steady growth with fixed constant increments added over equal intervals: <code>an = a1 + (n - 1)d</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Common Difference (d)</div>
+              <div class="c-meaning"><strong>Definition:</strong> The constant value added in each step of an arithmetic sequence: <code>d = an - an-1</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Geometric Sequence</div>
+              <div class="c-meaning"><strong>Definition:</strong> A mathematical model for exponential growth or decay through constant multiplication over equal intervals: <code>an = a1 &middot; r^(n - 1)</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Common Ratio (r)</div>
+              <div class="c-meaning"><strong>Definition:</strong> The constant multiplier in a geometric sequence: <code>r = an &divide; an-1</code>.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Growth Multiplier</div>
+              <div class="c-meaning"><strong>Definition:</strong> The common ratio for exponential growth where <code>r = 1 + Growth Rate</code> (e.g. 5% growth &rarr; r=1.05).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword gm">Depreciation Multiplier</div>
+              <div class="c-meaning"><strong>Definition:</strong> The common ratio for asset depreciation where <code>r = 1 - Depreciation Rate</code> (e.g. 15% depreciation &rarr; r=0.85).</div>
+            </div>
           </div>
         </div>
 
         <div class="mode-detailed-content">
           <div class="detailed-section">
-            <div class="formula-box">
-              Arithmetic nth term: an = a1 + (n - 1)d<br>
-              Arithmetic Sum: Sn = (n / 2) * (a1 + an)<br>
-              Geometric nth term: an = a1 * r^(n - 1)<br>
-              Geometric Sum: Sn = a1 * (1 - r^n) / (1 - r)
+            <h4 class="det-subtitle">Real-World Sequence Applications (Defined)</h4>
+            <div class="det-example-box gm">
+              &bull; <strong>Installment Plan:</strong> Defined as a structured financial arrangement where a buyer pays fixed periodic increments over time, modeled arithmetically.<br>
+              &bull; <strong>Asset Depreciation:</strong> Defined as the gradual reduction in economic value of tangible property (e.g. phones, laptops, cars) over time due to age and wear, modeled geometrically (\(0 < r < 1\)).<br>
+              &bull; <strong>Exponential Growth:</strong> Defined as rapid growth where the quantity increases by a fixed proportion per unit of time (e.g. bacteria doubling, population growth, compound interest where \(r > 1\)).
             </div>
           </div>
         </div>
 
-        <!-- Dedicated Quiz Category Button -->
         <div class="quiz-category-box">
           <div class="quiz-cat-left">
             <div class="quiz-cat-icon">&#9997;&#65039;</div>
             <div>
-              <div class="quiz-cat-title">Quiz: Arithmetic &amp; Geometric Sequences</div>
-              <div class="quiz-cat-sub">Multiple Choice &middot; 1 question at a time &middot; Instant feedback</div>
+              <div class="quiz-cat-title">Quiz: Sequence Definitions &amp; Real Life Models</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Linear vs Exponential, Growth Factors &amp; Formulas</div>
             </div>
           </div>
-          <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-sequences')">
-            <span>&#127919;</span> Take Lesson Quiz
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz gm" onclick="startLessonQuiz('gm-sequences-applications')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html" class="btn-start-quiz" style="background:linear-gradient(135deg,#6366f1,#f43f5e);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+              <span>&#127918;</span> Play in Gimkit
+            </a>
+          </div>
         </div>
       </section>
+
     </main>
   </div>
 
-  <!-- ==========================================================================
-       VIEW 4: FINITE MATHEMATICS 1 CHANNEL
-       ========================================================================== -->
   <div class="view-container" id="view-fn">
     <div class="channel-top-bar">
       <button class="ch-back-link" onclick="switchChannel('landing')">&#8592; Topics Hub</button>
@@ -2671,7 +2813,1103 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
        ========================================================================== -->
   <script>
     // Complete Quiz Database
-    const QUIZ_DATABASE = {"gm-wages-overtime": {"title": "Aralin 1.1: Wages, Pay Periods at Overtime (Art. 87)", "lessonId": "lesson-gm-wages-overtime", "questions": [{"q": "Alin sa mga sumusunod ang kabayarang nakabatay sa bilang ng oras o dami ng natapos na gawa?", "options": ["Suweldo (Salary)", "Sahod (Wage)", "Komisyon (Commission)", "Withholding Tax"], "answer": 1, "hint": "Ang Sahod o Wage ay ibinabayad batay sa oras o piraso."}, {"q": "Ilang beses nagpapasahod sa isang taon kapag SEMI-MONTHLY ang suweldo?", "options": ["12 beses", "24 na beses (ika-15 at ika-30)", "26 na beses", "52 beses"], "answer": 1, "hint": "Semi-monthly ay dalawang beses bawat buwan (12 x 2 = 24)."}, {"q": "Ayon sa Article 87 ng Philippine Labor Code, ano ang pormula sa REGULAR DAY Overtime (+25%)?", "options": ["Hourly Rate x 1.00 x Oras", "Hourly Rate x 1.25 x Oras", "Hourly Rate x 1.69 x Oras", "Hourly Rate x 2.60 x Oras"], "answer": 1, "hint": "Regular day OT ay may dagdag na 25% (1.25x)."}, {"q": "Kung kumikita si Jasmine ng ₱30,000 bawat buwan, magkano ang kaniyang taunang suweldo (Annual Salary)?", "options": ["₱300,000", "₱360,000", "₱400,000", "₱320,000"], "answer": 1, "hint": "₱30,000 x 12 buwan = ₱360,000."}, {"q": "Kapag ang overtime ay pumatak sa REST DAY o SPECIAL DAY, ano ang multiplier sa hourly rate?", "options": ["1.25x", "1.69x (130% base + 30%)", "2.60x", "3.38x"], "answer": 1, "hint": "1.30 x 1.30 = 1.69x."}]}, "gm-piecework-commissions": {"title": "Aralin 1.2: Piecework & Sales Commissions", "lessonId": "lesson-gm-piecework-commissions", "questions": [{"q": "Ano ang tawag sa sistema ng pagpapasahod na nakabatay sa dami ng produktong natapos at hindi sa oras?", "options": ["Salary", "Piecework", "Excise Tax", "Hourly Rate"], "answer": 1, "hint": "Piecework ang bayad bawat piraso o unit."}, {"q": "Ano ang layunin ng DIFFERENTIAL PIECE RATE system?", "options": ["Bawasan ang sahod ng masipag", "Magbigay ng mas mataas na rate para sa bawat unit na lalagpas sa quota", "Gawing libre ang produkto", "Walang bayad ang overtime"], "answer": 1, "hint": "Insentibo sa mataas na produksyon ang mas mataas na rate beyond quota."}, {"q": "Kung si Mariel ay may 5% komisyon at nakabenta ng bahay na nagkakahalaga ng ₱3,200,000, magkano ang kaniyang komisyon?", "options": ["₱150,000", "₱160,000", "₱180,000", "₱320,000"], "answer": 1, "hint": "₱3,200,000 x 0.05 = ₱160,000."}, {"q": "Kung si Leo ay kumita ng ₱10/box sa unang 100 boxes at ₱15/box sa labis na 60 boxes, ano ang total gross earnings?", "options": ["₱1,600", "₱1,900", "₱2,400", "₱1,500"], "answer": 1, "hint": "(100 x 10) + (60 x 15) = 1,000 + 900 = ₱1,900."}]}, "gm-taxes-vat": {"title": "Aralin 1.3: 12 Uri ng Buwis, 12% VAT at 2025 Tax Table", "lessonId": "lesson-gm-taxes-vat", "questions": [{"q": "Aling buwis ang ipinapataw sa partikular na mga produkto tulad ng gasolina, alak, at tabako?", "options": ["Capital Gains Tax", "Excise Tax", "Real Property Tax", "Donor's Tax"], "answer": 1, "hint": "Excise tax ang buwis sa specific commodities."}, {"q": "Magkano ang 12% VAT ng isang laptop na nagkakahalaga ng ₱35,000 bago ang buwis?", "options": ["₱3,500", "₱4,200", "₱4,500", "₱5,000"], "answer": 1, "hint": "₱35,000 x 0.12 = ₱4,200."}, {"q": "Ayon sa Bagong Income Tax Table 2025, magkano ang buwis ng may taunang taxable income na hindi lalagpas sa ₱250,000?", "options": ["0% (Libre sa buwis)", "15%", "20%", "25%"], "answer": 0, "hint": "0% tax para sa ₱250,000 pababa."}, {"q": "Aling buwis ang kinakaltas nang maaga ng employer mula sa suweldo ng empleyado bago ito ibigay?", "options": ["Withholding Tax", "Value-Added Tax", "Transfer Tax", "Documentary Stamp Tax"], "answer": 0, "hint": "Withholding tax ang advance deduction sa suweldo."}, {"q": "Ano ang tawag sa buwis sa tubong kinita mula sa pagbebenta ng mga ari-arian tulad ng lupa o bahay?", "options": ["Capital Gains Tax (CGT)", "Percentage Tax", "Business Tax", "Excise Tax"], "answer": 0, "hint": "CGT ang buwis sa capital gains o tubo sa assets."}]}, "gm-payroll-deductions": {"title": "Aralin 1.4: Statutory Deductions & Payroll Computation", "lessonId": "lesson-gm-payroll-deductions", "questions": [{"q": "Sa ilalim ng 2025 SSS rate (15%), ilang porsyento ang share na kinakaltas sa empleyado?", "options": ["2.5%", "5%", "10%", "15%"], "answer": 1, "hint": "5% ang share ng empleyado, 10% ang employer share."}, {"q": "Magkano ang maximum statutory monthly deduction para sa Pag-IBIG ng miyembro?", "options": ["₱100.00", "₱200.00", "₱400.00", "₱500.00"], "answer": 1, "hint": "₱200.00 ang maximum member contribution sa Pag-IBIG."}, {"q": "Sa 5% PhilHealth premium rate hike, ilang porsyento ng Basic Pay ang kinakaltas bilang Employee Share?", "options": ["1.5%", "2.5% (Basic Pay x 0.025)", "4.0%", "5.0%"], "answer": 1, "hint": "Hating pantay ang 5% premium rate: 2.5% employee at 2.5% employer."}, {"q": "Paano kinukuha ang NET PAY o Take-Home Pay ng empleyado?", "options": ["Gross Income + Total Deductions", "Gross Income - Total Deductions", "Basic Pay x Overtime Rate", "Taxable Income x 12"], "answer": 1, "hint": "Net Pay = Gross Income minus Total Deductions."}, {"q": "Kung si Maria ay may Gross Income na ₱13,074.37 at Total Deductions na ₱1,163.50, magkano ang kaniyang Net Income?", "options": ["₱11,500.00", "₱11,910.87 (o ₱11,910.88)", "₱12,000.00", "₱14,237.87"], "answer": 1, "hint": "13,074.37 - 1,163.50 = ₱11,910.87."}]}, "mk-elem-anyo": {"title": "Aralin 3.1: 5 Elemento at Anyo ng Pagpapahayag", "lessonId": "lesson-mk-elem-anyo", "questions": [{"q": "Sino ang pinagmumulan o nagpapadala ng mensahe?", "options": ["Tagatanggap (Receiver)", "Tagapagpadala (Sender)", "Daluyan (Channel)", "Tugon (Feedback)"], "answer": 1, "hint": "Ang Sender ang nagsisimula ng proseso."}, {"q": "Aling anyo ng pagpapahayag ang nagbibigay ng impormasyon batay sa nakita o narinig NANG HINDI AGAD NAGBIBIGAY NG SARILING PAGHUHUSGA?", "options": ["Pagkukuwento", "Paglalahad ng Obserbasyon", "Pagtatanong", "Panghuhula"], "answer": 1, "hint": "Obserbasyon muna bago humusga."}, {"q": "'Ano po ang takdang-aralin?' ay halimbawa ng anong anyo ng pagpapahayag?", "options": ["Pagpapahayag ng Opinyon", "Pagkukuwento", "Pagtatanong", "Paglalahad ng Obserbasyon"], "answer": 2, "hint": "Paraan ng pagkuha ng impormasyon o paghingi ng linaw."}, {"q": "Ang pagsasalaysay ng isang karanasan o pangyayari upang magbahagi ng impormasyon o magbigay-aliw ay:", "options": ["Pagtatanong", "Pagkukuwento", "Tugon", "Noise"], "answer": 1, "hint": "Pagsasalaysay ng kwento at karanasan."}]}, "mk-antas-awdyens": {"title": "Aralin 3.2: Antas ng Komunikasyon at Awdyens", "lessonId": "lesson-mk-antas-awdyens", "questions": [{"q": "Ano ang tawag sa komunikasyon kung saan iisa ang tagapagsalita at marami ang tagapakinig?", "options": ["Personal na Komunikasyon", "Interpersonal na Komunikasyon", "Pampublikong Komunikasyon", "Passive Footprint"], "answer": 2, "hint": "Pampubliko dahil nakatuon sa malaking madla tulad ng talumpati."}, {"q": "Bakit mahalagang kilalanin ang awdyens bago magpahayag?", "options": ["Upang malaman ang kanilang password", "Upang makapili ng angkop na salita, tono, at paraan ng pagpapahayag", "Para sumikat online", "Para maiwasan ang pagsasalita"], "answer": 1, "hint": "Dapat iakma ang tono at wika sa nakikinig."}, {"q": "Saan karaniwang ginagamit ang PORMAL na wika?", "options": ["Chat sa barkada", "Paaralan, opisina, at talumpati", "Kaswal na usapan sa kanto", "TikTok comments"], "answer": 1, "hint": "Ginagamit sa opisyal at seryosong sitwasyon."}, {"q": "Alin ang mas SISTEMATIKONG pagsulat ng mga natutuhan, obserbasyon, at pagninilay sa sarili?", "options": ["Dyornal (Journal)", "Talaarawan (Diary)", "Blog Comment", "Tweet"], "answer": 0, "hint": "Dyornal ang mas nakatuon sa sistematikong pagkatuto."}]}, "mk-digital-privacy": {"title": "Aralin 3.3: Digital Identity, Privacy at Netiquette", "lessonId": "lesson-mk-digital-privacy", "questions": [{"q": "Ano ang kahulugan ng PRIVACY (Pagkapribado)?", "options": ["Karapatang mag-post ng kahit ano", "Karapatan ng tao na panatilihing pribado at ligtas ang kaniyang personal na impormasyon", "Pagbura ng account", "Pagbabahagi ng password"], "answer": 1, "hint": "Pangangalaga sa sariling impormasyon."}, {"q": "Alin ang halimbawa ng PASSIVE digital footprint?", "options": ["Pag-upload ng video", "Web cookies at browsing history na awtomatikong nakokolekta", "Pag-post ng status", "Pagkomento sa balita"], "answer": 1, "hint": "Awtomatikong naitatala nang walang kusa."}, {"q": "Bakit mahalaga ang Two-Factor Authentication (2FA) at Personal Data Protection?", "options": ["Upang maprotektahan ang datos laban sa hindi awtorisadong paggamit", "Upang dumami ang followers", "Upang bumilis ang phone", "Upang maging pormal ang chat"], "answer": 0, "hint": "Karagdagang layer ng seguridad sa personal data."}]}, "mk-public-facing": {"title": "Aralin 3.4: Public-Facing na Teksto at Layunin Nito", "lessonId": "lesson-mk-public-facing", "questions": [{"q": "Aling public-facing text ang naglalayong HIKAYATIN ang mga tao na suportahan o makiisa sa isang adbokasiya?", "options": ["Talaarawan", "Advocacy Post", "Maikling Kolumn", "Dyornal"], "answer": 1, "hint": "Advocacy post ang humihikayat sa layunin."}, {"q": "Ano ang INCLUSIVITY (Pagiging Inklusibo) bilang layunin ng teksto?", "options": ["Pagbubukod sa mga mahihirap", "Pantay na paggalang, pagkakataon, at pagtanggap sa lahat anuman ang kasarian, edad, o kultura", "Pagsasara ng komento", "Pang-iinsulto sa iba"], "answer": 1, "hint": "Pantay na pagtanggap sa lahat nang walang diskriminasyon."}, {"q": "Ang maikling artikulo na nagpapahayag ng opinyon ng may-akda sa napapanahong isyu ay tinatawag na:", "options": ["Blog", "Maikling Kolumn", "Advocacy Post", "Talaarawan"], "answer": 1, "hint": "Maikling kolumn sa pahayagan o magasin."}, {"q": "Alin ang sulating nagbibigay ng sariling pananaw, pagsusuri, o opinyon tungkol sa isang balita o isyu?", "options": ["Komentaryo", "Data Protection", "2FA", "Passive Footprint"], "answer": 0, "hint": "Komentaryo ang naglalaman ng pagsusuri at pananaw."}]}, "mk-proseso": {"title": "Aralin 4.1: Dinamikong Proseso ng Komunikasyon", "lessonId": "lesson-mk-proseso", "questions": [{"q": "Alin sa 3 proseso ang tumutukoy sa pag-unawa at pagbibigay-kahulugan sa mensahe batay sa karanasan at emosyon?", "options": ["Pagpapahayag (Expression)", "Pakikilahok (Participation)", "Pagbibigay-kahulugan (Decoding)", "Pampubliko"], "answer": 2, "hint": "Decoding ang pag-unawa sa kahulugan."}, {"q": "Bakit sinasabing DINAMIKO ang komunikasyon?", "options": ["Dahil ito ay nakatigil", "Dahil ito ay tuloy-tuloy, interaktibo, at lumulutas ng mga suliranin", "Dahil pasulat lamang ito", "Dahil walang tugon"], "answer": 1, "hint": "Dinamiko = patuloy na nagbabago at umuunlad ang ugnayan."}, {"q": "Ang aktibong pakikinig at pakikiisa sa talakayan ay bahagi ng anong proseso?", "options": ["Pakikilahok (Participation)", "Passive Data", "Personal Data", "Noise"], "answer": 0, "hint": "Pakikilahok = active engagement."}]}, "mk-kultural-konteksto": {"title": "Aralin 4.2: 4 na Konteksto at Kamalayang Kultural", "lessonId": "lesson-mk-kultural-konteksto", "questions": [{"q": "Ang komunikasyon sa loob ng pangkat o komunidad (hal. pagbibigay ng opinyon sa klase) ay kontekstong:", "options": ["Personal", "Interpersonal", "Sosyal", "Kultural"], "answer": 2, "hint": "Sosyal ang antas sa pangkat o komunidad."}, {"q": "Aling pahayag ang nagpapakita ng SENSIBILIDAD sa komunikasyon?", "options": ["'Maling-mali ka!'", "'Wala kang alam!'", "'Mayroon akong ibang pananaw ukol diyan.'", "'Tumahimik ka na lang.'"], "answer": 2, "hint": "Isinasaalang-alang ang damdamin ng kausap."}, {"q": "Ang paggamit ng 'po' at 'opo' sa Pilipinas ay halimbawa ng anong konteksto?", "options": ["Personal", "Kultural (pag-unawa sa tradisyon at paniniwala)", "Passive Footprint", "Noise"], "answer": 1, "hint": "Bahagi ito ng kultura at kaugaliang Pilipino."}]}, "gs-levers": {"title": "Week 5: The Three Classes of Levers", "lessonId": "lesson-gs-levers", "questions": [{"q": "Which class of lever has the FULCRUM in the middle?", "options": ["1st Class Lever (Seesaw, scissors)", "2nd Class Lever (Wheelbarrow)", "3rd Class Lever (Tweezers)", "None"], "answer": 0, "hint": "1st = Fulcrum in middle."}, {"q": "Which class of lever has the LOAD in the middle and always has MA > 1?", "options": ["1st Class", "2nd Class", "3rd Class", "4th Class"], "answer": 1, "hint": "2nd = Load in middle."}, {"q": "Which class of lever has the EFFORT in the middle and multiplies speed (MA < 1)?", "options": ["1st Class", "2nd Class", "3rd Class", "Fixed pulley"], "answer": 2, "hint": "3rd = Effort in middle."}]}, "gs-pulleys": {"title": "Week 5: Pulleys, Wheels, & Inclined Planes", "lessonId": "lesson-gs-pulleys", "questions": [{"q": "A fixed pulley has a Mechanical Advantage of:", "options": ["0", "1 (only redirects force)", "2", "4"], "answer": 1, "hint": "It changes force direction only."}, {"q": "A ramp is 10 m long and 2 m high. What is its Ideal Mechanical Advantage (IMA)?", "options": ["0.2", "5", "20", "8"], "answer": 1, "hint": "IMA = Length / Height (10 / 2 = 5)."}, {"q": "Two inclined planes placed back-to-back used for cutting describe a:", "options": ["Screw", "Wedge", "Wheel and Axle", "3rd Class Lever"], "answer": 1, "hint": "Axes and knives are wedges."}]}, "gs-compound": {"title": "Week 5: Compound Machines & Combined MA", "lessonId": "lesson-gs-compound", "questions": [{"q": "How is total MA of a compound machine calculated?", "options": ["MA_total = MA1 + MA2", "MA_total = MA1 x MA2 x MA3...", "MA_total = (MA1 + MA2) / 2", "MA_total = MA1 - MA2"], "answer": 1, "hint": "Multiplied together."}, {"q": "Why are compound machines generally less efficient than simple machines?", "options": ["They produce too much work", "More moving parts introduce more friction and heat loss", "They violate physics", "They have MA < 1"], "answer": 1, "hint": "Friction from multiple components."}, {"q": "A pair of scissors combines which simple machines?", "options": ["Two 1st class levers + wedge blades", "Wheel & axle + pulley", "Screw + ramp", "3rd class lever + fixed pulley"], "answer": 0, "hint": "Pivoted levers with sharp wedge blades."}]}, "gs-pascal": {"title": "Week 6: Pascal's Principle & Hydraulics", "lessonId": "lesson-gs-pascal", "questions": [{"q": "Pascal's Principle states that pressure applied to an enclosed fluid is:", "options": ["Lost at the bottom", "Transmitted undiminished in all directions", "Reduced by 50%", "Directed only upwards"], "answer": 1, "hint": "P1 = P2 throughout the fluid."}, {"q": "In a hydraulic lift, if Piston 2 has 10 times the area of Piston 1, the output force F2 will be:", "options": ["10 times greater than F1", "10 times smaller than F1", "Equal to F1", "Zero"], "answer": 0, "hint": "F2 = F1 x (A2 / A1)."}, {"q": "Which machine operates directly on Pascal's Principle?", "options": ["Hydraulic car brakes and lifts", "A simple crowbar", "A fixed flagpole pulley", "A compass"], "answer": 0, "hint": "Hydraulic systems use fluid pressure."}]}, "gs-archimedes": {"title": "Week 6: Archimedes' Principle & Buoyancy", "lessonId": "lesson-gs-archimedes", "questions": [{"q": "According to Archimedes' Principle, Buoyant Force (Fb) equals:", "options": ["Total weight of the object", "Weight of fluid displaced by the object", "Depth of the water", "Zero in seawater"], "answer": 1, "hint": "Fb = Weight of displaced fluid."}, {"q": "An object will SINK in water if:", "options": ["Its density is greater than water (Fb < Weight)", "Its density is less than water", "It is made of wood", "Its volume is large"], "answer": 0, "hint": "Higher density sinks."}, {"q": "Why do massive steel ships float on water?", "options": ["Steel is lighter than water", "Hollow hull displaces huge volume of water, creating large buoyant force", "Salt in ocean repels steel", "Engines push the ship up"], "answer": 1, "hint": "Displaced water weight exceeds ship weight."}]}, "gm-markup": {"title": "Week 6: Mark-up, Mark-down & Discounts", "lessonId": "lesson-gm-markup", "questions": [{"q": "If an item costs \u20b1400 and is sold for \u20b1550, what is the Mark-up?", "options": ["\u20b1100", "\u20b1150", "\u20b1950", "\u20b1200"], "answer": 1, "hint": "Mark-up = 550 - 400 = 150."}, {"q": "A \u20b11,000 item has a 25% discount. What is the Sale Price?", "options": ["\u20b1250", "\u20b1750", "\u20b11,250", "\u20b1800"], "answer": 1, "hint": "1,000 - 250 = 750."}, {"q": "What is the formula for Mark-up Rate based on Cost?", "options": ["(Mark-up / Cost) x 100%", "(Cost / Mark-up) x 100%", "Cost x Selling Price", "Selling Price - Discount"], "answer": 0, "hint": "Mark-up over original cost."}]}, "gm-interest": {"title": "Week 6: Simple Interest & Maturity Value", "lessonId": "lesson-gm-interest", "questions": [{"q": "What is the formula for Simple Interest (I)?", "options": ["I = P + r + t", "I = Prt (Principal x Rate x Time)", "I = P / rt", "I = P(1 + r)^t"], "answer": 1, "hint": "I = Prt."}, {"q": "If you invest \u20b120,000 at 4% for 2 years, how much interest is earned?", "options": ["\u20b1800", "\u20b11,600", "\u20b121,600", "\u20b14,000"], "answer": 1, "hint": "20,000 x 0.04 x 2 = 1,600."}, {"q": "What is the Maturity Value (Future Value F) of the investment above?", "options": ["\u20b11,600", "\u20b120,000", "\u20b121,600", "\u20b124,000"], "answer": 2, "hint": "20,000 + 1,600 = 21,600."}]}, "gm-patterns": {"title": "Week 7: Patterns in Nature & Fibonacci", "lessonId": "lesson-gm-patterns", "questions": [{"q": "What are the next two terms: 0, 1, 1, 2, 3, 5, 8, __, __?", "options": ["10, 12", "13, 21", "11, 15", "16, 24"], "answer": 1, "hint": "5+8=13, 8+13=21."}, {"q": "Which symmetry is shown by a starfish and sunflower florets?", "options": ["Bilateral symmetry", "Radial / Rotational symmetry", "Asymmetry", "Translation"], "answer": 1, "hint": "Rotational around center."}, {"q": "Why do honeybees build hexagonal honeycomb cells?", "options": ["Random", "Hexagons maximize storage volume with minimal perimeter/wax", "To trap heat only", "Easier to count"], "answer": 1, "hint": "Optimal packing efficiency."}]}, "gm-sequences": {"title": "Week 8: Arithmetic & Geometric Sequences", "lessonId": "lesson-gm-sequences", "questions": [{"q": "In the Arithmetic Sequence 5, 9, 13, 17..., what is the Common Difference (d)?", "options": ["2", "4", "5", "8"], "answer": 1, "hint": "d = 9 - 5 = 4."}, {"q": "What is the formula for the nth term of an Arithmetic Sequence?", "options": ["an = a1 + (n - 1)d", "an = a1 x r^(n-1)", "an = n x d", "an = a1 / d"], "answer": 0, "hint": "an = a1 + (n - 1)d."}, {"q": "In the Geometric Sequence 3, 6, 12, 24..., what is the Common Ratio (r)?", "options": ["2", "3", "4", "6"], "answer": 0, "hint": "r = 6 / 3 = 2."}]}, "fn-tess": {"title": "Lesson 3: Tessellations & Frieze Patterns", "lessonId": "lesson-fn-tess", "questions": [{"q": "What is a Tessellation (Tiling)?", "options": ["3D sculpture", "Covering a plane with shapes without overlaps or gaps", "Equation", "Fractal dimension"], "answer": 1, "hint": "No gaps, no overlaps."}, {"q": "How many distinct Frieze Symmetry Groups exist in 1D border patterns?", "options": ["4", "7", "12", "17"], "answer": 1, "hint": "Exactly 7 frieze groups."}, {"q": "Which transformation slides an object along a line without rotation?", "options": ["Reflection", "Rotation", "Translation", "Glide Reflection"], "answer": 2, "hint": "Linear slide is Translation."}]}, "fn-golden": {"title": "Lesson 4: Golden Ratio & Fibonacci Spirals", "lessonId": "lesson-fn-golden", "questions": [{"q": "What is the approximate value of the Golden Ratio (Phi, \u03c6)?", "options": ["3.1416", "1.618", "2.718", "1.414"], "answer": 1, "hint": "\u03c6 \u2248 1.6180339887."}, {"q": "A Golden Rectangle has side lengths in the ratio:", "options": ["2 : 1", "1.618 : 1 (\u03c6 : 1)", "3 : 2", "1 : 1"], "answer": 1, "hint": "Length / Width = \u03c6."}, {"q": "As Fibonacci sequence progresses, the ratio of consecutive terms (Fn+1 / Fn) approaches:", "options": ["0", "1", "The Golden Ratio (\u03c6 \u2248 1.618)", "Infinity"], "answer": 2, "hint": "Converges to Phi."}]}, "fn-fractals": {"title": "Lesson 5: Fractals & Self-Similarity", "lessonId": "lesson-fn-fractals", "questions": [{"q": "What is the defining property of a Fractal?", "options": ["Straight lines only", "Self-Similarity (repeats structure at every scale)", "Fixed area only", "Finite iterations only"], "answer": 1, "hint": "Structural repetition across zoom levels."}, {"q": "Which of the following is a classic fractal?", "options": ["Sierpinski Gasket / Triangle", "Koch Snowflake", "Mandelbrot Set", "All of the above"], "answer": 3, "hint": "All three are prominent fractals."}, {"q": "Which natural phenomenon displays fractal geometry?", "options": ["Fern leaves and coastlines", "Lightning branches and river networks", "Blood vessels and lung bronchi", "All of the above"], "answer": 3, "hint": "Nature uses fractal branching."}]}, "fn-matrix": {"title": "Lessons 6 & 7: Matrix Algebra & Multiplication", "lessonId": "lesson-fn-matrix", "questions": [{"q": "To ADD two matrices, they must have:", "options": ["Square dimensions", "Identical dimensions (same rows and columns)", "Determinants equal to 1", "Positive entries only"], "answer": 1, "hint": "Same m x n order."}, {"q": "What condition must be met to MULTIPLY Matrix A (m x k) and Matrix B (p x n)?", "options": ["Columns of A (k) must equal Rows of B (p)", "Rows of A must equal Rows of B", "Both must be square", "k must equal m"], "answer": 0, "hint": "Inner dimensions must match: (m x k) \u2022 (k x n)."}, {"q": "If Matrix A is (2 x 3) and Matrix B is (3 x 4), what is the order of AB?", "options": ["2 x 4", "3 x 3", "2 x 3", "Undefined"], "answer": 0, "hint": "Outer dimensions: 2 x 4."}]}};
+    const QUIZ_DATABASE = {
+  "mk-elem-anyo": {
+    "title": "Aralin 3.1: 5 Elemento at Anyo ng Pagpapahayag",
+    "lessonId": "lesson-mk-elem-anyo",
+    "questions": [
+      {
+        "q": "Sino ang pinagmumulan o nagpapadala ng mensahe?",
+        "options": [
+          "Tagatanggap (Receiver)",
+          "Tagapagpadala (Sender)",
+          "Daluyan (Channel)",
+          "Tugon (Feedback)"
+        ],
+        "answer": 1,
+        "hint": "Ang Sender ang nagsisimula ng proseso."
+      },
+      {
+        "q": "Aling anyo ng pagpapahayag ang nagbibigay ng impormasyon batay sa nakita o narinig NANG HINDI AGAD NAGBIBIGAY NG SARILING PAGHUHUSGA?",
+        "options": [
+          "Pagkukuwento",
+          "Paglalahad ng Obserbasyon",
+          "Pagtatanong",
+          "Panghuhula"
+        ],
+        "answer": 1,
+        "hint": "Obserbasyon muna bago humusga."
+      },
+      {
+        "q": "'Ano po ang takdang-aralin?' ay halimbawa ng anong anyo ng pagpapahayag?",
+        "options": [
+          "Pagpapahayag ng Opinyon",
+          "Pagkukuwento",
+          "Pagtatanong",
+          "Paglalahad ng Obserbasyon"
+        ],
+        "answer": 2,
+        "hint": "Paraan ng pagkuha ng impormasyon o paghingi ng linaw."
+      },
+      {
+        "q": "Ang pagsasalaysay ng isang karanasan o pangyayari upang magbahagi ng impormasyon o magbigay-aliw ay:",
+        "options": [
+          "Pagtatanong",
+          "Pagkukuwento",
+          "Tugon",
+          "Noise"
+        ],
+        "answer": 1,
+        "hint": "Pagsasalaysay ng kwento at karanasan."
+      }
+    ]
+  },
+  "mk-antas-awdyens": {
+    "title": "Aralin 3.2: Antas ng Komunikasyon at Awdyens",
+    "lessonId": "lesson-mk-antas-awdyens",
+    "questions": [
+      {
+        "q": "Ano ang tawag sa komunikasyon kung saan iisa ang tagapagsalita at marami ang tagapakinig?",
+        "options": [
+          "Personal na Komunikasyon",
+          "Interpersonal na Komunikasyon",
+          "Pampublikong Komunikasyon",
+          "Passive Footprint"
+        ],
+        "answer": 2,
+        "hint": "Pampubliko dahil nakatuon sa malaking madla tulad ng talumpati."
+      },
+      {
+        "q": "Bakit mahalagang kilalanin ang awdyens bago magpahayag?",
+        "options": [
+          "Upang malaman ang kanilang password",
+          "Upang makapili ng angkop na salita, tono, at paraan ng pagpapahayag",
+          "Para sumikat online",
+          "Para maiwasan ang pagsasalita"
+        ],
+        "answer": 1,
+        "hint": "Dapat iakma ang tono at wika sa nakikinig."
+      },
+      {
+        "q": "Saan karaniwang ginagamit ang PORMAL na wika?",
+        "options": [
+          "Chat sa barkada",
+          "Paaralan, opisina, at talumpati",
+          "Kaswal na usapan sa kanto",
+          "TikTok comments"
+        ],
+        "answer": 1,
+        "hint": "Ginagamit sa opisyal at seryosong sitwasyon."
+      },
+      {
+        "q": "Alin ang mas SISTEMATIKONG pagsulat ng mga natutuhan, obserbasyon, at pagninilay sa sarili?",
+        "options": [
+          "Dyornal (Journal)",
+          "Talaarawan (Diary)",
+          "Blog Comment",
+          "Tweet"
+        ],
+        "answer": 0,
+        "hint": "Dyornal ang mas nakatuon sa sistematikong pagkatuto."
+      }
+    ]
+  },
+  "mk-digital-privacy": {
+    "title": "Aralin 3.3: Digital Identity, Privacy at Netiquette",
+    "lessonId": "lesson-mk-digital-privacy",
+    "questions": [
+      {
+        "q": "Ano ang kahulugan ng PRIVACY (Pagkapribado)?",
+        "options": [
+          "Karapatang mag-post ng kahit ano",
+          "Karapatan ng tao na panatilihing pribado at ligtas ang kaniyang personal na impormasyon",
+          "Pagbura ng account",
+          "Pagbabahagi ng password"
+        ],
+        "answer": 1,
+        "hint": "Pangangalaga sa sariling impormasyon."
+      },
+      {
+        "q": "Alin ang halimbawa ng PASSIVE digital footprint?",
+        "options": [
+          "Pag-upload ng video",
+          "Web cookies at browsing history na awtomatikong nakokolekta",
+          "Pag-post ng status",
+          "Pagkomento sa balita"
+        ],
+        "answer": 1,
+        "hint": "Awtomatikong naitatala nang walang kusa."
+      },
+      {
+        "q": "Bakit mahalaga ang Two-Factor Authentication (2FA) at Personal Data Protection?",
+        "options": [
+          "Upang maprotektahan ang datos laban sa hindi awtorisadong paggamit",
+          "Upang dumami ang followers",
+          "Upang bumilis ang phone",
+          "Upang maging pormal ang chat"
+        ],
+        "answer": 0,
+        "hint": "Karagdagang layer ng seguridad sa personal data."
+      }
+    ]
+  },
+  "mk-public-facing": {
+    "title": "Aralin 3.4: Public-Facing na Teksto at Layunin Nito",
+    "lessonId": "lesson-mk-public-facing",
+    "questions": [
+      {
+        "q": "Aling public-facing text ang naglalayong HIKAYATIN ang mga tao na suportahan o makiisa sa isang adbokasiya?",
+        "options": [
+          "Talaarawan",
+          "Advocacy Post",
+          "Maikling Kolumn",
+          "Dyornal"
+        ],
+        "answer": 1,
+        "hint": "Advocacy post ang humihikayat sa layunin."
+      },
+      {
+        "q": "Ano ang INCLUSIVITY (Pagiging Inklusibo) bilang layunin ng teksto?",
+        "options": [
+          "Paggamit ng napakahirap na salita",
+          "Pagtitiyak na ang teksto ay bukas, sensitibo, at gumagalang sa lahat ng uri ng mambabasa",
+          "Pag-post para lamang sa mga kaibigan",
+          "Pang-iinsulto sa iba"
+        ],
+        "answer": 1,
+        "hint": "Bukas at sensitibo sa lahat."
+      },
+      {
+        "q": "Alin sa mga sumusunod ang HINDI kabilang sa public-facing texts?",
+        "options": [
+          "Press Release",
+          "Advocacy Post",
+          "Personal na Talaarawan (Secret Diary)",
+          "Maikling Kolumn"
+        ],
+        "answer": 2,
+        "hint": "Ang personal diary ay pribado at hindi para sa publiko."
+      }
+    ]
+  },
+  "mk-proseso": {
+    "title": "Aralin 4.1: 3 Yugto ng Proseso ng Komunikasyon",
+    "lessonId": "lesson-mk-proseso",
+    "questions": [
+      {
+        "q": "Ano ang unang yugto sa proseso ng komunikasyon?",
+        "options": [
+          "Aktuwal na Pagpapahayag (Transmitting)",
+          "Bago Magpahayag (Pre-communicating)",
+          "Pagkatapos Magpahayag (Post-communicating)",
+          "Feedback Loop"
+        ],
+        "answer": 1,
+        "hint": "Pre-communicating: pagpaplano at pagkilala sa layunin."
+      },
+      {
+        "q": "Saang yugto nagaganap ang pagwawasto at paghingi ng linaw batay sa tugon o feedback?",
+        "options": [
+          "Bago Magpahayag",
+          "Aktuwal na Pagpapahayag",
+          "Pagkatapos Magpahayag",
+          "Encoding"
+        ],
+        "answer": 2,
+        "hint": "Post-communicating: pagtataya sa epekto at feedback."
+      },
+      {
+        "q": "Bakit mahalaga ang paghahanda (Pre-communicating) bago magpahayag?",
+        "options": [
+          "Upang maiwasan ang maling impormasyon at maiakma ang tono sa awdyens",
+          "Para maging mabilis ang pagsasalita",
+          "Para hindi na kailangan ng tugon",
+          "Para mawala ang ingay"
+        ],
+        "answer": 0,
+        "hint": "Naiiwasan ang miscommunication kapag may plano."
+      }
+    ]
+  },
+  "mk-kultural-konteksto": {
+    "title": "Aralin 4.2: 4 na Konteksto ng Pagpapahayag",
+    "lessonId": "lesson-mk-kultural-konteksto",
+    "questions": [
+      {
+        "q": "Aling konteksto ang tumutukoy sa mga kaugalian, tradisyon, at mga bawal o taboo ng isang grupo?",
+        "options": [
+          "Pisikal na Konteksto",
+          "Kultural na Konteksto",
+          "Sosyal na Konteksto",
+          "Sikolohikal na Konteksto"
+        ],
+        "answer": 1,
+        "hint": "Kultura ang nagtatakda ng mga pamantayan at tradisyon."
+      },
+      {
+        "q": "Ang relasyon ng tagapagsalita sa tagapakinig (hal. boss at empleyado, magkaibigan) ay nasa anong konteksto?",
+        "options": [
+          "Sosyal na Konteksto",
+          "Pisikal na Konteksto",
+          "Historikal na Konteksto",
+          "Digital na Konteksto"
+        ],
+        "answer": 0,
+        "hint": "Sosyal na relasyon at ugnayan."
+      },
+      {
+        "q": "Ang maingay na silid-aralan o mahinang internet connection ay halimbawa ng:",
+        "options": [
+          "Sikolohikal na Konteksto",
+          "Pisikal / Teknolohikal na Konteksto",
+          "Kultural na Konteksto",
+          "Sosyal na Konteksto"
+        ],
+        "answer": 1,
+        "hint": "Pisikal na kapaligiran o daluyan ng komunikasyon."
+      }
+    ]
+  },
+  "gs-levers": {
+    "title": "Week 5: 6 Simple Machines & Levers",
+    "lessonId": "lesson-gs-levers",
+    "questions": [
+      {
+        "q": "Which simple machine consists of a rigid bar pivoting on a fixed point called a fulcrum?",
+        "options": [
+          "Inclined Plane",
+          "Lever",
+          "Pulley",
+          "Screw"
+        ],
+        "answer": 1,
+        "hint": "Pivots around a fulcrum."
+      },
+      {
+        "q": "In a FIRST-CLASS lever, which component is in the middle?",
+        "options": [
+          "Load",
+          "Effort",
+          "Fulcrum",
+          "Axis"
+        ],
+        "answer": 2,
+        "hint": "F-L-E mnemonic: 1st class has Fulcrum in middle."
+      },
+      {
+        "q": "A wheelbarrow and nutcracker are examples of which class of lever?",
+        "options": [
+          "1st Class",
+          "2nd Class",
+          "3rd Class",
+          "4th Class"
+        ],
+        "answer": 1,
+        "hint": "Load is in the middle."
+      },
+      {
+        "q": "Tweezers, tongs, and a baseball bat are examples of:",
+        "options": [
+          "1st Class Lever",
+          "2nd Class Lever",
+          "3rd Class Lever",
+          "Wheel & Axle"
+        ],
+        "answer": 2,
+        "hint": "Effort is applied between fulcrum and load."
+      }
+    ]
+  },
+  "gs-pulleys": {
+    "title": "Week 5: Pulleys, Inclined Planes & IMA",
+    "lessonId": "lesson-gs-pulleys",
+    "questions": [
+      {
+        "q": "What is the Ideal Mechanical Advantage (IMA) of a single FIXED pulley?",
+        "options": [
+          "IMA = 1",
+          "IMA = 2",
+          "IMA = 4",
+          "IMA = 0.5"
+        ],
+        "answer": 0,
+        "hint": "Only changes direction of force, IMA = 1."
+      },
+      {
+        "q": "What is the formula for the Ideal Mechanical Advantage (IMA) of an inclined plane?",
+        "options": [
+          "Height \u00f7 Length",
+          "Length of slope \u00f7 Height (L/h)",
+          "Force \u00f7 Distance",
+          "Radius \u00f7 Axle"
+        ],
+        "answer": 1,
+        "hint": "Length of ramp divided by vertical height."
+      },
+      {
+        "q": "If a ramp has a length of 6 meters and a height of 2 meters, what is its IMA?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "12"
+        ],
+        "answer": 1,
+        "hint": "6 \u00f7 2 = 3."
+      }
+    ]
+  },
+  "gs-compound": {
+    "title": "Week 5: Compound Machines & Efficiency",
+    "lessonId": "lesson-gs-compound",
+    "questions": [
+      {
+        "q": "What is a compound machine?",
+        "options": [
+          "A machine with electronic circuits",
+          "A machine made of two or more simple machines working together",
+          "A machine with 100% efficiency",
+          "A perpetual motion device"
+        ],
+        "answer": 1,
+        "hint": "Combination of simple machines (e.g. scissors, bicycle)."
+      },
+      {
+        "q": "Why is the real efficiency of any practical machine always LESS than 100%?",
+        "options": [
+          "Gravity disappears",
+          "Friction and heat dissipate energy",
+          "Distance is lost",
+          "Mass increases"
+        ],
+        "answer": 1,
+        "hint": "Friction converts work into heat energy."
+      },
+      {
+        "q": "What is the formula for mechanical efficiency?",
+        "options": [
+          "(Work Output \u00f7 Work Input) \u00d7 100%",
+          "(Work Input \u00f7 Work Output) \u00d7 100%",
+          "IMA \u00d7 AMA",
+          "Force \u00d7 Distance"
+        ],
+        "answer": 0,
+        "hint": "Output divided by Input times 100."
+      }
+    ]
+  },
+  "gs-pascal": {
+    "title": "Week 6: Pascal's Principle & Hydraulics",
+    "lessonId": "lesson-gs-pascal",
+    "questions": [
+      {
+        "q": "What does Pascal's Principle state regarding enclosed fluids?",
+        "options": [
+          "Pressure only pushes downward",
+          "Pressure applied to an enclosed fluid is transmitted undiminished in all directions",
+          "Fluids always expand with heat",
+          "Fluid velocity increases at nozzles"
+        ],
+        "answer": 1,
+        "hint": "Transmitted undiminished throughout the fluid."
+      },
+      {
+        "q": "What is the formula for pressure (P)?",
+        "options": [
+          "P = Force \u00d7 Area",
+          "P = Force \u00f7 Area (F/A)",
+          "P = Mass \u00d7 Gravity",
+          "P = Work \u00f7 Time"
+        ],
+        "answer": 1,
+        "hint": "Force per unit area (N/m\u00b2 or Pascals)."
+      },
+      {
+        "q": "Hydraulic car brakes and hydraulic lifts operate based on which scientific principle?",
+        "options": [
+          "Archimedes' Principle",
+          "Pascal's Principle",
+          "Bernoulli's Principle",
+          "Newton's Third Law"
+        ],
+        "answer": 1,
+        "hint": "Pascal's law of fluid pressure multiplication."
+      }
+    ]
+  },
+  "gs-archimedes": {
+    "title": "Week 6: Archimedes' Principle & Buoyancy",
+    "lessonId": "lesson-gs-archimedes",
+    "questions": [
+      {
+        "q": "According to Archimedes' Principle, the buoyant force on a submerged body is equal to:",
+        "options": [
+          "The total mass of the object",
+          "The weight of the fluid displaced by the object",
+          "The surface tension of the fluid",
+          "The atmospheric pressure"
+        ],
+        "answer": 1,
+        "hint": "Buoyant force = weight of displaced fluid."
+      },
+      {
+        "q": "An object will SINK in water if:",
+        "options": [
+          "Its average density is greater than the density of water",
+          "Its buoyant force exceeds its weight",
+          "It has a large surface area",
+          "Its volume is less than 1 liter"
+        ],
+        "answer": 0,
+        "hint": "Higher density than water causes sinking."
+      },
+      {
+        "q": "Why can a massive steel ship float on water?",
+        "options": [
+          "Steel has zero mass in water",
+          "Its hollow hull design gives it an average density lower than water",
+          "The water pressure pulls it upward",
+          "Salt water makes steel lighter"
+        ],
+        "answer": 1,
+        "hint": "Hollow shape displaces large volume of water."
+      }
+    ]
+  },
+  "fn-tess": {
+    "title": "Lessons 3 & 4: Regular & Semi-Regular Tessellations",
+    "lessonId": "lesson-fn-tess",
+    "questions": [
+      {
+        "q": "Which three regular polygons can form REGULAR tessellations on a flat plane?",
+        "options": [
+          "Triangles, Squares, Hexagons",
+          "Pentagons, Hexagons, Octagons",
+          "Squares, Pentagons, Decagons",
+          "Triangles, Pentagons, Hexagons"
+        ],
+        "answer": 0,
+        "hint": "Internal angles must divide 360\u00b0 evenly (60\u00b0, 90\u00b0, 120\u00b0)."
+      },
+      {
+        "q": "What is a SEMI-REGULAR (Archimedean) tessellation?",
+        "options": [
+          "A tiling with random gaps",
+          "A tiling using two or more types of regular polygons with identical vertex configurations",
+          "A tiling made of circles",
+          "A non-repeating pattern"
+        ],
+        "answer": 1,
+        "hint": "Uses 2+ regular polygons with same vertex arrangement."
+      },
+      {
+        "q": "Which artist is globally famous for intricate interlocking figure tessellations?",
+        "options": [
+          "Leonardo da Vinci",
+          "M.C. Escher",
+          "Pablo Picasso",
+          "Vincent van Gogh"
+        ],
+        "answer": 1,
+        "hint": "M.C. Escher."
+      }
+    ]
+  },
+  "fn-golden": {
+    "title": "Lesson 5: Golden Ratio & Fibonacci Spirals",
+    "lessonId": "lesson-fn-golden",
+    "questions": [
+      {
+        "q": "What is the approximate numerical value of the Golden Ratio (Phi, \u03c6)?",
+        "options": [
+          "1.414",
+          "1.618",
+          "2.718",
+          "3.1415"
+        ],
+        "answer": 1,
+        "hint": "\u03c6 \u2248 1.6180339887..."
+      },
+      {
+        "q": "How is the Golden Ratio mathematically connected to the Fibonacci sequence?",
+        "options": [
+          "The sum of all Fibonacci numbers is Phi",
+          "The ratio of consecutive Fibonacci terms (Fn / Fn-1) approaches Phi as n increases",
+          "Every Fibonacci number is divisible by 1.618",
+          "Phi was invented by Fibonacci's brother"
+        ],
+        "answer": 1,
+        "hint": "Limit of consecutive terms Fn/Fn-1 = Phi."
+      },
+      {
+        "q": "Where is the Golden Spiral commonly observed in nature?",
+        "options": [
+          "Nautilus shell and spiral galaxies",
+          "Straight crystals",
+          "Honeycomb hexagons",
+          "Spider web radial lines"
+        ],
+        "answer": 0,
+        "hint": "Nautilus shell growth."
+      }
+    ]
+  },
+  "fn-fractals": {
+    "title": "Lesson 5B: Fractals & Self-Similarity",
+    "lessonId": "lesson-fn-fractals",
+    "questions": [
+      {
+        "q": "What is the defining characteristic of a FRACTAL?",
+        "options": [
+          "Perfect circle shape",
+          "Self-similarity across multiple scales",
+          "Zero perimeter",
+          "Fixed finite area without boundary"
+        ],
+        "answer": 1,
+        "hint": "Self-similar repeating structures."
+      },
+      {
+        "q": "Which of the following is a famous mathematical fractal?",
+        "options": [
+          "Mandelbrot Set and Sierpinski Triangle",
+          "Euler Circle",
+          "Cartesian Coordinate System",
+          "Gaussian Curve"
+        ],
+        "answer": 0,
+        "hint": "Mandelbrot & Sierpinski."
+      },
+      {
+        "q": "Which natural phenomenon demonstrates fractal geometry?",
+        "options": [
+          "Trees, river deltas, ferns, and coastlines",
+          "A flat tabletop",
+          "A square tile floor",
+          "A single drop of oil"
+        ],
+        "answer": 0,
+        "hint": "Branching structures in nature."
+      }
+    ]
+  },
+  "fn-matrix": {
+    "title": "Lessons 6 & 7: Matrix Algebra & Multiplication",
+    "lessonId": "lesson-fn-matrix",
+    "questions": [
+      {
+        "q": "To ADD two matrices, they must have:",
+        "options": [
+          "Square dimensions",
+          "Identical dimensions (same rows and columns)",
+          "Determinants equal to 1",
+          "Positive entries only"
+        ],
+        "answer": 1,
+        "hint": "Same m x n order."
+      },
+      {
+        "q": "What condition must be met to MULTIPLY Matrix A (m x k) and Matrix B (p x n)?",
+        "options": [
+          "Columns of A (k) must equal Rows of B (p)",
+          "Rows of A must equal Rows of B",
+          "Both must be square",
+          "k must equal m"
+        ],
+        "answer": 0,
+        "hint": "Inner dimensions must match: (m x k) \u2022 (k x n)."
+      },
+      {
+        "q": "If Matrix A is (2 x 3) and Matrix B is (3 x 4), what is the order of AB?",
+        "options": [
+          "2 x 4",
+          "3 x 3",
+          "2 x 3",
+          "Undefined"
+        ],
+        "answer": 0,
+        "hint": "Outer dimensions: 2 x 4."
+      }
+    ]
+  },
+  "gm-payroll-compensation": {
+    "title": "Lesson 1.1: Wages, Salaries & Compensation",
+    "lessonId": "lesson-gm-payroll",
+    "questions": [
+      {
+        "q": "What is the formal definition of COMPENSATION?",
+        "options": [
+          "A government tax deduction",
+          "The money paid to people for their work in forms like wages, salaries, and commissions",
+          "The net profit of a corporation",
+          "An overtime multiplier"
+        ],
+        "answer": 1,
+        "hint": "PDF: Compensation is the money paid to people for their work."
+      },
+      {
+        "q": "Which compensation is based on hours worked or units finished (common in hourly or factory jobs)?",
+        "options": [
+          "Salary",
+          "Wage",
+          "Commission",
+          "Dividend"
+        ],
+        "answer": 1,
+        "hint": "Wages are calculated hourly or per piece completed."
+      },
+      {
+        "q": "Which compensation is a fixed regular payment given to professionals who are paid to complete tasks rather than track time?",
+        "options": [
+          "Commission",
+          "Wage",
+          "Salary",
+          "Bonus"
+        ],
+        "answer": 2,
+        "hint": "Salaries are fixed regular payments."
+      },
+      {
+        "q": "Under a semi-monthly pay period (e.g. 15th & 30th), how many paychecks are received in a year?",
+        "options": [
+          "12 paychecks",
+          "24 paychecks",
+          "26 paychecks",
+          "52 paychecks"
+        ],
+        "answer": 1,
+        "hint": "Semi-monthly = twice a month = 24 paychecks."
+      },
+      {
+        "q": "What does GRESMA stand for in problem-solving?",
+        "options": [
+          "Goals, Reason, Equation, Solve, Method",
+          "Given, Required, Equation, Solution, Answer",
+          "General, Ratio, Exact, Summary, Action",
+          "Gain, Rate, Expense, Standard, Amount"
+        ],
+        "answer": 1,
+        "hint": "Given, Required, Equation, Solution, Answer."
+      }
+    ]
+  },
+  "gm-overtime-art87": {
+    "title": "Lesson 1.2: Overtime Pay (Article 87 Labor Code)",
+    "lessonId": "lesson-gm-overtime",
+    "questions": [
+      {
+        "q": "What is the legal definition of Overtime (OT) Pay under Article 87 of the Philippine Labor Code?",
+        "options": [
+          "Pay for working on holidays only",
+          "Compensation for work performed beyond 8 regular hours per day",
+          "Annual 13th month pay",
+          "Deductions for late arrival"
+        ],
+        "answer": 1,
+        "hint": "Work beyond 8 hours per day."
+      },
+      {
+        "q": "What is the overtime multiplier for work beyond 8 hours on a REGULAR working day?",
+        "options": [
+          "1.10x",
+          "1.25x (+25%)",
+          "1.30x",
+          "1.69x"
+        ],
+        "answer": 1,
+        "hint": "Hourly Rate x 1.25 x Hours."
+      },
+      {
+        "q": "What is the overtime multiplier for work on a scheduled REST DAY or SPECIAL NON-WORKING DAY?",
+        "options": [
+          "1.25x",
+          "1.50x",
+          "1.69x (+30% on 130% base)",
+          "2.60x"
+        ],
+        "answer": 2,
+        "hint": "Hourly Rate x 1.69 x Hours."
+      },
+      {
+        "q": "What is the overtime multiplier for work on a REGULAR HOLIDAY (+30% on 200% base)?",
+        "options": [
+          "2.00x",
+          "2.60x",
+          "3.00x",
+          "3.38x"
+        ],
+        "answer": 1,
+        "hint": "Hourly Rate x 2.60 x Hours."
+      },
+      {
+        "q": "What is the overtime multiplier when a Regular Holiday falls on an employee's REST DAY?",
+        "options": [
+          "2.60x",
+          "3.00x",
+          "3.38x (+30% on 260% base)",
+          "4.00x"
+        ],
+        "answer": 2,
+        "hint": "Hourly Rate x 3.38 x Hours."
+      }
+    ]
+  },
+  "gm-piecework-commission": {
+    "title": "Lesson 1.3: Piecework & Commission Schemes",
+    "lessonId": "lesson-gm-piecework",
+    "questions": [
+      {
+        "q": "What is PIECEWORK pay?",
+        "options": [
+          "Pay based on hourly attendance",
+          "Pay based strictly on the number of items or units finished rather than hours worked",
+          "A government bonus",
+          "An annual dividend"
+        ],
+        "answer": 1,
+        "hint": "Gross = Pay per item x Number of items."
+      },
+      {
+        "q": "What is DIFFERENTIAL PIECEWORK?",
+        "options": [
+          "Workers earn different pay based on age",
+          "Workers earn one base rate up to a quota, and a higher rate beyond it",
+          "Workers are paid in merchandise",
+          "Pay changes every month"
+        ],
+        "answer": 1,
+        "hint": "Higher incentive rate beyond quota."
+      },
+      {
+        "q": "What is the definition of STRAIGHT COMMISSION?",
+        "options": [
+          "Commission rate remains constant for all sales volume",
+          "Commission increases with every tier",
+          "Commission paid only in cash",
+          "Commission with zero deductions"
+        ],
+        "answer": 0,
+        "hint": "Constant percentage rate across all sales."
+      },
+      {
+        "q": "What is the definition of VARIABLE COMMISSION?",
+        "options": [
+          "Commission rate changes randomly",
+          "Commission percentage rate increases as sales volume reaches higher milestones",
+          "Commission paid every 2 weeks",
+          "Commission fixed by BIR"
+        ],
+        "answer": 1,
+        "hint": "Rate increases as sales grow."
+      }
+    ]
+  },
+  "gm-taxes-vat": {
+    "title": "Lesson 1.4: Philippine Taxes & 12% VAT",
+    "lessonId": "lesson-gm-taxes",
+    "questions": [
+      {
+        "q": "What are TAXES as defined in the lesson?",
+        "options": [
+          "Voluntary donations to charity",
+          "Amounts of money collected by the government from individuals and businesses to generate revenue and fund public resources",
+          "Bank service fees",
+          "Interest on credit cards"
+        ],
+        "answer": 1,
+        "hint": "Government revenue for public services."
+      },
+      {
+        "q": "Which tax is imposed specifically on goods like alcohol, fuel, and tobacco?",
+        "options": [
+          "Excise Tax",
+          "Capital Gains Tax",
+          "Percentage Tax",
+          "Documentary Stamp Tax"
+        ],
+        "answer": 0,
+        "hint": "Excise tax on specific commodities."
+      },
+      {
+        "q": "Which tax is imposed on profit earned from selling assets like land or shares?",
+        "options": [
+          "Donor's Tax",
+          "Capital Gains Tax (CGT)",
+          "Real Property Tax",
+          "Transfer Tax"
+        ],
+        "answer": 1,
+        "hint": "CGT on capital assets."
+      },
+      {
+        "q": "What is the standard Value-Added Tax (VAT) rate in the Philippines?",
+        "options": [
+          "5%",
+          "10%",
+          "12%",
+          "15%"
+        ],
+        "answer": 2,
+        "hint": "12% statutory rate."
+      },
+      {
+        "q": "How do you compute the base price BEFORE VAT from a VAT-inclusive total?",
+        "options": [
+          "Total x 0.12",
+          "Total - 0.12",
+          "Total \u00f7 1.12",
+          "Total x 1.12"
+        ],
+        "answer": 2,
+        "hint": "Price before VAT = Total \u00f7 1.12."
+      }
+    ]
+  },
+  "gm-deductions-netpay": {
+    "title": "Lesson 1.5: 2025 Deductions & Net Take-Home Pay",
+    "lessonId": "lesson-gm-deductions",
+    "questions": [
+      {
+        "q": "What is GROSS INCOME?",
+        "options": [
+          "Salary after taxes",
+          "Total unadjusted earnings before any deductions (Basic Pay + OT Pay)",
+          "Taxable income only",
+          "Mandatory contributions"
+        ],
+        "answer": 1,
+        "hint": "Total earnings before deductions."
+      },
+      {
+        "q": "What is NET INCOME (Take-Home Pay)?",
+        "options": [
+          "Basic pay only",
+          "Actual cash received after subtracting all mandatory deductions and withholding tax",
+          "Gross income plus allowances",
+          "Annual taxable salary"
+        ],
+        "answer": 1,
+        "hint": "Net = Gross - Total Deductions."
+      },
+      {
+        "q": "Under RA 11199 in 2025, what is the employee's share of the 15% SSS contribution?",
+        "options": [
+          "4%",
+          "5% (Employer pays 10%)",
+          "10%",
+          "15%"
+        ],
+        "answer": 1,
+        "hint": "Employee pays 5%."
+      },
+      {
+        "q": "In 2025, what is the standard maximum employee contribution to Pag-IBIG Fund?",
+        "options": [
+          "\u20b1100.00",
+          "\u20b1200.00",
+          "\u20b1300.00",
+          "\u20b1500.00"
+        ],
+        "answer": 1,
+        "hint": "\u20b1200 employee share."
+      },
+      {
+        "q": "Under the 2025 Income Tax Table, what is the tax rate on annual taxable income not over \u20b1250,000?",
+        "options": [
+          "0% (Completely Tax-Exempt)",
+          "5%",
+          "10%",
+          "15%"
+        ],
+        "answer": 0,
+        "hint": "Income not over \u20b1250k pays 0%."
+      }
+    ]
+  },
+  "gm-percentages-inflation": {
+    "title": "Week 6: Percentages in Business & Finance",
+    "lessonId": "lesson-gm-percentages",
+    "questions": [
+      {
+        "q": "What is INFLATION as defined in the curriculum?",
+        "options": [
+          "The decrease in interest rates",
+          "The general increase in prices of goods and services over time, which causes money's purchasing power to decline",
+          "The increase in corporate profits",
+          "A promotional discount"
+        ],
+        "answer": 1,
+        "hint": "General price increase eroding purchasing power."
+      },
+      {
+        "q": "What is the definition of MARK-UP?",
+        "options": [
+          "The discount given to customers",
+          "The amount added to the cost price of an item to make a profit",
+          "The loss incurred in production",
+          "The VAT rate"
+        ],
+        "answer": 1,
+        "hint": "Mark-Up = Selling Price - Cost Price."
+      },
+      {
+        "q": "What is the definition of DISCOUNT?",
+        "options": [
+          "The tax on luxury goods",
+          "The amount reduced from the original regular price during a sale",
+          "The profit margin on cost",
+          "The supplier cost"
+        ],
+        "answer": 1,
+        "hint": "Discount = Original Price - Net Price."
+      },
+      {
+        "q": "When does a PROFIT (Gain) occur in business?",
+        "options": [
+          "When Selling Price > Cost Price (Revenue exceeds expenses)",
+          "When Selling Price < Cost Price",
+          "When Cost Price = Selling Price",
+          "When Discount = 0"
+        ],
+        "answer": 0,
+        "hint": "SP > CP."
+      },
+      {
+        "q": "When does a LOSS occur in business?",
+        "options": [
+          "When Selling Price > Cost Price",
+          "When an item is sold for less than what was paid for it (Selling Price < Cost Price)",
+          "When inventory is full",
+          "When taxes are zero"
+        ],
+        "answer": 1,
+        "hint": "SP < CP."
+      }
+    ]
+  },
+  "gm-patterns-fibonacci": {
+    "title": "Week 7: Patterns in Life and Nature & Fibonacci",
+    "lessonId": "lesson-gm-patterns",
+    "questions": [
+      {
+        "q": "What is a PATTERN as defined in the curriculum?",
+        "options": [
+          "A random arrangement of colors",
+          "A repeated or regular arrangement of shapes, numbers, designs, or events that follow a recognizable rule",
+          "A single geometric line",
+          "A one-time event"
+        ],
+        "answer": 1,
+        "hint": "Repeated regular arrangement following a rule."
+      },
+      {
+        "q": "What is a SEQUENCE?",
+        "options": [
+          "A set of unorganized numbers",
+          "An ordered list of numbers (terms) that follow a specific governing mathematical rule",
+          "A single algebraic equation",
+          "A geometrical circle"
+        ],
+        "answer": 1,
+        "hint": "Ordered list of numbers following a rule."
+      },
+      {
+        "q": "What is the FIBONACCI SEQUENCE?",
+        "options": [
+          "A sequence formed by multiplying by 2",
+          "A sequence where each term is the sum of the two preceding terms (Fn = Fn-1 + Fn-2)",
+          "A sequence of even numbers",
+          "A sequence with common difference d"
+        ],
+        "answer": 1,
+        "hint": "Each term is the sum of previous two terms."
+      },
+      {
+        "q": "What are FRACTALS?",
+        "options": [
+          "Shapes with no angles",
+          "Infinitely complex, self-similar repeating geometric patterns found across scales in nature",
+          "Regular 4-sided polygons",
+          "Hexagonal floor tiles"
+        ],
+        "answer": 1,
+        "hint": "Self-similar repeating structures."
+      },
+      {
+        "q": "What is the difference between BILATERAL and RADIAL symmetry?",
+        "options": [
+          "Bilateral splits into 2 mirror halves; Radial radiates outward from a central point",
+          "Bilateral has no axis; Radial has 4 axes",
+          "Bilateral is for flowers; Radial is for humans",
+          "They are identical"
+        ],
+        "answer": 0,
+        "hint": "Bilateral = 2 sides; Radial = radiating from center."
+      }
+    ]
+  },
+  "gm-sequences-applications": {
+    "title": "Week 8: Sequences & Real Life Models",
+    "lessonId": "lesson-gm-sequences",
+    "questions": [
+      {
+        "q": "What does an ARITHMETIC SEQUENCE model in real life?",
+        "options": [
+          "Rapid explosive decay",
+          "Linear steady growth with fixed constant increments added over equal intervals",
+          "Compound interest and bacteria",
+          "Chaotic unpredictable changes"
+        ],
+        "answer": 1,
+        "hint": "Linear growth through constant addition."
+      },
+      {
+        "q": "What does a GEOMETRIC SEQUENCE model in real life?",
+        "options": [
+          "Linear steady addition",
+          "Exponential growth or decay through constant multiplication over equal intervals",
+          "Simple subtraction",
+          "Zero change"
+        ],
+        "answer": 1,
+        "hint": "Exponential growth/decay through multiplication."
+      },
+      {
+        "q": "In the arithmetic formula an = a1 + (n - 1)d, what does 'd' represent?",
+        "options": [
+          "Common ratio",
+          "Common difference (the constant value added in each step)",
+          "Number of days",
+          "Discount rate"
+        ],
+        "answer": 1,
+        "hint": "d = common difference."
+      },
+      {
+        "q": "For exponential growth, how is the common ratio (r) calculated from a growth rate?",
+        "options": [
+          "r = 1 - Growth Rate",
+          "r = 1 + Growth Rate",
+          "r = Growth Rate \u00f7 100",
+          "r = Growth Rate x 10"
+        ],
+        "answer": 1,
+        "hint": "Growth multiplier r = 1 + rate."
+      },
+      {
+        "q": "What is ASSET DEPRECIATION as modeled geometrically?",
+        "options": [
+          "The increase in property tax",
+          "The gradual reduction in monetary value of physical property over time due to wear or age (r = 1 - rate)",
+          "The appreciation of land value",
+          "The total sales volume"
+        ],
+        "answer": 1,
+        "hint": "Gradual reduction in value over time."
+      }
+    ]
+  }
+};
 
     let activeQuizKey = null;
     let currentQIndex = 0;
