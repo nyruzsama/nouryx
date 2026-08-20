@@ -1,162 +1,236 @@
 /* ==========================================================================
-   ROMANTIC LIGHT BLUE AESTHETIC & CINEMATIC FADE INTRO/OUTRO ENGINE
+   ROMANTIC LIGHT BLUE AESTHETIC & LIVE LOVE CLOCK ENGINE
    "Happy 1st Anniversary, Kaye" - Interactive Core Script
-   Linear 1st to 12th Month Journey (3 Photos Per Month - Blank Text Ready)
+   Months Timeline: 09/22/25 to 08/22/26 (3 Photos Per Month)
    ========================================================================== */
 
-// --- 1. MONTHLY DATA CONFIGURATION (MONTHS 1 TO 12, 3 PHOTOS PER MONTH) ---
-// Letters and captions are kept blank so you can insert your own personal messages!
+// --- 1. SPECIAL DATES & CONFIGURATION ---
+// August 22, 2025 at 9:43 PM (Month index 7 is August in JS)
+const LOVE_START_DATE = new Date(2025, 7, 22, 21, 43, 0);
+let loveClockInterval = null;
+
+// Secret Riddle Password ("HAPPY")
+const CORRECT_RIDDLE_PASSWORD = "HAPPY"; 
+
+// --- 2. MULTI-TRACK ROMANTIC AUDIO PLAYLIST (AUDIOS FOLDER) ---
+const AUDIO_PLAYLIST = [
+  { title: "Song 1", src: "audios/1.mp3", fallbackSrc: "audio/1.mp3" },
+  { title: "Song 2", src: "audios/2.mp3", fallbackSrc: "audio/2.mp3" },
+  { title: "Song 3", src: "audios/3.mp3", fallbackSrc: "audio/3.mp3" },
+  { title: "Memories", src: "ssstik.io_@fayy.creates_1787037209737.mp4", fallbackSrc: "" }
+];
+let currentAudioIndex = 0;
+let isAudioPlaying = false;
+let webAudioContext = null;
+
+// --- 3. MONTHLY DATA CONFIGURATION (MONTHS 1 TO 12: 09/22/25 -> 08/22/26) ---
+// Blank templates ready for user's own photos & personal letters
 const MONTHS_DATA = [
   {
     index: 1,
-    date: "08/22/25",
+    date: "09/22/25",
     title: "Month 1",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_01 (08-22-25)",
+    folderName: "Month_01 (09-22-25)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (08-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (08-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (08-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (09-22-25)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (09-22-25)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (09-22-25)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month1_1.jpg",
+      "images/month1_2.jpg",
+      "images/month1_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 2,
-    date: "09/22/25",
+    date: "10/22/25",
     title: "Month 2",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_02 (09-22-25)",
+    folderName: "Month_02 (10-22-25)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (09-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (09-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (09-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (10-22-25)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (10-22-25)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (10-22-25)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month2_1.jpg",
+      "images/month2_2.jpg",
+      "images/month2_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 3,
-    date: "10/22/25",
+    date: "11/22/25",
     title: "Month 3",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_03 (10-22-25)",
+    folderName: "Month_03 (11-22-25)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (10-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (10-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (10-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (11-22-25)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (11-22-25)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (11-22-25)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month3_1.jpg",
+      "images/month3_2.jpg",
+      "images/month3_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 4,
-    date: "11/22/25",
+    date: "12/22/25",
     title: "Month 4",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_04 (11-22-25)",
+    folderName: "Month_04 (12-22-25)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (11-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (11-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (11-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (12-22-25)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (12-22-25)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (12-22-25)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month4_1.jpg",
+      "images/month4_2.jpg",
+      "images/month4_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 5,
-    date: "12/22/25",
+    date: "01/22/26",
     title: "Month 5",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_05 (12-22-25)",
+    folderName: "Month_05 (01-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (12-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (12-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (12-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (01-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (01-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (01-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month5_1.jpg",
+      "images/month5_2.jpg",
+      "images/month5_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 6,
-    date: "01/22/26",
+    date: "02/22/26",
     title: "Month 6",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_06 (01-22-26)",
+    folderName: "Month_06 (02-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (01-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (01-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (01-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (02-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (02-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (02-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month6_1.jpg",
+      "images/month6_2.jpg",
+      "images/month6_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 7,
-    date: "02/22/26",
+    date: "03/22/26",
     title: "Month 7",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_07 (02-22-26)",
+    folderName: "Month_07 (03-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (02-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (02-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (02-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (03-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (03-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (03-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month7_1.jpg",
+      "images/month7_2.jpg",
+      "images/month7_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 8,
-    date: "03/22/26",
+    date: "04/22/26",
     title: "Month 8",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_08 (03-22-26)",
+    folderName: "Month_08 (04-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (03-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (03-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (03-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (04-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (04-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (04-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month8_1.jpg",
+      "images/month8_2.jpg",
+      "images/month8_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 9,
-    date: "04/22/26",
+    date: "05/22/26",
     title: "Month 9",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_09 (04-22-26)",
+    folderName: "Month_09 (05-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (04-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (04-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (04-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (05-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (05-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (05-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month9_1.jpg",
+      "images/month9_2.jpg",
+      "images/month9_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 10,
-    date: "05/22/26",
+    date: "06/22/26",
     title: "Month 10",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_10 (05-22-26)",
+    folderName: "Month_10 (06-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (05-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (05-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (05-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (06-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (06-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (06-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month10_1.jpg",
+      "images/month10_2.jpg",
+      "images/month10_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
   },
   {
     index: 11,
-    date: "06/22/26",
+    date: "07/22/26",
     title: "Month 11",
     greeting: "To my dearest Kaye,",
-    folderName: "Month_11 (06-22-26)",
+    folderName: "Month_11 (07-22-26)",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (06-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (06-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (06-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (07-22-26)/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (07-22-26)/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (07-22-26)/photo3.jpg"
+    ],
+    altPaths: [
+      "images/month11_1.jpg",
+      "images/month11_2.jpg",
+      "images/month11_3.jpg"
     ],
     captions: ["", "", ""],
     letter: ""
@@ -171,40 +245,56 @@ const MONTHS_DATA = [
       "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_12 (08-22-26)/photo2.jpg",
       "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_12 (08-22-26)/photo3.jpg"
     ],
+    altPaths: [
+      "images/month12_1.jpg",
+      "images/month12_2.jpg",
+      "images/month12_3.jpg"
+    ],
     captions: ["", "", ""],
     isSpecial12th: true
   }
 ];
 
-// --- 2. EXTENSIVE MOVING PHOTOS DATABASE ---
-const MOVING_PHOTOS_DATA = [
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo1.jpg", fallbackSrc: "floating_photos/photo1.jpg", caption: "Photo 1", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo2.jpg", fallbackSrc: "floating_photos/photo2.jpg", caption: "Photo 2", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo3.jpg", fallbackSrc: "floating_photos/photo3.jpg", caption: "Photo 3", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo4.jpg", fallbackSrc: "floating_photos/photo4.jpg", caption: "Photo 4", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo5.jpg", fallbackSrc: "floating_photos/photo5.jpg", caption: "Photo 5", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo6.jpg", fallbackSrc: "floating_photos/photo6.jpg", caption: "Photo 6", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo7.jpg", fallbackSrc: "floating_photos/photo7.jpg", caption: "Photo 7", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo8.jpg", fallbackSrc: "floating_photos/photo8.jpg", caption: "Photo 8", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo9.jpg", fallbackSrc: "floating_photos/photo9.jpg", caption: "Photo 9", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo10.jpg", fallbackSrc: "floating_photos/photo10.jpg", caption: "Photo 10", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo11.jpg", fallbackSrc: "floating_photos/photo11.jpg", caption: "Photo 11", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo12.jpg", fallbackSrc: "floating_photos/photo12.jpg", caption: "Photo 12", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo13.jpg", fallbackSrc: "floating_photos/photo13.jpg", caption: "Photo 13", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo14.jpg", fallbackSrc: "floating_photos/photo14.jpg", caption: "Photo 14", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo15.jpg", fallbackSrc: "floating_photos/photo15.jpg", caption: "Photo 15", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo16.jpg", fallbackSrc: "floating_photos/photo16.jpg", caption: "Photo 16", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo17.jpg", fallbackSrc: "floating_photos/photo17.jpg", caption: "Photo 17", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo18.jpg", fallbackSrc: "floating_photos/photo18.jpg", caption: "Photo 18", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo19.jpg", fallbackSrc: "floating_photos/photo19.jpg", caption: "Photo 19", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo20.jpg", fallbackSrc: "floating_photos/photo20.jpg", caption: "Photo 20", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo21.jpg", fallbackSrc: "floating_photos/photo21.jpg", caption: "Photo 21", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo22.jpg", fallbackSrc: "floating_photos/photo22.jpg", caption: "Photo 22", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo23.jpg", fallbackSrc: "floating_photos/photo23.jpg", caption: "Photo 23", note: "" },
-  { src: "PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/photo24.jpg", fallbackSrc: "floating_photos/photo24.jpg", caption: "Photo 24", note: "" }
+// --- 4. 28 UNIQUE FLOATING PHOTOS (NO DUPLICATES) ---
+const UNIQUE_FLOATING_PHOTOS = [
+  "01decfb3-4137-48b1-8bdf-1a774fa715cd (1).jpg",
+  "03993175-edf1-471c-b492-de98f400c0f8.jpg",
+  "044c3867-7e89-4247-afec-65b09395d6bf.jpg",
+  "11a946c0-367d-4b46-a346-3d171f6ed365.jpg",
+  "1f919dd8-2419-40cc-bedc-c1d7d8117b99.jpg",
+  "2b6f6570-da3d-4d46-84e7-6892cf740e03.jpg",
+  "2da7eb6e-8797-43b8-9750-5618e15b015a (1).jpg",
+  "3af7b64d-cf20-4bfa-8ce9-8f4a0a7daaba.jpg",
+  "3b3a4b3a-1ba7-4f46-aee3-99b295c55f6b.jpg",
+  "4fed4cfb-3c90-46c6-919c-79bbb93b149f.jpg",
+  "645ebf7e-ffef-4c4c-9046-69966ec19b6c.jpg",
+  "6b87fefd-e87f-44ec-9ef0-a335970a3815.jpg",
+  "6cea3c4d-6dad-4107-8378-03da50e40069.jpg",
+  "72d0d26d-7acc-48d6-a1d3-5e4f79a3327d.jpg",
+  "753b6859-fadc-41a2-af90-96dbcf3b6920.jpg",
+  "77603abf-da95-4ee6-8f16-2773be99c4b7.jpg",
+  "7a536360-69c4-4b43-aa24-1bdf3602b680.jpg",
+  "824bbce4-11f0-4a7d-8413-f0557dd331ff.jpg",
+  "9185ef90-d177-4603-9bb3-57ac5f21e81c.jpg",
+  "97c171d3-82f1-4d74-974a-22caa18b594f.jpg",
+  "98e424b6-46df-462a-a975-482385e2c22a.jpg",
+  "bad8d70e-f9b1-4464-856a-3a2e1db9a49b.jpg",
+  "cb06954d-e7fb-41fa-88a1-b89833c0868d.jpg",
+  "cf272746-db6b-455e-bc90-9ea070d8b7dd.jpg",
+  "d14fcdc3-4335-4df9-ac03-d69e946c4499.jpg",
+  "d75a2c7e-7533-4e6f-98f7-e53376264c5b (1).jpg",
+  "ecdf8be8-2d9f-4c49-945a-b5fb7aa6ede3.jpg",
+  "f031cce5-7671-418a-9976-a90750d2a66e.jpg"
 ];
 
-// --- 3. SLIDESHOW IMAGES (From 04_FINALE_SLIDESHOW (LAST)/ or LAST/) ---
+const MOVING_PHOTOS_DATA = UNIQUE_FLOATING_PHOTOS.map((filename, i) => ({
+  src: `PHOTOS_ORGANIZED/03_FLOATING_PHOTOS/${filename}`,
+  fallbackSrc: `images/photo${i+1}.jpg`,
+  caption: `Memory ${i+1}`,
+  note: ""
+}));
+
+// --- 5. SLIDESHOW IMAGES (TEMPLATES READY FOR USER) ---
 const LAST_SLIDESHOW_IMAGES = [
   { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo1.jpg", fallbackSrc: "LAST/photo1.jpg", caption: "" },
   { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo2.jpg", fallbackSrc: "LAST/photo2.jpg", caption: "" },
@@ -213,23 +303,26 @@ const LAST_SLIDESHOW_IMAGES = [
   { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo5.jpg", fallbackSrc: "LAST/photo5.jpg", caption: "" }
 ];
 
-// --- 4. STATE VARIABLES ---
+// --- 6. STATE VARIABLES ---
 let currentChannelId = "channel-pin";
 let pinAttempts = 0;
 const CORRECT_PIN = "082225";
 let pinSuccessScreenReady = false;
+
+// Riddle Channel State
+let riddleAttempts = 0;
+let isClueAnimationRunning = false;
+
 let currentMonthIndex = 1;
 let slideshowTimer = null;
 let currentSlideIndex = 0;
-let isAudioPlaying = false;
-let webAudioContext = null;
 
 // 2-Click & Moving Photos State
 let activeMovingPhotos = [];
 let movingAnimationRequestId = null;
 let currentlyFocusedPhoto = null;
 
-// --- 5. DOM ELEMENTS ---
+// --- 7. DOM ELEMENTS ---
 const pinCard = document.getElementById("pin-card");
 const pinInputs = document.querySelectorAll(".pin-digit");
 const pinFeedback = document.getElementById("pin-feedback");
@@ -239,7 +332,18 @@ const pinSuccessBox = document.getElementById("pin-success-box");
 const anniversaryAnnouncement = document.getElementById("anniversary-announcement");
 const channelPin = document.getElementById("channel-pin");
 
+// Riddle Channel Elements
+const passwordRiddleCard = document.getElementById("password-riddle-card");
+const passwordTextInput = document.getElementById("password-text-input");
+const btnSubmitPassword = document.getElementById("btn-submit-password");
+const riddleFeedbackText = document.getElementById("riddle-feedback-text");
+const btnClueTrigger = document.getElementById("btn-clue-trigger");
+const seqOops = document.getElementById("seq-oops");
+const seqTeka = document.getElementById("seq-teka");
+const riddleMainTitle = document.getElementById("riddle-main-title");
+
 const audioController = document.getElementById("audio-controller");
+const audioLabelText = document.getElementById("audio-label-text");
 const bgAudio = document.getElementById("bg-audio");
 const floatingPhotoLayer = document.getElementById("floating-photo-layer");
 const photoFocusOverlay = document.getElementById("photo-focus-overlay");
@@ -248,16 +352,66 @@ const photoModalImg = document.getElementById("photo-modal-img");
 const photoModalCaption = document.getElementById("photo-modal-caption");
 const photoModalNote = document.getElementById("photo-modal-note");
 
-// --- 6. INITIALIZATION ---
+// --- 8. INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
   setupRomanticClickEffects();
   initOverflowingMovingPhotosEngine();
   setupParticles();
   setupPinInputEvents();
+  setupRiddleChannelEvents();
   setupAudioController();
+  initLoveClock();
 });
 
-// --- 7. OVERFLOWING MOVING PHOTOS ENGINE ---
+// --- 9. LIVE LOVE CLOCK ENGINE (COUNTING SINCE 08/22/25 9:43 PM) ---
+function initLoveClock() {
+  updateLoveClock();
+  if (loveClockInterval) clearInterval(loveClockInterval);
+  loveClockInterval = setInterval(updateLoveClock, 1000);
+}
+
+function updateLoveClock() {
+  const daysEl = document.getElementById("clock-days");
+  const hoursEl = document.getElementById("clock-hours");
+  const minEl = document.getElementById("clock-minutes");
+  const secEl = document.getElementById("clock-seconds");
+
+  if (!daysEl || !hoursEl || !minEl || !secEl) return;
+
+  const now = new Date();
+  const diffMs = now - LOVE_START_DATE;
+
+  if (diffMs < 0) {
+    daysEl.textContent = "0";
+    hoursEl.textContent = "00";
+    minEl.textContent = "00";
+    secEl.textContent = "00";
+    return;
+  }
+
+  const totalSeconds = Math.floor(diffMs / 1000);
+  const days = Math.floor(totalSeconds / (3600 * 24));
+  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  daysEl.textContent = days.toLocaleString();
+  hoursEl.textContent = String(hours).padStart(2, '0');
+  minEl.textContent = String(minutes).padStart(2, '0');
+  secEl.textContent = String(seconds).padStart(2, '0');
+}
+
+// Utility: Fisher-Yates Shuffle
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// --- 10. RANDOMIZED FLOATING PHOTOS (GENTLE REBOUND - NO DASH OUT) ---
 function initOverflowingMovingPhotosEngine() {
   if (!floatingPhotoLayer) return;
   floatingPhotoLayer.innerHTML = "";
@@ -265,8 +419,11 @@ function initOverflowingMovingPhotosEngine() {
   currentlyFocusedPhoto = null;
 
   const isMobile = window.innerWidth < 768;
-  const photoCount = isMobile ? 14 : 22;
-  const photosToUse = MOVING_PHOTOS_DATA.slice(0, photoCount);
+  const photoCount = isMobile ? 14 : 20;
+
+  // Randomize the 28 unique photos every time
+  const shuffledPhotos = shuffleArray(MOVING_PHOTOS_DATA);
+  const photosToUse = shuffledPhotos.slice(0, Math.min(photoCount, shuffledPhotos.length));
 
   const screenW = window.innerWidth;
   const screenH = window.innerHeight;
@@ -280,40 +437,42 @@ function initOverflowingMovingPhotosEngine() {
 
     let baseWidth;
     if (isMobile) {
-      baseWidth = depth === 0 ? 78 : depth === 1 ? 92 : 106;
+      baseWidth = depth === 0 ? 76 : depth === 1 ? 90 : 104;
     } else {
-      baseWidth = depth === 0 ? 104 : depth === 1 ? 128 : 150;
+      baseWidth = depth === 0 ? 100 : depth === 1 ? 122 : 144;
     }
     el.style.width = `${baseWidth}px`;
 
     el.innerHTML = `
       <div class="polaroid-img-wrapper">
         <img src="${item.src}" alt="${item.caption || 'Memory'}"
-             onerror="this.onerror=null; this.src='${item.fallbackSrc || ''}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\' style=\\'padding:4px;\\'><span class=\\'placeholder-icon\\' style=\\'font-size:16px;\\'>📷</span><span class=\\'placeholder-text\\' style=\\'font-size:8px;\\'>Photo ${index+1}</span></div>';};">
+             onerror="this.onerror=null; this.src='${item.fallbackSrc || ''}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\' style=\\'padding:4px;\\'><span class=\\'placeholder-icon\\' style=\\'font-size:16px;\\'>📷</span><span class=\\'placeholder-text\\' style=\\'font-size:8px;\\'>Photo</span></div>';};">
       </div>
-      <div class="polaroid-caption">${item.caption || `Photo ${index+1}`}</div>
+      <div class="polaroid-caption">${item.caption || `Photo`}</div>
       <div class="click-again-badge">Tap again to open</div>
     `;
+
+    const startX = Math.max(16, Math.min(screenW - baseWidth - 16, Math.random() * (screenW - baseWidth)));
+    const startY = Math.max(16, Math.min(screenH - baseWidth * 1.25 - 16, Math.random() * (screenH - baseWidth * 1.25)));
 
     const photoObj = {
       el,
       item,
-      x: Math.random() * (screenW - baseWidth),
-      y: Math.random() * (screenH - 140),
-      vx: 0,
-      vy: 0,
+      x: startX,
+      y: startY,
+      vx: (Math.random() - 0.5) * (isMobile ? 0.35 : 0.45),
+      vy: (Math.random() - 0.5) * (isMobile ? 0.35 : 0.45),
       rot: (Math.random() - 0.5) * 16,
-      rotSpeed: (Math.random() - 0.5) * 0.05,
+      rotSpeed: (Math.random() - 0.5) * 0.04,
       width: baseWidth,
       height: baseWidth * 1.25,
       isHovered: false,
       isBig: false
     };
 
-    const speed = (isMobile ? 0.32 + Math.random() * 0.25 : 0.4 + Math.random() * 0.3) * (depth === 0 ? 0.8 : depth === 1 ? 1 : 1.15);
-    const angle = Math.random() * Math.PI * 2;
-    photoObj.vx = Math.cos(angle) * speed;
-    photoObj.vy = Math.sin(angle) * speed;
+    // Ensure non-zero velocity
+    if (Math.abs(photoObj.vx) < 0.15) photoObj.vx = photoObj.vx < 0 ? -0.22 : 0.22;
+    if (Math.abs(photoObj.vy) < 0.15) photoObj.vy = photoObj.vy < 0 ? -0.22 : 0.22;
 
     el.addEventListener("pointerdown", (e) => {
       e.stopPropagation();
@@ -354,9 +513,14 @@ function handlePhotoClick(photoObj) {
   photoObj.isBig = true;
   photoObj.isHovered = true;
 
+  if (floatingPhotoLayer) {
+    floatingPhotoLayer.classList.add("has-focused");
+  }
+
   const screenW = window.innerWidth;
   const screenH = window.innerHeight;
-  const zoomScale = screenW < 768 ? 2.1 : 2.6;
+  const maxW = Math.min(screenW * 0.84, 300);
+  const zoomScale = Math.max(1.8, maxW / photoObj.width);
 
   const targetX = (screenW - photoObj.width) / 2;
   const targetY = (screenH - photoObj.height) / 2;
@@ -379,6 +543,9 @@ function dismissFocusedPhoto(resumeHover = true) {
     p.el.style.transform = `translate3d(${p.x}px, ${p.y}px, 0) rotate(${p.rot}deg)`;
     currentlyFocusedPhoto = null;
   }
+  if (floatingPhotoLayer) {
+    floatingPhotoLayer.classList.remove("has-focused");
+  }
   if (photoFocusOverlay) {
     photoFocusOverlay.classList.remove("active");
   }
@@ -391,9 +558,11 @@ if (photoFocusOverlay) {
   });
 }
 
+// Gentle continuous drift & soft viewport rebound
 function updateMovingPhotosLoop() {
   const screenW = window.innerWidth;
   const screenH = window.innerHeight;
+  const pad = 12;
 
   activeMovingPhotos.forEach(p => {
     if (!p.isHovered && !p.isBig) {
@@ -401,11 +570,22 @@ function updateMovingPhotosLoop() {
       p.y += p.vy;
       p.rot += p.rotSpeed;
 
-      const margin = 110;
-      if (p.x < -margin) p.x = screenW + 20;
-      if (p.x > screenW + margin) p.x = -p.width - 20;
-      if (p.y < -margin) p.y = screenH + 20;
-      if (p.y > screenH + margin) p.y = -p.height - 20;
+      // Soft rebound from screen boundaries (Zero jumping / zero sudden dash)
+      if (p.x <= pad) {
+        p.x = pad;
+        p.vx = Math.abs(p.vx);
+      } else if (p.x >= screenW - p.width - pad) {
+        p.x = screenW - p.width - pad;
+        p.vx = -Math.abs(p.vx);
+      }
+
+      if (p.y <= pad) {
+        p.y = pad;
+        p.vy = Math.abs(p.vy);
+      } else if (p.y >= screenH - p.height - pad) {
+        p.y = screenH - p.height - pad;
+        p.vy = -Math.abs(p.vy);
+      }
 
       p.el.style.transform = `translate3d(${p.x}px, ${p.y}px, 0) rotate(${p.rot}deg)`;
     }
@@ -415,20 +595,25 @@ function updateMovingPhotosLoop() {
 }
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth < 768 && activeMovingPhotos.length > 15) {
+  if (window.innerWidth < 768 && activeMovingPhotos.length > 16) {
     initOverflowingMovingPhotosEngine();
   } else if (window.innerWidth >= 768 && activeMovingPhotos.length < 18) {
     initOverflowingMovingPhotosEngine();
   }
 });
 
-// --- 8. OPENED MEMORY MODAL ---
+// --- 11. OPENED MEMORY MODAL ---
 function openPhotoModal(src, caption, note) {
   if (!photoModalBackdrop) return;
   photoModalImg.src = src;
+  photoModalImg.onerror = function() {
+    this.onerror = null;
+    this.src = 'PHOTOS_ORGANIZED/01_PIN_AND_HERO/pin_photo.jpg';
+  };
   photoModalCaption.textContent = caption || "";
   if (photoModalNote) {
     photoModalNote.textContent = note || "";
+    photoModalNote.style.display = note ? "block" : "none";
   }
   photoModalBackdrop.classList.add("active");
 }
@@ -438,7 +623,7 @@ function closePhotoModal() {
   dismissFocusedPhoto();
 }
 
-// --- 9. ROMANTIC CLICK & TAP EFFECTS (NO CURSOR TRACKING) ---
+// --- 12. ROMANTIC CLICK & TAP EFFECTS ---
 function setupRomanticClickEffects() {
   window.addEventListener("pointerdown", (e) => {
     if (!e.target.closest(".photo-modal-card") && !e.target.closest("input")) {
@@ -452,19 +637,19 @@ function spawnRomanticBlossom(x, y) {
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 16; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const speed = Math.random() * 4.5 + 1.2;
+    const speed = Math.random() * 4.8 + 1.2;
     const vx = Math.cos(angle) * speed;
     const vy = Math.sin(angle) * speed - 1.2;
-    const size = Math.random() * 5 + 3;
+    const size = Math.random() * 5.5 + 3.5;
     const isHeart = Math.random() > 0.4;
     let alpha = 1;
 
     function renderSpark() {
       if (alpha <= 0) return;
       ctx.save();
-      ctx.translate(x + vx * (1 - alpha) * 24, y + vy * (1 - alpha) * 24);
+      ctx.translate(x + vx * (1 - alpha) * 26, y + vy * (1 - alpha) * 26);
       
       if (isHeart) {
         ctx.beginPath();
@@ -474,33 +659,33 @@ function spawnRomanticBlossom(x, y) {
         ctx.bezierCurveTo(-h / 2, (h + h * 0.3) / 2, 0, h, 0, h * 1.3);
         ctx.bezierCurveTo(0, h, h / 2, (h + h * 0.3) / 2, h / 2, h * 0.3);
         ctx.bezierCurveTo(h / 2, 0, 0, 0, 0, h * 0.3);
-        ctx.fillStyle = `rgba(165, 220, 255, ${alpha * 0.9})`;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = `rgba(70, 166, 247, ${alpha})`;
+        ctx.fillStyle = `rgba(175, 225, 255, ${alpha * 0.95})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = `rgba(50, 150, 240, ${alpha})`;
         ctx.fill();
       } else {
         ctx.beginPath();
-        const r = size * alpha * 0.8;
+        const r = size * alpha * 0.85;
         for (let j = 0; j < 4; j++) {
           ctx.lineTo(Math.cos((j * Math.PI) / 2) * r, Math.sin((j * Math.PI) / 2) * r);
           ctx.lineTo(Math.cos((j * Math.PI) / 2 + Math.PI / 4) * (r * 0.35), Math.sin((j * Math.PI) / 2 + Math.PI / 4) * (r * 0.35));
         }
         ctx.closePath();
         ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = `rgba(140, 210, 255, ${alpha})`;
+        ctx.shadowBlur = 14;
+        ctx.shadowColor = `rgba(130, 205, 255, ${alpha})`;
         ctx.fill();
       }
 
       ctx.restore();
-      alpha -= 0.04;
+      alpha -= 0.038;
       requestAnimationFrame(renderSpark);
     }
     renderSpark();
   }
 }
 
-// --- 10. CINEMATIC CHANNEL SWITCHING ENGINE (FADE IN & OUT) ---
+// --- 13. CINEMATIC CHANNEL SWITCHING ENGINE (FADE IN & OUT) ---
 function switchChannel(targetChannelId, callback) {
   const currentActive = document.querySelector(".channel.active");
   const targetChannel = document.getElementById(targetChannelId);
@@ -533,7 +718,7 @@ function switchChannel(targetChannelId, callback) {
   }
 }
 
-// --- 11. PIN VALIDATION LOGIC ---
+// --- 14. PIN VALIDATION LOGIC ---
 function setupPinInputEvents() {
   pinInputs.forEach((input, idx) => {
     input.addEventListener("input", (e) => {
@@ -558,11 +743,13 @@ function setupPinInputEvents() {
     btnSubmitPin.addEventListener("click", validatePin);
   }
 
-  // Click anywhere on anniversary announcement -> Directly open Month 1!
+  // Click anywhere on anniversary announcement -> Open Secret Riddle Channel!
   if (channelPin) {
     channelPin.addEventListener("click", (e) => {
       if (pinSuccessScreenReady && !e.target.closest(".pin-digit") && !e.target.closest("button")) {
-        openMonthLetter(1);
+        switchChannel("channel-password", () => {
+          startRiddleSequence();
+        });
       }
     });
   }
@@ -620,7 +807,164 @@ function handlePinSuccess() {
   }, 3000);
 }
 
-// --- 12. MONTHLY LETTER CHANNELS (SMOOTH PAGE TRANSITIONS) ---
+// --- 15. RIDDLE / PASSWORD CHANNEL LOGIC (PASSWORD: "HAPPY") ---
+function setupRiddleChannelEvents() {
+  if (btnSubmitPassword) {
+    btnSubmitPassword.addEventListener("click", validateRiddlePassword);
+  }
+
+  if (passwordTextInput) {
+    passwordTextInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        validateRiddlePassword();
+      }
+    });
+  }
+
+  if (btnClueTrigger) {
+    btnClueTrigger.addEventListener("click", handleClueTriggerClick);
+  }
+}
+
+function startRiddleSequence() {
+  if (passwordTextInput) {
+    passwordTextInput.value = "";
+    setTimeout(() => passwordTextInput.focus(), 500);
+  }
+
+  // Smooth entrance sequence: "OOPS!" -> "Teka may isa pa" -> "Ano muna password?"
+  if (seqOops) {
+    seqOops.style.opacity = "0";
+    seqOops.style.transform = "translateY(-10px)";
+  }
+  if (seqTeka) {
+    seqTeka.style.opacity = "0";
+    seqTeka.style.transform = "translateY(-10px)";
+  }
+  if (riddleMainTitle) {
+    riddleMainTitle.style.opacity = "0";
+    riddleMainTitle.style.transform = "translateY(-10px)";
+  }
+
+  setTimeout(() => {
+    if (seqOops) {
+      seqOops.style.opacity = "1";
+      seqOops.style.transform = "translateY(0)";
+    }
+  }, 200);
+
+  setTimeout(() => {
+    if (seqTeka) {
+      seqTeka.style.opacity = "1";
+      seqTeka.style.transform = "translateY(0)";
+    }
+  }, 1000);
+
+  setTimeout(() => {
+    if (riddleMainTitle) {
+      riddleMainTitle.style.opacity = "1";
+      riddleMainTitle.style.transform = "translateY(0)";
+    }
+  }, 1800);
+}
+
+function validateRiddlePassword() {
+  if (!passwordTextInput) return;
+  const rawInput = passwordTextInput.value.trim().toUpperCase();
+  if (!rawInput) return;
+
+  // Clean out any extra punctuation/spaces (e.g. "HAPPY!", "happy", " HAPPY ")
+  const cleaned = rawInput.replace(/[^A-Z]/g, "");
+
+  if (cleaned === CORRECT_RIDDLE_PASSWORD || rawInput === CORRECT_RIDDLE_PASSWORD) {
+    handleRiddleSuccess();
+  } else {
+    handleRiddleFailure();
+  }
+}
+
+function handleRiddleSuccess() {
+  if (riddleFeedbackText) {
+    riddleFeedbackText.style.color = "var(--sky-deep)";
+    riddleFeedbackText.textContent = "✨ Yeheeey! You unlocked it na bebb! ✨";
+  }
+  if (btnClueTrigger) btnClueTrigger.style.display = "none";
+
+  createGrandConfetti();
+
+  setTimeout(() => {
+    switchChannel("channel-clock");
+  }, 1600);
+}
+
+function handleRiddleFailure() {
+  riddleAttempts++;
+  if (passwordRiddleCard) {
+    passwordRiddleCard.classList.remove("shake");
+    void passwordRiddleCard.offsetWidth;
+    passwordRiddleCard.classList.add("shake");
+  }
+
+  if (riddleAttempts === 1) {
+    if (riddleFeedbackText) {
+      riddleFeedbackText.style.color = "#e54d60";
+      riddleFeedbackText.textContent = "Clue Clue?";
+    }
+    if (btnClueTrigger) {
+      btnClueTrigger.style.display = "inline-flex";
+    }
+  } else if (riddleAttempts === 2) {
+    if (btnClueTrigger) btnClueTrigger.style.display = "none";
+    if (riddleFeedbackText) {
+      riddleFeedbackText.style.color = "#e54d60";
+      riddleFeedbackText.textContent = "letters ngani";
+    }
+  } else {
+    if (btnClueTrigger) btnClueTrigger.style.display = "none";
+    if (riddleFeedbackText) {
+      riddleFeedbackText.style.color = "#e54d60";
+      riddleFeedbackText.textContent = "observe all the letters that I gave you";
+    }
+  }
+}
+
+function handleClueTriggerClick() {
+  if (isClueAnimationRunning) return;
+  isClueAnimationRunning = true;
+
+  if (btnClueTrigger) btnClueTrigger.style.display = "none";
+
+  // Step 1: "kiss mo muna ako 😙"
+  if (riddleFeedbackText) {
+    riddleFeedbackText.style.color = "var(--sky-deep)";
+    riddleFeedbackText.textContent = "kiss mo muna ako 😙";
+  }
+
+  // Step 2: "JOKE LAANG wag ka umaliss"
+  setTimeout(() => {
+    if (riddleFeedbackText) {
+      riddleFeedbackText.textContent = "JOKE LAANG wag ka umaliss";
+    }
+  }, 1800);
+
+  // Step 3: "eto na"
+  setTimeout(() => {
+    if (riddleFeedbackText) {
+      riddleFeedbackText.textContent = "eto na...";
+    }
+  }, 3400);
+
+  // Step 4: "Letters"
+  setTimeout(() => {
+    if (riddleFeedbackText) {
+      riddleFeedbackText.style.color = "var(--sky-deep)";
+      riddleFeedbackText.textContent = "💡 Letters";
+    }
+    isClueAnimationRunning = false;
+  }, 5000);
+}
+
+// --- 16. MONTHLY LETTER CHANNELS (SMOOTH PAGE TRANSITIONS) ---
 function openMonthLetter(monthIndex) {
   currentMonthIndex = monthIndex;
   const month = MONTHS_DATA.find(m => m.index === monthIndex);
@@ -643,7 +987,7 @@ function openMonthLetter(monthIndex) {
 
     if (btnPrev) {
       if (monthIndex === 1) {
-        btnPrev.textContent = "← Start Over";
+        btnPrev.textContent = "← Live Clock";
       } else {
         btnPrev.textContent = `← Month ${monthIndex - 1}`;
       }
@@ -666,13 +1010,14 @@ function openMonthLetter(monthIndex) {
         const itemEl = document.createElement("div");
         itemEl.className = "trio-polaroid-item";
         
+        const altPath = (month.altPaths && month.altPaths[idx]) ? month.altPaths[idx] : `images/month${month.index}_${idx + 1}.jpg`;
         const fallbackOldPath = `images/month${month.index}_${idx + 1}.jpg`;
         const fallbackSinglePath = `images/month${month.index}.jpg`;
 
         itemEl.innerHTML = `
           <div class="trio-img-container">
             <img src="${imgSrc}" alt="${cap}"
-                 onerror="this.onerror=null; this.src='${fallbackOldPath}'; this.onerror=function(){this.src='${fallbackSinglePath}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\'><span class=\\'placeholder-icon\\'>📷</span><span class=\\'placeholder-text\\'>Photo ${idx+1}</span><span class=\\'placeholder-sub\\'>photo${idx+1}.jpg</span></div>';};};">
+                 onerror="this.onerror=null; this.src='${altPath}'; this.onerror=function(){this.src='${fallbackOldPath}'; this.onerror=function(){this.src='${fallbackSinglePath}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\'><span class=\\'placeholder-icon\\'>📷</span><span class=\\'placeholder-text\\'>Photo ${idx+1}</span><span class=\\'placeholder-sub\\'>photo${idx+1}.jpg</span></div>';};};};">
           </div>
           <div class="trio-caption">${cap}</div>
         `;
@@ -711,11 +1056,11 @@ function navigatePrevMonth() {
   if (currentMonthIndex > 1) {
     openMonthLetter(currentMonthIndex - 1);
   } else {
-    switchChannel("channel-pin");
+    switchChannel("channel-clock");
   }
 }
 
-// --- 13. INTERMISSION (12TH MONTH - 08/22/26) ---
+// --- 17. INTERMISSION (12TH MONTH - 08/22/26) ---
 function showIntermissionCategory() {
   const intermissionGallery = document.getElementById("intermission-photos-gallery");
   const month12 = MONTHS_DATA.find(m => m.index === 12);
@@ -757,7 +1102,7 @@ if (channelIntermission) {
   });
 }
 
-// --- 14. GRAND FINALE (SLIDESHOW & LAST TEXT) ---
+// --- 18. GRAND FINALE (SLIDESHOW & LAST TEXT) ---
 function startGrandFinale() {
   switchChannel("channel-finale", () => {
     startAudioPlayback();
@@ -841,7 +1186,6 @@ function revealLastText() {
 
   if (lastTextBox) {
     lastTextBox.classList.add("visible");
-    // Spawn celebratory starlight sparks on letter reveal
     spawnRomanticBlossom(window.innerWidth / 2, window.innerHeight * 0.55);
   }
 
@@ -861,9 +1205,33 @@ function revealLastText() {
   }
 }
 
-// --- 15. AUDIO CONTROLLER & SYNTHESIS ---
+// --- 19. AUDIO CONTROLLER & MULTI-TRACK PLAYLIST (MP3 ONLY) ---
 function setupAudioController() {
-  if (!audioController) return;
+  if (!audioController || !bgAudio) return;
+
+  // Set initial volume & source
+  bgAudio.volume = 1.0;
+  if (!bgAudio.src || !bgAudio.src.includes(AUDIO_PLAYLIST[currentAudioIndex].src)) {
+    bgAudio.src = AUDIO_PLAYLIST[currentAudioIndex].src;
+  }
+
+  // When a track ends, automatically advance to the next MP3
+  bgAudio.addEventListener("ended", () => {
+    playNextAudioTrack();
+  });
+
+  // Track play state changes
+  bgAudio.addEventListener("play", () => {
+    isAudioPlaying = true;
+    audioController.classList.add("playing");
+    if (audioLabelText) audioLabelText.textContent = `${AUDIO_PLAYLIST[currentAudioIndex].title} 🎵`;
+  });
+
+  bgAudio.addEventListener("pause", () => {
+    isAudioPlaying = false;
+    audioController.classList.remove("playing");
+    if (audioLabelText) audioLabelText.textContent = "Music";
+  });
 
   audioController.addEventListener("click", () => {
     if (isAudioPlaying) {
@@ -872,77 +1240,66 @@ function setupAudioController() {
       startAudioPlayback();
     }
   });
+
+  // 1. Immediate Autoplay Attempt on page load
+  startAudioPlayback();
+
+  // 2. Global Autoplay Trigger: On first gesture, immediately start MP3 playback
+  const triggerMp3Autoplay = () => {
+    if (bgAudio && bgAudio.paused) {
+      startAudioPlayback();
+    }
+  };
+
+  ["pointerdown", "click", "touchstart", "keydown", "focusin", "scroll"].forEach(evt => {
+    window.addEventListener(evt, triggerMp3Autoplay, { passive: true });
+    document.addEventListener(evt, triggerMp3Autoplay, { passive: true });
+  });
 }
 
 function startAudioPlayback() {
-  if (bgAudio) {
-    bgAudio.play().then(() => {
-      isAudioPlaying = true;
-      audioController.classList.add("playing");
-    }).catch(() => {
-      startAmbientSynthMelody();
-    });
-  } else {
-    startAmbientSynthMelody();
+  if (!bgAudio) return;
+
+  const track = AUDIO_PLAYLIST[currentAudioIndex];
+  if (!bgAudio.src || !bgAudio.src.includes(encodeURI(track.src))) {
+    bgAudio.src = track.src;
   }
+
+  const playPromise = bgAudio.play();
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      isAudioPlaying = true;
+      if (audioController) audioController.classList.add("playing");
+      if (audioLabelText) audioLabelText.textContent = `${track.title} 🎵`;
+    }).catch(err => {
+      // Browser blocked zero-interaction autoplay; waiting for first tap/click
+      console.log("Audio waiting for first gesture:", err);
+    });
+  }
+}
+
+function playNextAudioTrack() {
+  if (!bgAudio) return;
+  currentAudioIndex = (currentAudioIndex + 1) % AUDIO_PLAYLIST.length;
+  const nextTrack = AUDIO_PLAYLIST[currentAudioIndex];
+  bgAudio.src = nextTrack.src;
+  bgAudio.play().then(() => {
+    isAudioPlaying = true;
+    if (audioController) audioController.classList.add("playing");
+    if (audioLabelText) audioLabelText.textContent = `${nextTrack.title} 🎵`;
+  }).catch(err => {
+    console.log("Error advancing track:", err);
+  });
 }
 
 function pauseAudio() {
   if (bgAudio) bgAudio.pause();
-  stopAmbientSynthMelody();
   isAudioPlaying = false;
   if (audioController) audioController.classList.remove("playing");
+  if (audioLabelText) audioLabelText.textContent = "Music";
 }
 
-function startAmbientSynthMelody() {
-  try {
-    if (!webAudioContext) {
-      webAudioContext = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    if (webAudioContext.state === 'suspended') {
-      webAudioContext.resume();
-    }
-    isAudioPlaying = true;
-    if (audioController) audioController.classList.add("playing");
-
-    playRomanticNotesSequence();
-  } catch (err) {
-    console.log("Audio notice:", err);
-  }
-}
-
-function playRomanticNotesSequence() {
-  if (!isAudioPlaying || !webAudioContext) return;
-
-  const romanticScale = [261.63, 329.63, 392.00, 493.88, 523.25, 587.33, 659.25];
-  const noteFreq = romanticScale[Math.floor(Math.random() * romanticScale.length)];
-
-  const osc = webAudioContext.createOscillator();
-  const gain = webAudioContext.createGain();
-
-  osc.type = "sine";
-  osc.frequency.setValueAtTime(noteFreq, webAudioContext.currentTime);
-
-  gain.gain.setValueAtTime(0.0001, webAudioContext.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.09, webAudioContext.currentTime + 0.35);
-  gain.gain.exponentialRampToValueAtTime(0.0001, webAudioContext.currentTime + 2.8);
-
-  osc.connect(gain);
-  gain.connect(webAudioContext.destination);
-
-  osc.start();
-  osc.stop(webAudioContext.currentTime + 2.9);
-
-  if (isAudioPlaying) {
-    setTimeout(playRomanticNotesSequence, 1600 + Math.random() * 1200);
-  }
-}
-
-function stopAmbientSynthMelody() {
-  isAudioPlaying = false;
-}
-
-// --- 16. PARTICLES & CONFETTI (ROMANTIC ETHEREAL PARTICLES) ---
+// --- 20. PARTICLES & CONFETTI (ROMANTIC ETHEREAL PARTICLES) ---
 function setupParticles() {
   const canvas = document.getElementById("particles-canvas");
   if (!canvas) return;
@@ -957,19 +1314,19 @@ function setupParticles() {
   });
 
   const particles = [];
-  const count = window.innerWidth < 768 ? 22 : 36;
+  const count = window.innerWidth < 768 ? 24 : 38;
 
   for (let i = 0; i < count; i++) {
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
       size: Math.random() * 12 + 6,
-      speedX: (Math.random() - 0.5) * 0.4,
-      speedY: -(Math.random() * 0.5 + 0.25),
+      speedX: (Math.random() - 0.5) * 0.35,
+      speedY: -(Math.random() * 0.45 + 0.22),
       swaySpeed: Math.random() * 0.02 + 0.01,
       swayOffset: Math.random() * Math.PI * 2,
-      opacity: Math.random() * 0.5 + 0.3,
-      type: Math.random() > 0.45 ? "heart" : "sparkle"
+      opacity: Math.random() * 0.5 + 0.32,
+      type: Math.random() > 0.42 ? "heart" : "sparkle"
     });
   }
 
@@ -985,8 +1342,8 @@ function setupParticles() {
     ctx.bezierCurveTo(size / 2, 0, 0, 0, 0, topCurveHeight);
     ctx.closePath();
     ctx.fillStyle = `rgba(165, 218, 255, ${opacity})`;
-    ctx.shadowBlur = 12;
-    ctx.shadowColor = `rgba(70, 166, 247, ${opacity * 0.9})`;
+    ctx.shadowBlur = 14;
+    ctx.shadowColor = `rgba(55, 155, 245, ${opacity * 0.95})`;
     ctx.fill();
     ctx.restore();
   }
@@ -1004,8 +1361,8 @@ function setupParticles() {
     }
     ctx.closePath();
     ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = `rgba(150, 220, 255, 0.85)`;
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = `rgba(145, 215, 255, 0.9)`;
     ctx.fill();
     ctx.restore();
   }
@@ -1046,9 +1403,9 @@ function createGrandConfetti() {
   const centerX = window.innerWidth / 2;
   const centerY = window.innerHeight / 2;
 
-  for (let i = 0; i < 55; i++) {
+  for (let i = 0; i < 60; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const speed = Math.random() * 7 + 2;
+    const speed = Math.random() * 7.5 + 2.5;
     const vx = Math.cos(angle) * speed;
     const vy = Math.sin(angle) * speed;
     let life = 1;
@@ -1057,13 +1414,13 @@ function createGrandConfetti() {
       if (life <= 0) return;
       ctx.save();
       ctx.beginPath();
-      ctx.arc(centerX + vx * (1 - life) * 45, centerY + vy * (1 - life) * 45, 4.5 * life, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(145, 215, 255, ${life})`;
-      ctx.shadowBlur = 14;
-      ctx.shadowColor = "rgba(70, 166, 247, 0.85)";
+      ctx.arc(centerX + vx * (1 - life) * 48, centerY + vy * (1 - life) * 48, 4.5 * life, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(140, 210, 255, ${life})`;
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = "rgba(55, 155, 245, 0.9)";
       ctx.fill();
       ctx.restore();
-      life -= 0.03;
+      life -= 0.028;
       requestAnimationFrame(renderParticle);
     }
     renderParticle();
@@ -1073,11 +1430,15 @@ function createGrandConfetti() {
 // Reset Story with smooth transition
 function restartStory() {
   pinAttempts = 0;
+  riddleAttempts = 0;
   pinSuccessScreenReady = false;
   dismissFocusedPhoto();
   if (pinSuccessBox) pinSuccessBox.style.display = "none";
   if (anniversaryAnnouncement) anniversaryAnnouncement.style.display = "none";
   if (pinEntryView) pinEntryView.style.display = "block";
   pinInputs.forEach(input => input.value = "");
+  if (passwordTextInput) passwordTextInput.value = "";
+  if (riddleFeedbackText) riddleFeedbackText.textContent = "";
+  if (btnClueTrigger) btnClueTrigger.style.display = "none";
   switchChannel("channel-pin");
 }
