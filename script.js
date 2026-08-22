@@ -1,6 +1,6 @@
 /* ==========================================================================
    ROMANTIC LIGHT BLUE AESTHETIC & LIVE LOVE CLOCK ENGINE
-   "Happy 1st Anniversary, Kaye" - Interactive Core Script
+   "Happy 1st Anniversary, Mahal" - Interactive Core Script
    Months Timeline: 09/22/25 to 08/22/26 (3 Photos Per Month)
    ========================================================================== */
 
@@ -16,241 +16,249 @@ const CORRECT_RIDDLE_PASSWORD = "HAPPY";
 const AUDIO_PLAYLIST = [
   { title: "Song 1", src: "audios/1.mp3", fallbackSrc: "audio/1.mp3" },
   { title: "Song 2", src: "audios/2.mp3", fallbackSrc: "audio/2.mp3" },
-  { title: "Song 3", src: "audios/3.mp3", fallbackSrc: "audio/3.mp3" },
-  { title: "Memories", src: "ssstik.io_@fayy.creates_1787037209737.mp4", fallbackSrc: "" }
+  { title: "Song 3", src: "audios/3.mp3", fallbackSrc: "audio/3.mp3" }
 ];
 let currentAudioIndex = 0;
 let isAudioPlaying = false;
 let webAudioContext = null;
 
 // --- 3. MONTHLY DATA CONFIGURATION (MONTHS 1 TO 12: 09/22/25 -> 08/22/26) ---
-// Blank templates ready for user's own photos & personal letters
 const MONTHS_DATA = [
   {
     index: 1,
     date: "09/22/25",
     title: "Month 1",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_01 (09-22-25)",
+    greeting: "To my dearest Baby,",
+    folderName: "1",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (09-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (09-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_01 (09-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/photo3.jpg"
     ],
     altPaths: [
-      "images/month1_1.jpg",
-      "images/month1_2.jpg",
-      "images/month1_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/6231fe57-7535-4039-b08c-5e696118a958 (1).jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/ab218fbb-901a-442b-8173-3b40d1797e1c.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/e63d9e8c-62f6-420a-9a70-489b0224a2d6.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "Remember that day nung finally! sinagot mo ako? Yknow what? I was the mooost happiest man on Earth nung finally, sinagot mo ako. I still remember, I was planning to ask you kung pwede na itake natin kung anong meron tayo into the next level during acquaintance. Pero wala eh. Nagmamadali ang tadhana :> mwihihi. Kamusta na kaya yung tinanim natin don? Naalala mo pa yung puno na tinanim natin together? We were tasked to plant atleast 2 per person But we only planted 1 HWUAHAHA. Kasmuta na kaya yon? Gaya nga ng sabi ni Cher Marlon, that will mark our relationship. Kaya I believe parin talaga na nakatayo pa yung puno natin na yun! :> I also remember how oa/long my 1st monthsary greetings pa sayo non. Remember my favourite word before? \"we don't know what might happen in the future. We Don't know what the future holds. Well, Baby, Look at us. We're still here. We're still choosing to stay. Fighting for what we have. I've told you before that na it was only a monthsary and we have a veeery long Journey pa ahead us. Look at uss. we're on our 12th months of love na babyyy."
   },
   {
     index: 2,
     date: "10/22/25",
     title: "Month 2",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_02 (10-22-25)",
+    greeting: "To my dearest Mahal,",
+    folderName: "2",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (10-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (10-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_02 (10-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/photo3.jpg"
     ],
     altPaths: [
-      "images/month2_1.jpg",
-      "images/month2_2.jpg",
-      "images/month2_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/2da6eace-d06a-4d01-8724-d391dc02797b.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/a3f50409-afd8-4960-aa29-376edc4f289b.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/dbbf4496-adaf-4224-becb-716117d0d10b.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "\" let's strive for a better future.\" was my favourite word before. I'm just so glad that we've finally came to this point kung saan finally, we're one BIG step ahead for that \"better future\" that I'm always telling you. Remember that day when I became a speaker sa mca event? I was soooo embarassed. Sino ba namang tatakbo biglaan. Weirdo ee. Yiee, napangiti kita ngayon no??? katawa tawa talaga ako hayst. Let's move na sa next month :>"
   },
   {
     index: 3,
     date: "11/22/25",
     title: "Month 3",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_03 (11-22-25)",
+    greeting: "To my dearest Beb,",
+    folderName: "3",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (11-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (11-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_03 (11-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/photo3.jpg"
     ],
     altPaths: [
-      "images/month3_1.jpg",
-      "images/month3_2.jpg",
-      "images/month3_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/6a9b8b10-fb5c-49d4-8d6d-5d00703e47d3.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/af19e837-7759-4d83-8824-49a7b4c68506.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/b0e32528-7c38-4b3f-9fd3-8a8637415ffd.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "I'm really glad That I have a such an Amazing, Loving, Caring, GORGEOUS Girlfriend like you. You make my whole world feel calm. You never fail to bring me comfort. I love youu so much. I really cherish every short moments that we share together. We really were having it so hard before. Many times that We almost fall apart. That you leave me. But Thank God. Alhamdulillah. Thank you for not always choosing to stay with me. For choosing to fight for what we have. For continuing what we had."
   },
   {
     index: 4,
     date: "12/22/25",
     title: "Month 4",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_04 (12-22-25)",
+    greeting: "To my dearest Love,",
+    folderName: "4",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (12-22-25)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (12-22-25)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_04 (12-22-25)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/photo3.jpg"
     ],
     altPaths: [
-      "images/month4_1.jpg",
-      "images/month4_2.jpg",
-      "images/month4_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/3ca5bb7a-e13c-4d66-95af-f66973c760b2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/418fc7e7-559c-4c8a-9a04-a51291f0344e.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/78af3428-bc01-4d99-bf38-697faf525055.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "We're still young. But even so, I wanna spend the rest of my life with you by myside. We may be too young to talking about forever but I will be making sure that we stay up together. Until the very End. To become your husband is something I really really wish for. I'll continue to become the better man that you've always been wanting. No matter how hard our situation is, always remember that I will always be here to understand you and be patient with you. I will always choose you because being with you fills my life with warmth, happiness, hope, and peace. You are the one I’m certain of, today and always. No matter where life takes us, you will forever feel like home."
   },
   {
     index: 5,
     date: "01/22/26",
     title: "Month 5",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_05 (01-22-26)",
+    greeting: "To my dearest Asawa Ko,",
+    folderName: "5",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (01-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (01-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_05 (01-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/photo3.jpg"
     ],
     altPaths: [
-      "images/month5_1.jpg",
-      "images/month5_2.jpg",
-      "images/month5_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/ca79bce1-650f-4b36-9db8-6c6428e8174c.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/fb57ecf6-815d-47aa-b828-c87f4e214304.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/fd95ad2c-3617-408c-bb0a-5fe5b0d8a294.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "You may be hard to handle sometimes but don't let that run into your mind. You don't have to worry. You can be yourself. You can be who you are. Just know that I will never ever give up on you. on us. I'll always choose to fight for us. I know that yu've been having it so hard. I will never ever leave you all alone by yourself. Your problems are also my problems. Gaya ng sabi ko, Kakampi mo ako. We fight, we stay, we fix. That will be our resolve on every battle that we face."
   },
   {
     index: 6,
     date: "02/22/26",
     title: "Month 6",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_06 (02-22-26)",
+    greeting: "To my dearest Baby,",
+    folderName: "6",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (02-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (02-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_06 (02-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/photo3.jpg"
     ],
     altPaths: [
-      "images/month6_1.jpg",
-      "images/month6_2.jpg",
-      "images/month6_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/08890ed6-5ab4-4dcb-b2f7-7ea96459e76f.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/c1794cc7-9e58-4809-87c1-1d0773c94aa6 (1).jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/d5b1bc88-8c6c-48d1-8262-8de1c07ab019.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "Half a year. Feels like its so bilis. But if you would look at it, It's too short. 6 months of love and we've already shared a countless memories. We were filled with so much love. I will do anything to protect those laughs, every funny conversations, and your smile. I will always be SOOO SOO grateful that we always choose to keep on fighting on what we have. Being embraced by your love is such a blessing."
   },
   {
     index: 7,
     date: "03/22/26",
     title: "Month 7",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_07 (03-22-26)",
+    greeting: "To my dearest Mahal,",
+    folderName: "7",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (03-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (03-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_07 (03-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/photo3.jpg"
     ],
     altPaths: [
-      "images/month7_1.jpg",
-      "images/month7_2.jpg",
-      "images/month7_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/18285723-0cee-45ae-8e65-be2f87de8444.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/b17e770f-ee02-488c-a38f-a3d24fb1778a.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/c1e5fbee-edeb-4032-9f11-04a83e19a452.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "I love you, entirely. Do you still remember this month? I gave you a one carnation flowerr. That was my first time. First time magbigay ng totoong bulaklak. I was planning to give you A real one on our Graduation but I couldn't help but give you one mwihi. Having you by near me, having to hear your laugh. Seeing your beatiful smile. Oh God, I'm so lucky to have you."
   },
   {
     index: 8,
     date: "04/22/26",
     title: "Month 8",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_08 (04-22-26)",
+    greeting: "To my dearest Beb,",
+    folderName: "8",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (04-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (04-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_08 (04-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/photo3.jpg"
     ],
     altPaths: [
-      "images/month8_1.jpg",
-      "images/month8_2.jpg",
-      "images/month8_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/12c48f9a-dc65-416a-a747-762e5dc9547e.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/60640a77-1ccd-44ee-95ad-d5d685919ec4.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/a83ca954-9740-4615-809f-f23f74c8d3c6 (1).jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "During this month, It was our month na ggraduate na tayo. Tbh, I was scared. Takot ako na mapahiwalay sayo. I can't take it. But look at us. WE're still from the same school. Not only that, seatmate pa mweh. I'm so happy that I graduated with you. Remember our last hug sa mca? that night where we secretly hide and hug each other. I was soooo so sad and happy during those times. But, Ang importante is that  even after everything, We're still here. Loving one another endlessly."
   },
   {
     index: 9,
     date: "05/22/26",
     title: "Month 9",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_09 (05-22-26)",
+    greeting: "To my dearest Love,",
+    folderName: "9",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (05-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (05-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_09 (05-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/photo3.jpg"
     ],
     altPaths: [
-      "images/month9_1.jpg",
-      "images/month9_2.jpg",
-      "images/month9_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/4ec74acd-e719-4004-86db-dcbcf9f738de.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/abf4d6ef-d774-46f0-8a2a-fa405c1b6ce5.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/e1c69003-ab9c-4168-9193-27976f73d1d2.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "Onti nalangg. We're so close on reaching our 1st anniversary. Pagod ka na ata magbasa eeee. on our 9th months of love, the pressure is real. sabay tayo nag enroll but hindi tayo nakapag request na mag classmate tayo. Grabe. I was scared na baka di tayo maging magclassmate nan but also happy na same school tayo ng pinasukan. going to places we're not familliar with. Aghh I couldn't ask for more. kung saan saan tayo napupunta. pati bag mo iniiwan mo sa guidance office HWUAHAHA. takot sha eh. opsie, next month na"
   },
   {
     index: 10,
     date: "06/22/26",
     title: "Month 10",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_10 (06-22-26)",
+    greeting: "To my dearest Asawa Ko,",
+    folderName: "10",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (06-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (06-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_10 (06-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/photo3.jpg"
     ],
     altPaths: [
-      "images/month10_1.jpg",
-      "images/month10_2.jpg",
-      "images/month10_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/05645749-e079-41c5-981c-17f7dff8117b.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/2e612b26-5eff-407a-9196-82c8d37e7ec8.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/3e22a381-d0a2-4fec-b665-dfc7adbc25e1.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "10 months of love. who would have thought that time can flew by this fast. Even after Graduating, I'm so glad that distance didn't break us. Weekly parin tayo nagkikita't lumalabas and that just made us mooore connected. I got to see you more often. And remember yung work ko? I was happy at that time na finally, nag pappayout na sha and naililibre na kita ng mga wants mo. kaso bumagsak :< But even still, I'm more than happy kasi nandan ka ! :> You've given me enough strength to stand up again after falling. You give me comfort. You're literally my strength."
   },
   {
     index: 11,
     date: "07/22/26",
     title: "Month 11",
-    greeting: "To my dearest Kaye,",
-    folderName: "Month_11 (07-22-26)",
+    greeting: "To my dearest Baby,",
+    folderName: "11",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (07-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (07-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_11 (07-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/photo3.jpg"
     ],
     altPaths: [
-      "images/month11_1.jpg",
-      "images/month11_2.jpg",
-      "images/month11_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/423b880b-849c-4619-9316-7b14007d9ecd.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/b1d555a5-1bb8-454d-9f61-4096a2be505f.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/fc733e89-7308-48fd-9274-1a7fe1d5e64c.jpg"
     ],
     captions: ["", "", ""],
-    letter: ""
+    letter: "And finally! 11th months of love. 11 months of choosing each other. I know it's not been easy for us. But still, finally, we're still here. I have no regrets that we became classmates. All this time, palaagi't palagi tayo magkasama. I just couldn't get enough of your presence. We're finally at this point wherein nakakapag usap na tayo harap harapan. inaayos natin problema natin ng harapan. pinaka mahalaga sa lahat is that nagpapatawaran tayo ng harapan. I was so happy that naibibili na kita ng mga mamamahaling pagkain pero now, naudlot. I want you to know na someday, mas magagandang pagkain ang makakain mo. Your smile brings me all the joy I need."
   },
   {
     index: 12,
     date: "08/22/26",
     title: "Month 12",
-    folderName: "Month_12 (08-22-26)",
+    folderName: "12",
+    greeting: "Happy 1st Anniversary, Baby",
     images: [
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_12 (08-22-26)/photo1.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_12 (08-22-26)/photo2.jpg",
-      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/Month_12 (08-22-26)/photo3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/photo1.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/photo2.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/photo3.jpg"
     ],
     altPaths: [
-      "images/month12_1.jpg",
-      "images/month12_2.jpg",
-      "images/month12_3.jpg"
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/193e860b-8c03-4258-bad7-5c698387a038.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/7b7a5b01-feed-4974-968f-9b86d9b6fe55.jpg",
+      "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/7f2f3a35-2adb-41c3-abdf-b4e7d08add6b.jpg"
     ],
     captions: ["", "", ""],
+    letter: `Again, Happy 1st Anniversary, mylove.
+
+At last, we reached our first anniversary. For me, this is such a BIG step. Something That I will truly Cherish. Always will cherish and a moment that I will forever treasure. Baby, I just want to thank you. Thank you for all of your sacrifices. For all the times na mas pinipili mong mahalin ako't piliin kung anong meron saatin. Thank you for Being with me through Our Journey.
+
+I hope, you can still forgive me for the wrong doings that i've done. For all the pain that I've caused you. I'm so ashamed of myself for hurting you that much. But don't worry, mylove. I'll put in more and more and more effort on avoiding na masaktan kita ulit. You're so kind. You're so caring. It is not right for me to hurt such a beautiful soul like yours.
+
+Baby,I know that isang taon lng to. Our goal in this relationship of our is to be married. there's still more years to come diba? Again, I promise you. I will get us married. I will marry you no matter what. In Sha Allah, we'll make that come true. To be with you is my dream. To marry you is my greatest wish. If it is a sunnah to marry 4wives, I would marry you as many times as you want.
+
+Thank you for all the efforts that you've given me. Thank you for being yourself. For Embracing me with such a love. I will always choose you over anything else. Uhibbuki, Ya Albi. Again, In Sha Allah, We will get married. Wal Akhira, Fid dunya. I love you, Eternally, Baby.`,
     isSpecial12th: true
   }
 ];
@@ -294,13 +302,23 @@ const MOVING_PHOTOS_DATA = UNIQUE_FLOATING_PHOTOS.map((filename, i) => ({
   note: ""
 }));
 
-// --- 5. SLIDESHOW IMAGES (TEMPLATES READY FOR USER) ---
+// --- 5. SLIDESHOW IMAGES (15 CONTINUOUSLY REPEATING MEMORIES) ---
 const LAST_SLIDESHOW_IMAGES = [
-  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo1.jpg", fallbackSrc: "LAST/photo1.jpg", caption: "" },
-  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo2.jpg", fallbackSrc: "LAST/photo2.jpg", caption: "" },
-  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo3.jpg", fallbackSrc: "LAST/photo3.jpg", caption: "" },
-  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo4.jpg", fallbackSrc: "LAST/photo4.jpg", caption: "" },
-  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo5.jpg", fallbackSrc: "LAST/photo5.jpg", caption: "" }
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo1.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo2.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo3.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo4.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/4/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo5.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/5/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo6.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/6/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo7.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/7/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo8.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/8/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo9.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/9/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo10.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/10/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo11.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/11/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo12.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/12/photo1.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo13.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/1/photo2.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo14.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/2/photo2.jpg", caption: "" },
+  { src: "PHOTOS_ORGANIZED/04_FINALE_SLIDESHOW (LAST)/photo15.jpg", fallbackSrc: "PHOTOS_ORGANIZED/02_MONTHS_CATEGORIES/3/photo2.jpg", caption: "" }
 ];
 
 // --- 6. STATE VARIABLES ---
@@ -445,11 +463,9 @@ function initOverflowingMovingPhotosEngine() {
 
     el.innerHTML = `
       <div class="polaroid-img-wrapper">
-        <img src="${item.src}" alt="${item.caption || 'Memory'}"
-             onerror="this.onerror=null; this.src='${item.fallbackSrc || ''}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\' style=\\'padding:4px;\\'><span class=\\'placeholder-icon\\' style=\\'font-size:16px;\\'>📷</span><span class=\\'placeholder-text\\' style=\\'font-size:8px;\\'>Photo</span></div>';};">
+        <img src="${item.src}" alt="Photo"
+             onerror="this.onerror=null; this.src='${item.fallbackSrc || ''}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\' style=\\'padding:4px;\\'></div>';};">
       </div>
-      <div class="polaroid-caption">${item.caption || `Photo`}</div>
-      <div class="click-again-badge">Tap again to open</div>
     `;
 
     const startX = Math.max(16, Math.min(screenW - baseWidth - 16, Math.random() * (screenW - baseWidth)));
@@ -800,6 +816,7 @@ function handlePinSuccess() {
 
     setTimeout(() => {
       pinSuccessBox.style.display = "none";
+      if (pinCard) pinCard.classList.add("anniversary-revealed");
       anniversaryAnnouncement.style.display = "flex";
       anniversaryAnnouncement.style.opacity = "1";
       pinSuccessScreenReady = true;
@@ -886,7 +903,7 @@ function validateRiddlePassword() {
 function handleRiddleSuccess() {
   if (riddleFeedbackText) {
     riddleFeedbackText.style.color = "var(--sky-deep)";
-    riddleFeedbackText.textContent = "✨ Yeheeey! You unlocked it na bebb! ✨";
+    riddleFeedbackText.textContent = "Yeheeey! You unlocked it na bebb!";
   }
   if (btnClueTrigger) btnClueTrigger.style.display = "none";
 
@@ -934,10 +951,10 @@ function handleClueTriggerClick() {
 
   if (btnClueTrigger) btnClueTrigger.style.display = "none";
 
-  // Step 1: "kiss mo muna ako 😙"
+  // Step 1: "kiss mo muna ako"
   if (riddleFeedbackText) {
     riddleFeedbackText.style.color = "var(--sky-deep)";
-    riddleFeedbackText.textContent = "kiss mo muna ako 😙";
+    riddleFeedbackText.textContent = "kiss mo muna ako";
   }
 
   // Step 2: "JOKE LAANG wag ka umaliss"
@@ -958,7 +975,7 @@ function handleClueTriggerClick() {
   setTimeout(() => {
     if (riddleFeedbackText) {
       riddleFeedbackText.style.color = "var(--sky-deep)";
-      riddleFeedbackText.textContent = "💡 Letters";
+      riddleFeedbackText.textContent = "Letters";
     }
     isClueAnimationRunning = false;
   }, 5000);
@@ -980,9 +997,9 @@ function openMonthLetter(monthIndex) {
   const btnNext = document.getElementById("btn-next-month");
 
   function renderMonthContent() {
-    if (letterDateStamp) letterDateStamp.textContent = `📅 ${month.date}`;
+    if (letterDateStamp) letterDateStamp.textContent = `${month.date}`;
     if (letterMonthCount) letterMonthCount.textContent = `Month ${month.index} of 12`;
-    if (letterGreeting) letterGreeting.textContent = month.greeting || "To my dearest Kaye,";
+    if (letterGreeting) letterGreeting.textContent = month.greeting || "To my dearest Baby,";
     if (letterParagraphs) letterParagraphs.textContent = month.letter || "";
 
     if (btnPrev) {
@@ -997,16 +1014,15 @@ function openMonthLetter(monthIndex) {
       if (monthIndex < 11) {
         btnNext.textContent = `Next: Month ${monthIndex + 1} →`;
       } else {
-        btnNext.textContent = `Next: 1st Year Finale ✨ →`;
+        btnNext.textContent = `Next: 1st Year Finale →`;
       }
     }
 
-    // Render 3 Interactive Polaroid Photos for this Month
+    // Render 3 Interactive Polaroid Photos for this Month (No Text on Picture Frames)
     if (letterPhotosGallery) {
       letterPhotosGallery.innerHTML = "";
 
       month.images.forEach((imgSrc, idx) => {
-        const cap = (month.captions && month.captions[idx]) ? month.captions[idx] : `Photo ${idx + 1}`;
         const itemEl = document.createElement("div");
         itemEl.className = "trio-polaroid-item";
         
@@ -1016,14 +1032,13 @@ function openMonthLetter(monthIndex) {
 
         itemEl.innerHTML = `
           <div class="trio-img-container">
-            <img src="${imgSrc}" alt="${cap}"
-                 onerror="this.onerror=null; this.src='${altPath}'; this.onerror=function(){this.src='${fallbackOldPath}'; this.onerror=function(){this.src='${fallbackSinglePath}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\'><span class=\\'placeholder-icon\\'>📷</span><span class=\\'placeholder-text\\'>Photo ${idx+1}</span><span class=\\'placeholder-sub\\'>photo${idx+1}.jpg</span></div>';};};};">
+            <img src="${imgSrc}" alt="Photo"
+                 onerror="this.onerror=null; this.src='${altPath}'; this.onerror=function(){this.src='${fallbackOldPath}'; this.onerror=function(){this.src='${fallbackSinglePath}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\'></div>';};};};">
           </div>
-          <div class="trio-caption">${cap}</div>
         `;
 
         itemEl.addEventListener("click", () => {
-          openPhotoModal(imgSrc, cap, "");
+          openPhotoModal(imgSrc, "", "");
         });
 
         letterPhotosGallery.appendChild(itemEl);
@@ -1068,7 +1083,6 @@ function showIntermissionCategory() {
   if (intermissionGallery && month12) {
     intermissionGallery.innerHTML = "";
     month12.images.forEach((imgSrc, idx) => {
-      const cap = (month12.captions && month12.captions[idx]) ? month12.captions[idx] : `Photo ${idx + 1}`;
       const itemEl = document.createElement("div");
       itemEl.className = "trio-polaroid-item";
       
@@ -1077,15 +1091,14 @@ function showIntermissionCategory() {
 
       itemEl.innerHTML = `
         <div class="trio-img-container">
-          <img src="${imgSrc}" alt="${cap}"
-               onerror="this.onerror=null; this.src='${fallbackOldPath}'; this.onerror=function(){this.src='${fallbackSinglePath}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\'><span class=\\'placeholder-icon\\'>🎁</span><span class=\\'placeholder-text\\'>Photo ${idx+1}</span><span class=\\'placeholder-sub\\'>photo${idx+1}.jpg</span></div>';};};">
+          <img src="${imgSrc}" alt="Photo"
+               onerror="this.onerror=null; this.src='${fallbackOldPath}'; this.onerror=function(){this.src='${fallbackSinglePath}'; this.onerror=function(){this.parentElement.innerHTML='<div class=\\'placeholder-content\\'></div>';};};">
         </div>
-        <div class="trio-caption">${cap}</div>
       `;
 
       itemEl.addEventListener("click", (e) => {
         e.stopPropagation();
-        openPhotoModal(imgSrc, cap, "");
+        openPhotoModal(imgSrc, "", "");
       });
 
       intermissionGallery.appendChild(itemEl);
@@ -1133,7 +1146,7 @@ function initFinaleSlideshow() {
         img.style.display = "none";
         const ph = document.createElement("div");
         ph.className = `placeholder-content slideshow-image ${index === 0 ? 'active-slide' : ''}`;
-        ph.innerHTML = `<span class="placeholder-icon">✨</span><span class="placeholder-text">Photo ${index + 1}</span><span class="placeholder-sub">photo${index + 1}.jpg</span>`;
+        ph.innerHTML = ``;
         slideshowViewport.appendChild(ph);
       }
     };
@@ -1176,8 +1189,14 @@ function initFinaleSlideshow() {
 
 function revealLastText() {
   const lastTextBox = document.getElementById("last-text-box");
+  const lastTextContent = document.getElementById("last-text-content");
   const finaleHint = document.getElementById("finale-click-hint");
   const slideshowWrapper = document.querySelector(".slideshow-wrapper");
+
+  const month12 = MONTHS_DATA.find(m => m.index === 12);
+  if (lastTextContent && month12 && month12.letter) {
+    lastTextContent.textContent = month12.letter;
+  }
 
   if (slideshowWrapper) {
     slideshowWrapper.style.transform = "translateY(-12px)";
@@ -1224,7 +1243,7 @@ function setupAudioController() {
   bgAudio.addEventListener("play", () => {
     isAudioPlaying = true;
     audioController.classList.add("playing");
-    if (audioLabelText) audioLabelText.textContent = `${AUDIO_PLAYLIST[currentAudioIndex].title} 🎵`;
+    if (audioLabelText) audioLabelText.textContent = `${AUDIO_PLAYLIST[currentAudioIndex].title}`;
   });
 
   bgAudio.addEventListener("pause", () => {
@@ -1270,7 +1289,7 @@ function startAudioPlayback() {
     playPromise.then(() => {
       isAudioPlaying = true;
       if (audioController) audioController.classList.add("playing");
-      if (audioLabelText) audioLabelText.textContent = `${track.title} 🎵`;
+      if (audioLabelText) audioLabelText.textContent = `${track.title}`;
     }).catch(err => {
       // Browser blocked zero-interaction autoplay; waiting for first tap/click
       console.log("Audio waiting for first gesture:", err);
@@ -1280,13 +1299,18 @@ function startAudioPlayback() {
 
 function playNextAudioTrack() {
   if (!bgAudio) return;
-  currentAudioIndex = (currentAudioIndex + 1) % AUDIO_PLAYLIST.length;
+  // Advance to next song, or loop back to Song 2 (2nd music in folder, index 1)
+  if (currentAudioIndex + 1 >= AUDIO_PLAYLIST.length) {
+    currentAudioIndex = 1;
+  } else {
+    currentAudioIndex++;
+  }
   const nextTrack = AUDIO_PLAYLIST[currentAudioIndex];
   bgAudio.src = nextTrack.src;
   bgAudio.play().then(() => {
     isAudioPlaying = true;
     if (audioController) audioController.classList.add("playing");
-    if (audioLabelText) audioLabelText.textContent = `${nextTrack.title} 🎵`;
+    if (audioLabelText) audioLabelText.textContent = `${nextTrack.title}`;
   }).catch(err => {
     console.log("Error advancing track:", err);
   });
@@ -1433,6 +1457,7 @@ function restartStory() {
   riddleAttempts = 0;
   pinSuccessScreenReady = false;
   dismissFocusedPhoto();
+  if (pinCard) pinCard.classList.remove("anniversary-revealed");
   if (pinSuccessBox) pinSuccessBox.style.display = "none";
   if (anniversaryAnnouncement) anniversaryAnnouncement.style.display = "none";
   if (pinEntryView) pinEntryView.style.display = "block";
