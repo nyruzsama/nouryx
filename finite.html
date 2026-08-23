@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Finite Mathematics 1 &ndash; Complete Reviewer (Lessons 3&ndash;7)</title>
+  <meta name="description" content="Complete exam reviewer for Finite Mathematics 1 covering Escher-Type Tessellations and Frieze Patterns (Lesson 3), Golden Ratio and Fibonacci (Lesson 4), Fractals (Lesson 5), Matrix Fundamentals (Lesson 6), and Matrix Multiplication (Lesson 7)."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+:root{
+  --bg:#080c12;--bg2:#0d1220;--card:#111827;--card2:#151f30;
+  --border:#1a2740;--border2:#20304e;
+  --orange:#f97316;--amber:#fbbf24;--emerald:#10d987;
+  --blue:#4f9eff;--violet:#a78bfa;
+  --rose:#fb7185;--green:#34d399;--t1:#e8edf5;--t2:#94a3b8;--t3:#64748b;
+  --gor:linear-gradient(135deg,#f97316,#fbbf24);
+  --gab:linear-gradient(135deg,#fbbf24,#f97316);
+  --gem:linear-gradient(135deg,#10d987,#4f9eff);
+  --gblu:linear-gradient(135deg,#4f9eff,#a78bfa);
+  --gvi:linear-gradient(135deg,#a78bfa,#fb7185);
+  --ghdr:linear-gradient(135deg,#080c12,#111827,#080c12);
+  --r1:6px;--r2:12px;--r3:20px;--r4:28px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;font-size:15px;}
+::selection{background:rgba(167,139,250,.3);color:#fff;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--violet);}
+
+/* COVER */
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:60px 24px;
+  background:var(--ghdr);position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 15% 20%,rgba(249,115,22,.12),transparent 60%),
+  radial-gradient(ellipse 60% 50% at 85% 80%,rgba(167,139,250,.12),transparent 60%),
+  radial-gradient(ellipse 40% 40% at 50% 50%,rgba(16,217,135,.06),transparent 70%);pointer-events:none;}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;
+  background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.35);border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:32px;animation:fadeD .6s ease both;}
+.cover-title{font-size:clamp(34px,6vw,70px);font-weight:900;line-height:1.1;letter-spacing:-.03em;
+  background:var(--gor);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;margin-bottom:16px;animation:fadeD .7s ease .1s both;}
+.cover-sub{font-size:clamp(15px,2vw,21px);color:var(--t2);margin-bottom:48px;
+  max-width:640px;animation:fadeD .7s ease .2s both;}
+.cover-chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+  margin-bottom:48px;animation:fadeU .7s ease .3s both;}
+.chip{padding:9px 20px;border-radius:var(--r2);font-size:12px;font-weight:600;
+  border:1px solid;transition:transform .2s,box-shadow .2s;cursor:default;}
+.chip:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.c-or{background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.3);color:var(--orange);}
+.c-ab{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.3);color:var(--amber);}
+.c-em{background:rgba(16,217,135,.1);border-color:rgba(16,217,135,.3);color:var(--emerald);}
+.c-bl{background:rgba(79,158,255,.1);border-color:rgba(79,158,255,.3);color:var(--blue);}
+.c-vi{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--violet);}
+.cvr-div{width:80px;height:3px;background:var(--gor);border-radius:2px;margin:0 auto 24px;
+  animation:fadeU .7s ease .4s both;}
+.cvr-note{font-size:13px;color:var(--t3);max-width:520px;
+  animation:fadeU .7s ease .5s both;font-style:italic;}
+
+/* STICKY NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(8,12,18,.93);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);padding:0 24px;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:4px;
+  overflow-x:auto;scrollbar-width:none;padding:12px 0;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nl{flex-shrink:0;padding:6px 16px;border-radius:var(--r1);font-size:12px;font-weight:600;
+  color:var(--t3);text-decoration:none;transition:all .2s;white-space:nowrap;}
+.nl:hover{color:var(--t1);background:var(--card);}
+.nl.or{color:var(--orange);}.nl.ab{color:var(--amber);}.nl.em{color:var(--emerald);}
+.nl.bl{color:var(--blue);}.nl.vi{color:var(--violet);}
+
+/* LESSON CATEGORY HEADER */
+.main{max-width:1100px;margin:0 auto;padding:60px 24px;}
+.ls{margin-bottom:100px;}
+.lh{display:flex;align-items:flex-start;gap:20px;margin-bottom:40px;padding:32px;
+  border-radius:var(--r4);border:1px solid;position:relative;overflow:hidden;}
+.lh::before{content:'';position:absolute;inset:0;opacity:.07;}
+.lh.or{border-color:rgba(249,115,22,.35);background:rgba(249,115,22,.05);}
+.lh.or::before{background:var(--gor);}
+.lh.ab{border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.05);}
+.lh.ab::before{background:var(--gab);}
+.lh.em{border-color:rgba(16,217,135,.35);background:rgba(16,217,135,.05);}
+.lh.em::before{background:var(--gem);}
+.lh.bl{border-color:rgba(79,158,255,.35);background:rgba(79,158,255,.05);}
+.lh.bl::before{background:var(--gblu);}
+.lh.vi{border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.05);}
+.lh.vi::before{background:var(--gvi);}
+.lnum{flex-shrink:0;width:58px;height:58px;border-radius:var(--r2);display:flex;
+  align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1.2;text-align:center;}
+.lnum.or{background:rgba(249,115,22,.2);color:var(--orange);}
+.lnum.ab{background:rgba(251,191,36,.2);color:var(--amber);}
+.lnum.em{background:rgba(16,217,135,.2);color:var(--emerald);}
+.lnum.bl{background:rgba(79,158,255,.2);color:var(--blue);}
+.lnum.vi{background:rgba(167,139,250,.2);color:var(--violet);}
+.lht{flex:1;}
+.llbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
+.llbl.or{color:var(--orange);}.llbl.ab{color:var(--amber);}.llbl.em{color:var(--emerald);}
+.llbl.bl{color:var(--blue);}.llbl.vi{color:var(--violet);}
+.ltitle{font-size:clamp(20px,3vw,28px);font-weight:800;line-height:1.2;letter-spacing:-.02em;}
+.ldesc{font-size:14px;color:var(--t2);margin-top:8px;}
+
+/* SECTION DIVIDER */
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;margin-top:40px;}
+.shl{flex:1;height:1px;background:var(--border);}
+.shb{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;white-space:nowrap;}
+.s-or{color:var(--orange);background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);}
+.s-ab{color:var(--amber);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);}
+.s-em{color:var(--emerald);background:rgba(16,217,135,.1);border:1px solid rgba(16,217,135,.2);}
+.s-bl{color:var(--blue);background:rgba(79,158,255,.1);border:1px solid rgba(79,158,255,.2);}
+.s-vi{color:var(--violet);background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);}
+.s-gd{color:var(--amber);background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);}
+.s-ro{color:var(--rose);background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.2);}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);
+  padding:28px;margin-bottom:16px;transition:border-color .2s,background .2s;}
+.card:hover{border-color:var(--border2);background:var(--card2);}
+.ctitle{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.cdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.d-or{background:var(--orange);box-shadow:0 0 8px rgba(249,115,22,.5);}
+.d-ab{background:var(--amber);box-shadow:0 0 8px rgba(251,191,36,.5);}
+.d-em{background:var(--emerald);box-shadow:0 0 8px rgba(16,217,135,.5);}
+.d-bl{background:var(--blue);box-shadow:0 0 8px rgba(79,158,255,.5);}
+.d-vi{background:var(--violet);box-shadow:0 0 8px rgba(167,139,250,.5);}
+
+/* TERMS GRID */
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;}
+.ti{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r2);
+  padding:14px 16px;transition:all .2s;}
+.ti:hover{background:rgba(255,255,255,.06);transform:translateY(-1px);}
+.tn{font-weight:700;font-size:14px;margin-bottom:4px;}
+.tn.or{color:var(--orange);}.tn.ab{color:var(--amber);}.tn.em{color:var(--emerald);}
+.tn.bl{color:var(--blue);}.tn.vi{color:var(--violet);}
+.td{font-size:13px;color:var(--t2);line-height:1.5;}
+
+/* EXAMPLE BOX */
+.ex{background:rgba(0,0,0,.25);border-left:3px solid;border-radius:0 var(--r2) var(--r2) 0;
+  padding:18px 20px;margin:10px 0;}
+.ex.or{border-color:var(--orange);}.ex.ab{border-color:var(--amber);}
+.ex.em{border-color:var(--emerald);}.ex.bl{border-color:var(--blue);}.ex.vi{border-color:var(--violet);}
+.exl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.exl.or{color:var(--orange);}.exl.ab{color:var(--amber);}.exl.em{color:var(--emerald);}
+.exl.bl{color:var(--blue);}.exl.vi{color:var(--violet);}
+.exp{font-weight:600;margin-bottom:8px;color:var(--t1);font-size:14px;}
+.exs{font-size:13.5px;color:var(--t2);line-height:1.7;}
+.hl{font-weight:700;padding:1px 6px;border-radius:4px;font-size:13px;}
+.ho{background:rgba(249,115,22,.15);color:var(--orange);}
+.ha{background:rgba(251,191,36,.15);color:var(--amber);}
+.he{background:rgba(16,217,135,.15);color:var(--emerald);}
+.hb{background:rgba(79,158,255,.15);color:var(--blue);}
+.hv{background:rgba(167,139,250,.15);color:var(--violet);}
+.hr{background:rgba(251,113,133,.15);color:var(--rose);}
+
+/* FORMULA BOX */
+.fb{background:rgba(0,0,0,.3);border:1px solid var(--border2);border-radius:var(--r2);
+  padding:16px 20px;margin:12px 0;}
+.fb .fl{font-family:Inter,sans-serif;font-size:11px;font-weight:600;color:var(--t3);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.fb .fm{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--emerald);}
+
+/* MATRIX */
+.mx{display:inline-flex;align-items:center;gap:4px;margin:6px 12px;vertical-align:middle;}
+.mx-br{display:flex;flex-direction:column;border-left:2px solid var(--t2);border-right:2px solid var(--t2);padding:4px 8px;gap:4px;}
+.mx-br::before,.mx-br::after{display:none;}
+.mx-row{display:flex;gap:16px;}
+.mx-el{min-width:32px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:13px;
+  font-weight:600;color:var(--t1);}
+.matrix-display{background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:var(--r2);
+  padding:16px 20px;margin:10px 0;overflow-x:auto;}
+.matrix-display table{border-collapse:collapse;margin:0 auto;}
+.matrix-display td{padding:5px 12px;text-align:center;font-family:'JetBrains Mono',monospace;
+  font-size:14px;font-weight:600;color:var(--t1);border:none;}
+.matrix-display .lbr{border-left:2px solid var(--t2);}.matrix-display .rbr{border-right:2px solid var(--t2);}
+.matrix-name{font-size:13px;font-weight:700;color:var(--t3);text-align:center;margin-bottom:6px;letter-spacing:.05em;}
+.op-row{display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin:12px 0;}
+.op-sign{font-size:28px;font-weight:700;color:var(--t3);align-self:center;}
+
+/* TABLE */
+.ct{width:100%;border-collapse:collapse;font-size:14px;}
+.ct th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;background:rgba(255,255,255,.04);
+  border-bottom:1px solid var(--border);color:var(--t3);}
+.ct td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--t2);vertical-align:top;}
+.ct tr:last-child td{border-bottom:none;}
+.ct tr:hover td{background:rgba(255,255,255,.03);}
+.ct td:first-child{color:var(--t1);font-weight:600;}
+
+/* MUST MEMORIZE LIST */
+.ml{list-style:none;counter-reset:m;}
+.ml li{counter-increment:m;display:flex;gap:12px;align-items:flex-start;
+  padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.ml li:last-child{border-bottom:none;}
+.ml li::before{content:counter(m,decimal-leading-zero);flex-shrink:0;width:28px;height:28px;
+  display:flex;align-items:center;justify-content:center;border-radius:6px;
+  font-size:11px;font-weight:700;margin-top:2px;}
+.mo li::before{background:rgba(249,115,22,.15);color:var(--orange);}
+.mab li::before{background:rgba(251,191,36,.15);color:var(--amber);}
+.mem li::before{background:rgba(16,217,135,.15);color:var(--emerald);}
+.mbl li::before{background:rgba(79,158,255,.15);color:var(--blue);}
+.mvi li::before{background:rgba(167,139,250,.15);color:var(--violet);}
+.mterm{font-weight:700;}
+.mterm.or{color:var(--orange);}.mterm.ab{color:var(--amber);}.mterm.em{color:var(--emerald);}
+.mterm.bl{color:var(--blue);}.mterm.vi{color:var(--violet);}
+
+/* EXAM SECTION */
+.es{background:linear-gradient(135deg,rgba(8,12,18,.85),rgba(17,24,39,.85));
+  border:1px solid var(--border);border-radius:var(--r4);padding:36px;margin-top:48px;}
+.eh{text-align:center;margin-bottom:36px;}
+.ebdg{display:inline-block;padding:6px 18px;border-radius:100px;font-size:11px;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;}
+.eb-or{background:rgba(249,115,22,.12);color:var(--orange);border:1px solid rgba(249,115,22,.25);}
+.eb-ab{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid rgba(251,191,36,.25);}
+.eb-em{background:rgba(16,217,135,.12);color:var(--emerald);border:1px solid rgba(16,217,135,.25);}
+.eb-bl{background:rgba(79,158,255,.12);color:var(--blue);border:1px solid rgba(79,158,255,.25);}
+.eb-vi{background:rgba(167,139,250,.12);color:var(--violet);border:1px solid rgba(167,139,250,.25);}
+.etitle{font-size:24px;font-weight:800;letter-spacing:-.02em;}
+.esub{font-size:13px;color:var(--t3);margin-top:4px;}
+.qtt{font-size:15px;font-weight:700;margin-bottom:16px;padding-bottom:10px;
+  border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.qn{display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:700;flex-shrink:0;}
+.qn-or{background:rgba(249,115,22,.2);color:var(--orange);}
+.qn-ab{background:rgba(251,191,36,.2);color:var(--amber);}
+.qn-em{background:rgba(16,217,135,.2);color:var(--emerald);}
+.qn-bl{background:rgba(79,158,255,.2);color:var(--blue);}
+.qn-vi{background:rgba(167,139,250,.2);color:var(--violet);}
+.qn-ro{background:rgba(251,113,133,.2);color:var(--rose);}
+.ql{list-style:none;}
+.qi{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:14px;}
+.qi:last-child{border-bottom:none;}
+.qin{flex-shrink:0;font-weight:700;font-size:13px;min-width:26px;}
+.qit{color:var(--t2);line-height:1.65;}
+.mco{list-style:none;margin-top:8px;}
+.mci{display:flex;gap:8px;padding:4px 0;font-size:13px;color:var(--t3);}
+.mcl{font-weight:700;color:var(--t2);min-width:18px;}
+
+/* ANSWER KEY */
+.ak{background:rgba(0,0,0,.25);border:1px dashed var(--border2);border-radius:var(--r3);
+  padding:28px;margin-top:32px;}
+.akt{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--amber);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.aks{margin-bottom:20px;}
+.akst{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:10px;
+  text-transform:uppercase;letter-spacing:.08em;}
+.akg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.aki{background:rgba(255,255,255,.04);border-radius:var(--r1);padding:8px 12px;font-size:13px;display:flex;gap:8px;}
+.akq{font-weight:700;color:var(--t3);}.aka{color:var(--t1);}
+.akm{display:flex;flex-wrap:wrap;gap:8px;}
+.akmi{background:rgba(255,255,255,.04);border-radius:var(--r1);padding:6px 12px;font-size:13px;display:flex;gap:6px;}
+
+/* FINAL REVIEW */
+.fr{background:linear-gradient(135deg,rgba(249,115,22,.07),rgba(167,139,250,.07),rgba(16,217,135,.07));
+  border:1px solid rgba(249,115,22,.2);border-radius:var(--r4);padding:44px;
+  text-align:center;margin-top:80px;position:relative;overflow:hidden;}
+.fr::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 40% 40% at 50% 50%,rgba(167,139,250,.06),transparent 70%);
+  pointer-events:none;}
+.frb{display:inline-block;padding:6px 18px;background:rgba(251,191,36,.12);
+  border:1px solid rgba(251,191,36,.25);border-radius:100px;font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.frt{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:20px;
+  background:var(--gor);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.frtx{font-size:15px;color:var(--t2);max-width:760px;margin:0 auto;line-height:1.85;}
+.fps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:32px;}
+.fp{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r2);
+  padding:20px;text-align:left;}
+.fpi{font-size:22px;margin-bottom:10px;}
+.fptitle{font-weight:700;font-size:13px;margin-bottom:8px;}
+.fptx{font-size:12.5px;color:var(--t2);line-height:1.65;}
+
+/* UTILITY */
+.divr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+p{color:var(--t2);margin-bottom:12px;font-size:14.5px;line-height:1.75;}
+ul,ol{padding-left:20px;color:var(--t2);font-size:14.5px;line-height:1.8;}
+li{margin-bottom:6px;}strong{color:var(--t1);}
+code{font-family:'JetBrains Mono',monospace;font-size:13px;
+  background:rgba(255,255,255,.07);padding:2px 6px;border-radius:4px;color:var(--emerald);}
+
+/* FRIEZE TABLE */
+.ft{width:100%;border-collapse:collapse;}
+.ft th{padding:10px 14px;background:rgba(255,255,255,.05);color:var(--t3);
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  border-bottom:1px solid var(--border);}
+.ft td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;font-size:13.5px;color:var(--t2);}
+.ft tr:last-child td{border-bottom:none;}
+.ft td:first-child{font-weight:700;color:var(--orange);}
+.ft td:nth-child(2){color:var(--amber);font-family:'JetBrains Mono',monospace;}
+
+@keyframes fadeD{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeU{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){
+  .main{padding:40px 16px;}.lh{padding:20px;flex-direction:column;}
+  .es{padding:24px 16px;}.tg{grid-template-columns:1fr;}.fps{grid-template-columns:1fr 1fr;}
+  .op-row{gap:12px;}.op-sign{font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-badge">&#128218; Finite Mathematics 1</div>
+  <h1 class="cover-title">Complete Reviewer</h1>
+  <p class="cover-sub">Lessons 3 &ndash; 7 &middot; Finite Mathematics 1 &middot; First Term<br>
+  Weeks 5 through 9 &middot; Categorized &amp; Exam-Ready</p>
+  <div class="cover-chips">
+    <span class="chip c-or">L3 W5 &middot; Tessellations &amp; Frieze</span>
+    <span class="chip c-ab">L4 W6 &middot; Golden Ratio &amp; Fibonacci</span>
+    <span class="chip c-em">L5 W7 &middot; Fractals</span>
+    <span class="chip c-bl">L6 W8 &middot; Matrix Fundamentals</span>
+    <span class="chip c-vi">L7 W9 &middot; Matrix Multiplication</span>
+  </div>
+  <div class="cvr-div"></div>
+  <p class="cvr-note">Tip: Use the sticky navigation bar above to jump between lessons instantly. Each lesson has its own color so you never lose your place.</p>
+</section>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#l3" class="nl or">L3 &middot; Tessellations</a>
+    <a href="#l3mem" class="nl">Must Memorize</a>
+    <a href="#l3exam" class="nl">Exam Q</a>
+    <a href="#l4" class="nl ab">L4 &middot; Golden Ratio</a>
+    <a href="#l4mem" class="nl">Must Memorize</a>
+    <a href="#l4exam" class="nl">Exam Q</a>
+    <a href="#l5" class="nl em">L5 &middot; Fractals</a>
+    <a href="#l5mem" class="nl">Must Memorize</a>
+    <a href="#l5exam" class="nl">Exam Q</a>
+    <a href="#l6" class="nl bl">L6 &middot; Matrix Basics</a>
+    <a href="#l6mem" class="nl">Must Memorize</a>
+    <a href="#l6exam" class="nl">Exam Q</a>
+    <a href="#l7" class="nl vi">L7 &middot; Matrix Operations</a>
+    <a href="#l7mem" class="nl">Must Memorize</a>
+    <a href="#l7exam" class="nl">Exam Q</a>
+    <a href="#final" class="nl">&#9889; Final Review</a>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ============ LESSON 3: TESSELLATIONS & FRIEZE ============ -->
+<section class="ls" id="l3">
+  <div class="lh or">
+    <div class="lnum or">L3<br>W5</div>
+    <div class="lht">
+      <div class="llbl or">Lesson 3 &middot; Week 5 &middot; Finite Mathematics 1</div>
+      <h2 class="ltitle">Escher-Type Tessellations &amp; Frieze Patterns</h2>
+      <p class="ldesc">M.C. Escher &middot; Geometric Transformations &middot; The 7 Frieze Groups &middot; Isometries</p>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-or">Learning Outcomes</div><div class="shl"></div></div>
+  <div class="card"><ul>
+    <li>Construct an <strong>Escher-type tessellation</strong> by modifying a basic geometric shape and repeating it to create an interlocking pattern with no gaps.</li>
+    <li>Identify and distinguish the <strong>geometric transformations</strong> used to generate a given frieze pattern.</li>
+    <li>Analyze and explain the relationship between geometric transformation and repeating pattern.</li>
+  </ul></div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-or">M.C. Escher &amp; Tessellations</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-or"></span>Who is M.C. Escher?</div>
+    <p><strong>Maurits Cornelis Escher (1898&ndash;1972)</strong> was a Dutch artist famous for his print works and graphic art that feature tessellation patterns and optical illusion designs. He utilized shapes and forms as an integral part of his designs, combining and translating geometric shapes into organic elements to create complex visual illusions.</p>
+    <p>His most famous tessellation artwork is the <strong>"Regular Division of the Plane"</strong> series.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn or">Tiling</div><div class="td">Covering a surface without gaps or overlaps.</div></div>
+      <div class="ti"><div class="tn or">Tessellation</div><div class="td">A type of tiling with a specific, repeating geometric pattern.</div></div>
+      <div class="ti"><div class="tn or">Escher-Type Tessellation</div><div class="td">Uses recognizable, interlocking shapes (animals, people) instead of simple polygons. No gaps or overlaps.</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-or"></span>Characteristics of Escher-Type Tessellations</div>
+    <div class="tg">
+      <div class="ti"><div class="tn or">1. No Gaps or Overlaps</div><div class="td">Shapes fit together like puzzle pieces, covering the plane completely.</div></div>
+      <div class="ti"><div class="tn or">2. Recognizable Forms</div><div class="td">Birds, fish, lizards, or humans replace plain geometric polygons.</div></div>
+      <div class="ti"><div class="tn or">3. Symmetry &amp; Transformation</div><div class="td">Shapes flip, slide, or rotate to blend into the repeating pattern.</div></div>
+    </div>
+    <div class="ex or" style="margin-top:14px"><div class="exl or">&#128204; Key Distinction</div>
+      <div class="exs"><strong>Regular Tessellation</strong> uses simple geometric shapes (squares, triangles, hexagons). <strong>Escher-Type Tessellation</strong> goes beyond by using creative, morphing designs that play with symmetry and optical illusions.</div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-or">Frieze Patterns</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-or"></span>What is a Frieze Pattern?</div>
+    <p>A <strong>Frieze pattern</strong> consists of repeated copies, along a line, of a single figure or block. They are formed by <strong>isometries</strong>&mdash;actions on the plane that preserve distances. The essential elements are <strong>symmetry and repetition</strong>.</p>
+    <p>The term "frieze" comes from architecture, where it refers to a decorative carving or pattern that runs horizontally just below a roofline or ceiling. Found in wallpaper borders, pottery designs, buildings, needlepoint stitches, and ironwork railings.</p>
+    <div class="ex or"><div class="exl or">&#128204; Key Concept</div>
+      <div class="exs"><strong>Isometries</strong> that generate frieze patterns have the additional property that they map a fixed line back onto itself. Since these are the only isometries that map a line onto itself, frieze patterns must be generated by repeating combinations of these four basic actions: <strong>Translation (T), Glide Reflection (G), Vertical Reflection (V), Horizontal Reflection (H), and Rotation (R).</strong></div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-or">The 7 Frieze Patterns (Groups)</div><div class="shl"></div></div>
+  <div class="card">
+    <table class="ft">
+      <thead><tr><th>Name</th><th>Code</th><th>Transformations Used</th><th>How to Identify</th></tr></thead>
+      <tbody>
+        <tr><td>1. The Hop</td><td>T</td><td>Translation only</td><td>Pattern slides in one direction only. No flips or rotations.</td></tr>
+        <tr><td>2. The Step</td><td>TG</td><td>Glide reflection + Translation</td><td>Pattern looks like alternating footprints/steps. Half-turn asymmetry.</td></tr>
+        <tr><td>3. The Sidle</td><td>TV</td><td>Vertical reflection + Translation</td><td>Has vertical lines of symmetry. Pattern mirrors left-right.</td></tr>
+        <tr><td>4. The Spinning Hop</td><td>TR</td><td>180&deg; Rotation + Translation</td><td>Half-turn centers visible. No reflections.</td></tr>
+        <tr><td>5. The Spinning Sidle</td><td>TRVG</td><td>Rotation + Vertical reflection + Glide reflection</td><td>Most complex without horizontal symmetry. Has both rotations and vertical mirrors.</td></tr>
+        <tr><td>6. The Jump</td><td>THG</td><td>Horizontal reflection + Glide translation</td><td>Has a horizontal axis of symmetry. Top and bottom are mirror images.</td></tr>
+        <tr><td>7. The Spinning Jump</td><td>TRHVG</td><td>ALL symmetries: T, H, V, R, G</td><td>Contains all symmetries. Most complete frieze group.</td></tr>
+      </tbody>
+    </table>
+    <div class="ex or" style="margin-top:14px"><div class="exl or">&#128204; Memory Aid for Codes</div>
+      <div class="exs"><strong>T</strong> = Translation &nbsp;|&nbsp; <strong>G</strong> = Glide reflection &nbsp;|&nbsp; <strong>V</strong> = Vertical reflection &nbsp;|&nbsp; <strong>H</strong> = Horizontal reflection &nbsp;|&nbsp; <strong>R</strong> = 180&deg; Rotation<br>Every frieze pattern ALWAYS has Translation (T). The other letters added tell you what extra symmetries it has.</div>
+    </div>
+  </div>
+
+  <!-- MUST MEMORIZE L3 -->
+  <div class="sh" id="l3mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Lesson 3</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mo">
+    <li><div><span class="mterm or">Tessellation</span> &ndash; tiling a plane with a pattern that has no gaps or overlaps; a specific type of tiling.</div></li>
+    <li><div><span class="mterm or">Escher-Type Tessellation</span> &ndash; tessellations using recognizable interlocking shapes (not just polygons); go beyond simple geometric shapes.</div></li>
+    <li><div><span class="mterm or">M.C. Escher</span> &ndash; Dutch artist, famous for "Regular Division of the Plane"; combined geometric shapes into organic elements.</div></li>
+    <li><div><span class="mterm or">Frieze Pattern</span> &ndash; repeated copies of a figure along a line; formed by isometries; found in wallpaper borders, pottery, buildings.</div></li>
+    <li><div><span class="mterm or">Isometry</span> &ndash; transformation that preserves distances (congruence). The four basic isometries: Translation, Reflection, Rotation, Glide Reflection.</div></li>
+    <li><div><span class="mterm or">Translation (T)</span> &ndash; sliding a figure in one direction. Every frieze pattern has this.</div></li>
+    <li><div><span class="mterm or">Glide Reflection (G)</span> &ndash; a translation followed by a reflection across a horizontal axis.</div></li>
+    <li><div><span class="mterm or">Vertical Reflection (V)</span> &ndash; flip across a vertical line; left-right mirror.</div></li>
+    <li><div><span class="mterm or">Horizontal Reflection (H)</span> &ndash; flip across a horizontal line; top-bottom mirror.</div></li>
+    <li><div><span class="mterm or">Rotation (R)</span> &ndash; turning a figure by 180&deg; about a center point.</div></li>
+    <li><div><span class="mterm or">The Hop (T)</span> &ndash; translation only; simplest frieze.</div></li>
+    <li><div><span class="mterm or">The Step (TG)</span> &ndash; glide reflection + translation; looks like footsteps.</div></li>
+    <li><div><span class="mterm or">The Sidle (TV)</span> &ndash; vertical reflection + translation; left-right mirrors.</div></li>
+    <li><div><span class="mterm or">The Spinning Hop (TR)</span> &ndash; 180&deg; rotation + translation; no reflections.</div></li>
+    <li><div><span class="mterm or">The Spinning Sidle (TRVG)</span> &ndash; rotation + vertical reflection + glide reflection.</div></li>
+    <li><div><span class="mterm or">The Jump (THG)</span> &ndash; horizontal reflection; top and bottom are mirror images.</div></li>
+    <li><div><span class="mterm or">The Spinning Jump (TRHVG)</span> &ndash; ALL symmetries; the most complete frieze group.</div></li>
+  </ul></div>
+
+  <!-- EXAM L3 -->
+  <div class="es" id="l3exam">
+    <div class="eh"><div class="ebdg eb-or">&#128221; Lesson 3 &middot; Week 5</div>
+      <div class="etitle">Possible Exam Questions</div>
+      <div class="esub">Escher-Type Tessellations &amp; Frieze Patterns</div>
+    </div>
+    <div class="qtt"><span class="qn qn-or">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">The Dutch artist known for interlocking tessellation designs and "Regular Division of the Plane."</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The frieze group that uses translation only (simplest frieze pattern).</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">The frieze group that contains ALL symmetries (translation, horizontal &amp; vertical reflection, rotation, glide reflection).</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A transformation that preserves distance; actions used to generate frieze patterns.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">The frieze pattern generated by a glide reflection followed by a translation; looks like footsteps.</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">The letter code for a Vertical Reflection in the frieze mnemonic system.</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">Type of tessellation that uses recognizable interlocking shapes such as birds, fish, or lizards.</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">The frieze group that uses 180&deg; rotation + translation with no reflections.</span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">The frieze group characterized by a horizontal reflection followed by translation; top and bottom are mirror images.</span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">The type of transformation that slides a figure in one direction (always present in all frieze patterns).</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-or">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">How many frieze pattern groups exist?<ul class="mco"><li class="mci"><span class="mcl">A.</span>5</li><li class="mci"><span class="mcl">B.</span>6</li><li class="mci"><span class="mcl">C.</span>7</li><li class="mci"><span class="mcl">D.</span>8</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Which transformation is present in EVERY frieze pattern?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Rotation</li><li class="mci"><span class="mcl">B.</span>Translation</li><li class="mci"><span class="mcl">C.</span>Reflection</li><li class="mci"><span class="mcl">D.</span>Glide reflection</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">What does the "V" in the frieze mnemonic represent?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Void</li><li class="mci"><span class="mcl">B.</span>Vector</li><li class="mci"><span class="mcl">C.</span>Vertical reflection</li><li class="mci"><span class="mcl">D.</span>Variable</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A Frieze pattern that uses only a glide reflection + translation is called:<ul class="mco"><li class="mci"><span class="mcl">A.</span>The Hop</li><li class="mci"><span class="mcl">B.</span>The Step</li><li class="mci"><span class="mcl">C.</span>The Sidle</li><li class="mci"><span class="mcl">D.</span>The Jump</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">An Escher-type tessellation differs from a regular tessellation because it:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Has gaps between shapes</li><li class="mci"><span class="mcl">B.</span>Uses only triangles and squares</li><li class="mci"><span class="mcl">C.</span>Uses recognizable, interlocking organic shapes</li><li class="mci"><span class="mcl">D.</span>Has overlapping tiles</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">In the Spinning Jump (TRHVG), which symmetries are included?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Only translation and rotation</li><li class="mci"><span class="mcl">B.</span>All symmetries</li><li class="mci"><span class="mcl">C.</span>Only reflections</li><li class="mci"><span class="mcl">D.</span>Translation and glide reflection only</li></ul></span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">The Sidle (TV) uses which transformations?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Translation + Horizontal reflection</li><li class="mci"><span class="mcl">B.</span>Translation + Rotation</li><li class="mci"><span class="mcl">C.</span>Translation + Vertical reflection</li><li class="mci"><span class="mcl">D.</span>Glide reflection + Rotation</li></ul></span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">The "frieze" term originally comes from:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Mathematics</li><li class="mci"><span class="mcl">B.</span>Architecture (horizontal decorative carving below a roofline)</li><li class="mci"><span class="mcl">C.</span>Music</li><li class="mci"><span class="mcl">D.</span>Textile patterns</li></ul></span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">In Escher-type tessellations, shapes fit together like:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Scattered pebbles</li><li class="mci"><span class="mcl">B.</span>Random shapes</li><li class="mci"><span class="mcl">C.</span>Puzzle pieces with no gaps or overlaps</li><li class="mci"><span class="mcl">D.</span>Overlapping tiles</li></ul></span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">The Spinning Hop (TR) uses:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Horizontal reflection + Glide</li><li class="mci"><span class="mcl">B.</span>Translation only</li><li class="mci"><span class="mcl">C.</span>180&deg; Rotation + Translation, no reflections</li><li class="mci"><span class="mcl">D.</span>Vertical reflection + Rotation</li></ul></span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ab">C</span> True or False <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">All seven frieze patterns include translation as a symmetry.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The Spinning Jump (TRHVG) uses only rotation and translation.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Escher-type tessellations can use recognizable shapes like animals or people.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">The term "isometry" means a transformation that changes the size of a figure.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">The Jump (THG) is characterized by horizontal reflection and glide translation.</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ro">D</span> Short Answer <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">Name and describe all 7 frieze patterns, including their mnemonic codes.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">What is the difference between tiling and tessellation?</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">What are the 3 main characteristics of Escher-type tessellations?</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Explain what an isometry is and give two examples of isometries used in frieze patterns.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Why is The Spinning Jump (TRHVG) considered the most complete frieze group?</span></li>
+    </ul>
+    <div class="ak">
+      <div class="akt">&#128273; Answer Key &ndash; Lesson 3</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">M.C. Escher</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">The Hop (T)</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">The Spinning Jump (TRHVG)</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Isometry</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">The Step (TG)</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">V</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">Escher-type Tessellation</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">The Spinning Hop (TR)</span></div>
+        <div class="aki"><span class="akq">9.</span><span class="aka">The Jump (THG)</span></div>
+        <div class="aki"><span class="akq">10.</span><span class="aka">Translation</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">C (7)</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">7.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">9.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">C</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">C. True or False</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">False (all symmetries)</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">False (preserves size)</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">True</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LESSON 4: GOLDEN RATIO & FIBONACCI ============ -->
+<section class="ls" id="l4">
+  <div class="lh ab">
+    <div class="lnum ab">L4<br>W6</div>
+    <div class="lht">
+      <div class="llbl ab">Lesson 4 &middot; Week 6 &middot; Finite Mathematics 1</div>
+      <h2 class="ltitle">Golden Ratio &amp; Fibonacci Sequence</h2>
+      <p class="ldesc">Spirals &middot; &phi; &asymp; 1.618 &middot; Golden Rectangle &middot; Nature &amp; Art &middot; Fibonacci Formula</p>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-ab">Learning Outcomes</div><div class="shl"></div></div>
+  <div class="card"><ul>
+    <li>Explain the meaning and characteristics of the <strong>golden ratio</strong>, golden rectangle, and golden spiral.</li>
+    <li>Recognize and identify manifestations of the golden ratio in nature, art, and architecture.</li>
+    <li>Generate terms of a <strong>Fibonacci sequence</strong> and relate the sequence to the golden ratio through numerical patterns and problem-solving.</li>
+  </ul></div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-ab">Spirals in Nature</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-ab"></span>Logarithmic Spirals</div>
+    <p>A <strong>logarithmic (growth) spiral</strong> is a self-similar spiral curve that appears in nature. First described by <strong>René Descartes</strong>, later investigated by <strong>Jacob Bernoulli</strong>. It focuses on a center point with a series of circular shapes revolving around it.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn ab">Pinecones</div><div class="td">Seeds arranged in spiral patterns following Fibonacci numbers.</div></div>
+      <div class="ti"><div class="tn ab">Pineapple</div><div class="td">Scales form two intersecting sets of spirals (8 and 13 — Fibonacci!).</div></div>
+      <div class="ti"><div class="tn ab">Hurricane / Galaxy</div><div class="td">Arms form logarithmic spirals from the center outward.</div></div>
+      <div class="ti"><div class="tn ab">Snail / Nautilus Shell</div><div class="td">Chamber growth follows the golden spiral proportions.</div></div>
+      <div class="ti"><div class="tn ab">Romanesco Broccoli</div><div class="td">Every floret is a miniature spiral — Fibonacci and fractal combined.</div></div>
+      <div class="ti"><div class="tn ab">Artichoke</div><div class="td">Leaves arranged in golden angle spirals to maximize sunlight.</div></div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-ab">The Golden Ratio (&phi;)</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-ab"></span>Definition &amp; History</div>
+    <p>The <strong>Golden Ratio</strong> was first called the <em>Divine Proportion</em> in the early 1500s by <strong>Luca Pacioli</strong> ("De Divina Proportione," 1509), explored with <strong>Leonardo da Vinci</strong>. <strong>Euclid</strong> was the first to define it as "a dividing line in the extreme and mean ratio" in his book <em>The Elements</em>.</p>
+    <div class="fb">
+      <div class="fl">Golden Ratio Value</div>
+      <div class="fm">&phi; (phi) &asymp; 1.618033988&hellip;</div>
+    </div>
+    <p>The Golden Ratio is the ratio of the <strong>longer side to the shorter side</strong> of a special <strong>Golden Rectangle</strong>. If you cut off a square from a Golden Rectangle, the remaining rectangle has the same proportions as the original.</p>
+    <div class="ex ab"><div class="exl ab">&#128204; Pentagon &amp; Pentagram</div>
+      <div class="exs">If the side length of a regular pentagon is 1, the length of a diagonal equals the Golden Ratio (&phi;). In the pentagram inscribed in a pentagon, if the shortest segment = 1, the other lengths are powers of &phi;.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-ab"></span>Golden Ratio in Nature, Art &amp; Architecture</div>
+    <div class="tg">
+      <div class="ti"><div class="tn ab">Flower Petals</div><div class="td">Petal counts follow Fibonacci numbers: 3, 5, 8, 13, 21, 34, 55 (lily=3, buttercup=5, daisy=34/55).</div></div>
+      <div class="ti"><div class="tn ab">Human Face</div><div class="td">Mouth and nose positioned at golden sections of the distance between eyes and chin.</div></div>
+      <div class="ti"><div class="tn ab">Human Body</div><div class="td">Based on &phi; and the number 5: 5 appendages, 5 fingers/toes, 5 openings on the face.</div></div>
+      <div class="ti"><div class="tn ab">Sunflower Seeds</div><div class="td">Seeds produced at center, migrate outward in Fibonacci spiral patterns.</div></div>
+      <div class="ti"><div class="tn ab">Parthenon (Athens)</div><div class="td">Exterior dimensions embody the Golden Ratio.</div></div>
+      <div class="ti"><div class="tn ab">Great Pyramid of Giza</div><div class="td">Base=756 ft, Height=481 ft. Ratio &asymp; 1.5717 (close to &phi;).</div></div>
+      <div class="ti"><div class="tn ab">Notre Dame Cathedral</div><div class="td">Built 1163&ndash;1250; golden ratio in several key proportions.</div></div>
+      <div class="ti"><div class="tn ab">Eiffel Tower</div><div class="td">Base broader, narrows to top, following the golden ratio.</div></div>
+      <div class="ti"><div class="tn ab">Leonardo da Vinci</div><div class="td">Used golden ratio in Vitruvian Man, The Last Supper, Mona Lisa, St. Jerome in the Wilderness.</div></div>
+      <div class="ti"><div class="tn ab">Michelangelo</div><div class="td">"The Creation of Adam" &mdash; God's and Adam's fingers meet at the golden ratio point.</div></div>
+      <div class="ti"><div class="tn ab">Raphael</div><div class="td">"The School of Athens" uses golden ratio for proportions; "Crucifixion" has golden triangle and pentagram.</div></div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-ab">Fibonacci Sequence</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-ab"></span>Origin &amp; Definition</div>
+    <p>In <strong>1202</strong>, Italian mathematician <strong>Leonardo of Pisa (Fibonacci)</strong> posed a rabbit population question in his book <em>Liber Abaci</em>: <em>"If you start with a pair of baby rabbits, how many pairs after one year if each pair produces a new pair every month starting from their second month, assuming no rabbits die?"</em></p>
+    <p>The answer forms the <strong>Fibonacci sequence</strong>&mdash;a series where each number is the sum of the two before it.</p>
+    <div class="fb">
+      <div class="fl">Recursive Formula</div>
+      <div class="fm">F&#8320; = 0, F&#8321; = 1, F&#8345; = F&#8345;&#8331;&#178; + F&#8345;&#8331;&#185; &nbsp;(where n &ge; 2)</div>
+    </div>
+    <div class="ex ab"><div class="exl ab">&#128204; The Sequence</div>
+      <div class="exs" style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--amber);">0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, &hellip;</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-ab"></span>Golden Ratio Connection</div>
+    <p>As the Fibonacci sequence progresses and terms get larger, the ratio of consecutive terms approaches the Golden Ratio: <strong>F&#8345;&#8331;&#185; / F&#8345; &rarr; &phi; &asymp; 1.618</strong></p>
+    <table class="ct"><thead><tr><th>Fibonacci Terms</th><th>Ratio (F&#8345;&#8331;&#185; &divide; F&#8345;)</th></tr></thead>
+    <tbody>
+      <tr><td>1, 2</td><td>2 &divide; 1 = 2.000</td></tr>
+      <tr><td>2, 3</td><td>3 &divide; 2 = 1.500</td></tr>
+      <tr><td>5, 8</td><td>8 &divide; 5 = 1.600</td></tr>
+      <tr><td>13, 21</td><td>21 &divide; 13 = 1.615&hellip;</td></tr>
+      <tr><td>34, 55</td><td>55 &divide; 34 = 1.617&hellip;</td></tr>
+      <tr><td>89, 144</td><td>144 &divide; 89 = 1.6179&hellip;</td></tr>
+      <tr><td>Large terms</td><td>&rarr; 1.6180339&hellip; = &phi;</td></tr>
+    </tbody></table>
+  </div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-ab"></span>Direct Formula (Binet's Formula)</div>
+    <div class="fb">
+      <div class="fl">Finding the nth Fibonacci Term Directly</div>
+      <div class="fm">F&#8345; = [(1 + &radic;5)&#8319; &minus; (1 &minus; &radic;5)&#8319;] &divide; (2&#8319; &times; &radic;5)</div>
+    </div>
+    <div class="ex ab"><div class="exl ab">&#128204; Sample Problem 1 &ndash; Find the 11th term</div>
+      <div class="exs">Using the sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, <span class="hl ha">55</span><br>F&#8321;&#8321; = <span class="hl ha">55</span></div></div>
+    <div class="ex ab"><div class="exl ab">&#128204; Sample Problem 2 &ndash; Find the 15th term</div>
+      <div class="exs">Continuing: 89, 144, 233, 377, <span class="hl ha">610</span><br>F&#8321;&#8325; = <span class="hl ha">610</span></div></div>
+    <div class="ex ab"><div class="exl ab">&#128204; Sample Problem 3 &ndash; Find the 20th term</div>
+      <div class="exs">F&#8321;&#8320; = <span class="hl ha">6,765</span></div></div>
+    <div class="ex ab"><div class="exl ab">&#128204; Sample Problem 4 &ndash; Find the 25th term</div>
+      <div class="exs">F&#8322;&#8325; = <span class="hl ha">75,025</span></div></div>
+  </div>
+
+  <!-- MUST MEMORIZE L4 -->
+  <div class="sh" id="l4mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Lesson 4</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mab">
+    <li><div><span class="mterm ab">Golden Ratio (&phi;)</span> &ndash; &phi; &asymp; 1.618. Ratio of longer to shorter side of a golden rectangle. Represented by Greek letter phi.</div></li>
+    <li><div><span class="mterm ab">Divine Proportion</span> &ndash; original name for the Golden Ratio; coined by Luca Pacioli in 1509.</div></li>
+    <li><div><span class="mterm ab">Golden Rectangle</span> &ndash; special rectangle where ratio of sides = &phi;. Cutting off a square leaves another golden rectangle.</div></li>
+    <li><div><span class="mterm ab">Golden Spiral</span> &ndash; spiral drawn through corners of successive golden rectangles; seen in nautilus shells, hurricanes.</div></li>
+    <li><div><span class="mterm ab">Euclid</span> &ndash; first to define golden ratio as "dividing a line in the extreme and mean ratio" in <em>The Elements</em>.</div></li>
+    <li><div><span class="mterm ab">Fibonacci</span> &ndash; Leonardo of Pisa; posed the rabbit problem in <em>Liber Abaci</em> (1202).</div></li>
+    <li><div><span class="mterm ab">Fibonacci Sequence</span> &ndash; 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144&hellip; F&#8345; = F&#8345;&#8331;&#178; + F&#8345;&#8331;&#185;</div></li>
+    <li><div><span class="mterm ab">Fibonacci in Nature</span> &ndash; petal counts (3, 5, 8, 13, 21, 34, 55); spiral counts in pinecones, sunflowers, pineapples.</div></li>
+    <li><div><span class="mterm ab">Golden Ratio &amp; Fibonacci</span> &ndash; as Fibonacci numbers grow, ratio of consecutive terms &rarr; &phi; &asymp; 1.618.</div></li>
+    <li><div><span class="mterm ab">Logarithmic Spiral</span> &ndash; self-similar spiral; first described by Descartes, investigated by Bernoulli.</div></li>
+    <li><div><span class="mterm ab">Pentagram &amp; Pentagon</span> &ndash; diagonal of a regular pentagon with side=1 equals &phi;; pentagram lengths are powers of &phi;.</div></li>
+    <li><div><span class="mterm ab">Great Pyramid of Giza</span> &ndash; base 756 ft, height 481 ft; ratio &asymp; 1.5717 (close to &phi;).</div></li>
+  </ul></div>
+
+  <!-- EXAM L4 -->
+  <div class="es" id="l4exam">
+    <div class="eh"><div class="ebdg eb-ab">&#128221; Lesson 4 &middot; Week 6</div>
+      <div class="etitle">Possible Exam Questions</div>
+      <div class="esub">Golden Ratio &amp; Fibonacci Sequence</div>
+    </div>
+    <div class="qtt"><span class="qn qn-ab">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">The approximate value of the Golden Ratio &phi;.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The Italian mathematician who introduced the Fibonacci sequence in his book <em>Liber Abaci</em> in 1202.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">The Greek letter used to represent the Golden Ratio.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">The original name of the Golden Ratio used by Luca Pacioli in 1509.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">The recursive formula for the Fibonacci sequence.</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">The mathematician who first defined the Golden Ratio in his book <em>The Elements</em>.</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">The number that Fibonacci petal counts converge to as consecutive terms are divided.</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">The artist who used the Golden Ratio in the Vitruvian Man and the Mona Lisa.</span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">The 11th term of the Fibonacci sequence.</span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">The self-similar spiral curve that often appears in nature, first described by René Descartes.</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ab">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">What is the Golden Ratio?<ul class="mco"><li class="mci"><span class="mcl">A.</span>&pi; &asymp; 3.14</li><li class="mci"><span class="mcl">B.</span>&phi; &asymp; 1.618</li><li class="mci"><span class="mcl">C.</span>&radic;2 &asymp; 1.41</li><li class="mci"><span class="mcl">D.</span>e &asymp; 2.71</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">In the Fibonacci sequence 0, 1, 1, 2, 3, 5, 8, &hellip; what is the next term?<ul class="mco"><li class="mci"><span class="mcl">A.</span>11</li><li class="mci"><span class="mcl">B.</span>12</li><li class="mci"><span class="mcl">C.</span>13</li><li class="mci"><span class="mcl">D.</span>14</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">As Fibonacci numbers get larger, the ratio of consecutive terms approaches:<ul class="mco"><li class="mci"><span class="mcl">A.</span>2.0</li><li class="mci"><span class="mcl">B.</span>1.5</li><li class="mci"><span class="mcl">C.</span>1.618</li><li class="mci"><span class="mcl">D.</span>3.14</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qin">4.</span><span class="qit">A Golden Rectangle has what property when a square is cut from it?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Becomes a triangle</li><li class="mci"><span class="mcl">B.</span>The remaining rectangle has the same proportions</li><li class="mci"><span class="mcl">C.</span>The area doubles</li><li class="mci"><span class="mcl">D.</span>The shape collapses</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Which lily petal count is a Fibonacci number?<ul class="mco"><li class="mci"><span class="mcl">A.</span>4</li><li class="mci"><span class="mcl">B.</span>3</li><li class="mci"><span class="mcl">C.</span>6</li><li class="mci"><span class="mcl">D.</span>7</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">The Great Pyramid of Giza has a base of 756 ft and height of 481 ft. The ratio is approximately:<ul class="mco"><li class="mci"><span class="mcl">A.</span>1.0</li><li class="mci"><span class="mcl">B.</span>2.0</li><li class="mci"><span class="mcl">C.</span>1.5717 (close to &phi;)</li><li class="mci"><span class="mcl">D.</span>3.14</li></ul></span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">Which artist used the Golden Ratio in "The Creation of Adam"?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Leonardo da Vinci</li><li class="mci"><span class="mcl">B.</span>Raphael</li><li class="mci"><span class="mcl">C.</span>Michelangelo</li><li class="mci"><span class="mcl">D.</span>Escher</li></ul></span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">What is the 8th term of the Fibonacci sequence (starting 0, 1, 1, &hellip;)?<ul class="mco"><li class="mci"><span class="mcl">A.</span>13</li><li class="mci"><span class="mcl">B.</span>21</li><li class="mci"><span class="mcl">C.</span>8</li><li class="mci"><span class="mcl">D.</span>34</li></ul></span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">The spiral observed in a nautilus shell is best described as:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Arithmetic spiral</li><li class="mci"><span class="mcl">B.</span>Logarithmic (golden) spiral</li><li class="mci"><span class="mcl">C.</span>Linear pattern</li><li class="mci"><span class="mcl">D.</span>Fractal tessellation</li></ul></span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">The Fibonacci sequence rule is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Each term = previous term + 2</li><li class="mci"><span class="mcl">B.</span>Each term = previous term &times; 2</li><li class="mci"><span class="mcl">C.</span>Each term = sum of the two preceding terms</li><li class="mci"><span class="mcl">D.</span>Each term = previous term &minus; 1</li></ul></span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-em">C</span> True or False <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">The Golden Ratio is approximately 1.618.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The Fibonacci sequence starts with 2 and 3.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">As Fibonacci numbers get larger, the ratio of consecutive terms approaches the Golden Ratio.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A daisy flower typically has 4 or 6 petals, which are Fibonacci numbers.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Euclid defined the Golden Ratio in his work <em>The Elements</em> as "a dividing line in the extreme and mean ratio."</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ro">D</span> Problem Solving <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">List the first 15 terms of the Fibonacci sequence.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Compute the ratio of consecutive Fibonacci terms (F&#8325;/F&#8324;, F&#8326;/F&#8325;, F&#8327;/F&#8326;) and describe what you notice.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">A sunflower has 34 spirals going clockwise and 55 going counterclockwise. Are these Fibonacci numbers? What is their ratio?</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Identify the 20th term of the Fibonacci sequence.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Give three examples of the Golden Ratio found in architecture and briefly explain each.</span></li>
+    </ul>
+    <div class="ak">
+      <div class="akt">&#128273; Answer Key &ndash; Lesson 4</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">&asymp; 1.618</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">Fibonacci (Leonardo of Pisa)</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">&phi; (phi)</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Divine Proportion</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">F&#8345; = F&#8345;&#8331;&#178; + F&#8345;&#8331;&#185;</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">Euclid</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">1.618 (&phi;)</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">Leonardo da Vinci</span></div>
+        <div class="aki"><span class="akq">9.</span><span class="aka">55</span></div>
+        <div class="aki"><span class="akq">10.</span><span class="aka">Logarithmic Spiral</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">C (13)</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">B (3)</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">7.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">A (13; 8th=21)</span></div>
+        <div class="akmi"><span class="akq">9.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">C</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">C. True or False</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">False (0 and 1)</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">False (34 or 55)</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">True</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">D. Problem Solving</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">0,1,1,2,3,5,8,13,21,34,55,89,144,233,377</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">Ratios approach &phi; &asymp; 1.618</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">Yes (34,55); ratio=55/34&asymp;1.617</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">F&#8322;&#8320; = 6,765</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">Parthenon, Great Pyramid, Eiffel Tower</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LESSON 5: FRACTALS ============ -->
+<section class="ls" id="l5">
+  <div class="lh em">
+    <div class="lnum em">L5<br>W7</div>
+    <div class="lht">
+      <div class="llbl em">Lesson 5 &middot; Week 7 &middot; Finite Mathematics 1</div>
+      <h2 class="ltitle">Fractals</h2>
+      <p class="ldesc">Self-Similarity &middot; Recursion &middot; Infinite Complexity &middot; Mandelbrot Set &middot; Fractals in Nature</p>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-em">Learning Outcomes</div><div class="shl"></div></div>
+  <div class="card"><ul>
+    <li>Define <strong>fractals</strong> and explain their characteristics, including self-similarity, recursion, and infinite complexity.</li>
+    <li>Identify examples of fractals found in nature, mathematics, and art by analyzing their repeating patterns.</li>
+    <li>Generate simple fractals manually.</li>
+  </ul></div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-em">What Are Fractals?</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-em"></span>Definition</div>
+    <p>A <strong>fractal</strong> is a geometric figure or natural pattern that exhibits <strong>self-similarity</strong>&mdash;smaller portions resemble the entire object. Fractals are often produced through <strong>recursion</strong>, where the same rule is repeatedly applied. The word "fractal" comes from the Latin <em>fractus</em>, meaning <strong>broken, fragmented, or irregular</strong>.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn em">Self-Similarity</div><div class="td">A small portion of the fractal resembles the entire figure. The pattern repeats at every scale.</div></div>
+      <div class="ti"><div class="tn em">Infinite Complexity</div><div class="td">No matter how much you zoom in, new details continue to appear. There is always more detail to be seen.</div></div>
+      <div class="ti"><div class="tn em">Recursion / Iteration</div><div class="td">A simple rule is applied repeatedly over and over to create increasingly complex patterns.</div></div>
+      <div class="ti"><div class="tn em">Irregular Shapes</div><div class="td">Unlike smooth Euclidean geometry, fractals are rough and fragmented but still follow repeating patterns.</div></div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-em">Benoit Mandelbrot &amp; History</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-em"></span>The Father of Fractal Geometry</div>
+    <p><strong>Benoit Mandelbrot (1924&ndash;2010)</strong> was a French-American mathematician who transformed the study of unusual geometric figures into a new branch of mathematics. In <strong>1975</strong>, he introduced the term <strong>"fractal"</strong> in his book <em>The Fractal Geometry of Nature</em>. He chose the name because many natural objects appear rough and fragmented rather than smooth.</p>
+    <p>Mandelbrot showed that complex shapes could be generated using <strong>simple mathematical rules repeated many times</strong>&mdash;a process known as <strong>recursion or iteration</strong>.</p>
+    <div class="ex em"><div class="exl em">&#128204; The Mandelbrot Set</div>
+      <div class="exs">One of Mandelbrot's greatest contributions: a mathematical fractal generated using complex numbers. It became popular because it contains <strong>infinite detail</strong>&mdash;no matter how much you zoom in, new patterns appear. Many smaller patterns resemble the larger figure (self-similarity). It can only be fully explored using computers.</div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-em">Fractals in Nature</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-em"></span>Natural Fractal Examples</div>
+    <p>Natural fractals are not always perfectly identical at every scale, but display repeating patterns. Scientists study them because fractals often represent the most <strong>efficient way for nature to grow, transport materials, or occupy space</strong>.</p>
+    <div class="tg">
+      <div class="ti"><div class="tn em">Fern Leaf</div><div class="td">One of the most recognizable natural fractals. Each leaflet is a miniature of the whole fern.</div></div>
+      <div class="ti"><div class="tn em">Romanesco Broccoli</div><div class="td">Each floret is a miniature Romanesco. Both fractal AND Fibonacci spiral.</div></div>
+      <div class="ti"><div class="tn em">Trees</div><div class="td">Branches split into smaller branches that resemble the whole tree structure.</div></div>
+      <div class="ti"><div class="tn em">River Networks</div><div class="td">Main river splits into tributaries that split again, forming branching fractal patterns.</div></div>
+      <div class="ti"><div class="tn em">Lightning</div><span class="td">Follows fractal branching; each branch looks like a miniature of the whole bolt.</span></div>
+      <div class="ti"><div class="tn em">Blood Vessels</div><div class="td">The human circulatory system has a fractal structure, maximizing surface area for oxygen exchange.</div></div>
+      <div class="ti"><div class="tn em">Snowflakes</div><div class="td">Each snowflake develops intricate branching crystals with six-fold symmetry.</div></div>
+      <div class="ti"><div class="tn em">Clouds &amp; Coastlines</div><div class="td">Exhibit irregular fractal patterns; coastlines appear similarly jagged at any scale.</div></div>
+    </div>
+    <div class="ex em" style="margin-top:14px"><div class="exl em">&#128204; Characteristics of Natural Fractals</div>
+      <div class="exs">
+        <strong>1. Self-similarity</strong> &ndash; smaller parts resemble the larger structure.<br>
+        <strong>2. Branching patterns</strong> &ndash; many natural fractals grow through repeated branching.<br>
+        <strong>3. Irregular shapes</strong> &ndash; not perfectly identical but still follow repeating patterns.<br>
+        <strong>4. Efficient growth</strong> &ndash; fractal patterns allow organisms to maximize space, strength, or resource distribution.
+      </div>
+    </div>
+  </div>
+
+  <!-- MUST MEMORIZE L5 -->
+  <div class="sh" id="l5mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Lesson 5</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mem">
+    <li><div><span class="mterm em">Fractal</span> &ndash; geometric figure or pattern where smaller portions resemble the entire object (self-similarity). From Latin <em>fractus</em> = broken.</div></li>
+    <li><div><span class="mterm em">Self-Similarity</span> &ndash; the property that a small part resembles the whole. Key characteristic of all fractals.</div></li>
+    <li><div><span class="mterm em">Recursion / Iteration</span> &ndash; generating a fractal by repeatedly applying the same simple rule.</div></li>
+    <li><div><span class="mterm em">Infinite Complexity</span> &ndash; no matter how much you zoom in, new details keep appearing.</div></li>
+    <li><div><span class="mterm em">Benoit Mandelbrot</span> &ndash; Father of Fractal Geometry (1924&ndash;2010); coined "fractal" in 1975 in <em>The Fractal Geometry of Nature</em>.</div></li>
+    <li><div><span class="mterm em">Mandelbrot Set</span> &ndash; famous fractal generated using complex numbers; exhibits self-similarity and infinite detail.</div></li>
+    <li><div><span class="mterm em">Fractus (Latin)</span> &ndash; broken, fragmented, or irregular; origin of the word "fractal."</div></li>
+    <li><div><span class="mterm em">Fractals vs. Euclidean</span> &ndash; unlike smooth Euclidean geometry, fractals are irregular and infinitely complex.</div></li>
+    <li><div><span class="mterm em">Natural Fractals</span> &ndash; fern, Romanesco broccoli, trees, rivers, lightning, blood vessels, snowflakes, clouds, coastlines.</div></li>
+    <li><div><span class="mterm em">Why Nature Uses Fractals</span> &ndash; fractal patterns are efficient; help living organisms make best use of space, energy, and resources.</div></li>
+  </ul></div>
+
+  <!-- EXAM L5 -->
+  <div class="es" id="l5exam">
+    <div class="eh"><div class="ebdg eb-em">&#128221; Lesson 5 &middot; Week 7</div>
+      <div class="etitle">Possible Exam Questions</div>
+      <div class="esub">Fractals</div>
+    </div>
+    <div class="qtt"><span class="qn qn-em">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">The mathematician known as the "Father of Fractal Geometry" who coined the term in 1975.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The Latin word from which "fractal" is derived, meaning broken or irregular.</span></li>
+      <li class="qi"><span class="qit">3.</span><span class="qit">The property of a fractal where smaller parts resemble the entire figure.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">The process of generating a fractal by repeatedly applying the same mathematical rule.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">The famous fractal set generated using complex numbers, named after its discoverer.</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">A natural example of a fractal where each leaflet resembles the whole plant.</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">The characteristic of fractals where new details continue to appear no matter how much you zoom in.</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Name the book written by Benoit Mandelbrot where the term "fractal" was introduced.</span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">The type of pattern seen in tree branches, river networks, and blood vessels.</span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">Why do natural fractal patterns exist in living organisms? (efficiency-related answer)</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-em">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">What does "fractal" mean in Latin?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Beautiful</li><li class="mci"><span class="mcl">B.</span>Broken or fragmented</li><li class="mci"><span class="mcl">C.</span>Infinite</li><li class="mci"><span class="mcl">D.</span>Spiral</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Who introduced the term "fractal" in 1975?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Euclid</li><li class="mci"><span class="mcl">B.</span>Fibonacci</li><li class="mci"><span class="mcl">C.</span>Benoit Mandelbrot</li><li class="mci"><span class="mcl">D.</span>M.C. Escher</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Self-similarity means:<ul class="mco"><li class="mci"><span class="mcl">A.</span>The pattern has no repetition</li><li class="mci"><span class="mcl">B.</span>Smaller parts resemble the whole</li><li class="mci"><span class="mcl">C.</span>The pattern uses only triangles</li><li class="mci"><span class="mcl">D.</span>The figure has bilateral symmetry only</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Which of the following is a natural fractal?<ul class="mco"><li class="mci"><span class="mcl">A.</span>A perfect circle</li><li class="mci"><span class="mcl">B.</span>A square grid</li><li class="mci"><span class="mcl">C.</span>A fern leaf</li><li class="mci"><span class="mcl">D.</span>A rectangle</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">The Mandelbrot Set is generated using:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Fibonacci numbers</li><li class="mci"><span class="mcl">B.</span>Complex numbers and iteration</li><li class="mci"><span class="mcl">C.</span>Prime numbers</li><li class="mci"><span class="mcl">D.</span>Matrix multiplication</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">Why are fractal patterns common in nature?<ul class="mco"><li class="mci"><span class="mcl">A.</span>They are random and chaotic</li><li class="mci"><span class="mcl">B.</span>They look beautiful</li><li class="mci"><span class="mcl">C.</span>They are efficient in using space, energy, and resources</li><li class="mci"><span class="mcl">D.</span>They follow the Pythagorean theorem</li></ul></span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">The human circulatory system is an example of:<ul class="mco"><li class="mci"><span class="mcl">A.</span>A tessellation</li><li class="mci"><span class="mcl">B.</span>Bilateral symmetry</li><li class="mci"><span class="mcl">C.</span>A natural fractal (fractal branching)</li><li class="mci"><span class="mcl">D.</span>A geometric sequence</li></ul></span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Fractals are different from Euclidean geometry because they are:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Perfectly smooth and regular</li><li class="mci"><span class="mcl">B.</span>Irregular and infinitely complex</li><li class="mci"><span class="mcl">C.</span>Always two-dimensional</li><li class="mci"><span class="mcl">D.</span>Always three-dimensional</li></ul></span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">Which characteristic of the Mandelbrot Set shows self-similarity?<ul class="mco"><li class="mci"><span class="mcl">A.</span>It has only one pattern throughout</li><li class="mci"><span class="mcl">B.</span>Smaller patterns resemble the larger figure</li><li class="mci"><span class="mcl">C.</span>It can be drawn by hand easily</li><li class="mci"><span class="mcl">D.</span>It has bilateral symmetry only</li></ul></span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">Which best describes the process of "iteration" in fractals?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Drawing shapes randomly</li><li class="mci"><span class="mcl">B.</span>Applying the same simple rule repeatedly to create complex patterns</li><li class="mci"><span class="mcl">C.</span>Measuring the size of a fractal</li><li class="mci"><span class="mcl">D.</span>Simplifying a complex figure to basic shapes</li></ul></span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ab">C</span> True or False <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">Fractals can only exist in mathematics, not in nature.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The Mandelbrot Set was introduced by Benoit Mandelbrot in 1975.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Self-similarity means a small portion of a fractal resembles the entire figure.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Euclidean geometry and fractal geometry describe the same type of shapes.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Fractal patterns in living organisms are efficient because they help maximize space and resource distribution.</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ro">D</span> Short Answer <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">Define a fractal and explain its three main characteristics.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Who is Benoit Mandelbrot and what is his contribution to mathematics?</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">List 5 examples of fractals found in nature and briefly describe each.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">What is the Mandelbrot Set and why is it significant?</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Explain why fractal patterns are considered "efficient" in nature.</span></li>
+    </ul>
+    <div class="ak">
+      <div class="akt">&#128273; Answer Key &ndash; Lesson 5</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">Benoit Mandelbrot</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">Fractus</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">Self-Similarity</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Recursion / Iteration</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">Mandelbrot Set</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">Fern Leaf</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">Infinite Complexity</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">The Fractal Geometry of Nature</span></div>
+        <div class="aki"><span class="akq">9.</span><span class="aka">Fractal Branching</span></div>
+        <div class="aki"><span class="akq">10.</span><span class="aka">Fractal patterns are efficient; maximize space, energy, resources</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">7.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">9.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">B</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">C. True or False</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">False (also in nature)</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">False (different)</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">True</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LESSON 6: MATRIX FUNDAMENTALS ============ -->
+<section class="ls" id="l6">
+  <div class="lh bl">
+    <div class="lnum bl">L6<br>W8</div>
+    <div class="lht">
+      <div class="llbl bl">Lesson 6 &middot; Week 8 &middot; Finite Mathematics 1</div>
+      <h2 class="ltitle">Fundamental Concepts of Matrix</h2>
+      <p class="ldesc">Components &middot; Order &middot; Special Types &middot; Matrix Addition &amp; Subtraction</p>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-bl">Learning Outcomes</div><div class="shl"></div></div>
+  <div class="card"><ul>
+    <li>Identify the <strong>basic components</strong> of a matrix (name, elements, rows, columns, order, position).</li>
+    <li>Recognize <strong>special types</strong> of matrices (row, column, rectangular, square, null, diagonal, scalar, identity).</li>
+    <li>Perform matrix operations: <strong>addition and subtraction</strong>.</li>
+  </ul></div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-bl">What is a Matrix?</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-bl"></span>Definition</div>
+    <p>A <strong>matrix</strong> is a rectangular arrangement of numbers, symbols, or expressions organized into <strong>rows</strong> (horizontal) and <strong>columns</strong> (vertical). Matrices are represented using <strong>capital letters</strong> (A, B, C, &hellip;).</p>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-bl">Basic Components of a Matrix</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-bl"></span>The 6 Components</div>
+    <div class="tg">
+      <div class="ti"><div class="tn bl">1. Matrix Name</div><div class="td">Represented by a <strong>capital letter</strong> (e.g., Matrix A, Matrix B).</div></div>
+      <div class="ti"><div class="tn bl">2. Elements / Entries</div><div class="td">The <strong>numbers inside</strong> the matrix. A matrix must have entries in all cells to be valid.</div></div>
+      <div class="ti"><div class="tn bl">3. Rows</div><div class="td"><strong>Horizontal</strong> arrangement of elements. Counted from top to bottom.</div></div>
+      <div class="ti"><div class="tn bl">4. Columns</div><div class="td"><strong>Vertical</strong> arrangement of elements. Counted from left to right.</div></div>
+      <div class="ti"><div class="tn bl">5. Order (Dimension)</div><div class="td">Written as <strong>rows &times; columns</strong>. Ex: Matrix A with 2 rows, 3 columns &rarr; Order: 2&times;3.</div></div>
+      <div class="ti"><div class="tn bl">6. Position (a&#7522;&#11388;)</div><div class="td">Each element has a location: <strong>a&#7522;&#11388;</strong> where <strong>i = row</strong>, <strong>j = column</strong>. E.g., a&#8322;&#8323; = element at row 2, column 3.</div></div>
+    </div>
+    <div class="ex bl" style="margin-top:14px"><div class="exl bl">&#128204; Position Example</div>
+      <div class="exs">
+        Matrix A = [[3, 5, 7], [2, 4, 6]] (2&times;3 matrix)<br>
+        a&#8321;&#8321; = 3 &nbsp;|&nbsp; a&#8321;&#8322; = 5 &nbsp;|&nbsp; a&#8321;&#8323; = 7<br>
+        a&#8322;&#8321; = 2 &nbsp;|&nbsp; a&#8322;&#8322; = 4 &nbsp;|&nbsp; a&#8322;&#8323; = <span class="hl hb">6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-bl">Special Types of Matrices</div><div class="shl"></div></div>
+  <div class="card">
+    <table class="ct"><thead><tr><th>Type</th><th>Definition</th><th>Order Example</th></tr></thead>
+    <tbody>
+      <tr><td>Row Matrix</td><td>Contains <strong>only one row</strong>.</td><td>1 &times; n</td></tr>
+      <tr><td>Column Matrix</td><td>Contains <strong>only one column</strong>.</td><td>m &times; 1</td></tr>
+      <tr><td>Rectangular Matrix</td><td><strong>Unequal</strong> number of rows and columns (rows &ne; columns).</td><td>2&times;3, 3&times;2</td></tr>
+      <tr><td>Square Matrix</td><td><strong>Equal</strong> number of rows and columns.</td><td>2&times;2, 3&times;3</td></tr>
+      <tr><td>Null / Zero Matrix</td><td><strong>ALL entries are zero (0)</strong>.</td><td>Any order</td></tr>
+      <tr><td>Diagonal Matrix</td><td>A <strong>square matrix</strong> where all <em>non-diagonal</em> entries are zero.</td><td>Square only</td></tr>
+      <tr><td>Scalar Matrix</td><td>A <strong>diagonal matrix</strong> where all diagonal elements are <em>equal</em>.</td><td>Square only</td></tr>
+      <tr><td>Identity Matrix (I)</td><td>A <strong>scalar matrix</strong> where all diagonal elements are <strong>1</strong>.</td><td>Square only</td></tr>
+    </tbody></table>
+    <div class="ex bl" style="margin-top:14px"><div class="exl bl">&#128204; Hierarchy of Special Matrices</div>
+      <div class="exs">Identity Matrix &sub; Scalar Matrix &sub; Diagonal Matrix &sub; Square Matrix<br>All identity matrices are scalar; all scalar matrices are diagonal; all diagonal matrices are square.</div>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-bl">Matrix Addition &amp; Subtraction</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-bl"></span>Rules for Addition &amp; Subtraction</div>
+    <div class="fb"><div class="fl">Golden Rule</div>
+    <div class="fm">Matrices can ONLY be added or subtracted if they have the SAME ORDER.</div></div>
+    <p><strong>Matrix Addition:</strong> Add the corresponding elements (same position) of the two matrices.<br>
+    <strong>Matrix Subtraction:</strong> Subtract the corresponding elements of the two matrices.<br>
+    <strong>If orders differ:</strong> The operation is <em>INVALID</em>.</p>
+    <div class="ex bl"><div class="exl bl">&#128204; Example 1 &ndash; Addition (same order)</div>
+      <div class="exs">
+        A = [[&minus;2, 1, 0], [&minus;1, 5, 3], [4, 2, 8]] &nbsp;(3&times;3)<br>
+        B = [[3, 6, 11], [9, &minus;5, 2], [1, 4, &minus;8]] &nbsp;(3&times;3)<br>
+        <span class="hl hb">B + C = [[2, 19, 13], [19, &minus;13, 8], [&minus;4, 8, &minus;16]]</span>
+      </div>
+    </div>
+    <div class="ex bl"><div class="exl bl">&#128204; Example 2 &ndash; Subtraction</div>
+      <div class="exs">
+        D + A &rarr; <span class="hl hr">INVALID</span> (if orders differ)<br>
+        C &minus; A = [[1, 12, 2], [11, &minus;13, 3], [&minus;9, 2, &minus;16]] (same order, valid)
+      </div>
+    </div>
+    <div class="ex bl"><div class="exl bl">&#128204; Example 3 &ndash; Invalid</div>
+      <div class="exs">Matrix A (2&times;3) + Matrix D (2&times;1) = <span class="hl hr">INVALID</span> &mdash; orders do not match.</div>
+    </div>
+  </div>
+
+  <!-- MUST MEMORIZE L6 -->
+  <div class="sh" id="l6mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Lesson 6</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mbl">
+    <li><div><span class="mterm bl">Matrix</span> &ndash; rectangular arrangement of numbers in rows and columns; named with a capital letter.</div></li>
+    <li><div><span class="mterm bl">Elements / Entries</span> &ndash; the numbers inside a matrix. All cells must have entries (no blanks).</div></li>
+    <li><div><span class="mterm bl">Row</span> &ndash; horizontal arrangement. Counted top-to-bottom.</div></li>
+    <li><div><span class="mterm bl">Column</span> &ndash; vertical arrangement. Counted left-to-right.</div></li>
+    <li><div><span class="mterm bl">Order (Dimension)</span> &ndash; rows &times; columns notation. Ex: 2&times;3 means 2 rows, 3 columns.</div></li>
+    <li><div><span class="mterm bl">Position Notation a&#7522;&#11388;</span> &ndash; i = row number, j = column number. a&#8322;&#8323; = row 2, column 3.</div></li>
+    <li><div><span class="mterm bl">Row Matrix</span> &ndash; 1 row only (1&times;n).</div></li>
+    <li><div><span class="mterm bl">Column Matrix</span> &ndash; 1 column only (m&times;1).</div></li>
+    <li><div><span class="mterm bl">Rectangular Matrix</span> &ndash; rows &ne; columns.</div></li>
+    <li><div><span class="mterm bl">Square Matrix</span> &ndash; rows = columns (n&times;n).</div></li>
+    <li><div><span class="mterm bl">Null / Zero Matrix</span> &ndash; ALL elements are 0.</div></li>
+    <li><div><span class="mterm bl">Diagonal Matrix</span> &ndash; square matrix where non-diagonal entries = 0.</div></li>
+    <li><div><span class="mterm bl">Scalar Matrix</span> &ndash; diagonal matrix where ALL diagonal elements are equal.</div></li>
+    <li><div><span class="mterm bl">Identity Matrix (I)</span> &ndash; scalar matrix where diagonal elements = 1.</div></li>
+    <li><div><span class="mterm bl">Matrix Addition Rule</span> &ndash; add corresponding elements; SAME ORDER required.</div></li>
+    <li><div><span class="mterm bl">Matrix Subtraction Rule</span> &ndash; subtract corresponding elements; SAME ORDER required.</div></li>
+    <li><div><span class="mterm bl">Invalid Operation</span> &ndash; adding/subtracting matrices of different orders = not defined.</div></li>
+  </ul></div>
+
+  <!-- EXAM L6 -->
+  <div class="es" id="l6exam">
+    <div class="eh"><div class="ebdg eb-bl">&#128221; Lesson 6 &middot; Week 8</div>
+      <div class="etitle">Possible Exam Questions</div>
+      <div class="esub">Fundamental Concepts of Matrix</div>
+    </div>
+    <div class="qtt"><span class="qn qn-bl">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">The notation used to describe the size of a matrix (e.g., 2&times;3).</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">A matrix where ALL entries are zero.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">A matrix with only one row.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A matrix with only one column.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">A diagonal matrix where all diagonal entries are equal.</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">A scalar matrix where all diagonal entries equal 1.</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">The rule for matrix addition and subtraction regarding order.</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">In position notation a&#7522;&#11388;, what does "j" represent?</span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">A square matrix where all non-diagonal entries are zero.</span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">A matrix with equal number of rows and columns.</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-bl">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">A matrix with 3 rows and 4 columns has order:<ul class="mco"><li class="mci"><span class="mcl">A.</span>4&times;3</li><li class="mci"><span class="mcl">B.</span>3&times;4</li><li class="mci"><span class="mcl">C.</span>7&times;1</li><li class="mci"><span class="mcl">D.</span>12&times;1</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">In position notation a&#8322;&#8323;, which element is being referred to?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Row 3, Column 2</li><li class="mci"><span class="mcl">B.</span>Row 2, Column 3</li><li class="mci"><span class="mcl">C.</span>Element 23</li><li class="mci"><span class="mcl">D.</span>The 5th element</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Which type of matrix has equal rows and columns?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Row matrix</li><li class="mci"><span class="mcl">B.</span>Column matrix</li><li class="mci"><span class="mcl">C.</span>Square matrix</li><li class="mci"><span class="mcl">D.</span>Rectangular matrix</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Can a 2&times;3 matrix be added to a 3&times;2 matrix?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Yes, always</li><li class="mci"><span class="mcl">B.</span>Yes, if both are square</li><li class="mci"><span class="mcl">C.</span>No, different orders</li><li class="mci"><span class="mcl">D.</span>Yes, by transposing first</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">A null matrix is a matrix where:<ul class="mco"><li class="mci"><span class="mcl">A.</span>All diagonal entries are 1</li><li class="mci"><span class="mcl">B.</span>All entries are zero</li><li class="mci"><span class="mcl">C.</span>All entries are equal</li><li class="mci"><span class="mcl">D.</span>It has only one row</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">An identity matrix must have:<ul class="mco"><li class="mci"><span class="mcl">A.</span>All entries equal to any number</li><li class="mci"><span class="mcl">B.</span>All diagonal entries = 1, all others = 0</li><li class="mci"><span class="mcl">C.</span>All entries equal to 0</li><li class="mci"><span class="mcl">D.</span>Only one row</li></ul></span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">Matrices are named using:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Lowercase letters</li><li class="mci"><span class="mcl">B.</span>Numbers</li><li class="mci"><span class="mcl">C.</span>Capital letters</li><li class="mci"><span class="mcl">D.</span>Greek letters</li></ul></span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Matrix A (3&times;3) and Matrix B (3&times;3): A + B is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Invalid</li><li class="mci"><span class="mcl">B.</span>Valid, result is 3&times;3</li><li class="mci"><span class="mcl">C.</span>Valid, result is 6&times;6</li><li class="mci"><span class="mcl">D.</span>Valid, result is 9&times;1</li></ul></span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">In matrix A = [[3, 5, 7], [2, 4, 6]], what is a&#8321;&#8323;?<ul class="mco"><li class="mci"><span class="mcl">A.</span>5</li><li class="mci"><span class="mcl">B.</span>2</li><li class="mci"><span class="mcl">C.</span>7</li><li class="mci"><span class="mcl">D.</span>4</li></ul></span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qin">10.</span><span class="qit">The horizontal arrangement of elements in a matrix is called:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Column</li><li class="mci"><span class="mcl">B.</span>Diagonal</li><li class="mci"><span class="mcl">C.</span>Row</li><li class="mci"><span class="mcl">D.</span>Entry</li></ul></span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-em">C</span> True or False <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">An identity matrix is a special case of a scalar matrix.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">A 2&times;3 matrix and a 3&times;2 matrix can be added together.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">In notation a&#7522;&#11388;, i refers to the column number.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A diagonal matrix must be a square matrix.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Matrix addition is performed by adding corresponding elements of two matrices with the same order.</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ro">D</span> Problem Solving <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 4 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">Given A = [[&minus;2, 1, 0], [&minus;1, 5, 3], [4, 2, 8]] and B = [[3, 6, 11], [9, &minus;5, 2], [1, 4, &minus;8]], find: A + B and A &minus; B.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Identify the order and type of each: a) [[1, 2, 3]] &nbsp; b) [[5], [6]] &nbsp; c) [[1, 0], [0, 1]] &nbsp; d) [[0, 0], [0, 0]]</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">For matrix U = [[6, 3, &minus;5], [14, 9, &minus;7]], identify: a) a&#8321;&#8323; &nbsp; b) a&#8322;&#8321; &nbsp; c) a&#8322;&#8322;</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">Can matrix D (2&times;3) be added to matrix A (3&times;3)? Explain why or why not.</span></li>
+    </ul>
+    <div class="ak">
+      <div class="akt">&#128273; Answer Key &ndash; Lesson 6</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">Order (rows &times; columns)</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">Null / Zero Matrix</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">Row Matrix</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Column Matrix</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">Scalar Matrix</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">Identity Matrix</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">Matrices must have the SAME ORDER</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">Column number</span></div>
+        <div class="aki"><span class="akq">9.</span><span class="aka">Diagonal Matrix</span></div>
+        <div class="aki"><span class="akq">10.</span><span class="aka">Square Matrix</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">B (3&times;4)</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">7.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">B</span></div>
+        <div class="akmi"><span class="akq">9.</span><span class="aka">C (7)</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">C</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">C. True or False</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">False (invalid)</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">False (i = row)</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">True</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">D. Problem Solving</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">A+B=[[1,7,11],[8,0,5],[5,6,0]]; A&minus;B=[[&minus;5,&minus;5,&minus;11],[&minus;10,10,1],[3,&minus;2,16]]</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">a)1&times;3 Row; b)2&times;1 Col; c)2&times;2 Identity; d)2&times;2 Null</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">a&#8321;&#8323;=&minus;5; a&#8322;&#8321;=14; a&#8322;&#8322;=9</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Invalid; orders 2&times;3 &ne; 3&times;3</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LESSON 7: MATRIX MULTIPLICATION ============ -->
+<section class="ls" id="l7">
+  <div class="lh vi">
+    <div class="lnum vi">L7<br>W9</div>
+    <div class="lht">
+      <div class="llbl vi">Lesson 7 &middot; Week 9 &middot; Finite Mathematics 1</div>
+      <h2 class="ltitle">Matrix Multiplication by a Scalar, Transpose, &amp; Matrix Multiplication</h2>
+      <p class="ldesc">Scalar &middot; Scalar Multiplication &middot; Transpose (A&#7488;) &middot; Row-Column Rule &middot; Matrix Multiplication (AB)</p>
+    </div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-vi">Learning Outcomes</div><div class="shl"></div></div>
+  <div class="card"><ul>
+    <li>Define <strong>scalar multiplication</strong>, <strong>matrix multiplication</strong>, and <strong>transpose of a matrix</strong>.</li>
+    <li>Perform scalar multiplication correctly (multiply every element by the scalar).</li>
+    <li>Multiply two matrices using the <strong>row-column rule</strong>.</li>
+    <li>Find the <strong>transpose</strong> of a given matrix.</li>
+  </ul></div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-vi">Scalar &amp; Scalar Multiplication</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-vi"></span>What is a Scalar?</div>
+    <p>A <strong>scalar</strong> is a <em>single real number</em> used to multiply every element of a matrix. Unlike a matrix (which has many numbers in rows and columns), a scalar has only one value. Examples: 5, 3, &minus;1, 0, &frac12;.</p>
+    <div class="fb"><div class="fl">Scalar Multiplication Rule</div>
+    <div class="fm">k &times; A = multiply every element of A by k.<br>Order stays the same; only values change.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 1 &ndash; Find 3A</div>
+      <div class="exs">A = [[2, &minus;1], [0, 4]] &rarr; 3A = [[6, &minus;3], [0, 12]]<br>Every element multiplied by 3. Order unchanged.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 2 &ndash; Find &minus;2A</div>
+      <div class="exs">A = [[1, 3], [&minus;2, 5]] &rarr; &minus;2A = [[&minus;2, &minus;6], [4, &minus;10]]</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 3 &ndash; Find &frac12;B</div>
+      <div class="exs">B = [[4, 8], [2, 6]] &rarr; &frac12;B = [[2, 4], [1, 3]]</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 4 &ndash; Find &minus;A + 2B</div>
+      <div class="exs">Step 1: Compute &minus;A (multiply A by &minus;1).<br>Step 2: Compute 2B (multiply B by 2).<br>Step 3: Add the results (same order required).</div></div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-vi">Transpose of a Matrix (A&#7488;)</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-vi"></span>Definition &amp; Rules</div>
+    <p>The <strong>transpose</strong> of a matrix is a new matrix obtained by <strong>interchanging its rows and columns</strong>. Every row becomes a column; every column becomes a row. Written as <strong>A&#7488;</strong> (read: "A transpose"). The values of entries do NOT change&mdash;only their positions change.</p>
+    <div class="fb"><div class="fl">Order Change Rule</div>
+    <div class="fm">If A is m &times; n, then A&#7488; is n &times; m.<br>Square matrices: order stays the same, but off-diagonal elements switch.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 1 &ndash; Transpose (non-square)</div>
+      <div class="exs">A = [[1, 2, 3], [4, 5, 6]] &nbsp;(2&times;3)<br>A&#7488; = [[1, 4], [2, 5], [3, 6]] &nbsp;(3&times;2)<br>Row 1 became Column 1; Row 2 became Column 2.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 2 &ndash; Transpose (square)</div>
+      <div class="exs">B = [[1, 2], [3, 4]] &nbsp;(2&times;2)<br>B&#7488; = [[1, 3], [2, 4]] &nbsp;(2&times;2)<br>Main diagonal (1, 4) stays the same; off-diagonal elements swap.</div></div>
+    <div class="ex vi"><div class="exl vi">&#128204; Key Note</div>
+      <div class="exs">For a square matrix, the <strong>main diagonal stays the same</strong>; only off-diagonal elements change position.</div></div>
+  </div>
+
+  <div class="sh"><div class="shl"></div><div class="shb s-vi">Matrix Multiplication (AB)</div><div class="shl"></div></div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-vi"></span>When is AB Possible?</div>
+    <div class="fb"><div class="fl">Condition for Matrix Multiplication</div>
+    <div class="fm">A (m&times;n) &times; B (n&times;q) = AB (m&times;q)<br>INNER numbers must match. OUTER numbers give the result order.</div></div>
+    <div class="tg">
+      <div class="ti"><div class="tn vi">Valid: A(2&times;3) &times; B(3&times;4)</div><div class="td">Inner: 3=3 ✓ &rarr; Result: AB is 2&times;4</div></div>
+      <div class="ti"><div class="tn vi">Invalid: A(2&times;3) &times; B(4&times;2)</div><div class="td">Inner: 3&ne;4 ✗ &rarr; AB is NOT defined</div></div>
+      <div class="ti"><div class="tn vi">Note: AB &ne; BA</div><div class="td">Matrix multiplication is generally NOT commutative.</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ctitle"><span class="cdot d-vi"></span>The Row-Column Rule</div>
+    <p>Each entry of the product matrix AB is obtained by:</p>
+    <ol style="padding-left:20px;color:var(--t2);line-height:2;font-size:14.5px">
+      <li>Choose one <strong>row from Matrix A</strong>.</li>
+      <li>Choose one <strong>column from Matrix B</strong>.</li>
+      <li><strong>Multiply</strong> corresponding entries (1st with 1st, 2nd with 2nd, &hellip;).</li>
+      <li><strong>Add</strong> all the products &rarr; this is ONE entry in the result matrix.</li>
+    </ol>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 1 &ndash; AB (2&times;2 &times; 2&times;2)</div>
+      <div class="exs">
+        A = [[1, 2], [3, 4]] &nbsp;B = [[5, 6], [7, 8]]<br>
+        AB&#8321;&#8321; = (1&times;5) + (2&times;7) = 5 + 14 = <span class="hl hv">19</span><br>
+        AB&#8321;&#8322; = (1&times;6) + (2&times;8) = 6 + 16 = <span class="hl hv">22</span><br>
+        AB&#8322;&#8321; = (3&times;5) + (4&times;7) = 15 + 28 = <span class="hl hv">43</span><br>
+        AB&#8322;&#8322; = (3&times;6) + (4&times;8) = 18 + 32 = <span class="hl hv">50</span><br>
+        AB = [[19, 22], [43, 50]]
+      </div>
+    </div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 2 &ndash; Checking order</div>
+      <div class="exs">
+        A is 2&times;3, B is 3&times;4:<br>
+        Inner numbers (3 and 3) match &rarr; AB is possible.<br>
+        Result AB has order <span class="hl hv">2&times;4</span> (the outer numbers).
+      </div>
+    </div>
+    <div class="ex vi"><div class="exl vi">&#128204; Example 3 &ndash; Scalar then Multiply (combined)</div>
+      <div class="exs">
+        Find 3(AB): First compute AB, then multiply every element by 3.<br>
+        Or: Find A&#7488; + &frac12;B &rarr; transpose A first, then add &frac12;B (if orders allow).
+      </div>
+    </div>
+  </div>
+
+  <!-- MUST MEMORIZE L7 -->
+  <div class="sh" id="l7mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Lesson 7</div><div class="shl"></div></div>
+  <div class="card"><ul class="ml mvi">
+    <li><div><span class="mterm vi">Scalar</span> &ndash; a single real number (e.g., 5, &minus;2, &frac12;). Not a matrix.</div></li>
+    <li><div><span class="mterm vi">Scalar Multiplication</span> &ndash; multiply EVERY element of the matrix by the scalar. Order stays the same.</div></li>
+    <li><div><span class="mterm vi">Transpose (A&#7488;)</span> &ndash; swap rows and columns. Row i becomes Column i. Order: m&times;n &rarr; n&times;m.</div></li>
+    <li><div><span class="mterm vi">Transpose of Square</span> &ndash; order stays same; main diagonal unchanged; off-diagonal elements swap positions.</div></li>
+    <li><div><span class="mterm vi">Transpose values</span> &ndash; values DO NOT change; only positions change.</div></li>
+    <li><div><span class="mterm vi">Matrix Multiplication Condition</span> &ndash; A(m&times;n) &times; B(n&times;q): inner dimensions MUST match (both = n).</div></li>
+    <li><div><span class="mterm vi">Result Order of AB</span> &ndash; outer dimensions. A(m&times;n) &times; B(n&times;q) = AB(m&times;q).</div></li>
+    <li><div><span class="mterm vi">Row-Column Rule</span> &ndash; pick 1 row from A + 1 column from B &rarr; multiply corresponding entries &rarr; add all &rarr; one entry in AB.</div></li>
+    <li><div><span class="mterm vi">AB &ne; BA (generally)</span> &ndash; matrix multiplication is NOT commutative in general.</div></li>
+    <li><div><span class="mterm vi">NOT element-by-element</span> &ndash; matrix multiplication does NOT multiply corresponding elements (unlike addition).</div></li>
+  </ul></div>
+
+  <!-- EXAM L7 -->
+  <div class="es" id="l7exam">
+    <div class="eh"><div class="ebdg eb-vi">&#128221; Lesson 7 &middot; Week 9</div>
+      <div class="etitle">Possible Exam Questions</div>
+      <div class="esub">Scalar Multiplication, Transpose &amp; Matrix Multiplication</div>
+    </div>
+    <div class="qtt"><span class="qn qn-vi">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">A single real number used to multiply every element of a matrix.</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The notation for the transpose of matrix A.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">The condition for matrix multiplication AB to be possible.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">The rule used to find each entry in the product matrix AB.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">If matrix A is 3&times;4, what is the order of A&#7488;?</span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">If A is 2&times;3 and B is 3&times;5, what is the order of AB?</span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">In scalar multiplication, what changes and what stays the same?</span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">In the transpose of a square matrix, which elements remain unchanged?</span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">Is matrix multiplication commutative (AB = BA always)?</span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">Can a 2&times;4 matrix be multiplied by a 4&times;3 matrix? What is the order of the result?</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-vi">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">In scalar multiplication kA, what happens to the order of matrix A?<ul class="mco"><li class="mci"><span class="mcl">A.</span>It doubles</li><li class="mci"><span class="mcl">B.</span>It stays the same</li><li class="mci"><span class="mcl">C.</span>It becomes 1&times;1</li><li class="mci"><span class="mcl">D.</span>It transposes</li></ul></span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">The transpose of a 3&times;2 matrix has order:<ul class="mco"><li class="mci"><span class="mcl">A.</span>3&times;2</li><li class="mci"><span class="mcl">B.</span>2&times;3</li><li class="mci"><span class="mcl">C.</span>6&times;1</li><li class="mci"><span class="mcl">D.</span>1&times;6</li></ul></span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">For AB to be valid, the _____ of A must equal the _____ of B:<ul class="mco"><li class="mci"><span class="mcl">A.</span>rows; rows</li><li class="mci"><span class="mcl">B.</span>columns; rows</li><li class="mci"><span class="mcl">C.</span>rows; columns</li><li class="mci"><span class="mcl">D.</span>columns; columns</li></ul></span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A is 2&times;3, B is 3&times;4. The product AB has order:<ul class="mco"><li class="mci"><span class="mcl">A.</span>3&times;3</li><li class="mci"><span class="mcl">B.</span>2&times;4</li><li class="mci"><span class="mcl">C.</span>3&times;4</li><li class="mci"><span class="mcl">D.</span>2&times;3</li></ul></span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">In the row-column rule, each entry of AB is found by:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Adding corresponding elements</li><li class="mci"><span class="mcl">B.</span>Multiplying all elements of A by all elements of B</li><li class="mci"><span class="mcl">C.</span>Multiplying a row of A with a column of B and summing</li><li class="mci"><span class="mcl">D.</span>Transposing B then adding</li></ul></span></li>
+      <li class="qi"><span class="qin">6.</span><span class="qit">Which of the following is a scalar?<ul class="mco"><li class="mci"><span class="mcl">A.</span>[[2, 3]]</li><li class="mci"><span class="mcl">B.</span>[[1], [0]]</li><li class="mci"><span class="mcl">C.</span>5</li><li class="mci"><span class="mcl">D.</span>[[1, 0], [0, 1]]</li></ul></span></li>
+      <li class="qi"><span class="qin">7.</span><span class="qit">When taking the transpose of a matrix, what changes?<ul class="mco"><li class="mci"><span class="mcl">A.</span>The values of the elements</li><li class="mci"><span class="mcl">B.</span>The positions of the elements (rows become columns)</li><li class="mci"><span class="mcl">C.</span>The order stays the same for all matrices</li><li class="mci"><span class="mcl">D.</span>Elements are multiplied by &minus;1</li></ul></span></li>
+      <li class="qi"><span class="qin">8.</span><span class="qit">Is the following multiplication valid? A (3&times;2) &times; B (3&times;4):<ul class="mco"><li class="mci"><span class="mcl">A.</span>Yes, result is 3&times;4</li><li class="mci"><span class="mcl">B.</span>Yes, result is 2&times;4</li><li class="mci"><span class="mcl">C.</span>No, inner dimensions don't match (2&ne;3)</li><li class="mci"><span class="mcl">D.</span>Yes, result is 3&times;2</li></ul></span></li>
+      <li class="qi"><span class="qin">9.</span><span class="qit">Find 2A where A = [[1, 3], [&minus;2, 0]]:<ul class="mco"><li class="mci"><span class="mcl">A.</span>[[3, 5], [0, 2]]</li><li class="mci"><span class="mcl">B.</span>[[2, 6], [&minus;4, 0]]</li><li class="mci"><span class="mcl">C.</span>[[2, 3], [&minus;2, 0]]</li><li class="mci"><span class="mcl">D.</span>[[1, 3], [&minus;4, 0]]</li></ul></span></li>
+      <li class="qi"><span class="qin">10.</span><span class="qit">In which part of the product matrix does the row-column rule place the result?<ul class="mco"><li class="mci"><span class="mcl">A.</span>The diagonal</li><li class="mci"><span class="mcl">B.</span>The entry at the same row (from A) and column (from B)</li><li class="mci"><span class="mcl">C.</span>The last row</li><li class="mci"><span class="mcl">D.</span>The first column</li></ul></span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ab">C</span> True or False <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">Matrix multiplication is always commutative (AB = BA).</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">In scalar multiplication, the order of the matrix stays the same.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">The transpose of a 2&times;5 matrix is a 5&times;2 matrix.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">For matrix multiplication AB, the number of rows of A must equal the number of rows of B.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">In the row-column rule, we multiply each element of a selected row of A with each element of a selected column of B and then add all products.</span></li>
+    </ul>
+    <hr class="divr">
+    <div class="qtt"><span class="qn qn-ro">D</span> Problem Solving <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
+    <ul class="ql">
+      <li class="qi"><span class="qin">1.</span><span class="qit">Given A = [[2, &minus;1], [0, 3]], find: a) 3A &nbsp; b) &minus;2A &nbsp; c) &frac12;A</span></li>
+      <li class="qi"><span class="qin">2.</span><span class="qit">Given A = [[1, 2, 3], [4, 5, 6]], find A&#7488;.</span></li>
+      <li class="qi"><span class="qin">3.</span><span class="qit">Given A = [[1, 2], [3, 4]] and B = [[5, 6], [7, 8]], find AB.</span></li>
+      <li class="qi"><span class="qin">4.</span><span class="qit">A is 2&times;3 and B is 3&times;4. Is AB valid? Is BA valid? Explain and give the order of the valid product.</span></li>
+      <li class="qi"><span class="qin">5.</span><span class="qit">Given A = [[2, 0], [1, &minus;3]] and B = [[1, 4], [2, &minus;1]], find &minus;A + 2B.</span></li>
+    </ul>
+    <div class="ak">
+      <div class="akt">&#128273; Answer Key &ndash; Lesson 7</div>
+      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">Scalar</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">A&#7488;</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">Columns of A = Rows of B</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">Row-Column Rule</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">4&times;3</span></div>
+        <div class="aki"><span class="akq">6.</span><span class="aka">2&times;5</span></div>
+        <div class="aki"><span class="akq">7.</span><span class="aka">Values change; order stays same</span></div>
+        <div class="aki"><span class="akq">8.</span><span class="aka">Main diagonal elements</span></div>
+        <div class="aki"><span class="akq">9.</span><span class="aka">No (generally AB &ne; BA)</span></div>
+        <div class="aki"><span class="akq">10.</span><span class="aka">Yes; result is 2&times;3</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">B (2&times;3)</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">B (2&times;4)</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">7.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">C</span></div>
+        <div class="akmi"><span class="akq">9.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">B</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">C. True or False</div><div class="akm">
+        <div class="akmi"><span class="akq">1.</span><span class="aka">False</span></div>
+        <div class="akmi"><span class="akq">2.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">3.</span><span class="aka">True</span></div>
+        <div class="akmi"><span class="akq">4.</span><span class="aka">False (columns of A = rows of B)</span></div>
+        <div class="akmi"><span class="akq">5.</span><span class="aka">True</span></div>
+      </div></div>
+      <div class="aks"><div class="akst">D. Problem Solving</div><div class="akg">
+        <div class="aki"><span class="akq">1.</span><span class="aka">3A=[[6,&minus;3],[0,9]]; &minus;2A=[[&minus;4,2],[0,&minus;6]]; &frac12;A=[[1,&minus;&frac12;],[0,1.5]]</span></div>
+        <div class="aki"><span class="akq">2.</span><span class="aka">A&#7488;=[[1,4],[2,5],[3,6]] (3&times;2)</span></div>
+        <div class="aki"><span class="akq">3.</span><span class="aka">AB=[[19,22],[43,50]]</span></div>
+        <div class="aki"><span class="akq">4.</span><span class="aka">AB valid (2&times;4); BA invalid (4&ne;2)</span></div>
+        <div class="aki"><span class="akq">5.</span><span class="aka">&minus;A+2B=[[0,8],[3,1]]</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL REVIEW ============ -->
+<section class="fr" id="final">
+  <div class="frb">&#9889; One-Minute Final Review</div>
+  <div class="frt">Finite Mathematics 1 &middot; Lessons 3&ndash;7</div>
+  <p class="frtx">
+    <strong style="color:var(--orange)">L3 Tessellations &amp; Frieze:</strong> Escher used interlocking shapes (no gaps/overlaps). There are exactly <strong>7 frieze patterns</strong>, all containing Translation (T). Extra letters (G, V, H, R) show additional symmetries. The Spinning Jump (TRHVG) has all symmetries.<br><br>
+    <strong style="color:var(--amber)">L4 Golden Ratio &amp; Fibonacci:</strong> &phi; &asymp; 1.618. Fibonacci: F&#8345; = F&#8345;&#8331;&#178; + F&#8345;&#8331;&#185;, starts 0,1,1,2,3,5,8&hellip; As terms grow, consecutive ratios &rarr; &phi;. Found in nature (petals, shells, sunflowers), art (da Vinci, Michelangelo), and architecture (Parthenon, Pyramids, Eiffel Tower).<br><br>
+    <strong style="color:var(--emerald)">L5 Fractals:</strong> Self-similar, recursively generated, infinitely complex. Coined by Mandelbrot in 1975 from Latin <em>fractus</em>. The Mandelbrot Set has infinite detail. Found in ferns, rivers, trees, blood vessels, snowflakes, lightning.<br><br>
+    <strong style="color:var(--blue)">L6 Matrix Fundamentals:</strong> Matrix = rectangular array (rows &times; columns). Position a&#7522;&#11388; (i=row, j=col). 8 special types: Row, Column, Rectangular, Square, Null, Diagonal, Scalar, Identity. Add/subtract ONLY with same order.<br><br>
+    <strong style="color:var(--violet)">L7 Matrix Operations:</strong> Scalar: multiply every element by k (order unchanged). Transpose A&#7488;: rows become columns (m&times;n &rarr; n&times;m). Matrix Multiplication AB: columns of A must = rows of B. Use row-column rule. AB &ne; BA generally.
+  </p>
+  <div class="fps">
+    <div class="fp">
+      <div class="fpi">&#128305;</div>
+      <div class="fptitle" style="color:var(--orange)">L3 &middot; 7 Frieze Codes</div>
+      <div class="fptx">T &rarr; Hop<br>TG &rarr; Step<br>TV &rarr; Sidle<br>TR &rarr; Spinning Hop<br>TRVG &rarr; Spinning Sidle<br>THG &rarr; Jump<br>TRHVG &rarr; Spinning Jump</div>
+    </div>
+    <div class="fp">
+      <div class="fpi">&#127800;</div>
+      <div class="fptitle" style="color:var(--amber)">L4 &middot; Fibonacci Key Facts</div>
+      <div class="fptx">F&#8345; = F&#8345;&#8331;&#178; + F&#8345;&#8331;&#185;<br>Starts: 0,1,1,2,3,5,8,13,21,34&hellip;<br>F&#8321;&#8321; = 55 &nbsp;|&nbsp; F&#8321;&#8325; = 610<br>Consecutive ratio &rarr; &phi; &asymp; 1.618<br>Lily = 3 petals; Buttercup = 5<br>Daisy = 34 or 55</div>
+    </div>
+    <div class="fp">
+      <div class="fpi">&#127819;</div>
+      <div class="fptitle" style="color:var(--emerald)">L5 &middot; Fractal Key Facts</div>
+      <div class="fptx">Self-similarity = key property<br>Recursion = simple rule repeated<br>Mandelbrot coined "fractal" (1975)<br>Natural: fern, tree, river, snow<br>Mandelbrot Set = infinite detail<br>Fractals = efficient in nature</div>
+    </div>
+    <div class="fp">
+      <div class="fpi">&#128290;</div>
+      <div class="fptitle" style="color:var(--blue)">L6 &middot; Matrix Types</div>
+      <div class="fptx">Row: 1&times;n &nbsp;|&nbsp; Column: m&times;1<br>Square: n&times;n &nbsp;|&nbsp; Rect: m&ne;n<br>Null: all zeros<br>Diagonal: non-diag = 0<br>Scalar: diagonal, equal diag<br>Identity: scalar, diag = 1</div>
+    </div>
+    <div class="fp">
+      <div class="fpi">&#10006;</div>
+      <div class="fptitle" style="color:var(--violet)">L7 &middot; Matrix Operations</div>
+      <div class="fptx">kA: multiply each element by k<br>A&#7488;: swap rows &amp; columns<br>A(m&times;n) &times; B(n&times;q) = AB(m&times;q)<br>Inner must match; outer = result<br>Row-Col Rule: row&times;col, then sum<br>AB &ne; BA (not commutative)</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer style="text-align:center;padding:40px 24px;color:var(--t3);font-size:12px;border-top:1px solid var(--border);margin-top:40px;">
+  <p>Finite Mathematics 1 &middot; Complete Reviewer &middot; Lessons 3&ndash;7 (Weeks 5&ndash;9) &middot; First Term</p>
+  <p style="margin-top:4px">Use the sticky nav bar to jump between lessons. Each color = one lesson. Good luck!</p>
+</footer>
+</body>
+</html>
