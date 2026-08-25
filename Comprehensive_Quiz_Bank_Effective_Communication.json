@@ -1,0 +1,201 @@
+{
+  "ec-l3-full": {
+    "title": "Lesson 3 Master Quiz: Properties of a Well-Written Text & Modes of Expression",
+    "desc": "Test your mastery over all 44 slide concepts including Unity, Coherence, Cohesion, 5 Organizational Patterns, Language Appropriateness, Personal Narratives, Journaling, and Multimodal Expression.",
+    "questions": [
+      {
+        "q": "What two essential qualities must a text have to achieve its goals of informing, inspiring, or entertaining?",
+        "options": [
+          "Unity and Connectedness",
+          "Rhyme and Meter",
+          "Formality and Jargon",
+          "Complexity and Length"
+        ],
+        "answer": 0,
+        "exp": "As stated in the slides, writing is intended to inform, inspire, or entertain readers, but to achieve these goals, a text needs to have UNITY and CONNECTEDNESS."
+      },
+      {
+        "q": "Which property refers to how well the parts of a text fit together so that all sentences develop the main idea and each paragraph deals with a single main idea?",
+        "options": [
+          "Spatial Order",
+          "Unity",
+          "Jargon",
+          "Vulnerability"
+        ],
+        "answer": 1,
+        "exp": "Unity refers to how well the parts of a text fit together to form a whole, where all sentences develop the main idea and each paragraph covers one main idea."
+      },
+      {
+        "q": "What is the distinction between 'Organization' and 'Order' according to the lesson?",
+        "options": [
+          "Organization is about grammar, while Order is about vocabulary.",
+          "Organization is the logical arrangement of ideas to make the message easier to understand, while Order refers to your choice of what to mention first, second, next, etc.",
+          "Organization is for spoken speech, while Order is only for written essays.",
+          "They are identical synonyms with no distinction."
+        ],
+        "answer": 1,
+        "exp": "Organization is the logical arrangement of ideas to make comprehension easier; Order refers to your sequential choice of what to mention first, second, next, and so on."
+      },
+      {
+        "q": "Which organizational pattern proceeds from specific details to general ideas, summarizing everything into a main idea at the end?",
+        "options": [
+          "Deductive Organization",
+          "Inductive Organization",
+          "Spatial Order",
+          "Chronological Order"
+        ],
+        "answer": 1,
+        "exp": "Inductive organization moves from specific details to general conclusions (represented by a triangle pointing up: Specific at apex, Broad at base)."
+      },
+      {
+        "q": "Which organizational pattern is represented by an inverted triangle (Broad at top base to Specific at bottom apex)?",
+        "options": [
+          "Deductive Organization",
+          "Inductive Organization",
+          "Spatial Order",
+          "Order of Importance"
+        ],
+        "answer": 0,
+        "exp": "Deductive organization starts with a broad general idea/thesis and proceeds downward into specific supporting details and examples."
+      },
+      {
+        "q": "A paragraph describing the Bahay ni Rizal by first encountering the museum pavilion, then the reconstructed nipa-and-bamboo house, and then the adjacent plaza area uses which pattern?",
+        "options": [
+          "Chronological Order",
+          "Spatial Order",
+          "Order of Importance",
+          "Inductive Organization"
+        ],
+        "answer": 1,
+        "exp": "Spatial order organizes details according to physical location and sensory perspective to help readers visualize a layout."
+      },
+      {
+        "q": "An excerpt tracing Bahay ni Rizal from Rizal's birth in 1861, through the Spanish and American periods, to 20th-century restoration and its modern status uses which pattern?",
+        "options": [
+          "Chronological Order",
+          "Spatial Order",
+          "Deductive Order",
+          "Inductive Order"
+        ],
+        "answer": 0,
+        "exp": "Chronological order organizes events along a historical or temporal timeline."
+      },
+      {
+        "q": "Which property refers to the overall oneness of ideas, sentences, and paragraphs where all relevant ideas stick together?",
+        "options": [
+          "Cohesion",
+          "Coherence",
+          "Jargon",
+          "Metacognition"
+        ],
+        "answer": 1,
+        "exp": "Coherence refers to the overall oneness of ideas, sentences, and paragraphs where all relevant ideas stick together."
+      },
+      {
+        "q": "What are transitional devices?",
+        "options": [
+          "Electronic devices used for giving PowerPoint presentations",
+          "Words and phrases that act as bridges between ideas to develop, relate, and move them",
+          "Punctuation marks used exclusively at the end of paragraphs",
+          "Digital algorithms for converting audio into text"
+        ],
+        "answer": 1,
+        "exp": "Transitional devices are words and phrases that act as bridges between ideas to develop, relate, and move them."
+      },
+      {
+        "q": "Why is a Personal Narrative classified as an example of 'Subjective Narration'?",
+        "options": [
+          "Because it is written exclusively in the third-person objective point of view.",
+          "Because it presents a story based mainly on personal feelings, impressions, and lived perspective ('I', 'me', 'we').",
+          "Because it contains only legal facts and statistics.",
+          "Because it must be verified by an external editorial board."
+        ],
+        "answer": 1,
+        "exp": "Personal narratives recount events from the author's subjective viewpoint using sensory details and personal emotions."
+      },
+      {
+        "q": "Which of the following is NOT one of the 6 essential components of a Journal Entry?",
+        "options": [
+          "Today's Date",
+          "Notable Experiences",
+          "Mood or Emotion",
+          "Formal Academic Citation Bibliography"
+        ],
+        "answer": 3,
+        "exp": "The 6 components are: Today's Date, Notable Experiences, Mood or Emotion, Thoughts and Reflections, Goals and Plans, and Drawings or Photos."
+      },
+      {
+        "q": "What ethical guiding principle is highlighted for digital posts and Multimodal Expression?",
+        "options": [
+          "'Always post anonymously'",
+          "'Think before you click'",
+          "'Only post video content'",
+          "'Prioritize viral engagement over accuracy'"
+        ],
+        "answer": 1,
+        "exp": "The lesson reminds students that every digital post leaves an imprint, so one must 'think before you click' to ensure ethical and responsible expression."
+      }
+    ]
+  },
+  "ec-l4-full": {
+    "title": "Lesson 4 Master Quiz: Reflective Communication & Metacognition",
+    "desc": "Evaluate your understanding of the 4 Core Processes of Communication, Metacognition, Lucas (2020) Framework, Reflective Expression Pillars, and the 4 Growth Strategies.",
+    "questions": [
+      {
+        "q": "What are the four core processes in the human communication loop?",
+        "options": [
+          "Speaking, Reading, Writing, Listening",
+          "Interpreting, Engaging, Expressing, Reflecting",
+          "Encoding, Channeling, Decoding, Feedbacking",
+          "Drafting, Editing, Proofreading, Publishing"
+        ],
+        "answer": 1,
+        "exp": "The four core processes in Lesson 4 are Interpreting, Engaging, Expressing, and Reflecting."
+      },
+      {
+        "q": "How is 'Metacognition' fundamentally defined in communication psychology?",
+        "options": [
+          "Communicating through digital avatars in the metaverse",
+          "Thinking about thinking \u2014 the conscious monitoring and regulation of one's own thought and communicative processes",
+          "Memorizing long speeches word-for-word",
+          "Speed reading complex academic articles"
+        ],
+        "answer": 1,
+        "exp": "Metacognition is defined as 'thinking about thinking'\u2014the conscious awareness and self-regulation of one's cognitive and communicative strategies."
+      },
+      {
+        "q": "According to Lucas (2020), what role does reflection play in interpersonal dialogue?",
+        "options": [
+          "It delays speech unnecessarily during rapid negotiations.",
+          "It transforms raw communication experiences into actionable self-knowledge and ethical relational growth.",
+          "It is only necessary when giving formal political speeches.",
+          "It eliminates the need for receiving audience feedback."
+        ],
+        "answer": 1,
+        "exp": "Lucas (2020) underscores reflection as an essential competency for transforming communication into deeper ethical and personal insight."
+      },
+      {
+        "q": "Which pillar of Reflective Expression involves authentic emotional honesty and expressing needs without defensiveness?",
+        "options": [
+          "Insight",
+          "Vulnerability",
+          "Connection",
+          "Jargon"
+        ],
+        "answer": 1,
+        "exp": "Vulnerability is the pillar characterized by emotional authenticity, openness, and courageous expression."
+      },
+      {
+        "q": "What are the four Actionable Growth Strategies for developing reflective communication competence?",
+        "options": [
+          "Setting Clear Goals, Seeking Feedback, Intentional Practice, Tracking Progress",
+          "Talking Faster, Using Jargon, Avoiding Public Speaking, Reading Silently",
+          "Memorizing Vocabulary, Taking Speed Tests, Ignoring Criticism, Multitasking",
+          "Recording Videos, Posting Daily, Buying Equipment, Gaining Followers"
+        ],
+        "answer": 0,
+        "exp": "The four actionable growth strategies are: Setting Clear Goals, Seeking Feedback, Intentional Practice, and Tracking Progress."
+      }
+    ]
+  }
+}
