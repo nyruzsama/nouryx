@@ -299,6 +299,21 @@ body {
 .mob-tab.active-tab.tab-gm { color: #2563eb; }
 .mob-tab.active-tab.tab-fn { color: #d97706; }
 .active-tab.tab-pklp { color: #c2410c; }
+.active-ec { background: #f0f9ff; color: #0284c7; border-color: #bae6fd; font-weight: 800; }
+.active-tab.tab-ec { color: #0284c7; }
+
+/* Effective Communication Theme Classes */
+.ec { color: var(--ec-color); }
+.subj-header-card.ec { border-top: 4px solid var(--ec-color); }
+.shc-badge.ec { background: var(--ec-bg); color: var(--ec-color); border: 1px solid var(--ec-border); }
+.lesson-num.ec { color: var(--ec-color); }
+.c-keyword.ec { border-left-color: var(--ec-color); background: var(--ec-bg); }
+.det-example-box.ec { border-left: 4px solid var(--ec-color); background: var(--ec-bg); }
+.btn-start-quiz.ec { background: var(--ec-color); color: #fff; }
+.btn-start-quiz.ec:hover { background: #0369a1; }
+.card-ec { border-top: 4px solid #0284c7; }
+.card-ec:hover { border-color: #0284c7; box-shadow: 0 12px 28px rgba(2,132,199,0.18); }
+.card-ec .sc-badge { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
 
 /* ==========================================================================
    VIEW SWITCHING & MODE LOGIC
@@ -1233,6 +1248,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
       <!-- Desktop Channel Navigation -->
       <nav class="desktop-pills">
         <button class="dpill active-hub" id="dpill-landing" onclick="switchChannel('landing')">&#127968; Hub</button>
+        <button class="dpill" id="dpill-ec" onclick="switchChannel('ec')">&#128483;&#65039; Effective Comm</button>
         <button class="dpill" id="dpill-mk" onclick="switchChannel('mk')">&#128483;&#65039; MabKom</button>
         <button class="dpill" id="dpill-gs" onclick="switchChannel('gs')">&#128300; Science</button>
         <button class="dpill" id="dpill-gm" onclick="switchChannel('gm')">&#128208; Gen Math</button>
@@ -1252,9 +1268,13 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
        MOBILE BOTTOM NAVIGATION
        ========================================================================== -->
   <nav class="mobile-bottom-nav">
-    <button class="mob-tab active-tab" id="mtab-landing" onclick="switchChannel('landing')">
+    <button class="mob-tab active-tab tab-hub" id="mtab-landing" onclick="switchChannel('landing')">
       <span class="mob-tab-icon">&#127968;</span>
       <span class="mob-tab-lbl">Hub</span>
+    </button>
+    <button class="mob-tab" id="mtab-ec" onclick="switchChannel('ec')">
+      <span class="mob-tab-icon">&#128483;&#65039;</span>
+      <span class="mob-tab-lbl">Eff Comm</span>
     </button>
     <button class="mob-tab" id="mtab-mk" onclick="switchChannel('mk')">
       <span class="mob-tab-icon">&#128483;&#65039;</span>
@@ -2944,6 +2964,386 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
   </div>
 
 
+    <!-- ==========================================================================
+       CHANNEL 6: EFFECTIVE COMMUNICATION (UNIT 1: LESSONS 3 & 4)
+       ========================================================================== -->
+  <div class="view-container" id="view-ec">
+    <div class="channel-top-bar">
+      <button class="ch-back-link" onclick="switchChannel('landing')">&#8592; Topics Hub</button>
+      <div class="ch-heading">&#128483;&#65039; Effective Communication</div>
+      <a href="gengen.html?deck=ec" style="background:linear-gradient(135deg,#0369a1,#0284c7,#38bdf8);color:#fff;padding:6px 14px;border-radius:9999px;font-size:12px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:4px;box-shadow:0 2px 8px rgba(2,132,199,0.3);">
+        <span>&#127918;</span> Play in Gimkit (EC Arena)
+      </a>
+    </div>
+
+    <main class="channel-container">
+      <div class="subj-header-card ec">
+        <div class="shc-badge ec">&#128483;&#65039; Unit 1: Effective Communication in Personal, Interpersonal, Social, and Cultural Contexts</div>
+        <h2 class="shc-title">Mastery of Written Texts &amp; Reflective Expression</h2>
+        <p class="shc-desc">
+          Complete verbatim curriculum reviewer covering all 67 visual slide modules: <strong>Lesson 3 (Properties of a Well-Written Text &amp; Modes of Expression)</strong> and <strong>Lesson 4 (Reflective Communication, Metacognition &amp; Lucas 2020 Framework)</strong>.
+        </p>
+      </div>
+
+      <!-- Gimkit In-Channel Game Banner -->
+      <div style="background:linear-gradient(135deg, #082f49, #0369a1);border:1px solid #38bdf8;border-radius:18px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 8px 24px rgba(3,105,161,0.25);">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;">&#127918;</span>
+          <div>
+            <div style="font-weight:800;font-size:14px;color:#fff;">Gimkit Effective Communication Arena!</div>
+            <div style="font-size:12px;color:#e0f2fe;">Battle in real-time on Text Properties, 5 Organizational Patterns, Metacognition, and Growth Strategies.</div>
+          </div>
+        </div>
+        <a href="gengen.html?deck=ec" style="background:linear-gradient(135deg,#0284c7,#38bdf8);color:#fff;font-weight:800;font-size:12.5px;padding:8px 18px;border-radius:10px;text-decoration:none;box-shadow:0 3px 8px rgba(2,132,199,0.3);">
+          &#9654; Start EC Gimkit Game &rarr;
+        </a>
+      </div>
+
+      <!-- Quick Resource Links Card -->
+      <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px;padding:14px 18px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div style="font-size:13px;color:#0369a1;font-weight:700;">
+          &#128193; Complete Study Guides &amp; Question Banks Created in <code>created_files/</code>:
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="background:#e0f2fe;color:#0369a1;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:6px;border:1px solid #7dd3fc;">Lesson 3 Guide (44 Slides)</span>
+          <span style="background:#e0f2fe;color:#0369a1;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:6px;border:1px solid #7dd3fc;">Lesson 4 Guide (23 Slides)</span>
+          <span style="background:#e0f2fe;color:#0369a1;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:6px;border:1px solid #7dd3fc;">Master Reviewer</span>
+          <span style="background:#e0f2fe;color:#0369a1;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:6px;border:1px solid #7dd3fc;">Raw OCR JSON</span>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           EC LESSON 1: PROPERTIES OF A WELL-WRITTEN TEXT
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-ec-properties">
+        <div class="lesson-head">
+          <div class="lesson-num ec">1</div>
+          <div class="lesson-title">Lesson 3: Properties of a Well-Written Text (Organization, Coherence, Cohesion &amp; Appropriate Language)</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item">
+              <div class="c-keyword ec">Foundations: Unity &amp; Connectedness</div>
+              <div class="c-meaning"><strong>Writing Purpose:</strong> Intended to <em>inform, inspire, or entertain</em>. To achieve this, a text needs <strong>Unity</strong> (all sentences develop main idea; each paragraph has one main idea) and <strong>Connectedness</strong> (weaving ideas so they flow logically).</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">Organization vs. Order</div>
+              <div class="c-meaning"><strong>Organization:</strong> Logical arrangement of ideas to facilitate comprehension (Introduction, Body, Conclusion).<br><strong>Order:</strong> Choice of what to mention first, second, next, and so on.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">Coherence &amp; Cohesion</div>
+              <div class="c-meaning"><strong>Coherence:</strong> Overall oneness of ideas, sentences, and paragraphs where all relevant ideas stick together.<br><strong>Cohesion:</strong> Grammatical and lexical linking holding text together. Achieved via Transitional Devices, Grammar &amp; Mechanics, and Language.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">Appropriate Language</div>
+              <div class="c-meaning"><strong>3 Core Pillars:</strong> 1. <em>Levels of Formality</em> (Formal vs. Informal) &middot; 2. <em>Jargon</em> (specialized group language) &middot; 3. <em>Precision and Clarity</em> (choosing simple, specific, concrete words).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <h4 class="det-subtitle">Core Properties &amp; 3-Part Division of Written Text</h4>
+            <div class="det-example-box ec" style="margin-bottom:18px;">
+              &bull; <strong>Introduction:</strong> Presents the main idea or central point and often includes a hook to grab the reader's attention.<br>
+              &bull; <strong>Body:</strong> Contains the most details about the experience and expounds on the main idea through a series of events or supporting details arranged logically.<br>
+              &bull; <strong>Conclusion:</strong> Gives closure to the text by summarizing major points or posing a reflective question for the reader to ponder.
+            </div>
+
+            <h4 class="det-subtitle">5 Organizational Patterns (With Verbatim Slide Models)</h4>
+            <div class="concept-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+              <div class="concept-item">
+                <div class="c-keyword ec">&#9650; Inductive Organization</div>
+                <div class="c-meaning">
+                  <strong>Concept:</strong> Proceeds from specific details to general ideas; details first, summarized as a main idea at the end (Triangle: Specific at top &rarr; Broad at base).<br><br>
+                  <em>Verbatim Model:</em> "I began my day at the Mercado... Midday I visited the Bahay ni Rizal... In the afternoon I lingered at the town plaza... Those close-up scenes convinced me that Calamba is a city grounded in community, history, and everyday warmth."
+                </div>
+              </div>
+
+              <div class="concept-item">
+                <div class="c-keyword ec">&#9660; Deductive Organization</div>
+                <div class="c-meaning">
+                  <strong>Concept:</strong> Proceeds from general to specific ideas; main idea at start, followed by details, examples, and illustrations (Inverted Triangle: Broad at top &rarr; Specific at apex).<br><br>
+                  <em>Verbatim Model:</em> "Calamba presents itself as a city where strong community life and proud historical memory meet in everyday places. That shows in the Mercado... at the Bahay ni Rizal... and around the town plaza..."
+                </div>
+              </div>
+
+              <div class="concept-item">
+                <div class="c-keyword ec">&#128337; Chronological Order</div>
+                <div class="c-meaning">
+                  <strong>Concept:</strong> Used to explain the history of an event, tell a story, relate an experience, or list steps in a process.<br><br>
+                  <em>Verbatim Model:</em> "The Bahay ni Rizal began as the ancestral home where José Rizal was born in 1861; after his family left it passed through different owners... restoration efforts in the 20th century... and today functions as a shrine and museum."
+                </div>
+              </div>
+
+              <div class="concept-item">
+                <div class="c-keyword ec">&#128065;&#65039; Spatial Order</div>
+                <div class="c-meaning">
+                  <strong>Concept:</strong> Used to help readers visualize something as you want them to see it or to create a main impression using the senses.<br><br>
+                  <em>Verbatim Model:</em> "Entering the Bahay ni Rizal complex, you first encounter the museum pavilion... then the reconstructed nipa-and-bamboo house stands on raised posts... and beyond that the plaza area and memorial markers..."
+                </div>
+              </div>
+
+              <div class="concept-item" style="grid-column: 1 / -1;">
+                <div class="c-keyword ec">&#9745;&#65039; Order of Importance</div>
+                <div class="c-meaning">
+                  <strong>Concept:</strong> Used to persuade or convince an audience by ranking items by their significance, benefit, or priority (Priority #1, Priority #2, Priority #3).<br><br>
+                  <em>Verbatim Model:</em> "Most important about the Bahay ni Rizal is its role as a tangible link to José Rizal's early life... next is its function as a museum... finally, its surrounding grounds and community programs provide accessible ways to engage with Calamba's cultural heritage."
+                </div>
+              </div>
+            </div>
+
+            <h4 class="det-subtitle">Coherence, Cohesion &amp; Transitional Devices Master Table</h4>
+            <div class="det-example-box ec">
+              &bull; <strong>Transitional Devices:</strong> Words and phrases acting as bridges between ideas to develop, relate, and move them.<br>
+              &bull; <strong>Addition:</strong> <em>and, also, besides, further, furthermore, in addition, moreover, next, too, first, second.</em><br>
+              &bull; <strong>Contrast / Conflict:</strong> <em>but, however, on the other hand, in contrast, nevertheless, on the contrary, yet, whereas, although.</em><br>
+              &bull; <strong>Illustration / Examples:</strong> <em>for example, for instance, specifically, to illustrate, in particular, namely, such as.</em><br>
+              &bull; <strong>Cause &amp; Result:</strong> <em>therefore, thus, consequently, as a result, hence, because, since, accordingly.</em><br>
+              &bull; <strong>Summary &amp; Conclusion:</strong> <em>in conclusion, in summary, to sum up, finally, all in all, in short.</em><br>
+              &bull; <strong>Time &amp; Sequence:</strong> <em>meanwhile, subsequently, simultaneously, after, before, then, earlier, later.</em><br>
+              &bull; <strong>Spatial / Location:</strong> <em>above, below, adjacent, beyond, nearby, opposite, across.</em><br>
+              &bull; <strong>Grammar &amp; Mechanics:</strong> Adherence to subject-verb agreement, proper punctuation marks, proper capitalization, and spelling.
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Properties of a Well-Written Text</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Unity, Connectedness, 5 Organizational Patterns, Coherence, Cohesion &amp; Mechanics</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz ec" onclick="startLessonQuiz('ec-properties-text')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html?deck=ec" class="btn-start-quiz" style="background:linear-gradient(135deg,#0284c7,#38bdf8);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:700;">
+              <span>&#127918;</span> Play in Gimkit (EC)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           EC LESSON 2: MODES OF EXPRESSION
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-ec-modes">
+        <div class="lesson-head">
+          <div class="lesson-num ec">2</div>
+          <div class="lesson-title">Lesson 3: Modes of Expression (Personal Narratives, Journal Entries &amp; Multimodal Expression)</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item">
+              <div class="c-keyword ec">Expression Philosophy</div>
+              <div class="c-meaning">"Every person has a story worth telling, but the true impact of that story lies in the mode you choose to express it. Expression is the bridge between your inner world and your audience; it is the art of sharing thoughts, emotions, and intentions clearly and purposefully."</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">1. Personal Narratives</div>
+              <div class="c-meaning"><strong>Definition:</strong> A text structure recounting a specific event at a particular place and time. An example of <em>Subjective Narration</em> (focusing on feelings and personal impressions from "I", "me", "we" perspective). Recreates experience using sensory details.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">2. Journal Entries</div>
+              <div class="c-meaning"><strong>6 Essential Components:</strong> 1. Today's Date &middot; 2. Notable Experiences &middot; 3. Mood or Emotion &middot; 4. Thoughts and Reflections &middot; 5. Goals and Plans &middot; 6. Drawings or Photos.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">3. Multimodal Expression</div>
+              <div class="c-meaning"><strong>Definition:</strong> Multiple channels/modes (text, audio, video, images) used simultaneously (e.g. Vlogging &amp; digital media). Ethical Rule: <strong>"Think before you click"</strong> because every digital post leaves an imprint.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <h4 class="det-subtitle">Deep Breakdown: 3 Modes of Expression</h4>
+
+            <div class="concept-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+              <div class="concept-item">
+                <div class="c-keyword ec">Personal Narrative Key Features</div>
+                <div class="c-meaning">
+                  &bull; <strong>Perspective:</strong> Told from your point of view using pronouns like "I," "me," and "we".<br>
+                  &bull; <strong>Recreation of Experience:</strong> Allows you to recreate an event so readers can visualize and feel what it was like to be there.<br>
+                  &bull; <strong>Sensory Details:</strong> Using details of what you saw, heard, tasted, smelled, or felt to give life to the story.
+                </div>
+              </div>
+
+              <div class="concept-item">
+                <div class="c-keyword ec">6 Essential Components of Journaling</div>
+                <div class="c-meaning">
+                  &bull; <strong>1. Today's Date:</strong> Crucial for tracking personal progress and growth over time.<br>
+                  &bull; <strong>2. Notable Experiences:</strong> Documenting significant positive or negative events to learn deeper lessons.<br>
+                  &bull; <strong>3. Mood or Emotion:</strong> Reflecting on emotional connections to experiences.<br>
+                  &bull; <strong>4. Thoughts &amp; Reflections:</strong> Internal self-analysis and processing.<br>
+                  &bull; <strong>5. Goals &amp; Plans:</strong> Staying motivated and accountable.<br>
+                  &bull; <strong>6. Drawings or Photos:</strong> Expressing complex feelings beyond words.
+                </div>
+              </div>
+            </div>
+
+            <h4 class="det-subtitle">Multimodal Expression &amp; Responsible Digital Presence</h4>
+            <div class="det-example-box ec">
+              &bull; <strong>Multimodal Integration:</strong> Combining text, audio, video, and imagery simultaneously into a unified message (vlogging, podcasts, digital storytelling).<br>
+              &bull; <strong>Ethical Axiom:</strong> <em>"Remembering that every digital post leaves an imprint, you must think before you click to ensure your expression is ethical and responsible."</em>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Modes of Expression</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Personal Narratives, Subjective Narration, Journal Components &amp; Multimodal Ethics</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz ec" onclick="startLessonQuiz('ec-modes-expression')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html?deck=ec" class="btn-start-quiz" style="background:linear-gradient(135deg,#0284c7,#38bdf8);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:700;">
+              <span>&#127918;</span> Play in Gimkit (EC)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           EC LESSON 3: THE 4 CORE PROCESSES OF COMMUNICATION
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-ec-processes">
+        <div class="lesson-head">
+          <div class="lesson-num ec">3</div>
+          <div class="lesson-title">Lesson 4: The Four Core Processes of Communication ("The Engine for Growth")</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item">
+              <div class="c-keyword ec">1. Interpreting</div>
+              <div class="c-meaning"><strong>"Understanding Meaning":</strong> Cognitive decoding of verbal, nonverbal, and contextual symbols; looking beyond literal words to grasp tone, subtext, emotions, and underlying intent.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">2. Engaging</div>
+              <div class="c-meaning"><strong>"Showing Presence":</strong> Active relational involvement demonstrated through attentive listening, empathy, eye contact, respectful posture, and reciprocal feedback.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">3. Expressing</div>
+              <div class="c-meaning"><strong>"Sharing with Purpose":</strong> The purposeful articulation of thoughts, emotions, and intentions into verbal/nonverbal actions tailored to audience and context.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">4. Reflecting</div>
+              <div class="c-meaning"><strong>"Evaluating Oneself":</strong> Looking back at how you interpreted, engaged, and expressed yourself to assess what succeeded, what caused confusion, and how to adapt.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <h4 class="det-subtitle">The Continuous Communication Cycle</h4>
+            <div class="det-example-box ec" style="margin-bottom:18px;">
+              &bull; <strong>Dynamic Interdependence:</strong> Communication is not a one-directional arrow. It operates in an ongoing loop: <em>Interpreting &rarr; Engaging &rarr; Expressing &rarr; Reflecting &rarr; (refining subsequent Interpreting)</em>.<br><br>
+              &bull; <strong>Transformative Shift:</strong> Balancing all four processes enables individuals to move from mechanical "talking" to genuine, empathetic "connecting".
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: The 4 Core Processes</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Interpreting, Engaging, Expressing, and Reflecting</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz ec" onclick="startLessonQuiz('ec-core-processes')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html?deck=ec" class="btn-start-quiz" style="background:linear-gradient(135deg,#0284c7,#38bdf8);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:700;">
+              <span>&#127918;</span> Play in Gimkit (EC)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           EC LESSON 4: METACOGNITION, LUCAS (2020) & 4 GROWTH STRATEGIES
+           ====================================================================== -->
+      <section class="lesson-card" id="lesson-ec-reflective">
+        <div class="lesson-head">
+          <div class="lesson-num ec">4</div>
+          <div class="lesson-title">Lesson 4: Metacognition, Reflective Expression &amp; Actionable Growth Strategies (Lucas 2020)</div>
+        </div>
+
+        <div class="mode-summary-content">
+          <div class="concept-grid">
+            <div class="concept-item">
+              <div class="c-keyword ec">Metacognition</div>
+              <div class="c-meaning"><strong>Definition:</strong> "Thinking about thinking" &mdash; the conscious awareness, real-time monitoring, and self-regulation of one's communicative strategies and cognitive habits.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">Lucas (2020) Framework</div>
+              <div class="c-meaning"><strong>Core Insight:</strong> Self-reflection transforms raw, everyday communication experiences into intentional learning and actionable self-knowledge.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">Pillars of Reflective Expression</div>
+              <div class="c-meaning"><strong>1. Insight:</strong> Self-awareness of motives and triggers &middot; <strong>2. Vulnerability:</strong> Authentic, courageous openness &middot; <strong>3. Connection:</strong> Empathetic bridging of relational divides.</div>
+            </div>
+            <div class="concept-item">
+              <div class="c-keyword ec">4 Growth Strategies</div>
+              <div class="c-meaning"><strong>Mastery Roadmap:</strong> 1. Setting Clear Goals &middot; 2. Seeking Feedback &middot; 3. Intentional Practice &middot; 4. Tracking Progress to correct mistakes before they become ingrained habits.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mode-detailed-content">
+          <div class="detailed-section">
+            <h4 class="det-subtitle">The Metacognitive Monitoring Framework in Real-Time Dialogue</h4>
+            <div class="concept-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+              <div class="concept-item"><div class="c-keyword ec">Planning (Pre-interaction)</div><div class="c-meaning">"What is my core goal? Who is my audience? Which tone and level of formality will best resonate?"</div></div>
+              <div class="concept-item"><div class="c-keyword ec">Monitoring (In-flight)</div><div class="c-meaning">"Am I being understood? Is my non-verbal body language open? Does my listener show confusion?"</div></div>
+              <div class="concept-item"><div class="c-keyword ec">Revising (Mid-stream adjustment)</div><div class="c-meaning">"Let me rephrase that concept using a concrete, relatable example."</div></div>
+              <div class="concept-item"><div class="c-keyword ec">Evaluating (Post-interaction)</div><div class="c-meaning">"Did I achieve my intended purpose? What specific element can I refine for next time?"</div></div>
+            </div>
+
+            <h4 class="det-subtitle">4 Actionable Strategies for Long-term Communication Mastery</h4>
+            <div class="det-example-box ec">
+              &bull; <strong>1. Setting Clear Goals:</strong> Formulate explicit, measurable targets (e.g. pausing before responding, eliminating filler words, maintaining steady eye contact).<br>
+              &bull; <strong>2. Seeking Feedback:</strong> Actively inviting candid evaluations from mentors, peers, and listeners to illuminate unconscious blind spots.<br>
+              &bull; <strong>3. Intentional Practice:</strong> Engaging in deliberate, low-stakes practice routines (recording speeches, simulated negotiations) rather than passive repetition.<br>
+              &bull; <strong>4. Tracking Progress:</strong> Maintaining a reflective communication log or journal to analyze growth trends over time.
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-category-box">
+          <div class="quiz-cat-left">
+            <div class="quiz-cat-icon">&#9997;&#65039;</div>
+            <div>
+              <div class="quiz-cat-title">Quiz: Metacognition &amp; Growth Strategies</div>
+              <div class="quiz-cat-sub">Multiple Choice &middot; Metacognitive Monitoring, Lucas (2020) Framework &amp; 4 Growth Strategies</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-start-quiz ec" onclick="startLessonQuiz('ec-reflective-metacognition')">
+              <span>&#127919;</span> Take Lesson Quiz
+            </button>
+            <a href="gengen.html?deck=ec" class="btn-start-quiz" style="background:linear-gradient(135deg,#0284c7,#38bdf8);color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:700;">
+              <span>&#127918;</span> Play in Gimkit (EC)
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+
   <div class="view-container" id="view-fn">
     <div class="channel-top-bar">
       <button class="ch-back-link" onclick="switchChannel('landing')">&#8592; Topics Hub</button>
@@ -4510,6 +4910,306 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         "hint": "Bayanihan, kapwa, at malasakit ang bunga ng pagkakaisa."
       }
     ]
+  },
+    "ec-properties-text": {
+    "title": "Properties of a Well-Written Text",
+    "lessonId": "lesson-ec-properties",
+    "questions": [
+      {
+        "q": "What two essential qualities must a text have to achieve its goals of informing, inspiring, or entertaining?",
+        "options": [
+          "Unity and Connectedness",
+          "Rhyme and Meter",
+          "Formality and Jargon",
+          "Length and Complexity"
+        ],
+        "answer": 0,
+        "hint": "Writing requires oneness and logical flow.",
+        "explanation": "Writing is intended to inform, inspire, or entertain readers, and requires UNITY and CONNECTEDNESS to succeed."
+      },
+      {
+        "q": "Which property refers to how well the parts of a text fit together so that all sentences develop the main idea and each paragraph deals with a single main idea?",
+        "options": [
+          "Spatial Order",
+          "Unity",
+          "Jargon",
+          "Vulnerability"
+        ],
+        "answer": 1,
+        "hint": "Oneness of topic throughout the text.",
+        "explanation": "Unity means all sentences develop the main idea and each paragraph handles one main idea."
+      },
+      {
+        "q": "What is the distinction between 'Organization' and 'Order' according to the lesson?",
+        "options": [
+          "Organization is grammar; Order is vocabulary",
+          "Organization is the logical arrangement of ideas to make the message easier to understand, while Order refers to your choice of what to mention first, second, next, etc.",
+          "Organization is for spoken speech; Order is only for written essays",
+          "They are identical synonyms with no distinction"
+        ],
+        "answer": 1,
+        "hint": "Arrangement structure vs. sequence choice.",
+        "explanation": "Organization is the logical framework (Intro, Body, Conclusion); Order is the sequence of details."
+      },
+      {
+        "q": "Which organizational pattern proceeds from specific details to general ideas, summarizing everything into a main idea at the end?",
+        "options": [
+          "Deductive Organization",
+          "Inductive Organization",
+          "Spatial Order",
+          "Chronological Order"
+        ],
+        "answer": 1,
+        "hint": "Specific details first -> Broad main idea at the end (Upright triangle).",
+        "explanation": "Inductive organization moves from specific observations to a general conclusion at the end."
+      },
+      {
+        "q": "Which organizational pattern is represented by an inverted triangle (Broad at top base to Specific at bottom apex)?",
+        "options": [
+          "Deductive Organization",
+          "Inductive Organization",
+          "Spatial Order",
+          "Order of Importance"
+        ],
+        "answer": 0,
+        "hint": "Broad thesis first -> Specific details following.",
+        "explanation": "Deductive organization starts with a broad general idea/thesis and proceeds downward into specific supporting details."
+      },
+      {
+        "q": "A paragraph describing the Bahay ni Rizal by first encountering the museum pavilion, then the reconstructed nipa-and-bamboo house, and then the adjacent plaza area uses which pattern?",
+        "options": [
+          "Chronological Order",
+          "Spatial Order",
+          "Order of Importance",
+          "Inductive Organization"
+        ],
+        "answer": 1,
+        "hint": "Arranging details according to physical location and sight.",
+        "explanation": "Spatial order arranges physical details according to visual and geographical placement."
+      },
+      {
+        "q": "An excerpt tracing Bahay ni Rizal from Rizal's birth in 1861, through the Spanish and American periods, to 20th-century restoration and its modern status uses which pattern?",
+        "options": [
+          "Chronological Order",
+          "Spatial Order",
+          "Deductive Order",
+          "Inductive Order"
+        ],
+        "answer": 0,
+        "hint": "Temporal sequence from 1861 to present.",
+        "explanation": "Chronological order explains historical timelines or procedural sequences."
+      },
+      {
+        "q": "Ranking items according to Priority #1, Priority #2, and Priority #3 to convince an audience illustrates:",
+        "options": [
+          "Spatial Order",
+          "Order of Importance",
+          "Chronological Order",
+          "Inductive Order"
+        ],
+        "answer": 1,
+        "hint": "Ranking by significance and priority.",
+        "explanation": "Order of Importance ranks elements by significance, benefit, or priority to persuade the reader."
+      },
+      {
+        "q": "What are transitional devices?",
+        "options": [
+          "Electronic devices used for presentations",
+          "Words and phrases that act as bridges between ideas to develop, relate, and move them",
+          "Punctuation marks used only in footnotes",
+          "Smartphones and tablets"
+        ],
+        "answer": 1,
+        "hint": "Bridges connecting ideas in writing.",
+        "explanation": "Transitional devices are words/phrases (e.g. moreover, however, therefore) that link sentences and paragraphs."
+      }
+    ]
+  },
+  "ec-modes-expression": {
+    "title": "Modes of Expression & Personal Narratives",
+    "lessonId": "lesson-ec-modes",
+    "questions": [
+      {
+        "q": "Why is a Personal Narrative classified as an example of 'Subjective Narration'?",
+        "options": [
+          "It is written in the third person by an objective reporter",
+          "It presents a story based mainly on personal feelings, impressions, and lived perspective ('I', 'me', 'we')",
+          "It contains only mathematical data",
+          "It avoids all emotions"
+        ],
+        "answer": 1,
+        "hint": "Subjective narration focuses on feelings and first-person point of view.",
+        "explanation": "Personal narratives recreate events from the author's own perspective using feelings and sensory details."
+      },
+      {
+        "q": "Which of the following is NOT one of the 6 essential components of a Journal Entry?",
+        "options": [
+          "Today's Date",
+          "Notable Experiences",
+          "Mood or Emotion",
+          "Formal Academic Bibliography"
+        ],
+        "answer": 3,
+        "hint": "Journals are reflective personal records, not cited research papers.",
+        "explanation": "The 6 components are Date, Notable Experiences, Mood/Emotion, Thoughts/Reflections, Goals/Plans, and Drawings/Photos."
+      },
+      {
+        "q": "Why is writing 'Today's Date' considered an essential component of a journal entry?",
+        "options": [
+          "It is required by copyright law",
+          "It is crucial for tracking personal progress and growth over time",
+          "It ensures the journal can be sold as a book",
+          "It is just a decorative tradition"
+        ],
+        "answer": 1,
+        "hint": "Tracking progress and personal evolution.",
+        "explanation": "Dates provide a temporal baseline to track mindset shifts and personal milestones."
+      },
+      {
+        "q": "What ethical guiding principle is emphasized for digital posts and Multimodal Expression?",
+        "options": [
+          "'Always post anonymously'",
+          "'Think before you click'",
+          "'Only post video content'",
+          "'Prioritize virality over truth'"
+        ],
+        "answer": 1,
+        "hint": "Awareness that every digital post leaves an imprint.",
+        "explanation": "Because every digital post leaves a permanent footprint, communicators must 'think before you click'."
+      }
+    ]
+  },
+  "ec-core-processes": {
+    "title": "The Four Core Processes of Communication",
+    "lessonId": "lesson-ec-processes",
+    "questions": [
+      {
+        "q": "Which of the 4 Core Processes of Communication is described as 'Understanding Meaning'—looking beyond literal words to grasp tone, emotion, and intent?",
+        "options": [
+          "Expressing",
+          "Interpreting",
+          "Reflecting",
+          "Engaging"
+        ],
+        "answer": 1,
+        "hint": "Interpreting = decoding meaning and intent.",
+        "explanation": "Interpreting involves decoding verbal and nonverbal cues to comprehend the true underlying message."
+      },
+      {
+        "q": "Demonstrating active listening, empathy, eye contact, and showing presence in the communicative cycle corresponds to which core process?",
+        "options": [
+          "Engaging",
+          "Interpreting",
+          "Dictating",
+          "Grammar"
+        ],
+        "answer": 0,
+        "hint": "Engaging = Showing presence and active connection.",
+        "explanation": "Engaging represents active presence and empathetic participation in communication."
+      },
+      {
+        "q": "What is the core definition of 'Expressing' in effective communication?",
+        "options": [
+          "Remaining completely silent during discussions",
+          "Sharing with purpose: putting thoughts and feelings into words and actions tailored to audience and goal",
+          "Memorizing a dictionary",
+          "Criticizing other speakers"
+        ],
+        "answer": 1,
+        "hint": "Expressing = Sharing with purpose and structure.",
+        "explanation": "Expressing is the purposeful encoding of thoughts and feelings into verbal and nonverbal communication."
+      },
+      {
+        "q": "Which core process serves as 'Evaluating Oneself' to assess what communication strategies succeeded and what failed?",
+        "options": [
+          "Interpreting",
+          "Reflecting",
+          "Translating",
+          "Lecturing"
+        ],
+        "answer": 1,
+        "hint": "Reflecting = self-evaluation and growth.",
+        "explanation": "Reflecting enables communicators to look back at their performance and make adjustments."
+      },
+      {
+        "q": "Why is awareness of all four core processes (Interpreting, Engaging, Expressing, Reflecting) transformative for communicators?",
+        "options": [
+          "It allows communicators to move from merely 'talking' to genuinely 'connecting'",
+          "It eliminates the need to speak English",
+          "It guarantees nobody will ever disagree with you",
+          "It replaces all grammar rules"
+        ],
+        "answer": 0,
+        "hint": "From talking to genuine connection.",
+        "explanation": "Balancing all four processes turns mechanical talking into meaningful interpersonal connection and growth."
+      }
+    ]
+  },
+  "ec-reflective-metacognition": {
+    "title": "Metacognition & Reflective Framework",
+    "lessonId": "lesson-ec-reflective",
+    "questions": [
+      {
+        "q": "What is METACOGNITION in the context of effective communication?",
+        "options": [
+          "Memorizing long speeches",
+          "Thinking about your own thinking: monitoring, evaluating, and adapting how you speak, listen, write, and respond",
+          "Using artificial intelligence to write all papers",
+          "Ignoring listener feedback"
+        ],
+        "answer": 1,
+        "hint": "Thinking about one's own thinking and communication process.",
+        "explanation": "Metacognition is self-awareness and intentional regulation of one's communicative performance."
+      },
+      {
+        "q": "According to Lucas (2020), what is the key transformative value of self-reflection in communication?",
+        "options": [
+          "It transforms raw experience into intentional learning and heightened self-awareness",
+          "It eliminates the need for preparation",
+          "It makes speeches shorter",
+          "It ensures you will never receive criticism"
+        ],
+        "answer": 0,
+        "hint": "Transforms experience into learning.",
+        "explanation": "Lucas (2020) emphasizes that self-reflection converts communicative experiences into lasting skills and intentionality."
+      },
+      {
+        "q": "Which pillar of Reflective Expression involves authentic emotional honesty and expressing needs without defensiveness?",
+        "options": [
+          "Insight",
+          "Vulnerability",
+          "Connection",
+          "Jargon"
+        ],
+        "answer": 1,
+        "hint": "Courageous openness and emotional authenticity.",
+        "explanation": "Vulnerability is the pillar characterized by emotional authenticity and openness."
+      },
+      {
+        "q": "What are the four Actionable Growth Strategies for developing reflective communication competence?",
+        "options": [
+          "Setting Clear Goals, Seeking Feedback, Intentional Practice, Tracking Progress",
+          "Talking Faster, Using Jargon, Avoiding Public Speaking, Reading Silently",
+          "Memorizing Vocabulary, Taking Speed Tests, Ignoring Criticism, Multitasking",
+          "Recording Videos, Posting Daily, Buying Equipment, Gaining Followers"
+        ],
+        "answer": 0,
+        "hint": "Goals, Feedback, Deliberate Practice, and Tracking.",
+        "explanation": "The 4 actionable strategies are Setting Clear Goals, Seeking Feedback, Intentional Practice, and Tracking Progress."
+      },
+      {
+        "q": "During a live presentation, asking yourself 'Am I speaking too quickly? Does the audience follow this graph?' is an example of:",
+        "options": [
+          "Passive Daydreaming",
+          "Real-time Metacognitive Monitoring",
+          "External Interruption",
+          "Spatial Disorientation"
+        ],
+        "answer": 1,
+        "hint": "In-flight monitoring of one's own clarity.",
+        "explanation": "Real-time metacognitive monitoring allows communicators to adjust their delivery mid-stream to maintain clarity."
+      }
+    ]
   }
 };
 
@@ -4578,7 +5278,8 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         'gs': document.getElementById('view-gs'),
         'gm': document.getElementById('view-gm'),
         'fn': document.getElementById('view-fn'),
-        'pklp': document.getElementById('view-pklp')
+        'pklp': document.getElementById('view-pklp'),
+        'ec': document.getElementById('view-ec')
       };
 
       const dpills = {
@@ -4587,7 +5288,8 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         'gs': document.getElementById('dpill-gs'),
         'gm': document.getElementById('dpill-gm'),
         'fn': document.getElementById('dpill-fn'),
-        'pklp': document.getElementById('dpill-pklp')
+        'pklp': document.getElementById('dpill-pklp'),
+        'ec': document.getElementById('dpill-ec')
       };
 
       const mtabs = {
@@ -4596,7 +5298,8 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
         'gs': document.getElementById('mtab-gs'),
         'gm': document.getElementById('mtab-gm'),
         'fn': document.getElementById('mtab-fn'),
-        'pklp': document.getElementById('mtab-pklp')
+        'pklp': document.getElementById('mtab-pklp'),
+        'ec': document.getElementById('mtab-ec')
       };
 
       Object.keys(views).forEach(k => {
@@ -4752,6 +5455,10 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
           gimBtn.href = 'gengen.html?deck=pklp';
           gimBtn.innerHTML = '<span>&#127918;</span> Laruin ang PKLP sa Gimkit Arena &rarr;';
           gimBtn.style.background = 'linear-gradient(135deg,#ea580c,#d97706)';
+        } else if (activeQuizKey && activeQuizKey.startsWith('ec-')) {
+          gimBtn.href = 'gengen.html?deck=ec';
+          gimBtn.innerHTML = '<span>&#127918;</span> Play Effective Communication in Gimkit &rarr;';
+          gimBtn.style.background = 'linear-gradient(135deg,#0284c7,#38bdf8)';
         } else {
           gimBtn.href = 'gengen.html';
           gimBtn.innerHTML = '<span>&#127918;</span> Play Gimkit Game Arena &rarr;';
@@ -4789,6 +5496,10 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
 
     // Search Engine
     const searchTerms = [
+      { title: "Properties of a Well-Written Text", channel: "ec", lessonId: "lesson-ec-properties", desc: "Organization, Chronological/Spatial/Emphatic Order, Coherence, Cohesion, Transitions" },
+      { title: "Modes of Expression & Personal Narratives", channel: "ec", lessonId: "lesson-ec-modes", desc: "Personal narratives, Subjective vs Objective, Journal entries, Multimodal Vlogging" },
+      { title: "The 4 Core Processes of Communication", channel: "ec", lessonId: "lesson-ec-processes", desc: "Interpreting, Engaging, Expressing, Reflecting - The communication engine" },
+      { title: "Metacognition & Reflective Growth (Lucas 2020)", channel: "ec", lessonId: "lesson-ec-reflective", desc: "Thinking about thinking, monitoring, 4 Actionable growth strategies" },
       { title: "Dimensiyon ng Buhay (Hiyas, Agimat, Ginhawa)", channel: "pklp", lessonId: "lesson-pk-buhay", desc: "Hiyas (Buhay na Lakas), Anting-anting (Proteksyon), Ginhawa (Life Force), Loob at Labas" },
       { title: "Dimensiyon ng Kabiláng-Buhay & Manunggul Jar", channel: "pklp", lessonId: "lesson-pk-kabilangbuhay", desc: "Kaluluwa, Dungan, Banga ng Manunggul, Anito, Umalagad, Pasiyam, Babang Luksa, Atang" },
       { title: "Katutubong Pagpapagaling & 10 Halamang-Gamot", channel: "pklp", lessonId: "lesson-pk-pagpapagaling", desc: "Baylan/Babaylan, Tutho (Tura), Hilot, Tawas, Pausok (Suob), Kamangyan, Lagundi, Sambong" },
@@ -4858,7 +5569,7 @@ body.mode-is-detailed .mode-detailed-content { display: block !important; }
       const hash = window.location.hash;
       if (hash.startsWith('#channel-')) {
         const ch = hash.replace('#channel-', '');
-        if (['mk', 'gs', 'gm', 'fn', 'pklp'].includes(ch)) {
+        if (['mk', 'gs', 'gm', 'fn', 'pklp', 'ec'].includes(ch)) {
           switchChannel(ch);
         }
       }
