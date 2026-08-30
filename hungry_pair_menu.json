@@ -1,0 +1,378 @@
+{
+  "categories": [
+    {
+      "category": "Refreshing Lemonade ",
+      "description": "Freshly squeezed lemonade made with real lemons—perfectly balanced with a hint of sweetness for a cool, refreshing sip",
+      "product_ids": [
+        "124233607",
+        "124233784",
+        "124233785",
+        "124233786",
+        "124233787"
+      ]
+    },
+    {
+      "category": "Tebasaki Chicken ",
+      "description": "Signature Tebasaki Chicken ",
+      "product_ids": [
+        "137165164",
+        "137165167"
+      ]
+    },
+    {
+      "category": "Rice Bowl",
+      "description": "",
+      "product_ids": [
+        "123014516",
+        "123607775",
+        "124233884",
+        "124233894"
+      ]
+    },
+    {
+      "category": "Gyudon Series",
+      "description": "",
+      "product_ids": [
+        "124436119",
+        "125352725",
+        "125352814"
+      ]
+    },
+    {
+      "category": "Platters",
+      "description": "",
+      "product_ids": [
+        "123014518"
+      ]
+    },
+    {
+      "category": "Seafood Bucket",
+      "description": "Dive into our Seafood Bucket—packed with shrimp, mussels, scallops, squid, and crabs, served with marble potatoes and sweet corn. Choose your flavor: bold Cajun or rich Butter Garlic!”",
+      "product_ids": [
+        "124253607",
+        "125474364",
+        "137164531",
+        "137164586",
+        "137164597",
+        "137164603",
+        "137164647",
+        "137164611",
+        "137164896",
+        "137165038"
+      ]
+    },
+    {
+      "category": "Signature Waffles and Mini Pancakes ",
+      "description": "Golden, crispy on the outside and soft on the inside—our Signature Waffles are freshly made to perfection and served with your favorite toppings for a sweet, satisfying treat.",
+      "product_ids": [
+        "124361552",
+        "124361590",
+        "124361719",
+        "124361852",
+        "124362572",
+        "124362575",
+        "124362594"
+      ]
+    },
+    {
+      "category": "Refreshing Lemonade ",
+      "description": "Freshly squeezed lemonade made with real lemons—perfectly balanced with a hint of sweetness for a cool, refreshing sip",
+      "product_ids": [
+        "124233607",
+        "124233784",
+        "124233785",
+        "124233786",
+        "124233787"
+      ]
+    },
+    {
+      "category": "Tebasaki Chicken ",
+      "description": "Signature Tebasaki Chicken ",
+      "product_ids": [
+        "137165164",
+        "137165167"
+      ]
+    },
+    {
+      "category": "Rice Bowl",
+      "description": "",
+      "product_ids": [
+        "123014516",
+        "123607775",
+        "124233884",
+        "124233894"
+      ]
+    },
+    {
+      "category": "Gyudon Series",
+      "description": "",
+      "product_ids": [
+        "124436119",
+        "125352725",
+        "125352814"
+      ]
+    },
+    {
+      "category": "Platters",
+      "description": "",
+      "product_ids": [
+        "123014518"
+      ]
+    },
+    {
+      "category": "Seafood Bucket",
+      "description": "Dive into our Seafood Bucket—packed with shrimp, mussels, scallops, squid, and crabs, served with marble potatoes and sweet corn. Choose your flavor: bold Cajun or rich Butter Garlic!”",
+      "product_ids": [
+        "124253607",
+        "125474364",
+        "137164531",
+        "137164586",
+        "137164597",
+        "137164603",
+        "137164647",
+        "137164611",
+        "137164896",
+        "137165038"
+      ]
+    },
+    {
+      "category": "Signature Waffles and Mini Pancakes ",
+      "description": "Golden, crispy on the outside and soft on the inside—our Signature Waffles are freshly made to perfection and served with your favorite toppings for a sweet, satisfying treat.",
+      "product_ids": [
+        "124361552",
+        "124361590",
+        "124361719",
+        "124361852",
+        "124362572",
+        "124362575",
+        "124362594"
+      ]
+    }
+  ],
+  "products": {
+    "124233894": {
+      "id": "124233894",
+      "title": "Tebasaki Chicken ",
+      "description": "Tender chicken wings glazed with a savory sweet sauce served over fluffy steamed rice A beloved Japanese inspired dish with crispy exterior and juicy meat",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/bb346496-72bb-4952-92f0-f83b7c9b9e94.jpg",
+      "price": "₱..."
+    },
+    "125474364": {
+      "id": "125474364",
+      "title": "Solo Bucket - Regular ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/b7b56a43-5a7d-4bc8-befa-2c2e93f7c36b.jpg",
+      "price": "₱..."
+    },
+    "123607775": {
+      "id": "123607775",
+      "title": "Pork Katsudon",
+      "description": "Crispy breaded pork cutlet served over fluffy steamed rice topped with a savory egg sauce and fresh green onions A beloved Japanese comfort dish perfect for any meal",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/da49ce9a-a06c-461c-a9cd-c5b62b7b58d5.jpg",
+      "price": "₱..."
+    },
+    "124233884": {
+      "id": "124233884",
+      "title": "Pork Tonkatsu ",
+      "description": "Crispy breaded pork cutlet served over steamed rice with tonkatsu sauce fresh cabbage and a perfectly fried egg on top",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/dac6f2fd-5247-4388-8d21-298c3d19da86.jpg",
+      "price": "₱75.00"
+    },
+    "123014516": {
+      "id": "123014516",
+      "title": "Garlic Butter Shrimp",
+      "description": "Shrimp sauteed in garlic butter sauce",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/130351994/4c3b93f2-810d-4f1a-bc00-596741d5af00.jpg",
+      "price": "₱75.00"
+    },
+    "124233607": {
+      "id": "124233607",
+      "title": "Classic Lemonade ",
+      "description": "Freshly squeezed lemonade made with ripe lemons sugar and cool water Perfect thirst quencher on a hot day with a bright citrusy taste",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/6168ed02-358d-4181-b7ae-1ec972d8e71e.jpg",
+      "price": "₱75.00"
+    },
+    "124233784": {
+      "id": "124233784",
+      "title": "Chia Lemonade ",
+      "description": "Refreshing chia lemonade made with fresh squeezed lemons and chia seeds for a delightful burst of citrus flavor and natural energy perfect for any time of day",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/ae33795e-6dc5-4a30-8612-1387dff62506.jpg",
+      "price": "₱75.00"
+    },
+    "124233785": {
+      "id": "124233785",
+      "title": "Calamansi Lemonade ",
+      "description": "Refreshing calamansi lemonade made with freshly squeezed local calamansi juice blended with cool water and a touch of sweetness Perfect for hot days and pairs well with any meal",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/de4ff4eb-c5d3-4ed8-8dfe-63ba7a1d57f1.jpg",
+      "price": "₱75.00"
+    },
+    "124233786": {
+      "id": "124233786",
+      "title": "Strawberry Lemonade ",
+      "description": "Refreshing strawberry lemonade made with fresh ripe strawberries and tangy lemon juice blended with pure water and a touch of sweetness Perfect for hot days and gatherings",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/21c730de-ee83-4a3a-8baf-1dfab3c42684.jpg",
+      "price": "₱75.00"
+    },
+    "124233787": {
+      "id": "124233787",
+      "title": "Lychee Lemonade ",
+      "description": "Refreshing lychee lemonade blending sweet tropical lychee with tangy fresh lemon juice Perfect for hot days this chilled beverage offers a delightful balance of fruity sweetness and citrus brightness",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/58a1920b-ba91-4372-b7cc-1d9a42d55a2b.jpg",
+      "price": "₱75.00"
+    },
+    "137165164": {
+      "id": "137165164",
+      "title": "1 pc Tebasaki Chicken with House Blend Iced Tea",
+      "description": "Crispy tebasaki chicken with tender meat and golden skin paired with our refreshing house blend iced tea for the perfect meal combo",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/bb3639cd-ac66-4641-bc10-5fc8ae9de697.jpg",
+      "price": "₱204.00"
+    },
+    "137165167": {
+      "id": "137165167",
+      "title": "2pcs. Tebasaki Chicken ",
+      "description": "Two pieces of tender and juicy tebasaki chicken wings marinated in a savory blend of spices and grilled to golden perfection with a crispy exterior",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/53e91ad0-e321-478b-b75d-8b5f655e9716.jpg",
+      "price": "₱204.00"
+    },
+    "124436119": {
+      "id": "124436119",
+      "title": "Gyudon Triple Cheese ",
+      "description": "Tender sliced beef served over steaming rice topped with a melty blend of three premium cheeses creating a savory and indulgent fusion dish",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/c8d4e07a-30fa-4d1b-a61b-9a65d32a4632.jpg",
+      "price": "₱399.00"
+    },
+    "125352725": {
+      "id": "125352725",
+      "title": "Gyudon Classic ",
+      "description": "Tender sliced beef simmered in a rich savory sauce served over a bed of fluffy white rice topped with a soft egg and green onions",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/ed19f058-62bc-406f-bbff-1b13b184bec9.jpg",
+      "price": "₱399.00"
+    },
+    "125352814": {
+      "id": "125352814",
+      "title": "Gyudon with Egg",
+      "description": "Tender sliced beef simmered in a savory soy-based sauce served over fluffy steamed rice and topped with a silky soft egg yolk for a rich creamy finish",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/ef60c02c-de26-4f4f-95a3-452d691325c4.jpg",
+      "price": "₱399.00"
+    },
+    "123014518": {
+      "id": "123014518",
+      "title": "Tebasaki Chicken Platters",
+      "description": "Crispy chicken wings",
+      "image": "https://images.deliveryhero.io/image/fd-ph/Products/123014518.jpg",
+      "price": "₱316.00"
+    },
+    "124253607": {
+      "id": "124253607",
+      "title": "Shrimp Fellas",
+      "description": "Succulent jumbo shrimp seasoned to perfection and fried until golden crispy A delightful seafood treat bursting with savory flavors perfect for sharing with friends and family",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/225523fd-6dba-439c-8db0-855d307d280d.jpg",
+      "price": "₱998.00"
+    },
+    "137164531": {
+      "id": "137164531",
+      "title": "Solo Bucket ( Regular) ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/c11a3e90-7da0-47c2-89f7-201af90a4483.jpg",
+      "price": "₱998.00"
+    },
+    "137164586": {
+      "id": "137164586",
+      "title": "Solo Bucket with Crab ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid and Crab Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/3c0dda98-e698-482c-9bde-4bafa4c71492.jpg",
+      "price": "₱998.00"
+    },
+    "137164597": {
+      "id": "137164597",
+      "title": "Bucket Pair - Regular ( Good for 2 pax) ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/5ded6fb8-8afa-41db-8694-b5e0bbba8c95.jpg",
+      "price": "₱998.00"
+    },
+    "137164603": {
+      "id": "137164603",
+      "title": "Bucket of Pair with Crab- Good for 2 Pax",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid and Crabs  Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/d9eddbd9-32ad-4b24-b344-1ec3e03636a1.jpg",
+      "price": "₱998.00"
+    },
+    "137164647": {
+      "id": "137164647",
+      "title": "Bucket of Friends with Crabs - (Good for 4 pax) ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid and crabs paired with marble potatoes and sweet corn slices Every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience Perfect for 4 pax",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/ffaacffc-7f7e-495e-9684-9759d4411359.jpg",
+      "price": "₱998.00"
+    },
+    "137164611": {
+      "id": "137164611",
+      "title": "Bucket of Friends - Regular ( Good for 4 pax) ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/21a0168c-5b0a-4d7a-a960-b2607a28a8bb.jpg",
+      "price": "₱998.00"
+    },
+    "137164896": {
+      "id": "137164896",
+      "title": "Hungry Bucket Regular - Good for 8 pax ",
+      "description": "Dive into our ultimate Seafood Bucket loaded with fresh shrimp mussels scallops and tender squid Paired with marble potatoes and sweet corn slices every bite is bursting with flavor Choose your favorite sauce rich Butter Garlic or bold Cajun for the perfect seafood experience",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/e96465af-958c-46c8-b22a-d8e70a5dc032.jpg",
+      "price": "₱998.00"
+    },
+    "137165038": {
+      "id": "137165038",
+      "title": "Hungry Bucket with Crabs - Good for 8 pax ",
+      "description": "A generous seafood bucket overflowing with fresh succulent crabs perfect for sharing with eight people Ideal for family gatherings and celebrations with friends",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/9466a5b5-5d80-4980-9c13-53849a28411f.jpg",
+      "price": "₱998.00"
+    },
+    "124361552": {
+      "id": "124361552",
+      "title": "Chocolate Hershey",
+      "description": "Crispy golden waffle topped with rich Hershey chocolate sauce and whipped cream. A delightful treat perfect for chocolate lovers.",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/88106c8a-f276-41da-bf5c-d8fe4dbbff61.jpg",
+      "price": "₱100.00"
+    },
+    "124361590": {
+      "id": "124361590",
+      "title": "Cookies and Cream Waffle",
+      "description": "Fluffy golden waffle topped with creamy vanilla ice cream and crushed cookie pieces creating a delightful blend of crispy and soft textures with every bite",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/a5e4fec5-e013-415b-9f2e-fa5165e679c5.jpg",
+      "price": "₱100.00"
+    },
+    "124361719": {
+      "id": "124361719",
+      "title": "Nutella Waffle",
+      "description": "Crispy golden waffle generously spread with rich creamy Nutella hazelnut chocolate and topped with whipped cream and fresh strawberries",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/96586bf7-fe33-4e87-ab57-aac5f04a4960.jpg",
+      "price": "₱100.00"
+    },
+    "124361852": {
+      "id": "124361852",
+      "title": "Matcha Pistachio Waffle",
+      "description": "Delicate waffle infused with vibrant matcha green tea and topped with creamy pistachio spread. A perfect blend of earthy matcha flavor and rich nutty pistachio taste served warm and crispy.",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/b7ec4d45-df7a-49f2-a2bd-7a321d054fb7.jpg",
+      "price": "₱100.00"
+    },
+    "124362572": {
+      "id": "124362572",
+      "title": "Biscoff Waffle",
+      "description": "Crispy golden waffle infused with the rich caramel and spiced cookie flavor of Biscoff spread Served warm with a drizzle of Biscoff sauce and topped with whipped cream for the perfect indulgent treat",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/275f8190-8eea-4828-9ab7-229e89b18077.jpg",
+      "price": "₱100.00"
+    },
+    "124362575": {
+      "id": "124362575",
+      "title": "Melted Cheese Waffle",
+      "description": "Golden crispy waffle topped with melted cheese that stretches with every bite. A savory and indulgent treat perfect for any time of day.",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/5ceb7c39-d482-46d5-a063-43006e5c1324.jpg",
+      "price": "₱100.00"
+    },
+    "124362594": {
+      "id": "124362594",
+      "title": "Mini Pancakes ",
+      "description": "Fluffy mini pancakes stacked high and drizzled with maple syrup butter and your choice of fresh berries or chocolate chips Perfect for sharing or enjoying as a sweet treat",
+      "image": "https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/da61229f-0b50-4be2-ade4-db9d09da0857.jpg",
+      "price": "₱100.00"
+    }
+  }
+}
