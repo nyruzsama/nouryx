@@ -1,865 +1,1454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>General Science &ndash; Complete Reviewer (Weeks 5&ndash;6)</title>
-  <meta name="description" content="Complete exam reviewer for General Science covering Simple and Compound Machines (Week 5), Pascal's Principle and Hydraulic Systems (Week 6), and Archimedes' Principle (Week 6)."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-  <style>
-:root{
-  --bg:#08100f;--bg2:#0c1a18;--card:#101f1c;--card2:#142620;
-  --border:#183028;--border2:#1e3c32;
-  --teal:#14d9a4;--cyan:#22d3ee;--lime:#84cc16;
-  --sky:#38bdf8;--indigo:#818cf8;
-  --rose:#fb7185;--green:#34d399;--t1:#e2ede8;--t2:#8fb5a8;--t3:#5a8070;
-  --gtl:linear-gradient(135deg,#14d9a4,#22d3ee);
-  --gcy:linear-gradient(135deg,#22d3ee,#14d9a4);
-  --glm:linear-gradient(135deg,#84cc16,#14d9a4);
-  --gsk:linear-gradient(135deg,#38bdf8,#818cf8);
-  --gin:linear-gradient(135deg,#818cf8,#fb7185);
-  --ghdr:linear-gradient(135deg,#08100f,#101f1c,#08100f);
-  --r1:6px;--r2:12px;--r3:20px;--r4:28px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;font-size:15px;}
-::selection{background:rgba(20,217,164,.3);color:#fff;}
-::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
-::-webkit-scrollbar-thumb:hover{background:var(--teal);}
-.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;padding:60px 24px;
-  background:var(--ghdr);position:relative;overflow:hidden;}
-.cover::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 15% 20%,rgba(20,217,164,.12),transparent 60%),
-  radial-gradient(ellipse 60% 50% at 85% 80%,rgba(56,189,248,.12),transparent 60%),
-  radial-gradient(ellipse 40% 40% at 50% 50%,rgba(132,204,22,.06),transparent 70%);pointer-events:none;}
-.cover-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;
-  background:rgba(20,217,164,.15);border:1px solid rgba(20,217,164,.35);border-radius:100px;
-  font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:32px;animation:fadeD .6s ease both;}
-.cover-title{font-size:clamp(34px,6vw,70px);font-weight:900;line-height:1.1;letter-spacing:-.03em;
-  background:var(--gtl);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;margin-bottom:16px;animation:fadeD .7s ease .1s both;}
-.cover-sub{font-size:clamp(15px,2vw,21px);color:var(--t2);margin-bottom:48px;
-  max-width:640px;animation:fadeD .7s ease .2s both;}
-.cover-chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
-  margin-bottom:48px;animation:fadeU .7s ease .3s both;}
-.chip{padding:9px 20px;border-radius:var(--r2);font-size:12px;font-weight:600;
-  border:1px solid;transition:transform .2s,box-shadow .2s;cursor:default;}
-.chip:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
-.c-tl{background:rgba(20,217,164,.1);border-color:rgba(20,217,164,.3);color:var(--teal);}
-.c-cy{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--cyan);}
-.c-lm{background:rgba(132,204,22,.1);border-color:rgba(132,204,22,.3);color:var(--lime);}
-.c-sk{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.3);color:var(--sky);}
-.c-in{background:rgba(129,140,248,.1);border-color:rgba(129,140,248,.3);color:var(--indigo);}
-.cvr-div{width:80px;height:3px;background:var(--gtl);border-radius:2px;margin:0 auto 24px;
-  animation:fadeU .7s ease .4s both;}
-.cvr-note{font-size:13px;color:var(--t3);max-width:520px;
-  animation:fadeU .7s ease .5s both;font-style:italic;}
-.nav{position:sticky;top:0;z-index:100;background:rgba(8,16,15,.93);
-  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);padding:0 24px;}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:4px;
-  overflow-x:auto;scrollbar-width:none;padding:12px 0;}
-.nav-inner::-webkit-scrollbar{display:none;}
-.nl{flex-shrink:0;padding:6px 16px;border-radius:var(--r1);font-size:12px;font-weight:600;
-  color:var(--t3);text-decoration:none;transition:all .2s;white-space:nowrap;}
-.nl:hover{color:var(--t1);background:var(--card);}
-.nl.tl{color:var(--teal);}.nl.cy{color:var(--cyan);}.nl.lm{color:var(--lime);}
-.nl.sk{color:var(--sky);}.nl.in{color:var(--indigo);}
-.main{max-width:1100px;margin:0 auto;padding:60px 24px;}
-.ls{margin-bottom:100px;}
-.lh{display:flex;align-items:flex-start;gap:20px;margin-bottom:40px;padding:32px;
-  border-radius:var(--r4);border:1px solid;position:relative;overflow:hidden;}
-.lh::before{content:'';position:absolute;inset:0;opacity:.07;}
-.lh.tl{border-color:rgba(20,217,164,.35);background:rgba(20,217,164,.05);}
-.lh.tl::before{background:var(--gtl);}
-.lh.cy{border-color:rgba(34,211,238,.35);background:rgba(34,211,238,.05);}
-.lh.cy::before{background:var(--gcy);}
-.lh.lm{border-color:rgba(132,204,22,.35);background:rgba(132,204,22,.05);}
-.lh.lm::before{background:var(--glm);}
-.lh.sk{border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.05);}
-.lh.sk::before{background:var(--gsk);}
-.lnum{flex-shrink:0;width:58px;height:58px;border-radius:var(--r2);display:flex;
-  align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:.04em;line-height:1.2;text-align:center;}
-.lnum.tl{background:rgba(20,217,164,.2);color:var(--teal);}
-.lnum.cy{background:rgba(34,211,238,.2);color:var(--cyan);}
-.lnum.lm{background:rgba(132,204,22,.2);color:var(--lime);}
-.lnum.sk{background:rgba(56,189,248,.2);color:var(--sky);}
-.lht{flex:1;}
-.llbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
-.llbl.tl{color:var(--teal);}.llbl.cy{color:var(--cyan);}.llbl.lm{color:var(--lime);}.llbl.sk{color:var(--sky);}
-.ltitle{font-size:clamp(20px,3vw,28px);font-weight:800;line-height:1.2;letter-spacing:-.02em;}
-.ldesc{font-size:14px;color:var(--t2);margin-top:8px;}
-.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;margin-top:40px;}
-.shl{flex:1;height:1px;background:var(--border);}
-.shb{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  padding:5px 14px;border-radius:100px;white-space:nowrap;}
-.s-tl{color:var(--teal);background:rgba(20,217,164,.1);border:1px solid rgba(20,217,164,.2);}
-.s-cy{color:var(--cyan);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);}
-.s-lm{color:var(--lime);background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.2);}
-.s-sk{color:var(--sky);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);}
-.s-gd{color:var(--cyan);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);}
-.s-ro{color:var(--rose);background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.2);}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r3);
-  padding:28px;margin-bottom:16px;transition:border-color .2s,background .2s;}
-.card:hover{border-color:var(--border2);background:var(--card2);}
-.ctitle{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-.cdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.d-tl{background:var(--teal);box-shadow:0 0 8px rgba(20,217,164,.5);}
-.d-cy{background:var(--cyan);box-shadow:0 0 8px rgba(34,211,238,.5);}
-.d-lm{background:var(--lime);box-shadow:0 0 8px rgba(132,204,22,.5);}
-.d-sk{background:var(--sky);box-shadow:0 0 8px rgba(56,189,248,.5);}
-.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;}
-.ti{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r2);
-  padding:14px 16px;transition:all .2s;}
-.ti:hover{background:rgba(255,255,255,.06);transform:translateY(-1px);}
-.tn{font-weight:700;font-size:14px;margin-bottom:4px;}
-.tn.tl{color:var(--teal);}.tn.cy{color:var(--cyan);}.tn.lm{color:var(--lime);}.tn.sk{color:var(--sky);}
-.td{font-size:13px;color:var(--t2);line-height:1.5;}
-.ex{background:rgba(0,0,0,.25);border-left:3px solid;border-radius:0 var(--r2) var(--r2) 0;
-  padding:18px 20px;margin:10px 0;}
-.ex.tl{border-color:var(--teal);}.ex.cy{border-color:var(--cyan);}
-.ex.lm{border-color:var(--lime);}.ex.sk{border-color:var(--sky);}
-.exl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
-.exl.tl{color:var(--teal);}.exl.cy{color:var(--cyan);}.exl.lm{color:var(--lime);}.exl.sk{color:var(--sky);}
-.exs{font-size:13.5px;color:var(--t2);line-height:1.7;}
-.hl{font-weight:700;padding:1px 6px;border-radius:4px;font-size:13px;}
-.htl{background:rgba(20,217,164,.15);color:var(--teal);}
-.hlm{background:rgba(132,204,22,.15);color:var(--lime);}
-.hsk{background:rgba(56,189,248,.15);color:var(--sky);}
-.fb{background:rgba(0,0,0,.3);border:1px solid var(--border2);border-radius:var(--r2);
-  padding:16px 20px;margin:12px 0;}
-.fb .fl{font-family:Inter,sans-serif;font-size:11px;font-weight:600;color:var(--t3);
-  letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
-.fb .fm{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--teal);}
-.ct{width:100%;border-collapse:collapse;font-size:14px;}
-.ct th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;background:rgba(255,255,255,.04);
-  border-bottom:1px solid var(--border);color:var(--t3);}
-.ct td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--t2);vertical-align:top;}
-.ct tr:last-child td{border-bottom:none;}
-.ct tr:hover td{background:rgba(255,255,255,.03);}
-.ct td:first-child{color:var(--t1);font-weight:600;}
-.ml{list-style:none;counter-reset:m;}
-.ml li{counter-increment:m;display:flex;gap:12px;align-items:flex-start;
-  padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.ml li:last-child{border-bottom:none;}
-.ml li::before{content:counter(m,decimal-leading-zero);flex-shrink:0;width:28px;height:28px;
-  display:flex;align-items:center;justify-content:center;border-radius:6px;
-  font-size:11px;font-weight:700;margin-top:2px;}
-.mtl li::before{background:rgba(20,217,164,.15);color:var(--teal);}
-.mcy li::before{background:rgba(34,211,238,.15);color:var(--cyan);}
-.mlm li::before{background:rgba(132,204,22,.15);color:var(--lime);}
-.msk li::before{background:rgba(56,189,248,.15);color:var(--sky);}
-.mterm{font-weight:700;}
-.mterm.tl{color:var(--teal);}.mterm.cy{color:var(--cyan);}.mterm.lm{color:var(--lime);}.mterm.sk{color:var(--sky);}
-.es{background:linear-gradient(135deg,rgba(8,16,15,.85),rgba(16,31,28,.85));
-  border:1px solid var(--border);border-radius:var(--r4);padding:36px;margin-top:48px;}
-.eh{text-align:center;margin-bottom:36px;}
-.ebdg{display:inline-block;padding:6px 18px;border-radius:100px;font-size:11px;
-  font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;}
-.eb-tl{background:rgba(20,217,164,.12);color:var(--teal);border:1px solid rgba(20,217,164,.25);}
-.eb-cy{background:rgba(34,211,238,.12);color:var(--cyan);border:1px solid rgba(34,211,238,.25);}
-.eb-lm{background:rgba(132,204,22,.12);color:var(--lime);border:1px solid rgba(132,204,22,.25);}
-.eb-sk{background:rgba(56,189,248,.12);color:var(--sky);border:1px solid rgba(56,189,248,.25);}
-.etitle{font-size:24px;font-weight:800;letter-spacing:-.02em;}
-.esub{font-size:13px;color:var(--t3);margin-top:4px;}
-.qtt{font-size:15px;font-weight:700;margin-bottom:16px;padding-bottom:10px;
-  border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
-.qn{display:inline-flex;align-items:center;justify-content:center;
-  width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:700;flex-shrink:0;}
-.qn-tl{background:rgba(20,217,164,.2);color:var(--teal);}
-.qn-cy{background:rgba(34,211,238,.2);color:var(--cyan);}
-.qn-lm{background:rgba(132,204,22,.2);color:var(--lime);}
-.qn-sk{background:rgba(56,189,248,.2);color:var(--sky);}
-.qn-ro{background:rgba(251,113,133,.2);color:var(--rose);}
-.ql{list-style:none;}
-.qi{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:14px;}
-.qi:last-child{border-bottom:none;}
-.qin{flex-shrink:0;font-weight:700;font-size:13px;min-width:26px;}
-.qit{color:var(--t2);line-height:1.65;}
-.mco{list-style:none;margin-top:8px;}
-.mci{display:flex;gap:8px;padding:4px 0;font-size:13px;color:var(--t3);}
-.mcl{font-weight:700;color:var(--t2);min-width:18px;}
-.ak{background:rgba(0,0,0,.25);border:1px dashed var(--border2);border-radius:var(--r3);
-  padding:28px;margin-top:32px;}
-.akt{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--cyan);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
-.aks{margin-bottom:20px;}
-.akst{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:10px;
-  text-transform:uppercase;letter-spacing:.08em;}
-.akg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
-.aki{background:rgba(255,255,255,.04);border-radius:var(--r1);padding:8px 12px;font-size:13px;display:flex;gap:8px;}
-.akq{font-weight:700;color:var(--t3);}.aka{color:var(--t1);}
-.akm{display:flex;flex-wrap:wrap;gap:8px;}
-.akmi{background:rgba(255,255,255,.04);border-radius:var(--r1);padding:6px 12px;font-size:13px;display:flex;gap:6px;}
-.fr{background:linear-gradient(135deg,rgba(20,217,164,.07),rgba(129,140,248,.07),rgba(56,189,248,.07));
-  border:1px solid rgba(20,217,164,.2);border-radius:var(--r4);padding:44px;
-  text-align:center;margin-top:80px;position:relative;overflow:hidden;}
-.frb{display:inline-block;padding:6px 18px;background:rgba(34,211,238,.12);
-  border:1px solid rgba(34,211,238,.25);border-radius:100px;font-size:11px;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;}
-.frt{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:20px;
-  background:var(--gtl);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.frtx{font-size:15px;color:var(--t2);max-width:760px;margin:0 auto;line-height:1.85;}
-.fps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:32px;}
-.fp{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r2);
-  padding:20px;text-align:left;}
-.fpi{font-size:22px;margin-bottom:10px;}
-.fptitle{font-weight:700;font-size:13px;margin-bottom:8px;}
-.fptx{font-size:12.5px;color:var(--t2);line-height:1.65;}
-.divr{border:none;border-top:1px solid var(--border);margin:28px 0;}
-p{color:var(--t2);margin-bottom:12px;font-size:14.5px;line-height:1.75;}
-ul,ol{padding-left:20px;color:var(--t2);font-size:14.5px;line-height:1.8;}
-li{margin-bottom:6px;}strong{color:var(--t1);}
-code{font-family:'JetBrains Mono',monospace;font-size:13px;
-  background:rgba(255,255,255,.07);padding:2px 6px;border-radius:4px;color:var(--teal);}
-@keyframes fadeD{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeU{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:640px){
-  .main{padding:40px 16px;}.lh{padding:20px;flex-direction:column;}
-  .es{padding:24px 16px;}.tg{grid-template-columns:1fr;}.fps{grid-template-columns:1fr 1fr;}
-}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Hungry Pair — Seafood Buckets & Japanese Cuisine | Calamba, Laguna</title>
+    <meta name="description" content="Hungry Pair on Burgos St, Calamba, Laguna. Overflowing Cajun and Butter Garlic Seafood Buckets, authentic Japanese Gyudon, crispy Tebasaki wings, and dessert waffles. Order on Foodpanda now!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FFB800',
+                            goldLight: '#FFE082',
+                            orange: '#FF5722',
+                            coral: '#FF6636',
+                            deepCoral: '#E34A1B',
+                            pink: '#D70F64', // Foodpanda brand
+                            dark: '#0E1118',
+                            darkCard: '#171B26',
+                            darkLight: '#212636',
+                            border: '#2A3144',
+                            textMuted: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        script: ['"Dancing Script"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Base styles */
+        :root {
+            --coral: #FF5722;
+            --gold: #FFB800;
+            --pink: #D70F64;
+            --dark: #0E1118;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #0E1118;
+            color: #F8FAFC;
+            overflow-x: hidden;
+            position: relative;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Ambient Living Energy Orbs */
+        .living-light-stage {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .energy-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.55;
+            animation: orbPulse 16s ease-in-out infinite alternate;
+            will-change: transform, opacity;
+        }
+        .energy-orb.orb-1 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255, 87, 34, 0.28) 0%, rgba(255, 184, 0, 0.15) 50%, transparent 70%);
+            top: -100px; left: -80px;
+            animation-duration: 18s;
+        }
+        .energy-orb.orb-2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(215, 15, 100, 0.24) 0%, rgba(255, 87, 34, 0.12) 50%, transparent 70%);
+            top: 35%; right: -150px;
+            animation-duration: 22s;
+            animation-delay: -5s;
+        }
+        .energy-orb.orb-3 {
+            width: 480px; height: 480px;
+            background: radial-gradient(circle, rgba(255, 184, 0, 0.2) 0%, rgba(215, 15, 100, 0.12) 50%, transparent 70%);
+            bottom: 10%; left: 5%;
+            animation-duration: 20s;
+            animation-delay: -10s;
+        }
+
+        @keyframes orbPulse {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.45; }
+            50% { transform: translate(40px, -30px) scale(1.15); opacity: 0.75; }
+            100% { transform: translate(-30px, 40px) scale(0.95); opacity: 0.5; }
+        }
+
+        /* Ambient Electric Shimmer Waves */
+        .shimmer-wave {
+            position: absolute;
+            width: 140%;
+            height: 1.5px;
+            left: -20%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 87, 34, 0.4) 25%, rgba(255, 184, 0, 0.8) 50%, rgba(215, 15, 100, 0.6) 75%, transparent 100%);
+            animation: waveSweep 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .shimmer-wave.w1 { top: 22%; animation-delay: 0s; }
+        .shimmer-wave.w2 { top: 58%; animation-delay: 3s; }
+        .shimmer-wave.w3 { top: 88%; animation-delay: 6s; }
+
+        @keyframes waveSweep {
+            0% { transform: translateX(-50%); opacity: 0; }
+            40% { opacity: 0.9; }
+            70% { opacity: 0.9; }
+            100% { transform: translateX(50%); opacity: 0; }
+        }
+
+        /* Floating Culinary Particles */
+        .particles-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            bottom: -40px;
+            opacity: 0;
+            animation: particleFloat linear infinite;
+            user-select: none;
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 0; }
+            15% { opacity: 0.7; }
+            85% { opacity: 0.5; }
+            100% { transform: translateY(-110vh) rotate(360deg) scale(1.1); opacity: 0; }
+        }
+
+        /* Interactive Click Spark Effect */
+        .click-spark {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999999;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: clickRipple 0.65s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+        }
+        @keyframes clickRipple {
+            0% { width: 0px; height: 0px; opacity: 1; border: 3px solid rgba(255, 184, 0, 0.95); box-shadow: 0 0 25px rgba(255, 87, 34, 0.8); }
+            100% { width: 130px; height: 130px; opacity: 0; border: 1px solid rgba(255, 87, 34, 0); box-shadow: 0 0 45px rgba(255, 87, 34, 0); }
+        }
+
+        /* Glassmorphic UI Cards */
+        .glass-panel {
+            background: rgba(23, 27, 38, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(14, 17, 24, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 184, 0, 0.15);
+        }
+
+        /* Food Card Interactions */
+        .food-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @media (hover: hover) {
+            .food-card:hover {
+                transform: translateY(-6px) scale(1.01);
+                border-color: rgba(255, 184, 0, 0.6);
+                box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.7), 0 0 25px 2px rgba(255, 87, 34, 0.25);
+            }
+        }
+
+        /* Typography Gradients */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFD54F 0%, #FF9800 45%, #FF5722 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pink-gradient-text {
+            background: linear-gradient(135deg, #FF2B85 0%, #D70F64 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hide scrollbars for category bar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Smooth Mobile Bottom Safe Area */
+        .safe-bottom-padding {
+            padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+        }
+    </style>
 </head>
-<body>
+<body class="selection:bg-amber-400 selection:text-black antialiased min-h-screen flex flex-col safe-bottom-padding">
 
-<section class="cover">
-  <div class="cover-badge">&#128218; General Science</div>
-  <h1 class="cover-title">Complete Reviewer</h1>
-  <p class="cover-sub">Weeks 5 &ndash; 6 &middot; General Science &middot; First Term<br>
-  Simple &amp; Compound Machines &middot; Pascal's Principle &middot; Archimedes' Principle</p>
-  <div class="cover-chips">
-    <span class="chip c-tl">W5 &middot; Simple Machines</span>
-    <span class="chip c-cy">W5 &middot; Compound Machines</span>
-    <span class="chip c-lm">W6 &middot; Pascal's Principle</span>
-    <span class="chip c-sk">W6 &middot; Hydraulic Systems</span>
-    <span class="chip c-in">W6 &middot; Archimedes' Principle</span>
-  </div>
-  <div class="cvr-div"></div>
-  <p class="cvr-note">Tip: Use the sticky navigation bar to jump between topics. Each topic has its own color so you never lose your place.</p>
-</section>
+    <!-- Ambient Energy Orbs Stage -->
+    <div class="living-light-stage">
+        <div class="energy-orb orb-1"></div>
+        <div class="energy-orb orb-2"></div>
+        <div class="energy-orb orb-3"></div>
+        <div class="shimmer-wave w1"></div>
+        <div class="shimmer-wave w2"></div>
+        <div class="shimmer-wave w3"></div>
+    </div>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#w5simple" class="nl tl">W5 &middot; Simple Machines</a>
-    <a href="#w5mem" class="nl">Must Memorize</a>
-    <a href="#w5exam" class="nl">Exam Q</a>
-    <a href="#w5compound" class="nl cy">W5 &middot; Compound Machines</a>
-    <a href="#w5cmem" class="nl">Must Memorize</a>
-    <a href="#w5cexam" class="nl">Exam Q</a>
-    <a href="#w6pascal" class="nl lm">W6 &middot; Pascal's Principle</a>
-    <a href="#w6mem" class="nl">Must Memorize</a>
-    <a href="#w6exam" class="nl">Exam Q</a>
-    <a href="#w6arch" class="nl sk">W6 &middot; Archimedes'</a>
-    <a href="#w6amem" class="nl">Must Memorize</a>
-    <a href="#w6aexam" class="nl">Exam Q</a>
-    <a href="#final" class="nl">&#9889; Final Review</a>
-  </div>
-</nav>
+    <!-- Floating Particles Layer -->
+    <div class="particles-layer" id="particlesContainer"></div>
 
-<main class="main">
+    <!-- Live Floating Order Notification Toast (Social Proof) -->
+    <div id="liveOrderToast" class="fixed bottom-20 left-4 sm:bottom-6 sm:left-6 z-40 max-w-xs sm:max-w-sm glass-panel p-3.5 sm:p-4 rounded-2xl border border-amber-500/40 shadow-2xl flex items-center gap-3 hidden">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center text-white text-base sm:text-lg shrink-0 shadow-lg animate-bounce">
+            🦐
+        </div>
+        <div class="text-xs">
+            <div class="flex items-center gap-1.5 text-amber-400 font-bold text-[11px] sm:text-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Just Ordered in Calamba!</span>
+            </div>
+            <p class="text-slate-200 font-medium text-[11px] mt-0.5" id="toastMessage">Bucket of Pair with Crab (Good for 2-4 Pax)</p>
+            <p class="text-[10px] text-slate-400 mt-0.5">via Foodpanda • 2 mins ago</p>
+        </div>
+        <button onclick="document.getElementById('liveOrderToast').classList.add('hidden')" class="text-slate-400 hover:text-white ml-auto p-1" aria-label="Close notification">
+            <i class="fa-solid fa-xmark text-xs"></i>
+        </button>
+    </div>
 
-<!-- WEEK 5: SIMPLE MACHINES -->
-<section class="ls" id="w5simple">
-  <div class="lh tl">
-    <div class="lnum tl">W5<br>SM</div>
-    <div class="lht">
-      <div class="llbl tl">Week 5 &middot; General Science</div>
-      <h2 class="ltitle">Simple Machines</h2>
-      <p class="ldesc">Lever &middot; Wheel &amp; Axle &middot; Pulley &middot; Inclined Plane &middot; Wedge &middot; Screw &middot; Mechanical Advantage</p>
+    <!-- Top Announcement Live Bar -->
+    <div class="relative z-50 bg-gradient-to-r from-[#D70F64] via-rose-900 to-amber-900 text-white text-xs sm:text-sm py-2 px-3 sm:px-4 font-semibold border-b border-pink-500/30 flex items-center justify-center gap-2 sm:gap-4 flex-wrap text-center">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold bg-white text-[#D70F64] shadow-md uppercase tracking-wider">
+            <i class="fa-solid fa-bolt mr-1 text-amber-500 animate-pulse"></i> Foodpanda Live
+        </span>
+        <span class="text-slate-100 text-[11px] sm:text-xs">Craving Loaded Seafood Buckets & Japanese Gyudon in Calamba?</span>
+        <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+           class="font-black text-amber-300 hover:text-white underline transition-colors inline-flex items-center gap-1 text-[11px] sm:text-xs">
+            <span>Order on Foodpanda</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
     </div>
-  </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-tl">Learning Outcomes</div><div class="shl"></div></div>
-  <div class="card"><ul>
-    <li>Identify and describe the <strong>six types of simple machines</strong> and their real-life applications.</li>
-    <li>Calculate <strong>Mechanical Advantage (MA)</strong> for each type of simple machine.</li>
-    <li>Distinguish between <strong>Ideal (IMA)</strong> and <strong>Actual Mechanical Advantage (AMA)</strong>.</li>
-    <li>Explain how simple machines make work easier without reducing the total work done.</li>
-  </ul></div>
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Restaurant Brand Logo -->
+                <a href="#home" class="flex items-center gap-2.5 sm:gap-3.5 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-pink-600 p-0.5 shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-brand-dark rounded-[14px] flex items-center justify-center text-amber-400">
+                            <i class="fa-solid fa-fire-burner text-lg sm:text-2xl group-hover:rotate-12 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                            <span class="font-serif font-black text-xl sm:text-2xl lg:text-3xl tracking-wide text-white group-hover:text-amber-400 transition-colors">Hungry Pair</span>
+                            <span class="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-md bg-pink-500/20 text-pink-300 border border-pink-500/40 font-bold uppercase">Burgos St.</span>
+                        </div>
+                        <p class="text-[10px] sm:text-[11px] text-slate-400 font-medium tracking-wider hidden xs:block">Seafood Buckets • Japanese Gyudon • Tebasaki</p>
+                    </div>
+                </a>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-tl">Key Concepts</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-tl"></span>What is a Simple Machine?</div>
-    <p>A <strong>simple machine</strong> is a mechanical device that changes the direction or magnitude of a force. It makes work easier by reducing the effort force needed &mdash; but does <strong>NOT reduce the total work done</strong>. The trade-off is always force vs. distance.</p>
-    <div class="tg">
-      <div class="ti"><div class="tn tl">Work (W)</div><div class="td">W = F &times; d. Measured in Joules (J). Work is the same with or without a simple machine.</div></div>
-      <div class="ti"><div class="tn tl">Effort Force (FE)</div><div class="td">The force applied by the person using the machine. Reduced by the machine.</div></div>
-      <div class="ti"><div class="tn tl">Load Force (FL)</div><div class="td">The force the machine overcomes (the weight being moved or lifted).</div></div>
-      <div class="ti"><div class="tn tl">Mechanical Advantage (MA)</div><div class="td">MA = FL / FE. If MA &gt; 1, the machine multiplies force. If MA &lt; 1, it multiplies speed.</div></div>
-      <div class="ti"><div class="tn tl">IMA (Ideal)</div><div class="td">Calculated from distances/dimensions; no friction assumed. Always &ge; AMA.</div></div>
-      <div class="ti"><div class="tn tl">AMA (Actual)</div><div class="td">Calculated from real measured forces; includes friction. Always &le; IMA.</div></div>
-    </div>
-    <div class="fb">
-      <div class="fl">Core Formulas</div>
-      <div class="fm">MA = Load Force / Effort Force<br>Efficiency = (AMA / IMA) &times; 100%<br>Real machines: efficiency is always less than 100%</div>
-    </div>
-  </div>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-bold">
+                    <a href="#home" class="text-white hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-house text-xs text-amber-500"></i> Overview
+                    </a>
+                    <a href="#planner" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xs text-pink-400"></i> Feast Planner
+                    </a>
+                    <a href="#menu" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-utensils text-orange-400"></i> Menu
+                    </a>
+                    <a href="#about" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-xs text-red-400"></i> Our Story
+                    </a>
+                    <a href="#reviews" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-star text-xs text-amber-400"></i> Reviews (5.0★)
+                    </a>
+                    <a href="#location" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-location-dot text-emerald-400"></i> Location
+                    </a>
+                </nav>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-tl">The Six Simple Machines</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-tl"></span>1. Lever &mdash; Three Classes</div>
-    <p>A <strong>lever</strong> is a rigid bar that pivots on a fixed point called the <strong>fulcrum</strong>. The relative positions of the fulcrum (F), effort (E), and load (L) determine the class.</p>
-    <div class="tg">
-      <div class="ti"><div class="tn tl">1st Class Lever</div><div class="td"><strong>Fulcrum in the middle.</strong> Can redirect AND multiply force. Ex: seesaw, crowbar, scissors, pliers.</div></div>
-      <div class="ti"><div class="tn tl">2nd Class Lever</div><div class="td"><strong>Load in the middle.</strong> Always MA &gt; 1; always multiplies force. Ex: wheelbarrow, nutcracker, bottle opener.</div></div>
-      <div class="ti"><div class="tn tl">3rd Class Lever</div><div class="td"><strong>Effort in the middle.</strong> MA &lt; 1; multiplies speed and range of motion. Ex: tweezers, fishing rod, baseball bat, broom.</div></div>
-    </div>
-    <div class="fb"><div class="fl">Lever Mechanical Advantage</div>
-    <div class="fm">IMA = Effort Arm Length / Load Arm Length<br>AMA = Load Force / Effort Force</div></div>
-    <div class="ex tl"><div class="exl tl">&#128204; Memory Aid</div>
-      <div class="exs">Remember positions by class: <span class="hl htl">1st: F-middle</span> &nbsp; <span class="hl htl">2nd: L-middle</span> &nbsp; <span class="hl htl">3rd: E-middle</span>. The letter in the middle tells you the class.</div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-tl"></span>2. Wheel and Axle &nbsp;&bull;&nbsp; 3. Pulley</div>
-    <div class="tg">
-      <div class="ti"><div class="tn tl">Wheel and Axle</div><div class="td">Two circular objects (different radii) sharing an axis. IMA = R_wheel / R_axle. Ex: doorknob, steering wheel, screwdriver, windmill.</div></div>
-      <div class="ti"><div class="tn tl">Fixed Pulley</div><div class="td">Attached to fixed support. Changes direction only. MA = 1. Ex: flagpole, well.</div></div>
-      <div class="ti"><div class="tn tl">Movable Pulley</div><div class="td">Attached to the load. Multiplies force. MA = 2. Ex: construction cranes.</div></div>
-      <div class="ti"><div class="tn tl">Block &amp; Tackle</div><div class="td">Fixed + movable pulleys combined. MA = number of rope segments supporting the load.</div></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-tl"></span>4. Inclined Plane &nbsp;&bull;&nbsp; 5. Wedge &nbsp;&bull;&nbsp; 6. Screw</div>
-    <div class="tg">
-      <div class="ti"><div class="tn tl">Inclined Plane</div><div class="td">Flat sloped surface. IMA = Length / Height. Longer/gentler ramp = less effort needed. Ex: ramps, roads.</div></div>
-      <div class="ti"><div class="tn tl">Wedge</div><div class="td">Two inclined planes back-to-back. Converts downward force to sideways force. Ex: axe, knife, chisel, door stopper.</div></div>
-      <div class="ti"><div class="tn tl">Screw</div><div class="td">Inclined plane wrapped around a cylinder. Finer threads = greater MA. Ex: bolt, jar lid, drill, spiral staircase.</div></div>
-    </div>
-    <div class="ex tl" style="margin-top:14px"><div class="exl tl">&#128204; Key Relationship</div>
-      <div class="exs">The <strong>screw</strong> and <strong>wedge</strong> are both derived from the inclined plane. A longer/gentler ramp = greater IMA (less force, more distance). A screw with finer threads = greater IMA but requires more turns to move the same distance.</div>
-    </div>
-  </div>
+                <!-- Desktop Action Buttons -->
+                <div class="hidden sm:flex items-center gap-2.5">
+                    <a href="https://www.facebook.com/profile.php?id=61587575466576" target="_blank" rel="noopener noreferrer" 
+                       class="w-10 h-10 rounded-xl border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-blue-400 bg-slate-900/80 flex items-center justify-center transition-all shadow hover:scale-105" title="Visit Facebook Page">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer" 
+                       class="px-3.5 py-2.5 rounded-xl border border-slate-700 hover:border-amber-400 text-slate-200 hover:text-white bg-slate-900/80 transition-all text-xs font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-diamond-turn-right text-amber-400"></i>
+                        <span>Directions</span>
+                    </a>
+                    <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" 
+                       target="_blank" rel="noopener noreferrer"
+                       class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-black text-xs shadow-lg shadow-pink-900/50 hover:shadow-pink-600/60 transition-all flex items-center gap-2 hover:scale-105 active:scale-95">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>ORDER ONLINE</span>
+                    </a>
+                </div>
 
-  <div class="sh" id="w5mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Simple Machines</div><div class="shl"></div></div>
-  <div class="card"><ul class="ml mtl">
-    <li><div><span class="mterm tl">Simple Machine</span> &ndash; changes direction or magnitude of force; does NOT reduce total work; reduces effort force.</div></li>
-    <li><div><span class="mterm tl">MA = Load / Effort</span> &ndash; MA &gt; 1 = force multiplied; MA &lt; 1 = speed/distance multiplied.</div></li>
-    <li><div><span class="mterm tl">IMA</span> &ndash; uses dimensions/distances; no friction assumed.</div></li>
-    <li><div><span class="mterm tl">AMA</span> &ndash; uses actual forces; always less than IMA due to friction.</div></li>
-    <li><div><span class="mterm tl">Efficiency</span> &ndash; (AMA / IMA) &times; 100%; always less than 100% for real machines.</div></li>
-    <li><div><span class="mterm tl">1st Class Lever</span> &ndash; Fulcrum middle. Seesaw, crowbar, scissors. Redirects and can multiply force.</div></li>
-    <li><div><span class="mterm tl">2nd Class Lever</span> &ndash; Load middle. Wheelbarrow, nutcracker. Always MA &gt; 1.</div></li>
-    <li><div><span class="mterm tl">3rd Class Lever</span> &ndash; Effort middle. Tweezers, fishing rod, broom. MA &lt; 1; multiplies speed.</div></li>
-    <li><div><span class="mterm tl">Wheel &amp; Axle</span> &ndash; IMA = R_wheel / R_axle. Ex: doorknob, steering wheel, screwdriver.</div></li>
-    <li><div><span class="mterm tl">Fixed Pulley</span> &ndash; MA = 1; changes direction only. Ex: flagpole.</div></li>
-    <li><div><span class="mterm tl">Movable Pulley</span> &ndash; MA = 2; multiplies force. Ex: construction crane.</div></li>
-    <li><div><span class="mterm tl">Block &amp; Tackle</span> &ndash; MA = number of rope segments supporting the load.</div></li>
-    <li><div><span class="mterm tl">Inclined Plane</span> &ndash; IMA = Length / Height. Longer ramp = less force needed.</div></li>
-    <li><div><span class="mterm tl">Wedge</span> &ndash; Two inclined planes back-to-back. Converts downward to sideways force. Ex: axe, knife.</div></li>
-    <li><div><span class="mterm tl">Screw</span> &ndash; Inclined plane wrapped around cylinder. Finer threads = greater MA. Ex: bolt, jar lid.</div></li>
-  </ul></div>
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-xl bg-brand-darkCard border border-slate-800 text-slate-200 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
 
-  <div class="es" id="w5exam">
-    <div class="eh"><div class="ebdg eb-tl">&#128221; Week 5 &middot; Simple Machines</div>
-      <div class="etitle">Possible Exam Questions</div>
-      <div class="esub">Simple Machines &amp; Mechanical Advantage</div>
-    </div>
-    <div class="qtt"><span class="qn qn-tl">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">The fixed point around which a lever pivots.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">The class of lever where the load is between the fulcrum and effort.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">The type of pulley that only changes direction and has MA = 1.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">The simple machine that is an inclined plane wrapped around a cylinder.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">The ratio of Load Force to Effort Force.</span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">The formula for IMA of an inclined plane.</span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Two inclined planes joined back-to-back; used to cut or split objects.</span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">The class of lever where effort is between fulcrum and load (MA &lt; 1).</span></li>
-      <li class="qi"><span class="qin">9.</span><span class="qit">Combined fixed and movable pulleys; MA = number of supporting rope segments.</span></li>
-      <li class="qi"><span class="qin">10.</span><span class="qit">The formula for calculating machine efficiency.</span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-tl">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">A wheelbarrow is an example of which lever class?<ul class="mco"><li class="mci"><span class="mcl">A.</span>1st Class</li><li class="mci"><span class="mcl">B.</span>2nd Class</li><li class="mci"><span class="mcl">C.</span>3rd Class</li><li class="mci"><span class="mcl">D.</span>Not a lever</li></ul></span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">A ramp is 10 m long and 2 m high. Its IMA is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>2</li><li class="mci"><span class="mcl">B.</span>0.2</li><li class="mci"><span class="mcl">C.</span>5</li><li class="mci"><span class="mcl">D.</span>20</li></ul></span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">MA = number of rope segments supporting load. This describes:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Lever</li><li class="mci"><span class="mcl">B.</span>Inclined plane</li><li class="mci"><span class="mcl">C.</span>Pulley</li><li class="mci"><span class="mcl">D.</span>Screw</li></ul></span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Efficiency = 80%, IMA = 5. The AMA is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>6.25</li><li class="mci"><span class="mcl">B.</span>4</li><li class="mci"><span class="mcl">C.</span>400</li><li class="mci"><span class="mcl">D.</span>0.16</li></ul></span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Simple machines do NOT:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Change direction of force</li><li class="mci"><span class="mcl">B.</span>Reduce total work done</li><li class="mci"><span class="mcl">C.</span>Reduce effort force needed</li><li class="mci"><span class="mcl">D.</span>Change force magnitude</li></ul></span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">Scissors is an example of which lever class?<ul class="mco"><li class="mci"><span class="mcl">A.</span>1st Class</li><li class="mci"><span class="mcl">B.</span>2nd Class</li><li class="mci"><span class="mcl">C.</span>3rd Class</li><li class="mci"><span class="mcl">D.</span>Not a lever</li></ul></span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">A movable pulley has an MA of:<ul class="mco"><li class="mci"><span class="mcl">A.</span>1</li><li class="mci"><span class="mcl">B.</span>2</li><li class="mci"><span class="mcl">C.</span>3</li><li class="mci"><span class="mcl">D.</span>0</li></ul></span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">A doorknob is which simple machine?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Lever</li><li class="mci"><span class="mcl">B.</span>Wedge</li><li class="mci"><span class="mcl">C.</span>Wheel and Axle</li><li class="mci"><span class="mcl">D.</span>Screw</li></ul></span></li>
-      <li class="qi"><span class="qin">9.</span><span class="qit">A longer ramp of the same height requires:<ul class="mco"><li class="mci"><span class="mcl">A.</span>More effort</li><li class="mci"><span class="mcl">B.</span>Same effort</li><li class="mci"><span class="mcl">C.</span>Less effort</li><li class="mci"><span class="mcl">D.</span>Doubles total work</li></ul></span></li>
-      <li class="qi"><span class="qin">10.</span><span class="qit">A fishing rod is which lever class?<ul class="mco"><li class="mci"><span class="mcl">A.</span>1st Class</li><li class="mci"><span class="mcl">B.</span>2nd Class</li><li class="mci"><span class="mcl">C.</span>3rd Class</li><li class="mci"><span class="mcl">D.</span>4th Class</li></ul></span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-cy">C</span> True or False <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">A simple machine reduces the total amount of work needed to move an object.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">A fixed pulley has a mechanical advantage of 1.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">A 2nd class lever always has a mechanical advantage greater than 1.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">The IMA of an inclined plane increases as the slope angle gets steeper.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">A screw is an inclined plane wrapped around a cylinder.</span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-ro">D</span> Problem Solving <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 4 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">A 1st class lever: effort arm = 3 m, load arm = 0.5 m, load = 200 N. Find MA and the effort force needed.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Ramp: length = 8 m, height = 2 m, load = 400 N. Find IMA and effort force (ideal conditions).</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Block &amp; tackle with 4 rope segments supporting 800 N load. Find the ideal effort force.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">A machine lifts a 500 N load with 125 N of effort. IMA = 6. Find AMA and efficiency.</span></li>
-    </ul>
-    <div class="ak">
-      <div class="akt">&#128273; Answer Key &ndash; Simple Machines</div>
-      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">Fulcrum</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">2nd Class</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">Fixed Pulley</span></div>
-        <div class="aki"><span class="akq">4.</span><span class="aka">Screw</span></div>
-        <div class="aki"><span class="akq">5.</span><span class="aka">Mechanical Advantage (MA)</span></div>
-        <div class="aki"><span class="akq">6.</span><span class="aka">IMA = Length / Height</span></div>
-        <div class="aki"><span class="akq">7.</span><span class="aka">Wedge</span></div>
-        <div class="aki"><span class="akq">8.</span><span class="aka">3rd Class</span></div>
-        <div class="aki"><span class="akq">9.</span><span class="aka">Block and Tackle</span></div>
-        <div class="aki"><span class="akq">10.</span><span class="aka">Efficiency = (AMA/IMA) &times; 100%</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
-        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">C (5)</span></div>
-        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">B (4)</span></div>
-        <div class="akmi"><span class="akq">5.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">A</span></div>
-        <div class="akmi"><span class="akq">7.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">C</span></div>
-        <div class="akmi"><span class="akq">9.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">C</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">C. True or False</div><div class="akm">
-        <div class="akmi"><span class="akq">1.</span><span class="aka">False (same total work)</span></div>
-        <div class="akmi"><span class="akq">2.</span><span class="aka">True</span></div>
-        <div class="akmi"><span class="akq">3.</span><span class="aka">True</span></div>
-        <div class="akmi"><span class="akq">4.</span><span class="aka">False (IMA decreases as slope steepens)</span></div>
-        <div class="akmi"><span class="akq">5.</span><span class="aka">True</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">D. Problem Solving</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">MA = 3/0.5 = 6; Effort = 200/6 &asymp; 33.3 N</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">IMA = 8/2 = 4; Effort = 400/4 = 100 N</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">Effort = 800/4 = 200 N</span></div>
-        <div class="aki"><span class="akq">4.</span><span class="aka">AMA = 500/125 = 4; Efficiency = (4/6)&times;100 = 66.7%</span></div>
-      </div></div>
-    </div>
-  </div>
-</section>
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden glass-panel border-t border-slate-800 px-4 pt-3 pb-5 space-y-2">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-xl text-sm font-bold text-white hover:bg-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-house text-amber-400 text-xs w-4"></i> Overview
+            </a>
+            <a href="#planner" class="mobile-link block px-3 py-2 rounded-xl text-sm font-bold text-slate-300 hover:bg-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-pink-400 text-xs w-4"></i> Feast Planner
+            </a>
+            <a href="#menu" class="mobile-link block px-3 py-2 rounded-xl text-sm font-bold text-slate-300 hover:bg-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-utensils text-orange-400 text-xs w-4"></i> Menu & Dishes
+            </a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-xl text-sm font-bold text-slate-300 hover:bg-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-heart text-red-400 text-xs w-4"></i> About Hungry Pair
+            </a>
+            <a href="#reviews" class="mobile-link block px-3 py-2 rounded-xl text-sm font-bold text-slate-300 hover:bg-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-star text-amber-400 text-xs w-4"></i> Reviews (5.0★)
+            </a>
+            <a href="#location" class="mobile-link block px-3 py-2 rounded-xl text-sm font-bold text-slate-300 hover:bg-slate-800 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-emerald-400 text-xs w-4"></i> Location & Hours
+            </a>
+            
+            <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+                <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                   class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 text-center text-xs font-black text-white shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bag-shopping"></i> Order on Foodpanda Now
+                </a>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="https://www.facebook.com/profile.php?id=61587575466576" target="_blank" rel="noopener noreferrer" 
+                       class="py-2.5 rounded-xl border border-blue-600/40 bg-blue-900/20 text-blue-400 font-bold text-xs text-center flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer" 
+                       class="py-2.5 rounded-xl border border-slate-700 bg-slate-900/80 text-slate-300 font-bold text-xs text-center flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-location-dot text-amber-400"></i> Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- WEEK 5: COMPOUND MACHINES -->
-<section class="ls" id="w5compound">
-  <div class="lh cy">
-    <div class="lnum cy">W5<br>CM</div>
-    <div class="lht">
-      <div class="llbl cy">Week 5 &middot; General Science</div>
-      <h2 class="ltitle">Compound Machines</h2>
-      <p class="ldesc">Two or More Simple Machines &middot; Combined MA &middot; Bicycles &middot; Scissors &middot; Can Opener</p>
-    </div>
-  </div>
+    <main class="relative z-10 flex-grow">
+        
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden py-12 sm:py-20">
+            
+            <!-- Real Food Hero Cover -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.deliveryhero.io/image/fd-ph/LH/poyy-hero.jpg" 
+                     alt="Hungry Pair Signature Seafood Feast" 
+                     class="w-full h-full object-cover object-center filter brightness-[0.34] contrast-125 transform scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0E1118] via-[#0E1118]/80 to-transparent"></div>
+            </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-cy">Learning Outcomes</div><div class="shl"></div></div>
-  <div class="card"><ul>
-    <li>Define a <strong>compound machine</strong> and distinguish it from a simple machine.</li>
-    <li>Identify simple machines within common compound machines.</li>
-    <li>Calculate combined MA; explain why compound machines are less efficient.</li>
-  </ul></div>
+            <!-- Floating Hero Badges (Desktop) -->
+            <div class="absolute top-24 left-8 hidden xl:block animate-bounce opacity-90 pointer-events-none" style="animation-duration: 4s;">
+                <div class="glass-panel px-4 py-3 rounded-2xl border border-amber-500/40 flex items-center gap-3 shadow-2xl">
+                    <span class="text-3xl">🦐</span>
+                    <div>
+                        <p class="text-xs font-black text-white">Garlic Butter Shrimp</p>
+                        <p class="text-[11px] text-amber-400 font-bold">Rich & Savory Aromatics</p>
+                    </div>
+                </div>
+            </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-cy">Compound Machines</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-cy"></span>Definition &amp; Characteristics</div>
-    <p>A <strong>compound machine</strong> combines <strong>two or more simple machines</strong> where the output force of one becomes the input force of the next. This provides greater MA than any single component, but efficiency decreases because each part introduces additional friction.</p>
-    <div class="fb">
-      <div class="fl">Combined Mechanical Advantage</div>
-      <div class="fm">MA_total = MA1 &times; MA2 &times; MA3 &times; ...<br>Each added component increases MA but decreases efficiency.</div>
-    </div>
-    <div class="tg" style="margin-top:16px">
-      <div class="ti"><div class="tn cy">Scissors</div><div class="td">Two 1st class levers sharing a pivot (fulcrum) with wedge-shaped cutting blades.</div></div>
-      <div class="ti"><div class="tn cy">Bicycle</div><div class="td">Wheel &amp; axle (wheels/gears) + levers (pedals &amp; handlebars) + pulleys (chain) + screws (bolts).</div></div>
-      <div class="ti"><div class="tn cy">Can Opener</div><div class="td">Lever (handle) + wheel &amp; axle (cutting wheel) + wedge (sharp blade).</div></div>
-      <div class="ti"><div class="tn cy">Wheelbarrow</div><div class="td">2nd class lever (body/handles) + wheel &amp; axle (front wheel).</div></div>
-      <div class="ti"><div class="tn cy">Crane</div><div class="td">Pulley system + lever (boom arm) + wheel &amp; axle (cable drum).</div></div>
-      <div class="ti"><div class="tn cy">Stapler</div><div class="td">Lever (arm) + wedge (staple tip that pierces the paper).</div></div>
-    </div>
-    <div class="ex cy" style="margin-top:14px"><div class="exl cy">&#128204; Key Distinction</div>
-      <div class="exs"><strong>Simple Machine:</strong> one type only. <strong>Compound Machine:</strong> two or more simple machines combined. Compound machines are more powerful but less efficient due to accumulated friction.</div>
-    </div>
-  </div>
+            <div class="absolute bottom-24 right-8 hidden xl:block animate-bounce opacity-90 pointer-events-none" style="animation-duration: 4.5s; animation-delay: 1s;">
+                <div class="glass-panel px-4 py-3 rounded-2xl border border-pink-500/40 flex items-center gap-3 shadow-2xl">
+                    <span class="text-3xl">🦀</span>
+                    <div>
+                        <p class="text-xs font-black text-white">Loaded Seafood Bucket</p>
+                        <p class="text-[11px] text-pink-400 font-bold">Good for 3–4 Pax in Reality!</p>
+                    </div>
+                </div>
+            </div>
 
-  <div class="sh" id="w5cmem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Compound Machines</div><div class="shl"></div></div>
-  <div class="card"><ul class="ml mcy">
-    <li><div><span class="mterm cy">Compound Machine</span> &ndash; two or more simple machines; output of one = input of next.</div></li>
-    <li><div><span class="mterm cy">Combined MA</span> &ndash; MA_total = MA1 &times; MA2 &times; ... (product, not sum).</div></li>
-    <li><div><span class="mterm cy">Less Efficient</span> &ndash; more parts = more friction = more energy lost = lower efficiency.</div></li>
-    <li><div><span class="mterm cy">Scissors</span> &ndash; two 1st class levers + wedge blades.</div></li>
-    <li><div><span class="mterm cy">Bicycle</span> &ndash; wheel &amp; axle + levers + pulleys/gears + screws.</div></li>
-    <li><div><span class="mterm cy">Can Opener</span> &ndash; lever + wheel &amp; axle + wedge.</div></li>
-    <li><div><span class="mterm cy">Wheelbarrow</span> &ndash; 2nd class lever + wheel &amp; axle.</div></li>
-  </ul></div>
+            <!-- Main Hero Container -->
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- Live Status & Badges -->
+                <div class="inline-flex flex-wrap items-center justify-center gap-2 mb-5 sm:mb-6">
+                    <div class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/50 text-emerald-400 text-[11px] sm:text-xs font-extrabold shadow-lg">
+                        <span class="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Kitchen Open Today • Fast Delivery</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/50 text-amber-300 text-[11px] sm:text-xs font-extrabold shadow-lg">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>5.0★ (Foodpanda) • 4.4★ (Google)</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D70F64]/30 border border-[#D70F64]/60 text-pink-200 text-[11px] sm:text-xs font-extrabold">
+                        <i class="fa-solid fa-bicycle"></i>
+                        <span>Burgos St, Calamba Laguna</span>
+                    </div>
+                </div>
 
-  <div class="es" id="w5cexam">
-    <div class="eh"><div class="ebdg eb-cy">&#128221; Week 5 &middot; Compound Machines</div>
-      <div class="etitle">Possible Exam Questions</div>
-      <div class="esub">Compound Machines &amp; Combined Mechanical Advantage</div>
-    </div>
-    <div class="qtt"><span class="qn qn-cy">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 6 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">A machine that combines two or more simple machines.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">How the total MA of a compound machine is found from its component MAs.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Name at least three simple machines found in a bicycle.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Why compound machines are generally less efficient than individual simple machines.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">The types of simple machines found in a pair of scissors.</span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">A common kitchen compound machine combining a lever, wheel &amp; axle, and wedge.</span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-cy">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 5 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Two simple machines with MAs of 3 and 4. The total MA is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>7</li><li class="mci"><span class="mcl">B.</span>12</li><li class="mci"><span class="mcl">C.</span>0.75</li><li class="mci"><span class="mcl">D.</span>1</li></ul></span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">A wheelbarrow is made of:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Pulley + Inclined plane</li><li class="mci"><span class="mcl">B.</span>2nd class lever + Wheel &amp; Axle</li><li class="mci"><span class="mcl">C.</span>Screw + Wedge</li><li class="mci"><span class="mcl">D.</span>1st class lever + Pulley</li></ul></span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Adding more simple machines to a compound machine:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Increases efficiency</li><li class="mci"><span class="mcl">B.</span>Has no effect</li><li class="mci"><span class="mcl">C.</span>Decreases efficiency</li><li class="mci"><span class="mcl">D.</span>Doubles efficiency</li></ul></span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Which is NOT a compound machine?<ul class="mco"><li class="mci"><span class="mcl">A.</span>Bicycle</li><li class="mci"><span class="mcl">B.</span>Scissors</li><li class="mci"><span class="mcl">C.</span>A single crowbar</li><li class="mci"><span class="mcl">D.</span>Can opener</li></ul></span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">In a compound machine, the output of one simple machine:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Is wasted as heat</li><li class="mci"><span class="mcl">B.</span>Becomes the input to the next simple machine</li><li class="mci"><span class="mcl">C.</span>Always equals zero</li><li class="mci"><span class="mcl">D.</span>Is always greater than the input</li></ul></span></li>
-    </ul>
-    <div class="ak">
-      <div class="akt">&#128273; Answer Key &ndash; Compound Machines</div>
-      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">Compound Machine</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">MA1 &times; MA2 &times; ... (multiply all MAs)</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">Wheel &amp; axle, levers, pulleys/gears, screws</span></div>
-        <div class="aki"><span class="akq">4.</span><span class="aka">More parts = more friction = more energy lost</span></div>
-        <div class="aki"><span class="akq">5.</span><span class="aka">Two 1st class levers + wedge blades</span></div>
-        <div class="aki"><span class="akq">6.</span><span class="aka">Can opener</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
-        <div class="akmi"><span class="akq">1.</span><span class="aka">B (12)</span></div>
-        <div class="akmi"><span class="akq">2.</span><span class="aka">B</span></div>
-        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div>
-        <div class="akmi"><span class="akq">4.</span><span class="aka">C</span></div>
-        <div class="akmi"><span class="akq">5.</span><span class="aka">B</span></div>
-      </div></div>
-    </div>
-  </div>
-</section>
+                <!-- Headline -->
+                <h1 class="text-3xl sm:text-5xl lg:text-7xl font-serif font-black tracking-tight text-white mb-4 sm:mb-6 leading-tight">
+                    The Ultimate Feast of <br>
+                    <span class="gold-gradient-text">Overflowing Seafood</span> & <span class="pink-gradient-text">Japanese Classics</span>
+                </h1>
 
-<!-- WEEK 6: PASCAL'S PRINCIPLE -->
-<section class="ls" id="w6pascal">
-  <div class="lh lm">
-    <div class="lnum lm">W6<br>PP</div>
-    <div class="lht">
-      <div class="llbl lm">Week 6 &middot; General Science</div>
-      <h2 class="ltitle">Pascal's Principle &amp; Hydraulic Systems</h2>
-      <p class="ldesc">Blaise Pascal &middot; Pressure Transmission &middot; Hydraulic Lift &middot; P = F/A &middot; Fluid Mechanics</p>
-    </div>
-  </div>
+                <!-- Subtitle with authentic details -->
+                <p class="max-w-2xl mx-auto text-sm sm:text-lg lg:text-xl text-slate-200 font-normal mb-8 sm:mb-10 leading-relaxed">
+                    Packed with juicy whole crab, fresh shrimp, scallops, mussels & sweet corn in bold <strong>Cajun</strong> or rich <strong>Butter Garlic Sauce</strong>. Paired with authentic <strong>Japanese Gyudon</strong>, crispy <strong>Tebasaki Wings</strong> & dessert waffles!
+                </p>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-lm">Learning Outcomes</div><div class="shl"></div></div>
-  <div class="card"><ul>
-    <li>State <strong>Pascal's Principle</strong> and explain pressure transmission in enclosed fluids.</li>
-    <li>Apply the pressure formula <strong>P = F/A</strong> to hydraulic system problems.</li>
-    <li>Identify and explain real-life applications of hydraulic systems.</li>
-  </ul></div>
+                <!-- Primary CTAs -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-lg mx-auto">
+                    <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" 
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-[#D70F64] via-rose-600 to-pink-600 hover:from-pink-500 hover:to-rose-500 text-white font-black text-sm tracking-wide shadow-2xl shadow-pink-900/60 hover:shadow-pink-600/80 transition-all flex items-center justify-center gap-2.5 transform hover:-translate-y-1 active:scale-95">
+                        <i class="fa-solid fa-bag-shopping text-base"></i>
+                        <span>ORDER ON FOODPANDA</span>
+                    </a>
+                    
+                    <a href="#planner" 
+                       class="w-full sm:w-auto px-7 py-4 rounded-2xl glass-panel hover:bg-slate-800 text-slate-200 hover:text-white font-bold text-sm transition-all border border-slate-700 hover:border-amber-400 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                        <span>Plan Your Feast (Calculator)</span>
+                    </a>
+                </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-lm">Pascal's Principle</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-lm"></span>Statement &amp; History</div>
-    <p><strong>Blaise Pascal (1623&ndash;1662)</strong> was a French mathematician and physicist. He discovered that pressure applied to an enclosed fluid is transmitted equally and undiminished in all directions throughout that fluid. This principle is the scientific basis for all hydraulic systems.</p>
-    <div class="ex lm"><div class="exl lm">&#128204; Pascal's Principle (Official Statement)</div>
-      <div class="exs">"Pressure applied to a confined fluid is transmitted undiminished in all directions throughout the fluid and to the walls of its container."</div>
-    </div>
-    <div class="fb">
-      <div class="fl">Pressure Formula</div>
-      <div class="fm">P = F / A &nbsp;&nbsp; (Pressure = Force / Area)<br>P in Pascals (Pa) | F in Newtons (N) | A in square meters (m&sup2;)<br>1 Pascal = 1 N/m&sup2;</div>
-    </div>
-    <div class="tg" style="margin-top:14px">
-      <div class="ti"><div class="tn lm">Pressure (P)</div><div class="td">P = F/A. Force per unit area. Measured in Pascals (Pa = N/m&sup2;).</div></div>
-      <div class="ti"><div class="tn lm">Force (F)</div><div class="td">F = P &times; A. Push applied to a surface. Measured in Newtons (N).</div></div>
-      <div class="ti"><div class="tn lm">Area (A)</div><div class="td">A = F/P. Surface over which force is distributed. Measured in m&sup2;.</div></div>
-    </div>
-  </div>
+                <!-- Verified Review Quote -->
+                <div class="mt-8 sm:mt-12 max-w-xl mx-auto glass-panel p-4 rounded-2xl border border-slate-800 text-left flex items-center gap-3.5 shadow-xl">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-white font-black flex items-center justify-center shrink-0 text-sm shadow">
+                        M
+                    </div>
+                    <div>
+                        <p class="text-[11px] sm:text-xs text-slate-200 italic leading-relaxed">"Ordered seafood bucket for 1-2 persons and upon receiving the food is good for 3-4 persons hehe. The taste is superb pati partner ko na maselan ay super satisfied!"</p>
+                        <p class="text-[10px] sm:text-[11px] text-amber-400 font-bold mt-0.5">— Mariel Nordily Parao (Verified Google Review • 5 Photos)</p>
+                    </div>
+                </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-lm">Hydraulic Systems</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-lm"></span>How Hydraulic Systems Work</div>
-    <p>A <strong>hydraulic system</strong> uses Pascal's Principle with an enclosed <strong>incompressible fluid</strong> (oil). A small force applied to a small piston creates pressure transmitted to a large piston, producing a much larger output force.</p>
-    <div class="fb">
-      <div class="fl">Hydraulic System Equation</div>
-      <div class="fm">F1/A1 = F2/A2 &nbsp;&nbsp; (because P1 = P2)<br>F2 = F1 &times; (A2 / A1)<br>Larger output area = greater force multiplication.</div>
-    </div>
-    <div class="ex lm"><div class="exl lm">&#128204; Example &mdash; Hydraulic Lift</div>
-      <div class="exs">A1 = 0.01 m&sup2;, F1 = 100 N, A2 = 0.5 m&sup2;<br>P = 100 / 0.01 = <span class="hl hlm">10,000 Pa</span><br>F2 = 10,000 &times; 0.5 = <span class="hl hlm">5,000 N</span> &mdash; a 50&times; force multiplication!</div>
-    </div>
-    <div class="tg" style="margin-top:14px">
-      <div class="ti"><div class="tn lm">Hydraulic Brakes</div><div class="td">Foot pedal transmits pressure through brake fluid to all four wheels simultaneously and equally.</div></div>
-      <div class="ti"><div class="tn lm">Hydraulic Jack / Lift</div><div class="td">Small piston force lifts a heavy car via a large output piston. Used in garages and service stations.</div></div>
-      <div class="ti"><div class="tn lm">Hydraulic Press</div><div class="td">Shapes metal and compresses materials in industrial manufacturing.</div></div>
-      <div class="ti"><div class="tn lm">Excavators</div><div class="td">Construction machinery uses hydraulic cylinders for powerful digging and lifting.</div></div>
-      <div class="ti"><div class="tn lm">Airplane Landing Gear</div><div class="td">Hydraulic actuators retract and extend landing gear smoothly and reliably.</div></div>
-      <div class="ti"><div class="tn lm">Dentist Chair</div><div class="td">Height adjustable via hydraulic pistons for smooth, controlled patient positioning.</div></div>
-    </div>
-  </div>
+            </div>
+        </section>
 
-  <div class="sh" id="w6mem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Pascal's Principle</div><div class="shl"></div></div>
-  <div class="card"><ul class="ml mlm">
-    <li><div><span class="mterm lm">Pascal's Principle</span> &ndash; pressure on a confined fluid is transmitted equally and undiminished in all directions.</div></li>
-    <li><div><span class="mterm lm">Blaise Pascal</span> &ndash; French mathematician/physicist (1623&ndash;1662); discovered pressure transmission in fluids.</div></li>
-    <li><div><span class="mterm lm">Pressure Formula</span> &ndash; P = F / A. Measured in Pascals (Pa = N/m&sup2;).</div></li>
-    <li><div><span class="mterm lm">1 Pascal</span> &ndash; equals 1 Newton per square meter (1 N/m&sup2;).</div></li>
-    <li><div><span class="mterm lm">Hydraulic System</span> &ndash; uses enclosed incompressible fluid to transmit and multiply force via Pascal's Principle.</div></li>
-    <li><div><span class="mterm lm">Hydraulic Equation</span> &ndash; F1/A1 = F2/A2 (P1 = P2). Larger area = greater output force.</div></li>
-    <li><div><span class="mterm lm">Force Multiplication</span> &ndash; F2 = F1 &times; (A2/A1). Piston area ratio determines force gain.</div></li>
-    <li><div><span class="mterm lm">Incompressible Fluid</span> &ndash; oil or water; cannot be compressed; required for hydraulic systems to work.</div></li>
-    <li><div><span class="mterm lm">Hydraulic Brakes</span> &ndash; pedal pressure &rarr; fluid &rarr; all four wheels equally and simultaneously.</div></li>
-    <li><div><span class="mterm lm">Hydraulic Lift</span> &ndash; small force on small piston &rarr; large force on large piston to lift heavy loads.</div></li>
-  </ul></div>
+        <!-- Interactive Feast Planner & Portion Calculator -->
+        <section id="planner" class="py-12 sm:py-16 bg-brand-darkCard/70 border-y border-slate-800 relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+                    <span class="px-3.5 py-1 rounded-full bg-pink-500/20 text-pink-300 font-bold text-xs uppercase tracking-wider">
+                        <i class="fa-solid fa-calculator mr-1"></i> Interactive Feast Calculator
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-black text-white mt-2">
+                        How Many People Are Eating Today?
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                        Select your group size and favorite sauce to find your perfect Hungry Pair combo.
+                    </p>
+                </div>
 
-  <div class="es" id="w6exam">
-    <div class="eh"><div class="ebdg eb-lm">&#128221; Week 6 &middot; Pascal's Principle</div>
-      <div class="etitle">Possible Exam Questions</div>
-      <div class="esub">Pascal's Principle &amp; Hydraulic Systems</div>
-    </div>
-    <div class="qtt"><span class="qn qn-lm">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">The French mathematician who discovered pressure transmission in confined fluids.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">The SI unit of pressure equal to 1 Newton per square meter.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">The formula for calculating pressure.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">The property of fluid required for a hydraulic system (it must not compress).</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">A hydraulic device used to lift heavy vehicles in service stations.</span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">According to Pascal's Principle, what happens to pressure in a confined fluid?</span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">The equation relating input and output pistons in a hydraulic system.</span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">The vehicle safety system that applies Pascal's Principle to stop the vehicle.</span></li>
-      <li class="qi"><span class="qin">9.</span><span class="qit">In a hydraulic system, what factor determines the force multiplication?</span></li>
-      <li class="qi"><span class="qin">10.</span><span class="qit">A construction machine that uses hydraulic arms for digging.</span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-lm">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Pascal's Principle: pressure on a confined fluid is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Lost as heat</li><li class="mci"><span class="mcl">B.</span>Transmitted equally in all directions</li><li class="mci"><span class="mcl">C.</span>Reduced by friction</li><li class="mci"><span class="mcl">D.</span>Applied only to the top surface</li></ul></span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Force = 50 N, Area = 0.5 m&sup2;. Pressure = ?<ul class="mco"><li class="mci"><span class="mcl">A.</span>25 Pa</li><li class="mci"><span class="mcl">B.</span>0.01 Pa</li><li class="mci"><span class="mcl">C.</span>100 Pa</li><li class="mci"><span class="mcl">D.</span>50 Pa</li></ul></span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">A2 is 10 times larger than A1. Then F2 is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>10 times smaller than F1</li><li class="mci"><span class="mcl">B.</span>Equal to F1</li><li class="mci"><span class="mcl">C.</span>10 times larger than F1</li><li class="mci"><span class="mcl">D.</span>100 times larger</li></ul></span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Why must hydraulic fluid be incompressible?<ul class="mco"><li class="mci"><span class="mcl">A.</span>To prevent overheating</li><li class="mci"><span class="mcl">B.</span>So pressure is transmitted without loss</li><li class="mci"><span class="mcl">C.</span>To reduce friction</li><li class="mci"><span class="mcl">D.</span>To increase piston speed</li></ul></span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">The SI unit of pressure is:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Newton</li><li class="mci"><span class="mcl">B.</span>Joule</li><li class="mci"><span class="mcl">C.</span>Pascal</li><li class="mci"><span class="mcl">D.</span>Watt</li></ul></span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">A1 = 0.02 m&sup2;, A2 = 0.4 m&sup2;, F1 = 200 N. F2 = ?<ul class="mco"><li class="mci"><span class="mcl">A.</span>1,000 N</li><li class="mci"><span class="mcl">B.</span>4,000 N</li><li class="mci"><span class="mcl">C.</span>800 N</li><li class="mci"><span class="mcl">D.</span>10 N</li></ul></span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Hydraulic brakes apply Pascal's Principle because:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Pressure only reaches front wheels</li><li class="mci"><span class="mcl">B.</span>Pressure is transmitted equally to all brake pads</li><li class="mci"><span class="mcl">C.</span>Fluid is compressed in brake lines</li><li class="mci"><span class="mcl">D.</span>Friction is eliminated</li></ul></span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">Pressure = 2,000 Pa, Area = 5 m&sup2;. Output force = ?<ul class="mco"><li class="mci"><span class="mcl">A.</span>400 N</li><li class="mci"><span class="mcl">B.</span>2,000 N</li><li class="mci"><span class="mcl">C.</span>10,000 N</li><li class="mci"><span class="mcl">D.</span>2,005 N</li></ul></span></li>
-      <li class="qi"><span class="qin">9.</span><span class="qit">Pascal's Principle does NOT apply to:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Hydraulic brakes</li><li class="mci"><span class="mcl">B.</span>Hydraulic lifts</li><li class="mci"><span class="mcl">C.</span>A solid steel lever</li><li class="mci"><span class="mcl">D.</span>Hydraulic presses</li></ul></span></li>
-      <li class="qi"><span class="qin">10.</span><span class="qit">Pascal's Principle applies to fluids that are:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Open to the atmosphere</li><li class="mci"><span class="mcl">B.</span>Enclosed and confined</li><li class="mci"><span class="mcl">C.</span>Compressible gases only</li><li class="mci"><span class="mcl">D.</span>Heated liquids only</li></ul></span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-ro">C</span> Problem Solving <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 3 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Hydraulic jack: A1 = 0.005 m&sup2;, A2 = 0.1 m&sup2;, F1 = 50 N. Find F2.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Pressure = 8,000 Pa, output piston area = 0.25 m&sup2;. Find output force.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">Hydraulic brake: F = 300 N applied to piston area 0.03 m&sup2;. What pressure is transmitted?</span></li>
-    </ul>
-    <div class="ak">
-      <div class="akt">&#128273; Answer Key &ndash; Pascal's Principle</div>
-      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">Blaise Pascal</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">Pascal (Pa)</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">P = F / A</span></div>
-        <div class="aki"><span class="akq">4.</span><span class="aka">Incompressible fluid</span></div>
-        <div class="aki"><span class="akq">5.</span><span class="aka">Hydraulic lift / hydraulic jack</span></div>
-        <div class="aki"><span class="akq">6.</span><span class="aka">Transmitted equally in all directions</span></div>
-        <div class="aki"><span class="akq">7.</span><span class="aka">F1/A1 = F2/A2</span></div>
-        <div class="aki"><span class="akq">8.</span><span class="aka">Hydraulic brakes</span></div>
-        <div class="aki"><span class="akq">9.</span><span class="aka">Ratio of piston areas (A2/A1)</span></div>
-        <div class="aki"><span class="akq">10.</span><span class="aka">Excavator / bulldozer</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
-        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">C (100 Pa)</span></div>
-        <div class="akmi"><span class="akq">3.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">B</span></div>
-        <div class="akmi"><span class="akq">5.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">B (4,000 N)</span></div>
-        <div class="akmi"><span class="akq">7.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">C (10,000 N)</span></div>
-        <div class="akmi"><span class="akq">9.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">B</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">C. Problem Solving</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">P=10,000 Pa; F2 = 10,000 &times; 0.1 = 1,000 N</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">F = 8,000 &times; 0.25 = 2,000 N</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">P = 300 / 0.03 = 10,000 Pa</span></div>
-      </div></div>
-    </div>
-  </div>
-</section>
+                <div class="glass-panel p-5 sm:p-8 rounded-3xl border border-amber-500/30 shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+                        
+                        <!-- Step 1: Group Size -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                1. Select Group Size
+                            </label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="group-btn py-2.5 sm:py-3 rounded-xl border border-amber-500 bg-amber-500/20 text-amber-300 font-bold text-xs text-center transition-all" data-size="solo">
+                                    Solo / 1-2
+                                </button>
+                                <button type="button" class="group-btn py-2.5 sm:py-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 font-bold text-xs text-center hover:border-amber-400 transition-all" data-size="pair">
+                                    Pair (2-4)
+                                </button>
+                                <button type="button" class="group-btn py-2.5 sm:py-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 font-bold text-xs text-center hover:border-amber-400 transition-all" data-size="party">
+                                    Party (4-8)
+                                </button>
+                            </div>
+                        </div>
 
-<!-- WEEK 6: ARCHIMEDES' PRINCIPLE -->
-<section class="ls" id="w6arch">
-  <div class="lh sk">
-    <div class="lnum sk">W6<br>AP</div>
-    <div class="lht">
-      <div class="llbl sk">Week 6 &middot; General Science</div>
-      <h2 class="ltitle">Archimedes' Principle &amp; Buoyancy</h2>
-      <p class="ldesc">Archimedes &middot; Buoyant Force &middot; Floating &amp; Sinking &middot; Density &middot; Eureka!</p>
-    </div>
-  </div>
+                        <!-- Step 2: Sauce -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                2. Choose Sauce
+                            </label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" class="sauce-btn py-2.5 sm:py-3 rounded-xl border border-orange-500 bg-orange-500/20 text-orange-300 font-bold text-xs text-center transition-all" data-sauce="cajun">
+                                    🌶️ Bold Cajun
+                                </button>
+                                <button type="button" class="sauce-btn py-2.5 sm:py-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 font-bold text-xs text-center hover:border-amber-400 transition-all" data-sauce="butter">
+                                    🧄 Butter Garlic
+                                </button>
+                            </div>
+                        </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-sk">Learning Outcomes</div><div class="shl"></div></div>
-  <div class="card"><ul>
-    <li>State <strong>Archimedes' Principle</strong> and define buoyant force.</li>
-    <li>Determine if an object will <strong>float or sink</strong> by comparing densities.</li>
-    <li>Calculate <strong>buoyant force</strong> using displaced fluid weight.</li>
-    <li>Explain applications: ships, submarines, hot air balloons.</li>
-  </ul></div>
+                        <!-- Step 3: Resulting Combo with Direct Foodpanda Link -->
+                        <div class="bg-brand-dark/95 p-4 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider" id="calcRecommendationLabel">Recommended Best Choice</span>
+                                <h4 class="text-sm sm:text-base font-serif font-black text-white mt-0.5" id="calcTitle">Bucket of Pair with Crab</h4>
+                                <p class="text-[11px] text-slate-300 mt-1 leading-snug" id="calcDesc">Whole crabs, shrimps, scallops, mussels & corn in your selected sauce.</p>
+                            </div>
+                            <div class="mt-3.5 pt-3 border-t border-slate-800/80">
+                                <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                                   class="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs text-center uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-bag-shopping"></i> Order This on Foodpanda
+                                </a>
+                            </div>
+                        </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-sk">Archimedes' Principle</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-sk"></span>Statement &amp; History</div>
-    <p><strong>Archimedes (287&ndash;212 BC)</strong> was an ancient Greek mathematician from Syracuse. He discovered his principle while stepping into a bath and noticing water overflow. He reportedly ran through the streets shouting <em>"Eureka!"</em> (Greek for "I have found it!").</p>
-    <div class="ex sk"><div class="exl sk">&#128204; Archimedes' Principle (Official Statement)</div>
-      <div class="exs">"Any object completely or partially submerged in a fluid experiences an upward buoyant force equal to the weight of the fluid displaced by the object."</div>
-    </div>
-    <div class="fb">
-      <div class="fl">Buoyant Force Formula</div>
-      <div class="fm">FB = &rho;_fluid &times; V_displaced &times; g<br>FB = Weight of displaced fluid = m_fluid &times; g<br>&rho; = density (kg/m&sup3;) | V = volume (m&sup3;) | g = 9.8 m/s&sup2;</div>
-    </div>
-  </div>
+                    </div>
+                </div>
 
-  <div class="sh"><div class="shl"></div><div class="shb s-sk">Floating, Sinking &amp; Density</div><div class="shl"></div></div>
-  <div class="card">
-    <div class="ctitle"><span class="cdot d-sk"></span>Float or Sink Rules</div>
-    <table class="ct">
-      <thead><tr><th>Density Condition</th><th>Result</th><th>Examples</th></tr></thead>
-      <tbody>
-        <tr><td>&rho;_object &lt; &rho;_fluid</td><td>Object FLOATS</td><td>Wood in water, ship (hollow hull)</td></tr>
-        <tr><td>&rho;_object = &rho;_fluid</td><td>NEUTRAL BUOYANCY</td><td>Fish with swim bladder, hovering submarine</td></tr>
-        <tr><td>&rho;_object &gt; &rho;_fluid</td><td>Object SINKS</td><td>Rock in water, solid iron bar</td></tr>
-      </tbody>
-    </table>
-    <div class="ex sk" style="margin-top:14px"><div class="exl sk">&#128204; Why Ships Float</div>
-      <div class="exs">A steel ship floats because its <strong>hollow hull</strong> contains a large volume of air. The average density of (steel + air) is <strong>less than water</strong>. The ship displaces water equal in weight to the entire ship, so it floats. A solid steel block sinks because steel density (7,800 kg/m&sup3;) &gt;&gt; water density (1,000 kg/m&sup3;).</div>
-    </div>
-    <div class="tg" style="margin-top:14px">
-      <div class="ti"><div class="tn sk">Ships &amp; Boats</div><div class="td">Hollow hulls lower average density below water. Buoyant force = ship weight when floating.</div></div>
-      <div class="ti"><div class="tn sk">Submarines</div><div class="td">Fill ballast tanks with water to sink (increase density); expel water to rise (decrease density).</div></div>
-      <div class="ti"><div class="tn sk">Hot Air Balloon</div><div class="td">Heated air inside is less dense than surrounding cool air; buoyant force pushes balloon upward.</div></div>
-      <div class="ti"><div class="tn sk">Fish &amp; Swim Bladder</div><div class="td">Fish adjust gas volume in swim bladder to control buoyancy and hover at any depth.</div></div>
-      <div class="ti"><div class="tn sk">Hydrometer</div><div class="td">Instrument using Archimedes' Principle to measure the density of liquids.</div></div>
-      <div class="ti"><div class="tn sk">Icebergs</div><div class="td">Ice is less dense than water; ~90% is submerged, ~10% is visible above the surface.</div></div>
-    </div>
-  </div>
+            </div>
+        </section>
 
-  <div class="sh" id="w6amem"><div class="shl"></div><div class="shb s-gd">Must Memorize &middot; Archimedes' Principle</div><div class="shl"></div></div>
-  <div class="card"><ul class="ml msk">
-    <li><div><span class="mterm sk">Archimedes' Principle</span> &ndash; buoyant force = weight of fluid displaced by the object.</div></li>
-    <li><div><span class="mterm sk">Archimedes</span> &ndash; Greek mathematician (287&ndash;212 BC); discovered while bathing; said "Eureka!"</div></li>
-    <li><div><span class="mterm sk">Buoyant Force (FB)</span> &ndash; upward force exerted by fluid on a submerged or floating object.</div></li>
-    <li><div><span class="mterm sk">Buoyant Force Formula</span> &ndash; FB = &rho;_fluid &times; V_displaced &times; g = Weight of displaced fluid.</div></li>
-    <li><div><span class="mterm sk">Density (&rho;)</span> &ndash; mass per unit volume. &rho; = m / V. Measured in kg/m&sup3;.</div></li>
-    <li><div><span class="mterm sk">Float Condition</span> &ndash; &rho;_object &lt; &rho;_fluid; buoyant force &ge; weight of object.</div></li>
-    <li><div><span class="mterm sk">Sink Condition</span> &ndash; &rho;_object &gt; &rho;_fluid; weight &gt; buoyant force.</div></li>
-    <li><div><span class="mterm sk">Neutral Buoyancy</span> &ndash; &rho;_object = &rho;_fluid; object neither rises nor sinks; hovers.</div></li>
-    <li><div><span class="mterm sk">Why Ships Float</span> &ndash; hollow hull lowers average density below water; displaced water weight = ship weight.</div></li>
-    <li><div><span class="mterm sk">Submarine</span> &ndash; adds water to ballast tanks to sink; expels water to rise.</div></li>
-    <li><div><span class="mterm sk">Hot Air Balloon</span> &ndash; heated air is less dense; surrounding cooler air exerts upward buoyant force.</div></li>
-    <li><div><span class="mterm sk">Density of Water</span> &ndash; approximately 1,000 kg/m&sup3;. Objects denser than this sink in water.</div></li>
-  </ul></div>
+        <!-- Official Menu Section (100% Real Foodpanda Dishes & Authentic Photos) -->
+        <section id="menu" class="py-14 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2.5">
+                        <i class="fa-solid fa-utensils"></i> Official Menu & Offerings
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl lg:text-5xl font-serif font-black text-white mb-2 sm:mb-3">
+                        Authentic Dishes at Hungry Pair
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Prepared fresh daily in our Burgos St kitchen. Tap any dish to order directly on Foodpanda!
+                    </p>
+                </div>
 
-  <div class="es" id="w6aexam">
-    <div class="eh"><div class="ebdg eb-sk">&#128221; Week 6 &middot; Archimedes' Principle</div>
-      <div class="etitle">Possible Exam Questions</div>
-      <div class="esub">Buoyancy, Density &amp; Archimedes' Principle</div>
-    </div>
-    <div class="qtt"><span class="qn qn-sk">A</span> Identification <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">The ancient Greek mathematician who discovered the principle of buoyancy.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">The upward force exerted by a fluid on a submerged or floating object.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">The word Archimedes reportedly shouted upon discovering his principle.</span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">The formula for calculating buoyant force.</span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">The density condition required for an object to float in a fluid.</span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">The organ in fish that allows them to control their buoyancy.</span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">What a submarine does to its ballast tanks to dive/sink.</span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">The instrument that uses Archimedes' Principle to measure liquid density.</span></li>
-      <li class="qi"><span class="qin">9.</span><span class="qit">The approximate density of water in kg/m&sup3;.</span></li>
-      <li class="qi"><span class="qin">10.</span><span class="qit">Approximately what percentage of an iceberg is submerged below the waterline?</span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-sk">B</span> Multiple Choice <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 10 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Buoyant force equals:<ul class="mco"><li class="mci"><span class="mcl">A.</span>The weight of the object</li><li class="mci"><span class="mcl">B.</span>The weight of the fluid displaced</li><li class="mci"><span class="mcl">C.</span>The volume of the object</li><li class="mci"><span class="mcl">D.</span>The density of the fluid</li></ul></span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">An object sinks when:<ul class="mco"><li class="mci"><span class="mcl">A.</span>&rho;_obj &lt; &rho;_fluid</li><li class="mci"><span class="mcl">B.</span>&rho;_obj = &rho;_fluid</li><li class="mci"><span class="mcl">C.</span>&rho;_obj &gt; &rho;_fluid</li><li class="mci"><span class="mcl">D.</span>FB = Weight</li></ul></span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">A steel ship floats because:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Steel is less dense than water</li><li class="mci"><span class="mcl">B.</span>Its hollow hull gives average density less than water</li><li class="mci"><span class="mcl">C.</span>Ocean pushes it up electrically</li><li class="mci"><span class="mcl">D.</span>Water weighs more than steel</li></ul></span></li>
-      <li class="qi"><span class="qin">4.</span><span class="qit">Object displaces 0.5 m&sup3; of water (&rho; = 1,000 kg/m&sup3;, g = 9.8 m/s&sup2;). Buoyant force = ?<ul class="mco"><li class="mci"><span class="mcl">A.</span>500 N</li><li class="mci"><span class="mcl">B.</span>4,900 N</li><li class="mci"><span class="mcl">C.</span>9,800 N</li><li class="mci"><span class="mcl">D.</span>1,000 N</li></ul></span></li>
-      <li class="qi"><span class="qin">5.</span><span class="qit">Neutral buoyancy means the object:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Floats on the surface</li><li class="mci"><span class="mcl">B.</span>Sinks to the bottom</li><li class="mci"><span class="mcl">C.</span>Neither rises nor sinks</li><li class="mci"><span class="mcl">D.</span>Has zero buoyant force</li></ul></span></li>
-      <li class="qi"><span class="qin">6.</span><span class="qit">A submarine rises by:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Filling ballast tanks with water</li><li class="mci"><span class="mcl">B.</span>Expelling water from ballast tanks</li><li class="mci"><span class="mcl">C.</span>Increasing propeller speed only</li><li class="mci"><span class="mcl">D.</span>Heating surrounding water</li></ul></span></li>
-      <li class="qi"><span class="qin">7.</span><span class="qit">Object density = 800 kg/m&sup3;, water = 1,000 kg/m&sup3;. The object will:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Sink</li><li class="mci"><span class="mcl">B.</span>Float</li><li class="mci"><span class="mcl">C.</span>Hover neutrally</li><li class="mci"><span class="mcl">D.</span>Dissolve</li></ul></span></li>
-      <li class="qi"><span class="qin">8.</span><span class="qit">How much of an iceberg is visible above water?<ul class="mco"><li class="mci"><span class="mcl">A.</span>90%</li><li class="mci"><span class="mcl">B.</span>50%</li><li class="mci"><span class="mcl">C.</span>25%</li><li class="mci"><span class="mcl">D.</span>10%</li></ul></span></li>
-      <li class="qi"><span class="qin">9.</span><span class="qit">A hot air balloon rises because:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Hot air inside is denser than cold air</li><li class="mci"><span class="mcl">B.</span>Balloon fabric repels air</li><li class="mci"><span class="mcl">C.</span>Heated air is less dense; surrounding cool air exerts upward buoyant force</li><li class="mci"><span class="mcl">D.</span>Hot air is heavier than cool air</li></ul></span></li>
-      <li class="qi"><span class="qin">10.</span><span class="qit">Archimedes' Principle applies to:<ul class="mco"><li class="mci"><span class="mcl">A.</span>Solids only</li><li class="mci"><span class="mcl">B.</span>Gases only</li><li class="mci"><span class="mcl">C.</span>Both liquids and gases (all fluids)</li><li class="mci"><span class="mcl">D.</span>Liquids only</li></ul></span></li>
-    </ul>
-    <hr class="divr">
-    <div class="qtt"><span class="qn qn-ro">C</span> Problem Solving <span style="font-size:12px;color:var(--t3);font-weight:400">&ndash; 3 items</span></div>
-    <ul class="ql">
-      <li class="qi"><span class="qin">1.</span><span class="qit">Object displaces 0.3 m&sup3; of water (&rho; = 1,000 kg/m&sup3;, g = 9.8 m/s&sup2;). Find buoyant force.</span></li>
-      <li class="qi"><span class="qin">2.</span><span class="qit">Object density = 600 kg/m&sup3; placed in water (1,000 kg/m&sup3;). Will it float or sink? Explain.</span></li>
-      <li class="qi"><span class="qin">3.</span><span class="qit">A floating boat displaces 500 kg of water. What is the weight of the boat? (g = 9.8 m/s&sup2;)</span></li>
-    </ul>
-    <div class="ak">
-      <div class="akt">&#128273; Answer Key &ndash; Archimedes' Principle</div>
-      <div class="aks"><div class="akst">A. Identification</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">Archimedes</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">Buoyant Force (FB)</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">"Eureka!"</span></div>
-        <div class="aki"><span class="akq">4.</span><span class="aka">FB = &rho;_fluid &times; V &times; g</span></div>
-        <div class="aki"><span class="akq">5.</span><span class="aka">&rho;_object &lt; &rho;_fluid</span></div>
-        <div class="aki"><span class="akq">6.</span><span class="aka">Swim bladder</span></div>
-        <div class="aki"><span class="akq">7.</span><span class="aka">Fills ballast tanks with water</span></div>
-        <div class="aki"><span class="akq">8.</span><span class="aka">Hydrometer</span></div>
-        <div class="aki"><span class="akq">9.</span><span class="aka">1,000 kg/m&sup3;</span></div>
-        <div class="aki"><span class="akq">10.</span><span class="aka">~90% submerged (10% visible)</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">B. Multiple Choice</div><div class="akm">
-        <div class="akmi"><span class="akq">1.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">2.</span><span class="aka">C</span></div>
-        <div class="akmi"><span class="akq">3.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">4.</span><span class="aka">B (4,900 N)</span></div>
-        <div class="akmi"><span class="akq">5.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">6.</span><span class="aka">B</span></div>
-        <div class="akmi"><span class="akq">7.</span><span class="aka">B</span></div><div class="akmi"><span class="akq">8.</span><span class="aka">D (10%)</span></div>
-        <div class="akmi"><span class="akq">9.</span><span class="aka">C</span></div><div class="akmi"><span class="akq">10.</span><span class="aka">C</span></div>
-      </div></div>
-      <div class="aks"><div class="akst">C. Problem Solving</div><div class="akg">
-        <div class="aki"><span class="akq">1.</span><span class="aka">FB = 1000 &times; 0.3 &times; 9.8 = 2,940 N</span></div>
-        <div class="aki"><span class="akq">2.</span><span class="aka">FLOAT: 600 &lt; 1000; buoyant force &gt; weight</span></div>
-        <div class="aki"><span class="akq">3.</span><span class="aka">Weight = 500 &times; 9.8 = 4,900 N</span></div>
-      </div></div>
-    </div>
-  </div>
-</section>
+                <!-- Live Dish Search & Category Filtering Bar (Mobile-Optimized) -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-3.5 mb-7 sm:mb-8">
+                    <!-- Search Input -->
+                    <div class="relative w-full md:w-72">
+                        <input type="text" id="dishSearchInput" placeholder="Search dishes (e.g. crab, gyudon, waffle)..." 
+                               class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-brand-darkCard border border-slate-700 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-amber-400">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs"></i>
+                    </div>
 
-<!-- FINAL REVIEW -->
-<section class="fr" id="final">
-  <div class="frb">&#9889; One-Minute Final Review</div>
-  <div class="frt">General Science &middot; Weeks 5&ndash;6</div>
-  <p class="frtx">
-    <strong style="color:var(--teal)">Simple Machines (W5):</strong> 6 types: Lever (3 classes), Wheel &amp; Axle, Pulley, Inclined Plane, Wedge, Screw. MA = Load/Effort. IMA = dimensions; AMA = real forces. Efficiency = AMA/IMA &times; 100%. Machines reduce effort force, NOT total work.<br><br>
-    <strong style="color:var(--cyan)">Compound Machines (W5):</strong> Two or more simple machines combined. MA_total = MA1 &times; MA2 &times; ... More components = less efficiency. Scissors = levers + wedge. Bicycle = wheel &amp; axle + levers + pulleys. Can opener = lever + wheel + wedge.<br><br>
-    <strong style="color:var(--lime)">Pascal's Principle (W6):</strong> Pressure on confined fluid = transmitted equally everywhere. P = F/A (in Pascals). Hydraulic: F1/A1 = F2/A2. Larger piston = more force. Fluid must be enclosed and incompressible. Applications: brakes, hydraulic lifts, presses, excavators.<br><br>
-    <strong style="color:var(--sky)">Archimedes' Principle (W6):</strong> FB = weight of displaced fluid = &rho;_fluid &times; V &times; g. Float: &rho;_obj &lt; &rho;_fluid. Sink: &rho;_obj &gt; &rho;_fluid. Neutral: equal. Ships float (hollow hull). Submarines use ballast tanks. Hot air balloons: heated air less dense than surrounding air.
-  </p>
-  <div class="fps">
-    <div class="fp">
-      <div class="fpi">&#128296;</div>
-      <div class="fptitle" style="color:var(--teal)">Simple Machine Formulas</div>
-      <div class="fptx">MA = Load / Effort<br>Lever: MA = Effort arm / Load arm<br>Inclined: IMA = L / h<br>Wheel: IMA = R_wheel / R_axle<br>Pulley: MA = rope segments<br>Efficiency = (AMA/IMA) &times; 100%</div>
-    </div>
-    <div class="fp">
-      <div class="fpi">&#128230;</div>
-      <div class="fptitle" style="color:var(--cyan)">Lever Classes</div>
-      <div class="fptx">1st: Fulcrum middle<br>&rarr; Seesaw, crowbar, scissors<br>2nd: Load middle<br>&rarr; Wheelbarrow, nutcracker<br>3rd: Effort middle<br>&rarr; Tweezers, fishing rod, broom</div>
-    </div>
-    <div class="fp">
-      <div class="fpi">&#128167;</div>
-      <div class="fptitle" style="color:var(--lime)">Pascal's Key Facts</div>
-      <div class="fptx">P = F / A (in Pascals)<br>1 Pa = 1 N/m&sup2;<br>F1/A1 = F2/A2<br>Fluid: enclosed &amp; incompressible<br>F2 = F1 &times; (A2/A1)<br>Apps: brakes, lift, press, crane</div>
-    </div>
-    <div class="fp">
-      <div class="fpi">&#128674;</div>
-      <div class="fptitle" style="color:var(--sky)">Archimedes' Key Facts</div>
-      <div class="fptx">FB = &rho;_fluid &times; V &times; g<br>Float: &rho;_obj &lt; &rho;_fluid<br>Sink: &rho;_obj &gt; &rho;_fluid<br>Neutral: &rho;_obj = &rho;_fluid<br>&rho;_water = 1,000 kg/m&sup3;<br>Submarine: ballast tanks</div>
-    </div>
-    <div class="fp">
-      <div class="fpi">&#129302;</div>
-      <div class="fptitle" style="color:var(--indigo)">Compound Machines</div>
-      <div class="fptx">MA_total = MA1 &times; MA2 &times; ...<br>More parts = less efficiency<br>Scissors: levers + wedge<br>Bicycle: wheel + levers + pulleys<br>Can opener: lever + wheel + wedge<br>Wheelbarrow: lever + wheel &amp; axle</div>
-    </div>
-  </div>
-</section>
+                    <!-- Category Pills (Horizontal Scroll on Mobile) -->
+                    <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 text-xs font-bold no-scrollbar">
+                        <button class="menu-tab px-4 py-2.5 rounded-xl bg-amber-500 text-brand-dark transition-all shrink-0 shadow-md shadow-amber-500/20" data-category="all">
+                            All Items
+                        </button>
+                        <button class="menu-tab px-4 py-2.5 rounded-xl bg-brand-darkCard border border-slate-800 text-slate-300 hover:text-white transition-all shrink-0" data-category="seafood">
+                            🦐 Seafood Buckets
+                        </button>
+                        <button class="menu-tab px-4 py-2.5 rounded-xl bg-brand-darkCard border border-slate-800 text-slate-300 hover:text-white transition-all shrink-0" data-category="gyudon">
+                            🥩 Gyudon & Rice
+                        </button>
+                        <button class="menu-tab px-4 py-2.5 rounded-xl bg-brand-darkCard border border-slate-800 text-slate-300 hover:text-white transition-all shrink-0" data-category="tebasaki">
+                            🍗 Tebasaki Wings
+                        </button>
+                        <button class="menu-tab px-4 py-2.5 rounded-xl bg-brand-darkCard border border-slate-800 text-slate-300 hover:text-white transition-all shrink-0" data-category="waffles">
+                            🧇 Waffles
+                        </button>
+                        <button class="menu-tab px-4 py-2.5 rounded-xl bg-brand-darkCard border border-slate-800 text-slate-300 hover:text-white transition-all shrink-0" data-category="drinks">
+                            🍋 Lemonades
+                        </button>
+                    </div>
+                </div>
 
-</main>
-<footer style="text-align:center;padding:40px 24px;color:var(--t3);font-size:12px;border-top:1px solid var(--border);margin-top:40px;">
-  <p>General Science &middot; Complete Reviewer &middot; Weeks 5&ndash;6 &middot; First Term</p>
-  <p style="margin-top:4px">Use the sticky nav bar to jump between topics. Each color = one topic. Good luck on your exam!</p>
-</footer>
+                <!-- Menu Cards Grid (1 col on mobile, 2 on tablet, 3 on desktop) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7" id="menuGrid">
+                    
+                    <!-- 1. Bucket of Pair with Crab -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="seafood" data-name="bucket of pair with crab seafood feast cajun garlic">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/d9eddbd9-32ad-4b24-b344-1ec3e03636a1.jpg" 
+                                 alt="Bucket of Pair with Crab Hungry Pair" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-gradient-to-r from-red-600 to-orange-600 text-white shadow-lg">
+                                Bestseller 🔥
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱998.00 • Feeds 2–4 Pax
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Bucket of Pair with Crab</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Loaded with fresh whole crabs, shrimp, mussels, scallops, tender squid, sweet corn & potatoes. Choice of: <strong>Rich Butter Garlic</strong> or <strong>Bold Cajun Sauce</strong>!
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Gyudon Classic -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="gyudon" data-name="gyudon classic beef rice bowl japanese">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/ed19f058-62bc-406f-bbff-1b13b184bec9.jpg" 
+                                 alt="Gyudon Classic Beef Bowl" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-amber-500 text-brand-dark shadow-lg">
+                                Japanese Classic
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱240.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Gyudon Classic</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Tender sliced beef simmered in a rich savory dashi-soy sauce, served over a bed of fluffy steamed white rice and topped with a soft egg.
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Gyudon Triple Cheese -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="gyudon" data-name="gyudon triple cheese fusion beef">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/c8d4e07a-30fa-4d1b-a61b-9a65d32a4632.jpg" 
+                                 alt="Gyudon Triple Cheese Fusion" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-orange-500 text-white shadow-lg">
+                                Cheese Lovers
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱295.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Gyudon Triple Cheese</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Tender sliced beef served over hot rice topped with a luscious, torched melty blend of three premium cheeses creating an indulgent fusion.
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4. Tebasaki Chicken Wings -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="tebasaki" data-name="tebasaki chicken wings platter nagoya">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/53e91ad0-e321-478b-b75d-8b5f655e9716.jpg" 
+                                 alt="Tebasaki Chicken Wings" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-amber-500 text-brand-dark shadow-lg">
+                                Signature Wings
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱165.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Tebasaki Chicken Wings</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Authentic Japanese Nagoya-style chicken wings: crispy outside, juicy inside, glazed in deeply savory, sweet teriyaki glaze.
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Pork Katsudon -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="gyudon" data-name="pork katsudon tonkatsu japanese cutlet">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/da49ce9a-a06c-461c-a9cd-c5b62b7b58d5.jpg" 
+                                 alt="Pork Katsudon Japanese" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱220.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Pork Katsudon</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Golden crispy breaded pork cutlet served over steamed rice, topped with a flavorful simmered egg sauce and scallions.
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Bucket of Friends with Crabs (4 Pax) -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="seafood" data-name="bucket of friends with crabs party seafood">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/ffaacffc-7f7e-495e-9684-9759d4411359.jpg" 
+                                 alt="Bucket of Friends with Crabs" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-red-600 text-white shadow-lg">
+                                Party 4–6 Pax
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱1,299.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Bucket of Friends with Crabs</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Giant feast of whole crabs, shrimps, scallops, mussels, squid, corn & marble potatoes in rich Butter Garlic or fiery Cajun sauce.
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Matcha Pistachio Waffle -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="waffles" data-name="matcha pistachio waffle dessert">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/b7ec4d45-df7a-49f2-a2bd-7a321d054fb7.jpg" 
+                                 alt="Matcha Pistachio Waffle" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-emerald-600 text-white shadow-lg">
+                                Sweet Treat
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱140.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Matcha Pistachio Waffle</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Delicate golden waffle infused with matcha green tea, topped with rich creamy pistachio spread. Warm and crispy!
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 8. Nutella & Biscoff Waffles -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="waffles" data-name="nutella biscoff waffle sweet dessert">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/96586bf7-fe33-4e87-ab57-aac5f04a4960.jpg" 
+                                 alt="Nutella Waffle Hungry Pair" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱120.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Nutella & Biscoff Waffles</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Freshly pressed golden waffles loaded with authentic Nutella hazelnut cocoa or spiced Lotus Biscoff cookie sauce.
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 9. Craft Lemonades -->
+                    <div class="food-card menu-card glass-panel rounded-3xl overflow-hidden border border-slate-800 flex flex-col group" data-category="drinks" data-name="lemonade strawberry lychee calamansi chia drink">
+                        <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/21c730de-ee83-4a3a-8baf-1dfab3c42684.jpg" 
+                                 alt="Fresh Strawberry & Lychee Lemonades" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <span class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[11px] font-black bg-cyan-600 text-white shadow-lg">
+                                Ice Cold
+                            </span>
+                            <span class="absolute bottom-3.5 left-3.5 px-3 py-1 rounded-lg text-xs font-bold bg-[#0E1118]/90 text-amber-300 border border-amber-500/40 font-mono">
+                                ₱85.00
+                            </span>
+                        </div>
+                        <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-black text-lg sm:text-xl text-white group-hover:text-amber-400 transition-colors">Craft Lemonades (Strawberry, Lychee, Chia)</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-5 leading-relaxed flex-grow">
+                                Squeezed from fresh lemons with natural fruit purees. Available in Calamansi, Strawberry, Lychee, Chia seed, and Classic!
+                            </p>
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-extrabold text-xs tracking-wider uppercase transition-all shadow-md flex items-center justify-center gap-2 active:scale-95">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section id="about" class="py-14 sm:py-20 bg-brand-darkCard/40 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                    
+                    <!-- Left: Photo Collage -->
+                    <div class="relative">
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/d9eddbd9-32ad-4b24-b344-1ec3e03636a1.jpg" 
+                                 alt="Hungry Pair Seafood Bucket" 
+                                 loading="lazy"
+                                 class="rounded-2xl sm:rounded-3xl object-cover h-48 sm:h-64 w-full shadow-2xl border border-slate-800">
+                            <img src="https://images.deliveryhero.io/image/global-menu-service/FP_PH/vendor/poyy/product/c8d4e07a-30fa-4d1b-a61b-9a65d32a4632.jpg" 
+                                 alt="Hungry Pair Japanese Gyudon" 
+                                 loading="lazy"
+                                 class="rounded-2xl sm:rounded-3xl object-cover h-48 sm:h-64 w-full shadow-2xl border border-slate-800 mt-4 sm:mt-6">
+                        </div>
+
+                        <div class="absolute -bottom-4 left-4 sm:-bottom-6 sm:left-6 glass-panel p-4 sm:p-5 rounded-2xl border border-amber-500/40 shadow-2xl flex items-center gap-3.5">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-lg sm:text-xl">
+                                10/10
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Generous Portion Sizes</p>
+                                <p class="text-[10px] sm:text-[11px] text-slate-300">"Pang 2 pax pero kasya pang 4!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Story Narrative -->
+                    <div class="space-y-4 sm:space-y-6 pt-6 lg:pt-0">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                            About Hungry Pair
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-white leading-tight">
+                            Crafted with Passion, Served with Big Portions in Calamba, Laguna.
+                        </h2>
+                        <p class="text-slate-300 text-xs sm:text-sm lg:text-base leading-relaxed">
+                            Welcome to <strong class="text-amber-300">Hungry Pair</strong>! Located on Burgos Street in Calamba, we specialize in delivering overflowing seafood feasts and comforting Japanese meals that never skimp on flavor or quantity.
+                        </p>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Our signature <strong>Seafood Buckets</strong> are drenched in authentic Cajun and garlic-butter aromatics, brimming with whole crabs, succulent prawns, plump scallops, mussels, and squid. Alongside our Japanese <strong>Gyudon beef bowls</strong>, crispy <strong>Tebasaki wings</strong>, and dessert waffles, we guarantee a feast you will love.
+                        </p>
+
+                        <!-- Highlights Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-[#0E1118]/80 border border-slate-800">
+                                <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs font-bold text-slate-200">100% Real Seafood & Meats</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-[#0E1118]/80 border border-slate-800">
+                                <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs font-bold text-slate-200">Dine-In, Takeout & Delivery</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-[#0E1118]/80 border border-slate-800">
+                                <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs font-bold text-slate-200">Affordable Group Feasts</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-[#0E1118]/80 border border-slate-800">
+                                <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs font-bold text-slate-200">5.0★ Foodpanda Verified Rating</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 flex flex-wrap gap-3">
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="px-6 py-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg">
+                                <i class="fa-solid fa-bag-shopping"></i> Order on Foodpanda
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61587575466576" target="_blank" rel="noopener noreferrer" 
+                               class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow">
+                                <i class="fa-brands fa-facebook"></i> Facebook Page
+                            </a>
+                            <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer" 
+                               class="px-5 py-3 rounded-xl border border-slate-700 hover:border-slate-500 text-slate-200 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-amber-400"></i> Directions
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Testimonials (Google + Foodpanda Verified Reviews) -->
+        <section id="reviews" class="py-14 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2.5">
+                        <i class="fa-solid fa-comments"></i> Verified Customer Reviews
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-black text-white mb-2 sm:mb-3">
+                        Loved by Foodies in Calamba
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm">
+                        Real feedback from verified diners on Foodpanda and Google Maps.
+                    </p>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    
+                    <!-- Review 1: Alyssa -->
+                    <div class="glass-panel p-5 sm:p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-pink-500/50 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-3.5">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-full bg-pink-600 text-white font-bold flex items-center justify-center text-xs">
+                                        A
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs sm:text-sm font-bold text-white">Alyssa</h4>
+                                        <p class="text-[10px] text-pink-400 font-semibold">Foodpanda Order</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 italic leading-relaxed">
+                                "Worth it ang bayad. 1000/10! Sobrang sarap ng seafood and hot upon delivery."
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] text-slate-500 flex justify-between">
+                            <span>Verified Diner</span>
+                            <span class="text-emerald-400 font-semibold">5.0 Star Rating</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 2: Precy -->
+                    <div class="glass-panel p-5 sm:p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-amber-500/50 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-3.5">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center text-xs">
+                                        P
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs sm:text-sm font-bold text-white">Precy</h4>
+                                        <p class="text-[10px] text-amber-400 font-semibold">Foodpanda Order</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 italic leading-relaxed">
+                                "Sobrang sarap ng foods, and ang dami ng servings nila! Yung pang 2 persons kasya ng pang 3-4 persons. Sobrang satisfied!"
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] text-slate-500 flex justify-between">
+                            <span>Verified Diner</span>
+                            <span class="text-emerald-400 font-semibold">5.0 Star Rating</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 3: Mariel N. Parao -->
+                    <div class="glass-panel p-5 sm:p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-orange-500/50 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-3.5">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-full bg-orange-600 text-white font-bold flex items-center justify-center text-xs">
+                                        M
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs sm:text-sm font-bold text-white">Mariel N. Parao</h4>
+                                        <p class="text-[10px] text-orange-400 font-semibold">Google Maps Review</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 italic leading-relaxed">
+                                "Ordered seafood bucket for 1-2 persons and upon receiving the food is good for 3-4 persons hehe. The taste is superb pati partner ko ay super satisfied!"
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] text-slate-500 flex justify-between">
+                            <span>5 Photos Added</span>
+                            <span class="text-amber-400 font-semibold">Top Reviewer</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 4: Lewis Macdonald -->
+                    <div class="glass-panel p-5 sm:p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-blue-500/50 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-3.5">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs">
+                                        L
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs sm:text-sm font-bold text-white">Lewis Macdonald</h4>
+                                        <p class="text-[10px] text-blue-400 font-semibold">Google Local Guide</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300 italic leading-relaxed">
+                                "Great restaurant 10/10 would recommend. Japanese food is great and the price is amazing for what you get."
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] text-slate-500 flex justify-between">
+                            <span>Local Guide</span>
+                            <span class="text-emerald-400 font-semibold">10/10 Verified</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Location & Store Hours Section -->
+        <section id="location" class="py-14 sm:py-20 bg-brand-darkCard/40 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+                    
+                    <!-- Location Details -->
+                    <div class="lg:col-span-5 glass-panel rounded-3xl p-5 sm:p-8 border border-slate-800 space-y-5 sm:space-y-6">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-shop"></i> Visit Our Kitchen
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Location & Hours</h2>
+                            <p class="text-xs text-slate-400 mt-1">Conveniently located along Burgos St, Barangay 6, Calamba, Laguna.</p>
+                        </div>
+
+                        <!-- Address Detail -->
+                        <div class="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#0E1118]/90 border border-slate-800">
+                            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-base sm:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white uppercase tracking-wider">Physical Address</h4>
+                                <p class="text-xs sm:text-sm text-slate-200 mt-0.5 font-semibold">124 / 418 Burgos St, Barangay 6, Calamba, 4027 Laguna</p>
+                                <p class="text-[11px] text-amber-400 font-mono mt-1">Plus Code: 6578+4RC / 6578+5RF</p>
+                            </div>
+                        </div>
+
+                        <!-- Store Schedule Table -->
+                        <div class="p-3.5 sm:p-4 rounded-2xl bg-[#0E1118]/90 border border-slate-800 space-y-2 text-xs">
+                            <div class="flex items-center justify-between text-slate-300 font-bold border-b border-slate-800 pb-2 mb-2">
+                                <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-amber-400"></i> Operating Schedule</span>
+                                <span class="text-emerald-400 font-semibold text-[11px]">Open Today</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Monday:</span>
+                                <span class="font-medium text-slate-200">1:00 PM – 8:30 PM</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Tuesday – Thursday:</span>
+                                <span class="font-medium text-slate-200">11:30 AM – 8:30 PM</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400 font-medium">
+                                <span>Friday – Sunday:</span>
+                                <span class="font-semibold text-amber-300">11:30 AM – 9:30 PM</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct Order & Map Actions -->
+                        <div class="flex flex-col gap-2.5 pt-1">
+                            <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                               class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-[#D70F64] to-pink-600 hover:from-pink-500 hover:to-rose-600 text-white font-black text-xs tracking-wider uppercase text-center transition-all shadow-xl shadow-pink-900/40 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Order on Foodpanda Now</span>
+                            </a>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer"
+                                   class="py-2.5 px-3 rounded-xl border border-slate-700 hover:border-amber-400 bg-slate-900/80 text-slate-200 hover:text-white font-bold text-xs text-center transition-colors flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-diamond-turn-right text-amber-400"></i>
+                                    <span>Google Maps</span>
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=61587575466576" target="_blank" rel="noopener noreferrer"
+                                   class="py-2.5 px-3 rounded-xl border border-blue-600/40 hover:border-blue-500 bg-blue-950/30 text-blue-300 hover:text-white font-bold text-xs text-center transition-colors flex items-center justify-center gap-1.5">
+                                    <i class="fa-brands fa-facebook-f text-blue-400"></i>
+                                    <span>Facebook Page</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Map Embed -->
+                    <div class="lg:col-span-7 glass-panel rounded-3xl overflow-hidden border border-slate-800 h-[380px] sm:h-[480px] relative shadow-2xl">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.734614217112!2d121.1643!3d14.2085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd615f8a0058b7%3A0xb35a3962b1b369c7!2sBurgos%20St%2C%20Calamba%2C%20Laguna!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" 
+                            class="w-full h-full border-0 filter grayscale-[15%] contrast-110" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                        <div class="absolute top-3 left-3 glass-panel px-3.5 py-2 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                            <div>
+                                <p class="text-xs font-bold text-white">Hungry Pair - Burgos St</p>
+                                <p class="text-[10px] text-slate-300">Calamba, Laguna</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-[#080A0E] border-t border-slate-800 text-slate-400 text-xs py-10 sm:py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-7 mb-8 sm:mb-10">
+                
+                <!-- Brand & Overview -->
+                <div class="space-y-3.5 md:col-span-2">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-400 via-orange-500 to-pink-600 flex items-center justify-center text-brand-dark font-black">
+                            <i class="fa-solid fa-fire-burner text-xs text-brand-dark"></i>
+                        </div>
+                        <span class="font-serif font-black text-lg text-white">Hungry Pair</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-pink-500/20 text-pink-400 border border-pink-500/30 font-bold">Foodpanda Partner</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed text-xs">
+                        Calamba's premier destination for overflowing Cajun and Butter Garlic Seafood Buckets, authentic Japanese Gyudon, crispy Tebasaki wings, and dessert waffles.
+                    </p>
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+                           class="px-3 py-1.5 rounded-lg bg-pink-900/30 border border-pink-500/30 text-pink-300 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-bold">
+                            <i class="fa-solid fa-bag-shopping"></i> Foodpanda Store
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61587575466576" target="_blank" rel="noopener noreferrer" 
+                           class="px-3 py-1.5 rounded-lg bg-blue-900/30 border border-blue-500/30 text-blue-300 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-bold">
+                            <i class="fa-brands fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer" 
+                           class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-bold">
+                            <i class="fa-solid fa-map-pin text-amber-400"></i> Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-2">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-2.5">Quick Links</h5>
+                    <ul class="space-y-1.5 text-slate-400">
+                        <li><a href="#home" class="hover:text-amber-400 transition-colors">Overview</a></li>
+                        <li><a href="#planner" class="hover:text-amber-400 transition-colors">Feast Calculator</a></li>
+                        <li><a href="#menu" class="hover:text-amber-400 transition-colors">Menu & Dishes</a></li>
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">About Our Story</a></li>
+                        <li><a href="#reviews" class="hover:text-amber-400 transition-colors">Customer Reviews</a></li>
+                        <li><a href="#location" class="hover:text-amber-400 transition-colors">Store Hours & Maps</a></li>
+                    </ul>
+                </div>
+
+                <!-- Dining Information -->
+                <div class="space-y-2">
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-2.5">Store Information</h5>
+                    <p class="text-slate-400">Address: <span class="text-slate-200">124 / 418 Burgos St, Calamba</span></p>
+                    <p class="text-slate-400">Ratings: <span class="text-amber-400 font-bold">5.0★ (Foodpanda) | 4.4★ (Google)</span></p>
+                    <p class="text-slate-400">Services: <span class="text-slate-200">Dine-in, Takeout, Delivery</span></p>
+                    <p class="text-slate-400">Order Online: <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" class="text-pink-400 underline font-semibold">foodpanda.ph/poyy</a></p>
+                </div>
+
+            </div>
+
+            <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500 text-center sm:text-left">
+                <p>&copy; 2026 Hungry Pair - Burgos Street, Calamba, Laguna. All rights reserved.</p>
+                <div class="flex items-center gap-3">
+                    <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400">Foodpanda</a>
+                    <span>•</span>
+                    <a href="https://www.facebook.com/profile.php?id=61587575466576" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Facebook</a>
+                    <span>•</span>
+                    <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400">Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cellphone Mobile Sticky Bottom Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-[#0E1118]/95 backdrop-blur-lg border-t border-amber-500/20 px-3 py-2.5 sm:hidden flex items-center justify-between gap-2 shadow-2xl">
+        <a href="#menu" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs text-center flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-utensils text-amber-400"></i>
+            <span>Menu</span>
+        </a>
+        <a href="https://maps.app.goo.gl/YJbvTbUzRxtaw6rX8" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs text-center flex items-center justify-center">
+            <i class="fa-solid fa-location-dot text-amber-400"></i>
+        </a>
+        <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" rel="noopener noreferrer" 
+           class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#D70F64] to-pink-600 text-white font-extrabold text-xs text-center flex items-center justify-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Order Foodpanda</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Particle System
+        const particlesContainer = document.getElementById('particlesContainer');
+        const particleIcons = ['🦐', '🦀', '🍱', '🍗', '🧇', '✨', '🍋', '🧄'];
+        
+        function createParticle() {
+            if (!particlesContainer) return;
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.textContent = particleIcons[Math.floor(Math.random() * particleIcons.length)];
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.fontSize = (Math.random() * 14 + 14) + 'px';
+            p.style.animationDuration = (Math.random() * 10 + 12) + 's';
+            p.style.animationDelay = (Math.random() * 4) + 's';
+            particlesContainer.appendChild(p);
+            
+            setTimeout(() => {
+                p.remove();
+            }, 20000);
+        }
+
+        for (let i = 0; i < 16; i++) {
+            createParticle();
+        }
+        setInterval(createParticle, 3000);
+
+        // 2. Interactive Click Sparks
+        document.addEventListener('click', (e) => {
+            const spark = document.createElement('div');
+            spark.className = 'click-spark';
+            spark.style.left = e.clientX + 'px';
+            spark.style.top = e.clientY + 'px';
+            document.body.appendChild(spark);
+            setTimeout(() => spark.remove(), 700);
+        });
+
+        // 3. Live Order Toast Rotation
+        const toast = document.getElementById('liveOrderToast');
+        const toastMessage = document.getElementById('toastMessage');
+        const recentOrders = [
+            'Bucket of Pair with Crab (Good for 2-4 Pax)',
+            'Gyudon Triple Cheese + Iced Tea',
+            'Solo Bucket with Crab in Cajun Sauce',
+            'Tebasaki Chicken Wings Platter',
+            'Matcha Pistachio Waffle + Strawberry Lemonade',
+            'Bucket of Friends with Crabs (4 Pax)'
+        ];
+
+        let toastIndex = 0;
+        function showNextToast() {
+            if (!toast || !toastMessage) return;
+            toastMessage.textContent = recentOrders[toastIndex % recentOrders.length];
+            toastIndex++;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 6000);
+        }
+
+        setTimeout(showNextToast, 3500);
+        setInterval(showNextToast, 26000);
+
+        // 4. Interactive Feast Calculator Logic
+        const groupBtns = document.querySelectorAll('.group-btn');
+        const sauceBtns = document.querySelectorAll('.sauce-btn');
+        const calcTitle = document.getElementById('calcTitle');
+        const calcDesc = document.getElementById('calcDesc');
+
+        let selectedSize = 'solo';
+        let selectedSauce = 'cajun';
+
+        const combos = {
+            'solo-cajun': { title: 'Solo Bucket with Crab in Bold Cajun', desc: 'Loaded with fresh shrimp, mussels, scallops, squid & whole crab with sweet corn in spicy Cajun sauce!' },
+            'solo-butter': { title: 'Solo Bucket - Regular in Butter Garlic', desc: 'Succulent shrimp, squid & scallops drenched in rich golden garlic butter sauce.' },
+            'pair-cajun': { title: 'Bucket of Pair with Crab in Cajun (2-4 Pax)', desc: 'Our #1 Bestseller! Crabs, prawns, scallops & corn. Perfect sharing feast for couples & friends!' },
+            'pair-butter': { title: 'Bucket of Pair with Crab in Butter Garlic', desc: 'Overflowing seafood covered in silky, aromatic garlic butter sauce. Super satisfying!' },
+            'party-cajun': { title: 'Bucket of Friends with Crabs (4-8 Pax)', desc: 'Giant feast loaded with whole crabs, extra shrimps, mussels, corn & marble potatoes.' },
+            'party-butter': { title: 'Hungry Bucket Feast with Crabs in Garlic Butter', desc: 'Huge party-sized seafood mountain bathed in delicious sweet-savory garlic butter sauce.' }
+        };
+
+        function updateCalculator() {
+            const key = `${selectedSize}-${selectedSauce}`;
+            const data = combos[key] || combos['pair-cajun'];
+            if (calcTitle) calcTitle.textContent = data.title;
+            if (calcDesc) calcDesc.textContent = data.desc;
+        }
+
+        groupBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                groupBtns.forEach(b => {
+                    b.classList.remove('border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                    b.classList.add('border-slate-700', 'bg-slate-900', 'text-slate-300');
+                });
+                btn.classList.add('border-amber-500', 'bg-amber-500/20', 'text-amber-300');
+                btn.classList.remove('border-slate-700', 'bg-slate-900', 'text-slate-300');
+                selectedSize = btn.getAttribute('data-size');
+                updateCalculator();
+            });
+        });
+
+        sauceBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sauceBtns.forEach(b => {
+                    b.classList.remove('border-orange-500', 'bg-orange-500/20', 'text-orange-300');
+                    b.classList.add('border-slate-700', 'bg-slate-900', 'text-slate-300');
+                });
+                btn.classList.add('border-orange-500', 'bg-orange-500/20', 'text-orange-300');
+                btn.classList.remove('border-slate-700', 'bg-slate-900', 'text-slate-300');
+                selectedSauce = btn.getAttribute('data-sauce');
+                updateCalculator();
+            });
+        });
+
+        // 5. Dish Search Filter & Category Tabs
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuCards = document.querySelectorAll('.menu-card');
+        const searchInput = document.getElementById('dishSearchInput');
+
+        let currentCategory = 'all';
+
+        function filterMenu() {
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+            menuCards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                const cardName = (card.getAttribute('data-name') || '') + ' ' + card.innerText.toLowerCase();
+                
+                const matchesCategory = (currentCategory === 'all' || cardCat === currentCategory);
+                const matchesSearch = query === '' || cardName.includes(query);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                menuTabs.forEach(t => {
+                    t.classList.remove('bg-amber-500', 'text-brand-dark', 'shadow-md', 'shadow-amber-500/20');
+                    t.classList.add('bg-brand-darkCard', 'text-slate-300', 'border', 'border-slate-800');
+                });
+                tab.classList.add('bg-amber-500', 'text-brand-dark', 'shadow-md', 'shadow-amber-500/20');
+                tab.classList.remove('bg-brand-darkCard', 'text-slate-300', 'border', 'border-slate-800');
+
+                currentCategory = tab.getAttribute('data-category');
+                filterMenu();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', filterMenu);
+        }
+
+        // 6. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (isHidden) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
