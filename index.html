@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="format-detection" content="telephone=no"/>
   <title>MUJIB REVIEWER | Grade 11 Term 1 Summative Exam</title>
   
   <!-- Modern Google Fonts -->
@@ -4770,6 +4775,16 @@ h1, h2, h3, h4, h5, h6 {
       </div>
     </div>
     
+  
+<!-- LIGHTBOX MODAL FOR ANDROID FULLSCREEN IMAGE VIEWING -->
+<div id="image-lightbox" class="image-lightbox" onclick="closeLightbox()">
+  <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+    <button class="btn-close-lightbox" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-target-img" class="lightbox-img" src="" alt="Full view"/>
+    <div id="lightbox-caption-text" class="lightbox-caption"></div>
+  </div>
+</div>
+
 
   <!-- Master JavaScript Engine -->
   <script>
@@ -5737,6 +5752,42 @@ document.addEventListener('keydown', (e) => {
     openSearchModal();
   }
 });
+
+
+// ========================================================
+// ANDROID / MOBILE LIGHTBOX IMAGE VIEWER
+// ========================================================
+
+function openLightbox(src, caption) {
+  if (typeof playAudioTone === 'function') playAudioTone('click');
+  const lb = document.getElementById('image-lightbox');
+  const img = document.getElementById('lightbox-target-img');
+  const cap = document.getElementById('lightbox-caption-text');
+  if (lb && img) {
+    img.src = src;
+    if (cap) cap.innerText = caption || 'Image Preview';
+    lb.classList.add('open');
+  }
+}
+
+function closeLightbox() {
+  if (typeof playAudioTone === 'function') playAudioTone('click');
+  const lb = document.getElementById('image-lightbox');
+  if (lb) lb.classList.remove('open');
+}
+
+// Auto-attach lightbox to all infographic and module images
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.infographic-img').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wrap = img.closest('.infographic-wrapper');
+      const caption = wrap && wrap.querySelector('.infographic-caption') ? wrap.querySelector('.infographic-caption').innerText : (img.alt || 'Infographic Diagram');
+      openLightbox(img.src, caption);
+    });
+  });
+});
+
 
   </script>
 </body>
