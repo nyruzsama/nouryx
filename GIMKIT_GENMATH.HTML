@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"/>
+  <meta name="theme-color" content="#1e1b4b"/>
+  <title>GIMKIT GENMATH ARENA | Grade 11 Practice Exam Game</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gk-bg: #0f172a;
+      --gk-surface: #1e293b;
+      --gk-card: #243049;
+      --gk-purple: #7c3aed;
+      --gk-purple-light: #a78bfa;
+      --gk-indigo: #4f46e5;
+      --gk-cyan: #06b6d4;
+      --gk-green: #10b981;
+      --gk-green-light: #34d399;
+      --gk-amber: #f59e0b;
+      --gk-rose: #f43f5e;
+      --gk-red: #ef4444;
+      --font-game: 'Fredoka', cursive, sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0f172a 100%);
+      color: #f8fafc;
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* HEADER / HUD */
+    .gimkit-top-hud {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    }
+
+    .brand-name {
+      font-family: var(--font-game);
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+    }
+
+    .hud-metrics {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hud-pill {
+      background: var(--gk-surface);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 30px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .hud-pill-cash {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+    }
+
+    .hud-pill-streak {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
+    }
+
+    .hud-val {
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .val-cash { color: #34d399; }
+    .val-streak { color: #fbbf24; }
+
+    /* MAIN CONTAINER */
+    .gimkit-container {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px 16px 80px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* MODE SELECTOR SCREEN */
+    .mode-select-screen {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.2));
+      border: 2px solid rgba(167, 139, 250, 0.3);
+      border-radius: 20px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero-title {
+      font-family: var(--font-game);
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .hero-desc {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.5;
+    }
+
+    .modes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .mode-card {
+      background: var(--gk-surface);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mode-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gk-purple-light);
+      box-shadow: 0 12px 28px rgba(124, 58, 237, 0.25);
+    }
+
+    .mode-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .mode-title {
+      font-family: var(--font-game);
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .mode-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .btn-play-mode {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 12px;
+      font-family: var(--font-game);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+      transition: transform 0.1s ease;
+    }
+
+    .btn-play-mode:active {
+      transform: scale(0.96);
+    }
+
+    /* GAMEPLAY ARENA */
+    .gameplay-arena {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* BOSS HEALTH BAR (BOSS MODE) */
+    .boss-panel {
+      background: var(--gk-surface);
+      border: 2px solid #ef4444;
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .boss-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .boss-name {
+      font-family: var(--font-game);
+      font-size: 18px;
+      color: #f87171;
+    }
+
+    .boss-hp-text {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 800;
+      color: #fca5a5;
+    }
+
+    .boss-hp-track {
+      background: #450a0a;
+      border-radius: 20px;
+      height: 16px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .boss-hp-fill {
+      background: linear-gradient(90deg, #ef4444, #f87171);
+      height: 100%;
+      width: 100%;
+      transition: width 0.3s ease;
+    }
+
+    /* TIMER / PROGRESS */
+    .game-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(30, 41, 59, 0.6);
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .section-badge {
+      background: #334155;
+      color: #93c5fd;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    /* QUESTION CARD */
+    .question-card {
+      background: var(--gk-surface);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 24px 20px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    /* OPTIONS GRID */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-btn {
+      background: var(--gk-card);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px 14px;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 70px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .option-btn:hover {
+      border-color: var(--gk-cyan);
+      transform: translateY(-2px);
+    }
+
+    .option-btn:active {
+      transform: scale(0.98);
+    }
+
+    .option-tag {
+      width: 30px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-game);
+      font-weight: 700;
+      font-size: 14px;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .option-btn.opt-correct {
+      background: #065f46 !important;
+      border-color: #34d399 !important;
+      color: #ffffff !important;
+      animation: pulseGreen 0.3s ease;
+    }
+
+    .option-btn.opt-wrong {
+      background: #881337 !important;
+      border-color: #f43f5e !important;
+      color: #ffffff !important;
+      animation: shake 0.3s ease;
+    }
+
+    /* GIMKIT SHOP MODAL */
+    .shop-bar {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .btn-open-shop {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-family: var(--font-game);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 1;
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.35);
+    }
+
+    .shop-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 200;
+    }
+
+    .shop-modal {
+      background: var(--gk-surface);
+      border: 2px solid var(--gk-purple-light);
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .shop-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .shop-title {
+      font-family: var(--font-game);
+      font-size: 22px;
+      color: #fbbf24;
+    }
+
+    .btn-close-shop {
+      background: #334155;
+      color: #cbd5e1;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .shop-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .shop-item-card {
+      background: var(--gk-card);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .shop-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .shop-item-name {
+      font-family: var(--font-game);
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .shop-item-desc {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .btn-buy-upgrade {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.1s ease;
+    }
+
+    .btn-buy-upgrade:disabled {
+      background: #475569;
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    /* GAME OVER / VICTORY MODAL */
+    .gameover-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 300;
+    }
+
+    .gameover-card {
+      background: var(--gk-surface);
+      border: 2px solid #38bdf8;
+      border-radius: 24px;
+      max-width: 500px;
+      width: 100%;
+      padding: 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    .gameover-trophy {
+      font-size: 56px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .gameover-title {
+      font-family: var(--font-game);
+      font-size: 28px;
+      color: #38bdf8;
+    }
+
+    .stats-summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .stat-box {
+      background: var(--gk-card);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .stat-val {
+      font-family: var(--font-mono);
+      font-size: 20px;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .stat-lbl {
+      font-size: 11px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .btn-restart-game {
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 28px;
+      font-family: var(--font-game);
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation HUD -->
+  <header class="gimkit-top-hud">
+    <div class="brand-group" onclick="returnToModeSelect()">
+      <div class="brand-logo">⚡</div>
+      <div class="brand-name">GIMKIT <span>GENMATH</span></div>
+    </div>
+
+    <div class="hud-metrics">
+      <div class="hud-pill hud-pill-cash">
+        <span>💰</span>
+        <span id="hud-cash-val" class="hud-val val-cash">$10</span>
+      </div>
+      <div class="hud-pill hud-pill-streak">
+        <span>🔥</span>
+        <span id="hud-streak-val" class="hud-val val-streak">0x</span>
+      </div>
+      <div class="hud-pill" style="border-color:#a78bfa;background:rgba(167,139,250,0.15);">
+        <span>⚡</span>
+        <span id="hud-mult-val" class="hud-val" style="color:#c084fc;">1.0x</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="gimkit-container">
+
+    <!-- SCREEN 1: MODE SELECTOR -->
+    <section id="screen-mode-select" class="mode-select-screen">
+      <div class="hero-banner">
+        <h1 class="hero-title">🎮 Choose Your Gimkit Game Mode</h1>
+        <p class="hero-desc">
+          Master the official <strong>General Mathematics Summative Practice Exam (Tests 1 to 6)</strong>: Salary &amp; Wages, Payroll Computations, 12% VAT, Philippine Taxes, Natural Patterns, and Arithmetic &amp; Geometric Sequences!
+        </p>
+      </div>
+
+      <div class="modes-grid">
+        <!-- MODE 1: CLASSIC TYCOON -->
+        <div class="mode-card" onclick="startGame('classic')">
+          <div>
+            <div class="mode-icon">💰</div>
+            <h3 class="mode-title">Classic Tycoon</h3>
+            <p class="mode-desc">
+              Answer GenMath questions to earn cash. Buy shop upgrades, multipliers, and streak shields to reach the <strong>$50,000 cash goal</strong>!
+            </p>
+          </div>
+          <button class="btn-play-mode">Play Tycoon Mode →</button>
+        </div>
+
+        <!-- MODE 2: BOSS BATTLE -->
+        <div class="mode-card" onclick="startGame('boss')">
+          <div>
+            <div class="mode-icon">👾</div>
+            <h3 class="mode-title">Boss Battle: Tax Titan</h3>
+            <p class="mode-desc">
+              Defeat the <strong>1,500 HP Tax &amp; Deduction Titan</strong>! Correct answers cast high-damage attacks. Wrong answers deal damage to you!
+            </p>
+          </div>
+          <button class="btn-play-mode" style="background:linear-gradient(135deg,#ef4444,#b91c1c);">Fight Boss →</button>
+        </div>
+
+        <!-- MODE 3: 60-SECOND BLITZ -->
+        <div class="mode-card" onclick="startGame('blitz')">
+          <div>
+            <div class="mode-icon">⏱️</div>
+            <h3 class="mode-title">60-Second Blitz</h3>
+            <p class="mode-desc">
+              Time attack speed run! Answer as many questions as you can before the 60-second timer hits zero. Maximum multiplier combos!
+            </p>
+          </div>
+          <button class="btn-play-mode" style="background:linear-gradient(135deg,#06b6d4,#0284c7);">Start Blitz →</button>
+        </div>
+
+        <!-- MODE 4: FULL EXAM SIMULATOR -->
+        <div class="mode-card" onclick="startGame('exam')">
+          <div>
+            <div class="mode-icon">📋</div>
+            <h3 class="mode-title">Full Exam Simulator</h3>
+            <p class="mode-desc">
+              Sequential walk-through of all <strong>36 practice exam questions</strong>: Multiple Choice, Matching Type, True/False, Identification, and Computations.
+            </p>
+          </div>
+          <button class="btn-play-mode" style="background:linear-gradient(135deg,#10b981,#047857);">Simulate Exam →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: GAMEPLAY ARENA -->
+    <section id="screen-gameplay" class="gameplay-arena">
+      
+      <!-- Boss Health Bar (Boss Mode Only) -->
+      <div id="boss-panel" class="boss-panel">
+        <div class="boss-header">
+          <span class="boss-name">👾 Tax &amp; Deduction Titan</span>
+          <span id="boss-hp-text" class="boss-hp-text">1500 / 1500 HP</span>
+        </div>
+        <div class="boss-hp-track">
+          <div id="boss-hp-fill" class="boss-hp-fill"></div>
+        </div>
+      </div>
+
+      <!-- Game Meta / Timer -->
+      <div class="game-meta-row">
+        <span id="game-section-badge" class="section-badge">Test 1: Multiple Choice</span>
+        <span id="game-timer-badge" style="font-family:var(--font-mono);font-weight:700;color:#f87171;">⏱️ 60s</span>
+        <span id="game-question-counter" style="color:#94a3b8;font-size:12px;">Q 1/36</span>
+      </div>
+
+      <!-- Question Card -->
+      <div class="question-card">
+        <h2 id="q-text" class="question-text">Question loading...</h2>
+      </div>
+
+      <!-- Options Grid -->
+      <div id="options-grid" class="options-grid">
+        <!-- 4 Option Buttons Injected by JS -->
+      </div>
+
+      <!-- Action Bar / Open Shop -->
+      <div class="shop-bar">
+        <button class="btn-open-shop" onclick="openShop()">
+          <span>🛒</span> Open Gimkit Shop &amp; Upgrades
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SHOP MODAL -->
+  <div id="shop-modal" class="shop-modal-overlay">
+    <div class="shop-modal">
+      <div class="shop-title-row">
+        <h2 class="shop-title">🛒 Upgrade Shop</h2>
+        <button class="btn-close-shop" onclick="closeShop()">✕</button>
+      </div>
+
+      <div class="shop-items-list">
+        
+        <!-- UPGRADE 1: MONEY PER QUESTION -->
+        <div class="shop-item-card">
+          <div class="shop-item-info">
+            <div class="shop-item-name">💵 Money Per Question</div>
+            <div id="shop-mpq-desc" class="shop-item-desc">Current: $10 per correct answer. Upgrade to $50.</div>
+          </div>
+          <button id="btn-buy-mpq" class="btn-buy-upgrade" onclick="buyUpgrade('mpq')">Buy for $50</button>
+        </div>
+
+        <!-- UPGRADE 2: STREAK BONUS -->
+        <div class="shop-item-card">
+          <div class="shop-item-info">
+            <div class="shop-item-name">🔥 Streak Bonus Multiplier</div>
+            <div id="shop-streak-desc" class="shop-item-desc">Adds +$20 per active streak count.</div>
+          </div>
+          <button id="btn-buy-streak" class="btn-buy-upgrade" onclick="buyUpgrade('streak')">Buy for $100</button>
+        </div>
+
+        <!-- UPGRADE 3: GLOBAL MULTIPLIER -->
+        <div class="shop-item-card">
+          <div class="shop-item-info">
+            <div class="shop-item-name">⚡ 2x Cash Multiplier</div>
+            <div class="shop-item-desc">Doubles all future earnings permanently.</div>
+          </div>
+          <button id="btn-buy-mult" class="btn-buy-upgrade" onclick="buyUpgrade('mult')">Buy for $250</button>
+        </div>
+
+        <!-- UPGRADE 4: STREAK SHIELD -->
+        <div class="shop-item-card">
+          <div class="shop-item-info">
+            <div class="shop-item-name">🛡️ Streak Shield</div>
+            <div class="shop-item-desc">Protects your streak from resetting on 1 wrong answer.</div>
+          </div>
+          <button id="btn-buy-shield" class="btn-buy-upgrade" onclick="buyUpgrade('shield')">Buy for $150</button>
+        </div>
+
+        <!-- UPGRADE 5: 50/50 ELIMINATOR -->
+        <div class="shop-item-card">
+          <div class="shop-item-info">
+            <div class="shop-item-name">🎯 50/50 Eliminator</div>
+            <div class="shop-item-desc">Removes 2 incorrect choices on the current question.</div>
+          </div>
+          <button id="btn-buy-fifty" class="btn-buy-upgrade" onclick="buyUpgrade('fifty')">Buy for $80</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME OVER / VICTORY MODAL -->
+  <div id="gameover-modal" class="gameover-modal-overlay">
+    <div class="gameover-card">
+      <div id="go-trophy" class="gameover-trophy">🏆</div>
+      <h2 id="go-title" class="gameover-title">Game Finished!</h2>
+      <p id="go-subtitle" style="color:#cbd5e1;font-size:14px;">Great performance on the General Mathematics exam questions!</p>
+
+      <div class="stats-summary-grid">
+        <div class="stat-box">
+          <div id="stat-total-cash" class="stat-val" style="color:#34d399;">$52,400</div>
+          <div class="stat-lbl">Total Cash</div>
+        </div>
+        <div class="stat-box">
+          <div id="stat-accuracy" class="stat-val" style="color:#38bdf8;">94%</div>
+          <div class="stat-lbl">Accuracy</div>
+        </div>
+        <div class="stat-box">
+          <div id="stat-correct-count" class="stat-val" style="color:#a78bfa;">34/36</div>
+          <div class="stat-lbl">Correct Answers</div>
+        </div>
+        <div class="stat-box">
+          <div id="stat-best-streak" class="stat-val" style="color:#fbbf24;">12🔥</div>
+          <div class="stat-lbl">Best Streak</div>
+        </div>
+      </div>
+
+      <button class="btn-restart-game" onclick="returnToModeSelect()">🎮 Play Another Mode</button>
+    </div>
+  </div>
+
+  <!-- Master Gimkit JavaScript Engine -->
+  <script>
+    const QUESTIONS = [{"id": "mc1", "section": "Test 1: Multiple Choice", "question": "Which best describes wages?", "options": ["Fixed payment given every month", "Payment based on hours worked or amount of work completed", "Payment based only on sales", "Government tax deduction"], "correct": 1, "exp": "Wages are calculated on the basis of hours worked or units produced."}, {"id": "mc2", "section": "Test 1: Multiple Choice", "question": "Which best describes a salary?", "options": ["Payment based on the number of products made", "Payment based on sales", "Fixed regular payment for work", "Payment received only during overtime"], "correct": 2, "exp": "Salary is a fixed regular payment regardless of exact hours worked."}, {"id": "mc3", "section": "Test 1: Multiple Choice", "question": "What is commission?", "options": ["Pay based on how much a person sells", "A government tax", "A mandatory deduction", "A fixed monthly salary"], "correct": 0, "exp": "Commission is earnings calculated as a percentage of sales."}, {"id": "mc4", "section": "Test 1: Multiple Choice", "question": "What is the main purpose of payroll?", "options": ["To calculate business profit", "To ensure employees are paid correctly and on time", "To calculate VAT only", "To calculate discounts"], "correct": 1, "exp": "Payroll manages employee wages, overtime, and mandatory deductions."}, {"id": "mc5", "section": "Test 1: Multiple Choice", "question": "Which pay period gives an employee 26 paychecks per year?", "options": ["Weekly", "Biweekly", "Semi-monthly", "Monthly"], "correct": 1, "exp": "Biweekly pays every 2 weeks (52 weeks ÷ 2 = 26 paychecks)."}, {"id": "mc6", "section": "Test 1: Multiple Choice", "question": "A shirt costs ₱800 and is increased by 25%. What is the new selling price?", "options": ["₱900", "₱950", "₱1,000", "₱1,025"], "correct": 2, "exp": "Mark-up = 25% of ₱800 = ₱200. Selling Price = ₱800 + ₱200 = ₱1,000."}, {"id": "mc7", "section": "Test 1: Multiple Choice", "question": "A bag originally costs ₱2,000 and is discounted by 15%. What is the discounted price?", "options": ["₱1,600", "₱1,650", "₱1,700", "₱1,850"], "correct": 2, "exp": "Discount = 15% of ₱2,000 = ₱300. Net Price = ₱2,000 - ₱300 = ₱1,700."}, {"id": "mc8", "section": "Test 1: Multiple Choice", "question": "An item costs ₱500 and is sold for ₱650. What is the mark-up?", "options": ["₱100", "₱150", "₱200", "₱250"], "correct": 1, "exp": "Mark-up = Selling Price - Cost Price = ₱650 - ₱500 = ₱150."}, {"id": "mc9", "section": "Test 1: Multiple Choice", "question": "A product costs ₱1,000 before VAT. Using the 12% VAT rate, what is the total price?", "options": ["₱1,012", "₱1,100", "₱1,120", "₱1,200"], "correct": 2, "exp": "VAT = 12% of ₱1,000 = ₱120. Total Price = ₱1,000 + ₱120 = ₱1,120."}, {"id": "mc10", "section": "Test 1: Multiple Choice", "question": "According to the TRAIN income tax table, taxable income not over ₱250,000 has a tax rate of:", "options": ["5%", "10%", "12%", "0%"], "correct": 3, "exp": "Annual income of ₱250,000 or below is exempt from withholding tax (0%)."}, {"id": "mc11", "section": "Test 1: Multiple Choice", "question": "What is the next term in: 2, 4, 6, 8, ___?", "options": ["9", "10", "12", "16"], "correct": 1, "exp": "Arithmetic sequence adding 2: 8 + 2 = 10."}, {"id": "mc12", "section": "Test 1: Multiple Choice", "question": "What is the next term in: 3, 6, 12, 24, ___?", "options": ["30", "36", "48", "54"], "correct": 2, "exp": "Geometric sequence multiplying by 2: 24 × 2 = 48."}, {"id": "mc13", "section": "Test 1: Multiple Choice", "question": "What type of sequence is: 5, 10, 15, 20, ...?", "options": ["Geometric", "Fibonacci", "Arithmetic", "Harmonic"], "correct": 2, "exp": "Arithmetic sequence with a common difference d = 5."}, {"id": "mc14", "section": "Test 1: Multiple Choice", "question": "What is the next term in: 1, 1, 2, 3, 5, ___?", "options": ["6", "7", "8", "10"], "correct": 2, "exp": "Fibonacci sequence: 3 + 5 = 8."}, {"id": "mc15", "section": "Test 1: Multiple Choice", "question": "What is the common ratio of: 4, 12, 36, 108, ...?", "options": ["2", "3", "4", "6"], "correct": 1, "exp": "Common ratio r = 12 ÷ 4 = 3."}, {"id": "m1", "section": "Test 2: Matching Type", "question": "MATCHING: Payment based on the number of items completed.", "options": ["Piecework", "Salary", "Commission", "Gross Earnings"], "correct": 0, "exp": "Piecework is compensation per individual finished unit."}, {"id": "m2", "section": "Test 2: Matching Type", "question": "MATCHING: Money remaining after deductions are subtracted from gross income.", "options": ["Net Income", "Gross Earnings", "Loss", "Profit"], "correct": 0, "exp": "Net Income = Gross Income - Total Deductions."}, {"id": "m3", "section": "Test 2: Matching Type", "question": "MATCHING: Payment based directly on the amount of sales generated.", "options": ["Commission", "Wages", "Salary", "Payroll"], "correct": 0, "exp": "Commission = Sales × Commission Rate."}, {"id": "m4", "section": "Test 2: Matching Type", "question": "MATCHING: Fixed regular payment for work regardless of exact hours.", "options": ["Salary", "Piecework", "Differential Piece Rate", "Wages"], "correct": 0, "exp": "Salary is fixed periodic compensation."}, {"id": "m5", "section": "Test 2: Matching Type", "question": "MATCHING: Process of calculating earnings, deductions, and ensuring timely employee payment.", "options": ["Payroll", "Gross Earnings", "Mark-up", "Discount"], "correct": 0, "exp": "Payroll is the total administration of worker compensation."}, {"id": "m6", "section": "Test 2: Matching Type", "question": "MATCHING: Total earnings before any taxes or deductions are subtracted.", "options": ["Gross Earnings", "Net Income", "Profit", "Piecework"], "correct": 0, "exp": "Gross Earnings = Basic Pay + Overtime Pay."}, {"id": "m7", "section": "Test 2: Matching Type", "question": "MATCHING: Pay system where a higher incentive rate is given for units produced beyond a quota.", "options": ["Differential Piece Rate", "Straight Commission", "Fixed Salary", "Standard Wage"], "correct": 0, "exp": "Differential piece rate provides a higher rate for excess units."}, {"id": "m8", "section": "Test 2: Matching Type", "question": "MATCHING: Financial gain when selling price is greater than cost price.", "options": ["Profit", "Loss", "Discount", "Net Price"], "correct": 0, "exp": "Profit = Selling Price - Cost Price (when Selling Price > Cost Price)."}, {"id": "m9", "section": "Test 2: Matching Type", "question": "MATCHING: Financial loss when selling price is less than cost price.", "options": ["Loss", "Profit", "Mark-up", "Gross Income"], "correct": 0, "exp": "Loss = Cost Price - Selling Price."}, {"id": "tf1", "section": "Test 3: True or False", "question": "TRUE or FALSE: Salary is usually a fixed regular payment.", "options": ["TRUE", "FALSE"], "correct": 0, "exp": "TRUE. Salary is fixed periodic pay."}, {"id": "tf2", "section": "Test 3: True or False", "question": "TRUE or FALSE: Wages can be based on the number of hours worked.", "options": ["TRUE", "FALSE"], "correct": 0, "exp": "TRUE. Wages are based on hours or units."}, {"id": "tf3", "section": "Test 3: True or False", "question": "TRUE or FALSE: Overtime generally refers to work rendered beyond 8 hours per day in the Philippine Labor Code.", "options": ["TRUE", "FALSE"], "correct": 0, "exp": "TRUE. Article 87 specifies regular work is 8 hours/day."}, {"id": "tf4", "section": "Test 3: True or False", "question": "TRUE or FALSE: Profit occurs when the selling price is less than the cost price.", "options": ["TRUE", "FALSE"], "correct": 1, "exp": "FALSE. That is a Loss. Profit occurs when Selling Price > Cost Price."}, {"id": "tf5", "section": "Test 3: True or False", "question": "TRUE or FALSE: A geometric sequence is formed by adding the same number to every term.", "options": ["TRUE", "FALSE"], "correct": 1, "exp": "FALSE. Adding forms an Arithmetic sequence; Geometric multiplies by ratio r."}, {"id": "tf6", "section": "Test 3: True or False", "question": "TRUE or FALSE: Fibonacci terms are obtained by adding the two preceding terms.", "options": ["TRUE", "FALSE"], "correct": 0, "exp": "TRUE. Fn = Fn-1 + Fn-2."}, {"id": "tf7", "section": "Test 3: True or False", "question": "TRUE or FALSE: Depreciation of a gadget can be modeled using a geometric sequence.", "options": ["TRUE", "FALSE"], "correct": 0, "exp": "TRUE. Value decreases exponentially by (1 - depreciation rate) each year."}, {"id": "id1", "section": "Test 4: Identification - Patterns", "question": "IDENTIFY: A sequence where the difference between consecutive terms is constant.", "options": ["Arithmetic Sequence", "Geometric Sequence", "Harmonic Sequence", "Fibonacci Sequence"], "correct": 0, "exp": "Arithmetic Sequence has constant difference d."}, {"id": "id2", "section": "Test 4: Identification - Patterns", "question": "IDENTIFY: A sequence where each term is obtained by multiplying the previous term by the same number.", "options": ["Geometric Sequence", "Arithmetic Sequence", "Square Numbers", "Constant Sequence"], "correct": 0, "exp": "Geometric Sequence has constant multiplier/ratio r."}, {"id": "id3", "section": "Test 4: Identification - Patterns", "question": "IDENTIFY: A sequence formed by taking the reciprocals of the terms of an arithmetic sequence.", "options": ["Harmonic Sequence", "Geometric Sequence", "Fibonacci Sequence", "Square Numbers"], "correct": 0, "exp": "Harmonic Sequence is formed by 1/an."}, {"id": "id4", "section": "Test 4: Identification - Taxes", "question": "IDENTIFY TAX: Tax added to the price of goods and services in everyday consumption (12% in the Philippines).", "options": ["Value-Added Tax (VAT)", "Excise Tax", "Estate Tax", "Documentary Stamp Tax"], "correct": 0, "exp": "VAT is a 12% consumption tax on goods and services."}, {"id": "id5", "section": "Test 4: Identification - Taxes", "question": "IDENTIFY TAX: Tax imposed on specific goods such as fuel, tobacco, alcohol, and sweetened beverages.", "options": ["Excise Tax", "Percentage Tax", "Real Property Tax", "Capital Gains Tax"], "correct": 0, "exp": "Excise Tax targets specific manufactured or imported goods."}, {"id": "id6", "section": "Test 4: Identification - Taxes", "question": "IDENTIFY TAX: Tax imposed on profits earned from selling capital assets like land or stock shares.", "options": ["Capital Gains Tax", "Documentary Stamp Tax", "Donor's Tax", "Transfer Tax"], "correct": 0, "exp": "Capital Gains Tax applies to sales of capital assets."}, {"id": "id7", "section": "Test 4: Identification - Taxes", "question": "IDENTIFY TAX: Business tax for small businesses that are not VAT-registered (sales under ₱3,000,000).", "options": ["Percentage Tax", "Excise Tax", "Corporate Income Tax", "Withholding Tax"], "correct": 0, "exp": "Percentage Tax is for non-VAT registered businesses."}, {"id": "id8", "section": "Test 4: Identification - Taxes", "question": "IDENTIFY TAX: Tax imposed on gifts or voluntary donations between living persons.", "options": ["Donor's Tax", "Estate Tax", "Transfer Tax", "Real Property Tax"], "correct": 0, "exp": "Donor's Tax is levied on gratuitous transfers inter vivos."}, {"id": "id9", "section": "Test 4: Identification - Taxes", "question": "IDENTIFY TAX: Local tax levied annually on ownership of land, buildings, and machinery.", "options": ["Real Property Tax (RPT)", "Community Tax", "Excise Tax", "Value-Added Tax"], "correct": 0, "exp": "Real Property Tax is collected annually by local government units."}, {"id": "pay1", "section": "Test 5: Payroll Computation", "question": "Mark earns a Daily Rate of ₱650 and worked for 22 days. What is his Basic Income?", "options": ["₱13,000.00", "₱14,300.00", "₱14,500.00", "₱15,000.00"], "correct": 1, "exp": "Basic Income = ₱650.00 × 22 = ₱14,300.00."}, {"id": "pay2", "section": "Test 5: Payroll Computation", "question": "Mark's daily rate is ₱650 (Hourly = ₱81.25). He rendered 4 hours of Regular Day OT (1.25x). What is his Overtime Pay?", "options": ["₱325.00", "₱406.25", "₱450.00", "₱500.00"], "correct": 1, "exp": "Overtime Pay = ₱81.25 × 1.25 × 4 = ₱406.25."}, {"id": "pay3", "section": "Test 5: Payroll Computation", "question": "Mark has Gross Income ₱14,706.25. Deductions: SSS ₱750, PhilHealth ₱400, Pag-IBIG ₱200, Tax ₱0. What is his NET INCOME?", "options": ["₱13,356.25", "₱13,500.00", "₱14,000.00", "₱14,300.00"], "correct": 0, "exp": "Total Deductions = ₱1,350.00. Net Income = ₱14,706.25 - ₱1,350.00 = ₱13,356.25."}, {"id": "comp1", "section": "Test 6: Computation", "question": "The price of rice increased from ₱50 to ₱58. What is the percentage inflation increase?", "options": ["12.00%", "15.00%", "16.00%", "18.00%"], "correct": 2, "exp": "Percentage Increase = (58 - 50) ÷ 50 × 100% = 8 ÷ 50 × 100% = 16.00%."}, {"id": "comp2", "section": "Test 6: Computation", "question": "A product costs ₱1,120 including 12% VAT. What is the original price before VAT?", "options": ["₱980.00", "₱1,000.00", "₱1,050.00", "₱1,100.00"], "correct": 1, "exp": "Price before VAT = Total Price ÷ 1.12 = ₱1,120 ÷ 1.12 = ₱1,000.00."}, {"id": "comp3", "section": "Test 6: Computation", "question": "A student saves ₱500 every month (500, 1000, 1500...). How much will be saved after 12 months?", "options": ["₱5,000.00", "₱6,000.00", "₱7,500.00", "₱12,000.00"], "correct": 1, "exp": "a12 = a1 + (n - 1)d = 500 + (11)(500) = ₱6,000.00."}, {"id": "comp4", "section": "Test 6: Computation", "question": "Given Arithmetic sequence: a1 = 300, d = 200, n = 15. What is the 15th term (a15)?", "options": ["₱2,800", "₱3,000", "₱3,100", "₱3,300"], "correct": 2, "exp": "a15 = 300 + (15 - 1)(200) = 300 + 2,800 = 3,100."}, {"id": "comp5", "section": "Test 6: Computation", "question": "A bacteria population starts at 500 and doubles every month (r = 2). How many after 6 months?", "options": ["8,000", "16,000", "32,000", "64,000"], "correct": 1, "exp": "a6 = 500 × 2^(6 - 1) = 500 × 32 = 16,000."}, {"id": "comp6", "section": "Test 6: Computation", "question": "A laptop costs ₱50,000 and loses 15% value each year (r = 0.85). What is its value after 4 years?", "options": ["₱25,000.00", "₱30,706.25", "₱32,500.00", "₱35,000.00"], "correct": 1, "exp": "a4 = 50,000 × (0.85)^3 = 50,000 × 0.614125 = ₱30,706.25."}];
+
+    let audioCtx = null;
+    function playSynthTone(type) {
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        const t = audioCtx.currentTime;
+
+        if (type === 'correct') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(523.25, t);
+          osc.frequency.setValueAtTime(659.25, t + 0.08);
+          osc.frequency.setValueAtTime(783.99, t + 0.16);
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.35);
+          osc.start(t);
+          osc.stop(t + 0.35);
+        } else if (type === 'wrong') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, t);
+          osc.frequency.setValueAtTime(164.81, t + 0.1);
+          gain.gain.setValueAtTime(0.3, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.3);
+          osc.start(t);
+          osc.stop(t + 0.3);
+        } else if (type === 'buy') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, t);
+          osc.frequency.setValueAtTime(880, t + 0.1);
+          gain.gain.setValueAtTime(0.25, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.25);
+          osc.start(t);
+          osc.stop(t + 0.25);
+        } else if (type === 'boss_hit') {
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(150, t);
+          osc.frequency.setValueAtTime(90, t + 0.08);
+          gain.gain.setValueAtTime(0.4, t);
+          gain.gain.exponentialRampToValueAtTime(0.01, t + 0.25);
+          osc.start(t);
+          osc.stop(t + 0.25);
+        }
+      } catch (e) {
+        console.warn('Audio tone error', e);
+      }
+    }
+
+    // State Variables
+    let currentMode = 'classic';
+    let cash = 10;
+    let streak = 0;
+    let bestStreak = 0;
+    let globalMultiplier = 1.0;
+    let baseMpq = 10;
+    let streakBonusPerCount = 0;
+    let hasShield = false;
+
+    // Upgrades Levels
+    let mpqLevel = 1;
+    const mpqPrices = [50, 200, 800, 2500, 10000];
+    const mpqValues = [10, 50, 250, 1000, 5000];
+
+    let streakLevel = 0;
+    const streakPrices = [100, 400, 1500, 5000];
+    const streakValues = [0, 20, 50, 150];
+
+    // Game stats
+    let totalAnswered = 0;
+    let totalCorrect = 0;
+    let currentQIndex = 0;
+    let shuffledQuestions = [];
+    let timerInterval = null;
+    let timeRemaining = 60;
+
+    // Boss stats
+    let bossMaxHp = 1500;
+    let bossHp = 1500;
+
+    function startGame(mode) {
+      playSynthTone('buy');
+      currentMode = mode;
+      cash = 10;
+      streak = 0;
+      bestStreak = 0;
+      globalMultiplier = 1.0;
+      baseMpq = 10;
+      streakBonusPerCount = 0;
+      hasShield = false;
+      mpqLevel = 1;
+      streakLevel = 0;
+      totalAnswered = 0;
+      totalCorrect = 0;
+      currentQIndex = 0;
+
+      shuffledQuestions = [...QUESTIONS].sort(() => Math.random() - 0.5);
+
+      document.getElementById('screen-mode-select').style.display = 'none';
+      document.getElementById('screen-gameplay').style.display = 'flex';
+      document.getElementById('gameover-modal').style.display = 'none';
+
+      const bossPanel = document.getElementById('boss-panel');
+      const timerBadge = document.getElementById('game-timer-badge');
+
+      if (mode === 'boss') {
+        bossMaxHp = 1500;
+        bossHp = 1500;
+        bossPanel.style.display = 'flex';
+        updateBossHp();
+        timerBadge.style.display = 'none';
+      } else if (mode === 'blitz') {
+        bossPanel.style.display = 'none';
+        timerBadge.style.display = 'inline-block';
+        timeRemaining = 60;
+        timerBadge.innerText = '⏱️ 60s';
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+          timeRemaining--;
+          timerBadge.innerText = '⏱️ ' + timeRemaining + 's';
+          if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            finishGame('Time\'s Up! Great speed!');
+          }
+        }, 1000);
+      } else {
+        bossPanel.style.display = 'none';
+        timerBadge.style.display = 'none';
+      }
+
+      updateHUD();
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      if (currentQIndex >= shuffledQuestions.length) {
+        shuffledQuestions = [...QUESTIONS].sort(() => Math.random() - 0.5);
+        currentQIndex = 0;
+      }
+
+      const q = shuffledQuestions[currentQIndex];
+      document.getElementById('game-section-badge').innerText = q.section;
+      document.getElementById('game-question-counter').innerText = 'Q ' + (currentQIndex + 1) + '/' + shuffledQuestions.length;
+      document.getElementById('q-text').innerText = q.question;
+
+      const optsContainer = document.getElementById('options-grid');
+      optsContainer.innerHTML = '';
+
+      const tagLabels = ['A', 'B', 'C', 'D'];
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-tag">${tagLabels[idx] || (idx + 1)}</span><span>${optText}</span>`;
+        btn.onclick = () => handleAnswer(idx, btn);
+        optsContainer.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(selectedIdx, clickedBtn) {
+      const q = shuffledQuestions[currentQIndex];
+      totalAnswered++;
+
+      const allBtns = document.querySelectorAll('.option-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      if (selectedIdx === q.correct) {
+        // CORRECT ANSWER
+        playSynthTone('correct');
+        clickedBtn.classList.add('opt-correct');
+        streak++;
+        if (streak > bestStreak) bestStreak = streak;
+        totalCorrect++;
+
+        // Calculate earned cash
+        const earned = Math.round((baseMpq + (streak * streakBonusPerCount)) * globalMultiplier);
+        cash += earned;
+
+        // Mode specific events
+        if (currentMode === 'boss') {
+          playSynthTone('boss_hit');
+          bossHp -= Math.round(earned / 2 + 50);
+          if (bossHp < 0) bossHp = 0;
+          updateBossHp();
+          if (bossHp <= 0) {
+            setTimeout(() => finishGame('Boss Defeated! You vanquished the Tax Titan! 🏆'), 600);
+            return;
+          }
+        } else if (currentMode === 'classic' && cash >= 50000) {
+          setTimeout(() => finishGame('🎉 Goal Reached! You earned $50,000!'), 600);
+          return;
+        }
+
+      } else {
+        // WRONG ANSWER
+        playSynthTone('wrong');
+        clickedBtn.classList.add('opt-wrong');
+        allBtns[q.correct]?.classList.add('opt-correct');
+
+        if (hasShield) {
+          hasShield = false;
+        } else {
+          streak = 0;
+        }
+      }
+
+      updateHUD();
+
+      setTimeout(() => {
+        currentQIndex++;
+        if (currentMode === 'exam' && currentQIndex >= QUESTIONS.length) {
+          finishGame('Exam Completed! Review your mastery scores below.');
+        } else {
+          renderQuestion();
+        }
+      }, 700);
+    }
+
+    function updateBossHp() {
+      const pct = Math.max(0, Math.min(100, (bossHp / bossMaxHp) * 100));
+      document.getElementById('boss-hp-fill').style.width = pct + '%';
+      document.getElementById('boss-hp-text').innerText = bossHp + ' / ' + bossMaxHp + ' HP';
+    }
+
+    function updateHUD() {
+      document.getElementById('hud-cash-val').innerText = '$' + cash.toLocaleString();
+      document.getElementById('hud-streak-val').innerText = streak + 'x';
+      document.getElementById('hud-mult-val').innerText = globalMultiplier.toFixed(1) + 'x';
+    }
+
+    function openShop() {
+      playSynthTone('buy');
+      document.getElementById('shop-modal').style.display = 'flex';
+      refreshShopUI();
+    }
+
+    function closeShop() {
+      document.getElementById('shop-modal').style.display = 'none';
+    }
+
+    function refreshShopUI() {
+      // MPQ
+      const btnMpq = document.getElementById('btn-buy-mpq');
+      const descMpq = document.getElementById('shop-mpq-desc');
+      if (mpqLevel < mpqPrices.length) {
+        const cost = mpqPrices[mpqLevel - 1];
+        const nextVal = mpqValues[mpqLevel];
+        descMpq.innerText = `Current: $${baseMpq} per answer. Upgrade to $${nextVal}.`;
+        btnMpq.innerText = `Buy for $${cost.toLocaleString()}`;
+        btnMpq.disabled = cash < cost;
+      } else {
+        descMpq.innerText = `MAX LEVEL ($${baseMpq} per answer).`;
+        btnMpq.innerText = 'MAXED';
+        btnMpq.disabled = true;
+      }
+
+      // STREAK
+      const btnStreak = document.getElementById('btn-buy-streak');
+      const descStreak = document.getElementById('shop-streak-desc');
+      if (streakLevel < streakPrices.length - 1) {
+        const cost = streakPrices[streakLevel];
+        const nextVal = streakValues[streakLevel + 1];
+        descStreak.innerText = `Adds +$${nextVal} extra cash per active streak.`;
+        btnStreak.innerText = `Buy for $${cost.toLocaleString()}`;
+        btnStreak.disabled = cash < cost;
+      } else {
+        descStreak.innerText = `MAX STREAK BOOST (+${streakBonusPerCount} per streak).`;
+        btnStreak.innerText = 'MAXED';
+        btnStreak.disabled = true;
+      }
+
+      // MULTIPLIER
+      const btnMult = document.getElementById('btn-buy-mult');
+      btnMult.disabled = cash < 250;
+
+      // SHIELD
+      const btnShield = document.getElementById('btn-buy-shield');
+      btnShield.disabled = cash < 150 || hasShield;
+      if (hasShield) btnShield.innerText = 'SHIELD ACTIVE';
+      else btnShield.innerText = 'Buy for $150';
+
+      // FIFTY
+      const btnFifty = document.getElementById('btn-buy-fifty');
+      btnFifty.disabled = cash < 80;
+    }
+
+    function buyUpgrade(type) {
+      if (type === 'mpq' && mpqLevel < mpqPrices.length) {
+        const cost = mpqPrices[mpqLevel - 1];
+        if (cash >= cost) {
+          playSynthTone('buy');
+          cash -= cost;
+          baseMpq = mpqValues[mpqLevel];
+          mpqLevel++;
+        }
+      } else if (type === 'streak' && streakLevel < streakPrices.length - 1) {
+        const cost = streakPrices[streakLevel];
+        if (cash >= cost) {
+          playSynthTone('buy');
+          cash -= cost;
+          streakLevel++;
+          streakBonusPerCount = streakValues[streakLevel];
+        }
+      } else if (type === 'mult') {
+        if (cash >= 250) {
+          playSynthTone('buy');
+          cash -= 250;
+          globalMultiplier += 1.0;
+        }
+      } else if (type === 'shield') {
+        if (cash >= 150 && !hasShield) {
+          playSynthTone('buy');
+          cash -= 150;
+          hasShield = true;
+        }
+      } else if (type === 'fifty') {
+        if (cash >= 80) {
+          playSynthTone('buy');
+          cash -= 80;
+          useFiftyFifty();
+          closeShop();
+        }
+      }
+
+      updateHUD();
+      refreshShopUI();
+    }
+
+    function useFiftyFifty() {
+      const q = shuffledQuestions[currentQIndex];
+      const allBtns = document.querySelectorAll('.option-btn');
+      let eliminated = 0;
+      allBtns.forEach((btn, idx) => {
+        if (idx !== q.correct && eliminated < 2) {
+          btn.style.opacity = '0.2';
+          btn.disabled = true;
+          eliminated++;
+        }
+      });
+    }
+
+    function finishGame(title) {
+      clearInterval(timerInterval);
+      playSynthTone('correct');
+
+      document.getElementById('go-title').innerText = title || 'Game Finished!';
+      document.getElementById('stat-total-cash').innerText = '$' + cash.toLocaleString();
+      const acc = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+      document.getElementById('stat-accuracy').innerText = acc + '%';
+      document.getElementById('stat-correct-count').innerText = `${totalCorrect}/${totalAnswered}`;
+      document.getElementById('stat-best-streak').innerText = bestStreak + '🔥';
+
+      document.getElementById('gameover-modal').style.display = 'flex';
+    }
+
+    function returnToModeSelect() {
+      clearInterval(timerInterval);
+      document.getElementById('gameover-modal').style.display = 'none';
+      document.getElementById('shop-modal').style.display = 'none';
+      document.getElementById('screen-gameplay').style.display = 'none';
+      document.getElementById('screen-mode-select').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
