@@ -1,0 +1,21 @@
+{
+  "name": "school-ssg-photo-drop",
+  "version": "1.0.0",
+  "description": "School Photo Drop website with Students Upload Zone and SSG Exclusive Vault",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["school", "ssg", "photo-upload", "gallery"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^11.1.0"
+  }
+}

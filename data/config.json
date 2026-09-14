@@ -1,0 +1,6 @@
+{
+  "ssgPin": "2026",
+  "schoolName": "Supreme Student Government (SSG) Photo Vault",
+  "maxFileSizeMb": 25,
+  "allowedExtensions": [".jpg", ".jpeg", ".png", ".webp", ".gif", ".heic", ".bmp"]
+}
