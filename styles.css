@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-dark: #28170F;
+  --primary: #4A2E1B;
+  --primary-light: #6E472D;
+  --caramel: #C88A42;
+  --caramel-light: #E0A664;
+  --caramel-glow: rgba(200, 138, 66, 0.18);
+  --caramel-gold: #D49A58;
+  --cream-bg: #FAF6F0;
+  --parchment: #F2E9DE;
+  --parchment-border: #DFD3C3;
+  --parchment-card: #FFFFFF;
+  --text-main: #2C211B;
+  --text-muted: #726257;
+  --text-light: #A39387;
+  --accent-green: #2E7D32;
+  --safe-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--cream-bg);
+  color: var(--text-main);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 90px; /* Space for mobile channel dock */
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* Typography Helpers */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   LIVELY ANIMATIONS & AESTHETIC VISUALS
+   ========================================================================== */
+
+/* Shimmer Animation for Badges & Buttons */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, rgba(200, 138, 66, 0.15) 0%, rgba(255, 235, 204, 0.7) 50%, rgba(200, 138, 66, 0.15) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 3.5s infinite;
+}
+
+/* Gentle Floating Animation */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-1.5deg); }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+/* Subtle Steam Waves */
+@keyframes steamWave {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  25% { opacity: 0.6; }
+  50% { transform: translateY(-12px) scaleX(1.15) rotate(2deg); opacity: 0.8; }
+  75% { opacity: 0.4; }
+  100% { transform: translateY(-24px) scaleX(1.3) rotate(-2deg); opacity: 0; }
+}
+
+.steam-wave-1 {
+  animation: steamWave 3.5s infinite ease-out;
+}
+.steam-wave-2 {
+  animation: steamWave 4s infinite ease-out 1.2s;
+}
+
+/* Pulse Glow for Featured Cards */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(200, 138, 66, 0.12); }
+  50% { box-shadow: 0 10px 32px rgba(200, 138, 66, 0.28); }
+}
+
+.specialty-card {
+  transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C88A42, #E0A664, #C88A42);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 40px -10px rgba(40, 23, 15, 0.16);
+  border-color: var(--caramel);
+}
+
+.specialty-card:hover::before {
+  opacity: 1;
+}
+
+.specialty-card:hover .specialty-img {
+  transform: scale(1.07);
+}
+
+.specialty-img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Subtle Card Glow */
+.card-glow:hover {
+  box-shadow: 0 16px 36px -8px rgba(74, 46, 27, 0.15);
+}
+
+/* Ornate Victorian Border / Divider Details */
+.vintage-border {
+  border: 1px solid var(--parchment-border);
+  box-shadow: 0 4px 20px rgba(74, 46, 27, 0.06);
+}
+
+.ornate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.ornate-divider::before,
+.ornate-divider::after {
+  content: "";
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--caramel), transparent);
+}
+
+.ornate-diamond {
+  width: 8px;
+  height: 8px;
+  background-color: var(--caramel);
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+/* Custom Scrollbar for Smooth Touch */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--parchment-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--caramel);
+}
+
+/* Category Horizontal Scroll Bar Hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* FLOATING MOBILE CHANNEL DOCK */
+.channel-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(223, 211, 195, 0.9);
+  padding: 8px 10px calc(8px + var(--safe-bottom)) 10px;
+  box-shadow: 0 -8px 30px rgba(40, 23, 15, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.channel-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.channel-btn.active {
+  color: var(--primary);
+  background: var(--caramel-glow);
+}
+
+.channel-btn.active .channel-icon {
+  transform: translateY(-2px) scale(1.1);
+  color: var(--caramel);
+}
+
+.channel-btn.back-channel {
+  background: #FFF4E5;
+  color: #B35B00;
+  border: 1px solid #FFE0B2;
+}
+
+.channel-btn.back-channel:active {
+  transform: scale(0.92);
+}
+
+/* Persistent Header Back Button */
+.header-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(200, 138, 66, 0.14);
+  color: var(--primary);
+  border: 1px solid rgba(200, 138, 66, 0.35);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-back-btn:hover {
+  background: var(--caramel);
+  color: #FFFFFF;
+}
+
+.header-back-btn:active {
+  transform: scale(0.95);
+}
+
+/* Pulse badge for Open Status */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.status-dot.open {
+  background-color: #10B981;
+}
+
+.status-dot.open::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.4);
+  animation: pulseDot 2s infinite;
+}
+
+.status-dot.closed {
+  background-color: #EF4444;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* Card Hover & Interactive Effects */
+.menu-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(74, 46, 27, 0.12);
+  border-color: var(--caramel);
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(40, 23, 15, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(40, 23, 15, 0.3);
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Zoomable Menu Sheet Modal */
+.sheet-modal-content {
+  max-width: 900px;
+  background: var(--cream-bg);
+}
+
+/* Foodpanda Pulsing Button */
+@keyframes pandaPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.btn-foodpanda-pulse:hover {
+  animation: pandaPulse 1.2s infinite ease-in-out;
+}
+
+/* Touch Friendly Tap Highlight Reset */
+button, a {
+  touch-action: manipulation;
+}

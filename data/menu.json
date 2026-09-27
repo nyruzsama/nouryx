@@ -1,0 +1,900 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Offerings",
+      "icon": "sparkles"
+    },
+    {
+      "id": "coffee",
+      "name": "Espresso & Coffee",
+      "icon": "coffee"
+    },
+    {
+      "id": "house-creations",
+      "name": "House Creations",
+      "icon": "award"
+    },
+    {
+      "id": "matcha-strawberry",
+      "name": "Matcha & Strawberry",
+      "icon": "flower"
+    },
+    {
+      "id": "frappes",
+      "name": "Frappes",
+      "icon": "cup-soda"
+    },
+    {
+      "id": "teas",
+      "name": "Fruit & Full Leaf Tea",
+      "icon": "leaf"
+    },
+    {
+      "id": "pastries",
+      "name": "Bakery & Pastries",
+      "icon": "cake"
+    },
+    {
+      "id": "cheesecakes",
+      "name": "Tub Cheesecakes",
+      "icon": "pie-chart"
+    },
+    {
+      "id": "cookies",
+      "name": "Artisan Cookies",
+      "icon": "cookie"
+    },
+    {
+      "id": "pasta-rice",
+      "name": "Pastas & Rice Meals",
+      "icon": "utensils"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "name": "Cold Brew",
+      "category": "coffee",
+      "priceGrande": 80,
+      "priceVenti": 95,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Smooth, slow-steeped cold brew with low acidity and deep chocolate-caramel notes.",
+      "image": ""
+    },
+    {
+      "id": "c2",
+      "name": "Americano",
+      "category": "coffee",
+      "priceGrande": 110,
+      "priceVenti": 125,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Bold double espresso pulled over filtered hot or ice-cold water.",
+      "image": ""
+    },
+    {
+      "id": "c3",
+      "name": "Caffe Latte",
+      "category": "coffee",
+      "priceGrande": 110,
+      "priceVenti": 125,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Full-bodied espresso balanced with velvety steamed or chilled whole milk.",
+      "image": ""
+    },
+    {
+      "id": "c4",
+      "name": "Cappuccino",
+      "category": "coffee",
+      "priceGrande": 120,
+      "priceVenti": 135,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Classic espresso crowned with a thick cloud of silky, aerated milk foam.",
+      "image": ""
+    },
+    {
+      "id": "c5",
+      "name": "Vanilla Latte",
+      "category": "coffee",
+      "priceGrande": 120,
+      "priceVenti": 135,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Sweet aromatic Madagascar vanilla combined with espresso and milk.",
+      "image": ""
+    },
+    {
+      "id": "c6",
+      "name": "Caramel Latte",
+      "category": "coffee",
+      "priceGrande": 120,
+      "priceVenti": 135,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Rich buttery caramel syrup swirled into freshly pulled espresso and milk.",
+      "image": ""
+    },
+    {
+      "id": "c7",
+      "name": "Spanish Latte",
+      "category": "coffee",
+      "priceGrande": 120,
+      "priceVenti": 135,
+      "type": "Hot/Iced",
+      "bestseller": true,
+      "desc": "Our signature customer favorite! Sweetened condensed milk, smooth espresso, and chilled milk.",
+      "image": "assets/images/spanish-latte.jpg"
+    },
+    {
+      "id": "c8",
+      "name": "Caffe Mocha",
+      "category": "coffee",
+      "priceGrande": 130,
+      "priceVenti": 145,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Decadent Dutch cocoa syrup blended with rich espresso and milk.",
+      "image": ""
+    },
+    {
+      "id": "c9",
+      "name": "White Mocha",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": true,
+      "desc": "Luxurious white chocolate melted into espresso and fresh milk.",
+      "image": ""
+    },
+    {
+      "id": "c10",
+      "name": "Dark Mocha",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Bittersweet dark artisan chocolate infused with double-shot espresso.",
+      "image": ""
+    },
+    {
+      "id": "c11",
+      "name": "Caramel Macchiato",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": true,
+      "desc": "Vanilla-infused milk stained with dark espresso and drizzled with amber caramel.",
+      "image": ""
+    },
+    {
+      "id": "c12",
+      "name": "Choco Hazelnut",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Nutty roasted hazelnut paired with silky cocoa and bold espresso.",
+      "image": ""
+    },
+    {
+      "id": "c13",
+      "name": "Butterscotch Latte",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Warm, caramelized brown sugar and rich cream melted into coffee.",
+      "image": ""
+    },
+    {
+      "id": "c14",
+      "name": "Dark Caramel Latte",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Deeply toasted toffee caramel with rich dark espresso undertones.",
+      "image": ""
+    },
+    {
+      "id": "nc1",
+      "name": "Signature Chocolate",
+      "category": "coffee",
+      "priceGrande": 130,
+      "priceVenti": 145,
+      "type": "Hot/Iced",
+      "bestseller": true,
+      "desc": "Pure comforting indulgence: rich artisan cocoa steamed or iced with whole milk.",
+      "image": ""
+    },
+    {
+      "id": "nc2",
+      "name": "Vanilla Cream",
+      "category": "coffee",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Silky sweet vanilla cream blend, a soothing caffeine-free treat.",
+      "image": ""
+    },
+    {
+      "id": "nc3",
+      "name": "Toffee Chocolatte",
+      "category": "coffee",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Sweet buttery toffee melted with rich chocolate milk.",
+      "image": ""
+    },
+    {
+      "id": "hc1",
+      "name": "Cafe Shakerato",
+      "category": "house-creations",
+      "priceGrande": 130,
+      "priceVenti": null,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Fresh double espresso shaken vigorously over ice with cane sugar for a frothy crema head.",
+      "image": "assets/images/cafe-shakerato.jpg"
+    },
+    {
+      "id": "hc2",
+      "name": "Dry Ice Americano",
+      "category": "house-creations",
+      "priceGrande": 130,
+      "priceVenti": 145,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Sub-zero chilled espresso pour with intense crisp aromatics.",
+      "image": ""
+    },
+    {
+      "id": "hc3",
+      "name": "White Cream Cold Brew",
+      "category": "house-creations",
+      "priceGrande": 130,
+      "priceVenti": 145,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Slow-steeped cold brew crowned with thick, handcrafted velvety sweet cream.",
+      "image": "assets/images/white-cream-cold-brew.jpg"
+    },
+    {
+      "id": "hc4",
+      "name": "Cloud Caramel",
+      "category": "house-creations",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Iced coffee topped with an airy, pillowy cloud of salted caramel foam.",
+      "image": ""
+    },
+    {
+      "id": "hc5",
+      "name": "Double Mocha Creation",
+      "category": "house-creations",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Double chocolate indulgence with intense espresso roast.",
+      "image": ""
+    },
+    {
+      "id": "hc6",
+      "name": "Classic Tiramisu",
+      "category": "house-creations",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Italian dessert in a cup: espresso, mascarpone notes, and pure cocoa dust.",
+      "image": ""
+    },
+    {
+      "id": "hc7",
+      "name": "Velvet Muscovado",
+      "category": "house-creations",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Our premier specialty! Unrefined local Calamba muscovado sugar paired with velvety espresso & cream.",
+      "image": "assets/images/velvet-muscovado.jpg"
+    },
+    {
+      "id": "hc8",
+      "name": "Cashew Au Lait",
+      "category": "house-creations",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Artisan toasted cashew milk shaken with dark roast coffee.",
+      "image": ""
+    },
+    {
+      "id": "hc9",
+      "name": "Affogato Speciale",
+      "category": "house-creations",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Rich scoop of premium vanilla bean ice cream drenched in piping hot espresso.",
+      "image": ""
+    },
+    {
+      "id": "ms1",
+      "name": "Matcha Latte",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Authentic Japanese ceremonial green tea matcha whisked smooth with fresh milk.",
+      "image": ""
+    },
+    {
+      "id": "ms2",
+      "name": "Strawberry Matcha",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Vibrant layered tri-color drink: sweet strawberry puree, milk, and earthy matcha.",
+      "image": "assets/images/strawberry-matcha.jpg"
+    },
+    {
+      "id": "ms3",
+      "name": "Dirty Matcha",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Ceremonial matcha latte crowned with a bold shot of dark roast espresso.",
+      "image": ""
+    },
+    {
+      "id": "ms4",
+      "name": "Matcha Frappe",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Frosty blended green tea matcha topped with fluffy whipped cream.",
+      "image": ""
+    },
+    {
+      "id": "ms5",
+      "name": "Strawberry Frappe",
+      "category": "matcha-strawberry",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Blended strawberries & cream finished with whipped cream.",
+      "image": ""
+    },
+    {
+      "id": "ms6",
+      "name": "Strawberry Dulce",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Ripe strawberry blend layered with rich dulce de leche caramelized milk.",
+      "image": ""
+    },
+    {
+      "id": "ms7",
+      "name": "Strawberry Latte",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Creamy fresh milk over artisanal strawberry reduction.",
+      "image": ""
+    },
+    {
+      "id": "ms8",
+      "name": "Chocoberry Frappe",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Frosty dark chocolate and juicy strawberry blended harmony.",
+      "image": ""
+    },
+    {
+      "id": "ms9",
+      "name": "Strawberry Apple Freeze",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Crisp orchard apples & real strawberries blended over crushed ice.",
+      "image": ""
+    },
+    {
+      "id": "ms10",
+      "name": "Strawberry Milkshake w/ Popping Boba",
+      "category": "matcha-strawberry",
+      "priceGrande": 160,
+      "priceVenti": 175,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Creamy strawberry milkshake paired with bursting strawberry juice popping boba.",
+      "image": ""
+    },
+    {
+      "id": "fr1",
+      "name": "Caramel Coffee Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": true,
+      "desc": "Espresso and rich caramel blended with ice, topped with whipped cream.",
+      "image": ""
+    },
+    {
+      "id": "fr2",
+      "name": "Mocha Coffee Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": false,
+      "desc": "Rich cocoa and coffee blended frosty with chocolate drizzle.",
+      "image": ""
+    },
+    {
+      "id": "fr3",
+      "name": "White Mocha Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": false,
+      "desc": "Sweet white chocolate and coffee blended to perfection.",
+      "image": ""
+    },
+    {
+      "id": "fr4",
+      "name": "Java Chip Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": true,
+      "desc": "Coffee frappe loaded with crunchy chocolate chips and mocha sauce.",
+      "image": ""
+    },
+    {
+      "id": "fr5",
+      "name": "Coffee Jelly Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": true,
+      "desc": "Creamy coffee frappe layered over chewy, bouncy coffee jelly cubes.",
+      "image": ""
+    },
+    {
+      "id": "fr6",
+      "name": "Vanilla Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": false,
+      "desc": "Creamy vanilla blended with milk and ice (non-coffee).",
+      "image": ""
+    },
+    {
+      "id": "fr7",
+      "name": "Chocolate Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": false,
+      "desc": "Decadent chocolate milkshake frappe topped with whipped cream.",
+      "image": ""
+    },
+    {
+      "id": "fr8",
+      "name": "Chocolate Chip Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": false,
+      "desc": "Sweet cream and chocolate chips blended frosty (non-coffee).",
+      "image": ""
+    },
+    {
+      "id": "fr9",
+      "name": "White Cream Frappe",
+      "category": "frappes",
+      "priceGrande": 150,
+      "priceVenti": 165,
+      "type": "Blended",
+      "bestseller": false,
+      "desc": "Smooth velvety sweet cream frappe with whipped cloud.",
+      "image": ""
+    },
+    {
+      "id": "t1",
+      "name": "Peachberry Fruit Tea",
+      "category": "teas",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Juicy ripe peach and wild berry tea infused over crushed ice.",
+      "image": ""
+    },
+    {
+      "id": "t2",
+      "name": "Strawberry Chamomile Fruit Tea",
+      "category": "teas",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Soothing chamomile tea shaken with real strawberry puree.",
+      "image": ""
+    },
+    {
+      "id": "t3",
+      "name": "Vanilla Bean Black Tea",
+      "category": "teas",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": false,
+      "desc": "Ceylon black tea kissed with aromatic vanilla bean essence.",
+      "image": ""
+    },
+    {
+      "id": "t4",
+      "name": "Black Peach w/ Coco Jelly",
+      "category": "teas",
+      "priceGrande": 140,
+      "priceVenti": 155,
+      "type": "Iced",
+      "bestseller": true,
+      "desc": "Sweet peach black tea paired with chewy coconut nata jelly.",
+      "image": ""
+    },
+    {
+      "id": "t5",
+      "name": "Full Leaf Peach Tea",
+      "category": "teas",
+      "priceGrande": 100,
+      "priceVenti": 115,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Artisan loose leaf black tea naturally scented with sweet peach.",
+      "image": ""
+    },
+    {
+      "id": "t6",
+      "name": "Full Leaf Green Tea",
+      "category": "teas",
+      "priceGrande": 100,
+      "priceVenti": 115,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Pure steamed green tea leaves with crisp vegetal aroma.",
+      "image": ""
+    },
+    {
+      "id": "t7",
+      "name": "Lemon Ginger Tea",
+      "category": "teas",
+      "priceGrande": 100,
+      "priceVenti": 115,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Warming fresh ginger root tea balanced with tangy sun-ripened lemon.",
+      "image": ""
+    },
+    {
+      "id": "t8",
+      "name": "Full Leaf Chamomile Tea",
+      "category": "teas",
+      "priceGrande": 100,
+      "priceVenti": 115,
+      "type": "Hot/Iced",
+      "bestseller": false,
+      "desc": "Caffeine-free soothing whole chamomile flowers with delicate honey notes.",
+      "image": ""
+    },
+    {
+      "id": "p1",
+      "name": "Blueberry Muffins",
+      "category": "pastries",
+      "price": 40,
+      "bestseller": true,
+      "desc": "Tender, golden-baked muffin bursting with sweet juicy blueberries.",
+      "image": "assets/images/food/muffin.png"
+    },
+    {
+      "id": "p2",
+      "name": "Glazed Cinnamon Roll",
+      "category": "pastries",
+      "price": 160,
+      "bestseller": true,
+      "desc": "Warm fluffy spiral roll swirled with cinnamon brown sugar & cream cheese glaze.",
+      "image": "assets/images/food/cinnamon-roll.png"
+    },
+    {
+      "id": "p3",
+      "name": "Fudge Marble Brownies",
+      "category": "pastries",
+      "price": 35,
+      "bestseller": false,
+      "desc": "Chewy, rich chocolate fudge brownie square with chocolate marble swirl.",
+      "image": "assets/images/food/brownie.png"
+    },
+    {
+      "id": "p4",
+      "name": "Four Cheese Bread",
+      "category": "pastries",
+      "price": 120,
+      "bestseller": false,
+      "desc": "Oven-toasted flatbread loaded with cheddar, mozzarella, parmesan & cream cheese.",
+      "image": "assets/images/food/four-cheese-bread.png"
+    },
+    {
+      "id": "p5",
+      "name": "Garlic Cheese Bread",
+      "category": "pastries",
+      "price": 120,
+      "bestseller": false,
+      "desc": "Freshly baked artisan bread slathered with roasted garlic butter and melted cheese.",
+      "image": "assets/images/food/garlic-cheese-bread.png"
+    },
+    {
+      "id": "ck1",
+      "name": "Biscoff Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": true,
+      "desc": "Lotus Biscoff crust, ultra-creamy cheesecake, melted speculoos cookie butter & Biscoff biscuit.",
+      "image": "assets/images/biscoff-cheesecake-artisan.jpg"
+    },
+    {
+      "id": "ck2",
+      "name": "Matcha Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": false,
+      "desc": "Earthy ceremonial Japanese matcha infused into velvety cheesecake base.",
+      "image": ""
+    },
+    {
+      "id": "ck3",
+      "name": "Pistachio Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": true,
+      "desc": "Roasted Sicilian pistachio cream layered over rich, chilled cheesecake.",
+      "image": ""
+    },
+    {
+      "id": "ck4",
+      "name": "Nutella Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": false,
+      "desc": "Decadent chocolate hazelnut Nutella swirl on graham crust.",
+      "image": ""
+    },
+    {
+      "id": "ck5",
+      "name": "Salted Caramel Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": false,
+      "desc": "Slow-cooked amber caramel with sea salt crystals over dense cream cheese.",
+      "image": ""
+    },
+    {
+      "id": "ck6",
+      "name": "Blueberry Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": false,
+      "desc": "Classic New York style cheesecake crowned with whole wild blueberry compote.",
+      "image": ""
+    },
+    {
+      "id": "ck7",
+      "name": "Mango Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": false,
+      "desc": "Sweet Philippine ripe mango puree over creamy chilled cheesecake.",
+      "image": ""
+    },
+    {
+      "id": "ck8",
+      "name": "Cookies & Cream Tub Cheesecake",
+      "category": "cheesecakes",
+      "price": 155,
+      "bestseller": false,
+      "desc": "Crushed Oreo cookies folded into silky sweet cheesecake.",
+      "image": ""
+    },
+    {
+      "id": "co1",
+      "name": "Classic Chocolate Chip Cookie",
+      "category": "cookies",
+      "price": 90,
+      "bestseller": true,
+      "desc": "Giant bakery cookie with crispy golden edges and melted dark chocolate chunks.",
+      "image": "assets/images/food/cookie.png"
+    },
+    {
+      "id": "co2",
+      "name": "Matcha Cookie",
+      "category": "cookies",
+      "price": 90,
+      "bestseller": false,
+      "desc": "Green tea infused dough with creamy white chocolate chunks.",
+      "image": ""
+    },
+    {
+      "id": "co3",
+      "name": "Red Velvet Cookie",
+      "category": "cookies",
+      "price": 90,
+      "bestseller": false,
+      "desc": "Rich cocoa red velvet cookie with cream cheese filling inside.",
+      "image": ""
+    },
+    {
+      "id": "co4",
+      "name": "Double Choco Cookie",
+      "category": "cookies",
+      "price": 90,
+      "bestseller": false,
+      "desc": "Dark Dutch cocoa dough loaded with melted milk chocolate pockets.",
+      "image": ""
+    },
+    {
+      "id": "co5",
+      "name": "Smores Cookie",
+      "category": "cookies",
+      "price": 90,
+      "bestseller": true,
+      "desc": "Campfire favorite with toasted gooey marshmallow, chocolate & graham crust.",
+      "image": ""
+    },
+    {
+      "id": "pa1",
+      "name": "Chicken Pesto Pasta",
+      "category": "pasta-rice",
+      "price": 160,
+      "bestseller": true,
+      "desc": "Al dente spaghetti tossed in rich basil pesto sauce, tender chicken breast, and parmesan.",
+      "image": "assets/images/food/chicken-pesto.png"
+    },
+    {
+      "id": "pa2",
+      "name": "Beef Lasagna",
+      "category": "pasta-rice",
+      "price": 160,
+      "bestseller": true,
+      "desc": "Oven-baked layers of pasta sheets, slow-simmered beef bolognese, bechamel, and melted cheese.",
+      "image": ""
+    },
+    {
+      "id": "pa3",
+      "name": "Chicken Truffle Pasta",
+      "category": "pasta-rice",
+      "price": 160,
+      "bestseller": true,
+      "desc": "Silky white cream sauce infused with real black truffle oil, chicken strips & herbs.",
+      "image": ""
+    },
+    {
+      "id": "pa4",
+      "name": "Creamy Carbonara",
+      "category": "pasta-rice",
+      "price": 160,
+      "bestseller": false,
+      "desc": "Savory bacon bits, garlic cream sauce, and cracked black pepper over spaghetti.",
+      "image": ""
+    },
+    {
+      "id": "pa5",
+      "name": "Spaghetti Bolognese",
+      "category": "pasta-rice",
+      "price": 160,
+      "bestseller": false,
+      "desc": "Traditional hearty Italian ground beef tomato sauce with herbs and cheese.",
+      "image": ""
+    },
+    {
+      "id": "pa6",
+      "name": "Kung Pao Chicken Pasta",
+      "category": "pasta-rice",
+      "price": 160,
+      "bestseller": false,
+      "desc": "Spicy Asian-fusion pasta with tender chicken, dried chili, and crunchy roasted peanuts.",
+      "image": ""
+    },
+    {
+      "id": "rm1",
+      "name": "Sweet & Sour Pork Rice Meal",
+      "category": "pasta-rice",
+      "price": 180,
+      "bestseller": false,
+      "desc": "Crispy golden pork bites tossed in tangy sweet and sour glaze served with hot rice.",
+      "image": ""
+    },
+    {
+      "id": "rm2",
+      "name": "Pork Humba Bowl",
+      "category": "pasta-rice",
+      "price": 200,
+      "bestseller": true,
+      "desc": "Heritage slow-braised pork belly in soy-vinegar glaze, black beans, and banana blossoms with garlic rice.",
+      "image": ""
+    },
+    {
+      "id": "rm3",
+      "name": "Chicken Pastil Rice Meal",
+      "category": "pasta-rice",
+      "price": 180,
+      "bestseller": true,
+      "desc": "Mindanao shredded spiced kagikit chicken flakes served over hot steamed rice with side.",
+      "image": ""
+    },
+    {
+      "id": "rm4",
+      "name": "Beef Salpicao Rice Bowl",
+      "category": "pasta-rice",
+      "price": 180,
+      "bestseller": true,
+      "desc": "Tender tenderloin beef cubes sauteed in butter, garlic chips, and savory sauce with rice.",
+      "image": ""
+    },
+    {
+      "id": "rm5",
+      "name": "Chicken Teriyaki Rice Bowl",
+      "category": "pasta-rice",
+      "price": 180,
+      "bestseller": true,
+      "desc": "Grilled glazed chicken thigh in house sweet teriyaki sauce with fresh cucumber slices and rice.",
+      "image": "assets/images/food/rice-meal.png"
+    }
+  ]
+}
