@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Location | Hungry Pair Seafood Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-cream: #FAF6F0;
+      --bg-light: #F4EFEA;
+      --card-bg: #FFFFFF;
+      --brown-primary: #6E432A;
+      --brown-hover: #54311D;
+      --brown-dark: #2C1E16;
+      --text-muted: #7A695E;
+      --border-subtle: #E8DED4;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 2px 8px rgba(44, 30, 22, 0.04);
+      --shadow-md: 0 8px 24px rgba(44, 30, 22, 0.08);
+      --shadow-lg: 0 16px 40px rgba(44, 30, 22, 0.12);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-script: 'Caveat', cursive;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-cream);
+      color: var(--brown-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      background-color: #F1E9DE;
+      color: #6C5B52;
+      font-size: 0.8rem;
+      padding: 9px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(110, 67, 42, 0.08);
+      font-weight: 500;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(250, 246, 240, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-container {
+      max-width: 1280px; margin: 0 auto; padding: 0 40px; height: 84px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-logo {
+      text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .brand-logo h1 {
+      font-family: var(--font-heading); font-size: 1.7rem; font-weight: 800;
+      letter-spacing: 0.06em; color: var(--brown-dark); line-height: 1;
+    }
+    .brand-logo span {
+      font-size: 0.65rem; letter-spacing: 0.24em; font-weight: 700; color: var(--brown-primary); text-transform: uppercase;
+    }
+    .nav-menu { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-link {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--brown-dark); text-decoration: none; position: relative; padding: 6px 0; transition: color 0.25s ease;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--brown-primary); }
+
+    .btn-pill {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background-color: var(--brown-primary); color: #FFFFFF; padding: 12px 28px;
+      border-radius: var(--radius-pill); font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid transparent; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(110, 67, 42, 0.2); transition: all 0.3s ease;
+    }
+    .btn-pill:hover { background-color: var(--brown-hover); transform: translateY(-2px); }
+
+    /* CHANNEL HEADER BAR */
+    .channel-header-bar {
+      background: #F1E9DE;
+      padding: 14px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .channel-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .btn-back-channel {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brown-primary);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-back-channel:hover {
+      background: var(--brown-primary);
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+    .channel-crumbs {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* HERO INTRO */
+    .contact-hero {
+      text-align: center;
+      padding: 64px 20px 40px;
+    }
+    .contact-hero-script { font-family: var(--font-script); font-size: 2rem; color: var(--brown-primary); margin-bottom: 4px; }
+    .contact-hero-title { font-family: var(--font-heading); font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 800; color: var(--brown-dark); margin-bottom: 12px; }
+    .contact-hero-desc { color: var(--text-muted); max-width: 580px; margin: 0 auto; font-size: 1rem; }
+
+    /* LAYOUT */
+    .contact-container {
+      max-width: 1160px;
+      margin: 0 auto 96px;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+    }
+
+    /* LEFT INFO */
+    .info-card-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .info-tile {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+    .info-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .info-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .info-tile h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--brown-dark);
+      margin-bottom: 6px;
+    }
+    .info-tile p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .info-tile a {
+      color: var(--brown-primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* HOURS TABLE */
+    .hours-card {
+      background: #F4ECE1;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border-subtle);
+      margin-top: 10px;
+    }
+    .hours-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--brown-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(110, 67, 42, 0.15);
+      font-size: 0.88rem;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { font-weight: 600; color: var(--brown-dark); }
+    .hours-time { font-weight: 700; color: var(--brown-primary); }
+
+    /* RIGHT MAP */
+    .map-frame-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 6px solid #FFFFFF;
+      height: 480px;
+      background: #E8DED4;
+    }
+    .map-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* CHANNELS SECTION */
+    .direct-channels-section {
+      margin-top: 36px;
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+    .direct-channels-section h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--brown-dark);
+      margin-bottom: 16px;
+    }
+    .channel-action-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .channel-action-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+    }
+    .channel-action-btn:hover {
+      transform: translateX(4px);
+    }
+    .channel-action-btn.fp {
+      background: #D70F64;
+      color: #FFFFFF;
+    }
+    .channel-action-btn.ms {
+      background: #0866FF;
+      color: #FFFFFF;
+    }
+    .channel-action-btn.gm {
+      background: #34A853;
+      color: #FFFFFF;
+    }
+
+    /* CHANNEL BANNER */
+    .channel-banner {
+      background: #F4ECE1;
+      border-top: 1px solid var(--border-subtle);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .channel-banner h3 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--brown-dark); margin-bottom: 12px; }
+    .channel-banner p { color: var(--text-muted); max-width: 540px; margin: 0 auto 32px; }
+    .channel-switch-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    footer {
+      background-color: var(--bg-cream);
+      padding: 32px 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: var(--text-muted);
+    }
+
+    /* DOCK */
+    .channels-dock {
+      position: fixed; bottom: 24px; right: 28px; z-index: 999;
+      display: flex; align-items: center; background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px); padding: 8px 14px; border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle); box-shadow: 0 12px 32px rgba(44, 30, 22, 0.15); gap: 8px;
+    }
+    .dock-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown-primary); padding-right: 6px; border-right: 1px solid var(--border-subtle); }
+    .dock-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: var(--radius-pill); font-size: 0.76rem; font-weight: 700; color: var(--brown-dark); text-decoration: none; transition: all 0.2s ease; }
+    .dock-btn:hover { background: var(--bg-light); color: var(--brown-primary); }
+    .dock-btn.active-channel { background: var(--bg-light); color: var(--brown-primary); font-weight: 800; }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(44, 30, 22, 0.72);
+      backdrop-filter: blur(6px); z-index: 10000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: #FFFFFF; border-radius: var(--radius-lg); padding: 44px 36px;
+      max-width: 480px; width: 100%; text-align: center; box-shadow: var(--shadow-lg);
+    }
+    .modal-box h3 { font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: var(--brown-dark); margin-bottom: 8px; }
+    .modal-box p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 28px; }
+    .modal-channel-btns { display: flex; flex-direction: column; gap: 14px; }
+    .channel-option-btn {
+      display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+      border-radius: var(--radius-md); text-decoration: none; text-align: left; transition: all 0.3s ease;
+    }
+    .channel-option-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .channel-option-btn.panda { background: linear-gradient(135deg, #D70F64, #B00A4E); color: #FFFFFF; }
+    .channel-option-btn.fb { background: linear-gradient(135deg, #0866FF, #004DD4); color: #FFFFFF; }
+    .channel-icon { font-size: 2rem; }
+    .channel-title { font-weight: 700; font-size: 1.05rem; display: block; }
+    .channel-sub { font-size: 0.8rem; opacity: 0.88; font-weight: 400; }
+    .modal-close { margin-top: 24px; display: inline-block; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; }
+
+    @media (max-width: 860px) {
+      .contact-container { grid-template-columns: 1fr; gap: 40px; }
+      .map-frame-wrap { height: 350px; }
+      .nav-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>Good Seafood, Good Mood</div>
+    <div>Mon–Thu: 10:00 AM – 9:00 PM &nbsp;|&nbsp; Fri–Sun: 10:00 AM – 10:00 PM</div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <h1>HUNGRY PAIR</h1>
+        <span>SEAFOOD &amp; MORE</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <button class="btn-pill" onclick="openOrderModal()">Order Online</button>
+    </div>
+  </header>
+
+  <!-- CHANNEL RETURN BAR -->
+  <div class="channel-header-bar">
+    <div class="channel-bar-inner">
+      <a href="index.html" class="btn-back-channel" title="Click to return to home channel">
+        ← Return to Main Channel
+      </a>
+      <div class="channel-crumbs">
+        Current Channel: <strong>📍 Location, Hours &amp; Channels</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO INTRO -->
+  <section class="contact-hero">
+    <div class="contact-hero-script">Find Us on Burgos Street</div>
+    <h2 class="contact-hero-title">Visit or Contact Us</h2>
+    <p class="contact-hero-desc">We're ready to welcome you in Calamba, Laguna. Drop by for dining or reach out to us directly through any channel.</p>
+  </section>
+
+  <!-- MAIN CONTACT GRID -->
+  <div class="contact-container">
+
+    <!-- LEFT COLUMN -->
+    <div class="info-card-wrap">
+      <div class="info-tile">
+        <span class="info-icon">📍</span>
+        <div>
+          <h4>Restaurant Address</h4>
+          <p>124B Burgos Street, Calamba, 4027 Laguna, Philippines</p>
+          <a href="https://maps.app.goo.gl/1zfrLJ3LNA9QNQSs8" target="_blank" style="margin-top: 4px; display: inline-block;">View on Google Maps →</a>
+        </div>
+      </div>
+
+      <div class="info-tile">
+        <span class="info-icon">💬</span>
+        <div>
+          <h4>Social Media &amp; Chat</h4>
+          <p>Message us directly for inquiries, celebrations, and pre-orders.</p>
+          <p style="margin-top: 4px;">
+            <a href="https://www.facebook.com/p/Hungry-Pair-61587575466576/" target="_blank">Facebook: Hungry Pair Calamba</a><br>
+            <a href="https://m.me/61587575466576" target="_blank">Messenger: m.me/HungryPair</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- HOURS CARD -->
+      <div class="hours-card">
+        <h4><span>🕒</span> Operating Hours</h4>
+        <div class="hours-row">
+          <span class="hours-day">Monday</span>
+          <span class="hours-time">10:00 AM – 9:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Tuesday</span>
+          <span class="hours-time">10:00 AM – 9:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Wednesday</span>
+          <span class="hours-time">10:00 AM – 9:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Thursday</span>
+          <span class="hours-time">10:00 AM – 9:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Friday</span>
+          <span class="hours-time">10:00 AM – 10:00 PM ✨</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Saturday</span>
+          <span class="hours-time">10:00 AM – 10:00 PM ✨</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Sunday</span>
+          <span class="hours-time">10:00 AM – 10:00 PM ✨</span>
+        </div>
+      </div>
+
+      <!-- DIRECT ORDER CHANNELS -->
+      <div class="direct-channels-section">
+        <h4>Direct Order Channels</h4>
+        <div class="channel-action-row">
+          <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" class="channel-action-btn fp">
+            <span>🐼</span> Order via Foodpanda Delivery
+          </a>
+          <a href="https://m.me/61587575466576" target="_blank" class="channel-action-btn ms">
+            <span>💬</span> Message via Facebook Messenger
+          </a>
+          <a href="https://maps.app.goo.gl/1zfrLJ3LNA9QNQSs8" target="_blank" class="channel-action-btn gm">
+            <span>📍</span> Open Turn-by-Turn Navigation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: GOOGLE MAPS EMBED -->
+    <div>
+      <div class="map-frame-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.688585829684!2d121.1670679!3d14.2130038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd622b3e9ac92d%3A0x7abae1ebf220c339!2s124B%20Burgos%20St%2C%20Calamba%2C%204027%20Laguna!5e0!3m2!1sen!2sph!4v1696400000000!5m2!1sen!2sph"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Hungry Pair Burgos Street Location"></iframe>
+      </div>
+      <p style="text-align: center; margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
+        124B Burgos St, Calamba, 4027 Laguna &bull; Dine-in, Takeout &amp; Foodpanda Delivery Available
+      </p>
+    </div>
+
+  </div>
+
+  <!-- CHANNEL BANNER -->
+  <section class="channel-banner">
+    <h3>Switch to Another Channel</h3>
+    <p>Jump to our full menu or return to our main showroom page.</p>
+    <div class="channel-switch-buttons">
+      <a href="index.html" class="btn-pill">🏠 Home Channel</a>
+      <a href="menu.html" class="btn-pill" style="background:#8C5938;">🍽️ Full Menu Channel</a>
+      <a href="about.html" class="btn-pill" style="background:#5B4133;">📖 Our Story Channel</a>
+      <button class="btn-pill" onclick="openOrderModal()">🛍️ Order Channel</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>&copy; 2025 Hungry Pair. 124B Burgos St, Calamba, Laguna.</div>
+      <div>
+        <a href="https://www.facebook.com/p/Hungry-Pair-61587575466576/" target="_blank" style="color:inherit;text-decoration:none;">Facebook Page</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUICK CHANNEL DOCK -->
+  <div class="channels-dock">
+    <span class="dock-label">Channels</span>
+    <a href="index.html" class="dock-btn">🏠 Home</a>
+    <a href="menu.html" class="dock-btn">🍽️ Menu</a>
+    <a href="about.html" class="dock-btn">📖 Story</a>
+    <a href="contact.html" class="dock-btn active-channel">📍 Map</a>
+    <button class="dock-btn" style="background:var(--brown-primary);color:#fff;" onclick="openOrderModal()">🛍️ Order</button>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="orderModal" onclick="closeOrderModalOutside(event)">
+    <div class="modal-box">
+      <h3>How would you like to order?</h3>
+      <p>Choose your preferred channel below:</p>
+      <div class="modal-channel-btns">
+        <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" class="channel-option-btn panda">
+          <span class="channel-icon">🐼</span>
+          <div>
+            <span class="channel-title">Order on Foodpanda</span>
+            <span class="channel-sub">Fast delivery straight to your doorstep</span>
+          </div>
+        </a>
+        <a href="https://m.me/61587575466576" target="_blank" class="channel-option-btn fb">
+          <span class="channel-icon">💬</span>
+          <div>
+            <span class="channel-title">Chat on Facebook Messenger</span>
+            <span class="channel-sub">Message our page directly for orders &amp; inquiries</span>
+          </div>
+        </a>
+      </div>
+      <span class="modal-close" onclick="closeOrderModal()">✕ Close</span>
+    </div>
+  </div>
+
+  <script>
+    function openOrderModal() { document.getElementById('orderModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeOrderModal() { document.getElementById('orderModal').classList.remove('active'); document.body.style.overflow = ''; }
+    function closeOrderModalOutside(e) { if(e.target === document.getElementById('orderModal')) closeOrderModal(); }
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeOrderModal(); });
+  </script>
+</body>
+</html>

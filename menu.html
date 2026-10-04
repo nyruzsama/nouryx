@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Channel | Hungry Pair Seafood Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-cream: #FAF6F0;
+      --bg-light: #F4EFEA;
+      --card-bg: #FFFFFF;
+      --brown-primary: #6E432A;
+      --brown-hover: #54311D;
+      --brown-dark: #2C1E16;
+      --text-muted: #7A695E;
+      --border-subtle: #E8DED4;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 2px 8px rgba(44, 30, 22, 0.04);
+      --shadow-md: 0 8px 24px rgba(44, 30, 22, 0.08);
+      --shadow-lg: 0 16px 40px rgba(44, 30, 22, 0.12);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-script: 'Caveat', cursive;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-cream);
+      color: var(--brown-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background-color: #F1E9DE;
+      color: #6C5B52;
+      font-size: 0.8rem;
+      padding: 9px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(110, 67, 42, 0.08);
+      font-weight: 500;
+    }
+    .top-bar a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(250, 246, 240, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-container {
+      max-width: 1280px; margin: 0 auto; padding: 0 40px; height: 84px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-logo {
+      text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .brand-logo h1 {
+      font-family: var(--font-heading); font-size: 1.7rem; font-weight: 800;
+      letter-spacing: 0.06em; color: var(--brown-dark); line-height: 1;
+    }
+    .brand-logo span {
+      font-size: 0.65rem; letter-spacing: 0.24em; font-weight: 700; color: var(--brown-primary); text-transform: uppercase;
+    }
+    .nav-menu { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-link {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--brown-dark); text-decoration: none; position: relative; padding: 6px 0; transition: color 0.25s ease;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--brown-primary); }
+
+    .btn-pill {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background-color: var(--brown-primary); color: #FFFFFF; padding: 12px 28px;
+      border-radius: var(--radius-pill); font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid transparent; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(110, 67, 42, 0.2); transition: all 0.3s ease;
+    }
+    .btn-pill:hover { background-color: var(--brown-hover); transform: translateY(-2px); }
+
+    /* CHANNEL RETURN BANNER (User Request: Click to redirect, click back whenever they like) */
+    .channel-header-bar {
+      background: #F1E9DE;
+      padding: 14px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .channel-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .btn-back-channel {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brown-primary);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-back-channel:hover {
+      background: var(--brown-primary);
+      color: #FFFFFF;
+      transform: translateX(-3px);
+    }
+    .channel-crumbs {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .channel-crumbs strong { color: var(--brown-dark); }
+
+    /* PAGE INTRO */
+    .menu-hero {
+      text-align: center;
+      padding: 64px 20px 40px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.8), transparent);
+    }
+    .menu-hero-script { font-family: var(--font-script); font-size: 2rem; color: var(--brown-primary); margin-bottom: 4px; }
+    .menu-hero-title { font-family: var(--font-heading); font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 800; color: var(--brown-dark); margin-bottom: 12px; }
+    .menu-hero-desc { color: var(--text-muted); max-width: 580px; margin: 0 auto; font-size: 1rem; }
+
+    /* CATEGORY TABS */
+    .menu-tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 32px auto 56px;
+      padding: 0 20px;
+    }
+    .menu-tab-btn {
+      padding: 10px 24px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--border-subtle);
+      background: #FFFFFF;
+      color: var(--brown-dark);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .menu-tab-btn:hover, .menu-tab-btn.active {
+      background: var(--brown-primary);
+      color: #FFFFFF;
+      border-color: var(--brown-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(110,67,42,0.2);
+    }
+
+    /* GRID */
+    .menu-grid-container {
+      max-width: 1200px;
+      margin: 0 auto 96px;
+      padding: 0 40px;
+    }
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 32px;
+    }
+    .dish-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(232, 222, 212, 0.7);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .dish-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(110, 67, 42, 0.25);
+    }
+    .dish-img-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: var(--bg-light);
+    }
+    .dish-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .dish-card:hover .dish-img-wrap img {
+      transform: scale(1.08);
+    }
+    .dish-content {
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .dish-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown-primary);
+      margin-bottom: 6px;
+    }
+    .dish-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+    .dish-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .dish-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 14px;
+    }
+    .dish-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brown-primary);
+    }
+    .dish-order-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-light);
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .dish-order-link:hover {
+      background: var(--brown-primary);
+      color: #FFFFFF;
+    }
+
+    /* BOTTOM CHANNEL REDIRECT BANNER */
+    .channel-banner {
+      background: #F4ECE1;
+      border-top: 1px solid var(--border-subtle);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .channel-banner h3 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--brown-dark);
+      margin-bottom: 12px;
+    }
+    .channel-banner p {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+    .channel-switch-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--bg-cream);
+      padding: 32px 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(44, 30, 22, 0.72);
+      backdrop-filter: blur(6px); z-index: 10000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: #FFFFFF; border-radius: var(--radius-lg); padding: 44px 36px;
+      max-width: 480px; width: 100%; text-align: center; box-shadow: var(--shadow-lg);
+    }
+    .modal-box h3 { font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: var(--brown-dark); margin-bottom: 8px; }
+    .modal-box p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 28px; }
+    .modal-channel-btns { display: flex; flex-direction: column; gap: 14px; }
+    .channel-option-btn {
+      display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+      border-radius: var(--radius-md); text-decoration: none; text-align: left; transition: all 0.3s ease;
+    }
+    .channel-option-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .channel-option-btn.panda { background: linear-gradient(135deg, #D70F64, #B00A4E); color: #FFFFFF; }
+    .channel-option-btn.fb { background: linear-gradient(135deg, #0866FF, #004DD4); color: #FFFFFF; }
+    .channel-icon { font-size: 2rem; }
+    .channel-title { font-weight: 700; font-size: 1.05rem; display: block; }
+    .channel-sub { font-size: 0.8rem; opacity: 0.88; font-weight: 400; }
+    .modal-close { margin-top: 24px; display: inline-block; cursor: pointer; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; }
+
+    /* DOCK */
+    .channels-dock {
+      position: fixed; bottom: 24px; right: 28px; z-index: 999;
+      display: flex; align-items: center; background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px); padding: 8px 14px; border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle); box-shadow: 0 12px 32px rgba(44, 30, 22, 0.15); gap: 8px;
+    }
+    .dock-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown-primary); padding-right: 6px; border-right: 1px solid var(--border-subtle); }
+    .dock-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: var(--radius-pill); font-size: 0.76rem; font-weight: 700; color: var(--brown-dark); text-decoration: none; transition: all 0.2s ease; }
+    .dock-btn:hover { background: var(--bg-light); color: var(--brown-primary); }
+    .dock-btn.active-channel { background: var(--bg-light); color: var(--brown-primary); font-weight: 800; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>Good Seafood, Good Mood</div>
+    <div>Mon–Thu: 10:00 AM – 9:00 PM &nbsp;|&nbsp; Fri–Sun: 10:00 AM – 10:00 PM</div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <h1>HUNGRY PAIR</h1>
+        <span>SEAFOOD &amp; MORE</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="btn-pill" onclick="openOrderModal()">Order Online</button>
+    </div>
+  </header>
+
+  <!-- CHANNEL RETURN BAR -->
+  <div class="channel-header-bar">
+    <div class="channel-bar-inner">
+      <a href="index.html" class="btn-back-channel" title="Click to return to home channel">
+        ← Return to Main Channel
+      </a>
+      <div class="channel-crumbs">
+        Current Channel: <strong>🍽️ Full Menu Catalog</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU HERO INTRO -->
+  <section class="menu-hero">
+    <div class="menu-hero-script">Handcrafted with Love</div>
+    <h2 class="menu-hero-title">Our Complete Menu</h2>
+    <p class="menu-hero-desc">Explore our full selection of freshly grilled catches, seafood favorites, sizzling plates, and Filipino feasts.</p>
+
+    <!-- CATEGORY FILTER TABS -->
+    <div class="menu-tabs-bar">
+      <button class="menu-tab-btn active" onclick="filterCategory('all', this)">All Catches</button>
+      <button class="menu-tab-btn" onclick="filterCategory('grilled', this)">🔥 Charcoal Grills</button>
+      <button class="menu-tab-btn" onclick="filterCategory('seafood', this)">🦐 Seafood Classics</button>
+      <button class="menu-tab-btn" onclick="filterCategory('sizzling', this)">🍳 Sizzling Plates</button>
+      <button class="menu-tab-btn" onclick="filterCategory('platters', this)">🍌 Boodle Platters</button>
+    </div>
+  </section>
+
+  <!-- DISHES GRID -->
+  <div class="menu-grid-container">
+    <div class="dishes-grid" id="dishesGrid">
+
+      <!-- Dish 1 -->
+      <div class="dish-card" data-cat="grilled">
+        <div class="dish-img-wrap">
+          <img src="grilled_squid.jpg" alt="Grilled Squid" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Chef's Signature</span>
+          <h3 class="dish-title">Charcoal-Grilled Squid</h3>
+          <p class="dish-desc">Fresh whole squid marinated in garlic butter, calamansi, and Filipino spices, grilled over coconut charcoal.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱320.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 2 -->
+      <div class="dish-card" data-cat="seafood">
+        <div class="dish-img-wrap">
+          <img src="garlic_shrimp.jpg" alt="Garlic Butter Shrimp" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Customer Favorite</span>
+          <h3 class="dish-title">Garlic Butter Shrimp</h3>
+          <p class="dish-desc">Juicy plump shrimp simmered in sweet savory garlic butter sauce with fresh herbs and a hint of chili warmth.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱380.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 3 -->
+      <div class="dish-card" data-cat="seafood">
+        <div class="dish-img-wrap">
+          <img src="steamed_crabs.jpg" alt="Steamed Blue Crabs" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Daily Catch</span>
+          <h3 class="dish-title">Steamed Blue Crabs</h3>
+          <p class="dish-desc">Freshly caught blue crabs steamed to sweet perfection, served on banana leaf with spiced sinamak vinegar dipping sauce.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱450.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 4 -->
+      <div class="dish-card" data-cat="grilled">
+        <div class="dish-img-wrap">
+          <img src="grilled_bangus.jpg" alt="Stuffed Grilled Bangus" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Filipino Classic</span>
+          <h3 class="dish-title">Stuffed Grilled Bangus</h3>
+          <p class="dish-desc">Boneless milkfish generously stuffed with ripe tomatoes, sweet onions, and garlic, grilled with banana leaf wrapping.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱290.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 5 -->
+      <div class="dish-card" data-cat="platters">
+        <div class="dish-img-wrap">
+          <img src="seafood_platter.jpg" alt="Seafood Boodle Fight Platter" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Group Feast</span>
+          <h3 class="dish-title">Seafood Boodle Fight Platter</h3>
+          <p class="dish-desc">The ultimate communal feast: crabs, grilled fish, shrimp skewers, mussels, boiled eggs, and garlic rice on banana leaves.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱1,250.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 6 -->
+      <div class="dish-card" data-cat="sizzling">
+        <div class="dish-img-wrap">
+          <img src="sizzling_sisig.jpg" alt="Sizzling Seafood Sisig" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Sizzling Hot</span>
+          <h3 class="dish-title">Sizzling Seafood Sisig</h3>
+          <p class="dish-desc">Finely minced squid and shrimp tossed in savory aromatics, topped with raw egg and calamansi on a scorching cast iron plate.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱340.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 7 -->
+      <div class="dish-card" data-cat="seafood">
+        <div class="dish-img-wrap">
+          <img src="buttered_tahong.jpg" alt="Baked Buttered Tahong" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Appetizer Special</span>
+          <h3 class="dish-title">Baked Buttered Tahong</h3>
+          <p class="dish-desc">Plump green mussels baked with rich garlic butter and golden melted cheese topping on a rustic wooden platter.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱260.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dish 8 -->
+      <div class="dish-card" data-cat="grilled">
+        <div class="dish-img-wrap">
+          <img src="seafood_prep.jpg" alt="Chef's Grill Sampler" />
+        </div>
+        <div class="dish-content">
+          <span class="dish-tag">Chef's Platter</span>
+          <h3 class="dish-title">Hungry Pair Combo Grill</h3>
+          <p class="dish-desc">A generous tandem pair of giant grilled tiger prawns and tender charcoal-seared squid with secret house basting sauce.</p>
+          <div class="dish-bottom">
+            <span class="dish-price">₱490.00</span>
+            <button class="dish-order-link" onclick="openOrderModal()">Order ↗</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CHANNEL SWITCHER BANNER (Click to redirect to another channel) -->
+  <section class="channel-banner">
+    <h3>Switch to Another Channel</h3>
+    <p>Hop between our digital channels anytime. You can always click back whenever you like!</p>
+    <div class="channel-switch-buttons">
+      <a href="index.html" class="btn-pill">🏠 Home Channel</a>
+      <a href="about.html" class="btn-pill" style="background:#8C5938;">📖 Our Story Channel</a>
+      <a href="contact.html" class="btn-pill" style="background:#5B4133;">📍 Location &amp; Map Channel</a>
+      <button class="btn-pill" onclick="openOrderModal()">🛍️ Order Channel</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>&copy; 2025 Hungry Pair. 124B Burgos St, Calamba, Laguna.</div>
+      <div>
+        <a href="https://www.facebook.com/p/Hungry-Pair-61587575466576/" target="_blank" style="color:inherit;text-decoration:none;">Facebook Page</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- QUICK CHANNEL DOCK -->
+  <div class="channels-dock">
+    <span class="dock-label">Channels</span>
+    <a href="index.html" class="dock-btn">🏠 Home</a>
+    <a href="menu.html" class="dock-btn active-channel">🍽️ Menu</a>
+    <a href="about.html" class="dock-btn">📖 Story</a>
+    <a href="contact.html" class="dock-btn">📍 Map</a>
+    <button class="dock-btn" style="background:var(--brown-primary);color:#fff;" onclick="openOrderModal()">🛍️ Order</button>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="orderModal" onclick="closeOrderModalOutside(event)">
+    <div class="modal-box">
+      <h3>How would you like to order?</h3>
+      <p>Choose your preferred channel below:</p>
+      <div class="modal-channel-btns">
+        <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" class="channel-option-btn panda">
+          <span class="channel-icon">🐼</span>
+          <div>
+            <span class="channel-title">Order on Foodpanda</span>
+            <span class="channel-sub">Fast delivery straight to your doorstep</span>
+          </div>
+        </a>
+        <a href="https://m.me/61587575466576" target="_blank" class="channel-option-btn fb">
+          <span class="channel-icon">💬</span>
+          <div>
+            <span class="channel-title">Chat on Facebook Messenger</span>
+            <span class="channel-sub">Message our page directly for orders &amp; inquiries</span>
+          </div>
+        </a>
+      </div>
+      <span class="modal-close" onclick="closeOrderModal()">✕ Close</span>
+    </div>
+  </div>
+
+  <script>
+    function openOrderModal() { document.getElementById('orderModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeOrderModal() { document.getElementById('orderModal').classList.remove('active'); document.body.style.overflow = ''; }
+    function closeOrderModalOutside(e) { if(e.target === document.getElementById('orderModal')) closeOrderModal(); }
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeOrderModal(); });
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.menu-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.dish-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,1155 +1,1541 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>Grind. Coffee | More Than Just Coffee - Calamba City</title>
-  <meta name="description" content="Grind. Coffee - Your cozy third space in Poblacion, Calamba City beside Bahay ni Rizal. Specialty espresso, frappes, cheesecakes, pastas and rice meals. Available on Foodpanda.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hungry Pair | Fresh Seafood, Great Moments</title>
+  <meta name="description" content="Hungry Pair - Savor handcrafted seafood, fresh catches, and cozy vibes in Calamba, Laguna. Bringing people together, one PAIR at a time." />
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              espresso: '#28170F',
-              roast: '#3C2415',
-              coffee: '#4A2E1B',
-              caramel: '#C88A42',
-              cream: '#FAF6F0',
-              parchment: '#F2E9DE',
-              border: '#DFD3C3'
-            }
-          }
-        }
+  <!-- Fonts: Playfair Display for headings, Caveat for script eyebrow, Plus Jakarta Sans for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Spline Viewer Web Component -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+
+  <style>
+    /* ─── RESET & ROOT VARIABLES ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-cream: #FAF6F0;
+      --bg-light: #F4EFEA;
+      --card-bg: #FFFFFF;
+      --brown-primary: #6E432A;
+      --brown-hover: #54311D;
+      --brown-dark: #2C1E16;
+      --text-muted: #7A695E;
+      --border-subtle: #E8DED4;
+      --gold-accent: #C49A58;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 2px 8px rgba(44, 30, 22, 0.04);
+      --shadow-md: 0 8px 24px rgba(44, 30, 22, 0.08);
+      --shadow-lg: 0 16px 40px rgba(44, 30, 22, 0.12);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-script: 'Caveat', cursive;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-cream);
+      color: var(--brown-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── TOP NOTIFICATION BAR ─── */
+    .top-bar {
+      background-color: #F1E9DE;
+      color: #6C5B52;
+      font-size: 0.8rem;
+      padding: 9px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(110, 67, 42, 0.08);
+      font-weight: 500;
+    }
+
+    .top-bar-left {
+      letter-spacing: 0.02em;
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .top-hours {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-socials {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .top-socials a {
+      color: #6C5B52;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .top-socials a:hover {
+      color: var(--brown-primary);
+      transform: translateY(-1px);
+    }
+
+    /* ─── MAIN HEADER & NAVIGATION ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 246, 240, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .brand-logo h1 {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--brown-dark);
+      line-height: 1;
+    }
+
+    .brand-logo span {
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      font-weight: 700;
+      color: var(--brown-primary);
+      text-transform: uppercase;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brown-dark);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.25s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: var(--brown-primary);
+      transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--brown-primary);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--brown-primary);
+      color: #FFFFFF;
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(110, 67, 42, 0.2);
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .btn-pill:hover {
+      background-color: var(--brown-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(110, 67, 42, 0.3);
+    }
+
+    .btn-pill:active {
+      transform: translateY(0);
+    }
+
+    .btn-pill-sm {
+      padding: 8px 22px;
+      font-size: 0.75rem;
+    }
+
+    .btn-pill-outline {
+      background-color: transparent;
+      color: var(--brown-primary);
+      border-color: var(--brown-primary);
+      box-shadow: none;
+    }
+
+    .btn-pill-outline:hover {
+      background-color: var(--brown-primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(110, 67, 42, 0.15);
+    }
+
+    /* ─── HERO SECTION ─── */
+    .hero-section {
+      position: relative;
+      background-color: #FAF5EE;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Subtle Tabletop Wood Grain & Glow Overlay */
+    .hero-bg-texture {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center, rgba(255, 255, 255, 0.95) 0%, rgba(245, 237, 226, 0.85) 60%, rgba(238, 227, 212, 0.95) 100%),
+        repeating-linear-gradient(90deg, rgba(110, 67, 42, 0.015) 0px, rgba(110, 67, 42, 0.015) 1px, transparent 1px, transparent 80px);
+      z-index: 1;
+    }
+
+    /* Food Arrangement Around Hero (Mirroring the Croissant, Muffin, Latte in Inspo) */
+    .hero-plate {
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: 0 24px 60px rgba(44, 30, 22, 0.18), 0 4px 16px rgba(44, 30, 22, 0.08);
+      z-index: 2;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      cursor: pointer;
+    }
+
+    .hero-plate img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      border: 6px solid #FFFFFF;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-plate:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .hero-plate.top-left {
+      width: 220px;
+      height: 220px;
+      top: -30px;
+      left: 40px;
+    }
+
+    .hero-plate.bottom-left {
+      width: 260px;
+      height: 260px;
+      bottom: -40px;
+      left: 50px;
+    }
+
+    .hero-plate.top-right {
+      width: 240px;
+      height: 240px;
+      top: -35px;
+      right: 50px;
+    }
+
+    .hero-plate.bottom-right {
+      width: 250px;
+      height: 250px;
+      bottom: -45px;
+      right: 40px;
+    }
+
+    /* Hero Center Content */
+    .hero-center {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero-script {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--brown-primary);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeInDown 0.8s ease forwards 0.2s;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+      font-weight: 800;
+      color: var(--brown-dark);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInUp 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.35s;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeInUp 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.5s;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.65s;
+    }
+
+    /* ─── SPLINE 3D INTEGRATION CONTAINER ─── */
+    .spline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 6px 16px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--brown-primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .spline-badge:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spline-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(44, 30, 22, 0.75);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .spline-drawer.active {
+      display: flex;
+    }
+
+    .spline-modal-content {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 880px;
+      height: 600px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      animation: zoomIn 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .spline-modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-cream);
+    }
+
+    .spline-modal-header h4 {
+      font-family: var(--font-heading);
+      color: var(--brown-dark);
+      font-size: 1.1rem;
+    }
+
+    .spline-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .spline-close-btn:hover {
+      color: var(--brown-dark);
+    }
+
+    .spline-canvas-wrap {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background: #FAF5EE;
+      position: relative;
+    }
+
+    .spline-canvas-wrap spline-viewer {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ─── SECTION STYLING (Matching Inspo) ─── */
+    .section-standard {
+      padding: 96px 40px;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+
+    .section-motif {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      color: var(--brown-primary);
+      font-size: 1.4rem;
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.1rem, 3.8vw, 3rem);
+      font-weight: 800;
+      color: var(--brown-dark);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* ─── WHY CHOOSE US (3-CARD GRID) ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .why-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(232, 222, 212, 0.7);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(110, 67, 42, 0.2);
+    }
+
+    .why-card-img-wrap {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background-color: var(--bg-light);
+    }
+
+    .why-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .why-card:hover .why-card-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .why-card-body {
+      padding: 32px 28px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .why-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 12px;
+    }
+
+    .why-card-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* ─── MENU HIGHLIGHTS (4-CARD GRID) ─── */
+    .menu-highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      max-width: 1160px;
+      margin: 0 auto 52px;
+    }
+
+    .menu-item-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(232, 222, 212, 0.7);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      cursor: pointer;
+    }
+
+    .menu-item-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(110, 67, 42, 0.25);
+    }
+
+    .menu-item-img-wrap {
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      background-color: var(--bg-light);
+    }
+
+    .menu-item-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .menu-item-card:hover .menu-item-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .menu-item-body {
+      padding: 22px 18px 24px;
+    }
+
+    .menu-item-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 6px;
+    }
+
+    .menu-item-price {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--brown-primary);
+    }
+
+    .menu-highlights-action {
+      text-align: center;
+    }
+
+    /* ─── VISIT US TODAY (SPLIT 2-COLUMN) ─── */
+    .visit-section {
+      background-color: #F4ECE1;
+      padding: 108px 40px;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .visit-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .visit-text-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .visit-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      font-weight: 800;
+      color: var(--brown-dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .visit-ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--brown-primary);
+    }
+
+    .visit-ornament-line {
+      width: 50px;
+      height: 1.5px;
+      background-color: var(--brown-primary);
+    }
+
+    .visit-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .visit-meta {
+      font-size: 0.92rem;
+      color: var(--brown-dark);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .visit-meta strong {
+      color: var(--brown-primary);
+    }
+
+    /* Inspo's 3 Vertical Portrait Images Side-by-Side */
+    .visit-photos-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .visit-photo-card {
+      height: 380px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 4px solid #FFFFFF;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .visit-photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .visit-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── STAY IN THE LOOP (NEWSLETTER IN SPO) ─── */
+    .newsletter-section {
+      background-color: var(--bg-cream);
+      padding: 72px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .newsletter-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .newsletter-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .newsletter-icon {
+      font-size: 2.2rem;
+      color: var(--brown-primary);
+      flex-shrink: 0;
+    }
+
+    .newsletter-info h4 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 4px;
+    }
+
+    .newsletter-info p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .newsletter-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      max-width: 440px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 13px 20px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--brown-dark);
+      outline: none;
+      transition: border-color 0.25s;
+    }
+
+    .newsletter-input:focus {
+      border-color: var(--brown-primary);
+    }
+
+    .newsletter-follow {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .newsletter-follow-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brown-dark);
+    }
+
+    .newsletter-social-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .newsletter-social-icons a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #F1E9DE;
+      color: var(--brown-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+    }
+
+    .newsletter-social-icons a:hover {
+      background: var(--brown-primary);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* ─── SITE FOOTER ─── */
+    footer {
+      background-color: var(--bg-cream);
+      padding: 32px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-inner a:hover {
+      color: var(--brown-primary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* ─── CHANNELS QUICK-DOCK (User Requirement for Multi-Channel Navigation) ─── */
+    .channels-dock {
+      position: fixed;
+      bottom: 24px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 12px 32px rgba(44, 30, 22, 0.15);
+      gap: 8px;
+    }
+
+    .dock-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown-primary);
+      padding-right: 6px;
+      border-right: 1px solid var(--border-subtle);
+    }
+
+    .dock-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .dock-btn:hover {
+      background: var(--bg-light);
+      color: var(--brown-primary);
+    }
+
+    .dock-btn.order-highlight {
+      background: var(--brown-primary);
+      color: #FFFFFF;
+    }
+
+    .dock-btn.order-highlight:hover {
+      background: var(--brown-hover);
+    }
+
+    /* ─── MODAL (Order Online Channels) ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(44, 30, 22, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      animation: popIn 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .modal-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+
+    .modal-box p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .modal-channel-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .channel-option-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      text-align: left;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .channel-option-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .channel-option-btn.panda {
+      background: linear-gradient(135deg, #D70F64, #B00A4E);
+      color: #FFFFFF;
+    }
+
+    .channel-option-btn.fb {
+      background: linear-gradient(135deg, #0866FF, #004DD4);
+      color: #FFFFFF;
+    }
+
+    .channel-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .channel-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: block;
+    }
+
+    .channel-sub {
+      font-size: 0.8rem;
+      opacity: 0.88;
+      font-weight: 400;
+    }
+
+    .modal-close {
+      margin-top: 24px;
+      display: inline-block;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .modal-close:hover {
+      color: var(--brown-dark);
+    }
+
+    /* ─── TOAST NOTIFICATION ─── */
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--brown-dark);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 10001;
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      box-shadow: var(--shadow-md);
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.92) translateY(14px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .reveal-on-scroll.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE BREAKPOINTS ─── */
+    @media (max-width: 1024px) {
+      .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .menu-highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .newsletter-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .newsletter-follow {
+        align-items: flex-start;
       }
     }
-  </script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 8px 20px;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+      .nav-container {
+        padding: 0 20px;
+        height: 72px;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .hero-plate {
+        display: none;
+      }
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .menu-highlights-grid {
+        grid-template-columns: 1fr;
+      }
+      .visit-photos-col {
+        grid-template-columns: 1fr;
+      }
+      .visit-photo-card {
+        height: 260px;
+      }
+      .channels-dock {
+        bottom: 12px;
+        right: 12px;
+        left: 12px;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
-<body class="bg-[#FAF6F0] text-[#2C211B] antialiased selection:bg-[#C88A42] selection:text-white">
+<body>
 
-  <!-- 1. TOP LIVE STATUS BAR -->
-  <header class="bg-[#28170F] text-[#FAF6F0] text-xs py-2 px-4 border-b border-[#3C2415] relative z-40">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center sm:text-left">
-      <div class="flex items-center gap-2 live-status-badge">
-        <span class="status-dot open"></span>
-        <span class="text-emerald-400 font-semibold">Open Daily</span>
-        <span class="text-stone-300">· 9:00 AM – 10:00 PM</span>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      Good Seafood, Good Mood
+    </div>
+    <div class="top-bar-right">
+      <div class="top-hours">
+        <span>🕒</span> Mon–Thu: 10:00 AM – 9:00 PM &nbsp;|&nbsp; Fri–Sun: 10:00 AM – 10:00 PM
       </div>
+      <div class="top-socials">
+        <a href="https://www.facebook.com/p/Hungry-Pair-61587575466576/" target="_blank" title="Facebook">📘</a>
+        <a href="https://m.me/61587575466576" target="_blank" title="Messenger">💬</a>
+        <a href="https://maps.app.goo.gl/1zfrLJ3LNA9QNQSs8" target="_blank" title="Google Maps">📍</a>
+      </div>
+    </div>
+  </div>
 
-      <div class="flex items-center gap-4 text-stone-300 text-[11px]">
-        <span class="flex items-center gap-1">
-          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-          <span>219 JP Rizal St., Poblacion VI, Calamba City (Beside Bahay ni Rizal)</span>
-        </span>
-        <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-           class="text-[#F48FB1] hover:text-white flex items-center gap-1 font-bold underline hidden md:flex">
-          <span>Deliver via foodpanda</span>
-          <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
-      </div>
+  <!-- MAIN HEADER (Mirroring CAFÉ / COFFEE & MORE in Inspo) -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <h1>HUNGRY PAIR</h1>
+        <span>SEAFOOD &amp; MORE</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="btn-pill" onclick="openOrderModal()">Order Online</button>
     </div>
   </header>
 
-  <!-- 2. STICKY MAIN HEADER & NAVIGATION -->
-  <nav class="sticky top-0 z-30 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#DFD3C3]/80 transition duration-200">
-    <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-3">
+  <!-- HERO SECTION (Exact composition of the inspiration mockup!) -->
+  <section class="hero-section">
+    <div class="hero-bg-texture"></div>
+
+    <!-- 4 Circular Decorative Plates Framing the Hero (Matching Croissant, Latte, Pastry, Muffin) -->
+    <div class="hero-plate top-left" onclick="window.location.href='menu.html'" title="Explore Garlic Butter Shrimp">
+      <img src="garlic_shrimp.jpg" alt="Garlic Butter Shrimp" />
+    </div>
+    <div class="hero-plate bottom-left" onclick="window.location.href='menu.html'" title="Explore Grilled Squid">
+      <img src="grilled_squid.jpg" alt="Charcoal-Grilled Squid" />
+    </div>
+    <div class="hero-plate top-right" onclick="window.location.href='menu.html'" title="Explore Steamed Crabs">
+      <img src="steamed_crabs.jpg" alt="Steamed Blue Crabs" />
+    </div>
+    <div class="hero-plate bottom-right" onclick="window.location.href='menu.html'" title="Explore Baked Tahong">
+      <img src="buttered_tahong.jpg" alt="Baked Tahong with Butter" />
+    </div>
+
+    <!-- Center Hero Content -->
+    <div class="hero-center">
+      <div class="hero-script">Welcome to Hungry Pair</div>
+      <h2 class="hero-title">Good Seafood,<br>Great Moments</h2>
+      <p class="hero-subtitle">Savor handcrafted seafood catches, fresh grills, and cozy vibes. Your perfect culinary escape in Calamba, Laguna.</p>
       
-      <!-- Persistent Header Back Button (Allows instant back click anytime!) -->
-      <div class="flex items-center gap-2">
-        <button id="headerBackBtn" class="header-back-btn back-trigger opacity-0 pointer-events-none transition duration-200" title="Click back anytime">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          <span class="text-xs">Back</span>
-        </button>
-
-        <a href="#home" class="flex items-center gap-3 group" onclick="switchChannel('home')">
-          <div class="relative">
-            <img src="assets/images/logo.png" alt="Grind. Logo" class="h-10 w-10 object-contain rounded-full shadow-sm bg-white p-0.5 border border-stone-200 group-hover:rotate-6 transition duration-300">
-            <!-- Animated steam bubbles -->
-            <span class="absolute -top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#C88A42] opacity-70 steam-wave-1"></span>
-          </div>
-          <div>
-            <span class="font-cinzel text-xl font-extrabold tracking-wider text-[#28170F] block leading-tight">GRIND.</span>
-            <span class="text-[9px] tracking-widest uppercase font-semibold text-[#C88A42] block">More Than Just Coffee</span>
-          </div>
-        </a>
+      <div class="hero-actions">
+        <!-- Direct button redirecting to Menu Channel -->
+        <a href="menu.html" class="btn-pill">View Our Menu</a>
+        <!-- Channel Button to Order Online -->
+        <button class="btn-pill btn-pill-outline" onclick="openOrderModal()">Order Online</button>
       </div>
 
-      <!-- Desktop Channel Navigation -->
-      <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-stone-700">
-        <button onclick="switchChannel('home')" class="hover:text-[#C88A42] transition">Home</button>
-        <button onclick="switchChannel('specialty')" class="hover:text-[#C88A42] transition text-[#C88A42] font-bold flex items-center gap-1">
-          <i data-lucide="star" class="w-3.5 h-3.5 fill-[#C88A42]"></i>
-          <span>Specialty Menu</span>
-        </button>
-        <button onclick="switchChannel('menu')" class="hover:text-[#C88A42] transition">Full Menu</button>
-        <button onclick="switchChannel('quiz')" class="hover:text-[#C88A42] transition flex items-center gap-1">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-          <span>Drink Matcher</span>
-        </button>
-        <button onclick="switchChannel('story')" class="hover:text-[#C88A42] transition">Our Story</button>
-        <button onclick="switchChannel('visit')" class="hover:text-[#C88A42] transition">Branches & Hours</button>
-      </div>
-
-      <!-- Header Action Buttons -->
-      <div class="flex items-center gap-2">
-        <button onclick="openSheetModal()" 
-                class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-stone-300 text-xs font-semibold text-stone-700 hover:border-[#4A2E1B] hover:bg-stone-50 transition">
-          <i data-lucide="book-open" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-          <span>Original Menu</span>
-        </button>
-
-        <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition shadow-sm btn-foodpanda-pulse">
-          <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-          <span>Order Online</span>
-        </a>
-      </div>
-
-    </div>
-  </nav>
-
-  <!-- 3. HERO SECTION (INSPIRED BY THE TAVERN COFFEE HOUSE) -->
-  <section id="home" class="relative overflow-hidden pt-8 pb-14 md:py-20 px-4 border-b border-[#DFD3C3]/60 bg-gradient-to-b from-[#FAF6F0] via-[#F4ECE1] to-[#FAF6F0]">
-    
-    <!-- Floating Ambient Elements for Visual Liveliness -->
-    <div class="absolute top-10 left-10 w-24 h-24 rounded-full bg-amber-500/10 blur-2xl pointer-events-none animate-float"></div>
-    <div class="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-[#4A2E1B]/10 blur-2xl pointer-events-none animate-float-reverse"></div>
-
-    <div class="max-w-5xl mx-auto text-center relative z-10">
-
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-[#DFD3C3] shadow-sm text-xs font-bold text-[#4A2E1B] mb-5 gold-shimmer">
-        <span class="w-2 h-2 rounded-full bg-[#C88A42]"></span>
-        <span>A Third Space in Historic Calamba · Beside Bahay ni Rizal</span>
-      </div>
-
-      <!-- Main Headline -->
-      <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-black text-[#28170F] tracking-tight leading-tight md:leading-none max-w-4xl mx-auto">
-        MORE THAN JUST COFFEE.
-      </h1>
-
-      <p class="font-playfair italic text-lg sm:text-2xl text-[#C88A42] mt-3 font-medium">
-        Where rich brews, warm stories, and comfort food meet.
-      </p>
-
-      <p class="font-sans text-sm sm:text-base text-stone-600 max-w-2xl mx-auto mt-4 leading-relaxed">
-        Step into your cozy neighborhood haven in Poblacion, Calamba City. From local heritage favorites like our <strong>Velvet Muscovado</strong> and <strong>Spanish Latte</strong> to artisan tub cheesecakes, pasta, and rice bowls — we're brewing moments of joy, one cup at a time.
-      </p>
-
-      <!-- Action Buttons -->
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
-        <button onclick="switchChannel('specialty')" 
-                class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#C88A42] text-white text-sm font-bold shadow-md hover:bg-[#b07835] transition flex items-center justify-center gap-2">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
-          <span>Explore Specialty Menu</span>
-        </button>
-
-        <button onclick="switchChannel('menu')" 
-                class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#4A2E1B] text-white text-sm font-bold shadow-md hover:bg-[#341F12] transition flex items-center justify-center gap-2">
-          <i data-lucide="coffee" class="w-4 h-4 text-amber-200"></i>
-          <span>Full Menu (80+ Items)</span>
-        </button>
-
-        <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer"
-           class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#D70F64] text-white text-sm font-bold shadow-md hover:bg-[#b00c52] transition flex items-center justify-center gap-2 btn-foodpanda-pulse">
-          <i data-lucide="utensils" class="w-4 h-4"></i>
-          <span>Order on foodpanda</span>
-        </a>
-      </div>
-
-      <!-- Quick Feature Highlights -->
-      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
-        <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-xl border border-stone-200/80 shadow-xs hover:border-[#C88A42] transition">
-          <div class="flex items-center gap-2 text-[#C88A42] mb-1">
-            <i data-lucide="award" class="w-4 h-4"></i>
-            <span class="text-xs font-bold uppercase tracking-wider text-stone-900">Craft Coffee</span>
-          </div>
-          <p class="text-[11px] text-stone-500 leading-snug">Espressos, cold brews, and signature house creations.</p>
-        </div>
-
-        <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-xl border border-stone-200/80 shadow-xs hover:border-[#C88A42] transition">
-          <div class="flex items-center gap-2 text-[#C88A42] mb-1">
-            <i data-lucide="cake" class="w-4 h-4"></i>
-            <span class="text-xs font-bold uppercase tracking-wider text-stone-900">Tub Cheesecakes</span>
-          </div>
-          <p class="text-[11px] text-stone-500 leading-snug">Lotus Biscoff, Pistachio, Matcha & Salted Caramel at ₱155.</p>
-        </div>
-
-        <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-xl border border-stone-200/80 shadow-xs hover:border-[#C88A42] transition">
-          <div class="flex items-center gap-2 text-[#C88A42] mb-1">
-            <i data-lucide="utensils-crossed" class="w-4 h-4"></i>
-            <span class="text-xs font-bold uppercase tracking-wider text-stone-900">Pastas & Bowls</span>
-          </div>
-          <p class="text-[11px] text-stone-500 leading-snug">Chicken Pesto, Beef Lasagna, Pork Humba & Salpicao.</p>
-        </div>
-
-        <div class="bg-white/80 backdrop-blur-sm p-3.5 rounded-xl border border-stone-200/80 shadow-xs hover:border-[#C88A42] transition">
-          <div class="flex items-center gap-2 text-[#C88A42] mb-1">
-            <i data-lucide="map-pin" class="w-4 h-4"></i>
-            <span class="text-xs font-bold uppercase tracking-wider text-stone-900">Historic Spot</span>
-          </div>
-          <p class="text-[11px] text-stone-500 leading-snug">Right beside Bahay ni Rizal on 219 JP Rizal St.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 4. FEATURED CROWD FAVORITES CAROUSEL / HIGHLIGHTS (WITH FULL IMAGES ADDED) -->
-  <section class="py-12 px-4 max-w-6xl mx-auto">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+      <!-- Interactive Spline 3D Integration Badge -->
       <div>
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C88A42] flex items-center gap-1">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          <span>Curated Selections</span>
-        </span>
-        <h2 class="font-cinzel text-2xl sm:text-3xl font-black text-[#28170F]">Crowd Favorites & Signatures</h2>
-      </div>
-      <button onclick="switchChannel('menu')" class="text-xs font-bold text-[#4A2E1B] hover:text-[#C88A42] flex items-center gap-1 transition">
-        <span>View all 80+ items</span>
-        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-      </button>
-    </div>
-
-    <!-- 4 High-Res Cards with Gorgeous Visuals -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      
-      <!-- Feature 1: Velvet Muscovado (Now with Image!) -->
-      <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition duration-300 group cursor-pointer" onclick="openItemModal('hc7')">
-        <div>
-          <div class="h-40 rounded-xl overflow-hidden mb-3 bg-stone-100 relative">
-            <img src="assets/images/velvet-muscovado.jpg" alt="Velvet Muscovado" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-2 left-2 bg-[#4A2E1B]/90 backdrop-blur-xs text-amber-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-              ⭐ House Signature
-            </span>
-          </div>
-          <h3 class="font-cinzel font-bold text-base text-stone-900 group-hover:text-[#C88A42] transition">Velvet Muscovado</h3>
-          <p class="text-xs text-stone-500 mt-1 leading-relaxed">Local Calamba unrefined muscovado sugar blended with bold espresso & cream.</p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-          <span class="text-sm font-bold text-[#4A2E1B]">₱150 / ₱165</span>
-          <span class="text-xs font-semibold text-[#C88A42] flex items-center gap-1 group-hover:translate-x-1 transition">
-            <span>Details</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-          </span>
-        </div>
-      </div>
-
-      <!-- Feature 2: Biscoff Tub Cheesecake -->
-      <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition duration-300 group cursor-pointer" onclick="openItemModal('ck1')">
-        <div>
-          <div class="h-40 rounded-xl overflow-hidden mb-3 bg-stone-100 relative">
-            <img src="assets/images/biscoff-cheesecake-artisan.jpg" alt="Biscoff Cheesecake" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-2 left-2 bg-[#D70F64]/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-              🍰 Bestseller Tub
-            </span>
-          </div>
-          <h3 class="font-cinzel font-bold text-base text-stone-900 group-hover:text-[#C88A42] transition">Biscoff Cheesecake</h3>
-          <p class="text-xs text-stone-500 mt-1 leading-relaxed">Speculoos cookie butter melted over chilled, ultra-creamy artisanal cheesecake.</p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-          <span class="text-sm font-bold text-[#4A2E1B]">₱155 each</span>
-          <span class="text-xs font-semibold text-[#C88A42] flex items-center gap-1 group-hover:translate-x-1 transition">
-            <span>Details</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-          </span>
-        </div>
-      </div>
-
-      <!-- Feature 3: Chicken Pesto Pasta -->
-      <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition duration-300 group cursor-pointer" onclick="openItemModal('pa1')">
-        <div>
-          <div class="h-40 rounded-xl overflow-hidden mb-3 bg-stone-100 relative">
-            <img src="assets/images/food/chicken-pesto.png" alt="Chicken Pesto Pasta" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-2 left-2 bg-emerald-800/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-              🍝 Comfort Food
-            </span>
-          </div>
-          <h3 class="font-cinzel font-bold text-base text-stone-900 group-hover:text-[#C88A42] transition">Chicken Pesto Pasta</h3>
-          <p class="text-xs text-stone-500 mt-1 leading-relaxed">Al dente pasta tossed in vibrant basil pesto, roasted chicken & parmesan.</p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-          <span class="text-sm font-bold text-[#4A2E1B]">₱160 each</span>
-          <span class="text-xs font-semibold text-[#C88A42] flex items-center gap-1 group-hover:translate-x-1 transition">
-            <span>Details</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-          </span>
-        </div>
-      </div>
-
-      <!-- Feature 4: Spanish Latte (Now with Image!) -->
-      <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow-sm flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition duration-300 group cursor-pointer" onclick="openItemModal('c7')">
-        <div>
-          <div class="h-40 rounded-xl overflow-hidden mb-3 bg-stone-100 relative">
-            <img src="assets/images/spanish-latte.jpg" alt="Spanish Latte" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-2 left-2 bg-amber-700/90 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-              ☕ All-Time Favorite
-            </span>
-          </div>
-          <h3 class="font-cinzel font-bold text-base text-stone-900 group-hover:text-[#C88A42] transition">Spanish Latte</h3>
-          <p class="text-xs text-stone-500 mt-1 leading-relaxed">Sweetened condensed milk, chilled milk, and smooth double espresso.</p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-          <span class="text-sm font-bold text-[#4A2E1B]">₱120 / ₱135</span>
-          <span class="text-xs font-semibold text-[#C88A42] flex items-center gap-1 group-hover:translate-x-1 transition">
-            <span>Details</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-          </span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 5. NEW: SPECIALTY MENU (BARISTA'S RESERVE & SIGNATURE SHOWCASE) -->
-  <section id="specialty" class="py-16 px-4 bg-gradient-to-b from-[#28170F] via-[#351E13] to-[#28170F] text-white relative overflow-hidden">
-    
-    <!-- Background Accents -->
-    <div class="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#C88A42]/10 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-[#E0A664]/10 blur-3xl pointer-events-none"></div>
-
-    <div class="max-w-6xl mx-auto relative z-10">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#C88A42]/20 border border-[#C88A42]/40 text-amber-300 text-xs font-bold tracking-widest uppercase mb-3">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          <span>Barista's Reserve</span>
-        </span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-black text-white">THE SPECIALTY MENU</h2>
-        <p class="font-playfair italic text-stone-300 text-base sm:text-lg mt-2">
-          Handcrafted recipes uniquely created to elevate your coffee experience in Calamba.
-        </p>
-        <div class="ornate-divider my-4">
-          <span class="ornate-diamond bg-amber-400"></span>
-        </div>
-      </div>
-
-      <!-- Specialty Grid: 6 Masterpiece Creations -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Specialty 1: Velvet Muscovado -->
-        <div class="specialty-card bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
-          <div>
-            <div class="h-52 rounded-xl overflow-hidden mb-4 bg-stone-900 relative">
-              <img src="assets/images/velvet-muscovado.jpg" alt="Velvet Muscovado" class="specialty-img w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 bg-[#C88A42] text-white rounded-full">
-                👑 Signature Drink
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-amber-300 transition">Velvet Muscovado</h3>
-              <span class="text-sm font-bold text-amber-400">₱150 / ₱165</span>
-            </div>
-
-            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
-              Unrefined sugarcane muscovado sugar slowly dissolved into velvety whole milk and layered with dark double espresso. Rich, buttery toffee aromatics.
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-stone-400">
-              <span class="px-2 py-0.5 rounded bg-white/10">🔥 Roast: Bold</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">🍯 Sweetness: Medium</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">✨ Local Heritage</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openItemModal('hc7')" class="text-xs font-semibold text-amber-300 hover:text-white transition flex items-center gap-1">
-              <span>View Recipe Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-               class="px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="shopping-bag" class="w-3 h-3"></i>
-              <span>Order</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Specialty 2: White Cream Cold Brew -->
-        <div class="specialty-card bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
-          <div>
-            <div class="h-52 rounded-xl overflow-hidden mb-4 bg-stone-900 relative">
-              <img src="assets/images/white-cream-cold-brew.jpg" alt="White Cream Cold Brew" class="specialty-img w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 bg-amber-600 text-white rounded-full">
-                ☕ Cold Brew Art
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-amber-300 transition">White Cream Cold Brew</h3>
-              <span class="text-sm font-bold text-amber-400">₱130 / ₱145</span>
-            </div>
-
-            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
-              18-hour cold steeped coffee, super low acidity, crowned with a dense, decadent layer of salted vanilla sweet cream slowly cascading downward.
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-stone-400">
-              <span class="px-2 py-0.5 rounded bg-white/10">❄️ Steep: 18 Hours</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">🧈 Salted Sweet Cream</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">⚡ High Focus</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openItemModal('hc3')" class="text-xs font-semibold text-amber-300 hover:text-white transition flex items-center gap-1">
-              <span>View Recipe Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-               class="px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="shopping-bag" class="w-3 h-3"></i>
-              <span>Order</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Specialty 3: Strawberry Matcha Layered Latte -->
-        <div class="specialty-card bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
-          <div>
-            <div class="h-52 rounded-xl overflow-hidden mb-4 bg-stone-900 relative">
-              <img src="assets/images/strawberry-matcha.jpg" alt="Strawberry Matcha" class="specialty-img w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 bg-emerald-600 text-white rounded-full">
-                🍵 Tri-Layer Aesthetic
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-amber-300 transition">Strawberry Matcha</h3>
-              <span class="text-sm font-bold text-amber-400">₱160 / ₱175</span>
-            </div>
-
-            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
-              Vivid natural colors and sensational flavor balance: fresh crushed strawberry compote base, whole milk, and emerald ceremonial Japanese matcha whisked smooth.
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-stone-400">
-              <span class="px-2 py-0.5 rounded bg-white/10">🍓 Real Strawberries</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">🍵 Ceremonial Matcha</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">📸 Instagram Star</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openItemModal('ms2')" class="text-xs font-semibold text-amber-300 hover:text-white transition flex items-center gap-1">
-              <span>View Recipe Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-               class="px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="shopping-bag" class="w-3 h-3"></i>
-              <span>Order</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Specialty 4: Cafe Shakerato -->
-        <div class="specialty-card bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
-          <div>
-            <div class="h-52 rounded-xl overflow-hidden mb-4 bg-stone-900 relative">
-              <img src="assets/images/cafe-shakerato.jpg" alt="Cafe Shakerato" class="specialty-img w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 bg-amber-800 text-white rounded-full">
-                🍸 Barista Creation
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-amber-300 transition">Cafe Shakerato</h3>
-              <span class="text-sm font-bold text-amber-400">₱130</span>
-            </div>
-
-            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
-              Italian bar tradition: double espresso vigorously shaken with ice and citrus zest in a cocktail shaker, served in an elegant glass with a luxurious golden froth head.
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-stone-400">
-              <span class="px-2 py-0.5 rounded bg-white/10">🍸 Shaken Aerated</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">🍊 Citrus Notes</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">⚡ Pure Crema</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openItemModal('hc1')" class="text-xs font-semibold text-amber-300 hover:text-white transition flex items-center gap-1">
-              <span>View Recipe Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-               class="px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="shopping-bag" class="w-3 h-3"></i>
-              <span>Order</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Specialty 5: Spanish Latte Supreme -->
-        <div class="specialty-card bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
-          <div>
-            <div class="h-52 rounded-xl overflow-hidden mb-4 bg-stone-900 relative">
-              <img src="assets/images/spanish-latte.jpg" alt="Spanish Latte" class="specialty-img w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 bg-amber-700 text-white rounded-full">
-                ☕ #1 Top Bestseller
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-amber-300 transition">Spanish Latte Supreme</h3>
-              <span class="text-sm font-bold text-amber-400">₱120 / ₱135</span>
-            </div>
-
-            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
-              Silky sweetened condensed milk, fresh cold milk, and intensely roasted espresso. The undisputed customer-favorite drink in Calamba.
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-stone-400">
-              <span class="px-2 py-0.5 rounded bg-white/10">🥛 Condensed Cream</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">⚡ Smooth Punch</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">⭐ Crowd Pick</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openItemModal('c7')" class="text-xs font-semibold text-amber-300 hover:text-white transition flex items-center gap-1">
-              <span>View Recipe Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-               class="px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="shopping-bag" class="w-3 h-3"></i>
-              <span>Order</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Specialty 6: Lotus Biscoff Tub Cheesecake -->
-        <div class="specialty-card bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
-          <div>
-            <div class="h-52 rounded-xl overflow-hidden mb-4 bg-stone-900 relative">
-              <img src="assets/images/biscoff-cheesecake-artisan.jpg" alt="Biscoff Tub Cheesecake" class="specialty-img w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <span class="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 bg-rose-600 text-white rounded-full">
-                🍰 Signature Tub
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between">
-              <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-amber-300 transition">Lotus Biscoff Tub</h3>
-              <span class="text-sm font-bold text-amber-400">₱155 each</span>
-            </div>
-
-            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
-              Crushed speculoos biscuit base, luscious dense cheesecake cream, melted warm Biscoff spread, and a whole crunchy Lotus biscuit on top.
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-stone-400">
-              <span class="px-2 py-0.5 rounded bg-white/10">🍪 Speculoos Crust</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">🧀 Dense Cream</span>
-              <span class="px-2 py-0.5 rounded bg-white/10">🍨 Ready-To-Eat Tub</span>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-            <button onclick="openItemModal('ck1')" class="text-xs font-semibold text-amber-300 hover:text-white transition flex items-center gap-1">
-              <span>View Recipe Details</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-            <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-               class="px-3.5 py-1.5 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="shopping-bag" class="w-3 h-3"></i>
-              <span>Order</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Quick Delivery Banner inside Specialty Section -->
-      <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-amber-900/40 via-stone-900/60 to-amber-900/40 border border-[#C88A42]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-[#C88A42]/20 flex items-center justify-center shrink-0">
-            <i data-lucide="truck" class="w-6 h-6 text-amber-300"></i>
-          </div>
-          <div>
-            <h4 class="font-cinzel text-lg font-bold text-white">Can't make it to Poblacion today?</h4>
-            <p class="text-xs text-stone-300">All specialty drinks and tub cheesecakes are packed safely for foodpanda delivery.</p>
-          </div>
-        </div>
-        <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer"
-           class="px-6 py-3 rounded-full bg-[#D70F64] text-white text-xs font-bold hover:bg-[#b00c52] transition flex items-center gap-2 shrink-0 shadow-lg btn-foodpanda-pulse">
-          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-          <span>Order Specialties on foodpanda</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 6. THE MAIN MENU CHANNEL SECTION -->
-  <section id="menu" class="py-14 px-4 bg-stone-100/60 border-t border-b border-[#DFD3C3]/80">
-    <div class="max-w-6xl mx-auto">
-      
-      <!-- Vintage Section Title -->
-      <div class="text-center max-w-2xl mx-auto mb-8">
-        <div class="ornate-divider">
-          <span class="ornate-diamond"></span>
-        </div>
-        <span class="text-xs font-bold uppercase tracking-widest text-[#C88A42]">Crafted With Care</span>
-        <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-[#28170F] mt-1">OUR FULL MENU</h2>
-        <p class="font-playfair italic text-stone-600 text-sm sm:text-base mt-2">
-          From slow-dripped cold brews to hearty rice meals, explore our complete selection.
-        </p>
-
-        <!-- View Authentic Vintage Menu Button -->
-        <div class="mt-4 flex items-center justify-center gap-3">
-          <button onclick="openSheetModal()" 
-                  class="open-sheets-btn px-5 py-2.5 rounded-full bg-white border border-[#4A2E1B] text-[#4A2E1B] text-xs font-bold hover:bg-[#4A2E1B] hover:text-white transition shadow-sm flex items-center gap-2">
-            <i data-lucide="image" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-            <span>View Original Framed Menu Boards</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Real-Time Menu Search & Filter Bar -->
-      <div class="max-w-xl mx-auto mb-6">
-        <div class="relative">
-          <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
-          <input type="text" id="menuSearch" 
-                 placeholder="Search 80+ drinks, pasta, cheesecakes, frappes..." 
-                 class="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-stone-200 text-sm focus:outline-none focus:border-[#C88A42] focus:ring-1 focus:ring-[#C88A42] shadow-xs">
-        </div>
-      </div>
-
-      <!-- Horizontal Scrollable Category Pills -->
-      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8" id="categoryPills">
-        <!-- Injected via app.js -->
-      </div>
-
-      <!-- Interactive Menu Items Grid -->
-      <div id="menuGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Injected via app.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 7. "FIND YOUR GRIND" BEVERAGE MATCHER QUIZ CHANNEL -->
-  <section id="quiz" class="py-14 px-4 max-w-4xl mx-auto">
-    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-[#DFD3C3] shadow-md relative overflow-hidden">
-      
-      <div class="text-center max-w-lg mx-auto mb-8">
-        <span class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-[#C88A42] bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          <span>Interactive Matcher</span>
-        </span>
-        <h2 class="font-cinzel text-2xl sm:text-3xl font-extrabold text-[#28170F] mt-2">Find Your Grind</h2>
-        <p class="text-xs sm:text-sm text-stone-500 mt-1">Can't decide? Answer 3 quick taps to find your craving!</p>
-        
-        <!-- Progress Bar -->
-        <div class="w-48 h-1.5 bg-stone-100 rounded-full mx-auto mt-4 overflow-hidden">
-          <div id="quizProgressFill" class="h-full bg-[#C88A42] w-1/3 transition-all duration-300"></div>
-        </div>
-      </div>
-
-      <!-- Steps Container -->
-      <div id="quizStepsContainer">
-        
-        <!-- Step 1: Vibe -->
-        <div class="quiz-step" data-step="1">
-          <h3 class="text-sm font-bold text-center text-stone-800 mb-4">Step 1: What are you in the mood for?</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button data-quiz-vibe="energy" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-left transition flex items-center gap-3">
-              <span class="text-2xl">⚡</span>
-              <div>
-                <span class="font-bold text-sm text-stone-900 block">Bold Energy Boost</span>
-                <span class="text-xs text-stone-500">I need rich espresso & focus</span>
-              </div>
-            </button>
-
-            <button data-quiz-vibe="sweet" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-left transition flex items-center gap-3">
-              <span class="text-2xl">🍯</span>
-              <div>
-                <span class="font-bold text-sm text-stone-900 block">Sweet & Creamy Comfort</span>
-                <span class="text-xs text-stone-500">Caramel, condensed milk or chocolate</span>
-              </div>
-            </button>
-
-            <button data-quiz-vibe="fruity" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-left transition flex items-center gap-3">
-              <span class="text-2xl">🍓</span>
-              <div>
-                <span class="font-bold text-sm text-stone-900 block">Refreshing & Fruity</span>
-                <span class="text-xs text-stone-500">Matcha, strawberry or iced fruit teas</span>
-              </div>
-            </button>
-
-            <button data-quiz-vibe="food" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-left transition flex items-center gap-3">
-              <span class="text-2xl">🍝</span>
-              <div>
-                <span class="font-bold text-sm text-stone-900 block">Hungry for Comfort Food</span>
-                <span class="text-xs text-stone-500">Cheesy pasta, tub cheesecake or rice</span>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 2: Temperature -->
-        <div class="quiz-step hidden" data-step="2">
-          <h3 class="text-sm font-bold text-center text-stone-800 mb-4">Step 2: How do you like your temperature?</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <button data-quiz-temp="iced" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-center transition">
-              <span class="text-3xl block mb-1">❄️</span>
-              <span class="font-bold text-sm text-stone-900 block">Iced & Crisp</span>
-            </button>
-
-            <button data-quiz-temp="blended" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-center transition">
-              <span class="text-3xl block mb-1">🍧</span>
-              <span class="font-bold text-sm text-stone-900 block">Frosty Blended Frappe</span>
-            </button>
-
-            <button data-quiz-temp="hot" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-center transition">
-              <span class="text-3xl block mb-1">☕</span>
-              <span class="font-bold text-sm text-stone-900 block">Hot & Steamy</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 3: Beverage Type -->
-        <div class="quiz-step hidden" data-step="3">
-          <h3 class="text-sm font-bold text-center text-stone-800 mb-4">Step 3: Coffee or Non-Coffee?</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <button data-quiz-type="coffee" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-center transition">
-              <span class="text-3xl block mb-1">☕</span>
-              <span class="font-bold text-sm text-stone-900 block">Espresso / Coffee</span>
-            </button>
-
-            <button data-quiz-type="tea" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-center transition">
-              <span class="text-3xl block mb-1">🍵</span>
-              <span class="font-bold text-sm text-stone-900 block">Matcha or Fruit Tea</span>
-            </button>
-
-            <button data-quiz-type="chocolate" class="p-4 rounded-xl border border-stone-200 hover:border-[#C88A42] hover:bg-amber-50/50 text-center transition">
-              <span class="text-3xl block mb-1">🍫</span>
-              <span class="font-bold text-sm text-stone-900 block">Sweet & Caffeine-Free</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Quiz Result Container (Initially Hidden) -->
-      <div id="quizResult" class="hidden">
-        <div id="quizResultCard">
-          <!-- Injected via app.js -->
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 8. OUR STORY & THIRD SPACES SECTION (INSPIRED BY TAVERN COFFEE) -->
-  <section id="story" class="py-14 px-4 bg-gradient-to-b from-[#FAF6F0] via-[#F4ECE1] to-[#FAF6F0] border-t border-b border-[#DFD3C3]/80">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        
-        <!-- Story Copy -->
-        <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-[#C88A42]">Calamba Heritage & Community</span>
-          <h2 class="font-cinzel text-3xl sm:text-4xl font-black text-[#28170F] mt-1 leading-tight">
-            WHY THIRD SPACES MATTER
-          </h2>
-          <p class="font-playfair italic text-stone-700 text-base mt-2">
-            "First is your home. Second is your workplace. The third is where your soul unwinds."
-          </p>
-
-          <div class="space-y-4 text-xs sm:text-sm text-stone-600 mt-4 leading-relaxed">
-            <p>
-              Nestled right beside the historic <strong>Bahay ni Rizal</strong> in Poblacion, Calamba City, <strong>Grind. Coffee</strong> was built with a clear purpose: to be more than just a place to buy a drink.
-            </p>
-            <p>
-              We are a sanctuary where students study in peace, creators find inspiration, friends catch up after long days, and travelers rest in the heart of Dr. Jose Rizal's hometown. Every cup is brewed with locally inspired recipes — from unrefined muscovado sugar to premium matcha and fresh artisan breads.
-            </p>
-            <p class="font-semibold text-[#4A2E1B]">
-              Whether you stay for five minutes or five hours, our doors are always open to welcome you home.
-            </p>
-          </div>
-
-          <div class="mt-6 flex flex-wrap items-center gap-4 text-xs font-bold text-stone-700">
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-stone-200">
-              <i data-lucide="wifi" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-              <span>Cozy Study Vibe</span>
-            </div>
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-stone-200">
-              <i data-lucide="music" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-              <span>Warm Acoustic Ambiance</span>
-            </div>
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-stone-200">
-              <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500"></i>
-              <span>Locally Owned & Loved</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Visual Emblem & Brand Card -->
-        <div class="bg-white p-8 rounded-3xl border border-[#DFD3C3] shadow-md text-center relative">
-          <div class="w-24 h-24 mx-auto rounded-full bg-stone-50 border border-stone-200 p-2 shadow-inner mb-4 flex items-center justify-center">
-            <img src="assets/images/logo.png" alt="Grind Coffee Emblem" class="w-full h-full object-contain">
-          </div>
-
-          <h3 class="font-cinzel text-xl font-bold text-stone-900">GRIND.</h3>
-          <p class="text-xs font-bold tracking-widest text-[#C88A42] uppercase">More Than Just Coffee</p>
-          
-          <div class="mt-6 pt-6 border-t border-stone-100 text-left space-y-3 text-xs text-stone-600">
-            <div class="flex items-start gap-2">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#C88A42] shrink-0 mt-0.5"></i>
-              <div>
-                <strong class="text-stone-800 block">Poblacion Main Branch:</strong>
-                <span>219 JP Rizal St., Poblacion VI, Calamba City, Laguna (Beside Bahay ni Rizal)</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-2">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#C88A42] shrink-0 mt-0.5"></i>
-              <div>
-                <strong class="text-stone-800 block">Makiling Branch:</strong>
-                <span>Pueblo Laguna, Makiling, Calamba City (Beside WalterMart Makiling)</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 flex items-center justify-center gap-3">
-            <a href="https://www.facebook.com/profile.php?id=61579168303425" target="_blank" rel="noopener noreferrer" 
-               class="px-4 py-2 rounded-full bg-[#1877F2] text-white text-xs font-bold hover:bg-[#1565C0] transition flex items-center gap-1.5 shadow-xs">
-              <i data-lucide="facebook" class="w-3.5 h-3.5"></i>
-              <span>Follow on Facebook</span>
-            </a>
-          </div>
-        </div>
-
+        <button class="spline-badge" onclick="openSplineDrawer()">
+          <span>✨</span> Experience 3D Spline Interactive
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- 9. STORE LOCATOR & VISIT CHANNEL -->
-  <section id="visit" class="py-14 px-4 max-w-6xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <span class="text-xs font-bold uppercase tracking-widest text-[#C88A42]">Plan Your Visit</span>
-      <h2 class="font-cinzel text-3xl font-extrabold text-[#28170F] mt-1">OUR BRANCHES & LOCATION</h2>
-      <p class="text-xs sm:text-sm text-stone-500 mt-2">Come visit us in historic Poblacion or our cozy Makiling store.</p>
+  <!-- SPLINE 3D INTERACTIVE VIEWER DRAWER / MODAL -->
+  <div class="spline-drawer" id="splineDrawer" onclick="closeSplineDrawerOutside(event)">
+    <div class="spline-modal-content">
+      <div class="spline-modal-header">
+        <h4>Interactive 3D Spline Experience</h4>
+        <button class="spline-close-btn" onclick="closeSplineDrawer()">✕</button>
+      </div>
+      <div class="spline-canvas-wrap">
+        <!-- Live Verified Spline Scene: Interactive 3D Physics Bubble Sphere -->
+        <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"></spline-viewer>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US? (Exact layout & copy structure of the inspo) -->
+  <section class="section-standard">
+    <div class="section-header reveal-on-scroll">
+      <div class="section-motif">🦐 🦀</div>
+      <h3 class="section-title">Why Choose Us?</h3>
+      <p class="section-subtitle">We're passionate about quality, comfort, and creating memorable moments for every guest.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      
-      <!-- Main Branch Card -->
-      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold uppercase tracking-wider">
-              Main Branch
-            </span>
-            <div class="flex items-center gap-1 text-[11px] font-semibold text-emerald-600">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>Open 9 AM – 10 PM</span>
-            </div>
-          </div>
-
-          <h3 class="font-cinzel text-xl font-bold text-stone-900">Grind. Poblacion</h3>
-          <p class="text-xs text-stone-500 mt-1">219 JP Rizal St., Poblacion VI, Calamba City, Laguna (Beside Bahay ni Rizal shrine)</p>
-
-          <div class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-xs text-stone-600">
-            <div class="flex items-center justify-between">
-              <span class="font-semibold text-stone-700">Monday – Sunday:</span>
-              <span>9:00 AM – 10:00 PM</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="font-semibold text-stone-700">Dine-in / Takeout:</span>
-              <span>Available</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="font-semibold text-stone-700">Delivery:</span>
-              <span class="text-[#D70F64] font-bold">Foodpanda Active</span>
-            </div>
-          </div>
+    <div class="why-grid">
+      <!-- Card 1 -->
+      <div class="why-card reveal-on-scroll">
+        <div class="why-card-img-wrap">
+          <img src="grilled_bangus.jpg" alt="Quality Seafood" loading="lazy" />
         </div>
-
-        <div class="mt-6 pt-4 border-t border-stone-100 flex flex-col gap-2">
-          <a href="https://maps.app.goo.gl/rxhDgLTc79Vmz23N7" target="_blank" rel="noopener noreferrer" 
-             class="w-full py-2.5 px-4 rounded-xl bg-[#4A2E1B] text-white text-xs font-bold hover:bg-[#341F12] transition text-center flex items-center justify-center gap-2">
-            <i data-lucide="navigation" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-            <span>Open in Google Maps</span>
-          </a>
-          <a href="https://www.waze.com/ul?ll=14.2134788,121.1661678&navigate=yes" target="_blank" rel="noopener noreferrer"
-             class="w-full py-2 px-4 rounded-xl bg-stone-100 text-stone-700 text-xs font-semibold hover:bg-stone-200 transition text-center flex items-center justify-center gap-2">
-            <i data-lucide="map" class="w-3.5 h-3.5"></i>
-            <span>Navigate with Waze</span>
-          </a>
+        <div class="why-card-body">
+          <h4 class="why-card-title">Quality Seafood</h4>
+          <p class="why-card-desc">We source the finest catch daily and cook every dish to perfection with authentic flavors.</p>
+          <!-- Redirects to About Channel -->
+          <a href="about.html" class="btn-pill btn-pill-sm">Learn More</a>
         </div>
       </div>
 
-      <!-- Makiling Branch Card -->
-      <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-800 text-[10px] font-bold uppercase tracking-wider">
-              Makiling Branch
-            </span>
-            <div class="flex items-center gap-1 text-[11px] font-semibold text-emerald-600">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>Open 12 PM – 10 PM</span>
-            </div>
-          </div>
-
-          <h3 class="font-cinzel text-xl font-bold text-stone-900">Grind. Makiling</h3>
-          <p class="text-xs text-stone-500 mt-1">Pueblo Laguna, Makiling, Calamba City (Beside WalterMart Makiling)</p>
-
-          <div class="mt-4 pt-4 border-t border-stone-100 space-y-2 text-xs text-stone-600">
-            <div class="flex items-center justify-between">
-              <span class="font-semibold text-stone-700">Monday – Sunday:</span>
-              <span>12:00 PM – 10:00 PM</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="font-semibold text-stone-700">Dine-in / Takeout:</span>
-              <span>Available</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="font-semibold text-stone-700">Vibe:</span>
-              <span>Cozy hangout & coffee stop</span>
-            </div>
-          </div>
+      <!-- Card 2 -->
+      <div class="why-card reveal-on-scroll" style="transition-delay: 0.1s;">
+        <div class="why-card-img-wrap">
+          <img src="garlic_shrimp.jpg" alt="Fresh & Delicious" loading="lazy" />
         </div>
-
-        <div class="mt-6 pt-4 border-t border-stone-100 flex flex-col gap-2">
-          <a href="https://www.google.com/maps/search/Grind+Coffee+Pueblo+Laguna+Makiling" target="_blank" rel="noopener noreferrer" 
-             class="w-full py-2.5 px-4 rounded-xl bg-stone-100 text-stone-800 text-xs font-bold hover:bg-stone-200 transition text-center flex items-center justify-center gap-2">
-            <i data-lucide="navigation" class="w-3.5 h-3.5 text-[#C88A42]"></i>
-            <span>Directions to Makiling</span>
-          </a>
+        <div class="why-card-body">
+          <h4 class="why-card-title">Fresh &amp; Delicious</h4>
+          <p class="why-card-desc">From grilled catches to sizzling feasts, everything is made fresh to order for ultimate savor.</p>
+          <!-- Redirects to Menu Channel -->
+          <a href="menu.html" class="btn-pill btn-pill-sm">Learn More</a>
         </div>
       </div>
 
-      <!-- Google Maps Embed / Interactive Preview Card -->
-      <div class="bg-white p-4 rounded-2xl border border-stone-200 shadow-sm flex flex-col">
-        <span class="text-xs font-bold uppercase tracking-wider text-stone-400 mb-2 block">Poblacion Main Map</span>
-        <div class="w-full h-56 rounded-xl overflow-hidden bg-stone-200 border border-stone-200 relative mb-3">
-          <iframe 
-            src="https://maps.google.com/maps?q=14.2134788,121.1661678&z=17&output=embed" 
-            class="w-full h-full border-0" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+      <!-- Card 3 -->
+      <div class="why-card reveal-on-scroll" style="transition-delay: 0.2s;">
+        <div class="why-card-img-wrap">
+          <img src="restaurant_ambiance.jpg" alt="Cozy Atmosphere" loading="lazy" />
         </div>
-        <p class="text-[11px] text-stone-500 leading-snug">
-          Located right along JP Rizal St. beside the Rizal Shrine / Bahay ni Rizal heritage park. Street parking and nearby slots available.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 10. DELIVERY & ONLINE ORDER CHANNEL -->
-  <section id="order" class="py-14 px-4 bg-gradient-to-br from-[#4A2E1B] to-[#28170F] text-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="text-xs font-bold uppercase tracking-widest text-[#C88A42] bg-[#3C2415] px-3 py-1 rounded-full border border-amber-900/60 inline-block mb-3">
-        Craving Coffee at Home or Office?
-      </span>
-      <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white">WE DELIVER STRAIGHT TO YOU</h2>
-      <p class="font-playfair italic text-amber-200 text-sm sm:text-base mt-2 max-w-xl mx-auto">
-        Enjoy your favorite Grind. lattes, frappes, cheesecakes, and rice bowls wherever you are in Calamba.
-      </p>
-
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-        <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-           class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#D70F64] text-white font-bold text-sm hover:bg-[#b00c52] transition shadow-lg flex items-center justify-center gap-2 btn-foodpanda-pulse">
-          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-          <span>Order on foodpanda</span>
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61579168303425" target="_blank" rel="noopener noreferrer" 
-           class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm transition flex items-center justify-center gap-2">
-          <i data-lucide="message-circle" class="w-4 h-4 text-[#C88A42]"></i>
-          <span>Inquire via Facebook</span>
-        </a>
-      </div>
-
-      <div class="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300">
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Freshly Packed & Sealed</span>
-        </span>
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Dine-in, Takeout & Foodpanda</span>
-        </span>
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Poblacion & Makiling Branches</span>
-        </span>
+        <div class="why-card-body">
+          <h4 class="why-card-title">Cozy Atmosphere</h4>
+          <p class="why-card-desc">A warm and welcoming space to relax, dine with family, or catch up with barkada.</p>
+          <!-- Redirects to Contact / Location Channel -->
+          <a href="contact.html" class="btn-pill btn-pill-sm">Learn More</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 11. FOOTER -->
-  <footer class="bg-[#1E120A] text-stone-400 text-xs py-12 px-4 border-t border-stone-800">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-      <div class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Grind Coffee" class="w-10 h-10 object-contain rounded-full bg-white p-0.5">
-        <div>
-          <span class="font-cinzel text-lg font-bold text-white block">GRIND.</span>
-          <span class="text-[10px] tracking-wider text-[#C88A42] uppercase font-semibold">More Than Just Coffee</span>
+  <!-- OUR MENU HIGHLIGHTS (4-Column Layout from Inspo) -->
+  <section class="section-standard" style="background-color: #FAF5EE;">
+    <div class="section-header reveal-on-scroll">
+      <div class="section-motif">🦐</div>
+      <h3 class="section-title">Our Menu Highlights</h3>
+      <p class="section-subtitle">Handcrafted with love, made for you.</p>
+    </div>
+
+    <div class="menu-highlights-grid">
+      <!-- Dish 1 -->
+      <div class="menu-item-card reveal-on-scroll" onclick="window.location.href='menu.html'">
+        <div class="menu-item-img-wrap">
+          <img src="grilled_squid.jpg" alt="Grilled Squid" loading="lazy" />
+        </div>
+        <div class="menu-item-body">
+          <h4 class="menu-item-title">Grilled Squid</h4>
+          <div class="menu-item-price">₱320.00</div>
         </div>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-4 text-stone-400 text-xs">
-        <button onclick="switchChannel('home')" class="hover:text-white transition">Home</button>
-        <button onclick="switchChannel('specialty')" class="hover:text-white transition">Specialty Menu</button>
-        <button onclick="switchChannel('menu')" class="hover:text-white transition">Full Menu</button>
-        <button onclick="switchChannel('quiz')" class="hover:text-white transition">Drink Quiz</button>
-        <button onclick="switchChannel('visit')" class="hover:text-white transition">Branches</button>
-        <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Foodpanda</a>
-        <a href="https://www.facebook.com/profile.php?id=61579168303425" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Facebook</a>
+      <!-- Dish 2 -->
+      <div class="menu-item-card reveal-on-scroll" onclick="window.location.href='menu.html'" style="transition-delay: 0.1s;">
+        <div class="menu-item-img-wrap">
+          <img src="steamed_crabs.jpg" alt="Steamed Crabs" loading="lazy" />
+        </div>
+        <div class="menu-item-body">
+          <h4 class="menu-item-title">Steamed Crabs</h4>
+          <div class="menu-item-price">₱450.00</div>
+        </div>
       </div>
 
-      <div class="text-[11px] text-stone-500">
-        &copy; 2026 Grind. Coffee. All rights reserved.<br>
-        219 JP Rizal St., Poblacion VI, Calamba City, Laguna.
+      <!-- Dish 3 -->
+      <div class="menu-item-card reveal-on-scroll" onclick="window.location.href='menu.html'" style="transition-delay: 0.2s;">
+        <div class="menu-item-img-wrap">
+          <img src="garlic_shrimp.jpg" alt="Garlic Butter Shrimp" loading="lazy" />
+        </div>
+        <div class="menu-item-body">
+          <h4 class="menu-item-title">Garlic Butter Shrimp</h4>
+          <div class="menu-item-price">₱380.00</div>
+        </div>
+      </div>
+
+      <!-- Dish 4 -->
+      <div class="menu-item-card reveal-on-scroll" onclick="window.location.href='menu.html'" style="transition-delay: 0.3s;">
+        <div class="menu-item-img-wrap">
+          <img src="buttered_tahong.jpg" alt="Baked Tahong" loading="lazy" />
+        </div>
+        <div class="menu-item-body">
+          <h4 class="menu-item-title">Baked Tahong</h4>
+          <div class="menu-item-price">₱260.00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centered Button Redirecting to Full Menu Channel -->
+    <div class="menu-highlights-action reveal-on-scroll">
+      <a href="menu.html" class="btn-pill">View Full Menu</a>
+    </div>
+  </section>
+
+  <!-- VISIT US TODAY (Exact Layout of Inspo: Text on Left + 3 Vertical Photos on Right) -->
+  <section class="visit-section">
+    <div class="visit-grid">
+      <div class="visit-text-col reveal-on-scroll">
+        <h3 class="visit-title">Visit Us Today</h3>
+        <div class="visit-ornament">
+          <div class="visit-ornament-line"></div>
+          <span>📍</span>
+        </div>
+        <p class="visit-desc">We'd love to welcome you to our restaurant. Come for the seafood, stay for the good vibes!</p>
+        <div class="visit-meta">
+          <strong>Location:</strong> 124B Burgos St, Calamba, 4027 Laguna<br>
+          <strong>Hours:</strong> Mon–Thu 10AM–9PM &bull; Fri–Sun 10AM–10PM
+        </div>
+        <!-- Redirects to Contact / Map Channel -->
+        <a href="contact.html" class="btn-pill">Find Our Location</a>
+      </div>
+
+      <!-- 3 Vertical Portrait Photos from Inspo Layout -->
+      <div class="visit-photos-col reveal-on-scroll" style="transition-delay: 0.15s;">
+        <div class="visit-photo-card" title="Hungry Pair Storefront on Burgos Street">
+          <img src="storefront.jpg" alt="Hungry Pair Storefront" loading="lazy" />
+        </div>
+        <div class="visit-photo-card" title="Fresh Calamansi and Garlic Butter Drizzle">
+          <img src="seafood_prep.jpg" alt="Seafood Preparation" loading="lazy" />
+        </div>
+        <div class="visit-photo-card" title="Warm and Welcoming Family Atmosphere">
+          <img src="restaurant_ambiance.jpg" alt="Restaurant Interior" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY IN THE LOOP (Newsletter Section from Inspo Image) -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-info">
+        <div class="newsletter-icon">🦐</div>
+        <div>
+          <h4>Stay in the Loop</h4>
+          <p>Subscribe to get updates on new menu items, special offers, and events.</p>
+        </div>
+      </div>
+
+      <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+        <input type="email" id="emailInput" class="newsletter-input" placeholder="Your email address" required />
+        <button type="submit" class="btn-pill btn-pill-sm">Subscribe</button>
+      </form>
+
+      <div class="newsletter-follow">
+        <span class="newsletter-follow-title">Follow Us</span>
+        <div class="newsletter-social-icons">
+          <a href="https://www.facebook.com/p/Hungry-Pair-61587575466576/" target="_blank" title="Facebook">📘</a>
+          <a href="https://m.me/61587575466576" target="_blank" title="Messenger">💬</a>
+          <a href="https://maps.app.goo.gl/1zfrLJ3LNA9QNQSs8" target="_blank" title="Google Maps">📍</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>&copy; 2025 Hungry Pair. All Rights Reserved.</div>
+      <div class="footer-links">
+        <a href="privacy.html" onclick="event.preventDefault(); showToast('Privacy Policy details available in-store.');">Privacy Policy</a>
+        <span>&bull;</span>
+        <a href="terms.html" onclick="event.preventDefault(); showToast('Terms & Conditions available in-store.');">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
 
-  <!-- 12. FLOATING MOBILE CHANNEL DOCK (CELLPHONE-FRIENDLY CHANNEL NAVIGATION) -->
-  <div id="channelDock" class="channel-dock lg:hidden flex items-center justify-around">
-    
-    <!-- Persistent Back Channel (Click back whenever you like it!) -->
-    <button class="channel-btn back-channel back-trigger" title="Click back anytime">
-      <div class="w-5 h-5 flex items-center justify-center">
-        <i data-lucide="arrow-left" class="w-4 h-4 channel-icon"></i>
-      </div>
-      <span>Back</span>
-    </button>
-
-    <!-- Home Channel -->
-    <button class="channel-btn active" data-channel="home" title="Home Channel">
-      <i data-lucide="home" class="w-5 h-5 channel-icon"></i>
-      <span>Home</span>
-    </button>
-
-    <!-- Specialty Channel -->
-    <button class="channel-btn" data-channel="specialty" title="Specialty Menu">
-      <i data-lucide="star" class="w-5 h-5 channel-icon text-amber-500"></i>
-      <span>Specialty</span>
-    </button>
-
-    <!-- Menu Channel -->
-    <button class="channel-btn" data-channel="menu" title="Menu Channel">
-      <i data-lucide="coffee" class="w-5 h-5 channel-icon"></i>
-      <span>Menu</span>
-    </button>
-
-    <!-- Quiz Matcher Channel -->
-    <button class="channel-btn" data-channel="quiz" title="Drink Matcher">
-      <i data-lucide="sparkles" class="w-5 h-5 channel-icon"></i>
-      <span>Quiz</span>
-    </button>
-
-    <!-- Visit / Location Channel -->
-    <button class="channel-btn" data-channel="visit" title="Store & Hours">
-      <i data-lucide="map-pin" class="w-5 h-5 channel-icon"></i>
-      <span>Visit</span>
-    </button>
-
-    <!-- Order Channel -->
-    <a href="https://www.foodpanda.ph/restaurant/qlei/grind-jp-rizal" target="_blank" rel="noopener noreferrer" 
-       class="channel-btn text-[#D70F64]" title="Order Delivery">
-      <i data-lucide="shopping-bag" class="w-5 h-5 channel-icon"></i>
-      <span class="font-bold">Order</span>
-    </a>
-
+  <!-- FLOATING CHANNELS DOCK (Quick Channel Switcher Requested by User) -->
+  <div class="channels-dock" title="Jump directly to another channel">
+    <span class="dock-label">Channels</span>
+    <a href="index.html" class="dock-btn" title="Main Showroom Channel">🏠 Home</a>
+    <a href="menu.html" class="dock-btn" title="Full Menu Channel">🍽️ Menu</a>
+    <a href="about.html" class="dock-btn" title="Our Story Channel">📖 Story</a>
+    <a href="contact.html" class="dock-btn" title="Location & Map Channel">📍 Map</a>
+    <button class="dock-btn order-highlight" onclick="openOrderModal()" title="Order via Foodpanda or Messenger">🛍️ Order</button>
   </div>
 
-  <!-- 13. ITEM DETAIL MODAL -->
-  <div id="itemModal" class="modal-overlay">
-    <div class="modal-content" id="itemModalBody">
-      <!-- Populated dynamically via app.js -->
+  <!-- ORDER ONLINE MODAL (Foodpanda vs Facebook Messenger) -->
+  <div class="modal-overlay" id="orderModal" onclick="closeOrderModalOutside(event)">
+    <div class="modal-box">
+      <h3>How would you like to order?</h3>
+      <p>Choose your preferred channel below:</p>
+
+      <div class="modal-channel-btns">
+        <!-- Foodpanda Channel -->
+        <a href="https://www.foodpanda.ph/restaurant/poyy/hungry-pair-burgos-street" target="_blank" class="channel-option-btn panda">
+          <span class="channel-icon">🐼</span>
+          <div>
+            <span class="channel-title">Order on Foodpanda</span>
+            <span class="channel-sub">Fast delivery straight to your doorstep</span>
+          </div>
+        </a>
+
+        <!-- Messenger Channel -->
+        <a href="https://m.me/61587575466576" target="_blank" class="channel-option-btn fb">
+          <span class="channel-icon">💬</span>
+          <div>
+            <span class="channel-title">Chat on Facebook Messenger</span>
+            <span class="channel-sub">Message our page directly for orders &amp; inquiries</span>
+          </div>
+        </a>
+      </div>
+
+      <span class="modal-close" onclick="closeOrderModal()">✕ Close</span>
     </div>
   </div>
 
-  <!-- 14. ORIGINAL VINTAGE MENU SHEET VIEWER MODAL -->
-  <div id="sheetModal" class="modal-overlay">
-    <div class="modal-content sheet-modal-content p-4 sm:p-6">
-      
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
-        <div>
-          <span class="text-[10px] font-bold uppercase tracking-wider text-[#C88A42]">Authentic Framed Boards</span>
-          <h3 id="activeSheetTitle" class="font-cinzel text-lg font-bold text-stone-900">Original Menu Board</h3>
-        </div>
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-msg" id="toastMsg">Thank you for subscribing to Hungry Pair updates!</div>
 
-        <div class="flex items-center gap-2">
-          <!-- Zoom Controls -->
-          <button onclick="zoomSheet(0.2)" class="w-8 h-8 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center text-xs font-bold" title="Zoom In">+</button>
-          <button onclick="zoomSheet(-0.2)" class="w-8 h-8 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center text-xs font-bold" title="Zoom Out">-</button>
-          
-          <!-- Back / Close Button -->
-          <button onclick="closeSheetModal()" class="w-8 h-8 rounded-lg bg-[#4A2E1B] text-white flex items-center justify-center hover:bg-stone-800 transition" title="Back to Website">
-            <i data-lucide="x" class="w-4 h-4"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Sheet Tabs -->
-      <div class="flex items-center gap-2 my-3 overflow-x-auto no-scrollbar">
-        <button onclick="switchSheet(1)" class="sheet-tab-btn px-3 py-1.5 rounded-full text-xs font-semibold border border-stone-200 transition whitespace-nowrap bg-[#4A2E1B] text-white">
-          Drinks Sheet 1: Coffee & Matcha
-        </button>
-        <button onclick="switchSheet(2)" class="sheet-tab-btn px-3 py-1.5 rounded-full text-xs font-semibold border border-stone-200 transition whitespace-nowrap bg-white text-stone-700">
-          Drinks Sheet 2: Frappes & House
-        </button>
-        <button onclick="switchSheet(3)" class="sheet-tab-btn px-3 py-1.5 rounded-full text-xs font-semibold border border-stone-200 transition whitespace-nowrap bg-white text-stone-700">
-          Food Sheet: Pastries, Pastas & Rice
-        </button>
-      </div>
-
-      <!-- Sheet Image Container with Zoom -->
-      <div class="w-full h-[60vh] overflow-auto bg-stone-200/50 rounded-xl p-2 flex items-center justify-center border border-stone-300">
-        <img id="activeSheetImg" src="assets/images/menu-drinks-1.png" alt="Original Menu Board" class="max-h-full max-w-full object-contain transition duration-200 rounded shadow-md">
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="mt-4 pt-3 border-t border-stone-200 flex items-center justify-between">
-        <span class="text-xs text-stone-500">Pinch or use +/- buttons to zoom.</span>
-        <button onclick="closeSheetModal()" class="px-4 py-2 bg-[#4A2E1B] text-white text-xs font-bold rounded-lg hover:bg-stone-800 transition flex items-center gap-1.5">
-          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          <span>Back to Menu</span>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Lucide Icon Initialization -->
   <script>
-    if (window.lucide) {
-      lucide.createIcons();
+    // ─── Modal Functionality ───
+    function openOrderModal() {
+      document.getElementById('orderModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
-  </script>
 
-  <!-- Application Logic -->
-  <script src="app.js"></script>
+    function closeOrderModal() {
+      document.getElementById('orderModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeOrderModalOutside(e) {
+      if (e.target === document.getElementById('orderModal')) {
+        closeOrderModal();
+      }
+    }
+
+    // ─── Spline 3D Viewer Drawer ───
+    function openSplineDrawer() {
+      document.getElementById('splineDrawer').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSplineDrawer() {
+      document.getElementById('splineDrawer').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeSplineDrawerOutside(e) {
+      if (e.target === document.getElementById('splineDrawer')) {
+        closeSplineDrawer();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeOrderModal();
+        closeSplineDrawer();
+      }
+    });
+
+    // ─── Newsletter Form ───
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const input = document.getElementById('emailInput');
+      if (input.value) {
+        showToast('Thank you for subscribing to Hungry Pair updates!');
+        input.value = '';
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // ─── Scroll Reveal Observer ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
